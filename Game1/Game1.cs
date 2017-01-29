@@ -40,7 +40,8 @@ namespace Game1
 
         protected override void LoadContent()
         {
-              //Hey what's up, this is Oliver(yeah actually songnan wu if you guys don't now who Oliver is)
+            //Hey what's up, this is Oliver(yeah actually songnan wu if you guys don't now who Oliver is)
+            //Yo it's Nate, copying Oliver's idea to comment right here. Practicing committing code :-)
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Texture = Content.Load<Texture2D>("TidusSheet");
             TidusSprite = new StandingInPlaceTidusSprite(Texture);
