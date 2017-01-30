@@ -16,6 +16,7 @@ namespace Game1
         GamePadController gamepad;
         public ISprite TidusSprite;
         public Texture2D Texture;
+        public Texture2D Background;
         public Vector2 location;
 
         public Game1()
@@ -43,8 +44,10 @@ namespace Game1
             //Hey what's up, this is Oliver(yeah actually songnan wu if you guys don't now who Oliver is)
             //Yo it's Nate, copying Oliver's idea to comment right here. Practicing committing code :-)
             //What? It's George, LLLLLLLLLLLLLLLLLLLLLLOL
+            
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Texture = Content.Load<Texture2D>("TidusSheet");
+            Background = Content.Load<Texture2D>("bg");
             TidusSprite = new StandingInPlaceTidusSprite(Texture);
 
         }
@@ -76,7 +79,11 @@ namespace Game1
         {
             GraphicsDevice.Clear(Color.White);
             int spriteID = TidusSprite.SpriteID();
-
+            //Add a back ground
+            spriteBatch.Begin();
+            spriteBatch.Draw(Background, new Rectangle(0, 0, 800, 480), Color.White);
+            spriteBatch.End();
+            //---------------------------
             if (spriteID == 2)
             {
                 if (location.X <= 0)
