@@ -41,6 +41,7 @@ namespace Game1
         protected override void LoadContent()
         {
               //Hey what's up, this is Oliver(yeah actually songnan wu if you guys don't now who Oliver is)
+              //Comment added by Songnan Wu
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Texture = Content.Load<Texture2D>("TidusSheet");
             TidusSprite = new StandingInPlaceTidusSprite(Texture);
