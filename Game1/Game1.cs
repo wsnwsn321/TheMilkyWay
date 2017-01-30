@@ -41,6 +41,7 @@ namespace Game1
 
         protected override void LoadContent()
         {
+            //I got wrecked on Overwatch earlier today -Chris
             //Hey what's up, this is Oliver(yeah actually songnan wu if you guys don't now who Oliver is)
             //Yo it's Nate, copying Oliver's idea to comment right here. Practicing committing code :-)
             //What? It's George, LLLLLLLLLLLLLLLLLLLLLLOL
