@@ -44,6 +44,11 @@
     <Compile Include="IController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
+    <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\ISprite.cs" />
+    <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
