@@ -28,10 +28,11 @@ namespace SuperMarioGame
 
                 foreach (Keys key in pressedKeys)
                 {
-                    if (key.Equals(Keys.Q) || key.Equals(Keys.W) || key.Equals(Keys.E) || key.Equals(Keys.R) || key.Equals(Keys.T))
+                    if (controllerMappings.ContainsKey(key))
                     {
                         controllerMappings[key].Execute();
                     }
+                   
                 }
             }
 

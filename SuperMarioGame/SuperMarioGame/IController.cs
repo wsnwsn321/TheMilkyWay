@@ -9,7 +9,7 @@ namespace SuperMarioGame
 {
     public interface IController
     {
-        void RegisterCommand(Keys, ICommand);
+        void RegisterCommand(Keys key, ICommand command);
 
         void Update();
     }
