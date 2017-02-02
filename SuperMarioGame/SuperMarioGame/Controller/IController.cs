@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame
+namespace SuperMarioGame.Controller
 {
     public interface IController
     {

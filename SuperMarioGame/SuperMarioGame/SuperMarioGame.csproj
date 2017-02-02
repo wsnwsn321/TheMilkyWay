@@ -38,10 +38,22 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
+    <Compile Include="Commands\BrickBlockDisappearCommand.cs" />
+    <Compile Include="Commands\HiddenBlockToUsedBlockCommand.cs" />
+    <Compile Include="Commands\MarioBigCommand.cs" />
+    <Compile Include="Commands\MarioDeadCommand.cs" />
+    <Compile Include="Commands\MarioFireCommand.cs" />
+    <Compile Include="Commands\MarioIdleOrCrouchingCommand.cs" />
+    <Compile Include="Commands\MarioIdleOrJumpCommand.cs" />
+    <Compile Include="Commands\MarioLeftIdleOrRunningCommand.cs" />
+    <Compile Include="Commands\MarioRightIdleOrRunningCommand.cs" />
+    <Compile Include="Commands\MarioSmallCommand.cs" />
+    <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
+    <Compile Include="Commands\ResetCommand.cs" />
+    <Compile Include="Controller\Controller.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="IController.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Controller\IController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />

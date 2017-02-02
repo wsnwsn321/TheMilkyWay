@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SuperMarioGame.Commands;
+using SuperMarioGame.Controller;
 
 namespace SuperMarioGame
 {
@@ -11,6 +13,7 @@ namespace SuperMarioGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        IController controller;
 
         public Game1()
         {
@@ -27,6 +30,9 @@ namespace SuperMarioGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            // Assign commands to keys
+            this.InitializeCommands();
 
             base.Initialize();
         }
@@ -78,6 +84,22 @@ namespace SuperMarioGame
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+        }
+
+        private void InitializeCommands()
+        {
+            controller.RegisterCommand(Keys.W, new MarioIdleOrJumpCommand(this));
+            controller.RegisterCommand(Keys.A, new MarioLeftIdleOrRunningCommand(this));
+            controller.RegisterCommand(Keys.S, new MarioIdleOrCrouchingCommand(this));
+            controller.RegisterCommand(Keys.D, new MarioRightIdleOrRunningCommand(this));
+            controller.RegisterCommand(Keys.Y, new MarioSmallCommand(this));
+            controller.RegisterCommand(Keys.U, new MarioBigCommand(this));
+            controller.RegisterCommand(Keys.I, new MarioFireCommand(this));
+            controller.RegisterCommand(Keys.O, new MarioDeadCommand(this));
+            controller.RegisterCommand(Keys.Z, new QuestionBlockToUsedBlockCommand(this));
+            controller.RegisterCommand(Keys.X, new BrickBlockDisappearCommand(this));
+            controller.RegisterCommand(Keys.C, new HiddenBlockToUsedBlockCommand(this));
+            controller.RegisterCommand(Keys.R, new ResetCommand(this));
         }
     }
 }
