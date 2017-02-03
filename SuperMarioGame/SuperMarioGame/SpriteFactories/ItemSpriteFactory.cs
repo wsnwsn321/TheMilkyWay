@@ -30,6 +30,7 @@ namespace SuperMarioGame.SpriteFactories
 
         private ItemSpriteFactory()
         {
+            
         }
 
         public void LoadAllTextures(ContentManager content)
@@ -38,6 +39,8 @@ namespace SuperMarioGame.SpriteFactories
             //one example is below
 
             //mushroomSpriteSheet = content.Load<Texture2D>("mushroom");
+            flowerSpritesheet = content.Load<Texture2D>("Item/flower");
+            starSpritesheet = content.Load<Texture2D>("Item/star");
         }
 
         //methods for creating sprites below*************************************************
@@ -47,5 +50,16 @@ namespace SuperMarioGame.SpriteFactories
         //{
         //    return new MushroomSprite(mushroomSpritesheet, Game1.Instance.level.isAboveGround);
         //}
+
+        public ISprite CreateFlowerSprite()
+        {
+            return new Sprites.FlowerSprite(flowerSpritesheet); 
+        }
+
+        public ISprite CreateStarSprite()
+        {
+            return new Sprites.StarSprite(starSpritesheet);
+        }
+
     }
 }

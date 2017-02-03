@@ -61,6 +61,8 @@
     <Compile Include="SpriteFactories\ISprite.cs" />
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
+    <Compile Include="Sprites\FlowerSprite.cs" />
+    <Compile Include="Sprites\StarSprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
