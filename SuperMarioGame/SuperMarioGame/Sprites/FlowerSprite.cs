@@ -17,7 +17,7 @@ namespace SuperMarioGame.Sprites
             public FlowerSprite(Texture2D texture)
             {
                 Texture = texture;
-               // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+                // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             }
             public void Update()
             {
@@ -32,9 +32,9 @@ namespace SuperMarioGame.Sprites
             public void Draw(SpriteBatch spriteBatch, Vector2 position)
             {
                 spriteBatch.Begin();
-            Rectangle sourceRectange = new Rectangle(0,0,16,16);
-            Rectangle desRe = new Rectangle((int)position.X,(int)position.Y,32,32);
-            spriteBatch.Draw(Texture, desRe,sourceRectange, Color.White);
+                Rectangle sourceRectangle = new Rectangle(0,0,16,16);
+                Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,32,32);
+                spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
                 p = position;
                 spriteBatch.End();
             }
