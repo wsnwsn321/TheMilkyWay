@@ -14,7 +14,8 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         IController controller;
-        SpriteFactories.ISprite Flower;
+        SpriteFactories.ISprite Flower, RedMush, GreenMush, Pipe, Koopa;
+        
 
         public Game1()
         {
@@ -48,6 +49,10 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
             Flower =  SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+           // RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateReadMushSprite();
+           // GreenMush = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushSprite();
+           // Pipe = SpriteFactories.ItemSpriteFactory.Instance.CreatePipeSprite();
+           // Koopa = SpriteFactories.ItemSpriteFactory.Instance.CreateKoopaSprite();
             // TODO: use this.Content to load your game content here
         }
 
@@ -72,6 +77,10 @@ namespace SuperMarioGame
 
             // TODO: Add your update logic here
             Flower.Update();
+            RedMush.Update();
+            GreenMush.Update();
+            Pipe.Update();
+            Koopa.Update();
 
             base.Update(gameTime);
         }
@@ -86,6 +95,10 @@ namespace SuperMarioGame
 
             // TODO: Add your drawing code here
             Flower.Draw(spriteBatch,new Vector2( 100, 100));
+            RedMush.Draw(spriteBatch, new Vector2(200, 100));
+            GreenMush.Draw(spriteBatch, new Vector2(300, 100));
+            Pipe.Draw(spriteBatch, new Vector2(400, 100));
+            Koopa.Draw(spriteBatch, new Vector2(500, 100));
 
             base.Draw(gameTime);
         }

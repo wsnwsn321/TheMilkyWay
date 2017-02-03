@@ -62,6 +62,8 @@
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
     <Compile Include="Sprites\FlowerSprite.cs" />
+    <Compile Include="Sprites\GreenMushroomSprite.cs" />
+    <Compile Include="Sprites\RedMushroomSprite.cs" />
     <Compile Include="Sprites\StarSprite.cs" />
   </ItemGroup>
   <ItemGroup>
