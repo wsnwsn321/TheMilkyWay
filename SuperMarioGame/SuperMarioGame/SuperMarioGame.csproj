@@ -64,6 +64,8 @@
     <Compile Include="Sprites\KoopaSprite.cs" />
     <Compile Include="Sprites\PipeSprite.cs" />
     <Compile Include="Sprites\FlowerSprite.cs" />
+    <Compile Include="Sprites\GreenMushroomSprite.cs" />
+    <Compile Include="Sprites\RedMushroomSprite.cs" />
     <Compile Include="Sprites\StarSprite.cs" />
   </ItemGroup>
   <ItemGroup>
