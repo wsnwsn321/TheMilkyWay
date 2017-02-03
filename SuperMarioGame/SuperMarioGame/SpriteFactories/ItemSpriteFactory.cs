@@ -38,9 +38,12 @@ namespace SuperMarioGame.SpriteFactories
             //load sprite sheets here**************************************
             //one example is below
 
-            //mushroomSpriteSheet = content.Load<Texture2D>("mushroom");
-            flowerSpritesheet = content.Load<Texture2D>("Item/flower");
-            starSpritesheet = content.Load<Texture2D>("Item/star");
+            mushroomSpritesheet = content.Load<Texture2D>("Item/Mushroom");
+            flowerSpritesheet = content.Load<Texture2D>("Item/Flower");
+            starSpritesheet = content.Load<Texture2D>("Item/Star");
+            coinSpritesheet = content.Load<Texture2D>("Item/Coin");
+
+
         }
 
         //methods for creating sprites below*************************************************

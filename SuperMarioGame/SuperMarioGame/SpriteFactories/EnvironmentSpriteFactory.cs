@@ -13,7 +13,6 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D brickBlockSpritesheet;
         private Texture2D questionBlockSpritesheet;
         private Texture2D usedBlockSpritesheet;
-        private Texture2D hiddenBlockSpritesheet;
         private Texture2D groundBlockSpritesheet;
         private Texture2D pipeSpritesheet;
         // More private Texture2Ds follow
@@ -38,15 +37,21 @@ namespace SuperMarioGame.SpriteFactories
             //load sprite sheets here**************************************
             //one example is below
 
-            //pipeSpriteSheet = content.Load<Texture2D>("pipe");
+            pipeSpritesheet = content.Load<Texture2D>("Pipe");
+            usedBlockSpritesheet = content.Load<Texture2D>("UsedBlock");
+            brickBlockSpritesheet = content.Load<Texture2D>("BrickBlock");
+            questionBlockSpritesheet = content.Load<Texture2D>("QuestionBlock");
+            groundBlockSpritesheet = content.Load<Texture2D>("GroundBlock");
+
+
         }
 
         //methods for creating sprites below*************************************************
         //one example is below
 
-        //public ISprite CreatePipeSprite()
-        //{
-        //    return new PipeSprite(pipeSpritesheet, Game1.Instance.level.isAboveGround);
-        //}
+        public ISprite CreatePipeSprite()
+        {
+            return new Sprites.PipeSprite(pipeSpritesheet);
+        }
     }
 }

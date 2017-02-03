@@ -35,7 +35,9 @@ namespace SuperMarioGame.SpriteFactories
             //load sprite sheets here**************************************
             //one example below
 
-            //goombaSpriteSheet = content.Load<Texture2D>("goomba");
+            goombaSpritesheet = content.Load<Texture2D>("Goomba/Goomba");
+            koopaSpritesheet = content.Load<Texture2D>("Koopa/Koopa");
+
         }
 
         //methods for creating sprites below*************************************************
