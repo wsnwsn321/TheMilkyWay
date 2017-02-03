@@ -43,7 +43,6 @@ namespace SuperMarioGame.SpriteFactories
             starSpritesheet = content.Load<Texture2D>("Item/Star");
             coinSpritesheet = content.Load<Texture2D>("Item/Coin");
 
-
         }
 
         //methods for creating sprites below*************************************************
@@ -54,14 +53,29 @@ namespace SuperMarioGame.SpriteFactories
         //    return new MushroomSprite(mushroomSpritesheet, Game1.Instance.level.isAboveGround);
         //}
 
-        public ISprite CreateFlowerSprite()
+        public Sprites.ISprite CreateFlowerSprite()
         {
             return new Sprites.FlowerSprite(flowerSpritesheet); 
         }
 
-        public ISprite CreateStarSprite()
+        public Sprites.ISprite CreateStarSprite()
         {
             return new Sprites.StarSprite(starSpritesheet);
+        }
+
+        public Sprites.ISprite CreateGreenMushroomSprite()
+        {
+            return new Sprites.GreenMushroomSprite(mushroomSpritesheet);
+        }
+
+        public Sprites.ISprite CreateRedMushroomSprite()
+        {
+            return new Sprites.RedMushroomSprite(mushroomSpritesheet);
+        }
+
+        public Sprites.ISprite CreateCoinSprite()
+        {
+            return new Sprites.CoinSprite(coinSpritesheet);
         }
 
     }

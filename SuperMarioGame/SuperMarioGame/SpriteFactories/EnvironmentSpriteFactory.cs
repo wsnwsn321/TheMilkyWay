@@ -49,9 +49,29 @@ namespace SuperMarioGame.SpriteFactories
         //methods for creating sprites below*************************************************
         //one example is below
 
-        public ISprite CreatePipeSprite()
+        public Sprites.ISprite CreatePipeSprite()
         {
             return new Sprites.PipeSprite(pipeSpritesheet);
+        }
+
+        public Sprites.ISprite CreateUsedBlockSprite()
+        {
+            return new Sprites.UsedBlockSprite(usedBlockSpritesheet);
+        }
+
+        public Sprites.ISprite CreateBrickBlockSprite()
+        {
+            return new Sprites.BrickBlockSprite(brickBlockSpritesheet);
+        }
+
+        public Sprites.ISprite CreateQuestionBlockSprite()
+        {
+            return new Sprites.QuestionBlockSprite(questionBlockSpritesheet);
+        }
+
+        public Sprites.ISprite CreateGroundBlockSprite()
+        {
+            return new Sprites.GroundBlockSprite(groundBlockSpritesheet);
         }
     }
 }

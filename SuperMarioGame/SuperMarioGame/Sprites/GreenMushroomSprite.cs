@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperMarioGame.Sprites
 {
-    class GreenMushroomSprite
+    class GreenMushroomSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         Vector2 p;

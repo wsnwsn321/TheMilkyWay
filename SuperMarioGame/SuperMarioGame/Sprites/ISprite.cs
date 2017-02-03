@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.SpriteFactories
+namespace SuperMarioGame.Sprites
 {
     public interface ISprite
     {

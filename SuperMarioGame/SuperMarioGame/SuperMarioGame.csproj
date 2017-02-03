@@ -58,7 +58,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
-    <Compile Include="SpriteFactories\ISprite.cs" />
+    <Compile Include="Sprites\GroundBlockSprite.cs" />
+    <Compile Include="Sprites\QuestionBlockSprite.cs" />
+    <Compile Include="Sprites\BrickBlockSprite.cs" />
+    <Compile Include="Sprites\UsedBlockSprite.cs" />
+    <Compile Include="Sprites\CoinSprite.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
     <Compile Include="Sprites\KoopaSprite.cs" />

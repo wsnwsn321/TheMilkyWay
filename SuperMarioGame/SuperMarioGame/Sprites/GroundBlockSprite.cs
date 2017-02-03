@@ -8,13 +8,13 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class KoopaSprite: ISprite
+    class GroundBlockSprite: ISprite
 
     {
             public Texture2D Texture { get; set; }
             Vector2 p;
 
-            public KoopaSprite(Texture2D texture)
+            public GroundBlockSprite(Texture2D texture)
             {
                 Texture = texture;
                 // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
