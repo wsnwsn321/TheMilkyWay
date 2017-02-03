@@ -82,7 +82,7 @@ namespace SuperMarioGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Blue);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
             Flower.Draw(spriteBatch,new Vector2( 100, 100));
