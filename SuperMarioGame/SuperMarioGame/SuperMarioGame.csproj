@@ -60,6 +60,7 @@
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
     <Compile Include="Sprites\GroundBlockSprite.cs" />
     <Compile Include="Sprites\GoombaSprite.cs" />
+    <Compile Include="Sprites\HiddenBlockSprite.cs" />
     <Compile Include="Sprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\BrickBlockSprite.cs" />
     <Compile Include="Sprites\UsedBlockSprite.cs" />

@@ -37,11 +37,11 @@ namespace SuperMarioGame.SpriteFactories
             //load sprite sheets here**************************************
             //one example is below
 
-            pipeSpritesheet = content.Load<Texture2D>("Pipe");
-            usedBlockSpritesheet = content.Load<Texture2D>("UsedBlock");
-            brickBlockSpritesheet = content.Load<Texture2D>("BrickBlock");
-            questionBlockSpritesheet = content.Load<Texture2D>("QuestionBlock");
-            groundBlockSpritesheet = content.Load<Texture2D>("GroundBlock");
+            pipeSpritesheet = content.Load<Texture2D>("Item/Pipe");
+            usedBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
+            brickBlockSpritesheet = content.Load<Texture2D>("Item/BrickBlock");
+            questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
+            groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
 
 
         }
@@ -72,6 +72,11 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateGroundBlockSprite()
         {
             return new Sprites.GroundBlockSprite(groundBlockSpritesheet);
+        }
+
+        public Sprites.ISprite CreateHiddenBlockSprite()
+        {
+            return new Sprites.HiddenBlockSprite(pipeSpritesheet);
         }
     }
 }

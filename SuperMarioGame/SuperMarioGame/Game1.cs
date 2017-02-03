@@ -14,7 +14,7 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         IController controller;
-        SpriteFactories.ISprite Flower, RedMush, GreenMush, Pipe, Koopa;
+        Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
         
 
         public Game1()
@@ -34,7 +34,10 @@ namespace SuperMarioGame
             // TODO: Add your initialization logic here
 
             // Assign commands to keys
-           // this.InitializeCommands();
+            controller = new Controller.Controller();
+
+            InitializeCommands();
+
             
             base.Initialize();
         }
@@ -45,14 +48,11 @@ namespace SuperMarioGame
         /// </summary>
         protected override void LoadContent()
         {
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
-            Flower =  SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
-           // RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateReadMushSprite();
-           // GreenMush = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushSprite();
-           // Pipe = SpriteFactories.ItemSpriteFactory.Instance.CreatePipeSprite();
-           // Koopa = SpriteFactories.ItemSpriteFactory.Instance.CreateKoopaSprite();
+            LoadSprites();
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -80,7 +80,15 @@ namespace SuperMarioGame
             RedMush.Update();
             GreenMush.Update();
             Pipe.Update();
+            Goomba.Update();
             Koopa.Update();
+            Coin.Update();
+            Star.Update();
+            UsedBlock.Update();
+            GroundBlock.Update();
+            HiddenBlock.Update();
+            BrickBlock.Update();
+            QuestionBlock.Update();
 
             base.Update(gameTime);
         }
@@ -94,11 +102,19 @@ namespace SuperMarioGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            Flower.Draw(spriteBatch,new Vector2( 100, 100));
+            Flower.Draw(spriteBatch,new Vector2(100, 100));
             RedMush.Draw(spriteBatch, new Vector2(200, 100));
             GreenMush.Draw(spriteBatch, new Vector2(300, 100));
             Pipe.Draw(spriteBatch, new Vector2(400, 100));
             Koopa.Draw(spriteBatch, new Vector2(500, 100));
+            Goomba.Draw(spriteBatch, new Vector2(600, 100));
+            Coin.Draw(spriteBatch, new Vector2(100, 200));
+            Star.Draw(spriteBatch, new Vector2(200, 200));
+            HiddenBlock.Draw(spriteBatch, new Vector2(300, 200));
+            GroundBlock.Draw(spriteBatch, new Vector2(400, 200));
+            BrickBlock.Draw(spriteBatch, new Vector2(500, 200));
+            QuestionBlock.Draw(spriteBatch, new Vector2(600, 200));
+            UsedBlock.Draw(spriteBatch, new Vector2(700, 200));
 
             base.Draw(gameTime);
         }
@@ -117,6 +133,27 @@ namespace SuperMarioGame
             controller.RegisterCommand(Keys.X, new BrickBlockDisappearCommand(this));
             controller.RegisterCommand(Keys.C, new HiddenBlockToUsedBlockCommand(this));
             controller.RegisterCommand(Keys.R, new ResetCommand(this));
+        }
+
+        private void LoadSprites()
+        {
+            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
+            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content);
+            SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content);
+            //SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content);
+            Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+            RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
+            GreenMush = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushroomSprite();
+            Pipe = SpriteFactories.EnvironmentSpriteFactory.Instance.CreatePipeSprite();
+            Goomba = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaSprite();
+            Koopa = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            Coin = SpriteFactories.ItemSpriteFactory.Instance.CreateCoinSprite();
+            Star = SpriteFactories.ItemSpriteFactory.Instance.CreateStarSprite();
+            UsedBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+            QuestionBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateQuestionBlockSprite();
+            BrickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
+            HiddenBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
+            GroundBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
         }
     }
 }
