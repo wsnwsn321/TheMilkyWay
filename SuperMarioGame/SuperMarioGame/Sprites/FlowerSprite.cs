@@ -32,7 +32,9 @@ namespace SuperMarioGame.Sprites
             public void Draw(SpriteBatch spriteBatch, Vector2 position)
             {
                 spriteBatch.Begin();
-                spriteBatch.Draw(Texture, new Rectangle((int)position.X, (int)position.Y, 16, 16), Color.White);
+            Rectangle sourceRectange = new Rectangle(0,0,16,16);
+            Rectangle desRe = new Rectangle((int)position.X,(int)position.Y,32,32);
+            spriteBatch.Draw(Texture, desRe,sourceRectange, Color.White);
                 p = position;
                 spriteBatch.End();
             }
