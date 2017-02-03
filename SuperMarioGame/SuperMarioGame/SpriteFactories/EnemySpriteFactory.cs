@@ -43,14 +43,14 @@ namespace SuperMarioGame.SpriteFactories
         //methods for creating sprites below*************************************************
         //examples below
 
-        //public ISprite CreateGoombaSprite()
-        //{
-        //    return new GoombaSprite(goombaSpritesheet, Game1.Instance.level.isAboveGround);
-        //}
+        public Sprites.ISprite CreateGoombaSprite()
+        {
+            return new Sprites.GoombaSprite(goombaSpritesheet);
+        }
 
-        //public ISprite CreateKoopaSprite()
-        //{
-        //    return new KoopaSprite(koopaSpritesheet, 32, 32);
-        //}
+        public Sprites.ISprite CreateKoopaSprite()
+        {
+            return new Sprites.KoopaSprite(koopaSpritesheet);
+        }
     }
 }
