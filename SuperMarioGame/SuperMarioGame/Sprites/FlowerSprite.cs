@@ -17,6 +17,7 @@ namespace SuperMarioGame.Sprites
             public FlowerSprite(Texture2D texture)
             {
                 Texture = texture;
+               // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             }
             public void Update()
             {

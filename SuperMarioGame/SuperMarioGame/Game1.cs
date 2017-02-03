@@ -14,6 +14,7 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         IController controller;
+        SpriteFactories.ISprite Flower;
 
         public Game1()
         {
@@ -32,8 +33,8 @@ namespace SuperMarioGame
             // TODO: Add your initialization logic here
 
             // Assign commands to keys
-            this.InitializeCommands();
-
+           // this.InitializeCommands();
+            
             base.Initialize();
         }
 
@@ -45,7 +46,8 @@ namespace SuperMarioGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
+            Flower =  SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             // TODO: use this.Content to load your game content here
         }
 
@@ -69,6 +71,7 @@ namespace SuperMarioGame
                 Exit();
 
             // TODO: Add your update logic here
+            Flower.Update();
 
             base.Update(gameTime);
         }
@@ -82,6 +85,7 @@ namespace SuperMarioGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            Flower.Draw(spriteBatch,new Vector2( 100, 100));
 
             base.Draw(gameTime);
         }
