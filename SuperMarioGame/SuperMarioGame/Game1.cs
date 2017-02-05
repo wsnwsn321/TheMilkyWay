@@ -113,7 +113,7 @@ namespace SuperMarioGame
             HiddenBlock.Draw(spriteBatch, new Vector2(300, 200));
             GroundBlock.Draw(spriteBatch, new Vector2(400, 200));
             BrickBlock.Draw(spriteBatch, new Vector2(500, 200));
-            QuestionBlock.Draw(spriteBatch, new Vector2(600, 200));
+            QuestionBlock.Draw(spriteBatch, new Vector2(600, 200)); 
             UsedBlock.Draw(spriteBatch, new Vector2(700, 200));
 
             base.Draw(gameTime);
