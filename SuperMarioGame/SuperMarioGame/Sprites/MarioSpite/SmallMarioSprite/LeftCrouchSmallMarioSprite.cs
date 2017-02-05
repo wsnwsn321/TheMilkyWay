@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.StateClass.CharacterClass.Mario
+namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 {
-    class bigMario
+    class LeftCrouchSmallMarioSprite
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.StateClass.CharacterClass.Mario
+namespace SuperMarioGame.StateClass.MarioState
 {
-    class bigRedMario
+    class LeftRunningSmallMarioState
     {
     }
 }
