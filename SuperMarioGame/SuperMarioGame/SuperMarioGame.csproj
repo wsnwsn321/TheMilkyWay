@@ -96,6 +96,9 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Sprites\MarioSpite\BigMarioSprite\" />
+    <Folder Include="Sprites\MarioSpite\SmallMarioSprite\" />
+    <Folder Include="Sprites\MarioSpite\StarMarioSprite\" />
     <Folder Include="StateClass\EnemyClass\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>
