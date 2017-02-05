@@ -61,6 +61,14 @@
     <Compile Include="Sprites\GroundBlockSprite.cs" />
     <Compile Include="Sprites\GoombaSprite.cs" />
     <Compile Include="Sprites\HiddenBlockSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftCrouchingFireMario.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftIdleFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftJumpingFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftRunningFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightCrouchingFireMario.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightIdleFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightJumpingFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightRunningFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftJumpingSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftCrouchSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightJumpingSmallMarioSprite.cs" />
@@ -101,7 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sprites\MarioSpite\BigMarioSprite\" />
-    <Folder Include="Sprites\MarioSpite\FlowerMarioSprite\" />
     <Folder Include="StateClass\EnemyClass\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>
