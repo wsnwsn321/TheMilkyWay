@@ -61,6 +61,14 @@
     <Compile Include="Sprites\GroundBlockSprite.cs" />
     <Compile Include="Sprites\GoombaSprite.cs" />
     <Compile Include="Sprites\HiddenBlockSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightCrouchingFireMario.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftCrouchingFireMario.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightJumpingFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftJumpingFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightRunningFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftRunningFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightIdleFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftIdleFireMarioSprite.cs" />
     <Compile Include="Sprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\BrickBlockSprite.cs" />
     <Compile Include="Sprites\UsedBlockSprite.cs" />
@@ -96,9 +104,8 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sprites\MarioSpite\BigMarioSprite\" />
-    <Folder Include="Sprites\MarioSpite\FlowerMarioSprite\" />
-    <Folder Include="Sprites\MarioSpite\SmallMarioSprite\" />
+    <Folder Include="Sprites\MarioSprite\BigMarioSprite\" />
+    <Folder Include="Sprites\MarioSprite\SmallMarioSprite\" />
     <Folder Include="StateClass\EnemyClass\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>
