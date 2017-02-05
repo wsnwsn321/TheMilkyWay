@@ -61,6 +61,14 @@
     <Compile Include="Sprites\GroundBlockSprite.cs" />
     <Compile Include="Sprites\GoombaSprite.cs" />
     <Compile Include="Sprites\HiddenBlockSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\LeftCrouchingBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\LeftIdleBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\LeftJumpingBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\LeftRunningBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\RightCrouchingBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\RightIdleBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\RightJumpingBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\BigMarioSprite\RightRunningBigMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftCrouchingFireMario.cs" />
     <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftIdleFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\FireMarioSprite\LeftJumpingFireMarioSprite.cs" />
@@ -108,7 +116,6 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sprites\MarioSpite\BigMarioSprite\" />
     <Folder Include="StateClass\EnemyClass\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>
