@@ -76,6 +76,8 @@
     <Compile Include="Sprites\StarSprite.cs" />
     <Compile Include="StateClass\CharacterClass\Mario\bigMario\bigMario.cs" />
     <Compile Include="StateClass\CharacterClass\Mario\bigRedMario\bigRedMario.cs" />
+    <Compile Include="StateClass\CharacterClass\Mario\SmallMario\LeftMovingSmallMario.cs" />
+    <Compile Include="StateClass\CharacterClass\Mario\SmallMario\RightMovingSmallMario.cs" />
     <Compile Include="StateClass\CharacterClass\Mario\SmallMario\smallMario.cs" />
     <Compile Include="StateClass\StateInterface\IGoombaState.cs" />
     <Compile Include="StateClass\StateInterface\IMario.cs" />
