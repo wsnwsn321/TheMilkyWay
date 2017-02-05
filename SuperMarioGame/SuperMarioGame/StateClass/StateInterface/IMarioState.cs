@@ -12,7 +12,7 @@ namespace SuperMarioGame.StateClass.StateInterface
         void ChangeDirection();
         void ChangeForm();
         void Jump();
-        void Crounch();
+        void Crouch();
         void Run();
         void Draw();
         void Update();

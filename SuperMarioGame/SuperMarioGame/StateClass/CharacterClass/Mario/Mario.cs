@@ -15,35 +15,35 @@ namespace SuperMarioGame.StateClass.CharacterClass.Mario
         }
         public void MarioIdle()
         {
-
+            state.Idle();
         }
         public  void MarioChangeDirection()
         {
-
+            state.ChangeDirection();
         }
         public void MarioChangeForm()
         {
-
+            state.ChangeForm();
         }
         public void MarioJump()
         {
-
+            state.Jump();
         }
-        public void MarioCrounch()
+        public void MarioCrouch()
         {
-
+            state.Crouch();
         }
         public void MarioRun()
         {
-
+            state.Run();
         }
         public void MarioDraw()
         {
-
+            state.Draw();
         }
         public void MarioUpdate()
         {
-
+            state.Update();
         }
 
     }
