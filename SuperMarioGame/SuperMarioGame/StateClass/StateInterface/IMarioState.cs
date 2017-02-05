@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SuperMarioGame.StateClass.StateInterface
 {
-    public interface IMario
+    public interface IMarioState
     {
         void Idle();
         void ChangeDirection();
+        void ChangeForm();
         void Jump();
-        void Crounch();
+        void Crouch();
         void Run();
         void Draw();
         void Update();

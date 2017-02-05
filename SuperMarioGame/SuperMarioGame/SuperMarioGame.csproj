@@ -61,14 +61,14 @@
     <Compile Include="Sprites\GroundBlockSprite.cs" />
     <Compile Include="Sprites\GoombaSprite.cs" />
     <Compile Include="Sprites\HiddenBlockSprite.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightCrouchingFireMario.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftCrouchingFireMario.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightJumpingFireMarioSprite.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftJumpingFireMarioSprite.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightRunningFireMarioSprite.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftRunningFireMarioSprite.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightIdleFireMarioSprite.cs" />
-    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftIdleFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftJumpingSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftCrouchSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightJumpingSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightCrouchSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightRunningSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftRunningSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightIdleSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\BrickBlockSprite.cs" />
     <Compile Include="Sprites\UsedBlockSprite.cs" />
@@ -82,13 +82,9 @@
     <Compile Include="Sprites\GreenMushroomSprite.cs" />
     <Compile Include="Sprites\RedMushroomSprite.cs" />
     <Compile Include="Sprites\StarSprite.cs" />
-    <Compile Include="StateClass\CharacterClass\Mario\bigMario\bigMario.cs" />
-    <Compile Include="StateClass\CharacterClass\Mario\bigRedMario\bigRedMario.cs" />
-    <Compile Include="StateClass\CharacterClass\Mario\SmallMario\LeftMovingSmallMario.cs" />
-    <Compile Include="StateClass\CharacterClass\Mario\SmallMario\RightMovingSmallMario.cs" />
-    <Compile Include="StateClass\CharacterClass\Mario\SmallMario\smallMario.cs" />
+    <Compile Include="StateClass\CharacterClass\Mario\Mario.cs" />
     <Compile Include="StateClass\StateInterface\IGoombaState.cs" />
-    <Compile Include="StateClass\StateInterface\IMario.cs" />
+    <Compile Include="StateClass\StateInterface\IMarioState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -104,8 +100,8 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sprites\MarioSprite\BigMarioSprite\" />
-    <Folder Include="Sprites\MarioSprite\SmallMarioSprite\" />
+    <Folder Include="Sprites\MarioSpite\BigMarioSprite\" />
+    <Folder Include="Sprites\MarioSpite\FlowerMarioSprite\" />
     <Folder Include="StateClass\EnemyClass\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>

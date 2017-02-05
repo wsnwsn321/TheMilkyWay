@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.StateClass.CharacterClass.Mario.SmallMario
+namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 {
-    public class LeftMovingSmallMario:
+    class RightRunningSmallMarioSprite
     {
-       
     }
 }
