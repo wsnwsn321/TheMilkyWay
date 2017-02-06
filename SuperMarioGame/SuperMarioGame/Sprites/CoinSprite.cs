@@ -16,32 +16,40 @@ namespace SuperMarioGame.Sprites
         int currentFrame;
         int totalFrames;
         int counter = 0;
+        int currentWidth;
 
         public CoinSprite(Texture2D texture)
         {
             Texture = texture;
             currentFrame = 0;
             totalFrames = 4;
-
-
-            
+            currentWidth = 6;            
         }
         public void Update()
         {
-            if (counter % 9 == 0)
+            if (counter % 7 == 0)
             {
                 currentFrame++;
             }
+            if(currentFrame == 0)
+            {
+                currentWidth = 9;
+            }
+            else
+            {
+                currentWidth = 6;
+            }
+
             counter++;
             if (counter > 99)
             {
                 counter = 0;
             }
-
-            if (currentFrame == (totalFrames - 1))
+            if (currentFrame == (totalFrames-1))
             {
                 currentFrame = 0;
             }
+
         }
 
         public Vector2 returnPosition()
@@ -52,7 +60,7 @@ namespace SuperMarioGame.Sprites
         public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
             spriteBatch.Begin();
-            Rectangle sourceRectangle = new Rectangle((9*currentFrame),0,9,14);
+            Rectangle sourceRectangle = new Rectangle((9*currentFrame),0,currentWidth,14);
             Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
             spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
             p = position;
