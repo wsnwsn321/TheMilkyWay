@@ -99,7 +99,7 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateRightRunningSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.RightRunningSmallMarioSprite(runningSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.RightRunningSmallMarioSprite(RunningSmallMarioSpritesheet);
         }
 
         public Sprites.ISprite CreateLeftJumpingSmallMarioSprite()

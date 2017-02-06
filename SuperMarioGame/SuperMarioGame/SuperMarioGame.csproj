@@ -77,6 +77,7 @@
     <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightIdleFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightJumpingFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\FireMarioSprite\RightRunningFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSpite\SmallMarioSprite\DeadSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\SmallMarioSprite\LeftJumpingSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightJumpingSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSpite\SmallMarioSprite\RightRunningSmallMarioSprite.cs" />
