@@ -15,7 +15,9 @@ namespace SuperMarioGame
         SpriteBatch spriteBatch;
         IController controller;
         Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
+        Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario;
         
+
 
         public Game1()
         {
@@ -89,6 +91,10 @@ namespace SuperMarioGame
             HiddenBlock.Update();
             BrickBlock.Update();
             QuestionBlock.Update();
+            LeftIdleSmallMario.Update();
+            RightIdleSmallMario.Update();
+            LeftRunningSmallMario.Update();
+
 
             base.Update(gameTime);
         }
@@ -115,6 +121,11 @@ namespace SuperMarioGame
             BrickBlock.Draw(spriteBatch, new Vector2(500, 200));
             QuestionBlock.Draw(spriteBatch, new Vector2(600, 200)); 
             UsedBlock.Draw(spriteBatch, new Vector2(700, 200));
+            LeftIdleSmallMario.Draw(spriteBatch, new Vector2(700, 300));
+            RightIdleSmallMario.Draw(spriteBatch, new Vector2(750, 300));
+            LeftRunningSmallMario.Draw(spriteBatch, new Vector2(650, 300));
+
+
 
             base.Draw(gameTime);
         }
@@ -140,7 +151,7 @@ namespace SuperMarioGame
             SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
             SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content);
             SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content);
-            //SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content);
+            SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content);
             Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
             GreenMush = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushroomSprite();
@@ -154,6 +165,10 @@ namespace SuperMarioGame
             BrickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
             HiddenBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
             GroundBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
+            LeftIdleSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
+            RightIdleSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
+            LeftRunningSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
+
         }
     }
 }

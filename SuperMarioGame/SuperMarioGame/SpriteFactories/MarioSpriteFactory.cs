@@ -10,6 +10,11 @@ namespace SuperMarioGame.SpriteFactories
 {
     class MarioSpriteFactory
     {
+        //maybe we don't need separate left/right since we have the spritesheets which put these two together
+        private Texture2D IdleSmallMarioSpritesheet;
+        private Texture2D RunningSmallMarioSpritesheet;
+
+
         private Texture2D leftRunningSmallMarioSpritesheet;
         private Texture2D rightRunningSmallMarioSpritesheet;
         private Texture2D leftIdleSmallMarioSpritesheet;
@@ -61,6 +66,11 @@ namespace SuperMarioGame.SpriteFactories
             //one example is below
 
             //smallMarioRunningSpriteSheet = content.Load<Texture2D>("smallMarioRunning");
+            IdleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
+            RunningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
+
+
+
         }
 
         //methods for creating sprites below*************************************************
@@ -68,7 +78,21 @@ namespace SuperMarioGame.SpriteFactories
 
         //public Sprites.ISprite CreateSmallMarioRunningSprite()
         //{
-            //return new SmallMarioRunningSprite(smallMarioRunningSpritesheet, Game1.Instance.level.isAboveGround);
+        //return new SmallMarioRunningSprite(smallMarioRunningSpritesheet, Game1.Instance.level.isAboveGround);
         //}
+
+        public Sprites.ISprite CreateLeftIdleSmallMarioSprite()
+        {
+            return new Sprites.MarioSpite.SmallMarioSprite.LeftIdleSmallMarioSprit(IdleSmallMarioSpritesheet);
+        }
+
+        public Sprites.ISprite CreateRightIdleSmallMarioSprite()
+        {
+            return new Sprites.MarioSpite.SmallMarioSprite.RightIdleSmallMarioSprit(IdleSmallMarioSpritesheet);
+        }
+        public Sprites.ISprite CreateLeftRunningSmallMarioSprite()
+        {
+            return new Sprites.MarioSpite.SmallMarioSprite.LeftRunningSmallMarioSprite (RunningSmallMarioSpritesheet);
+        }
     }
 }

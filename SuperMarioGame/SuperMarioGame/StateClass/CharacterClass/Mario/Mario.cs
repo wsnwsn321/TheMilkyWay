@@ -11,7 +11,7 @@ namespace SuperMarioGame.StateClass.CharacterClass.Mario
         public StateInterface.IMarioState state;
         public Mario()
         {
-            state = new SpriteFactories.MarioSpriteFactory.
+          //  state = new SpriteFactories.MarioSpriteFactory.
         }
         public void MarioIdle()
         {
