@@ -54,7 +54,6 @@ namespace SuperMarioGame.SpriteFactories
 
         //methods for creating sprites below*************************************************
         //one example is below
-
         //public Sprites.ISprite CreateSmallMarioRunningSprite()
         //{
         //return new SmallMarioRunningSprite(smallMarioRunningSpritesheet, Game1.Instance.level.isAboveGround);
