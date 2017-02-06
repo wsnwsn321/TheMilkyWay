@@ -94,5 +94,10 @@ namespace SuperMarioGame.SpriteFactories
         {
             return new Sprites.MarioSpite.SmallMarioSprite.LeftRunningSmallMarioSprite (RunningSmallMarioSpritesheet);
         }
+
+        public Sprites.ISprite CreateRightRunningSmallMarioSprite()
+        {
+            return new Sprites.MarioSpite.SmallMarioSprite.RightRunningSmallMarioSprite(RunningSmallMarioSpritesheet);
+        }
     }
 }
