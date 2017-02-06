@@ -55,7 +55,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
             int currentWidth = 15;
             int column = currentFrame % totalFrame;
             Rectangle sourceRectangle = new Rectangle((currentFrame-1)*currentWidth, 0,15, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 16, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             spriteBatch.End();

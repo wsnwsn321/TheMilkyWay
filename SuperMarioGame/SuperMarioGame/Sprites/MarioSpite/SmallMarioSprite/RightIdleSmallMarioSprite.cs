@@ -32,7 +32,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
         {
             spriteBatch.Begin();
             Rectangle sourceRectangle = new Rectangle(12, 0, 13, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 16, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 26, 32);
             spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             spriteBatch.End();
