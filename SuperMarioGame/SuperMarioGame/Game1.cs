@@ -17,7 +17,7 @@ namespace SuperMarioGame
         Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
         Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario,RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario;
         Sprites.ISprite LeftIdleBigMario, RightIdleBigMario, LeftRunningBigMario, RightRunningBigMario, LeftJumpingBigMario, RightJumpingBigMario;
-
+        Sprites.ISprite LeftIdleFireMario, RightIdleFireMario, LeftRunningFireMario, RightRunningFireMario, LeftJumpingFireMario, RightJumpingFireMario;
 
 
         public Game1()
@@ -145,8 +145,6 @@ namespace SuperMarioGame
             LeftJumpingBigMario.Draw(spriteBatch, new Vector2(200, 300));
 
 
-
-
             base.Draw(gameTime);
         }
 
@@ -197,7 +195,6 @@ namespace SuperMarioGame
             RightRunningBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
             LeftJumpingBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
             RightJumpingBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
-
         }
     }
 }
