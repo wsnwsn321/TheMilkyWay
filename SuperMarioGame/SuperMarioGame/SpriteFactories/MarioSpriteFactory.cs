@@ -49,11 +49,13 @@ namespace SuperMarioGame.SpriteFactories
         {
             //load sprite sheets here**************************************
             //one example is below
-
-            //smallMarioRunningSpriteSheet = content.Load<Texture2D>("smallMarioRunning");
+            
             idleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
             runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
             jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
+            idleBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
+            runningBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioRun");
+            jumpingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioJump");
 
 
 
@@ -82,7 +84,7 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateRightRunningSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.RightRunningSmallMarioSprite(RunningSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.RightRunningSmallMarioSprite(runningSmallMarioSpritesheet);
         }
 
         public Sprites.ISprite CreateLeftJumpingSmallMarioSprite()
@@ -92,6 +94,34 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateRightJumpingSmallMarioSprite()
         {
             return new Sprites.MarioSpite.SmallMarioSprite.RightJumpingSmallMarioSprit(jumpingSmallMarioSpritesheet);
+        }
+
+        public Sprites.ISprite CreateLeftIdleBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.LeftIdleBigMarioSprite(idleBigMarioSpritesheet);
+        }
+
+        public Sprites.ISprite CreateRightIdleBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.RightIdleBigMarioSprite(idleBigMarioSpritesheet);
+        }
+        public Sprites.ISprite CreateLeftRunningBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.LeftRunningBigMarioSprite(runningBigMarioSpritesheet);
+        }
+
+        public Sprites.ISprite CreateRightRunningBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.RightRunningBigMarioSprite(runningBigMarioSpritesheet);
+        }
+
+        public Sprites.ISprite CreateLeftJumpingBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.LeftJumpingBigMarioSprite(jumpingBigMarioSpritesheet);
+        }
+        public Sprites.ISprite CreateRightJumpingBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.RightJumpingBigMarioSprite(jumpingBigMarioSpritesheet);
         }
     }
 }

@@ -16,7 +16,8 @@ namespace SuperMarioGame
         IController controller;
         Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
         Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario,RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario;
-        
+        Sprites.ISprite LeftIdleBigMario, RightIdleBigMario, LeftRunningBigMario, RightRunningBigMario, LeftJumpingBigMario, RightJumpingBigMario;
+
 
 
         public Game1()
@@ -97,6 +98,12 @@ namespace SuperMarioGame
             RightRunningSmallMario.Update();
             LeftJumpingSmallMario.Update();
             RightJumpingSmallMario.Update();
+            LeftIdleBigMario.Update();
+            RightIdleBigMario.Update();
+            LeftRunningBigMario.Update();
+            RightRunningBigMario.Update();
+            LeftJumpingBigMario.Update();
+            RightJumpingBigMario.Update();
 
 
             base.Update(gameTime);
@@ -130,6 +137,12 @@ namespace SuperMarioGame
             RightRunningSmallMario.Draw(spriteBatch, new Vector2(600, 300));
             RightJumpingSmallMario.Draw(spriteBatch, new Vector2(550, 300));
             LeftJumpingSmallMario.Draw(spriteBatch, new Vector2(500, 300));
+            LeftIdleBigMario.Draw(spriteBatch, new Vector2(450, 300));
+            RightIdleBigMario.Draw(spriteBatch, new Vector2(400, 300));
+            LeftRunningBigMario.Draw(spriteBatch, new Vector2(350, 300));
+            RightRunningBigMario.Draw(spriteBatch, new Vector2(300, 300));
+            RightJumpingBigMario.Draw(spriteBatch, new Vector2(250, 300));
+            LeftJumpingBigMario.Draw(spriteBatch, new Vector2(200, 300));
 
 
 
@@ -178,6 +191,12 @@ namespace SuperMarioGame
             RightRunningSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
             LeftJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
             RightJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
+            LeftIdleBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
+            RightIdleBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
+            LeftRunningBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
+            RightRunningBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+            LeftJumpingBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
+            RightJumpingBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
 
         }
     }
