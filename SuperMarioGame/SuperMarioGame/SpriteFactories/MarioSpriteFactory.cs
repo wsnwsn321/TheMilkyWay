@@ -11,37 +11,21 @@ namespace SuperMarioGame.SpriteFactories
     class MarioSpriteFactory
     {
         //maybe we don't need separate left/right since we have the spritesheets which put these two together
-        private Texture2D IdleSmallMarioSpritesheet;
-        private Texture2D RunningSmallMarioSpritesheet;
-        private Texture2D JumpingSmallMarioSpritesheet;
+        private Texture2D idleSmallMarioSpritesheet;
+        private Texture2D runningSmallMarioSpritesheet;
+        private Texture2D jumpingSmallMarioSpritesheet;
+
+        private Texture2D idleBigMarioSpritesheet;
+        private Texture2D runningBigMarioSpritesheet;
+        private Texture2D jumpingBigMarioSpritesheet;
+        private Texture2D crouchingBigMarioSpritesheet;
+
+        private Texture2D idleFireMarioSpritesheet;
+        private Texture2D runningFireMarioSpritesheet;
+        private Texture2D jumpingFireMarioSpritesheet;
+        private Texture2D crouchingFireMarioSpritesheet;
 
 
-        private Texture2D leftRunningSmallMarioSpritesheet;
-        private Texture2D rightRunningSmallMarioSpritesheet;
-        private Texture2D leftIdleSmallMarioSpritesheet;
-        private Texture2D rightIdleSmallMarioSpritesheet;
-        private Texture2D rightCrouchingSmallMarioSpritesheet;
-        private Texture2D rightJumpingSmallMarioSpritesheet;
-        private Texture2D leftCrouchingSmallMarioSpritesheet;
-        private Texture2D leftJumpingSmallMarioSpritesheet;
-
-        private Texture2D leftRunningBigMarioSpritesheet;
-        private Texture2D rightRunningBigMarioSpritesheet;
-        private Texture2D leftIdleBigMarioSpritesheet;
-        private Texture2D rightIdleBigMarioSpritesheet;
-        private Texture2D rightCrouchingBigMarioSpritesheet;
-        private Texture2D rightJumpingBigMarioSpritesheet;
-        private Texture2D leftCrouchingBigMarioSpritesheet;
-        private Texture2D leftJumpingBigMarioSpritesheet;
-
-        private Texture2D leftRunningFireMarioSpritesheet;
-        private Texture2D rightRunningFireMarioSpritesheet;
-        private Texture2D leftIdleFireMarioSpritesheet;
-        private Texture2D rightIdleFireMarioSpritesheet;
-        private Texture2D rightCrouchingFireMarioSpritesheet;
-        private Texture2D rightJumpingFireMarioSpritesheet;
-        private Texture2D leftCrouchingFireMarioSpritesheet;
-        private Texture2D leftJumpingFireMarioSpritesheet;
 
 
 
@@ -67,9 +51,9 @@ namespace SuperMarioGame.SpriteFactories
             //one example is below
 
             //smallMarioRunningSpriteSheet = content.Load<Texture2D>("smallMarioRunning");
-            IdleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
-            RunningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
-            JumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
+            idleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
+            runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
+            jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
 
 
 
@@ -77,7 +61,6 @@ namespace SuperMarioGame.SpriteFactories
 
         //methods for creating sprites below*************************************************
         //one example is below
-
         //public Sprites.ISprite CreateSmallMarioRunningSprite()
         //{
         //return new SmallMarioRunningSprite(smallMarioRunningSpritesheet, Game1.Instance.level.isAboveGround);
@@ -85,16 +68,16 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateLeftIdleSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.LeftIdleSmallMarioSprit(IdleSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.LeftIdleSmallMarioSprit(idleSmallMarioSpritesheet);
         }
 
         public Sprites.ISprite CreateRightIdleSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.RightIdleSmallMarioSprit(IdleSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.RightIdleSmallMarioSprit(idleSmallMarioSpritesheet);
         }
         public Sprites.ISprite CreateLeftRunningSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.LeftRunningSmallMarioSprite (RunningSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.LeftRunningSmallMarioSprite (runningSmallMarioSpritesheet);
         }
 
         public Sprites.ISprite CreateRightRunningSmallMarioSprite()
@@ -104,11 +87,11 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateLeftJumpingSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.LeftJumpingSmallMarioSprit(JumpingSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.LeftJumpingSmallMarioSprit(jumpingSmallMarioSpritesheet);
         }
         public Sprites.ISprite CreateRightJumpingSmallMarioSprite()
         {
-            return new Sprites.MarioSpite.SmallMarioSprite.RightJumpingSmallMarioSprit(JumpingSmallMarioSpritesheet);
+            return new Sprites.MarioSpite.SmallMarioSprite.RightJumpingSmallMarioSprit(jumpingSmallMarioSpritesheet);
         }
     }
 }
