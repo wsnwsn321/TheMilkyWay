@@ -25,8 +25,8 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
             Texture = texture;
             height = texture.Height;
             width = texture.Width / 6;
-            currentFrame = 3;
-            totalFrame = 5;
+            currentFrame = 0;
+            totalFrame = 3;
             currentUpdate = 4;
             slowSpeedDown = 5;
         }
@@ -38,7 +38,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
                 currentUpdate = 0;
                 currentFrame++;
                 if (currentFrame == totalFrame)
-                    currentFrame -= totalFrame;
+                    currentFrame = 0;
             }
 
         }
@@ -53,7 +53,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
             spriteBatch.Begin();
 
             int currentWidth = 17;
-            Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth), 0, 17, 32);
+            Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth) + 54, 0, 17, 32);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 34, 64);
             spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;

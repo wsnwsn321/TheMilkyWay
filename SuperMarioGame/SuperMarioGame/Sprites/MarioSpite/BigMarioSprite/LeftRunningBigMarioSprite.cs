@@ -25,8 +25,8 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
             Texture = texture;
             height = texture.Height;
             width = texture.Width / 6;
-            currentFrame = 0;
             totalFrame = 2;
+            currentFrame = totalFrame;
             currentUpdate = 4;
             slowSpeedDown = 5;
         }
@@ -36,9 +36,9 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
             if (currentUpdate == slowSpeedDown)
             {
                 currentUpdate = 0;
-                currentFrame++;
-                if (currentFrame == totalFrame)
-                    currentFrame = 0;
+                currentFrame--;
+                if (currentFrame < 0)
+                    currentFrame = totalFrame;
             }
 
         }
