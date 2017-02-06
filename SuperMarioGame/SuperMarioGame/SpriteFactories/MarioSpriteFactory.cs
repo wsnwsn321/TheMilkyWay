@@ -13,6 +13,7 @@ namespace SuperMarioGame.SpriteFactories
         //maybe we don't need separate left/right since we have the spritesheets which put these two together
         private Texture2D IdleSmallMarioSpritesheet;
         private Texture2D RunningSmallMarioSpritesheet;
+        private Texture2D JumpingSmallMarioSpritesheet;
 
 
         private Texture2D leftRunningSmallMarioSpritesheet;
@@ -68,6 +69,7 @@ namespace SuperMarioGame.SpriteFactories
             //smallMarioRunningSpriteSheet = content.Load<Texture2D>("smallMarioRunning");
             IdleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
             RunningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
+            JumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
 
 
 
@@ -98,6 +100,15 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateRightRunningSmallMarioSprite()
         {
             return new Sprites.MarioSpite.SmallMarioSprite.RightRunningSmallMarioSprite(RunningSmallMarioSpritesheet);
+        }
+
+        public Sprites.ISprite CreateLeftJumpingSmallMarioSprite()
+        {
+            return new Sprites.MarioSpite.SmallMarioSprite.LeftJumpingSmallMarioSprit(JumpingSmallMarioSpritesheet);
+        }
+        public Sprites.ISprite CreateRightJumpingSmallMarioSprite()
+        {
+            return new Sprites.MarioSpite.SmallMarioSprite.RightJumpingSmallMarioSprit(JumpingSmallMarioSpritesheet);
         }
     }
 }
