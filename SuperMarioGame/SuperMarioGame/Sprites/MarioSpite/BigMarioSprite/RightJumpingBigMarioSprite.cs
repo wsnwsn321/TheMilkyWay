@@ -12,11 +12,13 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
 
     {
         public Texture2D Texture { get; set; }
+        private SpriteBatch sb;
         Vector2 p;
 
-        public RightJumpingBigMarioSprite(Texture2D texture)
+        public RightJumpingBigMarioSprite(Texture2D texture,SpriteBatch sb)
         {
             Texture = texture;
+            this.sb = sb;
         }
         public void Update()
         {
@@ -28,14 +30,14 @@ namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
             return p;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 position)
+        public void Draw(Vector2 position)
         {
-            spriteBatch.Begin();
-            Rectangle sourceRectangle = new Rectangle(54, 0, 18, 32);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 36, 64);
-            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Begin();
+            Rectangle sourceRectangle = new Rectangle(16, 0, 16, 31);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 62);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
-            spriteBatch.End();
+            sb.End();
         }
     }
 }
