@@ -3,25 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.StateClass
 {
     class Mario
     {
-        public IMarioState state;
-     
-        public Mario()
+        public IMarioState state { set; get; }
+        private int marioState;
+        private Boolean marioDirection;
+        public Mario(SpriteBatch sp,Vector2 position)
         {
-            state = new RightMarioState(this, 1);
-            //state = new SpriteFactories.MarioSpriteFactory
+            marioState = 1;
+            marioDirection = true;
+            state = new IdleMarioState(sp,position,this,marioState,marioDirection);
+            MarioIdle();
+            
+        }
+        public Mario(SpriteBatch sp, Vector2 position, int marioState, Boolean marioDirection)
+        {
+            this.marioState = marioState;
+            this.marioDirection = marioDirection;
+            Console.WriteLine(position.X);
+            state = new IdleMarioState(sp, position, this, marioState, marioDirection);
         }
         public void MarioIdle()
         {
             state.Idle();
-        }
-        public  void MarioChangeDirection()
-        {
-            state.ChangeDirection();
         }
         public void MarioChangeForm()
         {
@@ -41,6 +50,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioDraw()
         {
+            
             state.Draw();
         }
         public void MarioUpdate()

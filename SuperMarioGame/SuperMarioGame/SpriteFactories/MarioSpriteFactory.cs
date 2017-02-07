@@ -100,10 +100,17 @@ namespace SuperMarioGame.SpriteFactories
         {
             return new Sprites.MarioSpite.BigMarioSprite.LeftIdleBigMarioSprite(idleBigMarioSpritesheet);
         }
-
         public Sprites.ISprite CreateRightIdleBigMarioSprite()
         {
             return new Sprites.MarioSpite.BigMarioSprite.RightIdleBigMarioSprite(idleBigMarioSpritesheet);
+        }
+        public Sprites.ISprite CreateLeftCrouchBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.LeftCrouchingBigMarioSprite(idleBigMarioSpritesheet);
+        }
+        public Sprites.ISprite CreateRightCrouchBigMarioSprite()
+        {
+            return new Sprites.MarioSpite.BigMarioSprite.RightCrouchingBigMarioSprite(idleBigMarioSpritesheet);
         }
         public Sprites.ISprite CreateLeftRunningBigMarioSprite()
         {

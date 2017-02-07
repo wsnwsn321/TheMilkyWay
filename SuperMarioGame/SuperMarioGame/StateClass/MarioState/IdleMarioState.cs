@@ -8,81 +8,110 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.StateClass
 {
-    class LeftMarioState : IMarioState
+    class IdleMarioState : IMarioState
     {
         // 1 : small mario 
         // 2 : big mario 
         // 3 : fire mario
         private int marioState;
-        // 1 : normal stand
-        // 2 : run
-        // 3 : crounch
-        // 4 : jump
-        // 5 : flag
-        // 6 : dead 
-        private int motionState;
+
+        // true: left
+        // false: right
+        private Boolean direction;
         private Vector2 position;
         private Mario mario;
-        private SpriteBatch sp;
-        public LeftMarioState( Mario mario, int marioState, int motionState, Vector2 position, SpriteBatch sp)
+        private Sprites.ISprite marioSprite;
+        public IdleMarioState(Vector2 position, Mario mario,int marioState,Boolean direction )
         {
             this.mario = mario;
             this.marioState = marioState;
-            this.motionState = motionState;
-            this.position = position;
-            this.sp = sp;
-        }
-        public void ChangeDirection()
-        {
-            mario.state = new RightMarioState(mario, marioState, motionState);
+            this.position = new Vector2(position.X,position.Y);
+            this.direction = direction;
         }
 
-        public void ChangeForm(int form)
+        public void Idle()
         {
-            switch (form)
+            if (direction)
             {
-                case 2:
-                        
+                switch (marioState)
+                {
+                    case 1:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
+                        Draw();
                         break;
-                case 3:
-                        
+                    case 2:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
+                        Draw();
                         break;
-                default:
+                    case 3:
+                        //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigRedMarioSprite();
+                        //Draw();
                         break;
+                }
+            }else
+            {
+                switch (marioState)
+                {
+                    case 1:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
+                        Draw();
+                        break;
+                    case 2:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
+                        Draw();
+                        break;
+                    case 3:
+                        //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
+                        //Draw();
+                        break;
+                }
             }
         }
 
         public void Crouch()
         {
-             switch (marioState){
-                case 1:
-                     break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-            }
+            mario.state = new CrouchMarioState(position, mario, marioState, direction);
+            mario.MarioCrouch();
         }
 
-
-        public void Idle()
+       
+        public void ChangeForm(int form)
         {
-            throw new NotImplementedException();
+            marioState  = form;
+            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.MarioIdle();
         }
+
+        
 
         public void Jump()
         {
-            throw new NotImplementedException();
+            mario.state = new JumpingMarioState(position, mario, marioState, direction);
+            mario.MarioJump();
         }
 
         public void Run()
         {
-            throw new NotImplementedException();
+            mario.state = new RunningMarioState(position, mario, marioState, direction);
+            mario.MarioRun();
         }
 
+
+        public void ChangeDirection()
+        {
+            direction = !direction;
+            mario.state     = new IdleMarioState(position, mario, marioState, direction);
+            mario.MarioIdle();
+        }
+        //** update the position
         public void Update()
         {
-            throw new NotImplementedException();
+
+        }
+
+        public void Draw()
+        {
+            marioSprite.Draw(position);
         }
     }
 }

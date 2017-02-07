@@ -11,9 +11,9 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
     class LeftIdleSmallMarioSprit:ISprite
     {
         
-            public Texture2D Texture { get; set; }
+        public Texture2D Texture { get; set; }
         Vector2 p;
-
+    
         public LeftIdleSmallMarioSprit(Texture2D texture)
         {
             Texture = texture;

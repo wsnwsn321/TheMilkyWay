@@ -22,12 +22,13 @@ namespace SuperMarioGame.StateClass
         private Mario mario;
         private SpriteBatch sp;
         private Sprites.ISprite marioSprite;
-        public LeftMarioState( Mario mario, int marioState, Vector2 position, SpriteBatch sp)
+        public CrouchMarioState(SpriteBatch sp, Vector2 position, Mario mario, int marioState, Boolean direction)
         {
             this.mario = mario;
             this.marioState = marioState;
             this.position = position;
             this.sp = sp;
+            this.direction = direction;
         }
 
         public void Crouch()
@@ -37,20 +38,23 @@ namespace SuperMarioGame.StateClass
                 switch (marioState)
                 {
                     case 1:
-                        marioSprite = new SpriteFactories.MarioSpriteFactory();
+                      
                         break;
                     case 2:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchBigMarioSprite();
+                        Draw();
                         break;
                     case 3:
                         break;
                 }
-            }else
-            {
+            }else{
                 switch (marioState)
                 {
                     case 1:
                         break;
                     case 2:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchBigMarioSprite();
+                        Draw();
                         break;
                     case 3:
                         break;
@@ -62,26 +66,31 @@ namespace SuperMarioGame.StateClass
 
         public void Draw()
         {
-
+            marioSprite.Draw(sp,position);
         }
         public void ChangeForm(int form)
         {
-
+            marioState = form;
+            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.MarioIdle();
         }
 
         public void Idle()
         {
-         
+            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.MarioIdle();
         }
 
         public void Jump()
         {
-            
+            mario.state = new JumpingMarioState(position, mario, marioState, direction);
+            mario.MarioJump();
         }
 
         public void Run()
         {
-           
+            mario.state = new RunningMarioState(position, mario, marioState, direction);
+            mario.MarioRun();
         }
 
         public void Update()
