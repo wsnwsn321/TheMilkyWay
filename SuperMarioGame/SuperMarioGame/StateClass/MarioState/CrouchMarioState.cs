@@ -22,7 +22,7 @@ namespace SuperMarioGame.StateClass
         private Mario mario;
         private SpriteBatch sp;
         private Sprites.ISprite marioSprite;
-        public CrouchMarioState(SpriteBatch sp, Vector2 position, Mario mario, int marioState, Boolean direction)
+        public CrouchMarioState(Vector2 position, Mario mario, int marioState, Boolean direction)
         {
             this.mario = mario;
             this.marioState = marioState;

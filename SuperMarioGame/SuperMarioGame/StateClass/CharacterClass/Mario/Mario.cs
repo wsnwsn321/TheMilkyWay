@@ -13,12 +13,11 @@ namespace SuperMarioGame.StateClass
         public IMarioState state { set; get; }
         private int marioState;
         private Boolean marioDirection;
-        public Mario(SpriteBatch sp,Vector2 position)
+        public Mario(Vector2 position)
         {
             marioState = 1;
             marioDirection = true;
-            state = new IdleMarioState(sp,position,this,marioState,marioDirection);
-            MarioIdle();
+            state = new IdleMarioState(position,this,marioState,marioDirection);
             
         }
         public Mario(SpriteBatch sp, Vector2 position, int marioState, Boolean marioDirection)
@@ -26,15 +25,15 @@ namespace SuperMarioGame.StateClass
             this.marioState = marioState;
             this.marioDirection = marioDirection;
             Console.WriteLine(position.X);
-            state = new IdleMarioState(sp, position, this, marioState, marioDirection);
+            state = new IdleMarioState(position, this, marioState, marioDirection);
         }
         public void MarioIdle()
         {
             state.Idle();
         }
-        public void MarioChangeForm()
+        public void MarioChangeForm(int form)
         {
-            state.ChangeForm();
+            state.ChangeForm(form);
         }
         public void MarioJump()
         {
