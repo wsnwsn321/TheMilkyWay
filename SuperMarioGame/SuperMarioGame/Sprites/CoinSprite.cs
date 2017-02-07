@@ -11,34 +11,62 @@ namespace SuperMarioGame.Sprites
     class CoinSprite: ISprite
 
     {
-            public Texture2D Texture { get; set; }
-            Vector2 p;
+        public Texture2D Texture { get; set; }
+        Vector2 p;
+        int currentFrame;
+        int totalFrames;
+        int counter = 0;
+        int currentWidth;
 
-            public CoinSprite(Texture2D texture)
+        public CoinSprite(Texture2D texture)
+        {
+            Texture = texture;
+            currentFrame = 0;
+            totalFrames = 4;
+            currentWidth = 6;            
+        }
+        public void Update()
+        {
+            if (counter % 7 == 0)
             {
-                Texture = texture;
-                // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+                currentFrame++;
             }
-            public void Update()
+            if(currentFrame == 0)
             {
+                currentWidth = 9;
+            }
+            else
+            {
+                currentWidth = 6;
+            }
 
+            counter++;
+            if (counter > 99)
+            {
+                counter = 0;
+            }
+            if (currentFrame == (totalFrames-1))
+            {
+                currentFrame = 0;
             }
 
-            public Vector2 returnPosition()
-            {
-                return p;
-            }
+        }
 
-            public void Draw(SpriteBatch spriteBatch, Vector2 position)
-            {
-                spriteBatch.Begin();
-                Rectangle sourceRectangle = new Rectangle(0,0,9,14);
-                Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
-                spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
-                p = position;
-                spriteBatch.End();
-            }
+        public Vector2 returnPosition()
+        {
+            return p;
+        }
+
+        public void Draw(SpriteBatch spriteBatch, Vector2 position)
+        {
+            spriteBatch.Begin();
+            Rectangle sourceRectangle = new Rectangle((9*currentFrame),0,currentWidth,14);
+            Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
+            spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
+            p = position;
+            spriteBatch.End();
         }
     }
+}
 
 

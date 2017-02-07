@@ -8,13 +8,13 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class LeftCrouchSmallMarioSprit : ISprite
+    class DeadSmallMarioSprit:ISprite
     {
-
-        public Texture2D Texture { get; set; }
+        
+            public Texture2D Texture { get; set; }
         Vector2 p;
 
-        public LeftCrouchSmallMarioSprit(Texture2D texture)
+        public DeadSmallMarioSprit(Texture2D texture)
         {
             Texture = texture;
         }
@@ -31,8 +31,8 @@ namespace SuperMarioGame.Sprites
         public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
             spriteBatch.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 12, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 24, 32);
+            Rectangle sourceRectangle = new Rectangle(0, 0, 14, 14);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             spriteBatch.End();
