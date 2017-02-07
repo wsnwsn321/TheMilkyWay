@@ -17,8 +17,9 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D starSpritesheet;
         // More private Texture2Ds follow
         // ...
-        public SpriteBatch sb { set; get; }
+
         private static ItemSpriteFactory instance = new ItemSpriteFactory();
+
         public static ItemSpriteFactory Instance
         {
             get
@@ -52,29 +53,29 @@ namespace SuperMarioGame.SpriteFactories
         //    return new MushroomSprite(mushroomSpritesheet, Game1.Instance.level.isAboveGround);
         //}
 
-        public Sprites.ISprite CreateFlowerSprite(SpriteBatch sb)
+        public Sprites.ISprite CreateFlowerSprite()
         {
-            return new Sprites.FlowerSprite(flowerSpritesheet, sb); 
+            return new Sprites.FlowerSprite(flowerSpritesheet); 
         }
 
         public Sprites.ISprite CreateStarSprite()
         {
-            return new Sprites.StarSprite(starSpritesheet, sb);
+            return new Sprites.StarSprite(starSpritesheet);
         }
 
         public Sprites.ISprite CreateGreenMushroomSprite()
         {
-            return new Sprites.GreenMushroomSprite(mushroomSpritesheet, sb);
+            return new Sprites.GreenMushroomSprite(mushroomSpritesheet);
         }
 
         public Sprites.ISprite CreateRedMushroomSprite()
         {
-            return new Sprites.RedMushroomSprite(mushroomSpritesheet, sb);
+            return new Sprites.RedMushroomSprite(mushroomSpritesheet);
         }
 
         public Sprites.ISprite CreateCoinSprite()
         {
-            return new Sprites.CoinSprite(coinSpritesheet,sb);
+            return new Sprites.CoinSprite(coinSpritesheet);
         }
 
     }
