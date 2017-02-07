@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.StateClass.StateInterface
+namespace SuperMarioGame.StateClass
 {
     public interface IMarioState
     {
         void Idle();
-        void ChangeDirection();
-        void ChangeForm();
+        void ChangeForm(int form);
         void Jump();
         void Crouch();
         void Run();

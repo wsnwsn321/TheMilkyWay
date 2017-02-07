@@ -14,6 +14,7 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         IController controller;
+
         Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
         Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario,RightRunningSmallMario;
         

@@ -99,8 +99,14 @@
     <Compile Include="Sprites\RedMushroomSprite.cs" />
     <Compile Include="Sprites\StarSprite.cs" />
     <Compile Include="StateClass\CharacterClass\Mario\Mario.cs" />
-    <Compile Include="StateClass\MarioState\LeftRunningSmallMarioState.cs" />
-    <Compile Include="StateClass\MarioState\RightRunningSmallMarioState.cs" />
+    <Compile Include="StateClass\MarioState\CrouchMarioState.cs" />
+    <Compile Include="StateClass\MarioState\IdleMarioState.cs" />
+    <Compile Include="StateClass\MarioState\JumpingMarioState.cs" />
+    <Compile Include="StateClass\MarioState\RunningMarioState.cs" />
+    <Compile Include="StateClass\MarioState\RightCrouchMarioState.cs" />
+    <Compile Include="StateClass\MarioState\RightIdleMarioState.cs" />
+    <Compile Include="StateClass\MarioState\RightJumpMarioState.cs" />
+    <Compile Include="StateClass\MarioState\RightRunningMarioState.cs" />
     <Compile Include="StateClass\StateInterface\IGoombaState.cs" />
     <Compile Include="StateClass\StateInterface\IMarioState.cs" />
   </ItemGroup>

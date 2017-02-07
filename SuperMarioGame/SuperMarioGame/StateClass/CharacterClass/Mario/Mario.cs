@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.StateClass.CharacterClass.Mario
+namespace SuperMarioGame.StateClass
 {
     class Mario
     {
-        public StateInterface.IMarioState state;
+        public IMarioState state;
+     
         public Mario()
         {
-          //  state = new SpriteFactories.MarioSpriteFactory.
+            state = new RightMarioState(this, 1);
+            //state = new SpriteFactories.MarioSpriteFactory
         }
         public void MarioIdle()
         {
