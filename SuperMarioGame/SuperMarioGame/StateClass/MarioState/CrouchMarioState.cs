@@ -20,14 +20,12 @@ namespace SuperMarioGame.StateClass
         private Boolean direction;
         private Vector2 position;
         private Mario mario;
-        private SpriteBatch sp;
         private Sprites.ISprite marioSprite;
         public CrouchMarioState(Vector2 position, Mario mario, int marioState, Boolean direction)
         {
             this.mario = mario;
             this.marioState = marioState;
             this.position = position;
-            this.sp = sp;
             this.direction = direction;
         }
 
@@ -38,7 +36,6 @@ namespace SuperMarioGame.StateClass
                 switch (marioState)
                 {
                     case 1:
-                      
                         break;
                     case 2:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchBigMarioSprite();
@@ -66,7 +63,7 @@ namespace SuperMarioGame.StateClass
 
         public void Draw()
         {
-            marioSprite.Draw(sp,position);
+            marioSprite.Draw(position);
         }
         public void ChangeForm(int form)
         {

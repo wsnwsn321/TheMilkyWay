@@ -12,14 +12,16 @@ namespace SuperMarioGame.Sprites
 
     {
         public Texture2D Texture { get; set; }
+        private SpriteBatch sb;
         Vector2 p;
         int currentFrame;
         int totalFrames;
         int counter = 0;
         int currentWidth;
 
-        public CoinSprite(Texture2D texture)
+        public CoinSprite(Texture2D texture,SpriteBatch sb)
         {
+            this.sb = sb;
             Texture = texture;
             currentFrame = 0;
             totalFrames = 4;
@@ -57,14 +59,14 @@ namespace SuperMarioGame.Sprites
             return p;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 position)
+        public void Draw(Vector2 position)
         {
-            spriteBatch.Begin();
+            sb.Begin();
             Rectangle sourceRectangle = new Rectangle((9*currentFrame),0,currentWidth,14);
             Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
-            spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle,sourceRectangle, Color.White);
             p = position;
-            spriteBatch.End();
+            sb.End();
         }
     }
 }
