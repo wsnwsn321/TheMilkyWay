@@ -13,11 +13,12 @@ namespace SuperMarioGame.Sprites
     {
             public Texture2D Texture { get; set; }
             Vector2 p;
+        SpriteBatch sb;
 
-            public LeftCrouchingFireMarioSprite(Texture2D texture)
+            public LeftCrouchingFireMarioSprite(Texture2D texture, SpriteBatch sb)
             {
                 Texture = texture;
-                // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+            this.sb = sb;
             }
             public void Update()
             {
@@ -29,14 +30,14 @@ namespace SuperMarioGame.Sprites
                 return p;
             }
 
-            public void Draw(SpriteBatch spriteBatch, Vector2 position)
+            public void Draw( Vector2 position)
             {
-                spriteBatch.Begin();
+                sb.Begin();
                 Rectangle sourceRectangle = new Rectangle(0,0,9,14);
                 Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
-                spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
+                sb.Draw(Texture, desRectangle,sourceRectangle, Color.White);
                 p = position;
-                spriteBatch.End();
+                sb.End();
             }
         }
     }

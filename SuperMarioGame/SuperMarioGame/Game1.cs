@@ -15,7 +15,7 @@ namespace SuperMarioGame
         SpriteBatch spriteBatch;
         IController controller;
         Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
-        Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario,RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario;
+        Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario,RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario, DeadSmallMario;
         
 
 
@@ -97,7 +97,7 @@ namespace SuperMarioGame
             RightRunningSmallMario.Update();
             LeftJumpingSmallMario.Update();
             RightJumpingSmallMario.Update();
-
+            DeadSmallMario.Update();
 
             base.Update(gameTime);
         }
@@ -111,26 +111,26 @@ namespace SuperMarioGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            Flower.Draw(spriteBatch,new Vector2(100, 100));
-            RedMush.Draw(spriteBatch, new Vector2(200, 100));
-            GreenMush.Draw(spriteBatch, new Vector2(300, 100));
-            Pipe.Draw(spriteBatch, new Vector2(400, 100));
-            Koopa.Draw(spriteBatch, new Vector2(500, 100));
-            Goomba.Draw(spriteBatch, new Vector2(600, 100));
-            Coin.Draw(spriteBatch, new Vector2(100, 200));
-            Star.Draw(spriteBatch, new Vector2(200, 200));
-            HiddenBlock.Draw(spriteBatch, new Vector2(300, 200));
-            GroundBlock.Draw(spriteBatch, new Vector2(400, 200));
-            BrickBlock.Draw(spriteBatch, new Vector2(500, 200));
-            QuestionBlock.Draw(spriteBatch, new Vector2(600, 200)); 
-            UsedBlock.Draw(spriteBatch, new Vector2(700, 200));
-            LeftIdleSmallMario.Draw(spriteBatch, new Vector2(700, 300));
-            RightIdleSmallMario.Draw(spriteBatch, new Vector2(750, 300));
-            LeftRunningSmallMario.Draw(spriteBatch, new Vector2(650, 300));
-            RightRunningSmallMario.Draw(spriteBatch, new Vector2(600, 300));
-            RightJumpingSmallMario.Draw(spriteBatch, new Vector2(550, 300));
-            LeftJumpingSmallMario.Draw(spriteBatch, new Vector2(500, 300));
-
+            Flower.Draw(new Vector2(100, 100));
+            RedMush.Draw( new Vector2(200, 100));
+            GreenMush.Draw(new Vector2(300, 100));
+            Pipe.Draw(new Vector2(400, 100));
+            Koopa.Draw( new Vector2(500, 100));
+            Goomba.Draw( new Vector2(600, 100));
+            Coin.Draw( new Vector2(100, 200));
+            Star.Draw( new Vector2(200, 200));
+            HiddenBlock.Draw( new Vector2(300, 200));
+            GroundBlock.Draw( new Vector2(400, 200));
+            BrickBlock.Draw( new Vector2(500, 200));
+            QuestionBlock.Draw( new Vector2(600, 200)); 
+            UsedBlock.Draw( new Vector2(700, 200));
+            LeftIdleSmallMario.Draw( new Vector2(700, 300));
+            RightIdleSmallMario.Draw( new Vector2(750, 300));
+            LeftRunningSmallMario.Draw( new Vector2(650, 300));
+            RightRunningSmallMario.Draw( new Vector2(600, 300));
+            RightJumpingSmallMario.Draw( new Vector2(550, 300));
+            LeftJumpingSmallMario.Draw( new Vector2(500, 300));
+            DeadSmallMario.Draw( new Vector2(450, 300));
 
 
 
@@ -178,6 +178,7 @@ namespace SuperMarioGame
             RightRunningSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
             LeftJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
             RightJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
+            DeadSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
 
         }
     }

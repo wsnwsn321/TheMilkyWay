@@ -13,6 +13,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 
         public Texture2D Texture { get; set; }
         Vector2 p;
+        SpriteBatch sb;
         int height;
         int width;
         int currentFrame;
@@ -20,9 +21,10 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
         int currentUpdate;
         int slowSpeedDown;
 
-        public LeftRunningSmallMarioSprite(Texture2D texture)
+        public LeftRunningSmallMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
+            this.sb = sb;
             height = texture.Height;
             width = texture.Width/2;
             currentFrame = 4;
@@ -48,17 +50,17 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
             return p;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 position)
+        public void Draw(Vector2 position)
         {
-            spriteBatch.Begin();
+            sb.Begin();
 
             int currentWidth = 15;
             int column = currentFrame % totalFrame;
             Rectangle sourceRectangle = new Rectangle((currentFrame-1)*currentWidth, 0,15, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 32);
-            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
-            spriteBatch.End();
+            sb.End();
         }
     }
 }
