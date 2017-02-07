@@ -12,13 +12,10 @@ namespace SuperMarioGame.Sprites
     {
         public Texture2D Texture { get; set; }
         Vector2 p;
-        SpriteBatch sb;
 
-        public HiddenBlockSprite(Texture2D texture, SpriteBatch sb)
+        public HiddenBlockSprite(Texture2D texture)
         {
             Texture = texture;
-            this.sb = sb;
-
         }
         public void Update()
         {
@@ -30,14 +27,14 @@ namespace SuperMarioGame.Sprites
             return p;
         }
 
-        public void Draw(Vector2 position)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
-            sb.Begin();
+            spriteBatch.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 1, 1);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.Green);
+            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.Green);
             p = position;
-            sb.End();
+            spriteBatch.End();
         }
     }
 }

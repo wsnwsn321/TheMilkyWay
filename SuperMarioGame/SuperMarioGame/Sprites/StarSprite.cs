@@ -13,31 +13,14 @@ namespace SuperMarioGame.Sprites
     {
         public Texture2D Texture { get; set; }
         Vector2 p;
-        SpriteBatch sb;
-        int currentFrame;
-        int totalFrame;
-        int currentUpdate;
-        int slowSpeedDown;
 
-        public StarSprite(Texture2D texture, SpriteBatch sb)
+        public StarSprite(Texture2D texture)
         {
             Texture = texture;
-            this.sb = sb;
-            currentFrame = 0;
-            totalFrame = 4;
-            currentUpdate = 0;
-            slowSpeedDown = 5;
         }
         public void Update()
         {
-            currentUpdate++;
-            if (currentUpdate == slowSpeedDown)
-            {
-                currentUpdate = 0;
-                currentFrame++;
-                if (currentFrame == totalFrame)
-                    currentFrame = 0;
-            }
+
         }
 
         public Vector2 returnPosition()
@@ -45,14 +28,14 @@ namespace SuperMarioGame.Sprites
             return p;
         }
 
-        public void Draw(Vector2 position)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
-            sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(currentFrame*14, 0, 14, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 28, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            spriteBatch.Begin();
+            Rectangle sourceRectangle = new Rectangle(0, 0, 14, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
-            sb.End();
+            spriteBatch.End();
         }
     }
 }
