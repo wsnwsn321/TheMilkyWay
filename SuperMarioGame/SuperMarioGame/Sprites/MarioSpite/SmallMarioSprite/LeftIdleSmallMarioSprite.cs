@@ -10,15 +10,14 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 {
     class LeftIdleSmallMarioSprit:ISprite
     {
-        
-            public Texture2D Texture { get; set; }
+        private SpriteBatch sb;
+        public Texture2D Texture { get; set; }
         Vector2 p;
-        SpriteBatch sb;
-
-        public LeftIdleSmallMarioSprit(Texture2D texture, SpriteBatch sb)
+    
+        public LeftIdleSmallMarioSprit(Texture2D texture,SpriteBatch sb)
         {
-            Texture = texture;
             this.sb = sb;
+            Texture = texture;
         }
         public void Update()
         {

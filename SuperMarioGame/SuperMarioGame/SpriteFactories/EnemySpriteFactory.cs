@@ -15,9 +15,10 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D koopaSpritesheet;
         // More private Texture2Ds follow
         // ...
-
+        public SpriteBatch sb { get; set; }
         private static EnemySpriteFactory instance = new EnemySpriteFactory();
 
+ 
         public static EnemySpriteFactory Instance
         {
             get
@@ -45,12 +46,12 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateGoombaSprite()
         {
-            return new Sprites.GoombaSprite(goombaSpritesheet);
+            return new Sprites.GoombaSprite(goombaSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateKoopaSprite()
         {
-            return new Sprites.KoopaSprite(koopaSpritesheet);
+            return new Sprites.KoopaSprite(koopaSpritesheet,sb);
         }
     }
 }

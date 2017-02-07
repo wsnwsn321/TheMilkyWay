@@ -17,7 +17,7 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D pipeSpritesheet;
         // More private Texture2Ds follow
         // ...
-
+        public SpriteBatch sb { get; set; }
         private static EnvironmentSpriteFactory instance = new EnvironmentSpriteFactory();
 
         public static EnvironmentSpriteFactory Instance
@@ -51,32 +51,32 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreatePipeSprite()
         {
-            return new Sprites.PipeSprite(pipeSpritesheet);
+            return new Sprites.PipeSprite(pipeSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateUsedBlockSprite()
         {
-            return new Sprites.UsedBlockSprite(usedBlockSpritesheet);
+            return new Sprites.UsedBlockSprite(usedBlockSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateBrickBlockSprite()
         {
-            return new Sprites.BrickBlockSprite(brickBlockSpritesheet);
+            return new Sprites.BrickBlockSprite(brickBlockSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateQuestionBlockSprite()
         {
-            return new Sprites.QuestionBlockSprite(questionBlockSpritesheet);
+            return new Sprites.QuestionBlockSprite(questionBlockSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateGroundBlockSprite()
         {
-            return new Sprites.GroundBlockSprite(groundBlockSpritesheet);
+            return new Sprites.GroundBlockSprite(groundBlockSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateHiddenBlockSprite()
         {
-            return new Sprites.HiddenBlockSprite(pipeSpritesheet);
+            return new Sprites.HiddenBlockSprite(pipeSpritesheet,sb);
         }
     }
 }

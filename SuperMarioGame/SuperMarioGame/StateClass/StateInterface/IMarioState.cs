@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.StateClass.StateInterface
+
+namespace SuperMarioGame.StateClass
 {
     public interface IMarioState
     {
         void Idle();
-        void ChangeDirection();
-        void ChangeForm();
+        void ChangeForm(int form);
         void Jump();
         void Crouch();
         void Run();
