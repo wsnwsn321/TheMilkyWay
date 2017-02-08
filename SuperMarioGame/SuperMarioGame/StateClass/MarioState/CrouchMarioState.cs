@@ -38,7 +38,7 @@ namespace SuperMarioGame.StateClass
                     case 1:
                         break;
                     case 2:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchBigMarioSprite();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingBigMarioSprite();
                         Draw();
                         break;
                     case 3:
@@ -50,7 +50,7 @@ namespace SuperMarioGame.StateClass
                     case 1:
                         break;
                     case 2:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchBigMarioSprite();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
                         Draw();
                         break;
                     case 3:

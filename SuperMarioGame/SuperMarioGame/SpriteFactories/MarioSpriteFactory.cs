@@ -57,7 +57,7 @@ namespace SuperMarioGame.SpriteFactories
             runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
             jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
             deadSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioDead");
-
+  
 
 
         }

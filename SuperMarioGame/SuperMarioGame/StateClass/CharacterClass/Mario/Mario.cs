@@ -20,7 +20,7 @@ namespace SuperMarioGame.StateClass
             state = new IdleMarioState(position,this,marioState,marioDirection);
             
         }
-        public Mario(SpriteBatch sp, Vector2 position, int marioState, Boolean marioDirection)
+        public Mario(Vector2 position, int marioState, Boolean marioDirection)
         {
             this.marioState = marioState;
             this.marioDirection = marioDirection;
