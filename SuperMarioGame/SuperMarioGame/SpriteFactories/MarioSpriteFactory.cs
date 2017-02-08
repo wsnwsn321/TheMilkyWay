@@ -99,7 +99,7 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateDeadSmallMarioSprite()
         {
-            return new Sprites.MarioSprite.SmallMarioSprite (deadSmallMarioSpritesheet, sb);
+            return new Sprites.MarioSprite.SmallMarioSprite.DeadSmallMarioSprite(deadSmallMarioSpritesheet, sb);
         }
     }
 }

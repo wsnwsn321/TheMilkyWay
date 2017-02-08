@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
+namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 {
     class LeftIdleSmallMarioSprite:ISprite
     {
