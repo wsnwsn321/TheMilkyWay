@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame
+namespace SuperMarioGame.Sprites
 {
     public interface ISprite
     {
         void Update();
 
-        void Draw(Vector2 location);
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

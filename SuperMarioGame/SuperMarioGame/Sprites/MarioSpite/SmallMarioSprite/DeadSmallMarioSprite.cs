@@ -11,13 +11,11 @@ namespace SuperMarioGame.Sprites
     class DeadSmallMarioSprit:ISprite
     {
         
-        public Texture2D Texture { get; set; }
-        private Vector2 position;
-        private SpriteBatch sb;
+            public Texture2D Texture { get; set; }
+        Vector2 p;
 
-        public DeadSmallMarioSprit(Texture2D texture,SpriteBatch sb)
+        public DeadSmallMarioSprit(Texture2D texture)
         {
-            this.sb = sb;
             Texture = texture;
         }
         public void Update()
@@ -27,17 +25,17 @@ namespace SuperMarioGame.Sprites
 
         public Vector2 returnPosition()
         {
-            return position;
+            return p;
         }
 
-        public void Draw(Vector2 position)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
-            sb.Begin();
-            this.position = position;
+            spriteBatch.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 14, 14);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            sb.End();
+            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            p = position;
+            spriteBatch.End();
         }
     }
 }

@@ -12,12 +12,10 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
     {
 
         public Texture2D Texture { get; set; }
-        private SpriteBatch sb;
-        public Vector2 position;
+        Vector2 p;
 
-        public RightJumpingSmallMarioSprit(Texture2D texture, SpriteBatch sb)
+        public RightJumpingSmallMarioSprit(Texture2D texture)
         {
-            this.sb = sb;
             Texture = texture;
         }
         public void Update()
@@ -27,17 +25,17 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 
         public Vector2 returnPosition()
         {
-            return position;
+            return p;
         }
 
-        public void Draw(Vector2 position)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
-            sb.Begin();
+            spriteBatch.Begin();
             Rectangle sourceRectangle = new Rectangle(17, 0, 16, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            this.position = position;
-            sb.End();
+            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            p = position;
+            spriteBatch.End();
         }
     }
 }

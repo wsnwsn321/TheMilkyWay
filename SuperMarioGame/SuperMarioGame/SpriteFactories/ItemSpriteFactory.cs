@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame
+namespace SuperMarioGame.SpriteFactories
 {
     class ItemSpriteFactory
     {
@@ -27,7 +27,7 @@ namespace SuperMarioGame
                 return instance;
             }
         }
-        public SpriteBatch sb { get; set; }
+
         private ItemSpriteFactory()
         {
             
@@ -55,27 +55,27 @@ namespace SuperMarioGame
 
         public Sprites.ISprite CreateFlowerSprite()
         {
-            return new Sprites.FlowerSprite(flowerSpritesheet,sb); 
+            return new Sprites.FlowerSprite(flowerSpritesheet); 
         }
 
         public Sprites.ISprite CreateStarSprite()
         {
-            return new Sprites.StarSprite(starSpritesheet,sb);
+            return new Sprites.StarSprite(starSpritesheet);
         }
 
         public Sprites.ISprite CreateGreenMushroomSprite()
         {
-            return new Sprites.GreenMushroomSprite(mushroomSpritesheet,sb);
+            return new Sprites.GreenMushroomSprite(mushroomSpritesheet);
         }
 
-        public SpISprite CreateRedMushroomSprite()
+        public Sprites.ISprite CreateRedMushroomSprite()
         {
-            return new RedMushroomSprite(mushroomSpritesheet,sb);
+            return new Sprites.RedMushroomSprite(mushroomSpritesheet);
         }
 
         public Sprites.ISprite CreateCoinSprite()
         {
-            return new Sprites.CoinSprite(coinSpritesheet,sb);
+            return new Sprites.CoinSprite(coinSpritesheet);
         }
 
     }
