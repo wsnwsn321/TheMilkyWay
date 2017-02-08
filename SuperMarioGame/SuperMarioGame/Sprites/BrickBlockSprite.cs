@@ -20,7 +20,7 @@ namespace SuperMarioGame.Sprites
         {
             Texture = texture;
             this.sb = sb;
-            draw = true; 
+            draw = true;
         }
         public void Update()
         {

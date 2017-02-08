@@ -74,6 +74,7 @@ namespace SuperMarioGame.StateClass
 
         public void Crouch()
         {
+            //if mario is in jumping state, we should change it to idle instead of crouch?
             mario.state = new CrouchMarioState(position, mario, marioState, direction);
             mario.MarioCrouch();
         }
