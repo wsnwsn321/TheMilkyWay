@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
             // r resets the scene
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+            myGame.mario = new StateClass.Mario(new Vector2(700, 300), 2, true);
         }
     }
 }

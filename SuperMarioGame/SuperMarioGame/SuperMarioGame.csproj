@@ -119,6 +119,7 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CodeReviews\" />
     <Folder Include="StateClass\EnemyClass\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>

@@ -23,7 +23,7 @@ namespace SuperMarioGame
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-       
+
             Content.RootDirectory = "Content";
         }
 
@@ -41,7 +41,7 @@ namespace SuperMarioGame
             controller = new Controller.Controller();
 
             InitializeCommands();
-            
+
 
             base.Initialize();
         }
@@ -160,11 +160,11 @@ namespace SuperMarioGame
 
         private void LoadSprites()
         {
-            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content,spriteBatch);
-            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content,spriteBatch);
+            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-          
+
 
             Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();

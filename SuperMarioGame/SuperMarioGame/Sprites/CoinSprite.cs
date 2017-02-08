@@ -14,15 +14,43 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        int currentFrame;
+        int totalFrames;
+        int counter = 0;
+        int currentWidth;
 
         public CoinSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
-            // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+            currentFrame = 0;
+            totalFrames = 4;
+            currentWidth = 6;
         }
         public void Update()
         {
+            if (counter % 7 == 0)
+            {
+                currentFrame++;
+            }
+            if (currentFrame == 0)
+            {
+                currentWidth = 9;
+            }
+            else
+            {
+                currentWidth = 6;
+            }
+
+            counter++;
+            if (counter > 99)
+            {
+                counter = 0;
+            }
+            if (currentFrame == (totalFrames))
+            {
+                currentFrame = 0;
+            }
 
         }
 
@@ -34,9 +62,19 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 9, 14);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            Rectangle sourceRectangle = new Rectangle((9 * currentFrame), 0, currentWidth, 14);
+            if (currentFrame == 2 || currentFrame == 3)
+            {
+                Rectangle desRectangle = new Rectangle((int)position.X+4, (int)position.Y, 18, 28);
+                sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            }
+            else
+            {
+                Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
+                sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+
+            }
+            
             p = position;
             sb.End();
         }
