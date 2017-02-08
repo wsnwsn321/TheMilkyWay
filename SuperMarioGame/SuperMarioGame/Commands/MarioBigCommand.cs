@@ -21,7 +21,7 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
             mario.MarioChangeForm(StateClass.Mario.MARIO_BIG);
-            
+
         }
     }
 }

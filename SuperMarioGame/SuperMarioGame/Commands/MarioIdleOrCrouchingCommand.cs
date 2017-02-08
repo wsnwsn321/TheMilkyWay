@@ -20,10 +20,8 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
+           
             mario.MarioCrouch();
-            //Change mario to an idle state if he was in a jumping state and a crouching state if he was not.
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
-
         }
     }
 }

@@ -11,38 +11,26 @@ namespace SuperMarioGame.StateClass
     class JumpingMarioState : IMarioState
     {
 
-
-        private int marioState;
-
-        // true: left
-        // false: right
-        private Boolean direction;
         private Vector2 position;
         private Mario mario;
         private Sprites.ISprite marioSprite;
-        public JumpingMarioState(Vector2 position, Mario mario, int marioState, Boolean direction)
+        public JumpingMarioState(Vector2 position, Mario mario)
         {
             this.mario = mario;
-            this.marioState = marioState;
             this.position = position;
-            this.direction = direction;
         }
 
         public void Jump()
         {
-            if (direction)
+            if (mario.marioDirection)
             {
-                switch (marioState)
+                switch (mario.marioState)
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
-                        Update();
-                        Draw();
                         break;
                     case Mario.MARIO_BIG:
-                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
-                        Update();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
                         break;
                     case Mario.MARIO_FIRE:
                         //red mario;
@@ -52,17 +40,13 @@ namespace SuperMarioGame.StateClass
             }
             else
             {
-                switch (marioState)
+                switch (mario.marioState)
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
-                        Update();
-                        Draw();
                         break;
                     case Mario.MARIO_BIG:
-                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
-                        Update();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
                         break;
                     case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
@@ -74,9 +58,8 @@ namespace SuperMarioGame.StateClass
 
         public void Crouch()
         {
-            //if mario is in jumping state, we should change it to idle instead of crouch?
-            mario.state = new CrouchMarioState(position, mario, marioState, direction);
-            mario.MarioCrouch();
+            mario.state = new IdleMarioState(position, mario);
+            mario.MarioIdle();
         }
 
         public void Draw()
@@ -85,29 +68,31 @@ namespace SuperMarioGame.StateClass
         }
         public void ChangeForm(int form)
         {
-            marioState = form;
-            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.marioState = form;
+            mario.state = new IdleMarioState(position, mario);
             mario.MarioIdle();
         }
 
         public void Idle()
         {
-            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.state = new IdleMarioState(position, mario);
             mario.MarioIdle();
         }
         public void Run()
         {
-            mario.state = new RunningMarioState(position, mario, marioState, direction);
+            mario.state = new RunningMarioState(position, mario);
             mario.MarioRun();
         }
 
         public void Update()
-        { 
+        {
+            marioSprite.Update();
         }
 
         public void ChangeDirection()
         {
-
+            mario.marioDirection = !mario.marioDirection;
+            mario.MarioJump();
         }
     }
 }

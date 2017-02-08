@@ -10,38 +10,32 @@ namespace SuperMarioGame.StateClass
 {
     class RunningMarioState : IMarioState
     {
-        // 1 : small mario 
-        // 2 : big mario 
-        // 3 : fire mario
-        private int marioState;
-
-        // true: left
-        // false: right
-        private Boolean direction;
+ 
         private Vector2 position;
         private Mario mario;
         private Sprites.ISprite marioSprite;
-        public RunningMarioState(Vector2 position, Mario mario, int marioState, Boolean direction)
+        public RunningMarioState(Vector2 position, Mario mario)
         {
             this.mario = mario;
-            this.marioState = marioState;
+         
             this.position = position;
-            this.direction = direction;
+         
         }
 
         public void Run()
         {
-            if (direction)
+            if (mario.marioDirection)
             {
-                switch (marioState)
+                switch (mario.marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
+        
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //red mario;
                         //Draw();
                         break;
@@ -49,15 +43,17 @@ namespace SuperMarioGame.StateClass
             }
             else
             {
-                switch (marioState)
+                switch (mario.marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
+                        mario.MarioUpdate();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                        mario.MarioUpdate();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
                         //Draw();
                         break;
@@ -66,45 +62,47 @@ namespace SuperMarioGame.StateClass
         }
         public void Crouch()
         {
-            mario.state = new CrouchMarioState(position, mario, marioState, direction);
+            mario.state = new CrouchMarioState(position, mario);
             mario.MarioCrouch();
         }
 
-       
+
         public void ChangeForm(int form)
         {
-            marioState = form;
-            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.marioState = form;
+            mario.state = new IdleMarioState(position, mario);
             mario.MarioRun();
         }
 
         public void Idle()
         {
-            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.state = new IdleMarioState(position, mario);
             mario.MarioIdle();
         }
 
         public void Jump()
         {
-            mario.state = new JumpingMarioState(position, mario, marioState, direction);
+            mario.state = new JumpingMarioState(position, mario);
             mario.MarioJump();
         }
 
-       
+
         public void Update()
         {
             marioSprite.Update();
+            //change position
+            
         }
 
         public void Draw()
         {
             marioSprite.Draw(position);
-        
+
         }
 
         public void ChangeDirection()
         {
-            direction = !direction;
+            mario.marioDirection = !mario.marioDirection;
             mario.MarioRun();
         }
     }
