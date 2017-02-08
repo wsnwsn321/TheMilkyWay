@@ -11,8 +11,8 @@ namespace SuperMarioGame.StateClass
     public class Mario
     {
         public IMarioState state { set; get; }
-        private int marioState;
-        private Boolean marioDirection;
+        public int marioState { set; get; }
+        public Boolean marioDirection { set; get }
         public Mario(Vector2 position)
         {
             marioState = 1;

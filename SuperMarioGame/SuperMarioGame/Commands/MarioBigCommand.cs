@@ -11,7 +11,8 @@ namespace SuperMarioGame.Commands
 
         private Game1 myGame;
         private SuperMarioGame.StateClass.Mario mario;
-
+        
+ 
         public MarioBigCommand(Game1 game)
         {
             myGame = game;
@@ -20,8 +21,11 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            // if mario is small mario, changeForm()
-            
+            if(mario.marioState == 1)
+            {
+                mario.marioState = 2;
+                mario.MarioIdle();
+            }   
         }
     }
 }
