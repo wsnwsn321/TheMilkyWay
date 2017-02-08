@@ -8,13 +8,13 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class BrickBlockSprite : ISprite
+    public class BrickBlockSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
-        private Boolean draw { get; set; }
+        public Boolean draw { get; set; }
 
         public BrickBlockSprite(Texture2D texture, SpriteBatch sb)
         {

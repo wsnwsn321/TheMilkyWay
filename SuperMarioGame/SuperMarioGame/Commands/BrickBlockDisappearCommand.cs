@@ -9,21 +9,18 @@ namespace SuperMarioGame.Commands
     class BrickBlockDisappearCommand : ICommand
     {
         private Game1 myGame;
-        private SuperMarioGame.Sprites.ISprite brick;
-
+        private SuperMarioGame.Sprites.BrickBlockSprite brick;
 
 
         public BrickBlockDisappearCommand(Game1 game)
         {
             myGame = game;
-            brick = game.BrickBlock;
+            brick = (SuperMarioGame.Sprites.BrickBlockSprite)game.BrickBlock;
         }
 
         public void Execute()
         {
-
-            // x makes the brick block disappear
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+            brick.draw = !(brick.draw);
         }
     }
 }
