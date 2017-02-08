@@ -8,18 +8,17 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class RightRunningFireMarioSprite : ISprite
-
+    class DeadSmallMarioSprite:ISprite
     {
+        
         public Texture2D Texture { get; set; }
-        Vector2 p;
-        SpriteBatch sb;
+        private Vector2 position;
+        private SpriteBatch sb;
 
-        public RightRunningFireMarioSprite(Texture2D texture, SpriteBatch sb)
+        public DeadSmallMarioSprite(Texture2D texture,SpriteBatch sb)
         {
-            Texture = texture;
             this.sb = sb;
-
+            Texture = texture;
         }
         public void Update()
         {
@@ -28,19 +27,17 @@ namespace SuperMarioGame.Sprites
 
         public Vector2 returnPosition()
         {
-            return p;
+            return position;
         }
 
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 9, 14);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
+            this.position = position;
+            Rectangle sourceRectangle = new Rectangle(0, 0, 14, 14);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            p = position;
             sb.End();
         }
     }
 }
-
-

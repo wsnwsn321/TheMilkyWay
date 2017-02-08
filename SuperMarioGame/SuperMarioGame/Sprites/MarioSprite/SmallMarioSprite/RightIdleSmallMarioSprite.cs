@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.Sprites
+namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 {
-    class DeadSmallMarioSprit:ISprite
+    class RightIdleSmallMarioSprite : ISprite
     {
         
         public Texture2D Texture { get; set; }
-        private Vector2 position;
         private SpriteBatch sb;
+        Vector2 position;
 
-        public DeadSmallMarioSprit(Texture2D texture,SpriteBatch sb)
+        public RightIdleSmallMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             this.sb = sb;
             Texture = texture;
@@ -30,13 +30,13 @@ namespace SuperMarioGame.Sprites
             return position;
         }
 
-        public void Draw(Vector2 position)
+        public void Draw( Vector2 position)
         {
             sb.Begin();
-            this.position = position;
-            Rectangle sourceRectangle = new Rectangle(0, 0, 14, 14);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            Rectangle sourceRectangle = new Rectangle(12, 0, 13, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 26, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            this.position = position;
             sb.End();
         }
     }

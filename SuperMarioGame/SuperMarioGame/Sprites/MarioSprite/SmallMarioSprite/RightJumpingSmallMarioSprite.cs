@@ -8,14 +8,14 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 {
-    class RightJumpingSmallMarioSprit : ISprite
+    class RightJumpingSmallMarioSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         public Vector2 position;
 
-        public RightJumpingSmallMarioSprit(Texture2D texture, SpriteBatch sb)
+        public RightJumpingSmallMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             this.sb = sb;
             Texture = texture;

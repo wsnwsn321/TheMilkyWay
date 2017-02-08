@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.Sprites
+namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 {
-    class RightCrouchingFireMarioSprite : ISprite
-
+    class LeftIdleSmallMarioSprite:ISprite
     {
+        private SpriteBatch sb;
         public Texture2D Texture { get; set; }
-        Vector2 p;
-        SpriteBatch sb;
-
-        public RightCrouchingFireMarioSprite(Texture2D texture, SpriteBatch sb)
+        private Vector2 position;
+    
+        public LeftIdleSmallMarioSprite(Texture2D texture,SpriteBatch sb)
         {
-            Texture = texture;
             this.sb = sb;
+            Texture = texture;
         }
         public void Update()
         {
@@ -27,19 +26,17 @@ namespace SuperMarioGame.Sprites
 
         public Vector2 returnPosition()
         {
-            return p;
+            return position;
         }
 
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 9, 14);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
+            Rectangle sourceRectangle = new Rectangle(0, 0, 12, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 24, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            p = position;
+            this.position = position;
             sb.End();
         }
     }
 }
-
-
