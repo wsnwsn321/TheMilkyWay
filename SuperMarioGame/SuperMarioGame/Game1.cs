@@ -55,10 +55,7 @@ namespace SuperMarioGame
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-       
-     
             LoadSprites();
-            test1.MarioRun();
             // TODO: use this.Content to load your game content here
         }
 
