@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
+namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
     class RightRunningBigMarioSprite : ISprite
     {

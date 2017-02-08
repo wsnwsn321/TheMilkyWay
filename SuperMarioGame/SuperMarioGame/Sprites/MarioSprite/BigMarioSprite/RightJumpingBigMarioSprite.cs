@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.Sprites.MarioSpite.BigMarioSprite
+namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
     class RightJumpingBigMarioSprite : ISprite
 
