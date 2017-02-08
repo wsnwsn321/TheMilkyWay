@@ -32,7 +32,7 @@ namespace SuperMarioGame.SpriteFactories
         {
         }
 
-        public void LoadAllTextures(ContentManager content)
+        public void LoadAllTextures(ContentManager content, SpriteBatch sb)
         {
             //load sprite sheets here**************************************
             //one example is below
@@ -42,7 +42,7 @@ namespace SuperMarioGame.SpriteFactories
             brickBlockSpritesheet = content.Load<Texture2D>("Item/BrickBlock");
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
-
+            this.sb = sb;
 
         }
 

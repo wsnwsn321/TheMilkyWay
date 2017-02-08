@@ -32,7 +32,7 @@ namespace SuperMarioGame.SpriteFactories
 
         }
 
-        public void LoadAllTextures(ContentManager content)
+        public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
             //load sprite sheets here**************************************
             //one example is below
@@ -41,7 +41,7 @@ namespace SuperMarioGame.SpriteFactories
             flowerSpritesheet = content.Load<Texture2D>("Item/Flower");
             starSpritesheet = content.Load<Texture2D>("Item/Star");
             coinSpritesheet = content.Load<Texture2D>("Item/Coin");
-
+            this.sb = sb;
         }
 
         //methods for creating sprites below*************************************************

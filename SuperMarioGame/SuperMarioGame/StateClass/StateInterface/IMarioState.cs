@@ -18,5 +18,6 @@ namespace SuperMarioGame.StateClass
         void Run();
         void Draw();
         void Update();
+        void ChangeDirection();
     }
 }

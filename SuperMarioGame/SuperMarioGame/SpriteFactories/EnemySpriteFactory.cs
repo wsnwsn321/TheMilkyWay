@@ -31,14 +31,14 @@ namespace SuperMarioGame.SpriteFactories
         {
         }
 
-        public void LoadAllTextures(ContentManager content)
+        public void LoadAllTextures(ContentManager content, SpriteBatch sb)
         {
             //load sprite sheets here**************************************
             //one example below
 
             goombaSpritesheet = content.Load<Texture2D>("Goomba/Goomba");
             koopaSpritesheet = content.Load<Texture2D>("Koopa/Koopa");
-
+            this.sb = sb;
         }
 
         //methods for creating sprites below*************************************************
