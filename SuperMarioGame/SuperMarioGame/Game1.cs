@@ -100,9 +100,7 @@ namespace SuperMarioGame
             RightJumpingSmallMario.Update();
             DeadSmallMario.Update();
             //LeftRunningBigMario.Update();
-            test1.MarioUpdate();
             controller.Update();
-
             base.Update(gameTime);
         }
 
@@ -128,10 +126,6 @@ namespace SuperMarioGame
             BrickBlock.Draw(new Vector2(500, 200));
             QuestionBlock.Draw(new Vector2(600, 200));
             UsedBlock.Draw(new Vector2(700, 200));
-
-            test1.MarioDraw();
-
-            
             //LeftIdleSmallMario.Draw(new Vector2(700, 300));
             //RightIdleSmallMario.Draw(new Vector2(750, 300));
             //LeftRunningSmallMario.Draw(new Vector2(650, 300));

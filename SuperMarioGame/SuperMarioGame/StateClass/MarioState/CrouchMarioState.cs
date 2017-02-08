@@ -36,10 +36,10 @@ namespace SuperMarioGame.StateClass
                 switch (marioState)
                 {
                     case 1:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
                         break;
                     case 2:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingBigMarioSprite();
-                        Draw();
                         break;
                     case 3:
                         break;
@@ -48,10 +48,10 @@ namespace SuperMarioGame.StateClass
                 switch (marioState)
                 {
                     case 1:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
                         break;
                     case 2:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
-                        Draw();
                         break;
                     case 3:
                         break;
@@ -60,7 +60,7 @@ namespace SuperMarioGame.StateClass
            
            
         }
-
+   
         public void Draw()
         {
             marioSprite.Draw(position);
@@ -92,11 +92,12 @@ namespace SuperMarioGame.StateClass
 
         public void Update()
         {
-          
+            marioSprite.Update();
         }
         public void ChangeDirection()
         {
-
+            direction = !direction;
+            mario.MarioCrouch();
         }
     }
 }

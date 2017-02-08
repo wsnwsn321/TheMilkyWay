@@ -37,15 +37,15 @@ namespace SuperMarioGame.StateClass
                 {
                     case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
-                        Draw();
+                  
                         break;
                     case 2:
-                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
-                        Draw();
+                       marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
+                        
                         break;
                     case 3:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigRedMarioSprite();
-                        //Draw();
+                        
                         break;
                 }
             }else
@@ -54,15 +54,15 @@ namespace SuperMarioGame.StateClass
                 {
                     case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
-                        Draw();
+                       
                         break;
                     case 2:
-                    //    marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
+                      
                         break;
                     case 3:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
-                        //Draw();
+                        
                         break;
                 }
             }
@@ -100,19 +100,19 @@ namespace SuperMarioGame.StateClass
         public void ChangeDirection()
         {
             direction = !direction;
-            mario.state     = new IdleMarioState(position, mario, marioState, direction);
             mario.MarioIdle();
         }
         //** update the position
         public void Update()
         {
-
+            marioSprite.Update();
         }
 
         public void Draw()
         {
             marioSprite.Draw(position);
         }
+
       
     }
 }

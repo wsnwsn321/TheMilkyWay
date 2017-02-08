@@ -24,7 +24,6 @@ namespace SuperMarioGame.StateClass
         {
             this.marioState = marioState;
             this.marioDirection = marioDirection;
-            Console.WriteLine(position.X);
             state = new IdleMarioState(position, this, marioState, marioDirection);
         }
         public void MarioIdle()
