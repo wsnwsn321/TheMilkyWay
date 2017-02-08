@@ -33,11 +33,9 @@ namespace SuperMarioGame.StateClass
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
-                        Draw();
                         break;
                     case Mario.MARIO_BIG:
-                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
                         break;
                     case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigRedMarioSprite();
@@ -50,11 +48,9 @@ namespace SuperMarioGame.StateClass
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
-                        Draw();
                         break;
                     case Mario.MARIO_BIG:
-                    //    marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
                         break;
                     case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
