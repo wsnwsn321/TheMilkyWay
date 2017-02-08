@@ -37,13 +37,9 @@ namespace SuperMarioGame.StateClass
                 {
                     case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
-                        Update();
-                        Draw();
                         break;
                     case 2:
-                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
-                        Update();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
                         break;
                     case 3:
                         //red mario;
@@ -57,13 +53,9 @@ namespace SuperMarioGame.StateClass
                 {
                     case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
-                        Update();
-                        Draw();
                         break;
                     case 2:
-                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
-                        Update();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
                         break;
                     case 3:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
@@ -102,12 +94,14 @@ namespace SuperMarioGame.StateClass
         }
 
         public void Update()
-        { 
+        {
+            marioSprite.Update();
         }
 
         public void ChangeDirection()
         {
-
+            direction = !direction;
+            mario.MarioJump();
         }
     }
 }

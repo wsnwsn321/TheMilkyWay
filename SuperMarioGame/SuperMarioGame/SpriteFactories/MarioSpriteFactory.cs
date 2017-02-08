@@ -32,7 +32,7 @@ namespace SuperMarioGame.SpriteFactories
 
         //there will be tons of other mario sprite sheets i assume...
 
-        public SpriteBatch sb { set; get; }
+        private SpriteBatch sb { set; get; }
         private static MarioSpriteFactory instance = new MarioSpriteFactory();
 
         public static MarioSpriteFactory Instance
@@ -47,7 +47,7 @@ namespace SuperMarioGame.SpriteFactories
         {
         }
 
-        public void LoadAllTextures(ContentManager content, SpriteBatch sb)
+        public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
             //load sprite sheets here**************************************
             //one example is below

@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.StateClass
 {
-    class Mario
+    public class Mario
     {
         public IMarioState state { set; get; }
-        private int marioState;
-        private Boolean marioDirection;
+        public int marioState { set; get; }
+        public Boolean marioDirection { set; get }
         public Mario(Vector2 position)
         {
             marioState = 1;
@@ -20,11 +20,10 @@ namespace SuperMarioGame.StateClass
             state = new IdleMarioState(position,this,marioState,marioDirection);
             
         }
-        public Mario(SpriteBatch sp, Vector2 position, int marioState, Boolean marioDirection)
+        public Mario(Vector2 position, int marioState, Boolean marioDirection)
         {
             this.marioState = marioState;
             this.marioDirection = marioDirection;
-            Console.WriteLine(position.X);
             state = new IdleMarioState(position, this, marioState, marioDirection);
         }
         public void MarioIdle()
@@ -49,7 +48,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioDraw()
         {
-            
+           
             state.Draw();
         }
         public void MarioUpdate()

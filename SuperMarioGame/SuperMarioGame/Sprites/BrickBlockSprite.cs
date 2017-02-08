@@ -14,11 +14,13 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        private Boolean draw { get; set; }
 
         public BrickBlockSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
+            draw = true; 
         }
         public void Update()
         {
@@ -32,12 +34,15 @@ namespace SuperMarioGame.Sprites
 
         public void Draw(Vector2 position)
         {
-            sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 16, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            p = position;
-            sb.End();
+            if (draw)
+            {
+                sb.Begin();
+                Rectangle sourceRectangle = new Rectangle(0, 0, 16, 16);
+                Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+                sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+                p = position;
+                sb.End();
+            }
         }
     }
 }
