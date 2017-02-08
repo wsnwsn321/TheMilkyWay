@@ -16,13 +16,14 @@ namespace SuperMarioGame.StateClass
 
         public int marioState { set; get; }
         public Boolean marioDirection { set; get; }
-       
+        public Vector2 position { set; get; }
     
         public Mario(Vector2 position)
         {
             marioState = MARIO_SMALL;
             marioDirection = MARIO_LEFT;
-            state = new IdleMarioState(position, this);
+            this.position = position;
+            state = new IdleMarioState(this.position, this);
 
         }
         public Mario(Vector2 position, int marioState, Boolean marioDirection)
@@ -63,7 +64,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioChangeDireciton()
         {
-
+            state.ChangeDirection();
         }
 
     }

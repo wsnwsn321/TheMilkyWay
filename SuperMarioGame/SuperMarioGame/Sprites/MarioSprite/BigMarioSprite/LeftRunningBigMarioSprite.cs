@@ -21,6 +21,8 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
         int currentUpdate;
         int slowSpeedDown;
 
+        int x;
+        int y;
         public LeftRunningBigMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             this.sb = sb;
@@ -43,6 +45,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
                     currentFrame = totalFrame;
             }
 
+            Draw(new Vector2(p.X + 20, p.Y));
         }
 
         public Vector2 returnPosition()

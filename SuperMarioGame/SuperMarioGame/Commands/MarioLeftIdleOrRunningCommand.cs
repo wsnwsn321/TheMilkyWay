@@ -23,10 +23,16 @@ namespace SuperMarioGame.Commands
             // may want to delay the state change to avoid a seemingly instant change from left running to right running when right is held down and vice-versa.
             //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
 
-            if (!mario.marioDirection)
+            if (mario.marioDirection)
+            {
+        
+                mario.MarioRun();
+            }else
             {
                 mario.MarioChangeDireciton();
-            }   
+                mario.MarioIdle();
+            }
+        
         }
     }
 }

@@ -18,7 +18,7 @@ namespace SuperMarioGame
         Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario, RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario, DeadSmallMario;
         Sprites.ISprite LeftRunningBigMario;
 
-        public StateClass.Mario mario = new StateClass.Mario(new Vector2(700, 300), 2, true);
+        public  StateClass.Mario mario = new StateClass.Mario(new Vector2(700, 300), 2, true);
 
         public Game1()
         {
@@ -38,7 +38,7 @@ namespace SuperMarioGame
             // TODO: Add your initialization logic here
 
             // Assign commands to keys
-            controller = new Controller.Controller();
+            controller = new Controller.Controller(mario);
 
             InitializeCommands();
 

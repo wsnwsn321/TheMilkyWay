@@ -30,6 +30,7 @@ namespace SuperMarioGame.StateClass
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
+        
                         break;
                     case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
@@ -46,9 +47,11 @@ namespace SuperMarioGame.StateClass
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
+                        mario.MarioUpdate();
                         break;
                     case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                        mario.MarioUpdate();
                         break;
                     case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
@@ -87,6 +90,8 @@ namespace SuperMarioGame.StateClass
         public void Update()
         {
             marioSprite.Update();
+            //change position
+            
         }
 
         public void Draw()

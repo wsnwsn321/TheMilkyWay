@@ -11,11 +11,12 @@ namespace SuperMarioGame.Controller
     {
       
             private Dictionary<Keys, ICommand> controllerMappings;
-        private int counter;
-
-            public Controller()
+            private int counter;
+            private StateClass.Mario mario;
+            public Controller(StateClass.Mario mario)
             {
                 controllerMappings = new Dictionary<Keys, ICommand>();
+                this.mario = mario;
                 counter = 0;
             }
 
@@ -45,7 +46,9 @@ namespace SuperMarioGame.Controller
                 counter = 0;
             }
             counter++;
+            mario.MarioUpdate();
             }
+           
 
         }
     
