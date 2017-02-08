@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            // if mario is small mario, changeForm()
+            mario.MarioChangeForm(StateClass.Mario.MARIO_BIG);
             
         }
     }
