@@ -12,6 +12,6 @@ namespace SuperMarioGame.Sprites
     {
         void Update();
 
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+        void Draw(Vector2 location);
     }
 }
