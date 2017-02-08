@@ -63,18 +63,13 @@ namespace SuperMarioGame.SpriteFactories
             jumpingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioJump");
             crouchingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
 
-            //idleFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
-            //runningFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioRun");
-            //jumpingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioJump");
-            //crouchingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioCrouch");
+            idleFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
+            runningFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioRun");
+            jumpingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioJump");
+            crouchingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
         }
 
         //methods for creating sprites below*************************************************
-        //one example is below
-        //public Sprites.ISprite CreateSmallMarioRunningSprite()
-        //{
-        //return new SmallMarioRunningSprite(smallMarioRunningSpritesheet, Game1.Instance.level.isAboveGround);
-        //}
 
         public Sprites.ISprite CreateLeftIdleSmallMarioSprite()
         {
@@ -144,42 +139,42 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.MarioSprite.BigMarioSprite.RightCrouchingBigMarioSprite(crouchingBigMarioSpritesheet, sb);
         }
 
-        //public Sprites.ISprite CreateLeftIdleFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.LeftIdleFireMarioSprite(idleFireMarioSpritesheet, sb);
-        //}
+        public Sprites.ISprite CreateLeftIdleFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.LeftIdleFireMarioSprite(idleFireMarioSpritesheet, sb);
+        }
 
-        //public Sprites.ISprite CreateRightIdleFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.RightIdleFireMarioSprite(idleFireMarioSpritesheet, sb);
-        //}
-        //public Sprites.ISprite CreateLeftRunningFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.LeftRunningFireMarioSprite(runningFireMarioSpritesheet, sb);
-        //}
+        public Sprites.ISprite CreateRightIdleFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.RightIdleFireMarioSprite(idleFireMarioSpritesheet, sb);
+        }
+        public Sprites.ISprite CreateLeftRunningFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.LeftRunningFireMarioSprite(runningFireMarioSpritesheet, sb);
+        }
 
-        //public Sprites.ISprite CreateRightRunningFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.RightRunningFireMarioSprite(runningFireMarioSpritesheet, sb);
-        //}
+        public Sprites.ISprite CreateRightRunningFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.RightRunningFireMarioSprite(runningFireMarioSpritesheet, sb);
+        }
 
-        //public Sprites.ISprite CreateLeftJumpingFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.LeftJumpingFireMarioSprite(jumpingFireMarioSpritesheet, sb);
-        //}
-        //public Sprites.ISprite CreateRightJumpingFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.RightJumpingFireMarioSprite(jumpingFireMarioSpritesheet, sb);
-        //}
+        public Sprites.ISprite CreateLeftJumpingFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.LeftJumpingFireMarioSprite(jumpingFireMarioSpritesheet, sb);
+        }
+        public Sprites.ISprite CreateRightJumpingFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.RightJumpingFireMarioSprite(jumpingFireMarioSpritesheet, sb);
+        }
 
-        //public Sprites.ISprite CreateLeftCrouchingFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.LeftCrouchingFireMarioSprite(crouchingFireMarioSpritesheet, sb);
-        //}
-        //public Sprites.ISprite CreateRightCrouchingFireMarioSprite()
-        //{
-        //    return new Sprites.MarioSprite.FireMarioSprite.RightCrouchingFireMarioSprite(crouchingFireMarioSpritesheet, sb);
-        //}
+        public Sprites.ISprite CreateLeftCrouchingFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.LeftCrouchingFireMarioSprite(crouchingFireMarioSpritesheet, sb);
+        }
+        public Sprites.ISprite CreateRightCrouchingFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.RightCrouchingFireMarioSprite(crouchingFireMarioSpritesheet, sb);
+        }
 
     }
 }
