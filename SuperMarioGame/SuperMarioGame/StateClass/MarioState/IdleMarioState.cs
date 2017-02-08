@@ -10,13 +10,9 @@ namespace SuperMarioGame.StateClass
 {
     class IdleMarioState : IMarioState
     {
-        // 1 : small mario 
-        // 2 : big mario 
-        // 3 : fire mario
+
         private int marioState;
 
-        // true: left
-        // false: right
         private Boolean direction;
         private Vector2 position;
         private Mario mario;
@@ -35,15 +31,15 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
                         Draw();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                      //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
                         Draw();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigRedMarioSprite();
                         //Draw();
                         break;
@@ -52,15 +48,15 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
                         Draw();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                     //    marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
                         Draw();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
                         //Draw();
                         break;

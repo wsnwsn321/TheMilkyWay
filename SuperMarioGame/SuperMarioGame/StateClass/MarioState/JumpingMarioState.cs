@@ -10,9 +10,8 @@ namespace SuperMarioGame.StateClass
 {
     class JumpingMarioState : IMarioState
     {
-        // 1 : small mario 
-        // 2 : big mario 
-        // 3 : fire mario
+
+
         private int marioState;
 
         // true: left
@@ -35,17 +34,17 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
                         Update();
                         Draw();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                      //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
                         Update();
                         Draw();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //red mario;
                         //Draw();
                         break;
@@ -55,17 +54,17 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
                         Update();
                         Draw();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                      //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
                         Update();
                         Draw();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
                         //Draw();
                         break;

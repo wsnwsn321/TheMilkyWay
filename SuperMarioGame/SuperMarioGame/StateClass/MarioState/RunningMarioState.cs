@@ -35,13 +35,13 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //red mario;
                         //Draw();
                         break;
@@ -51,13 +51,13 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
                         //Draw();
                         break;

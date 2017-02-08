@@ -58,7 +58,7 @@ namespace SuperMarioGame
        
      
             LoadSprites();
-            test1.MarioRun();
+            mario.MarioRun();
             // TODO: use this.Content to load your game content here
         }
 
@@ -103,7 +103,7 @@ namespace SuperMarioGame
             RightJumpingSmallMario.Update();
             DeadSmallMario.Update();
             //LeftRunningBigMario.Update();
-            test1.MarioUpdate();
+            mario.MarioUpdate();
             controller.Update();
 
             base.Update(gameTime);
@@ -132,7 +132,7 @@ namespace SuperMarioGame
             QuestionBlock.Draw(new Vector2(600, 200));
             UsedBlock.Draw(new Vector2(700, 200));
 
-            test1.MarioDraw();
+            mario.MarioDraw();
 
             
             //LeftIdleSmallMario.Draw(new Vector2(700, 300));

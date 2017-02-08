@@ -35,25 +35,25 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingBigMarioSprite();
                         Draw();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         break;
                 }
             }else{
                 switch (marioState)
                 {
-                    case 1:
+                    case Mario.MARIO_SMALL:
                         break;
-                    case 2:
+                    case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
                         Draw();
                         break;
-                    case 3:
+                    case Mario.MARIO_FIRE:
                         break;
                 }
             }
