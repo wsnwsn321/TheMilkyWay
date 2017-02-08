@@ -10,55 +10,51 @@ namespace SuperMarioGame.StateClass
 {
     class CrouchMarioState : IMarioState
     {
-        // 1 : small mario 
-        // 2 : big mario 
-        // 3 : fire mario
-        private int marioState;
-   
-        // true: left
-        // false: right
-        private Boolean direction;
+     
+
+     
         private Vector2 position;
         private Mario mario;
         private Sprites.ISprite marioSprite;
-        public CrouchMarioState(Vector2 position, Mario mario, int marioState, Boolean direction)
+        public CrouchMarioState(Vector2 position, Mario mario)
         {
             this.mario = mario;
-            this.marioState = marioState;
             this.position = position;
-            this.direction = direction;
+           
         }
 
         public void Crouch()
         {
-            if (direction)
+            if (mario.marioDirection)
             {
-                switch (marioState)
+                switch (mario.marioState)
                 {
                     case Mario.MARIO_SMALL:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
                         break;
                     case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingBigMarioSprite();
-                        Draw();
-                        break;
-                    case Mario.MARIO_FIRE:
-                        break;
-                }
-            }else{
-                switch (marioState)
-                {
-                    case Mario.MARIO_SMALL:
-                        break;
-                    case Mario.MARIO_BIG:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
-                        Draw();
                         break;
                     case Mario.MARIO_FIRE:
                         break;
                 }
             }
-           
-           
+            else
+            {
+                switch (mario.marioState)
+                {
+                    case Mario.MARIO_SMALL:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
+                        break;
+                    case Mario.MARIO_BIG:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
+                        break;
+                    case Mario.MARIO_FIRE:
+                        break;
+                }
+            }
+
+
         }
 
         public void Draw()
@@ -67,36 +63,37 @@ namespace SuperMarioGame.StateClass
         }
         public void ChangeForm(int form)
         {
-            marioState = form;
-            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.marioState = form;
+            mario.state = new IdleMarioState(position, mario);
             mario.MarioIdle();
         }
 
         public void Idle()
         {
-            mario.state = new IdleMarioState(position, mario, marioState, direction);
+            mario.state = new IdleMarioState(position, mario);
             mario.MarioIdle();
         }
 
         public void Jump()
         {
-            mario.state = new JumpingMarioState(position, mario, marioState, direction);
-            mario.MarioJump();
+            mario.state = new IdleMarioState(position, mario);
+            mario.MarioIdle();
         }
 
         public void Run()
         {
-            mario.state = new RunningMarioState(position, mario, marioState, direction);
+            mario.state = new RunningMarioState(position, mario);
             mario.MarioRun();
         }
 
         public void Update()
         {
-          
+            marioSprite.Update();
         }
         public void ChangeDirection()
         {
-
+            mario.marioDirection = !mario.marioDirection;
+            mario.MarioCrouch();
         }
     }
 }
