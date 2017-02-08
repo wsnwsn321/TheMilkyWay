@@ -55,10 +55,7 @@ namespace SuperMarioGame
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-       
-     
             LoadSprites();
-            mario.MarioRun();
             // TODO: use this.Content to load your game content here
         }
 
@@ -103,9 +100,7 @@ namespace SuperMarioGame
             RightJumpingSmallMario.Update();
             DeadSmallMario.Update();
             //LeftRunningBigMario.Update();
-            mario.MarioUpdate();
             controller.Update();
-
             base.Update(gameTime);
         }
 
@@ -131,10 +126,6 @@ namespace SuperMarioGame
             BrickBlock.Draw(new Vector2(500, 200));
             QuestionBlock.Draw(new Vector2(600, 200));
             UsedBlock.Draw(new Vector2(700, 200));
-
-            mario.MarioDraw();
-
-            
             //LeftIdleSmallMario.Draw(new Vector2(700, 300));
             //RightIdleSmallMario.Draw(new Vector2(750, 300));
             //LeftRunningSmallMario.Draw(new Vector2(650, 300));

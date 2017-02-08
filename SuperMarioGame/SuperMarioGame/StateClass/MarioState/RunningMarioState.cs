@@ -35,13 +35,13 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case Mario.MARIO_SMALL:
+                    case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
                         break;
-                    case Mario.MARIO_BIG:
+                    case 2:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
-                    case Mario.MARIO_FIRE:
+                    case 3:
                         //red mario;
                         //Draw();
                         break;
@@ -51,13 +51,13 @@ namespace SuperMarioGame.StateClass
             {
                 switch (marioState)
                 {
-                    case Mario.MARIO_SMALL:
+                    case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
                         break;
-                    case Mario.MARIO_BIG:
-                       marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                    case 2:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
                         break;
-                    case Mario.MARIO_FIRE:
+                    case 3:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
                         //Draw();
                         break;
@@ -91,7 +91,6 @@ namespace SuperMarioGame.StateClass
         }
 
        
-
         public void Update()
         {
             marioSprite.Update();
@@ -105,7 +104,8 @@ namespace SuperMarioGame.StateClass
 
         public void ChangeDirection()
         {
-
+            direction = !direction;
+            mario.MarioRun();
         }
     }
 }

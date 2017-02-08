@@ -10,6 +10,7 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
+        private SuperMarioGame.StateClass.Mario mario;
 
         public MarioIdleOrCrouchingCommand(Game1 game)
         {
@@ -20,6 +21,7 @@ namespace SuperMarioGame.Commands
         {
             //Change mario to an idle state if he was in a jumping state and a crouching state if he was not.
             //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+
         }
     }
 }
