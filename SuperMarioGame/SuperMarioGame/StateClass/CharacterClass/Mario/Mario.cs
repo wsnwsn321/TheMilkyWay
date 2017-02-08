@@ -11,19 +11,22 @@ namespace SuperMarioGame.StateClass
     public class Mario
     {
         public IMarioState state { set; get; }
-        public int marioState { set; get; }
-        public Boolean marioDirection { set; get }
+        public const int MARIO_SMALL = 1, MARIO_BIG = 2, MARIO_FIRE = 3;
+        public const Boolean MARIO_LEFT = true;
+        private int marioState;
+        private Boolean marioDirection;
         public Mario(Vector2 position)
         {
-            marioState = 1;
-            marioDirection = true;
-            state = new IdleMarioState(position,this,marioState,marioDirection);
-            
+            marioState = MARIO_SMALL;
+            marioDirection = MARIO_LEFT;
+            state = new IdleMarioState(position, this, marioState, marioDirection);
+
         }
         public Mario(Vector2 position, int marioState, Boolean marioDirection)
         {
             this.marioState = marioState;
             this.marioDirection = marioDirection;
+            Console.WriteLine(position.X);
             state = new IdleMarioState(position, this, marioState, marioDirection);
         }
         public void MarioIdle()
@@ -48,7 +51,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioDraw()
         {
-           
+
             state.Draw();
         }
         public void MarioUpdate()
