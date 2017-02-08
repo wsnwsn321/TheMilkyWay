@@ -94,5 +94,9 @@ namespace SuperMarioGame.StateClass
         {
           
         }
+        public void ChangeDirection()
+        {
+
+        }
     }
 }

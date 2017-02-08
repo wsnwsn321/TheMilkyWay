@@ -32,7 +32,7 @@ namespace SuperMarioGame.SpriteFactories
 
         //there will be tons of other mario sprite sheets i assume...
 
-        public SpriteBatch sb { set; get; }
+        private SpriteBatch sb { set; get; }
         private static MarioSpriteFactory instance = new MarioSpriteFactory();
 
         public static MarioSpriteFactory Instance
@@ -47,11 +47,11 @@ namespace SuperMarioGame.SpriteFactories
         {
         }
 
-        public void LoadAllTextures(ContentManager content)
+        public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
             //load sprite sheets here**************************************
             //one example is below
-
+            this.sb = sb;
             //smallMarioRunningSpriteSheet = content.Load<Texture2D>("smallMarioRunning");
             idleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
             runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
@@ -61,7 +61,7 @@ namespace SuperMarioGame.SpriteFactories
             idleBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
             runningBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioRun");
             jumpingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioJump");
-            crouchingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioCrouch");
+            crouchingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
 
             //idleFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
             //runningFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioRun");

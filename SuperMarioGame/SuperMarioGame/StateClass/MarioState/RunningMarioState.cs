@@ -37,13 +37,9 @@ namespace SuperMarioGame.StateClass
                 {
                     case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
-                        Update();
-                        Draw();
                         break;
                     case 2:
-                   //     marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
-                        Update();
-                        Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
                     case 3:
                         //red mario;
@@ -57,13 +53,9 @@ namespace SuperMarioGame.StateClass
                 {
                     case 1:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
-                        Update();
-                        Draw();
                         break;
                     case 2:
-                    //    marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
-                        Update();
-                        Draw();
+                       marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
                         break;
                     case 3:
                         //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
@@ -83,7 +75,7 @@ namespace SuperMarioGame.StateClass
         {
             marioState = form;
             mario.state = new IdleMarioState(position, mario, marioState, direction);
-            mario.MarioIdle();
+            mario.MarioRun();
         }
 
         public void Idle()
@@ -102,12 +94,13 @@ namespace SuperMarioGame.StateClass
 
         public void Update()
         {
-
+            marioSprite.Update();
         }
 
         public void Draw()
         {
             marioSprite.Draw(position);
+        
         }
 
         public void ChangeDirection()

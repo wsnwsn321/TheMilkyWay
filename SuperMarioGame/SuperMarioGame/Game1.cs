@@ -16,13 +16,14 @@ namespace SuperMarioGame
         IController controller;
         Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
         Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario, RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario, DeadSmallMario;
+        Sprites.ISprite LeftRunningBigMario;
 
-        StateClass.Mario test1;
+        public StateClass.Mario test1 = new StateClass.Mario(new Vector2(700, 300), 2, true);
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            test1 = new StateClass.Mario(new Vector2(700, 300),2,true);
+       
             Content.RootDirectory = "Content";
         }
 
@@ -40,7 +41,7 @@ namespace SuperMarioGame
             controller = new Controller.Controller();
 
             InitializeCommands();
-
+            
 
             base.Initialize();
         }
@@ -54,13 +55,10 @@ namespace SuperMarioGame
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-        
-            SpriteFactories.MarioSpriteFactory.Instance.sb = spriteBatch;
-            SpriteFactories.ItemSpriteFactory.Instance.sb = spriteBatch;
-            SpriteFactories.EnemySpriteFactory.Instance.sb = spriteBatch;
-            SpriteFactories.EnvironmentSpriteFactory.Instance.sb = spriteBatch;
-
+       
+     
             LoadSprites();
+            test1.MarioRun();
             // TODO: use this.Content to load your game content here
         }
 
@@ -104,6 +102,9 @@ namespace SuperMarioGame
             LeftJumpingSmallMario.Update();
             RightJumpingSmallMario.Update();
             DeadSmallMario.Update();
+            //LeftRunningBigMario.Update();
+            test1.MarioUpdate();
+            controller.Update();
 
             base.Update(gameTime);
         }
@@ -131,8 +132,9 @@ namespace SuperMarioGame
             QuestionBlock.Draw(new Vector2(600, 200));
             UsedBlock.Draw(new Vector2(700, 200));
 
+            test1.MarioDraw();
 
-            test1.MarioCrouch();
+            
             //LeftIdleSmallMario.Draw(new Vector2(700, 300));
             //RightIdleSmallMario.Draw(new Vector2(750, 300));
             //LeftRunningSmallMario.Draw(new Vector2(650, 300));
@@ -140,7 +142,7 @@ namespace SuperMarioGame
             //RightJumpingSmallMario.Draw(new Vector2(550, 300));
             //LeftJumpingSmallMario.Draw(new Vector2(500, 300));
             //DeadSmallMario.Draw(new Vector2(450, 300));
-
+            //LeftRunningBigMario.Draw(new Vector2(650, 300));
 
 
 
@@ -165,10 +167,10 @@ namespace SuperMarioGame
 
         private void LoadSprites()
         {
-            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
-            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content);
-            SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content);
-            SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content);
+            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content,spriteBatch);
+            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content,spriteBatch);
+            SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
           
 
             Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
@@ -192,6 +194,7 @@ namespace SuperMarioGame
             RightJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
             DeadSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
 
+            LeftRunningBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
         }
     }
 }

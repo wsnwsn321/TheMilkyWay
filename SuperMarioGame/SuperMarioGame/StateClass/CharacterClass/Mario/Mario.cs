@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.StateClass
 {
-    class Mario
+    public class Mario
     {
         public IMarioState state { set; get; }
         private int marioState;
@@ -49,7 +49,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioDraw()
         {
-            
+           
             state.Draw();
         }
         public void MarioUpdate()
