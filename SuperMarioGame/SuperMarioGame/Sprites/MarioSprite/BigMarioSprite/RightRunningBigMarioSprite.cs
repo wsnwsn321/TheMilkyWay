@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.Sprites
+namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
-    class RightRunningFireMarioSprite: ISprite
-
+    class RightRunningBigMarioSprite : ISprite
     {
+
         public Texture2D Texture { get; set; }
+        private SpriteBatch sb;
         Vector2 p;
         int height;
         int width;
@@ -20,9 +21,9 @@ namespace SuperMarioGame.Sprites
         int currentUpdate;
         int slowSpeedDown;
 
-        public RightRunningFireMarioSprite(Texture2D texture)
+        public RightRunningBigMarioSprite(Texture2D texture, SpriteBatch sb)
         {
-            Texture = texture;
+            this.sb = sb;
             Texture = texture;
             height = texture.Height;
             width = texture.Width / 6;
@@ -41,24 +42,24 @@ namespace SuperMarioGame.Sprites
                 if (currentFrame == totalFrame)
                     currentFrame = 0;
             }
-    }
 
-    public Vector2 returnPosition()
+        }
+
+        public Vector2 returnPosition()
         {
             return p;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 position)
+        public void Draw( Vector2 position)
         {
-            spriteBatch.Begin();
+            sb.Begin();
+
             int currentWidth = 17;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth) + 54, 0, 17, 32);
-            Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
-            spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 34, 64);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
-            spriteBatch.End();
+            sb.End();
         }
     }
 }
-
-

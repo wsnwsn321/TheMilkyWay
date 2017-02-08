@@ -8,49 +8,21 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class CoinSprite: ISprite
+    class CoinSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
-        private SpriteBatch sb;
         Vector2 p;
-        int currentFrame;
-        int totalFrames;
-        int counter = 0;
-        int currentWidth;
+        SpriteBatch sb;
 
-        public CoinSprite(Texture2D texture,SpriteBatch sb)
+        public CoinSprite(Texture2D texture, SpriteBatch sb)
         {
-            this.sb = sb;
             Texture = texture;
-            currentFrame = 0;
-            totalFrames = 4;
-            currentWidth = 6;            
+            this.sb = sb;
+            // SpriteFactories.ISprite newS = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
         }
         public void Update()
         {
-            if (counter % 7 == 0)
-            {
-                currentFrame++;
-            }
-            if(currentFrame == 0)
-            {
-                currentWidth = 9;
-            }
-            else
-            {
-                currentWidth = 6;
-            }
-
-            counter++;
-            if (counter > 99)
-            {
-                counter = 0;
-            }
-            if (currentFrame == (totalFrames-1))
-            {
-                currentFrame = 0;
-            }
 
         }
 
@@ -62,9 +34,9 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle((9*currentFrame),0,currentWidth,14);
-            Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,18,28);
-            sb.Draw(Texture, desRectangle,sourceRectangle, Color.White);
+            Rectangle sourceRectangle = new Rectangle(0, 0, 9, 14);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();
         }

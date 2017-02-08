@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
+namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
-    class LeftRunningSmallMarioSprite : ISprite
+    class LeftRunningBigMarioSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
+        private SpriteBatch sb;
         Vector2 p;
         int height;
         int width;
@@ -20,14 +21,15 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
         int currentUpdate;
         int slowSpeedDown;
 
-        public LeftRunningSmallMarioSprite(Texture2D texture)
+        public LeftRunningBigMarioSprite(Texture2D texture, SpriteBatch sb)
         {
+            this.sb = sb;
             Texture = texture;
             height = texture.Height;
-            width = texture.Width/2;
-            currentFrame = 4;
-            totalFrame = 4;
-            currentUpdate = 0;
+            width = texture.Width / 6;
+            totalFrame = 2;
+            currentFrame = totalFrame;
+            currentUpdate = 4;
             slowSpeedDown = 5;
         }
         public void Update()
@@ -37,7 +39,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
             {
                 currentUpdate = 0;
                 currentFrame--;
-                if (currentFrame == 1)
+                if (currentFrame < 0)
                     currentFrame = totalFrame;
             }
 
@@ -48,17 +50,17 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
             return p;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 position)
+        public void Draw(Vector2 position)
         {
-            spriteBatch.Begin();
+            sb.Begin();
 
-            int currentWidth = 15;
+            int currentWidth = 17;
             int column = currentFrame % totalFrame;
-            Rectangle sourceRectangle = new Rectangle((currentFrame-1)*currentWidth, 0,15, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 32);
-            spriteBatch.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth), 0, 17, 32);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 34, 64);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
-            spriteBatch.End();
+            sb.End();
         }
     }
 }
