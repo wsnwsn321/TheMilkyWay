@@ -47,7 +47,7 @@ namespace SuperMarioGame.SpriteFactories
         {
         }
 
-        public void LoadAllTextures(ContentManager content)
+        public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
             //load sprite sheets here**************************************
             //one example is below
@@ -57,7 +57,7 @@ namespace SuperMarioGame.SpriteFactories
             runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
             jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
             deadSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioDead");
-
+            this.sb = sb;
 
 
         }

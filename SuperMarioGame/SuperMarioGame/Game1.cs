@@ -155,10 +155,10 @@ namespace SuperMarioGame
 
         private void LoadSprites()
         {
-            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content);
-            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content);
-            SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content);
-            SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content);
+            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content,spriteBatch);
             Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
             GreenMush = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushroomSprite();

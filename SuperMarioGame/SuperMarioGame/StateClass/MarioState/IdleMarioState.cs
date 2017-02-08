@@ -40,7 +40,7 @@ namespace SuperMarioGame.StateClass
                         Draw();
                         break;
                     case 2:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
+                     //   marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigMarioSprite();
                         Draw();
                         break;
                     case 3:
@@ -57,7 +57,7 @@ namespace SuperMarioGame.StateClass
                         Draw();
                         break;
                     case 2:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
+                    //    marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigMarioSprite();
                         Draw();
                         break;
                     case 3:
@@ -113,5 +113,6 @@ namespace SuperMarioGame.StateClass
         {
             marioSprite.Draw(position);
         }
+      
     }
 }
