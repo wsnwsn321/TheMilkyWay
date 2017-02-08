@@ -52,7 +52,7 @@ namespace SuperMarioGame.SpriteFactories
         //    return new MushroomSprite(mushroomSpritesheet, Game1.Instance.level.isAboveGround);
         //}
 
-        public Sprites.ISprite CreateFlowerSprite(SpriteBatch sb)
+        public Sprites.ISprite CreateFlowerSprite()
         {
             return new Sprites.FlowerSprite(flowerSpritesheet, sb);
         }
