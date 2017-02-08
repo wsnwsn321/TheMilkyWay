@@ -8,36 +8,54 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class GoombaSprite: ISprite
+    class GoombaSprite : ISprite
 
     {
-            public Texture2D Texture { get; set; }
-            Vector2 p;
+        public Texture2D Texture { get; set; }
+        Vector2 p;
+        SpriteBatch sb;
+        int currentFrame;
+        int totalFrame;
+        int currentUpdate;
+        int slowSpeedDown;
 
-            public GoombaSprite(Texture2D texture)
+        public GoombaSprite(Texture2D texture, SpriteBatch sb)
+        {
+            Texture = texture;
+            this.sb = sb;
+            Texture = texture;
+            currentFrame = 0;
+            totalFrame = 2;
+            currentUpdate = 0;
+            slowSpeedDown = 8;
+        }
+        public void Update()
+        {
+            currentUpdate++;
+            if (currentUpdate == slowSpeedDown)
             {
-                Texture = texture;
-            }
-            public void Update()
-            {
-
-            }
-
-            public Vector2 returnPosition()
-            {
-                return p;
-            }
-
-            public void Draw(SpriteBatch spriteBatch, Vector2 position)
-            {
-                spriteBatch.Begin();
-                Rectangle sourceRectangle = new Rectangle(17,0,19,16);
-                Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,38,32);
-                spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
-                p = position;
-                spriteBatch.End();
+                currentUpdate = 0;
+                currentFrame++;
+                if (currentFrame == totalFrame)
+                    currentFrame = 0;
             }
         }
+
+        public Vector2 returnPosition()
+        {
+            return p;
+        }
+
+        public void Draw(Vector2 position)
+        {
+            sb.Begin();
+            Rectangle sourceRectangle = new Rectangle(17 * currentFrame, 0, 19, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 38, 32);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            p = position;
+            sb.End();
+        }
     }
+}
 
 
