@@ -98,7 +98,7 @@ namespace SuperMarioGame
             LeftJumpingSmallMario.Update();
             RightJumpingSmallMario.Update();
             DeadSmallMario.Update();
-
+            
             base.Update(gameTime);
         }
 

@@ -61,7 +61,7 @@ namespace SuperMarioGame.StateClass
                         Draw();
                         break;
                     case 2:
-                    //    marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
                         Update();
                         Draw();
                         break;
@@ -102,7 +102,7 @@ namespace SuperMarioGame.StateClass
 
         public void Update()
         {
-
+            marioState
         }
 
         public void Draw()
