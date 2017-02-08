@@ -12,7 +12,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
     {
         private SpriteBatch sb;
         public Texture2D Texture { get; set; }
-        Vector2 p;
+        private Vector2 position;
     
         public LeftIdleSmallMarioSprit(Texture2D texture,SpriteBatch sb)
         {
@@ -26,7 +26,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
 
         public Vector2 returnPosition()
         {
-            return p;
+            return position;
         }
 
         public void Draw(Vector2 position)
@@ -35,7 +35,7 @@ namespace SuperMarioGame.Sprites.MarioSpite.SmallMarioSprite
             Rectangle sourceRectangle = new Rectangle(0, 0, 12, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 24, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            p = position;
+            this.position = position;
             sb.End();
         }
     }
