@@ -14,11 +14,11 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         IController controller;
-        Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
+        public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock;
         Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario, RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario, DeadSmallMario;
         Sprites.ISprite LeftRunningBigMario;
 
-        public StateClass.Mario test1 = new StateClass.Mario(new Vector2(700, 300), 2, true);
+        public StateClass.Mario mario = new StateClass.Mario(new Vector2(700, 300), 2, true);
 
         public Game1()
         {

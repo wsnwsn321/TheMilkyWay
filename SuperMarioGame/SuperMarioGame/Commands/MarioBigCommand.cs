@@ -10,16 +10,18 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
+        private SuperMarioGame.StateClass.Mario mario;
 
         public MarioBigCommand(Game1 game)
         {
             myGame = game;
+            mario = game.mario;
         }
 
         public void Execute()
         {
-            //u should make mario big ( ͡° ͜ʖ ͡°)
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+            // if mario is small mario, changeForm()
+            
         }
     }
 }
