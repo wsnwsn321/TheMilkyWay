@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMarioGame.Sprites
+namespace SuperMarioGame
 {
     class RedMushroomSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         Vector2 p;
 
-        public RedMushroomSprite(Texture2D texture)
+        public RedMushroomSprite(Texture2D texture,SpriteBatch sb)
         {
             Texture = texture;
         }
