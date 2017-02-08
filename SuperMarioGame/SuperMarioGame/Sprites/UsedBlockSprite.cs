@@ -8,36 +8,38 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class UsedBlockSprite: ISprite
+    class UsedBlockSprite : ISprite
 
     {
-            public Texture2D Texture { get; set; }
-            Vector2 p;
+        public Texture2D Texture { get; set; }
+        Vector2 p;
+        SpriteBatch sb;
 
-            public UsedBlockSprite(Texture2D texture)
-            {
-                Texture = texture;
-            }
-            public void Update()
-            {
+        public UsedBlockSprite(Texture2D texture, SpriteBatch sb)
+        {
+            Texture = texture;
+            this.sb = sb;
+        }
+        public void Update()
+        {
 
-            }
+        }
 
-            public Vector2 returnPosition()
-            {
-                return p;
-            }
+        public Vector2 returnPosition()
+        {
+            return p;
+        }
 
-            public void Draw(SpriteBatch spriteBatch, Vector2 position)
-            {
-                spriteBatch.Begin();
-                Rectangle sourceRectangle = new Rectangle(0,0,16,16);
-                Rectangle desRectangle = new Rectangle((int)position.X,(int)position.Y,32,32);
-                spriteBatch.Draw(Texture, desRectangle,sourceRectangle, Color.White);
-                p = position;
-                spriteBatch.End();
-            }
+        public void Draw(Vector2 position)
+        {
+            sb.Begin();
+            Rectangle sourceRectangle = new Rectangle(0, 0, 16, 16);
+            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            p = position;
+            sb.End();
         }
     }
+}
 
 
