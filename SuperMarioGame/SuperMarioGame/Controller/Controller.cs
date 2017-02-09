@@ -22,7 +22,10 @@ namespace SuperMarioGame.Controller
 
             public void RegisterCommand(Keys key, ICommand command)
             {
-                controllerMappings.Add(key, command);
+                if (!controllerMappings.ContainsKey(key))
+                {
+                    controllerMappings.Add(key, command);
+                }
             }
 
             public void Update()
@@ -46,7 +49,6 @@ namespace SuperMarioGame.Controller
                 counter = 0;
             }
             counter++;
-            mario.MarioUpdate();
             }
            
 

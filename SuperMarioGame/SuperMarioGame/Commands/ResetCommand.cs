@@ -19,8 +19,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            // r resets the scene
-            myGame.mario = new StateClass.Mario(new Vector2(700, 300), 2, true);
+            myGame.ResetGame();
         }
     }
 }

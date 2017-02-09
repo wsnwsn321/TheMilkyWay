@@ -15,10 +15,9 @@ namespace SuperMarioGame
         SpriteBatch spriteBatch;
         IController controller;
         public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
-        Sprites.ISprite LeftIdleSmallMario, RightIdleSmallMario, LeftRunningSmallMario, RightRunningSmallMario, LeftJumpingSmallMario, RightJumpingSmallMario, DeadSmallMario;
-        Sprites.ISprite LeftRunningBigMario;
 
-        public  StateClass.Mario mario = new StateClass.Mario(new Vector2(700, 300), 2, true);
+        public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);
+
 
         public Game1()
         {
@@ -93,14 +92,8 @@ namespace SuperMarioGame
             HiddenBlock.Update();
             BrickBlock.Update();
             QuestionBlock.Update();
-            LeftIdleSmallMario.Update();
-            RightIdleSmallMario.Update();
-            LeftRunningSmallMario.Update();
-            //RightRunningSmallMario.Update();
-            LeftJumpingSmallMario.Update();
-            RightJumpingSmallMario.Update();
-            DeadSmallMario.Update();
-            //LeftRunningBigMario.Update();
+
+            mario.MarioUpdate();
             controller.Update();
             base.Update(gameTime);
         }
@@ -129,14 +122,6 @@ namespace SuperMarioGame
             UsedBlock.Draw(new Vector2(700, 200));
             StageBlock.Draw(new Vector2(700, 100));
             mario.MarioDraw();
-            //LeftIdleSmallMario.Draw(new Vector2(700, 300));
-            //RightIdleSmallMario.Draw(new Vector2(750, 300));
-            //LeftRunningSmallMario.Draw(new Vector2(650, 300));
-            //RightRunningSmallMario.Draw(new Vector2(600, 300));
-            //RightJumpingSmallMario.Draw(new Vector2(550, 300));
-            //LeftJumpingSmallMario.Draw(new Vector2(500, 300));
-            //DeadSmallMario.Draw(new Vector2(450, 300));
-            //LeftRunningBigMario.Draw(new Vector2(650, 300));
 
 
 
@@ -181,15 +166,16 @@ namespace SuperMarioGame
             HiddenBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
             GroundBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
             StageBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateStageBlockSprite();
-            LeftIdleSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
-            RightIdleSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
-            LeftRunningSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
-            RightRunningSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
-            LeftJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
-            RightJumpingSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
-            DeadSmallMario = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
-            
-            LeftRunningBigMario = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
+     
+        }
+
+        public void ResetGame()
+        {
+            mario = new StateClass.Mario(new Vector2(400, 300), 1, false);
+            mario.MarioIdle();
+            Initialize();
+            LoadContent();
+
         }
     }
 }
