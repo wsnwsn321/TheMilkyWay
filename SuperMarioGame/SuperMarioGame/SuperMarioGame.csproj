@@ -49,6 +49,7 @@
     <Compile Include="Commands\MarioRightIdleOrRunningCommand.cs" />
     <Compile Include="Commands\MarioSmallCommand.cs" />
     <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
+    <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Game1.cs" />

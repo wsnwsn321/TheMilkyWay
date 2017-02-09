@@ -142,6 +142,7 @@ namespace SuperMarioGame
             controller.RegisterCommand(Keys.X, new BrickBlockDisappearCommand(this));
             controller.RegisterCommand(Keys.C, new HiddenBlockToUsedBlockCommand(this));
             controller.RegisterCommand(Keys.R, new ResetCommand(this));
+            controller.RegisterCommand(Keys.Q, new QuitCommand(this));
         }
 
         private void LoadSprites()
