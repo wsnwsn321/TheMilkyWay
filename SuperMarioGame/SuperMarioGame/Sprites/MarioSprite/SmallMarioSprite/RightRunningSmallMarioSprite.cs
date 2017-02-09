@@ -28,7 +28,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             Texture = texture;
             height = texture.Height;
             width = texture.Width / 2;
-            currentFrame = 0;
+            currentFrame = 4;
             totalFrame = 8;
             currentUpdate = 4;
             slowSpeedDown = 5;

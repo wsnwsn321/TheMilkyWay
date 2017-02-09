@@ -10,7 +10,7 @@ namespace SuperMarioGame.StateClass
 {
     class IdleMarioState : IMarioState
     {
-  
+
         private Vector2 position;
         private Mario mario;
         private Sprites.ISprite marioSprite;
@@ -103,8 +103,9 @@ namespace SuperMarioGame.StateClass
         public void Draw()
         {
             marioSprite.Draw(position);
+            //}
+
+
         }
-
-
     }
 }

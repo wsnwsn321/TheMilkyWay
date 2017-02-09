@@ -86,6 +86,7 @@
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\BrickBlockSprite.cs" />
+    <Compile Include="Sprites\StageBlockSprite.cs" />
     <Compile Include="Sprites\UsedBlockSprite.cs" />
     <Compile Include="Sprites\CoinSprite.cs" />
     <Compile Include="Sprites\ISprite.cs" />
@@ -98,6 +99,9 @@
     <Compile Include="Sprites\RedMushroomSprite.cs" />
     <Compile Include="Sprites\StarSprite.cs" />
     <Compile Include="StateClass\CharacterClass\Mario\Mario.cs" />
+    <Compile Include="StateClass\ItemClass\BrickBlock.cs" />
+    <Compile Include="StateClass\ItemClass\IBlock.cs" />
+    <Compile Include="StateClass\ItemClass\QuestionBlock.cs" />
     <Compile Include="StateClass\MarioState\CrouchMarioState.cs" />
     <Compile Include="StateClass\MarioState\IdleMarioState.cs" />
     <Compile Include="StateClass\MarioState\JumpingMarioState.cs" />
@@ -121,7 +125,6 @@
   <ItemGroup>
     <Folder Include="CodeReviews\" />
     <Folder Include="StateClass\EnemyClass\" />
-    <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

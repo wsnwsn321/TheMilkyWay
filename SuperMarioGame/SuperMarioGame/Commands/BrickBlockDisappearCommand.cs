@@ -9,13 +9,12 @@ namespace SuperMarioGame.Commands
     class BrickBlockDisappearCommand : ICommand
     {
         private Game1 myGame;
-        private Sprites.ISprite brick;
 
 
         public BrickBlockDisappearCommand(Game1 game)
         {
             myGame = game;
-           // brick = game.BrickBlock;
+            
             
         }
 
@@ -24,6 +23,7 @@ namespace SuperMarioGame.Commands
             // NULL REF ERROR since game.BrickBlock doesn't define brick.draw
             // At first I tried making brick a BrickBlockSprite object instead
             //brick.draw = !(brick.draw);
+            myGame.BrickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D usedBlockSpritesheet;
         private Texture2D groundBlockSpritesheet;
         private Texture2D pipeSpritesheet;
+        private Texture2D stageBlockSpritesheet;
         // More private Texture2Ds follow
         // ...
         public SpriteBatch sb { get; set; }
@@ -38,10 +39,11 @@ namespace SuperMarioGame.SpriteFactories
             //one example is below
 
             pipeSpritesheet = content.Load<Texture2D>("Item/Pipe");
-            usedBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
+            usedBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             brickBlockSpritesheet = content.Load<Texture2D>("Item/BrickBlock");
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
+            stageBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
             this.sb = sb;
 
         }
@@ -77,6 +79,10 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateHiddenBlockSprite()
         {
             return new Sprites.HiddenBlockSprite(pipeSpritesheet,sb);
+        }
+        public Sprites.ISprite CreateStageBlockSprite()
+        {
+            return new Sprites.StageBlockSprite(stageBlockSpritesheet, sb);
         }
     }
 }
