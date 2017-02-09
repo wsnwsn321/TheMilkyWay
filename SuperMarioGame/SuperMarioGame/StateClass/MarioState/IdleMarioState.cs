@@ -10,7 +10,7 @@ namespace SuperMarioGame.StateClass
 {
     class IdleMarioState : IMarioState
     {
-
+  
         private Vector2 position;
         private Mario mario;
         private Sprites.ISprite marioSprite;
@@ -35,7 +35,7 @@ namespace SuperMarioGame.StateClass
 
                         break;
                     case Mario.MARIO_FIRE:
-                        //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleBigRedMarioSprite();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleFireMarioSprite();
 
                         break;
                 }
@@ -53,8 +53,7 @@ namespace SuperMarioGame.StateClass
 
                         break;
                     case Mario.MARIO_FIRE:
-                        //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
-
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleFireMarioSprite();
                         break;
                 }
             }
@@ -103,9 +102,11 @@ namespace SuperMarioGame.StateClass
         public void Draw()
         {
             marioSprite.Draw(position);
-            //}
+        }
 
-
+        public void MarioEatShit()
+        {
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
     }
 }

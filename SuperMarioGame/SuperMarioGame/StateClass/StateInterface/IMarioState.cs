@@ -19,5 +19,6 @@ namespace SuperMarioGame.StateClass
         void Draw();
         void Update();
         void ChangeDirection();
+        void MarioEatShit();
     }
 }

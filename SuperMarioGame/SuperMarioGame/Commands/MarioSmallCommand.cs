@@ -9,16 +9,16 @@ namespace SuperMarioGame.Commands
     class MarioSmallCommand : ICommand
     {
         private Game1 myGame;
-
+        private StateClass.Mario mario;
         public MarioSmallCommand(Game1 game)
         {
             myGame = game;
+            mario = game.mario;
         }
 
         public void Execute()
         {
-            //y should change mario to a small state
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+            mario.MarioChangeForm(StateClass.Mario.MARIO_SMALL);
         }
     }
 }

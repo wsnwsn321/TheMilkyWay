@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            
+            mario.MarioEatShit();
         }
     }
 }

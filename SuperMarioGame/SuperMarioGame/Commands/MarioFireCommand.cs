@@ -10,16 +10,17 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
-
+        private StateClass.Mario mario;
         public MarioFireCommand(Game1 game)
         {
             myGame = game;
+            this.mario = game.mario;
         }
 
         public void Execute()
         {
-            //u should make mario big ( ͡° ͜ʖ ͡°)
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+           
+            mario.MarioChangeForm(StateClass.Mario.MARIO_FIRE);
         }
     }
 }

@@ -66,6 +66,10 @@ namespace SuperMarioGame.StateClass
         {
             state.ChangeDirection();
         }
+        public void MarioEatShit()
+        {
+            state.MarioEatShit();
+        }
 
     }
 }
