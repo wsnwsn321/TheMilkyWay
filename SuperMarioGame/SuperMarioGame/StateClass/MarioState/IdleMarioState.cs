@@ -106,7 +106,8 @@ namespace SuperMarioGame.StateClass
 
         public void MarioEatShit()
         {
-            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
+            mario.state = new DeadMarioState(position, mario);
+            mario.MarioEatShit();
         }
     }
 }

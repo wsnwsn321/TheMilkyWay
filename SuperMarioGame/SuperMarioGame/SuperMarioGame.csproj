@@ -104,6 +104,7 @@
     <Compile Include="StateClass\ItemClass\IBlock.cs" />
     <Compile Include="StateClass\ItemClass\QuestionBlock.cs" />
     <Compile Include="StateClass\MarioState\CrouchMarioState.cs" />
+    <Compile Include="StateClass\MarioState\DeadMarioState.cs" />
     <Compile Include="StateClass\MarioState\IdleMarioState.cs" />
     <Compile Include="StateClass\MarioState\JumpingMarioState.cs" />
     <Compile Include="StateClass\MarioState\RunningMarioState.cs" />
