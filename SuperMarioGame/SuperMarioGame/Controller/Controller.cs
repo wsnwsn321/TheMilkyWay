@@ -33,25 +33,21 @@ namespace SuperMarioGame.Controller
                 
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
 
-            if (counter >= 7)
-            {
-                foreach (Keys key in pressedKeys)
+                if (counter >= 7)
                 {
-                    if (controllerMappings.ContainsKey(key))
+                    foreach (Keys key in pressedKeys)
                     {
+                        if (controllerMappings.ContainsKey(key))
+                        {
                         
-                            controllerMappings[key].Execute();
-               
+                                controllerMappings[key].Execute();
+
+                        }
 
                     }
-
+                    counter = 0;
                 }
-                counter = 0;
+                counter++;
             }
-            counter++;
-            }
-           
-
         }
-    
 }
