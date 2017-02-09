@@ -102,8 +102,11 @@ namespace SuperMarioGame.StateClass
         public void Draw()
         {
             marioSprite.Draw(position);
-            //}
+            }
 
-
+        public void MarioEatShit()
+        {
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
+        }
     }
 }
