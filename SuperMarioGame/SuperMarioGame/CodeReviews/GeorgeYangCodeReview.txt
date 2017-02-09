@@ -9,3 +9,5 @@ Specific comments on what is readable and what is not
 
 Code is pretty concise and name stydle is readable
 structure of the class is reuseable.
+
+Set every mario sprite precisely and have good connection with othre class
