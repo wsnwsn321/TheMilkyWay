@@ -118,13 +118,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeReviews\GeorgeYangCodeReview.txt" />
+    <Content Include="CodeReviews\ChrisCrainCodeReview.txt" />
+    <Content Include="CodeReviews\OliverCodeReview.txt" />
+    <Content Include="CodeReviews\NathanPrattCodeReview.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CodeReviews\" />
     <Folder Include="StateClass\EnemyClass\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
