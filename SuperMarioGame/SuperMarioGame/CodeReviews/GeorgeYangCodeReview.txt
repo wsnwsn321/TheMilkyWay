@@ -2,7 +2,10 @@
 2/8/17
 Sprint 2
 //to do
-Name of the .cs file being reviewed
-Author of the .cs file being reviewed
-Number of minutes taken to complete the review
+Name of the .cs file being reviewed MarioSpriteFactory.cs
+Author of the .cs file being reviewed Nite
+Number of minutes taken to complete the review 21minute 40sec
 Specific comments on what is readable and what is not
+
+Code is pretty concise and name stydle is readable
+structure of the class is reuseable.
