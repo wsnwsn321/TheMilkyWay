@@ -36,8 +36,8 @@ namespace SuperMarioGame.StateClass
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
                     case Mario.MARIO_FIRE:
-                        //red mario;
-                        //Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningFireMarioSprite();
+        
                         break;
                 }
             }
@@ -47,15 +47,12 @@ namespace SuperMarioGame.StateClass
                 {
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
-                        mario.MarioUpdate();
                         break;
                     case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
-                        mario.MarioUpdate();
                         break;
                     case Mario.MARIO_FIRE:
-                        //marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleBigRedMarioSprite();
-                        //Draw();
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningFireMarioSprite();
                         break;
                 }
             }
@@ -104,6 +101,10 @@ namespace SuperMarioGame.StateClass
         {
             mario.marioDirection = !mario.marioDirection;
             mario.MarioRun();
+        }
+        public void MarioEatShit()
+        {
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
     }
 }

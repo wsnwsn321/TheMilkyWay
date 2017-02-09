@@ -10,7 +10,7 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
-        public StateClass.Mario mario { get; set; }
+        private StateClass.Mario mario;
         public MarioRightIdleOrRunningCommand(Game1 game)
         {
             myGame = game;
