@@ -10,16 +10,19 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
+        private Sprites.ISprite block;
 
         public HiddenBlockToUsedBlockCommand(Game1 game)
         {
             myGame = game;
+            
         }
 
         public void Execute()
         {
             //c changes a hidden block into a used block
             //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
+            
         }
     }
 }
