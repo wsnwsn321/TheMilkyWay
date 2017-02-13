@@ -23,8 +23,16 @@ namespace SuperMarioGame.Commands
             //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
             if (!mario.marioDirection)
             {
-                mario.MarioRun();
-            }else
+                if (mario.marioAction == StateClass.Mario.MARIO_IDLE)
+                {
+                    mario.MarioRun();
+                }
+                else
+                {
+                    mario.MarioIdle();
+                }
+            }
+            else
             {
                 mario.MarioChangeDireciton();
                 mario.MarioIdle();
