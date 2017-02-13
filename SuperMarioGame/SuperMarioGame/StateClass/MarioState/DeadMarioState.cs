@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.StateClass
 {
-    class DeadMarioState: IMarioState
+    class DeadMarioState : IMarioState
     {
         private Vector2 position;
         private Mario mario;
@@ -29,26 +29,23 @@ namespace SuperMarioGame.StateClass
         {
             mario.marioState = form;
             mario.state = new IdleMarioState(position, mario);
-            if (mario.marioDirection)
-            {
-                mario.MarioChangeDireciton();
-            }
             mario.MarioIdle();
         }
         public void Jump()
         {
-
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
         public void Crouch()
         {
-
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
         public void Run()
         {
-
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
         public void Draw()
-        {           
+        {
+
             marioSprite.Draw(position);
         }
         public void Update()
@@ -57,11 +54,11 @@ namespace SuperMarioGame.StateClass
         }
         public void ChangeDirection()
         {
-
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
         public void MarioEatShit()
         {
-
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
     }
 }
