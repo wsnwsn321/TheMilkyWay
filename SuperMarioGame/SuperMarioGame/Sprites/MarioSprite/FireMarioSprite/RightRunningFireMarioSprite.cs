@@ -14,8 +14,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         Vector2 p;
-        int height;
-        int width;
         int currentFrame;
         int totalFrame;
         int currentUpdate;
@@ -25,8 +23,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         {
             this.sb = sb;
             Texture = texture;
-            height = texture.Height;
-            width = texture.Width / 8;
             currentFrame = 0;
             totalFrame = 3;
             currentUpdate = 4;

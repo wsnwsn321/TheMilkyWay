@@ -9,6 +9,7 @@ namespace SuperMarioGame
 {
     public class Game1 : Game
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
@@ -28,7 +29,7 @@ namespace SuperMarioGame
             // TODO: Add your initialization logic here
 
             // Assign commands to keys
-            controller = new Controller.Controller(mario);
+            controller = new Controller.Controller();
 
             InitializeCommands();
 

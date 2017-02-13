@@ -15,8 +15,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         Vector2 position;
-        int height;
-        int width;
         int currentFrame;
         int totalFrame;
         int currentUpdate;
@@ -26,8 +24,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         {
             this.sb = sb;
             Texture = texture;
-            height = texture.Height;
-            width = texture.Width / 2;
             currentFrame = 4;
             totalFrame = 8;
             currentUpdate = 4;
