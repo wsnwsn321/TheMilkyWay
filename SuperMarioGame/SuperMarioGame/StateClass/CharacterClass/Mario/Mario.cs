@@ -26,7 +26,7 @@ namespace SuperMarioGame.StateClass
             marioDirection = MARIO_LEFT;
             marioAction = MARIO_IDLE;
             this.position = position;
-            state = new IdleMarioState(this.position, this);
+            state = new IdleMarioState(this);
 
         }
         public Mario(Vector2 position, int marioState, Boolean marioDirection)
@@ -34,8 +34,8 @@ namespace SuperMarioGame.StateClass
             this.marioState = marioState;
             this.marioDirection = marioDirection;
             this.marioAction = MARIO_IDLE;
-            Console.WriteLine(position.X);
-            state = new IdleMarioState(position, this);
+            this.position = position;
+            state = new IdleMarioState(this);
         }
         public void MarioIdle()
         {
@@ -63,8 +63,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioDraw()
         {
-
-            state.Draw();
+            state.Draw(this.position);
         }
         public void MarioUpdate()
         {

@@ -11,13 +11,12 @@ namespace SuperMarioGame.StateClass
     class JumpingMarioState : IMarioState
     {
 
-        private Vector2 position;
+  
         private Mario mario;
         private Sprites.ISprite marioSprite;
-        public JumpingMarioState(Vector2 position, Mario mario)
+        public JumpingMarioState(Mario mario)
         {
             this.mario = mario;
-            this.position = position;
         }
 
         public void Jump()
@@ -56,29 +55,29 @@ namespace SuperMarioGame.StateClass
 
         public void Crouch()
         {
-            mario.state = new IdleMarioState(position, mario);
+            mario.state = new IdleMarioState( mario);
             mario.MarioIdle();
         }
 
-        public void Draw()
+        public void Draw(Vector2 position)
         {
             marioSprite.Draw(position);
         }
         public void ChangeForm(int form)
         {
             mario.marioState = form;
-            mario.state = new IdleMarioState(position, mario);
+            mario.state = new IdleMarioState( mario);
             mario.MarioIdle();
         }
 
         public void Idle()
         {
-            mario.state = new IdleMarioState(position, mario);
+            mario.state = new IdleMarioState(mario);
             mario.MarioIdle();
         }
         public void Run()
         {
-            mario.state = new RunningMarioState(position, mario);
+            mario.state = new RunningMarioState( mario);
             mario.MarioRun();
         }
 
@@ -94,7 +93,7 @@ namespace SuperMarioGame.StateClass
         }
         public void MarioEatShit()
         {
-            mario.state = new DeadMarioState(position, mario);
+            mario.state = new DeadMarioState( mario);
             mario.MarioEatShit();
         }
     }

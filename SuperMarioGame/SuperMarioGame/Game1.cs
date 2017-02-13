@@ -131,6 +131,14 @@ namespace SuperMarioGame
             controller.RegisterCommand(Keys.A, new MarioLeftIdleOrRunningCommand(this));
             controller.RegisterCommand(Keys.S, new MarioIdleOrCrouchingCommand(this));
             controller.RegisterCommand(Keys.D, new MarioRightIdleOrRunningCommand(this));
+
+            controller.RegisterCommand(Keys.Up, new MarioIdleOrJumpCommand(this));
+            controller.RegisterCommand(Keys.Left, new MarioLeftIdleOrRunningCommand(this));
+            controller.RegisterCommand(Keys.Down, new MarioIdleOrCrouchingCommand(this));
+            controller.RegisterCommand(Keys.Right, new MarioRightIdleOrRunningCommand(this));
+
+
+
             controller.RegisterCommand(Keys.Y, new MarioSmallCommand(this));
             controller.RegisterCommand(Keys.U, new MarioBigCommand(this));
             controller.RegisterCommand(Keys.I, new MarioFireCommand(this));

@@ -16,7 +16,7 @@ namespace SuperMarioGame.StateClass
         void Jump();
         void Crouch();
         void Run();
-        void Draw();
+        void Draw(Vector2 Position);
         void Update();
         void ChangeDirection();
         void MarioEatShit();

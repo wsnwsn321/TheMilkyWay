@@ -10,14 +10,12 @@ namespace SuperMarioGame.StateClass
 {
     class DeadMarioState : IMarioState
     {
-        private Vector2 position;
         private Mario mario;
         private Sprites.ISprite marioSprite;
 
-        public DeadMarioState(Vector2 position, Mario mario)
+        public DeadMarioState( Mario mario)
         {
             this.mario = mario;
-            this.position = position;
 
         }
         public void Idle()
@@ -28,7 +26,7 @@ namespace SuperMarioGame.StateClass
         public void ChangeForm(int form)
         {
             mario.marioState = form;
-            mario.state = new IdleMarioState(position, mario);
+            mario.state = new IdleMarioState( mario);
             mario.MarioIdle();
         }
         public void Jump()
@@ -43,7 +41,7 @@ namespace SuperMarioGame.StateClass
         {
             marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
-        public void Draw()
+        public void Draw(Vector2 position)
         {
 
             marioSprite.Draw(position);
