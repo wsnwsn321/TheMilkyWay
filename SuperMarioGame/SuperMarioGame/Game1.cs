@@ -15,10 +15,8 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
-        public static Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
-        //IList<Sprites.ISprite> enemySprites = new List<Sprites.ISprite>() { Goomba, Koopa };
-        //IList<Sprites.ISprite> environmentSprites = new List<Sprites.ISprite>() { Pipe, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock, StageBlock};
-        //IList<Sprites.ISprite> itemSprites = new List<Sprites.ISprite>() { Flower, RedMush, GreenMush, Coin, Star, };
+        public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
+
         public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
@@ -81,17 +79,6 @@ namespace SuperMarioGame
                 Exit();
 
             // TODO: Add your update logic here
-            //foreach( Sprites.ISprite item in itemSprites){
-            //    item.Update();
-            //}
-            //foreach (Sprites.ISprite enemy in enemySprites)
-            //{
-            //    enemy.Update();
-            //}
-            //foreach (Sprites.ISprite envItem in environmentSprites)
-            //{
-            //    envItem.Update();
-            //}
             Flower.Update();
             RedMush.Update();
             GreenMush.Update();
