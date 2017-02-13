@@ -14,9 +14,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
-        Vector2 p;
-        int height;
-        int width;
+        Vector2 position;
         int currentFrame;
         int totalFrame;
         int currentUpdate;
@@ -26,8 +24,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         {
             this.sb = sb;
             Texture = texture;
-            height = texture.Height;
-            width = texture.Width / 2;
             currentFrame = 4;
             totalFrame = 8;
             currentUpdate = 4;
@@ -48,7 +44,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 
         public Vector2 returnPosition()
         {
-            return p;
+            return position;
         }
 
         public void Draw(Vector2 position)
@@ -60,7 +56,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth)-1, 0, 15, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            p = position;
+            this.position = position;
             sb.End();
         }
     }
