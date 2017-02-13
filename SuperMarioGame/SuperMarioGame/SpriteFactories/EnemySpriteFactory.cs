@@ -13,8 +13,6 @@ namespace SuperMarioGame.SpriteFactories
 
         private Texture2D goombaSpritesheet;
         private Texture2D koopaSpritesheet;
-        // More private Texture2Ds follow
-        // ...
         public SpriteBatch sb { get; set; }
         private static EnemySpriteFactory instance = new EnemySpriteFactory();
 

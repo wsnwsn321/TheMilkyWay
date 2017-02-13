@@ -16,8 +16,6 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D groundBlockSpritesheet;
         private Texture2D pipeSpritesheet;
         private Texture2D stageBlockSpritesheet;
-        // More private Texture2Ds follow
-        // ...
         public SpriteBatch sb { get; set; }
         private static EnvironmentSpriteFactory instance = new EnvironmentSpriteFactory();
 
