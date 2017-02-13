@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class GoombaSprite : ISprite
+    public class GoombaSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }

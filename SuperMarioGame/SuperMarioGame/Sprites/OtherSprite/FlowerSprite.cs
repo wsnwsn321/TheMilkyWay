@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    class FlowerSprite : ISprite
+    public class FlowerSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
