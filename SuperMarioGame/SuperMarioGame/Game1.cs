@@ -28,7 +28,7 @@ namespace SuperMarioGame
             // TODO: Add your initialization logic here
 
             // Assign commands to keys
-            controller = new Controller.Controller(mario);
+            controller = new Controller.Controller();
 
             InitializeCommands();
 
