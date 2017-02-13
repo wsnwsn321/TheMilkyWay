@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
 {
-    class RightIdleFireMarioSprite : ISprite
+    public class RightIdleFireMarioSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
