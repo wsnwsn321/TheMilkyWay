@@ -9,6 +9,7 @@ namespace SuperMarioGame
 {
     public class Game1 : Game
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
