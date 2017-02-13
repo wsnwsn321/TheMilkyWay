@@ -15,7 +15,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         private SpriteBatch sb;
         Vector2 p;
         int currentFrame;
-        int totalFrame;
         int currentUpdate;
         int slowSpeedDown;
 
@@ -23,7 +22,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         {
             this.sb = sb;
             Texture = texture;
-            totalFrame = 1;
             currentFrame = 3;
             currentUpdate = 4;
             slowSpeedDown = 5;
@@ -51,7 +49,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
             sb.Begin();
 
             int currentWidth = 17;
-            int column = currentFrame % totalFrame;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth)+2, 0, 18, 33);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 36, 66);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);

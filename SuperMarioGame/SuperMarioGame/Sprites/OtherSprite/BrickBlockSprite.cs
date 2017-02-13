@@ -14,13 +14,13 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
-        public Boolean draw { get; set; }
+        public Boolean toDraw { get; set; }
 
         public BrickBlockSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
-            draw = true;
+            toDraw = true;
         }
         public void Update()
         {
@@ -34,7 +34,7 @@ namespace SuperMarioGame.Sprites
 
         public void Draw(Vector2 position)
         {
-            if (draw)
+            if (toDraw)
             {
                 sb.Begin();
                 Rectangle sourceRectangle = new Rectangle(0, 0, 16, 16);

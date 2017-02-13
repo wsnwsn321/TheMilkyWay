@@ -13,7 +13,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
-        public Vector2 p;
+        private Vector2 p;
 
         public RightJumpingSmallMarioSprite(Texture2D texture, SpriteBatch sb)
         {
