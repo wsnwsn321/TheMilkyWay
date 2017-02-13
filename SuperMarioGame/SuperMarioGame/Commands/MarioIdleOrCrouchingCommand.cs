@@ -20,8 +20,15 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-           
-            mario.MarioCrouch();
+            if (mario.marioAction == StateClass.Mario.MARIO_IDLE)
+            {
+                mario.MarioCrouch();
+            }
+            else
+            {
+                mario.MarioIdle();
+            }
+
         }
     }
 }

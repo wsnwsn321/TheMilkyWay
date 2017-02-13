@@ -19,7 +19,16 @@ namespace SuperMarioGame.Commands
         
         public void Execute()
         {
-            mario.MarioJump();
+                if (mario.marioAction == StateClass.Mario.MARIO_JUMP)
+                {
+                    mario.MarioCrouch();
+                }
+                else
+                {
+                    mario.MarioJump();
+                }
+            
+
         }
     }
 }
