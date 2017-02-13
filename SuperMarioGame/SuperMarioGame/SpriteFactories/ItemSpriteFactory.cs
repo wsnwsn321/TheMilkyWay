@@ -15,8 +15,6 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D coinSpritesheet;
         private Texture2D flowerSpritesheet;
         private Texture2D starSpritesheet;
-        // More private Texture2Ds follow
-        // ...
         public SpriteBatch sb { set; get; }
         private static ItemSpriteFactory instance = new ItemSpriteFactory();
         public static ItemSpriteFactory Instance
