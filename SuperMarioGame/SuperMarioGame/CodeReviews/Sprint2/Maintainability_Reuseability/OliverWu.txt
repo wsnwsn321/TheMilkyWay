@@ -8,5 +8,6 @@ Clear and straight-forward class to create all the sprites related to mario.
 Since there's a lot of mario sprites because we have many mario states, the code seems to be a liitle long, but I think the format 
 is easy to follow and what the functions do are understandable.
 
+
 A hypothetical change to make to the game related to the file being reviewed:
 loading all the spritesheets and create all the sprites are necessary. the code is highly cohesive and lossely coupled. Great work.

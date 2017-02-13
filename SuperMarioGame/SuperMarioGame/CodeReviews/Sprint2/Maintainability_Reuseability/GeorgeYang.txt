@@ -1,8 +1,17 @@
 ﻿George Yang
 2-13-17
 Sprint2
-Name of file being reviewed:
-Author of file being reviewed:
+Name of file being reviewed:     Mario.cs
+Author of file being reviewed:   George
 Specific Comments on code quality:
+
+
+
 A hypothetical change to make to the game related to the file being reviewed
+
+implementing some class which will be used in the future and comments them;
+
 and how the current implementation could or could not easily support that change: (<-delete this sentence when finished)
+
+make the accessiable variable of position only in Mario class only
+make the code more simple to read and more conhensive to easy to find the bug;
