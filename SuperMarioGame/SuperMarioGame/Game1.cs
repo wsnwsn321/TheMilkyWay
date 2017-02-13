@@ -12,17 +12,12 @@ namespace SuperMarioGame
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        List<Sprites.ISprite> enemySprites = new List<Sprites.ISprite>();        
-        List<Sprites.ISprite> environmentSprites = new List<Sprites.ISprite>();
-        List<Sprites.ISprite> itemSprites = new List<Sprites.ISprite>();
+        GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
-        
         public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
-        
-        public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);
 
+        public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
         {
@@ -45,7 +40,6 @@ namespace SuperMarioGame
             controller = new Controller.Controller(mario);
 
             InitializeCommands();
-
 
             base.Initialize();
         }
@@ -83,7 +77,6 @@ namespace SuperMarioGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
             Flower.Update();
             RedMush.Update();
             GreenMush.Update();
@@ -111,7 +104,6 @@ namespace SuperMarioGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             Flower.Draw(new Vector2(100, 100));
             RedMush.Draw(new Vector2(200, 100));
             GreenMush.Draw(new Vector2(300, 100));
@@ -156,7 +148,6 @@ namespace SuperMarioGame
             SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-
 
             Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
