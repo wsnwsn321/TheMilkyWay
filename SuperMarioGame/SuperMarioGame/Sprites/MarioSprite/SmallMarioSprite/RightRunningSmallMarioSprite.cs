@@ -8,13 +8,15 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 {
-    public class RightRunningSmallMarioSprite : ISprite
+    class RightRunningSmallMarioSprite : ISprite
     {
 
         
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
-        Vector2 p;
+        Vector2 position;
+        int height;
+        int width;
         int currentFrame;
         int totalFrame;
         int currentUpdate;
@@ -52,10 +54,11 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             sb.Begin();
 
             int currentWidth = 15;
+            int column = currentFrame % totalFrame;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth)-1, 0, 15, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            this.p = position;
+            p = position;
             sb.End();
         }
     }
