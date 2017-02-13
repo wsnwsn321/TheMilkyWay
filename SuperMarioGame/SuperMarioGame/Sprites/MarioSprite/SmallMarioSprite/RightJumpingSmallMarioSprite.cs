@@ -36,7 +36,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             Rectangle sourceRectangle = new Rectangle(17, 0, 16, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            this.p = position;
+            p = position;
             sb.End();
         }
     }
