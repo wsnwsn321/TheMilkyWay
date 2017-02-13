@@ -14,7 +14,7 @@ namespace SuperMarioGame.Commands
         public MarioRightIdleOrRunningCommand(Game1 game)
         {
             myGame = game;
-            mario  = game.mario;
+            mario  = myGame.mario;
         }
 
         public void Execute()

@@ -14,7 +14,7 @@ namespace SuperMarioGame.Commands
         public MarioFireCommand(Game1 game)
         {
             myGame = game;
-            this.mario = game.mario;
+            this.mario = myGame.mario;
         }
 
         public void Execute()

@@ -13,7 +13,7 @@ namespace SuperMarioGame.Commands
         public MarioSmallCommand(Game1 game)
         {
             myGame = game;
-            mario = game.mario;
+            mario = myGame.mario;
         }
 
         public void Execute()
