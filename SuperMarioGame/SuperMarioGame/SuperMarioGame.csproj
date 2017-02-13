@@ -117,10 +117,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReviews\GeorgeYangCodeReview.txt" />
-    <Content Include="CodeReviews\ChrisCrainCodeReview.txt" />
-    <Content Include="CodeReviews\OliverCodeReview.txt" />
-    <Content Include="CodeReviews\NathanPrattCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint2\Maintainability_Reuseability\ChrisCrain.txt" />
+    <Content Include="CodeReviews\Sprint2\Maintainability_Reuseability\OliverWu.txt" />
+    <Content Include="CodeReviews\Sprint2\Maintainability_Reuseability\GeorgeYang.txt" />
+    <Content Include="CodeReviews\Sprint2\Maintainability_Reuseability\NathanPratt.txt" />
+    <Content Include="CodeReviews\Sprint2\Readability\GeorgeYangCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint2\Readability\ChrisCrainCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint2\Readability\OliverCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint2\Readability\NathanPrattCodeReview.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
