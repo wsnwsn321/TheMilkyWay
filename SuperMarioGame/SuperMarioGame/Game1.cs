@@ -41,7 +41,6 @@ namespace SuperMarioGame
 
             InitializeCommands();
 
-
             base.Initialize();
         }
 
@@ -78,7 +77,6 @@ namespace SuperMarioGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
             Flower.Update();
             RedMush.Update();
             GreenMush.Update();
@@ -106,7 +104,6 @@ namespace SuperMarioGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             Flower.Draw(new Vector2(100, 100));
             RedMush.Draw(new Vector2(200, 100));
             GreenMush.Draw(new Vector2(300, 100));
