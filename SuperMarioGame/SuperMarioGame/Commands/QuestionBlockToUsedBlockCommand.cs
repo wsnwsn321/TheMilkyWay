@@ -18,8 +18,6 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            // Change a question block to a used block
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
             myGame.QuestionBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
         }
     }

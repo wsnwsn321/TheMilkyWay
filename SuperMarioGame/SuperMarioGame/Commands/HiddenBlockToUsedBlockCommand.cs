@@ -20,7 +20,6 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
             //c changes a hidden block into a used block
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
             myGame.HiddenBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
             
         }

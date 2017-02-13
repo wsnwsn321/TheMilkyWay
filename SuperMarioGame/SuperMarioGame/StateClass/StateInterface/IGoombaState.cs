@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//left blank for sprint2
 namespace SuperMarioGame.StateClass.StateInterface
 {
     public interface IGoombaState
