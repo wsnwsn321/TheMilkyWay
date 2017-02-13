@@ -56,6 +56,7 @@ namespace SuperMarioGame.StateClass
 
         public void Crouch()
         {
+            //for jumping mario, S/down arrow will make it into idle state
             mario.state = new IdleMarioState(position, mario);
             mario.MarioIdle();
         }

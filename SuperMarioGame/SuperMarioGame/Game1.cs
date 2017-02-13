@@ -16,7 +16,7 @@ namespace SuperMarioGame
         SpriteBatch spriteBatch;
         IController controller;
         public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
-
+        //initial mario
         public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
@@ -144,11 +144,12 @@ namespace SuperMarioGame
 
         private void LoadSprites()
         {
+            //Load the textures from factories
             SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-
+            //Create instances for all sprites from spritefactories
             Flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             RedMush = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
             GreenMush = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushroomSprite();

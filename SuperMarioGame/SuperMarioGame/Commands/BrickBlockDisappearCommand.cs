@@ -20,9 +20,6 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            // NULL REF ERROR since game.BrickBlock doesn't define brick.draw
-            // At first I tried making brick a BrickBlockSprite object instead
-            //brick.draw = !(brick.draw);
             myGame.BrickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
         }
     }

@@ -20,7 +20,6 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
             //left / a and right/ d should change mario between left running, left idle, right idle, and right running.
-            //myGame.MarioSprite = new IdleTidusSprite(myGame.Texture);
             if (!mario.marioDirection)
             {
                 if (mario.marioAction == StateClass.Mario.MARIO_IDLE)

@@ -48,9 +48,7 @@ namespace SuperMarioGame.SpriteFactories
 
         }
 
-        //methods for creating sprites below*************************************************
-        //one example is below
-
+        //create environment sprites
         public Sprites.ISprite CreatePipeSprite()
         {
             return new Sprites.PipeSprite(pipeSpritesheet,sb);

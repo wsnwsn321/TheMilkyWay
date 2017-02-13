@@ -44,14 +44,7 @@ namespace SuperMarioGame.SpriteFactories
             this.sb = sb;
         }
 
-        //methods for creating sprites below*************************************************
-        //one example is below
-
-        //public ISprite CreateMushroomSprite()
-        //{
-        //    return new MushroomSprite(mushroomSpritesheet, Game1.Instance.level.isAboveGround);
-        //}
-
+        //create item sprites
         public Sprites.ISprite CreateFlowerSprite()
         {
             return new Sprites.FlowerSprite(flowerSpritesheet, sb);

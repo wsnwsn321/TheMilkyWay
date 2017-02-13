@@ -69,8 +69,8 @@ namespace SuperMarioGame.SpriteFactories
             crouchingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
         }
 
-        //methods for creating sprites below*************************************************
 
+        //create mario sprites
         public Sprites.ISprite CreateLeftIdleSmallMarioSprite()
         {
             return new Sprites.MarioSprite.SmallMarioSprite.LeftIdleSmallMarioSprite(idleSmallMarioSpritesheet, sb);
