@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.Commands;
 using SuperMarioGame.Controller;
+using System.Collections.Generic;
 
 namespace SuperMarioGame
 {
@@ -12,10 +13,14 @@ namespace SuperMarioGame
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
+        List<Sprites.ISprite> enemySprites = new List<Sprites.ISprite>();        
+        List<Sprites.ISprite> environmentSprites = new List<Sprites.ISprite>();
+        List<Sprites.ISprite> itemSprites = new List<Sprites.ISprite>();
         SpriteBatch spriteBatch;
         IController controller;
+        
         public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
-
+        
         public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);
 
 
