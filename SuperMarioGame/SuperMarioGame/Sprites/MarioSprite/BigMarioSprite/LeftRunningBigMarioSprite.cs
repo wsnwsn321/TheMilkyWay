@@ -21,8 +21,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
         int currentUpdate;
         int slowSpeedDown;
 
-        int x;
-        int y;
         public LeftRunningBigMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             this.sb = sb;
