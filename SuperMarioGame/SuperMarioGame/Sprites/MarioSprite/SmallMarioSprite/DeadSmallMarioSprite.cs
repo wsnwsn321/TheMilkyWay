@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 {
-    class DeadSmallMarioSprite:ISprite
+    public class DeadSmallMarioSprite:ISprite
     {
         
         public Texture2D Texture { get; set; }
-        private Vector2 position;
+        private Vector2 p;
         private SpriteBatch sb;
 
         public DeadSmallMarioSprite(Texture2D texture,SpriteBatch sb)
@@ -27,13 +27,13 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 
         public Vector2 returnPosition()
         {
-            return position;
+            return p;
         }
 
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            this.position = position;
+            this.p = position;
             Rectangle sourceRectangle = new Rectangle(0, 0, 14, 14);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);

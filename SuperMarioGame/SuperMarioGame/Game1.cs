@@ -4,18 +4,19 @@ using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.Commands;
 using SuperMarioGame.Controller;
 using System.Collections.Generic;
-
+ 
 namespace SuperMarioGame
-{
+
+{ 
     public class Game1 : Game
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
-        public Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
+        internal Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
         //initial mario
-        public  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
+        internal  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
         {

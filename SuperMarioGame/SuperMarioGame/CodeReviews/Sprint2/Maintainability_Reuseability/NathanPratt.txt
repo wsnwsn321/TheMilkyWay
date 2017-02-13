@@ -1,8 +1,17 @@
 ﻿Nathan Pratt
 2-13-17
 Sprint2
-Name of file being reviewed:
-Author of file being reviewed:
+Name of file being reviewed: MarioBigCommand
+Author of file being reviewed: Chris Crain
+
 Specific Comments on code quality:
-A hypothetical change to make to the game related to the file being reviewed
-and how the current implementation could or could not easily support that change: (<-delete this sentence when finished)
+This class contains many properties that a high quality piece of code should have.
+This class has high cohesion; the class exhibits a very simple and concise structure
+that contains code that is all very related to its purpose.
+The class also has loose coupling; MarioBigCommand is dependant on only one outside piece
+of code.
+There are also no conditional branches in this class, making the cyclomatic complexity nonexistent.
+
+There is really no hypothetical change I would like to make to the class. If there were something that
+needed to be fixed or changed, it would be very simple to implement because of the high quality of the
+class.

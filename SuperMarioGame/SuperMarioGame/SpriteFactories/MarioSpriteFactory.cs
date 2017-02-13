@@ -10,7 +10,6 @@ namespace SuperMarioGame.SpriteFactories
 {
     class MarioSpriteFactory
     {
-        //maybe we don't need separate left/right since we have the spritesheets which put these two together
         private Texture2D idleSmallMarioSpritesheet;
         private Texture2D runningSmallMarioSpritesheet;
         private Texture2D jumpingSmallMarioSpritesheet;
@@ -49,10 +48,7 @@ namespace SuperMarioGame.SpriteFactories
 
         public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
-            //load sprite sheets here**************************************
-            //one example is below
             this.sb = sb;
-            //smallMarioRunningSpriteSheet = content.Load<Texture2D>("smallMarioRunning");
             idleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
             runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
             jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");

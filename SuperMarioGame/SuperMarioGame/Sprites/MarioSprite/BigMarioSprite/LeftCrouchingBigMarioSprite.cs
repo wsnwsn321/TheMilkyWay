@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
-    class LeftCrouchingBigMarioSprite : ISprite
+    public class LeftCrouchingBigMarioSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }

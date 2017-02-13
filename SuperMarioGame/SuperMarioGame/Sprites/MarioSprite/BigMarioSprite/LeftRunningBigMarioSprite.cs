@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
-    class LeftRunningBigMarioSprite : ISprite
+    public class LeftRunningBigMarioSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -52,7 +52,6 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
             sb.Begin();
 
             int currentWidth = 17;
-            int column = currentFrame % totalFrame;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth), 0, 17, 32);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 34, 64);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);

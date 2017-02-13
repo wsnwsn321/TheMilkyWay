@@ -8,12 +8,12 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 {
-    class RightJumpingSmallMarioSprite : ISprite
+    public class RightJumpingSmallMarioSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
-        public Vector2 p;
+        private Vector2 p;
 
         public RightJumpingSmallMarioSprite(Texture2D texture, SpriteBatch sb)
         {
@@ -36,7 +36,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             Rectangle sourceRectangle = new Rectangle(17, 0, 16, 16);
             Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
-            this.p = position;
+            p = position;
             sb.End();
         }
     }
