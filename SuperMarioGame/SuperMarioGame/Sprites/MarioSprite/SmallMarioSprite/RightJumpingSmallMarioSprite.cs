@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 {
-    class RightJumpingSmallMarioSprite : ISprite
+    public class RightJumpingSmallMarioSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
