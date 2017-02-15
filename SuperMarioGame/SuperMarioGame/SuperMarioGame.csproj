@@ -102,11 +102,18 @@
     <Compile Include="Sprites\OtherSprite\RedMushroomSprite.cs" />
     <Compile Include="Sprites\OtherSprite\StarSprite.cs" />
     <Compile Include="StateClass\CharacterClass\Mario\Mario.cs" />
+    <Compile Include="StateClass\EnvironmentClass\GroundBlock.cs" />
+    <Compile Include="StateClass\EnvironmentClass\StageBlock.cs" />
+    <Compile Include="StateClass\EnvironmentClass\QuestionBlock.cs" />
+    <Compile Include="StateClass\EnvironmentClass\UsedBlock.cs" />
+    <Compile Include="StateClass\EnvironmentClass\HiddenBlock.cs" />
+    <Compile Include="StateClass\EnvironmentClass\BrickBlock.cs" />
     <Compile Include="StateClass\MarioState\CrouchMarioState.cs" />
     <Compile Include="StateClass\MarioState\DeadMarioState.cs" />
     <Compile Include="StateClass\MarioState\IdleMarioState.cs" />
     <Compile Include="StateClass\MarioState\JumpingMarioState.cs" />
     <Compile Include="StateClass\MarioState\RunningMarioState.cs" />
+    <Compile Include="StateClass\StateInterface\IBlockState.cs" />
     <Compile Include="StateClass\StateInterface\IGoombaState.cs" />
     <Compile Include="StateClass\StateInterface\IMarioState.cs" />
   </ItemGroup>

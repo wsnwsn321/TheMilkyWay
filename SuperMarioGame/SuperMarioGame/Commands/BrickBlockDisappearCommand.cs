@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            myGame.BrickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
+            myGame.envElements[2] = new StateClass.EnvironmentClass.HiddenBlock(myGame.envElements[2].position);
         }
     }
 }

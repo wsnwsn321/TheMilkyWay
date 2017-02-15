@@ -14,9 +14,18 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
-        internal Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star, UsedBlock, QuestionBlock, GroundBlock, BrickBlock, HiddenBlock,StageBlock;
+        internal Sprites.ISprite Flower, RedMush, GreenMush, Pipe, Goomba, Koopa, Coin, Star;
         //initial mario
-        internal  StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
+        public List<StateClass.StateInterface.IBlock> envElements = new List<StateClass.StateInterface.IBlock>();
+        //public StateClass.StateInterface.IBlock BrickBlock;
+        //public StateClass.StateInterface.IBlock HiddenBlock;
+        //public StateClass.StateInterface.IBlock UsedBlock;
+        //public StateClass.StateInterface.IBlock QuestionBlock;
+        //public StateClass.StateInterface.IBlock GroundBlock;
+        //public StateClass.StateInterface.IBlock StageBlock;
+
+
+        internal StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
         {
@@ -62,11 +71,16 @@ namespace SuperMarioGame
             Koopa.Update();
             Coin.Update();
             Star.Update();
-            UsedBlock.Update();
-            GroundBlock.Update();
-            HiddenBlock.Update();
-            BrickBlock.Update();
-            QuestionBlock.Update();
+            foreach (StateClass.StateInterface.IBlock block in envElements)
+            {
+                block.Update();
+            }
+            //UsedBlock.Update();
+            //GroundBlock.Update();
+            //HiddenBlock.Update();
+            //BrickBlock.Update();
+            //QuestionBlock.Update();
+            //StageBlock.Update();
 
             mario.MarioUpdate();
             controller.Update();
@@ -85,15 +99,18 @@ namespace SuperMarioGame
             Goomba.Draw(new Vector2(600, 100));
             Coin.Draw(new Vector2(100, 200));
             Star.Draw(new Vector2(200, 200));
-            HiddenBlock.Draw(new Vector2(300, 200));
-            GroundBlock.Draw(new Vector2(400, 200));
-            BrickBlock.Draw(new Vector2(500, 200));
-            QuestionBlock.Draw(new Vector2(600, 200));
-            UsedBlock.Draw(new Vector2(700, 200));
-            StageBlock.Draw(new Vector2(700, 100));
+            foreach (StateClass.StateInterface.IBlock block in envElements)
+            {
+                block.Draw();
+            }
+            //HiddenBlock.Draw();
+            //GroundBlock.Draw();
+            //BrickBlock.Draw();
+            //QuestionBlock.Draw();
+            //UsedBlock.Draw();
+            //StageBlock.Draw();
+
             mario.MarioDraw();
-
-
 
             base.Draw(gameTime);
         }
@@ -109,8 +126,6 @@ namespace SuperMarioGame
             controller.RegisterCommand(Keys.Left, new MarioLeftIdleOrRunningCommand(this));
             controller.RegisterCommand(Keys.Down, new MarioIdleOrCrouchingCommand(this));
             controller.RegisterCommand(Keys.Right, new MarioRightIdleOrRunningCommand(this));
-
-
 
             controller.RegisterCommand(Keys.Y, new MarioSmallCommand(this));
             controller.RegisterCommand(Keys.U, new MarioBigCommand(this));
@@ -139,13 +154,18 @@ namespace SuperMarioGame
             Koopa = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
             Coin = SpriteFactories.ItemSpriteFactory.Instance.CreateCoinSprite();
             Star = SpriteFactories.ItemSpriteFactory.Instance.CreateStarSprite();
-            UsedBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-            QuestionBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateQuestionBlockSprite();
-            BrickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
-            HiddenBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
-            GroundBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
-            StageBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateStageBlockSprite();
-     
+            //UsedBlock = new StateClass.EnvironmentClass.UsedBlock(new Vector2(700, 200));
+            //QuestionBlock = new StateClass.EnvironmentClass.QuestionBlock(new Vector2(400, 200));
+            //BrickBlock = new StateClass.EnvironmentClass.BrickBlock(new Vector2(500, 200));
+            //HiddenBlock = new StateClass.EnvironmentClass.HiddenBlock(new Vector2(300, 200));
+            //GroundBlock = new StateClass.EnvironmentClass.GroundBlock(new Vector2(600,200));
+            //StageBlock = new StateClass.EnvironmentClass.StageBlock(new Vector2(700, 100));
+            envElements.Add(new StateClass.EnvironmentClass.UsedBlock(new Vector2(700, 200)));
+            envElements.Add(new StateClass.EnvironmentClass.QuestionBlock(new Vector2(400, 200)));
+            envElements.Add(new StateClass.EnvironmentClass.BrickBlock(new Vector2(500, 200)));
+            envElements.Add(new StateClass.EnvironmentClass.HiddenBlock(new Vector2(300, 200)));
+            envElements.Add(new StateClass.EnvironmentClass.GroundBlock(new Vector2(600, 200)));
+            envElements.Add(new StateClass.EnvironmentClass.StageBlock(new Vector2(700, 100)));
         }
 
         public void ResetGame()

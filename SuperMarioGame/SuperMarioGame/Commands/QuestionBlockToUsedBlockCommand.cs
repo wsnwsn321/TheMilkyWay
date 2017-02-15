@@ -18,7 +18,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            myGame.QuestionBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+            myGame.envElements[1] = new StateClass.EnvironmentClass.UsedBlock(myGame.envElements[1].position);
         }
     }
 }
