@@ -132,7 +132,8 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="StateClass\EnemyClass\" />
+    <Folder Include="StateClass\CharacterClass\Goomba\" />
+    <Folder Include="StateClass\CharacterClass\Koopa\" />
     <Folder Include="StateClass\ItemClass\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
