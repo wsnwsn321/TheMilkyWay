@@ -9,7 +9,7 @@ namespace SuperMarioGame.Commands
     class MarioIdleOrJumpCommand : ICommand
     {
         private Game1 myGame;
-        private SuperMarioGame.StateClass.Mario mario;
+        private SuperMarioGame.ElementClasses.Mario mario;
 
         public MarioIdleOrJumpCommand(Game1 game)
         {
@@ -19,7 +19,7 @@ namespace SuperMarioGame.Commands
         
         public void Execute()
         {
-                if (mario.marioAction == StateClass.Mario.MARIO_JUMP)
+                if (mario.marioAction == ElementClasses.Mario.MARIO_JUMP)
                 {
                     mario.MarioCrouch();
                 }

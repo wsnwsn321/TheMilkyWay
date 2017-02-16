@@ -10,7 +10,7 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
-        private StateClass.Mario mario;
+        private ElementClasses.Mario mario;
         public MarioLeftIdleOrRunningCommand(Game1 game)
         {
             myGame = game;
@@ -21,7 +21,7 @@ namespace SuperMarioGame.Commands
         {
             if (mario.marioDirection)
             {
-                if (mario.marioAction == StateClass.Mario.MARIO_IDLE)
+                if (mario.marioAction == ElementClasses.Mario.MARIO_IDLE)
                 {
                     mario.MarioRun();
                 } else

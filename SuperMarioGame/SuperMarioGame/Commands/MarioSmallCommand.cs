@@ -9,7 +9,7 @@ namespace SuperMarioGame.Commands
     class MarioSmallCommand : ICommand
     {
         private Game1 myGame;
-        private StateClass.Mario mario;
+        private ElementClasses.Mario mario;
         public MarioSmallCommand(Game1 game)
         {
             myGame = game;
@@ -18,7 +18,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            mario.MarioChangeForm(StateClass.Mario.MARIO_SMALL);
+            mario.MarioChangeForm(ElementClasses.Mario.MARIO_SMALL);
         }
     }
 }

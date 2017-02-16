@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
             //c changes a hidden block into a used block
-            myGame.envElements[3] = new StateClass.EnvironmentClass.UsedBlock(myGame.envElements[3].position);
+            myGame.envElements[3] = new ElementClasses.EnvironmentClass.UsedBlock(myGame.envElements[3].position);
             
         }
     }

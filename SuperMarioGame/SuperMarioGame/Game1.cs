@@ -15,11 +15,11 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
-        public List<StateClass.StateInterface.IBlock> envElements = new List<StateClass.StateInterface.IBlock>();
-        public List<StateClass.StateInterface.IItem> itemElements = new List<StateClass.StateInterface.IItem>();
-        public List<StateClass.StateInterface.IEnemy> enemyElements = new List<StateClass.StateInterface.IEnemy>();
+        internal List<ElementClasses.ElementInterfaces.IBlock> envElements = new List<ElementClasses.ElementInterfaces.IBlock>();
+        internal List<ElementClasses.ElementInterfaces.IItem> itemElements = new List<ElementClasses.ElementInterfaces.IItem>();
+        internal List<ElementClasses.ElementInterfaces.IEnemy> enemyElements = new List<ElementClasses.ElementInterfaces.IEnemy>();
 
-        internal StateClass.Mario mario = new StateClass.Mario(new Vector2(400, 300), 1, false);        
+        internal ElementClasses.Mario mario = new ElementClasses.Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
         {
@@ -51,15 +51,15 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {
-            foreach (StateClass.StateInterface.IEnemy enemy in enemyElements)
+            foreach (ElementClasses.ElementInterfaces.IEnemy enemy in enemyElements)
             {
                 enemy.Update();
             }
-            foreach (StateClass.StateInterface.IItem item in itemElements)
+            foreach (ElementClasses.ElementInterfaces.IItem item in itemElements)
             {
                 item.Update();
             }
-            foreach (StateClass.StateInterface.IBlock block in envElements)
+            foreach (ElementClasses.ElementInterfaces.IBlock block in envElements)
             {
                 block.Update();
             }
@@ -73,15 +73,15 @@ namespace SuperMarioGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            foreach (StateClass.StateInterface.IEnemy enemy in enemyElements)
+            foreach (ElementClasses.ElementInterfaces.IEnemy enemy in enemyElements)
             {
                 enemy.Draw();
             }
-            foreach (StateClass.StateInterface.IItem item in itemElements)
+            foreach (ElementClasses.ElementInterfaces.IItem item in itemElements)
             {
                 item.Draw();
             }
-            foreach (StateClass.StateInterface.IBlock block in envElements)
+            foreach (ElementClasses.ElementInterfaces.IBlock block in envElements)
             {
                 block.Draw();
             }
@@ -120,46 +120,46 @@ namespace SuperMarioGame
             SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
 
-            enemyElements.Add(new StateClass.CharacterClass.Enemies.Koopa(new Vector2(500, 100)));
+            enemyElements.Add(new ElementClasses.CharacterClass.Enemies.Koopa(new Vector2(500, 100)));
             //enemyElements[0] - Koopa
-            enemyElements.Add(new StateClass.CharacterClass.Enemies.Goomba(new Vector2(600, 100)));
+            enemyElements.Add(new ElementClasses.CharacterClass.Enemies.Goomba(new Vector2(600, 100)));
             //enemyElements[1] - Goomba
 
-            itemElements.Add(new StateClass.ItemClass.Coin(new Vector2(100, 200)));
+            itemElements.Add(new ElementClasses.ItemClass.Coin(new Vector2(100, 200)));
             //itemElements[0] - Coin
-            itemElements.Add(new StateClass.ItemClass.Flower(new Vector2(100, 100)));
+            itemElements.Add(new ElementClasses.ItemClass.Flower(new Vector2(100, 100)));
             //itemElements[1] - Flower
-            itemElements.Add(new StateClass.ItemClass.GreenMushroom(new Vector2(300, 100)));
+            itemElements.Add(new ElementClasses.ItemClass.GreenMushroom(new Vector2(300, 100)));
             //itemElements[2] - GreenMushroom
-            itemElements.Add(new StateClass.ItemClass.RedMushroom(new Vector2(200, 100)));
+            itemElements.Add(new ElementClasses.ItemClass.RedMushroom(new Vector2(200, 100)));
             //itemElements[3] - RedMushroom
-            itemElements.Add(new StateClass.ItemClass.Star(new Vector2(200, 200)));
+            itemElements.Add(new ElementClasses.ItemClass.Star(new Vector2(200, 200)));
             //itemElements[4] - Star
 
-            envElements.Add(new StateClass.EnvironmentClass.UsedBlock(new Vector2(700, 200)));
+            envElements.Add(new ElementClasses.EnvironmentClass.UsedBlock(new Vector2(700, 200)));
             //envElements[0] - UsedBlock
-            envElements.Add(new StateClass.EnvironmentClass.QuestionBlock(new Vector2(400, 200)));
+            envElements.Add(new ElementClasses.EnvironmentClass.QuestionBlock(new Vector2(400, 200)));
             //envElements[1] - QuestionBlock
-            envElements.Add(new StateClass.EnvironmentClass.BrickBlock(new Vector2(500, 200)));
+            envElements.Add(new ElementClasses.EnvironmentClass.BrickBlock(new Vector2(500, 200)));
             //envElements[2] - BrickBlock
-            envElements.Add(new StateClass.EnvironmentClass.HiddenBlock(new Vector2(300, 200)));
+            envElements.Add(new ElementClasses.EnvironmentClass.HiddenBlock(new Vector2(300, 200)));
             //envElements[3] - HiddenBlock
-            envElements.Add(new StateClass.EnvironmentClass.GroundBlock(new Vector2(600, 200)));
+            envElements.Add(new ElementClasses.EnvironmentClass.GroundBlock(new Vector2(600, 200)));
             //envElements[4] - GroundBlock
-            envElements.Add(new StateClass.EnvironmentClass.StageBlock(new Vector2(700, 100)));
+            envElements.Add(new ElementClasses.EnvironmentClass.StageBlock(new Vector2(700, 100)));
             //envElements[5] - StageBlock
-            envElements.Add(new StateClass.EnvironmentClass.Pipe(new Vector2(400, 100)));
+            envElements.Add(new ElementClasses.EnvironmentClass.Pipe(new Vector2(400, 100)));
             //envElements[6] - Pipe
         }
 
         public void ResetGame()
         {
-            mario = new StateClass.Mario(new Vector2(400, 300), 1, false);
+            mario = new ElementClasses.Mario(new Vector2(400, 300), 1, false);
             mario.MarioIdle();
             Initialize();
-            envElements = new List<StateClass.StateInterface.IBlock>();
-            itemElements = new List<StateClass.StateInterface.IItem>();
-            enemyElements = new List<StateClass.StateInterface.IEnemy>();
+            envElements = new List<ElementClasses.ElementInterfaces.IBlock>();
+            itemElements = new List<ElementClasses.ElementInterfaces.IItem>();
+            enemyElements = new List<ElementClasses.ElementInterfaces.IEnemy>();
             LoadContent();
         }
     }

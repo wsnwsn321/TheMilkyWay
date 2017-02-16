@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            myGame.envElements[2] = new StateClass.EnvironmentClass.HiddenBlock(myGame.envElements[2].position);
+            myGame.envElements[2] = new ElementClasses.EnvironmentClass.HiddenBlock(myGame.envElements[2].position);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
-        private SuperMarioGame.StateClass.Mario mario;
+        private SuperMarioGame.ElementClasses.Mario mario;
 
         public MarioIdleOrCrouchingCommand(Game1 game)
         {
@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (mario.marioAction == StateClass.Mario.MARIO_IDLE)
+            if (mario.marioAction == ElementClasses.Mario.MARIO_IDLE)
             {
                 mario.MarioCrouch();
             }

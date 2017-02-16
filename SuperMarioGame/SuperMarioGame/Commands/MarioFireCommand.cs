@@ -10,7 +10,7 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
-        private StateClass.Mario mario;
+        private ElementClasses.Mario mario;
         public MarioFireCommand(Game1 game)
         {
             myGame = game;
@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
            
-            mario.MarioChangeForm(StateClass.Mario.MARIO_FIRE);
+            mario.MarioChangeForm(ElementClasses.Mario.MARIO_FIRE);
         }
     }
 }

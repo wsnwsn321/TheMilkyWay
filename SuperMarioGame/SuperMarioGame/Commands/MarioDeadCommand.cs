@@ -10,7 +10,7 @@ namespace SuperMarioGame.Commands
     {
 
         private Game1 myGame;
-        private StateClass.Mario mario;
+        private ElementClasses.Mario mario;
 
         public MarioDeadCommand(Game1 game)
         {
