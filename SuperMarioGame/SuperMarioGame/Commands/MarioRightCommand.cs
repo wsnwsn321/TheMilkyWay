@@ -17,6 +17,7 @@ namespace SuperMarioGame.Commands
         {
             if (mario.marioDirection)
             {
+                mario.MarioIdle();
                 mario.MarioChangeDireciton();
             }
             mario.MarioRun();

@@ -21,26 +21,28 @@ namespace SuperMarioGame.ElementClasses
          
         }
 
+        
         public void Run()
         {
-            if (mario.marioDirection)
+            if (mario.marioDirection && mario.marioAction != Mario.MARIO_RUN)
             {
                 switch (mario.marioState)
                 {
+
                     case Mario.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
-        
+
                         break;
                     case Mario.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
                     case Mario.MARIO_FIRE:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningFireMarioSprite();
-        
+
                         break;
                 }
             }
-            else
+            else if (!mario.marioDirection && mario.marioAction != Mario.MARIO_RUN)
             {
                 switch (mario.marioState)
                 {

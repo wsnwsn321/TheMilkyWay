@@ -53,8 +53,8 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioRun()
         {
-            marioAction = MARIO_RUN;
             state.Run();
+            marioAction = MARIO_RUN; 
         }
         public void MarioDraw()
         {
