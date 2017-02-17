@@ -99,18 +99,19 @@ namespace SuperMarioGame
         private void InitializeCommands()
         {
             keyboardController.RegisterCommand(Keys.W, new MarioJumpCommand(this));
-            keyboardController.RegisterCommand(Keys.A, new MarioLeftIdleOrRunningCommand(this));
-            keyboardController.RegisterCommand(Keys.S, new MarioIdleOrCrouchingCommand(this));
-            keyboardController.RegisterCommand(Keys.D, new MarioRightIdleOrRunningCommand(this));
+            keyboardController.RegisterCommand(Keys.A, new MarioMoveLeftCommand(this));
+            keyboardController.RegisterCommand(Keys.D, new MarioMoveRightCommand(this));
+            keyboardController.RegisterCommand(Keys.S, new MarioCrouchCommand(this));
+
             keyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
-            keyboardController.RegisterCommand(Keys.Left, new MarioLeftIdleOrRunningCommand(this));
-            keyboardController.RegisterCommand(Keys.Down, new MarioIdleOrCrouchingCommand(this));
-            keyboardController.RegisterCommand(Keys.Right, new MarioRightIdleOrRunningCommand(this));
+            keyboardController.RegisterCommand(Keys.Left, new MarioMoveLeftCommand(this));
+            keyboardController.RegisterCommand(Keys.Right, new MarioMoveRightCommand(this));
+            keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new ResetCommand(this));
 
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
-            gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftIdleOrRunningCommand(this));
+            gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioIdleOrCrouchingCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioRightIdleOrRunningCommand(this));
             gamepadController.RegisterCommand(Buttons.Start, new ResetCommand(this));
