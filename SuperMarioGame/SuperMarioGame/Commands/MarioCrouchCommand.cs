@@ -16,7 +16,7 @@ namespace SuperMarioGame.Commands
         public void Execute()
         {
             mario.MarioCrouch();
-            mario.position = new Vector2(mario.position.X, mario.position.Y + 1);
+            mario.position = new Vector2(mario.position.X, mario.position.Y + 3);
         }
     }
 }
