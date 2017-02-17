@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMarioGame.Controller
 {
-    public class KeyboardController : IController
+    public class KeyboardController
     {
       
             private Dictionary<Keys, ICommand> controllerMappings;
