@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Commands
 {
-    class MarioDeadCommand : ICommand
+    class MarioCrouchCommand : ICommand
     {
-
         private Game1 myGame;
         private ElementClasses.Mario mario;
 
-        public MarioDeadCommand(Game1 game)
+        public MarioCrouchCommand(Game1 game)
         {
             myGame = game;
             mario = myGame.mario;
@@ -20,7 +15,8 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            mario.MarioEatShit();
+            mario.MarioCrouch();
+            mario.position = new Vector2(mario.position.X, mario.position.Y + 1);
         }
     }
 }
