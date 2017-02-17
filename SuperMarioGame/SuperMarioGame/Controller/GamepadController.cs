@@ -11,11 +11,9 @@ namespace SuperMarioGame.Controller
     {
 
         private Dictionary<Buttons, ICommand> controllerMappings;
-        private int counter;
         public GamepadController()
         {
             controllerMappings = new Dictionary<Buttons, ICommand>();
-            counter = 0;
         }
 
         public void RegisterCommand(Buttons button, ICommand command)

@@ -7,11 +7,9 @@ namespace SuperMarioGame.Controller
     {
       
             private Dictionary<Keys, ICommand> controllerMappings;
-            private int counter;
             public KeyboardController()
             {
                 controllerMappings = new Dictionary<Keys, ICommand>();
-                counter = 0;
             }
 
             public void RegisterCommand(Keys key, ICommand command)
