@@ -3,8 +3,12 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.Commands;
 using SuperMarioGame.Controller;
-using System;
 using System.Collections.Generic;
+using SuperMarioGame.ElementClasses.ElementInterfaces;
+using SuperMarioGame.ElementClasses.ItemClass;
+using SuperMarioGame.ElementClasses.EnvironmentClass;
+using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
+using SuperMarioGame.ElementClasses;
 
 namespace SuperMarioGame
 
@@ -15,11 +19,11 @@ namespace SuperMarioGame
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
         IController controller;
-        internal List<ElementClasses.ElementInterfaces.IBlock> envElements = new List<ElementClasses.ElementInterfaces.IBlock>();
-        internal List<ElementClasses.ElementInterfaces.IItem> itemElements = new List<ElementClasses.ElementInterfaces.IItem>();
-        internal List<ElementClasses.ElementInterfaces.IEnemy> enemyElements = new List<ElementClasses.ElementInterfaces.IEnemy>();
+        internal List<IBlock> envElements = new List<IBlock>();
+        internal List<IItem> itemElements = new List<IItem>();
+        internal List<IEnemy> enemyElements = new List<IEnemy>();
 
-        internal ElementClasses.Mario mario = new ElementClasses.Mario(new Vector2(400, 300), 1, false);        
+        internal Mario mario = new Mario(new Vector2(400, 300), 1, false);        
 
         public Game1()
         {
@@ -51,15 +55,15 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {
-            foreach (ElementClasses.ElementInterfaces.IEnemy enemy in enemyElements)
+            foreach (IEnemy enemy in enemyElements)
             {
                 enemy.Update();
             }
-            foreach (ElementClasses.ElementInterfaces.IItem item in itemElements)
+            foreach (IItem item in itemElements)
             {
                 item.Update();
             }
-            foreach (ElementClasses.ElementInterfaces.IBlock block in envElements)
+            foreach (IBlock block in envElements)
             {
                 block.Update();
             }
@@ -73,15 +77,15 @@ namespace SuperMarioGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            foreach (ElementClasses.ElementInterfaces.IEnemy enemy in enemyElements)
+            foreach (IEnemy enemy in enemyElements)
             {
                 enemy.Draw();
             }
-            foreach (ElementClasses.ElementInterfaces.IItem item in itemElements)
+            foreach (IItem item in itemElements)
             {
                 item.Draw();
             }
-            foreach (ElementClasses.ElementInterfaces.IBlock block in envElements)
+            foreach (IBlock block in envElements)
             {
                 block.Draw();
             }
@@ -120,46 +124,46 @@ namespace SuperMarioGame
             SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
 
-            enemyElements.Add(new ElementClasses.CharacterClass.Enemies.Koopa(new Vector2(500, 100)));
+            enemyElements.Add(new Koopa(new Vector2(500, 100)));
             //enemyElements[0] - Koopa
-            enemyElements.Add(new ElementClasses.CharacterClass.Enemies.Goomba(new Vector2(600, 100)));
+            enemyElements.Add(new Goomba(new Vector2(600, 100)));
             //enemyElements[1] - Goomba
 
-            itemElements.Add(new ElementClasses.ItemClass.Coin(new Vector2(100, 200)));
+            itemElements.Add(new Coin(new Vector2(100, 200)));
             //itemElements[0] - Coin
-            itemElements.Add(new ElementClasses.ItemClass.Flower(new Vector2(100, 100)));
+            itemElements.Add(new Flower(new Vector2(100, 100)));
             //itemElements[1] - Flower
-            itemElements.Add(new ElementClasses.ItemClass.GreenMushroom(new Vector2(300, 100)));
+            itemElements.Add(new GreenMushroom(new Vector2(300, 100)));
             //itemElements[2] - GreenMushroom
-            itemElements.Add(new ElementClasses.ItemClass.RedMushroom(new Vector2(200, 100)));
+            itemElements.Add(new RedMushroom(new Vector2(200, 100)));
             //itemElements[3] - RedMushroom
-            itemElements.Add(new ElementClasses.ItemClass.Star(new Vector2(200, 200)));
+            itemElements.Add(new Star(new Vector2(200, 200)));
             //itemElements[4] - Star
 
-            envElements.Add(new ElementClasses.EnvironmentClass.UsedBlock(new Vector2(700, 200)));
+            envElements.Add(new UsedBlock(new Vector2(700, 200)));
             //envElements[0] - UsedBlock
-            envElements.Add(new ElementClasses.EnvironmentClass.QuestionBlock(new Vector2(400, 200)));
+            envElements.Add(new QuestionBlock(new Vector2(400, 200)));
             //envElements[1] - QuestionBlock
-            envElements.Add(new ElementClasses.EnvironmentClass.BrickBlock(new Vector2(500, 200)));
+            envElements.Add(new BrickBlock(new Vector2(500, 200)));
             //envElements[2] - BrickBlock
-            envElements.Add(new ElementClasses.EnvironmentClass.HiddenBlock(new Vector2(300, 200)));
+            envElements.Add(new HiddenBlock(new Vector2(300, 200)));
             //envElements[3] - HiddenBlock
-            envElements.Add(new ElementClasses.EnvironmentClass.GroundBlock(new Vector2(600, 200)));
+            envElements.Add(new GroundBlock(new Vector2(600, 200)));
             //envElements[4] - GroundBlock
-            envElements.Add(new ElementClasses.EnvironmentClass.StageBlock(new Vector2(700, 100)));
+            envElements.Add(new StageBlock(new Vector2(700, 100)));
             //envElements[5] - StageBlock
-            envElements.Add(new ElementClasses.EnvironmentClass.Pipe(new Vector2(400, 100)));
+            envElements.Add(new Pipe(new Vector2(400, 100)));
             //envElements[6] - Pipe
         }
 
         public void ResetGame()
         {
-            mario = new ElementClasses.Mario(new Vector2(400, 300), 1, false);
+            mario = new Mario(new Vector2(400, 300), 1, false);
             mario.MarioIdle();
             Initialize();
-            envElements = new List<ElementClasses.ElementInterfaces.IBlock>();
-            itemElements = new List<ElementClasses.ElementInterfaces.IItem>();
-            enemyElements = new List<ElementClasses.ElementInterfaces.IEnemy>();
+            envElements = new List<IBlock>();
+            itemElements = new List<IItem>();
+            enemyElements = new List<IEnemy>();
             LoadContent();
         }
     }
