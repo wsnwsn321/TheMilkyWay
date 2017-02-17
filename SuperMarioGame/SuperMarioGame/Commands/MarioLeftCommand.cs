@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperMarioGame.Commands
 {
@@ -24,6 +19,7 @@ namespace SuperMarioGame.Commands
             {
                 mario.MarioChangeDireciton();
             }
+            mario.MarioRun();
             mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
 
 
