@@ -44,7 +44,7 @@
     <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioRightCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
-    <Compile Include="Commands\MarioLeftIdleOrRunningCommand.cs" />
+    <Compile Include="Commands\MarioLeftCommand.cs" />
     <Compile Include="Commands\MarioRightIdleOrRunningCommand.cs" />
     <Compile Include="Commands\MarioSmallCommand.cs" />
     <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
