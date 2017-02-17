@@ -52,10 +52,10 @@
     <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
-    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Controller\IController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

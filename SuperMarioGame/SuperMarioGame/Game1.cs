@@ -18,7 +18,8 @@ namespace SuperMarioGame
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         GraphicsDeviceManager graphics;        
         SpriteBatch spriteBatch;
-        IController controller;
+        GamepadController gamepadController;
+        KeyboardController keyboardController;
         internal List<IBlock> envElements = new List<IBlock>();
         internal List<IItem> itemElements = new List<IItem>();
         internal List<IEnemy> enemyElements = new List<IEnemy>();
@@ -34,7 +35,8 @@ namespace SuperMarioGame
 
         protected override void Initialize()
         {
-            controller = new Controller.Controller();
+            keyboardController = new KeyboardController();
+            gamepadController = new GamepadController();
 
             InitializeCommands();
 
@@ -69,7 +71,7 @@ namespace SuperMarioGame
             }
 
             mario.MarioUpdate();
-            controller.Update();
+            keyboardController.Update();
             base.Update(gameTime);
         }
 
@@ -96,24 +98,23 @@ namespace SuperMarioGame
 
         private void InitializeCommands()
         {
-            controller.RegisterCommand(Keys.W, new MarioIdleOrJumpCommand(this));
-            controller.RegisterCommand(Keys.A, new MarioLeftIdleOrRunningCommand(this));
-            controller.RegisterCommand(Keys.S, new MarioIdleOrCrouchingCommand(this));
-            controller.RegisterCommand(Keys.D, new MarioRightIdleOrRunningCommand(this));
-            controller.RegisterCommand(Keys.Up, new MarioIdleOrJumpCommand(this));
-            controller.RegisterCommand(Keys.Left, new MarioLeftIdleOrRunningCommand(this));
-            controller.RegisterCommand(Keys.Down, new MarioIdleOrCrouchingCommand(this));
-            controller.RegisterCommand(Keys.Right, new MarioRightIdleOrRunningCommand(this));
-            
-            controller.RegisterCommand(Keys.Y, new MarioSmallCommand(this));
-            controller.RegisterCommand(Keys.U, new MarioBigCommand(this));
-            controller.RegisterCommand(Keys.I, new MarioFireCommand(this));
-            controller.RegisterCommand(Keys.O, new MarioDeadCommand(this));
-            controller.RegisterCommand(Keys.Z, new QuestionBlockToUsedBlockCommand(this));
-            controller.RegisterCommand(Keys.X, new BrickBlockDisappearCommand(this));
-            controller.RegisterCommand(Keys.C, new HiddenBlockToUsedBlockCommand(this));
-            controller.RegisterCommand(Keys.R, new ResetCommand(this));
-            controller.RegisterCommand(Keys.Q, new QuitCommand(this));
+            keyboardController.RegisterCommand(Keys.W, new MarioIdleOrJumpCommand(this));
+            keyboardController.RegisterCommand(Keys.A, new MarioLeftIdleOrRunningCommand(this));
+            keyboardController.RegisterCommand(Keys.S, new MarioIdleOrCrouchingCommand(this));
+            keyboardController.RegisterCommand(Keys.D, new MarioRightIdleOrRunningCommand(this));
+            keyboardController.RegisterCommand(Keys.Up, new MarioIdleOrJumpCommand(this));
+            keyboardController.RegisterCommand(Keys.Left, new MarioLeftIdleOrRunningCommand(this));
+            keyboardController.RegisterCommand(Keys.Down, new MarioIdleOrCrouchingCommand(this));
+            keyboardController.RegisterCommand(Keys.Right, new MarioRightIdleOrRunningCommand(this));
+            keyboardController.RegisterCommand(Keys.Q, new ResetCommand(this));
+
+
+            gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioIdleOrJumpCommand(this));
+            gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftIdleOrRunningCommand(this));
+            gamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioIdleOrCrouchingCommand(this));
+            gamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioRightIdleOrRunningCommand(this));
+            gamepadController.RegisterCommand(Buttons.Start, new ResetCommand(this));
+
         }
 
         private void CreateElements()
