@@ -26,22 +26,21 @@ namespace SuperMarioGame.Controller
             {
                 
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-
-                if (counter >= 7)
+                if(pressedKeys.Length == 0)
                 {
-                    foreach (Keys key in pressedKeys)
-                    {
-                        if (controllerMappings.ContainsKey(key))
-                        {
-                        
-                                controllerMappings[key].Execute();
+                    controllerMappings[Keys.BrowserBack].Execute();
+                }
 
-                        }
+                foreach (Keys key in pressedKeys)
+                {
+                    if (controllerMappings.ContainsKey(key))
+                    {
+
+                        controllerMappings[key].Execute();
 
                     }
-                    counter = 0;
+
                 }
-                counter++;
             }
         }
 }
