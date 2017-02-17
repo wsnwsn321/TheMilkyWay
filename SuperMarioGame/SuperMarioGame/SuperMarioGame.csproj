@@ -39,8 +39,6 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Commands\BrickBlockDisappearCommand.cs" />
-    <Compile Include="Commands\HiddenBlockToUsedBlockCommand.cs" />
     <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioRightCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
