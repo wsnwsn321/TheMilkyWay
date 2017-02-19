@@ -13,6 +13,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
     {
         public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
+        public bool noD { get; set; }
 
         public GreenMushroom(Vector2 pos)
         {
@@ -22,7 +23,10 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Draw()
         {
-            itemSprite.Draw(position);
+            if (noD == false)
+            {
+                itemSprite.Draw(position);
+            }
         }
 
         public void Update()

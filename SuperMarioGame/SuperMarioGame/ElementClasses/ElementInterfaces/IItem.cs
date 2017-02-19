@@ -15,5 +15,7 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         void Update();
         ISprite itemSprite { get; set; }
 
+        bool noD { get; set; }
+
     }
 }
