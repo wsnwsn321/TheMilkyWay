@@ -12,19 +12,18 @@ namespace SuperMarioGame.CollisionHandler
 {
     class MarioBlockHandler
     {
-        private bool CollsionSide;
-        private Mario mario;
-        private IBlock brickBlock;
-        public static void BlockHandler(Mario mario, IBlock brickBlock, bool CollsionSide)
-        {
-            // From Bottom
-            if (CollsionSide) {
-                
-            }
-            //Other Side
-            else
-            {
 
+        public static void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
+        {
+            switch(CollisionSide){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
             }
         }
     }
