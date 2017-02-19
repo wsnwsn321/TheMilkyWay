@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace SuperMarioGame.CollisionHandler
 {
     class MarioItemHandler
-    {
+    { 
+
     }
 }

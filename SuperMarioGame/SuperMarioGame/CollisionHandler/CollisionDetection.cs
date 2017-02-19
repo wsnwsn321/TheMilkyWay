@@ -36,7 +36,10 @@ namespace SuperMarioGame.CollisionHandler
 
             foreach (IBlock block in envElements)
             {
-                mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle);
+                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
+                {
+                       
+                }
             }
         }
 
@@ -45,7 +48,11 @@ namespace SuperMarioGame.CollisionHandler
 
             foreach (IItem item in itemElements)
             {
-                mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle);
+               if(mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+                {
+
+                }
+                
             }
         }
 
@@ -54,7 +61,10 @@ namespace SuperMarioGame.CollisionHandler
 
             foreach (IEnemy enemy in enemyElements)
             {
-                mario.state.marioSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle);
+                if (mario.state.marioSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                {
+
+                }
             }
         }
 
