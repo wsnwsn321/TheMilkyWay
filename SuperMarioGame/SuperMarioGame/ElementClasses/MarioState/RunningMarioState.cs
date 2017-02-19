@@ -11,7 +11,41 @@ namespace SuperMarioGame.ElementClasses
         public ISprite marioSprite { get; set; }
         public RunningMarioState( Mario mario)
         {
-            this.mario = mario;      
+            this.mario = mario;
+            if (mario.marioDirection)
+            {
+                switch (mario.marioState)
+                {
+
+                    case Mario.MARIO_SMALL:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
+
+                        break;
+                    case Mario.MARIO_BIG:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
+                        break;
+                    case Mario.MARIO_FIRE:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningFireMarioSprite();
+
+                        break;
+                }
+            }
+            else if (!mario.marioDirection)
+            {
+                switch (mario.marioState)
+                {
+                    case Mario.MARIO_SMALL:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
+                        break;
+                    case Mario.MARIO_BIG:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                        break;
+                    case Mario.MARIO_FIRE:
+                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningFireMarioSprite();
+                        break;
+                }
+            }
+
         }
         
         public void Run()
