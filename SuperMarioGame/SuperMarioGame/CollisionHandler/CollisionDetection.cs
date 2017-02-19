@@ -60,14 +60,14 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = 4;
+                            SIDE = 2;
                         }
                         else
                         {
-                            SIDE = 2;
+                            SIDE = 4;
                         }
                     }
-                    MarioBlockHandler.Instance.BlockHandler(mario, block, SIDE);
+                    MarioBlockHandler.BlockHandler(mario, block, SIDE);
                 }
                 
             }
