@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -43,7 +44,7 @@ namespace SuperMarioGame.CollisionHandler
                 if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)){
                     firstRectangle = mario.state.marioSprite.desRectangle;
                     secondRectangle = block.blockSprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(mario.state.marioSprite.desRectangle, block.blockSprite.desRectangle);
+                    collideRectangle = Rectangle.Intersect(firstRectangle,secondRectangle);
                     if (collideRectangle.Width > collideRectangle.Height)
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
@@ -66,8 +67,9 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = 2;
                         }
                     }
-                    
+                    MarioBlockHandler.Instance.BlockHandler(mario, block, SIDE);
                 }
+                
             }
         }
 
