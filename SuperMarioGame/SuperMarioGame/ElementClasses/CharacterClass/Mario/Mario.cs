@@ -8,11 +8,11 @@ namespace SuperMarioGame.ElementClasses
         public IMarioState state { set; get; }
         public const int MARIO_SMALL = 1, MARIO_BIG = 2, MARIO_FIRE = 3, MARIO_IDLE = 4,
             MARIO_RUN = 5, MARIO_JUMP = 6, MARIO_CROUCH = 7, MARIO_DEAD = 8;
-        public  const  Boolean MARIO_LEFT = true;
+        public  const  bool MARIO_LEFT = true;
 
         public int marioAction { set; get; }
         public int marioState { set; get; }
-        public Boolean marioDirection { set; get; }
+        public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
     
         public Mario(Vector2 position)
@@ -28,7 +28,7 @@ namespace SuperMarioGame.ElementClasses
         {
             this.marioState = marioState;
             this.marioDirection = marioDirection;
-            this.marioAction = MARIO_IDLE;
+            marioAction = MARIO_IDLE;
             this.position = position;
             state = new IdleMarioState(this);
         }
@@ -58,7 +58,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioDraw()
         {
-            state.Draw(this.position);
+            state.Draw(position);
         }
         public void MarioUpdate()
         {
