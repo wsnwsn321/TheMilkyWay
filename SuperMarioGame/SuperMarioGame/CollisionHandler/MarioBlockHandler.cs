@@ -17,6 +17,7 @@ namespace SuperMarioGame.CollisionHandler
         {
             switch(CollisionSide){
                 case 1:
+         
                     break;
                 case 2:
                     break;
