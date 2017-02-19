@@ -28,29 +28,29 @@ namespace SuperMarioGame.CollisionHandler
         {
         }
 
-        public void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
+        public void BlockHandler(Mario mario, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
-
+            
             switch (CollisionSide){
                 case 1:
                     newPosition.X = mario.state.marioSprite.desRectangle.X;
-                    newPosition.Y = brickBlock.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
+                    newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
                     mario.position = newPosition;
 
                     break;
                 case 2:
-                    newPosition.X = brickBlock.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
+                    newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                     newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                     mario.position = newPosition;
                     break;
                 case 3:
                     newPosition.X = mario.state.marioSprite.desRectangle.X;
-                    newPosition.Y = brickBlock.blockSprite.desRectangle.Y + mario.state.marioSprite.desRectangle.Height;
+                    newPosition.Y = block.blockSprite.desRectangle.Y + mario.state.marioSprite.desRectangle.Height;
                     mario.position = newPosition;
                     break;
                 case 4:
-                    newPosition.X = brickBlock.blockSprite.desRectangle.X + mario.state.marioSprite.desRectangle.Width;
+                    newPosition.X = block.blockSprite.desRectangle.X + mario.state.marioSprite.desRectangle.Width;
                     newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                     mario.position = newPosition;
                     break;
