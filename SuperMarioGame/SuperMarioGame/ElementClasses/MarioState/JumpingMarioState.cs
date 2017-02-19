@@ -18,10 +18,6 @@ namespace SuperMarioGame.ElementClasses
         public JumpingMarioState(Mario mario)
         {
             this.mario = mario;
-        }
-
-        public void Jump()
-        {
             if (mario.marioDirection)
             {
                 switch (mario.marioState)
@@ -52,6 +48,11 @@ namespace SuperMarioGame.ElementClasses
                         break;
                 }
             }
+        }
+
+        public void Jump()
+        {
+
         }
 
         public void Crouch()

@@ -17,6 +17,8 @@ namespace SuperMarioGame.ElementClasses
         public DeadMarioState( Mario mario)
         {
             this.mario = mario;
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
+
 
         }
         public void Idle()
@@ -57,7 +59,6 @@ namespace SuperMarioGame.ElementClasses
         }
         public void Die()
         {
-            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
     }
 }
