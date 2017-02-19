@@ -50,12 +50,10 @@ namespace SuperMarioGame.CollisionHandler
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
                             SIDE = 3;
-                            MarioBlockHandler.BlockHandler(mario,block,3);
                         }
                         else
                         {
                             SIDE = 1;
-                            MarioBlockHandler.BlockHandler(mario, block, 1);
                         }
                     }
                     else if (collideRectangle.Width < collideRectangle.Height)
@@ -63,15 +61,13 @@ namespace SuperMarioGame.CollisionHandler
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
                             SIDE = 4;
-                            MarioBlockHandler.BlockHandler(mario, block, 4);
                         }
                         else
                         {
                             SIDE = 2;
-                            MarioBlockHandler.BlockHandler(mario, block, 2);
                         }
                     }
-                    MarioBlockHandler.Instance.BlockHandler(mario, block, SIDE);
+                    MarioBlockHandler.BlockHandler(mario, block, SIDE);
                 }
                 
             }
