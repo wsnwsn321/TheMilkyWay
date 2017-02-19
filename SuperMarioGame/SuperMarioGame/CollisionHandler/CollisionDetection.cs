@@ -144,7 +144,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = 2;
                         }
                     }
-
+                    MarioEnemyHandler.EnemyHandler(mario, enemy, SIDE);
                 }
             }
         }
