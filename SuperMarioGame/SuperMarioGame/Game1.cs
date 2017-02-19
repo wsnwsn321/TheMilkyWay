@@ -178,12 +178,12 @@ namespace SuperMarioGame
             envElements.Add(new Pipe(new Vector2(400, 100)));
             //envElements[6] - Pipe
 
-            backgroundElements.Add(new BigCloud(new Vector2(200, 50)));
-            backgroundElements.Add(new SmallCloud(new Vector2(400, 50)));
-            backgroundElements.Add(new BigMountain(new Vector2(200, 340)));
-            backgroundElements.Add(new SmallMountain(new Vector2(400, 340)));
-            backgroundElements.Add(new BigBrush(new Vector2(500, 350)));
-            backgroundElements.Add(new SmallBrush(new Vector2(500, 350)));
+            backgroundElements.Add(new BigCloud(new Vector2(200, 40)));
+            backgroundElements.Add(new SmallCloud(new Vector2(400, 40)));
+            backgroundElements.Add(new BigMountain(new Vector2(150, 410)));
+            backgroundElements.Add(new SmallMountain(new Vector2(375, 440)));
+            backgroundElements.Add(new BigBrush(new Vector2(500, 450)));
+            backgroundElements.Add(new SmallBrush(new Vector2(700, 450)));
         }
 
         public void ResetGame()
