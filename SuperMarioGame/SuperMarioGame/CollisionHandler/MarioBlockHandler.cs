@@ -7,38 +7,51 @@ using System.Threading.Tasks;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace SuperMarioGame.CollisionHandler
 {
     class MarioBlockHandler
     {
+        private static MarioBlockHandler instance = new MarioBlockHandler();
 
-        public static void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
+
+        public static MarioBlockHandler Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        private MarioBlockHandler()
+        {
+        }
+
+        public void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
         {
             Vector2 newPosition;
+
             switch (CollisionSide){
                 case 1:
-                    newPosition = new ;
-                    newPosition.X = mario.position.X;
-                    newPosition.Y = mario.state.marioSprite.desRectangle.Height;
+                    newPosition.X = mario.state.marioSprite.desRectangle.X;
+                    newPosition.Y = brickBlock.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
                     mario.position = newPosition;
+
                     break;
                 case 2:
-                    newPosition = brickBlock.position;
-                    newPosition.Y = mario.position.Y;
-                    newPosition.X += mario.state.marioSprite.desRectangle.Width;
+                    newPosition.X = brickBlock.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
+                    newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                     mario.position = newPosition;
                     break;
                 case 3:
-                    newPosition = brickBlock.position;
-                    newPosition.X = mario.position.X;
-                    newPosition.Y += mario.state.marioSprite.desRectangle.Height;
+                    newPosition.X = mario.state.marioSprite.desRectangle.X;
+                    newPosition.Y = brickBlock.blockSprite.desRectangle.Y + mario.state.marioSprite.desRectangle.Height;
                     mario.position = newPosition;
                     break;
                 case 4:
-                    newPosition = brickBlock.position;
-                    newPosition.Y = mario.position.Y;
-                    newPosition.X -= mario.state.marioSprite.desRectangle.Width;
+                    newPosition.X = brickBlock.blockSprite.desRectangle.X + mario.state.marioSprite.desRectangle.Width;
+                    newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                     mario.position = newPosition;
                     break;
             }

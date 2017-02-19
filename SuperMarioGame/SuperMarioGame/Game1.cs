@@ -74,6 +74,10 @@ namespace SuperMarioGame
                 block.Update();
                 
             }
+            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
+            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
+            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+
 
             mario.MarioUpdate();
             keyboardController.Update();

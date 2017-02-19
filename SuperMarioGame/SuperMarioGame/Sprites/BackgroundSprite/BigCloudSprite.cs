@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    public class BrickBlockSprite : ISprite
+    public class BigCloudSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -12,9 +12,9 @@ namespace SuperMarioGame.Sprites
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
-        public Boolean toDraw { get; set; }
+        public bool toDraw { get; set; }
 
-        public BrickBlockSprite(Texture2D texture, SpriteBatch sb)
+        public BigCloudSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
@@ -35,7 +35,7 @@ namespace SuperMarioGame.Sprites
             if (toDraw)
             {
                 sb.Begin();
-                Rectangle sourceRectangle = new Rectangle(0, 0, 16, 16);
+                Rectangle sourceRectangle = new Rectangle(142, 68, 66, 26);
                 desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
                 sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
                 p = position;
