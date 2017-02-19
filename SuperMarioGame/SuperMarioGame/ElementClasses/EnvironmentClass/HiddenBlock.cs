@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     public class HiddenBlock : ElementInterfaces.IBlock
 
     {
-        Sprites.ISprite hiddenBlock;
+        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
 
         public HiddenBlock(Vector2 pos)
         {
             position = pos;
-            hiddenBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
+            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateHiddenBlockSprite();
         }
 
         public void Draw()
         {
-            hiddenBlock.Draw(position);
+            blockSprite.Draw(position);
         }
 
         public void Update()
         {
-            hiddenBlock.Update();
+            blockSprite.Update();
         }
     }
 }

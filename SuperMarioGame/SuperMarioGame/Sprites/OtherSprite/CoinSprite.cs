@@ -14,6 +14,8 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        public Rectangle desRectangle { get; set; }
+
         int currentFrame;
         int totalFrames;
         int counter = 0;
@@ -65,12 +67,12 @@ namespace SuperMarioGame.Sprites
             Rectangle sourceRectangle = new Rectangle((9 * currentFrame), 0, currentWidth, 14);
             if (currentFrame == 2 || currentFrame == 3)
             {
-                Rectangle desRectangle = new Rectangle((int)position.X+4, (int)position.Y, 18, 28);
+                desRectangle = new Rectangle((int)position.X+4, (int)position.Y, 18, 28);
                 sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             }
             else
             {
-                Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, 18, 28);
                 sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
 
             }

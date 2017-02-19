@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     public class UsedBlock : ElementInterfaces.IBlock
 
     {
-        Sprites.ISprite usedBlock;
+        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
 
         public UsedBlock(Vector2 pos)
         {
             position = pos;
-            usedBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
         }
 
         public void Draw()
         {
-            usedBlock.Draw(position);
+            blockSprite.Draw(position);
         }
 
         public void Update()
         {
-            usedBlock.Update();
+            blockSprite.Update();
         }
     }
 }

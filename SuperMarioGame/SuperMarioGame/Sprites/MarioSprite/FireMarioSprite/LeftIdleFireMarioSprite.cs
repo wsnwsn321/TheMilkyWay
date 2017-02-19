@@ -14,6 +14,8 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        public Rectangle desRectangle { get; set; }
+
 
         public LeftIdleFireMarioSprite(Texture2D texture, SpriteBatch sb)
         {
@@ -34,7 +36,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         {
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(19, 0, 19, 32);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 38, 64);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 38, 64);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

@@ -14,6 +14,8 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         private Vector2 p;
+        public Rectangle desRectangle { get; set; }
+
 
         public RightJumpingSmallMarioSprite(Texture2D texture, SpriteBatch sb)
         {
@@ -34,7 +36,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         {
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(17, 0, 16, 16);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

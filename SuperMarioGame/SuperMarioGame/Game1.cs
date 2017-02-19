@@ -9,6 +9,7 @@ using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
 using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
 using SuperMarioGame.ElementClasses;
+using SuperMarioGame.SpriteFactories;
 
 namespace SuperMarioGame
 
@@ -123,10 +124,10 @@ namespace SuperMarioGame
         private void CreateElements()
         {
             //Load the textures from factories
-            SpriteFactories.ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            SpriteFactories.EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            SpriteFactories.EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            SpriteFactories.MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
 
             enemyElements.Add(new Koopa(new Vector2(500, 100)));
             //enemyElements[0] - Koopa

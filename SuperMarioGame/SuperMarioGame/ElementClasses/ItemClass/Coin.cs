@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.ItemClass
     public class Coin : ElementInterfaces.IItem
 
     {
-        Sprites.ISprite coin;
+        public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
 
         public Coin(Vector2 pos)
         {
             position = pos;
-            coin = SpriteFactories.ItemSpriteFactory.Instance.CreateCoinSprite();
+            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateCoinSprite();
         }
 
         public void Draw()
         {
-            coin.Draw(position);
+            itemSprite.Draw(position);
         }
 
         public void Update()
         {
-            coin.Update();
+            itemSprite.Update();
         }
     }
 }

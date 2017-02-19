@@ -14,6 +14,8 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        public Rectangle desRectangle { get; set; }
+
         public PipeSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
@@ -34,7 +36,7 @@ namespace SuperMarioGame.Sprites
         {
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(224, 96, 34, 33);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 60);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 60);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

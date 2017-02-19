@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-
+using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses
 {
@@ -20,5 +20,6 @@ namespace SuperMarioGame.ElementClasses
         void Update();
         void ChangeDirection();
         void MarioEatShit();
+        ISprite marioSprite { get; set; }
     }
 }

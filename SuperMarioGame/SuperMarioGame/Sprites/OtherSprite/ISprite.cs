@@ -13,5 +13,7 @@ namespace SuperMarioGame.Sprites
         void Update();
 
         void Draw(Vector2 location);
+
+        Rectangle desRectangle { get; set; }
     }
 }

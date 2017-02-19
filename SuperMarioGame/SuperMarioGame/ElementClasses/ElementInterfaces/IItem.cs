@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         Vector2 position { get; set; }
         void Draw();
         void Update();
+        ISprite itemSprite { get; set; }
+
     }
 }

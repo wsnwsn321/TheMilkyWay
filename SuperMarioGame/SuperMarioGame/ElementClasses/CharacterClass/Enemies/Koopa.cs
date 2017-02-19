@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
     public class Koopa : ElementInterfaces.IEnemy
 
     {
-        Sprites.ISprite koopa;
+        public ISprite enemySprite { get; set; }
         public Vector2 position { get; set; }
 
         public Koopa(Vector2 pos)
         {
             position = pos;
-            koopa = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
         }
 
         public void Draw()
         {
-            koopa.Draw(position);
+            enemySprite.Draw(position);
         }
 
         public void Update()
         {
-            koopa.Update();
+            enemySprite.Update();
         }
     }
 }

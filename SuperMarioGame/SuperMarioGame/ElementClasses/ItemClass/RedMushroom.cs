@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.ItemClass
     public class RedMushroom : ElementInterfaces.IItem
 
     {
-        Sprites.ISprite redMushroom;
+        public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
 
         public RedMushroom(Vector2 pos)
         {
             position = pos;
-            redMushroom = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
+            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
         }
 
         public void Draw()
         {
-            redMushroom.Draw(position);
+            itemSprite.Draw(position);
         }
 
         public void Update()
         {
-            redMushroom.Update();
+            itemSprite.Update();
         }
     }
 }

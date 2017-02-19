@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     public class BrickBlock : ElementInterfaces.IBlock
 
     {
-        Sprites.ISprite brickBlock;
+        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
 
         public BrickBlock(Vector2 pos)
         {
             position = pos;
-            brickBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
+            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
         }
 
         public void Draw()
         {
-            brickBlock.Draw(position);
+            blockSprite.Draw(position);
         }
 
         public void Update()
         {
-            brickBlock.Update();
+            blockSprite.Update();
         }
     }
 }

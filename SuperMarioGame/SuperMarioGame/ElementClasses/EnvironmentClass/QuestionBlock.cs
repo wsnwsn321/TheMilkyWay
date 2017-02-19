@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     public class QuestionBlock : ElementInterfaces.IBlock
 
     {
-        Sprites.ISprite questionBlock;
+        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
 
         public QuestionBlock(Vector2 pos)
         {
             position = pos;
-            questionBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateQuestionBlockSprite();
+            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateQuestionBlockSprite();
         }
 
         public void Draw()
         {
-            questionBlock.Draw(position);
+            blockSprite.Draw(position);
         }
 
         public void Update()
         {
-            questionBlock.Update();
+            blockSprite.Update();
         }
     }
 }

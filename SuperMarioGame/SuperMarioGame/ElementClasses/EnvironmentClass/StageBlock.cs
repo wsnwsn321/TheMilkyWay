@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     public class StageBlock : ElementInterfaces.IBlock
 
     {
-        Sprites.ISprite stageBlock;
+        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
 
         public StageBlock(Vector2 pos)
         {
             position = pos;
-            stageBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateStageBlockSprite();
+            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateStageBlockSprite();
         }
 
         public void Draw()
         {
-            stageBlock.Draw(position);
+            blockSprite.Draw(position);
         }
 
         public void Update()
         {
-            stageBlock.Update();
+            blockSprite.Update();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        public Rectangle desRectangle { get; set; }
 
         public HiddenBlockSprite(Texture2D texture, SpriteBatch sb)
         {
@@ -34,7 +35,7 @@ namespace SuperMarioGame.Sprites
         {
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 1, 1);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.Green);
             p = position;
             sb.End();

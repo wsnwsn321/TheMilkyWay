@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.ItemClass
     public class Flower : ElementInterfaces.IItem
 
     {
-        Sprites.ISprite flower;
+        public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
 
         public Flower(Vector2 pos)
         {
             position = pos;
-            flower = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
         }
 
         public void Draw()
         {
-            flower.Draw(position);
+            itemSprite.Draw(position);
         }
 
         public void Update()
         {
-            flower.Update();
+            itemSprite.Update();
         }
     }
 }

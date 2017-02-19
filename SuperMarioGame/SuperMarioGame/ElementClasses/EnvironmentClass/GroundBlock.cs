@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +11,22 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     public class GroundBlock : ElementInterfaces.IBlock
 
     {
-        Sprites.ISprite groundBlock;
+        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
         public GroundBlock(Vector2 pos)
         {
-            groundBlock = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
+            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
             position = pos;
         }
 
         public void Draw()
         {
-            groundBlock.Draw(position);
+            blockSprite.Draw(position);
         }
 
         public void Update()
         {
-            groundBlock.Update();
+            blockSprite.Update();
         }
     }
 }

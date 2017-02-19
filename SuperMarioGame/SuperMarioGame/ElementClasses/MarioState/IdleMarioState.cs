@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses
 {
@@ -13,7 +14,7 @@ namespace SuperMarioGame.ElementClasses
 
 
         private Mario mario;
-        private Sprites.ISprite marioSprite;
+        public ISprite marioSprite { get; set; }
         public IdleMarioState(Mario mario)
         {
             this.mario = mario;

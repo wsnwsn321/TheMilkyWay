@@ -13,6 +13,8 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
     {
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
+        public Rectangle desRectangle { get; set; }
+
         Vector2 p;
 
         public LeftJumpingBigMarioSprite(Texture2D texture,SpriteBatch sb)
@@ -34,7 +36,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
         {
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 16, 31);
-            Rectangle desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 62);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 62);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

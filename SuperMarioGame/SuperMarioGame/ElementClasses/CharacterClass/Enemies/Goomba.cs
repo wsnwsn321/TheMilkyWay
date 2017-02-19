@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,23 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
     public class Goomba : ElementInterfaces.IEnemy
 
     {
-        Sprites.ISprite goomba;
+        public ISprite enemySprite { get; set; }
         public Vector2 position { get; set; }
 
         public Goomba(Vector2 pos)
         {
             position = pos;
-            goomba = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaSprite();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaSprite();
         }
 
         public void Draw()
         {
-            goomba.Draw(position);
+            enemySprite.Draw(position);
         }
 
         public void Update()
         {
-            goomba.Update();
+            enemySprite.Update();
         }
     }
 }
