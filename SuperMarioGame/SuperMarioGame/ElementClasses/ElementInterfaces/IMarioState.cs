@@ -19,7 +19,7 @@ namespace SuperMarioGame.ElementClasses
         void Draw(Vector2 Position);
         void Update();
         void ChangeDirection();
-        void MarioEatShit();
+        void Die();
         ISprite marioSprite { get; set; }
     }
 }

@@ -71,7 +71,7 @@ namespace SuperMarioGame.ElementClasses
         public void MarioEatShit()
         {
             marioAction = MARIO_DEAD;
-            state.MarioEatShit();
+            state.Die();
         }
 
     }

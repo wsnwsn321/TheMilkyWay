@@ -104,7 +104,7 @@ namespace SuperMarioGame.ElementClasses
             mario.marioDirection = !mario.marioDirection;
             mario.MarioRun();
         }
-        public void MarioEatShit()
+        public void Die()
         {
             mario.state = new DeadMarioState( mario);
             mario.MarioEatShit();
