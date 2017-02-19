@@ -58,5 +58,11 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
+        //maybe need an enemy enemy collison too because we would need it later.
+        //  public void MarioEnemyCollision(List<IEnemy> enemyElement1, List<IEnemy> enemyElement2)
+
+        //and a enemy block collision as well
+        //  public void MarioEnemyCollision(List<IEnemy> enemyElements, List<IBlock>envElements)
+
     }
 }
