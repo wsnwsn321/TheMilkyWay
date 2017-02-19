@@ -60,11 +60,11 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = 4;
+                            SIDE = 2;
                         }
                         else
                         {
-                            SIDE = 2;
+                            SIDE = 4;
                         }
                     }
                     MarioBlockHandler.BlockHandler(mario, block, SIDE);
@@ -78,12 +78,12 @@ namespace SuperMarioGame.CollisionHandler
 
             foreach (IItem item in itemElements)
             {
-                mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle);
+                
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
                 {
                     firstRectangle = mario.state.marioSprite.desRectangle;
                     secondRectangle = item.itemSprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(mario.state.marioSprite.desRectangle, item.itemSprite.desRectangle);
+                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
                     if (collideRectangle.Width > collideRectangle.Height)
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
@@ -106,7 +106,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = 2;
                         }
                     }
-
+                    MarioItemHandler.ItemHandler(mario, item, SIDE);
                 }
             }
         }

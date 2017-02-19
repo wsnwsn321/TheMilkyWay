@@ -25,17 +25,17 @@ namespace SuperMarioGame.CollisionHandler
 
                     break;
                 case 2:
-                    newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
+                    newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                     newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                     mario.position = newPosition;
                     break;
                 case 3:
                     newPosition.X = mario.state.marioSprite.desRectangle.X;
-                    newPosition.Y = block.blockSprite.desRectangle.Y + mario.state.marioSprite.desRectangle.Height;
+                    newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height;
                     mario.position = newPosition;
                     break;
                 case 4:
-                    newPosition.X = block.blockSprite.desRectangle.X + mario.state.marioSprite.desRectangle.Width;
+                    newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                     newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                     mario.position = newPosition;
                     break;
