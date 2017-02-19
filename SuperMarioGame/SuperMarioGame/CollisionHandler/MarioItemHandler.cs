@@ -31,7 +31,7 @@ namespace SuperMarioGame.CollisionHandler
                     if(item is ElementClasses.ItemClass.RedMushroom)
                     {
                         
-                        if(mario.marioState != ElementClasses.Mario.MARIO_BIG && !item.noD)
+                        if(mario.marioState != ElementClasses.Mario.MARIO_BIG && !item.noD && mario.marioState !=ElementClasses.Mario.MARIO_DEAD)
                     {
                             mario.state.ChangeForm(2);
                             item.noD = true;
@@ -42,13 +42,26 @@ namespace SuperMarioGame.CollisionHandler
 
                 if (item is ElementClasses.ItemClass.Flower)
                 {
-                    if (mario.marioState != ElementClasses.Mario.MARIO_FIRE && !item.noD)
+                    if (mario.marioState != ElementClasses.Mario.MARIO_FIRE && !item.noD && mario.marioState != ElementClasses.Mario.MARIO_DEAD)
                     {
                         mario.state.ChangeForm(3);
                         item.noD = true;
                 }
                 }
-            
+
+            if (item is ElementClasses.ItemClass.Star)
+            {
+                    item.noD = true;
+            }
+
+            if (item is ElementClasses.ItemClass.Coin)
+            {
+                item.noD = true;
+            }
+            if (item is ElementClasses.ItemClass.GreenMushroom)
+            {
+                item.noD = true;
+            }
         }
     }
 }
