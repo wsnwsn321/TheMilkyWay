@@ -55,7 +55,7 @@ namespace SuperMarioGame.ElementClasses
         {
             marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
-        public void MarioEatShit()
+        public void Die()
         {
             marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
