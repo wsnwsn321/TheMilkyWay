@@ -13,22 +13,8 @@ namespace SuperMarioGame.CollisionHandler
 {
     class MarioBlockHandler
     {
-        private static MarioBlockHandler instance = new MarioBlockHandler();
-
-
-        public static MarioBlockHandler Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
-
-        private MarioBlockHandler()
-        {
-        }
-
-        public void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
+      
+        public static void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
         {
             Vector2 newPosition;
 
