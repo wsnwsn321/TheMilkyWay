@@ -18,9 +18,9 @@ namespace SuperMarioGame.CollisionHandler
             Vector2 newPosition;
             switch (CollisionSide){
                 case 1:
-                    newPosition = brickBlock.position;
+                    newPosition = new ;
                     newPosition.X = mario.position.X;
-                    newPosition.Y -= mario.state.marioSprite.desRectangle.Height;
+                    newPosition.Y = mario.state.marioSprite.desRectangle.Height;
                     mario.position = newPosition;
                     break;
                 case 2:
