@@ -1,20 +1,29 @@
-﻿namespace SuperMarioGame.CollisionHandler
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SuperMarioGame.ElementClasses.ElementInterfaces;
+using SuperMarioGame.ElementClasses;
+using Microsoft.Xna.Framework;
+
+namespace SuperMarioGame.CollisionHandler
 {
     class MarioItemHandler
     {
-        private static MarioItemHandler instance = new MarioItemHandler();
-
-
-        public static MarioItemHandler Instance
+        public static void ItemHandler(Mario mario,  IItem item, int CollisionSide)
         {
-            get
+            switch (CollisionSide)
             {
-                return instance;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
             }
-        }
-
-        private MarioItemHandler()
-        {
         }
     }
 }

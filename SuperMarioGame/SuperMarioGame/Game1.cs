@@ -22,6 +22,8 @@ namespace SuperMarioGame
         SpriteBatch spriteBatch;
         GamepadController gamepadController;
         KeyboardController keyboardController;
+        CollisionDetection Collision;
+
         internal List<IBlock> envElements = new List<IBlock>();
         internal List<IItem> itemElements = new List<IItem>();
         internal List<IEnemy> enemyElements = new List<IEnemy>();
@@ -70,6 +72,7 @@ namespace SuperMarioGame
             foreach (IBlock block in envElements)
             {
                 block.Update();
+                
             }
             CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
             CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
@@ -96,8 +99,9 @@ namespace SuperMarioGame
             foreach (IBlock block in envElements)
             {
                 block.Draw();
+                
             }
-
+            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
             mario.MarioDraw();
             base.Draw(gameTime);
         }
