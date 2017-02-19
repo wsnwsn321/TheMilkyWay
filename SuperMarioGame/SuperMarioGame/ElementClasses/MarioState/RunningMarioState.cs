@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses
@@ -17,11 +11,8 @@ namespace SuperMarioGame.ElementClasses
         public ISprite marioSprite { get; set; }
         public RunningMarioState( Mario mario)
         {
-            this.mario = mario;
-         
-         
+            this.mario = mario;      
         }
-
         
         public void Run()
         {
@@ -69,7 +60,7 @@ namespace SuperMarioGame.ElementClasses
         public void ChangeForm(int form)
         {
             mario.marioState = form;
-            mario.state = new IdleMarioState( mario);
+            mario.state = new IdleMarioState(mario);
             mario.MarioRun();
         }
 
