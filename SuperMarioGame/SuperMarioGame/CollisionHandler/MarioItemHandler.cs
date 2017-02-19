@@ -27,19 +27,28 @@ namespace SuperMarioGame.CollisionHandler
         }
         public static void ItemHandler(Mario mario,  IItem item, int CollisionSide)
         {
-            if (CollisionSide==1|| CollisionSide==2| CollisionSide==3|| CollisionSide==4)
-            {
                     
                     if(item is ElementClasses.ItemClass.RedMushroom)
                     {
-                        mario.state.ChangeForm(2);
+                        
+                        if(mario.marioState != ElementClasses.Mario.MARIO_BIG && !item.noD)
+                    {
+                            mario.state.ChangeForm(2);
+                            item.noD = true;
+                    }
                         
                     }
+
+
                 if (item is ElementClasses.ItemClass.Flower)
                 {
-                    mario.state.ChangeForm(3);
+                    if (mario.marioState != ElementClasses.Mario.MARIO_FIRE && !item.noD)
+                    {
+                        mario.state.ChangeForm(3);
+                        item.noD = true;
                 }
-            }
+                }
+            
         }
     }
 }
