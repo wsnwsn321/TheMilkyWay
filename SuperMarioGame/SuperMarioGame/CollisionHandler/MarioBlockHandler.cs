@@ -15,14 +15,31 @@ namespace SuperMarioGame.CollisionHandler
 
         public static void BlockHandler(Mario mario, IBlock brickBlock, int CollisionSide)
         {
-            switch(CollisionSide){
+            Vector2 newPosition;
+            switch (CollisionSide){
                 case 1:
+                    newPosition = brickBlock.position;
+                    newPosition.X = mario.position.X;
+                    newPosition.Y -= mario.state.marioSprite.desRectangle.Height;
+                    mario.position = newPosition;
                     break;
                 case 2:
+                    newPosition = brickBlock.position;
+                    newPosition.Y = mario.position.Y;
+                    newPosition.X += mario.state.marioSprite.desRectangle.Width;
+                    mario.position = newPosition;
                     break;
                 case 3:
+                    newPosition = brickBlock.position;
+                    newPosition.X = mario.position.X;
+                    newPosition.Y += mario.state.marioSprite.desRectangle.Height;
+                    mario.position = newPosition;
                     break;
                 case 4:
+                    newPosition = brickBlock.position;
+                    newPosition.Y = mario.position.Y;
+                    newPosition.X -= mario.state.marioSprite.desRectangle.Width;
+                    mario.position = newPosition;
                     break;
             }
         }
