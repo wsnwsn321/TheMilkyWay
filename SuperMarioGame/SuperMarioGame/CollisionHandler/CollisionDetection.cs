@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SuperMarioGame.ElementClasses;
 
 namespace SuperMarioGame.CollisionHandler
 {
     class CollisionDetection
     {
+        private Mario mario;
 
     }
 }
