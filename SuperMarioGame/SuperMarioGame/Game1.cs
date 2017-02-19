@@ -10,6 +10,7 @@ using SuperMarioGame.ElementClasses.EnvironmentClass;
 using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.SpriteFactories;
+using SuperMarioGame.CollisionHandler;
 
 namespace SuperMarioGame
 
@@ -70,6 +71,10 @@ namespace SuperMarioGame
             {
                 block.Update();
             }
+            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
+            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
+            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+
 
             mario.MarioUpdate();
             keyboardController.Update();
