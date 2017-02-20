@@ -6,10 +6,12 @@ namespace SuperMarioGame.ElementClasses
     public class Mario
     {
         public IMarioState state { set; get; }
+
+        public bool IsInvincible { get; set; }
         //state constant   
-        public const int MARIO_SMALL = 1, MARIO_BIG = 2, MARIO_FIRE = 3, MARIO_DEAD = 8 ;
+        public const int MARIO_DEAD = 1, MARIO_SMALL = 2, MARIO_BIG = 3, MARIO_FIRE = 4;
         //action constant
-        public const int MARIO_RUN = 5, MARIO_JUMP = 6, MARIO_CROUCH = 7,MARIO_IDLE = 4;
+        public const int MARIO_RUN = 5, MARIO_JUMP = 6, MARIO_CROUCH = 7,MARIO_IDLE = 8;
 
         public  const  bool MARIO_LEFT = true;
 
@@ -17,6 +19,8 @@ namespace SuperMarioGame.ElementClasses
         public int marioState { set; get; }
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
+
+        private int InvincibilityTime;
     
         public Mario(Vector2 position)
         {
@@ -25,6 +29,7 @@ namespace SuperMarioGame.ElementClasses
             marioAction = MARIO_IDLE;
             this.position = position;
             state = new IdleMarioState(this);
+            InvincibilityTime = 0;
 
         }
         public Mario(Vector2 position, int marioState, Boolean marioDirection)
@@ -72,10 +77,32 @@ namespace SuperMarioGame.ElementClasses
         {
             state.ChangeDirection();
         }
-        public void Die()
+        public void MarioDie()
         {
             marioState = MARIO_DEAD;
             state.Die();
+        }
+
+        public void MarioInvincible(int seconds)
+        {
+            if(InvincibilityTime < seconds) 
+            {
+                InvincibilityTime++;
+                this.IsInvincible = true;
+            } else
+            {
+
+            }
+
+        }
+
+        public void MarioGetHit()
+        {
+            if(!this.IsInvincible && this.marioState != MARIO_DEAD)
+            {
+                this.MarioChangeForm(this.marioState--);
+                this.MarioInvincible(3);
+            }
         }
 
     }
