@@ -12,19 +12,15 @@ namespace SuperMarioGame.CollisionHandler
             {
                 case 1:
                     mario.MarioGetHit();
-                    mario.InvincibilityTime += 3;
                     break;
                 case 2:
                     mario.MarioGetHit();
-                    mario.InvincibilityTime += 3;
                     break;
                 case 3:
                     mario.MarioGetHit();
-                    mario.InvincibilityTime += 3;
                     break;
                 case 4:
                     mario.MarioGetHit();
-                    mario.InvincibilityTime += 3;
                     break;
             }
         }

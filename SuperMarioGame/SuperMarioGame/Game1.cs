@@ -29,6 +29,7 @@ namespace SuperMarioGame
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
         internal Mario mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
+        public int WINDOW_HEIGHT;
 
 
         public Game1()
@@ -51,6 +52,7 @@ namespace SuperMarioGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //WINDOW_HEIGHT = spriteBatch.GraphicsDevice.
             CreateElements();
             mario.MarioIdle();
         }

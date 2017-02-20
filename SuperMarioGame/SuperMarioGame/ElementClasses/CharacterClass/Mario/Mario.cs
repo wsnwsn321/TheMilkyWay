@@ -29,6 +29,7 @@ namespace SuperMarioGame.ElementClasses
             marioDirection = MARIO_LEFT;
             marioAction = MARIO_IDLE;
             this.position = position;
+            this.IsInvincible = false;
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
 
@@ -74,13 +75,15 @@ namespace SuperMarioGame.ElementClasses
         {
             state.Update();
             counter++;
-            if(this.InvincibilityTime > 0 && counter > 10)
+            if(this.InvincibilityTime > 0 && counter > 20)
             {
+                this.IsInvincible = true;
                 this.InvincibilityTime--;
                 counter = 0;
-            } else if (this.InvincibilityTime == 0)
+            } else if (this.InvincibilityTime == 0 && counter > 20)
             {
                 this.IsInvincible = false;
+                counter = 0;
             }
         }
         public void MarioChangeDireciton()
@@ -95,14 +98,17 @@ namespace SuperMarioGame.ElementClasses
 
         public void MarioGetHit()
         {
-            if(!this.IsInvincible && this.marioState != MARIO_DEAD)
+            if(marioState > MARIO_SMALL && !this.IsInvincible)
             {
-                // The line below is risky, but works in our code.
-                this.MarioChangeForm(this.marioState--);
+                this.marioState--;
+                this.MarioChangeForm(marioState);
+                this.IsInvincible = true;
                 this.InvincibilityTime += 3;
-            } else if (this.marioState == MARIO_SMALL){
+            } else if (!this.IsInvincible)
+            {
                 this.MarioDie();
             }
+
         }
 
     }
