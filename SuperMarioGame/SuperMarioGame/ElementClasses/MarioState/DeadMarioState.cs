@@ -36,7 +36,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void Run()
         {
-            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
+              marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
         public void Draw(Vector2 position)
         {

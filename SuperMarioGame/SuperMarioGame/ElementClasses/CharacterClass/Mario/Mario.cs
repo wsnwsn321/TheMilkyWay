@@ -6,8 +6,11 @@ namespace SuperMarioGame.ElementClasses
     public class Mario
     {
         public IMarioState state { set; get; }
-        public const int MARIO_SMALL = 1, MARIO_BIG = 2, MARIO_FIRE = 3, MARIO_IDLE = 4,
-            MARIO_RUN = 5, MARIO_JUMP = 6, MARIO_CROUCH = 7, MARIO_DEAD = 8;
+        //state constant   
+        public const int MARIO_SMALL = 1, MARIO_BIG = 2, MARIO_FIRE = 3, MARIO_DEAD = 8 ;
+        //action constant
+        public const int MARIO_RUN = 5, MARIO_JUMP = 6, MARIO_CROUCH = 7,MARIO_IDLE = 4;
+
         public  const  bool MARIO_LEFT = true;
 
         public int marioAction { set; get; }
@@ -40,6 +43,7 @@ namespace SuperMarioGame.ElementClasses
         public void MarioChangeForm(int form)
         {
             state.ChangeForm(form);
+            marioState = form;
         }
         public void MarioJump()
         {
@@ -68,9 +72,9 @@ namespace SuperMarioGame.ElementClasses
         {
             state.ChangeDirection();
         }
-        public void MarioEatShit()
+        public void Die()
         {
-            marioAction = MARIO_DEAD;
+            marioState = MARIO_DEAD;
             state.Die();
         }
 

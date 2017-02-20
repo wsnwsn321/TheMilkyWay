@@ -15,8 +15,12 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
+            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+            {
             mario.MarioCrouch();
             mario.position = new Vector2(mario.position.X, mario.position.Y + 3);
+            }
+               
         }
     }
 }

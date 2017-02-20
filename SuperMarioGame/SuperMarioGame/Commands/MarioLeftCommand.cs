@@ -15,13 +15,17 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (!mario.marioDirection)
+            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
             {
+                if (!mario.marioDirection)
+               {
                 mario.MarioIdle();
                 mario.MarioChangeDireciton();
+                   }
+             mario.MarioRun();
+             mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
             }
-            mario.MarioRun();
-            mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
+                
 
 
         }

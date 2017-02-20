@@ -19,7 +19,7 @@ namespace SuperMarioGame.CollisionHandler
                         mario.MarioChangeForm(1);
                     }else
                     {
-                        mario.MarioEatShit();
+                        mario.Die();
                     }
                     break;
                 case 2:
@@ -33,7 +33,7 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     else
                     {
-                        mario.MarioEatShit();
+                        mario.Die();
                     }
                     break;
                 case 3:
@@ -47,7 +47,7 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     else
                     {
-                        mario.MarioEatShit();
+                        mario.Die();
                     }
                     break;
                 case 4:
@@ -61,7 +61,7 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     else
                     {
-                        mario.MarioEatShit();
+                        mario.Die();
                     }
                     break;
             }

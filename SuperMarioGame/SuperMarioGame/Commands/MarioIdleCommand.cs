@@ -12,7 +12,11 @@
 
         public void Execute()
         {
-            mario.MarioIdle();
+            if(mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+            {
+                     mario.MarioIdle();
+            }
+           
         }
     }
 }
