@@ -11,25 +11,26 @@ namespace SuperMarioGame.CollisionHandler
             switch (CollisionSide)
             {
                 case 1:
-                    if(mario.marioState  == 3)
+                    if(mario.marioState  == Mario.MARIO_FIRE)
                     {
-                        mario.MarioChangeForm(2);
-                    }else if(mario.marioState == 2)
+                        mario.MarioChangeForm(Mario.MARIO_BIG);
+
+                    }else if(mario.marioState == Mario.MARIO_BIG)
                     {
-                        mario.MarioChangeForm(1);
+                        mario.MarioChangeForm(Mario.MARIO_SMALL);
                     }else
                     {
                         mario.Die();
                     }
                     break;
                 case 2:
-                    if (mario.marioState == 3)
+                    if (mario.marioState == Mario.MARIO_FIRE)
                     {
-                        mario.MarioChangeForm(2);
+                        mario.MarioChangeForm(Mario.MARIO_BIG);
                     }
-                    else if (mario.marioState == 2)
+                    else if (mario.marioState == Mario.MARIO_BIG)
                     {
-                        mario.MarioChangeForm(1);
+                        mario.MarioChangeForm(Mario.MARIO_SMALL);
                     }
                     else
                     {
@@ -37,13 +38,13 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     break;
                 case 3:
-                    if (mario.marioState == 3)
+                    if (mario.marioState == Mario.MARIO_FIRE)
                     {
-                        mario.MarioChangeForm(2);
+                        mario.MarioChangeForm(Mario.MARIO_BIG);
                     }
-                    else if (mario.marioState == 2)
+                    else if (mario.marioState == Mario.MARIO_BIG)
                     {
-                        mario.MarioChangeForm(1);
+                        mario.MarioChangeForm(Mario.MARIO_SMALL);
                     }
                     else
                     {
@@ -51,13 +52,13 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     break;
                 case 4:
-                    if (mario.marioState == 3)
+                    if (mario.marioState == Mario.MARIO_FIRE)
                     {
-                        mario.MarioChangeForm(2);
+                        mario.MarioChangeForm(Mario.MARIO_BIG);
                     }
-                    else if (mario.marioState == 2)
+                    else if (mario.marioState == Mario.MARIO_BIG)
                     {
-                        mario.MarioChangeForm(1);
+                        mario.MarioChangeForm(Mario.MARIO_SMALL);
                     }
                     else
                     {
