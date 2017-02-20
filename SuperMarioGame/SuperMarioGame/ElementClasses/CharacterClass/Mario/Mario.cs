@@ -20,7 +20,7 @@ namespace SuperMarioGame.ElementClasses
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
 
-        private int InvincibilityTime;
+        private int InvincibilityTime, counter;
     
         public Mario(Vector2 position)
         {
@@ -72,6 +72,12 @@ namespace SuperMarioGame.ElementClasses
         public void MarioUpdate()
         {
             state.Update();
+            counter++;
+            if(this.InvincibilityTime > 0 && counter > 10)
+            {
+                this.InvincibilityTime--;
+                counter = 0;
+            }
         }
         public void MarioChangeDireciton()
         {
@@ -83,25 +89,13 @@ namespace SuperMarioGame.ElementClasses
             state.Die();
         }
 
-        public void MarioInvincible(int seconds)
-        {
-            if(InvincibilityTime < seconds) 
-            {
-                InvincibilityTime++;
-                this.IsInvincible = true;
-            } else
-            {
-
-            }
-
-        }
-
         public void MarioGetHit()
         {
             if(!this.IsInvincible && this.marioState != MARIO_DEAD)
             {
+                // The line below is risky, but works in our code.
                 this.MarioChangeForm(this.marioState--);
-                this.MarioInvincible(3);
+                this.InvincibilityTime += 3;
             }
         }
 
