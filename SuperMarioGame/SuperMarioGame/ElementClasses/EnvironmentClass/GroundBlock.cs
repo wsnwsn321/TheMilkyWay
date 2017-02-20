@@ -13,15 +13,21 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     {
         public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
+
+        public bool isVisible { get; set; }
         public GroundBlock(Vector2 pos)
         {
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
             position = pos;
+            isVisible = true;
         }
 
         public void Draw()
         {
-            blockSprite.Draw(position);
+            if (isVisible)
+            {
+                blockSprite.Draw(position);
+            }
         }
 
         public void Update()

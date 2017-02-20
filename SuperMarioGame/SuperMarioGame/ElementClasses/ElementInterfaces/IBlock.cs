@@ -14,6 +14,8 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         void Draw();
         void Update();
         ISprite blockSprite { get; set; }
+        bool isVisible { get; set; }
+
 
     }
 }

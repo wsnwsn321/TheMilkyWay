@@ -13,17 +13,18 @@ namespace SuperMarioGame.ElementClasses.ItemClass
     {
         public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
-        public bool noD { get; set; }
+        public bool isVisible { get; set; }
 
         public Flower(Vector2 pos)
         {
             position = pos;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
+            isVisible = true;
         }
 
         public void Draw()
         {
-            if (noD == false)
+            if (isVisible)
             {
                 itemSprite.Draw(position);
             }

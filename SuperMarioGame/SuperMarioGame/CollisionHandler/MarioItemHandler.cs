@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.ElementClasses.ItemClass;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -28,39 +29,39 @@ namespace SuperMarioGame.CollisionHandler
         public static void ItemHandler(Mario mario,  IItem item, int CollisionSide)
         {
                     
-                    if(item is ElementClasses.ItemClass.RedMushroom)
-                    {
+            if(item is RedMushroom)
+            {
                         
-                        if(mario.marioState != ElementClasses.Mario.MARIO_BIG && !item.noD && mario.marioState !=ElementClasses.Mario.MARIO_DEAD)
-                    {
-                            mario.state.ChangeForm(2);
-                            item.noD = true;
-                    }
-                        
-                    }
-
-
-                if (item is ElementClasses.ItemClass.Flower)
+                if(mario.marioState != Mario.MARIO_BIG && item.isVisible && mario.marioState !=Mario.MARIO_DEAD)
                 {
-                    if (mario.marioState != ElementClasses.Mario.MARIO_FIRE && !item.noD && mario.marioState != ElementClasses.Mario.MARIO_DEAD)
-                    {
-                        mario.state.ChangeForm(3);
-                        item.noD = true;
+                        mario.state.ChangeForm(2);
+                        item.isVisible = false;
                 }
-                }
-
-            if (item is ElementClasses.ItemClass.Star)
-            {
-                    item.noD = true;
+                        
             }
 
-            if (item is ElementClasses.ItemClass.Coin)
+
+            if (item is Flower)
             {
-                item.noD = true;
+                if (mario.marioState != Mario.MARIO_FIRE && item.isVisible && mario.marioState != Mario.MARIO_DEAD)
+                {
+                    mario.state.ChangeForm(3);
+                    item.isVisible = false;
+                }
             }
-            if (item is ElementClasses.ItemClass.GreenMushroom)
+
+            if (item is Star)
             {
-                item.noD = true;
+                    item.isVisible = false;
+            }
+
+            if (item is Coin)
+            {
+                item.isVisible = false;
+            }
+            if (item is GreenMushroom)
+            {
+                item.isVisible = false;
             }
         }
     }

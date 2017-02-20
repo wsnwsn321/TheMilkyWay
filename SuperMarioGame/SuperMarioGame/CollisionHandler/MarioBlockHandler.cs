@@ -8,6 +8,9 @@ using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using SuperMarioGame.ElementClasses.EnvironmentClass;
+using SuperMarioGame.Sprites;
+using SuperMarioGame.SpriteFactories;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -16,29 +19,44 @@ namespace SuperMarioGame.CollisionHandler
         public static void BlockHandler(Mario mario, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
-            
-            switch (CollisionSide){
-                case 1:
-                    newPosition.X = mario.state.marioSprite.desRectangle.X;
-                    newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
-                    mario.position = newPosition;
-
-                    break;
-                case 2:
-                    newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
-                    newPosition.Y = mario.state.marioSprite.desRectangle.Y;
-                    mario.position = newPosition;
-                    break;
-                case 3:
-                    newPosition.X = mario.state.marioSprite.desRectangle.X;
-                    newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height;
-                    mario.position = newPosition;
-                    break;
-                case 4:
-                    newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
-                    newPosition.Y = mario.state.marioSprite.desRectangle.Y;
-                    mario.position = newPosition;
-                    break;
+            if (block.isVisible)
+            {
+                switch (CollisionSide)
+                {
+                    case 1: //top collision
+                        newPosition.X = mario.state.marioSprite.desRectangle.X;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
+                        mario.position = newPosition;
+                        break;
+                    case 2: //right side collision
+                        newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
+                        newPosition.Y = mario.state.marioSprite.desRectangle.Y;
+                        mario.position = newPosition;
+                        break;
+                    case 3: //bottom collision
+                        newPosition.X = mario.state.marioSprite.desRectangle.X;
+                        newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height;
+                        mario.position = newPosition;
+                        if (block is BrickBlock)
+                        {
+                            block.isVisible = false;
+                        }
+                        else if (block is QuestionBlock)
+                        {
+                            //block = new UsedBlock(block.position);
+                            block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                        }
+                        else if (block is HiddenBlock)
+                        {
+                            block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                        }
+                        break;
+                    case 4: //left side collision
+                        newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
+                        newPosition.Y = mario.state.marioSprite.desRectangle.Y;
+                        mario.position = newPosition;
+                        break;
+                }
             }
         }
     }

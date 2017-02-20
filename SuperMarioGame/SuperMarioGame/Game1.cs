@@ -151,7 +151,7 @@ namespace SuperMarioGame
             //enemyElements[0] - Koopa
             enemyElements.Add(new Goomba(new Vector2(600, 100)));
             //enemyElements[1] - Goomba
-
+            
             itemElements.Add(new Coin(new Vector2(100, 300)));
             //itemElements[0] - Coin
             itemElements.Add(new Flower(new Vector2(100, 100)));

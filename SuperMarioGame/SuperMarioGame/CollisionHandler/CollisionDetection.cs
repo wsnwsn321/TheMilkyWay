@@ -12,7 +12,6 @@ namespace SuperMarioGame.CollisionHandler
 {
     class CollisionDetection
     {
-        private Mario mario;
         private List<IBlock> envElements = new List<IBlock>();
         private List<IItem> itemElements = new List<IItem>();
         private List<IEnemy> enemyElements = new List<IEnemy>();
@@ -22,7 +21,6 @@ namespace SuperMarioGame.CollisionHandler
         public int SIDE;
 
         private static CollisionDetection instance = new CollisionDetection();
-
 
         public static CollisionDetection Instance
         {
@@ -69,16 +67,13 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     MarioBlockHandler.BlockHandler(mario, block, SIDE);
                 }
-                
             }
         }
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
         {
-
             foreach (IItem item in itemElements)
-            {
-                
+            {     
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
                 {
                     firstRectangle = mario.state.marioSprite.desRectangle;
