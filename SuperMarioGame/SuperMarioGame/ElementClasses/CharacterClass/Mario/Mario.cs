@@ -20,7 +20,8 @@ namespace SuperMarioGame.ElementClasses
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
 
-        private int InvincibilityTime, counter;
+        public int InvincibilityTime;
+        private int counter;
     
         public Mario(Vector2 position)
         {
@@ -32,7 +33,7 @@ namespace SuperMarioGame.ElementClasses
             InvincibilityTime = 0;
 
         }
-        public Mario(Vector2 position, int marioState, Boolean marioDirection)
+        public Mario(Vector2 position, int marioState, bool marioDirection)
         {
             this.marioState = marioState;
             this.marioDirection = marioDirection;

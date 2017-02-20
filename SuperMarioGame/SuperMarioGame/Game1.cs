@@ -28,7 +28,7 @@ namespace SuperMarioGame
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
-        internal Mario mario = new Mario(new Vector2(400, 400), 1, false);
+        internal Mario mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
 
 
         public Game1()
