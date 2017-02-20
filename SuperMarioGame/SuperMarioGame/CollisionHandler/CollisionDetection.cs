@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
-using System.Diagnostics;
+
 
 namespace SuperMarioGame.CollisionHandler
 {
     class CollisionDetection
     {
-        private List<IBlock> envElements = new List<IBlock>();
-        private List<IItem> itemElements = new List<IItem>();
-        private List<IEnemy> enemyElements = new List<IEnemy>();
         private Rectangle collideRectangle;
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;

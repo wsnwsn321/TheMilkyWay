@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SuperMarioGame.Commands
+﻿namespace SuperMarioGame.Commands
 {
-    class QuestionBlockToUsedBlockCommand : ICommand
+    public class QuestionBlockToUsedBlockCommand : ICommand
     {
 
         private Game1 myGame;

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SuperMarioGame.ElementClasses.ElementInterfaces;
+﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
-using Microsoft.Xna.Framework;
 
 
 namespace SuperMarioGame.CollisionHandler
 {
-    class MarioEnemyHandler
+    public static class MarioEnemyHandler
     {
-        public static void EnemyHandler(Mario mario, IEnemy item, int CollisionSide)
+        public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
         {
             switch (CollisionSide)
             {

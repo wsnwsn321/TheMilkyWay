@@ -1,20 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SuperMarioGame.ElementClasses.ElementInterfaces;
+﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
-using System.Diagnostics;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
-using SuperMarioGame.Sprites;
 using SuperMarioGame.SpriteFactories;
 
 namespace SuperMarioGame.CollisionHandler
 {
-    class MarioBlockHandler
+    public static class MarioBlockHandler
     {
         public static void BlockHandler(Mario mario, IBlock block, int CollisionSide)
         {

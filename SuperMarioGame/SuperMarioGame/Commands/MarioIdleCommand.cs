@@ -1,5 +1,4 @@
-﻿
-namespace SuperMarioGame.Commands
+﻿namespace SuperMarioGame.Commands
 {
     class MarioIdleCommand : ICommand
     {
