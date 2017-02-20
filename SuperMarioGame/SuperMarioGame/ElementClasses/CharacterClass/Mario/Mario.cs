@@ -78,6 +78,9 @@ namespace SuperMarioGame.ElementClasses
             {
                 this.InvincibilityTime--;
                 counter = 0;
+            } else if (this.InvincibilityTime == 0)
+            {
+                this.IsInvincible = false;
             }
         }
         public void MarioChangeDireciton()
@@ -97,6 +100,8 @@ namespace SuperMarioGame.ElementClasses
                 // The line below is risky, but works in our code.
                 this.MarioChangeForm(this.marioState--);
                 this.InvincibilityTime += 3;
+            } else if (this.marioState == MARIO_SMALL){
+                this.MarioDie();
             }
         }
 
