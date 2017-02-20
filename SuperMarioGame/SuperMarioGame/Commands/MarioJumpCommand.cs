@@ -6,6 +6,7 @@ namespace SuperMarioGame.Commands
     {
         private Game1 myGame;
         private ElementClasses.Mario mario;
+        new Vector2 marioPosition;
 
         public MarioJumpCommand(Game1 game)
         {
@@ -18,7 +19,11 @@ namespace SuperMarioGame.Commands
             if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
             {
              mario.MarioJump();
-             mario.position = new Vector2(mario.position.X, mario.position.Y - 3);
+             
+                if (mario.position.Y > 0)
+                {
+                    mario.position = new Vector2(mario.position.X, mario.position.Y - 3);
+                }
             }
              
         }

@@ -12,22 +12,29 @@ namespace SuperMarioGame.CollisionHandler
             if(item is RedMushroom)
             {
                         
-                if(mario.marioState != Mario.MARIO_BIG && item.isVisible && mario.marioState !=Mario.MARIO_DEAD)
+                if(mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
                 {
-                        mario.state.ChangeForm(2);
-                        item.isVisible = false;
+                        mario.state.ChangeForm(Mario.MARIO_BIG);        
                 }
-                        
+                       item.isVisible = false;  
             }
 
 
             if (item is Flower)
             {
-                if (mario.marioState != Mario.MARIO_FIRE && item.isVisible && mario.marioState != Mario.MARIO_DEAD)
+                if (mario.marioState != Mario.MARIO_FIRE && item.isVisible)
                 {
-                    mario.state.ChangeForm(3);
-                    item.isVisible = false;
+                    if (mario.marioState == Mario.MARIO_SMALL)
+                    {
+                        mario.state.ChangeForm(Mario.MARIO_BIG);
+                    }
+                    else
+                    {
+                        mario.state.ChangeForm(Mario.MARIO_FIRE);  
+                    }
+                    
                 }
+                item.isVisible = false;
             }
 
             if (item is Star)

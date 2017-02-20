@@ -18,7 +18,11 @@ namespace SuperMarioGame.Commands
             if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
             {
             mario.MarioCrouch();
-            mario.position = new Vector2(mario.position.X, mario.position.Y + 3);
+                if (mario.position.Y < myGame.Window.ClientBounds.Height-mario.state.marioSprite.desRectangle.Height)
+                {
+                     mario.position = new Vector2(mario.position.X, mario.position.Y + 3);
+                }
+           
             }
                
         }

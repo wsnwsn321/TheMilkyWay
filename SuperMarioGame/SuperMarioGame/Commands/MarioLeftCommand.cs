@@ -23,7 +23,11 @@ namespace SuperMarioGame.Commands
                 mario.MarioChangeDireciton();
                    }
              mario.MarioRun();
-             mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
+                if (mario.position.X > 0)
+                {
+                    mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
+                }
+             
             }
                 
 
