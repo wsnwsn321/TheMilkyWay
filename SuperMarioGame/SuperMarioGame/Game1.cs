@@ -188,7 +188,7 @@ namespace SuperMarioGame
 
         public void ResetGame()
         {
-            mario = new Mario(new Vector2(400, 400), 1, false);
+            mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
             mario.MarioIdle();
             Initialize();
             envElements = new List<IBlock>();
