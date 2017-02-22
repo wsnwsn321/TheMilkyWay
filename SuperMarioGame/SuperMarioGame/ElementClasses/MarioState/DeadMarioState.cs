@@ -6,7 +6,7 @@ namespace SuperMarioGame.ElementClasses
     class DeadMarioState : IMarioState
     {
         private Mario mario;
-        public ISprite marioSprite { get; set; }
+        public IMarioSprite marioSprite { get; set; }
 
         public DeadMarioState( Mario mario)
         {

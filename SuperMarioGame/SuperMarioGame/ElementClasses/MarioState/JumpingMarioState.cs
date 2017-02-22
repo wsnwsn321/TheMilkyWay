@@ -8,7 +8,7 @@ namespace SuperMarioGame.ElementClasses
 
   
         private Mario mario;
-        public ISprite marioSprite { get; set; }
+        public IMarioSprite marioSprite { get; set; }
         public JumpingMarioState(Mario mario)
         {
             this.mario = mario;
