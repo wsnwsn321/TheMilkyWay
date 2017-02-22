@@ -10,12 +10,15 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
+        public Color tintColor { get; set; }
+
         Vector2 p;
 
         public LeftCrouchingBigMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             this.sb = sb;
             Texture = texture;
+            tintColor = Color.White;
         }
         public void Update()
         {
@@ -32,7 +35,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 18, 32);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 36, 64);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }
