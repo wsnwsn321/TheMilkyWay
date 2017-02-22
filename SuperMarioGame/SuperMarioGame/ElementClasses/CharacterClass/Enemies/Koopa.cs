@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMarioGame.ElementClasses.ElementInterfaces;
+using SuperMarioGame.ElementClasses.EnemyState.KoopaState;
 using SuperMarioGame.Sprites;
 using System;
 
@@ -11,44 +13,58 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
 
+        public IEnemyState koopaState;
+
+        public const int KOOPA_IDLE = 1, KOOPA_FLIPPED = 2, KOOPA_SHELL = 3;
+
+        public const bool GOOMBA_LEFT = true;
+
+        public bool koopaDirection;
+
+        public int koopaAction;
         public Koopa(Vector2 pos)
         {
-            position = pos;
+            position    = pos;
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
-            isVisible = true;
+            koopaState  = new KoopaIdleState(this);
+            koopaAction = KOOPA_IDLE; 
+            isVisible   = true;
         }
 
         public void Draw()
         {
             if (isVisible)
             { 
-                enemySprite.Draw(position);
+                koopaState.Draw(position,enemySprite);
             }
         }
 
         public void Update()
         {
-            enemySprite.Update();
+            koopaState.Update(enemySprite);
         }
 
         public void ChangeDirection()
         {
-            throw new NotImplementedException();
+            koopaState.ChangeDirection();
         }
 
         public void BeStomped()
         {
-            throw new NotImplementedException();
+            //enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaStompedSprite();
+            //koopaState.Bestomped();
         }
 
         public void BeFlipped()
         {
-            throw new NotImplementedException();
+            //enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaFlippedSprite();
+            //koopaState.BeFlipped()
         }
 
         public void EnemyIdle()
         {
-            throw new NotImplementedException();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            koopaState.EnemyIdle();
         }
     }
 }

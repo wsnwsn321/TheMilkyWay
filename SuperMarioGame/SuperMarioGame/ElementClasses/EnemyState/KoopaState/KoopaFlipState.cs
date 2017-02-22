@@ -6,55 +6,56 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.Sprites;
+using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
 
 namespace SuperMarioGame.ElementClasses.EnemyState.KoopaState
 {
     class KoopaFlipState: IEnemyState
     {
 
-        public void EnemyIdle()
-        {
+        private Koopa koopa;
 
+        public KoopaFlipState(Koopa koopa)
+        {
+            this.koopa = koopa;
+        }
+        public void EnemyIdle(Koopa koopa)
+        {
+            this.koopa = koopa;
         }
 
         public void BeFilpped()
         {
-            throw new NotImplementedException();
+            koopa.koopaAction = Koopa.KOOPA_FLIPPED;
         }
 
         public void BeStomped()
         {
-            throw new NotImplementedException();
+            koopa.koopaAction = Koopa.KOOPA_SHELL;
+            koopa.koopaState = new KoopaShellState(koopa);
         }
 
         public void ChangeDirection()
         {
-            throw new NotImplementedException();
+            koopa.koopaDirection = !koopa.koopaDirection;
         }
 
-        public void Draw()
+        public void EnemyIdle()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Draw(Vector2 position)
-        {
-            throw new NotImplementedException();
+            koopa.koopaAction = Koopa.KOOPA_IDLE;
+            koopa.koopaState = new KoopaIdleState(koopa);
         }
 
         public void Draw(Vector2 position, ISprite enemySprite)
         {
-            throw new NotImplementedException();
+            enemySprite.Draw(position);
         }
 
         public void Update(ISprite enemySprite)
         {
-            throw new NotImplementedException();
+            enemySprite.Update();
         }
+
+        
     }
 }

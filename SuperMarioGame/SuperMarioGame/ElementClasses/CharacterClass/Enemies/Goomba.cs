@@ -20,7 +20,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
 
-        public const bool GOOMBA_LEFT = true;
+        public const bool KOOPA_LEFT = true;
 
         public bool goombaDirection;
 
