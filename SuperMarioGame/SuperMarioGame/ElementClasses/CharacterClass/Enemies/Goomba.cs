@@ -17,21 +17,27 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Vector2 position { get; set; }
         public IEnemyState goombaState;
         public ISprite enemySprite { get; set; }
-        public  const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
+        public bool isVisible { get; set; }
+
+        public const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
 
         public const bool GOOMBA_LEFT = true;
 
         public bool goombaDirection;
+
         public int goombaAction;
+
+        private int deadCounter = 0;
 
         public Goomba(Vector2 pos)
         {
-            position        = pos;
+            position = pos;
             goombaDirection = true;
             goombaState = new GoombaIdleState(this);
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaSprite();
-            goombaAction    = GOOMBA_IDLE;
+            goombaAction = GOOMBA_IDLE;
             EnemyIdle();
+            isVisible = true;
         }
 
         public void  EnemyIdle()
@@ -41,12 +47,23 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         }
         public void Draw()
         {
-            goombaState.Draw(position,enemySprite);
+            if (isVisible)
+            {
+                goombaState.Draw(position, enemySprite);
+            }
         }
 
         public void Update()
         {
             goombaState.Update(enemySprite);
+            if (goombaAction.Equals(GOOMBA_DEAD))
+            {
+                deadCounter++;
+                if(deadCounter == 50)
+                {
+                    isVisible = false;
+                }
+            }
         }
 
         public void ChangeDirection()

@@ -16,11 +16,6 @@ namespace SuperMarioGame.Sprites
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
-        int currentFrame;
-        int totalFrame;
-        int currentUpdate;
-        int slowSpeedDown;
-
         public GoombaStompedSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;

@@ -39,17 +39,26 @@ namespace SuperMarioGame.CollisionHandler
 
             if (item is Star)
             {
-                item.isVisible = false;
-                mario.GetStar();
+                if (item.isVisible)
+                {
+                    item.isVisible = false;
+                    mario.GetStar();
+                }
             }
 
             if (item is Coin)
             {
-                item.isVisible = false;
+                if (item.isVisible)
+                {
+                    item.isVisible = false;
+                }
             }
             if (item is GreenMushroom)
             {
-                item.isVisible = false;
+                if (item.isVisible)
+                {
+                    item.isVisible = false;
+                }
             }
         }
     }

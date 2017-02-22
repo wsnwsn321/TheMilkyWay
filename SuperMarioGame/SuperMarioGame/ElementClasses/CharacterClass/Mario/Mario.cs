@@ -80,10 +80,10 @@ namespace SuperMarioGame.ElementClasses
                 starCounter++;
                 if(starCounter % 20 == 0)
                 {
-                    this.state.marioSprite.tintColor = Color.White;
+                    state.marioSprite.tintColor = Color.White;
                 }  else if (starCounter % 20 == 10) 
                 {
-                    this.state.marioSprite.tintColor = Color.Black;
+                    state.marioSprite.tintColor = Color.Brown;
                 }
             }
             state.Draw(position);
@@ -92,14 +92,14 @@ namespace SuperMarioGame.ElementClasses
         {
             state.Update();
             counter++;
-            if(this.InvincibilityTime > 0 && counter > 20)
+            if(InvincibilityTime > 0 && counter > 20)
             {
-                this.IsInvincible = true;
-                this.InvincibilityTime--;
+                IsInvincible = true;
+                InvincibilityTime--;
                 counter = 0;
-            } else if (this.InvincibilityTime == 0 && counter > 20)
+            } else if (InvincibilityTime == 0 && counter > 20)
             {
-                this.IsInvincible = false;
+                IsInvincible = false;
                 HasStarPower = false;
                 counter = 0;
             }
@@ -116,15 +116,15 @@ namespace SuperMarioGame.ElementClasses
 
         public void MarioGetHit()
         {
-            if(marioState > MARIO_SMALL && !this.IsInvincible)
+            if(marioState > MARIO_SMALL && !IsInvincible)
             {
-                this.marioState--;
-                this.MarioChangeForm(marioState);
-                this.IsInvincible = true;
-                this.InvincibilityTime += 3;
-            } else if (!this.IsInvincible)
+                marioState--;
+                MarioChangeForm(marioState);
+                IsInvincible = true;
+                InvincibilityTime += 3;
+            } else if (!IsInvincible)
             {
-                this.MarioDie();
+                MarioDie();
             }
 
         }

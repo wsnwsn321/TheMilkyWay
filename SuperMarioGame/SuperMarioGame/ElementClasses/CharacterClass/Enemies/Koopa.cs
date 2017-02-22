@@ -9,16 +9,21 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
     {
         public ISprite enemySprite { get; set; }
         public Vector2 position { get; set; }
+        public bool isVisible { get; set; }
 
         public Koopa(Vector2 pos)
         {
             position = pos;
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            isVisible = true;
         }
 
         public void Draw()
         {
-            enemySprite.Draw(position);
+            if (isVisible)
+            { 
+                enemySprite.Draw(position);
+            }
         }
 
         public void Update()

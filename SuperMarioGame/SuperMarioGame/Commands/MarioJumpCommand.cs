@@ -6,7 +6,6 @@ namespace SuperMarioGame.Commands
     {
         private Game1 myGame;
         private ElementClasses.Mario mario;
-        new Vector2 marioPosition;
 
         public MarioJumpCommand(Game1 game)
         {
