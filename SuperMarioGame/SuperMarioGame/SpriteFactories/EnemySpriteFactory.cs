@@ -47,6 +47,9 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.KoopaSprite(koopaSpritesheet,sb);
         }
 
-
+        public Sprites.ISprite CreateKoopaStompedSprite()
+        {
+            return new Sprites.KoopaStompedSprite(koopaSpritesheet, sb);
+        }
     }
 }

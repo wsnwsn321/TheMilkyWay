@@ -51,8 +51,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void BeStomped()
         {
-            //enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaStompedSprite();
-            //koopaState.Bestomped();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaStompedSprite();
+            koopaState.BeStomped();
         }
 
         public void BeFlipped()
