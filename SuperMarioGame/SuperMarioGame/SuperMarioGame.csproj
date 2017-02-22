@@ -109,6 +109,7 @@
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftRunningSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\RightIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftIdleSmallMarioSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\KoopaStompedSprite .cs" />
     <Compile Include="Sprites\OtherSprite\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BrickBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\StageBlockSprite.cs" />
