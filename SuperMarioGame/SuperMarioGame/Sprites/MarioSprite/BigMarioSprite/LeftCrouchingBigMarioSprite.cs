@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
-    public class LeftCrouchingBigMarioSprite : ISprite
+    public class LeftCrouchingBigMarioSprite : IMarioSprite
 
     {
         public Texture2D Texture { get; set; }
