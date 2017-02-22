@@ -1,44 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SuperMarioGame.ElementClasses.ElementInterfaces;
+﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
-using Microsoft.Xna.Framework;
+using SuperMarioGame.ElementClasses.ItemClass;
 
 namespace SuperMarioGame.CollisionHandler
 {
-    class MarioItemHandler
+    public static class MarioItemHandler
     {
-        private static MarioItemHandler instance = new MarioItemHandler();
-
-
-        public static MarioItemHandler Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
-
-        private MarioItemHandler()
-        {
-        }
         public static void ItemHandler(Mario mario,  IItem item, int CollisionSide)
         {
-            if (CollisionSide==1|| CollisionSide==2| CollisionSide==3|| CollisionSide==4)
-            {
                     
-                    if(item is ElementClasses.ItemClass.RedMushroom)
-                    {
-                        mario.state.ChangeForm(2);
+            if(item is RedMushroom)
+            {
                         
-                    }
-                if (item is ElementClasses.ItemClass.Flower)
+                if(mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
                 {
-                    mario.state.ChangeForm(3);
+                        mario.state.ChangeForm(Mario.MARIO_BIG);        
                 }
+                       item.isVisible = false;  
+            }
+
+
+            if (item is Flower)
+            {
+                if (mario.marioState != Mario.MARIO_FIRE && item.isVisible)
+                {
+                    if (mario.marioState == Mario.MARIO_SMALL)
+                    {
+                        mario.state.ChangeForm(Mario.MARIO_BIG);
+                    }
+                    else
+                    {
+                        mario.state.ChangeForm(Mario.MARIO_FIRE);  
+                    }
+                    
+                }
+                item.isVisible = false;
+            }
+
+            if (item is Star)
+            {
+                    item.isVisible = false;
+            }
+
+            if (item is Coin)
+            {
+                item.isVisible = false;
+            }
+            if (item is GreenMushroom)
+            {
+                item.isVisible = false;
             }
         }
     }

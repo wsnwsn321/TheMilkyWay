@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses
@@ -14,15 +8,10 @@ namespace SuperMarioGame.ElementClasses
      
 
         private Mario mario;
-        public ISprite marioSprite { get; set; }
+        public IMarioSprite marioSprite { get; set; }
         public CrouchMarioState(Mario mario)
         {
             this.mario = mario;
-           
-        }
-
-        public void Crouch()
-        {
             if (mario.marioDirection)
             {
                 switch (mario.marioState)
@@ -54,6 +43,12 @@ namespace SuperMarioGame.ElementClasses
                 }
             }
 
+
+
+        }
+
+        public void Crouch()
+        {
 
         }
 
@@ -98,7 +93,7 @@ namespace SuperMarioGame.ElementClasses
         public void Die()
         {
             mario.state = new DeadMarioState( mario);
-            mario.MarioEatShit();
+            mario.MarioDie();
         }
     }
 }

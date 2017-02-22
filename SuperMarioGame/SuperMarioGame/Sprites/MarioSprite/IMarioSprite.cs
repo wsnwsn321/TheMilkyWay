@@ -2,12 +2,14 @@
 
 namespace SuperMarioGame.Sprites
 {
-    public interface ISprite
+    public interface IMarioSprite
     {
         void Update();
 
         void Draw(Vector2 location);
 
         Rectangle desRectangle { get; set; }
+        
+        Color tintColor { get; set; }
     }
 }

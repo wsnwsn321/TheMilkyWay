@@ -12,7 +12,7 @@ namespace SuperMarioGame.Sprites
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
-        public Boolean toDraw { get; set; }
+        public bool toDraw { get; set; }
 
         public BrickBlockSprite(Texture2D texture, SpriteBatch sb)
         {

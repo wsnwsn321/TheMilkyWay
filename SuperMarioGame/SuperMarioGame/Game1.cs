@@ -28,7 +28,9 @@ namespace SuperMarioGame
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
-        internal Mario mario = new Mario(new Vector2(400, 400), 1, false);        
+        internal Mario mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
+        public int WINDOW_HEIGHT;
+
 
         public Game1()
         {
@@ -50,6 +52,7 @@ namespace SuperMarioGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //WINDOW_HEIGHT = spriteBatch.GraphicsDevice.
             CreateElements();
             mario.MarioIdle();
         }
@@ -125,6 +128,7 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             keyboardController.RegisterCommand(Keys.C, new MarioChangeFormCommand(this));
+            keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
 
 
@@ -149,7 +153,7 @@ namespace SuperMarioGame
             //enemyElements[0] - Koopa
             enemyElements.Add(new Goomba(new Vector2(600, 100)));
             //enemyElements[1] - Goomba
-
+            
             itemElements.Add(new Coin(new Vector2(100, 300)));
             //itemElements[0] - Coin
             itemElements.Add(new Flower(new Vector2(100, 100)));
@@ -176,17 +180,17 @@ namespace SuperMarioGame
             envElements.Add(new Pipe(new Vector2(400, 100)));
             //envElements[6] - Pipe
 
-            backgroundElements.Add(new BigCloud(new Vector2(200, 50)));
-            backgroundElements.Add(new SmallCloud(new Vector2(400, 50)));
-            backgroundElements.Add(new BigMountain(new Vector2(200, 340)));
-            backgroundElements.Add(new SmallMountain(new Vector2(400, 340)));
-            backgroundElements.Add(new BigBrush(new Vector2(500, 350)));
-            backgroundElements.Add(new SmallBrush(new Vector2(500, 350)));
+            backgroundElements.Add(new BigCloud(new Vector2(200, 40)));
+            backgroundElements.Add(new SmallCloud(new Vector2(400, 40)));
+            backgroundElements.Add(new BigMountain(new Vector2(150, 410)));
+            backgroundElements.Add(new SmallMountain(new Vector2(375, 440)));
+            backgroundElements.Add(new BigBrush(new Vector2(500, 450)));
+            backgroundElements.Add(new SmallBrush(new Vector2(700, 450)));
         }
 
         public void ResetGame()
         {
-            mario = new Mario(new Vector2(400, 400), 1, false);
+            mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
             mario.MarioIdle();
             Initialize();
             envElements = new List<IBlock>();

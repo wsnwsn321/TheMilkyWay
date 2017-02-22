@@ -8,15 +8,11 @@ namespace SuperMarioGame.ElementClasses
  
      
         private Mario mario;
-        public ISprite marioSprite { get; set; }
+        public IMarioSprite marioSprite { get; set; }
         public RunningMarioState( Mario mario)
         {
-            this.mario = mario;      
-        }
-        
-        public void Run()
-        {
-            if (mario.marioDirection && mario.marioAction != Mario.MARIO_RUN)
+            this.mario = mario;
+            if (mario.marioDirection)
             {
                 switch (mario.marioState)
                 {
@@ -34,7 +30,7 @@ namespace SuperMarioGame.ElementClasses
                         break;
                 }
             }
-            else if (!mario.marioDirection && mario.marioAction != Mario.MARIO_RUN)
+            else if (!mario.marioDirection)
             {
                 switch (mario.marioState)
                 {
@@ -49,6 +45,11 @@ namespace SuperMarioGame.ElementClasses
                         break;
                 }
             }
+
+        }
+        
+        public void Run()
+        {
         }
         public void Crouch()
         {
@@ -98,7 +99,7 @@ namespace SuperMarioGame.ElementClasses
         public void Die()
         {
             mario.state = new DeadMarioState( mario);
-            mario.MarioEatShit();
+            mario.MarioDie();
         }
     }
 }

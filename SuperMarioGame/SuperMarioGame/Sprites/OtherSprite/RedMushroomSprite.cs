@@ -1,10 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperMarioGame.Sprites
 {
@@ -33,12 +28,14 @@ namespace SuperMarioGame.Sprites
 
         public void Draw(Vector2 position)
         {
+
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 16, 16);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();
+          
         }
     }
 }

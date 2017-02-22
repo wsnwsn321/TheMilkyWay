@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
 {
-   public class RightRunningSmallMarioSprite : ISprite
+    public class RightRunningSmallMarioSprite : IMarioSprite
     {
 
         
@@ -16,6 +11,8 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         private SpriteBatch sb;
         Vector2 p;
         public Rectangle desRectangle { get; set; }
+        public Color tintColor { get; set; }
+
 
         int currentFrame;
         int totalFrame;
@@ -26,6 +23,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         {
             this.sb = sb;
             Texture = texture;
+            tintColor = Color.White;
             currentFrame = 4;
             totalFrame = 8;
             currentUpdate = 4;
@@ -55,7 +53,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             int currentWidth = 15;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth)-1, 0, 15, 16);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }

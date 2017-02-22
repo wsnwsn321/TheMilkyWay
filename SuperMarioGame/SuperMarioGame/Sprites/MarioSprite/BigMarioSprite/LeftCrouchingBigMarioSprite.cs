@@ -1,19 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
 {
-    public class LeftCrouchingBigMarioSprite : ISprite
+    public class LeftCrouchingBigMarioSprite : IMarioSprite
 
     {
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
+
+        public Color tintColor { get; set; }
 
         Vector2 p;
 
@@ -21,6 +18,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
         {
             this.sb = sb;
             Texture = texture;
+            tintColor = Color.White;
         }
         public void Update()
         {
@@ -37,7 +35,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 18, 32);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 36, 64);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }

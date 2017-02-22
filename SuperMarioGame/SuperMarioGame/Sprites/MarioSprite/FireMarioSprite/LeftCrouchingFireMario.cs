@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
 {
-    public class LeftCrouchingFireMarioSprite : ISprite
+    public class LeftCrouchingFireMarioSprite : IMarioSprite
 
     {
         public Texture2D Texture { get; set; }
@@ -16,11 +11,14 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
+        public Color tintColor { get; set; }
+
 
         public LeftCrouchingFireMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
+            this.tintColor = Color.White;
         }
         public void Update()
         {
@@ -37,7 +35,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 19, 32);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 38, 64);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses
@@ -12,11 +6,13 @@ namespace SuperMarioGame.ElementClasses
     class DeadMarioState : IMarioState
     {
         private Mario mario;
-        public ISprite marioSprite { get; set; }
+        public IMarioSprite marioSprite { get; set; }
 
         public DeadMarioState( Mario mario)
         {
             this.mario = mario;
+            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
+
 
         }
         public void Idle()
@@ -40,7 +36,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void Run()
         {
-            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
+              marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
         public void Draw(Vector2 position)
         {
@@ -57,7 +53,6 @@ namespace SuperMarioGame.ElementClasses
         }
         public void Die()
         {
-            marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
         }
     }
 }

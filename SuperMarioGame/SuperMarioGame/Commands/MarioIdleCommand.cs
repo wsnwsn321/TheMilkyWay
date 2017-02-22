@@ -1,5 +1,4 @@
-﻿
-namespace SuperMarioGame.Commands
+﻿namespace SuperMarioGame.Commands
 {
     class MarioIdleCommand : ICommand
     {
@@ -13,7 +12,11 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            mario.MarioIdle();
+            if(mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+            {
+                     mario.MarioIdle();
+            }
+           
         }
     }
 }
