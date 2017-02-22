@@ -81,6 +81,7 @@
     <Compile Include="Sprites\BackgroundSprite\SmallBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallMountainSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\IMarioSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />

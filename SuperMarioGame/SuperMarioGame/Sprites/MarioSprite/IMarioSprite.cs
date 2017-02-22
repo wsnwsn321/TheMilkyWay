@@ -9,7 +9,7 @@ namespace SuperMarioGame.Sprites
         void Draw(Vector2 location);
 
         Rectangle desRectangle { get; set; }
-        
+
         Color tintColor { get; set; }
     }
 }

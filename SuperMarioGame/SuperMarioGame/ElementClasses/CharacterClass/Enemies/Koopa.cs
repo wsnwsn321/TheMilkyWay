@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMarioGame.Sprites;
+using System;
 
 namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 {
@@ -35,7 +36,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             throw new NotImplementedException();
         }
 
-        public void BeFilpped()
+        public void BeFlipped()
         {
             throw new NotImplementedException();
         }
