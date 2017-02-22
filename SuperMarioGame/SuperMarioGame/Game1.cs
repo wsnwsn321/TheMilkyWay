@@ -19,10 +19,10 @@ namespace SuperMarioGame
     public class Game1 : Game
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        GraphicsDeviceManager graphics;        
-        SpriteBatch spriteBatch;
-        GamepadController gamepadController;
-        KeyboardController keyboardController;
+        internal GraphicsDeviceManager graphics;        
+        internal SpriteBatch spriteBatch;
+        internal GamepadController gamepadController;
+        internal KeyboardController keyboardController;
         internal List<IBlock> envElements = new List<IBlock>();
         internal List<IItem> itemElements = new List<IItem>();
         internal List<IEnemy> enemyElements = new List<IEnemy>();

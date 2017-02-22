@@ -69,6 +69,7 @@
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="GameTest.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
