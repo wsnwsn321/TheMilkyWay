@@ -9,6 +9,8 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         private Vector2 p;
+        public Color tintColor { get; set; }
+
         public Rectangle desRectangle { get; set; }
 
 
@@ -16,6 +18,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
         {
             this.sb = sb;
             Texture = texture;
+            tintColor = Color.White;
         }
         public void Update()
         {
@@ -32,7 +35,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(17, 0, 16, 16);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }
