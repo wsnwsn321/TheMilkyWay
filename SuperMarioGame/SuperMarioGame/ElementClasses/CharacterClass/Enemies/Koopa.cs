@@ -24,5 +24,25 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         {
             enemySprite.Update();
         }
+
+        public void ChangeDirection()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BeStomped()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BeFilpped()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EnemyIdle()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

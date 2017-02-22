@@ -37,6 +37,11 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.GoombaSprite(goombaSpritesheet,sb);
         }
 
+
+        public Sprites.ISprite CreateGoombaStompedSprite()
+        {
+            return new Sprites.GoombaStompedSprite(goombaSpritesheet,sb);
+        }
         public Sprites.ISprite CreateKoopaSprite()
         {
             return new Sprites.KoopaSprite(koopaSpritesheet,sb);
