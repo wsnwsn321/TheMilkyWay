@@ -8,6 +8,7 @@ namespace SuperMarioGame.ElementClasses
         public IMarioState state { set; get; }
 
         public bool IsInvincible { get; set; }
+        private bool HasStarPower { get; set; }
         //state constant   
         public const int MARIO_DEAD = 1, MARIO_SMALL = 2, MARIO_BIG = 3, MARIO_FIRE = 4;
         //action constant
@@ -20,8 +21,9 @@ namespace SuperMarioGame.ElementClasses
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
 
+
         public int InvincibilityTime;
-        private int counter;
+        private int counter, starCounter;
 
         public Mario(Vector2 position)
         {
@@ -30,8 +32,10 @@ namespace SuperMarioGame.ElementClasses
             marioAction = MARIO_IDLE;
             this.position = position;
             IsInvincible = false;
+            HasStarPower = false;
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
+            starCounter = 0;
 
         }
         public Mario(Vector2 position, int marioState, bool marioDirection)
@@ -71,6 +75,17 @@ namespace SuperMarioGame.ElementClasses
         }
         public virtual void MarioDraw()
         {
+            if(HasStarPower)
+            {
+                starCounter++;
+                if(starCounter % 20 == 0)
+                {
+                    this.state.marioSprite.tintColor = Color.White;
+                }  else if (starCounter % 20 == 10) 
+                {
+                    this.state.marioSprite.tintColor = Color.Black;
+                }
+            }
             state.Draw(position);
         }
         public void MarioUpdate()
@@ -85,6 +100,7 @@ namespace SuperMarioGame.ElementClasses
             } else if (this.InvincibilityTime == 0 && counter > 20)
             {
                 this.IsInvincible = false;
+                HasStarPower = false;
                 counter = 0;
             }
         }
@@ -111,6 +127,13 @@ namespace SuperMarioGame.ElementClasses
                 this.MarioDie();
             }
 
+        }
+
+        public void GetStar()
+        {
+            HasStarPower = true;
+            IsInvincible = true;
+            InvincibilityTime = 20;
         }
 
     }

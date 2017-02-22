@@ -60,7 +60,6 @@
     <Compile Include="ElementClasses\BackgroundClass\SmallBrush.cs" />
     <Compile Include="ElementClasses\BackgroundClass\SmallCloud.cs" />
     <Compile Include="ElementClasses\BackgroundClass\SmallMountain.cs" />
-    <Compile Include="ElementClasses\CharacterClass\Mario\StarMario.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />

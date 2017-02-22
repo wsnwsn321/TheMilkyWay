@@ -39,7 +39,8 @@ namespace SuperMarioGame.CollisionHandler
 
             if (item is Star)
             {
-                    item.isVisible = false;
+                item.isVisible = false;
+                mario.GetStar();
             }
 
             if (item is Coin)
