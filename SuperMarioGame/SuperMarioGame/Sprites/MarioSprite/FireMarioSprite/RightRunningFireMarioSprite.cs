@@ -9,6 +9,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         public Texture2D Texture { get; set; }
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
+        public Color tintColor { get; set; }
 
         Vector2 p;
         int currentFrame;
@@ -24,6 +25,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
             totalFrame = 3;
             currentUpdate = 4;
             slowSpeedDown = 5;
+            this.tintColor = Color.White;
         }
         public void Update()
         {
@@ -50,7 +52,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
             int currentWidth = 17;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth) + 73, 0, 18, 32);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 36, 64);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }
