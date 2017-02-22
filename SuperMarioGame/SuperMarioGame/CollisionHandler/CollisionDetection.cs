@@ -116,7 +116,6 @@ namespace SuperMarioGame.CollisionHandler
 
             foreach (IEnemy enemy in enemyElements)
             {
-           
                 if (mario.state.marioSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
                 {
                     firstRectangle = mario.state.marioSprite.desRectangle;

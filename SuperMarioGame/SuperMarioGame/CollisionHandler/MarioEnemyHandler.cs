@@ -12,21 +12,12 @@ namespace SuperMarioGame.CollisionHandler
 {
     class MarioEnemyHandler
     {
-        public static void EnemyHandler(Mario mario, IEnemy item, int CollisionSide)
+        public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
         {
             switch (CollisionSide)
             {
                 case 1:
-                    if(mario.marioState  == 3)
-                    {
-                        mario.MarioChangeForm(2);
-                    }else if(mario.marioState == 2)
-                    {
-                        mario.MarioChangeForm(1);
-                    }else
-                    {
-                        mario.MarioEatShit();
-                    }
+                    enemy.BeStomped();
                     break;
                 case 2:
                     if (mario.marioState == 3)

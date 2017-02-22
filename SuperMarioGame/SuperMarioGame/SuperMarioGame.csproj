@@ -61,6 +61,12 @@
     <Compile Include="ElementClasses\BackgroundClass\SmallCloud.cs" />
     <Compile Include="ElementClasses\BackgroundClass\SmallMountain.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
+    <Compile Include="ElementClasses\ElementInterfaces\IEnemyState.cs" />
+    <Compile Include="ElementClasses\EnemyState\GoombaState\GoombaStompedState.cs" />
+    <Compile Include="ElementClasses\EnemyState\GoombaState\GoombaIdleState.cs" />
+    <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaFlipState.cs" />
+    <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
+    <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -75,6 +81,7 @@
     <Compile Include="Sprites\BackgroundSprite\SmallBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallMountainSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />
     <Compile Include="Sprites\OtherSprite\HiddenBlockSprite.cs" />
@@ -138,7 +145,6 @@
     <Compile Include="ElementClasses\ElementInterfaces\IEnemy.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
-    <Compile Include="ElementClasses\ElementInterfaces\IGoombaState.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
   </ItemGroup>
   <ItemGroup>
