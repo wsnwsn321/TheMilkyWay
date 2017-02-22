@@ -10,11 +10,13 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         Vector2 p;
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
+        public Color tintColor { get; set; }
 
         public RightIdleFireMarioSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
+            this.tintColor = Color.White;
         }
         public void Update()
         {
@@ -31,7 +33,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(38, 0, 19, 32);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 38, 64);
-            sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
+            sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
         }
