@@ -22,14 +22,14 @@ namespace SuperMarioGame.ElementClasses
 
         public int InvincibilityTime;
         private int counter;
-    
+
         public Mario(Vector2 position)
         {
             marioState = MARIO_SMALL;
             marioDirection = MARIO_LEFT;
             marioAction = MARIO_IDLE;
             this.position = position;
-            this.IsInvincible = false;
+            IsInvincible = false;
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
 
@@ -41,13 +41,15 @@ namespace SuperMarioGame.ElementClasses
             marioAction = MARIO_IDLE;
             this.position = position;
             state = new IdleMarioState(this);
+            IsInvincible = false;
+            InvincibilityTime = 0;
         }
         public void MarioIdle()
         {
             marioAction = MARIO_IDLE;
             state.Idle();
         }
-        public void MarioChangeForm(int form)
+        public virtual void MarioChangeForm(int form)
         {
             state.ChangeForm(form);
             marioState = form;
@@ -67,7 +69,7 @@ namespace SuperMarioGame.ElementClasses
             state.Run();
             marioAction = MARIO_RUN; 
         }
-        public void MarioDraw()
+        public virtual void MarioDraw()
         {
             state.Draw(position);
         }
