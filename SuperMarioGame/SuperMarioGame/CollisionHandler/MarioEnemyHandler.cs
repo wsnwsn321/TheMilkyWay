@@ -11,7 +11,7 @@ namespace SuperMarioGame.CollisionHandler
             switch (CollisionSide)
             {
                 case 1:
-                    mario.MarioGetHit();
+                    enemy.BeStomped();
                     break;
                 case 2:
                     mario.MarioGetHit();
