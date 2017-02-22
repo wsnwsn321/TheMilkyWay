@@ -12,8 +12,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 {
     public class Goomba : IEnemy
 
-    {
-      
+    {     
         public Vector2 position { get; set; }
         public IEnemyState goombaState;
         public ISprite enemySprite { get; set; }

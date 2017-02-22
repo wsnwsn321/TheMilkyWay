@@ -1,6 +1,6 @@
 ﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
-
+using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -8,20 +8,23 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
         {
-            switch (CollisionSide)
+            if (!(enemy.enemySprite is GoombaStompedSprite))
             {
-                case 1:
-                    enemy.BeStomped();
-                    break;
-                case 2:
-                    mario.MarioGetHit();
-                    break;
-                case 3:
-                    mario.MarioGetHit();
-                    break;
-                case 4:
-                    mario.MarioGetHit();
-                    break;
+                switch (CollisionSide)
+                {
+                    case 1:
+                        enemy.BeStomped();
+                        break;
+                    case 2:
+                        mario.MarioGetHit();
+                        break;
+                    case 3:
+                        mario.MarioGetHit();
+                        break;
+                    case 4:
+                        mario.MarioGetHit();
+                        break;
+                }
             }
         }
     }
