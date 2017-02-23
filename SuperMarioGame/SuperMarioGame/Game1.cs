@@ -23,14 +23,8 @@ namespace SuperMarioGame
         internal SpriteBatch spriteBatch;
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
-        internal List<IBlock> envElements = new List<IBlock>();
-        internal List<IItem> itemElements = new List<IItem>();
-        internal List<IEnemy> enemyElements = new List<IEnemy>();
-        internal List<IBackground> backgroundElements = new List<IBackground>();
 
-        internal Mario mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
         public int WINDOW_HEIGHT;
-
 
         public Game1()
         {
@@ -53,7 +47,6 @@ namespace SuperMarioGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            mario.MarioIdle();
             TestCase.TestBlockCollision.Instance.RunTests();
         }
 
@@ -64,28 +57,6 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {
-            foreach (IEnemy enemy in enemyElements)
-            {
-                enemy.Update();
-            }
-            foreach (IItem item in itemElements)
-            {
-                item.Update();
-            }
-            foreach (IBlock block in envElements)
-            {
-                block.Update();
-            }
-            foreach (IBackground back in backgroundElements)
-            {
-                back.Update();
-            }
-            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
-            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
-            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
-
-
-            mario.MarioUpdate();
             keyboardController.Update();
             base.Update(gameTime);
         }
@@ -93,25 +64,6 @@ namespace SuperMarioGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            foreach (IEnemy enemy in enemyElements)
-            {
-                enemy.Draw();
-            }
-            foreach (IItem item in itemElements)
-            {
-                item.Draw();
-            }
-            foreach (IBlock block in envElements)
-            {
-                block.Draw();
-            }
-            foreach (IBackground back in backgroundElements)
-            {
-                back.Draw();
-            }
-
-            mario.MarioDraw();
             base.Draw(gameTime);
         }
 
@@ -149,53 +101,47 @@ namespace SuperMarioGame
             MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
 
-            enemyElements.Add(new Koopa(new Vector2(500, 100)));
-            //enemyElements[0] - Koopa
-            enemyElements.Add(new Goomba(new Vector2(600, 100)));
-            //enemyElements[1] - Goomba
-            itemElements.Add(new Coin(new Vector2(100, 300)));
-            //itemElements[0] - Coin
-            itemElements.Add(new Flower(new Vector2(100, 100)));
-            //itemElements[1] - Flower
-            itemElements.Add(new GreenMushroom(new Vector2(300, 100)));
-            //itemElements[2] - GreenMushroom
-            itemElements.Add(new RedMushroom(new Vector2(200, 100)));
-            //itemElements[3] - RedMushroom
-            itemElements.Add(new Star(new Vector2(200, 300)));
-            //itemElements[4] - Star
+            //enemyElements.Add(new Koopa(new Vector2(500, 100)));
+            ////enemyElements[0] - Koopa
+            //enemyElements.Add(new Goomba(new Vector2(600, 100)));
+            ////enemyElements[1] - Goomba
+            //itemElements.Add(new Coin(new Vector2(100, 300)));
+            ////itemElements[0] - Coin
+            //itemElements.Add(new Flower(new Vector2(100, 100)));
+            ////itemElements[1] - Flower
+            //itemElements.Add(new GreenMushroom(new Vector2(300, 100)));
+            ////itemElements[2] - GreenMushroom
+            //itemElements.Add(new RedMushroom(new Vector2(200, 100)));
+            ////itemElements[3] - RedMushroom
+            //itemElements.Add(new Star(new Vector2(200, 300)));
+            ////itemElements[4] - Star
 
-            envElements.Add(new UsedBlock(new Vector2(700, 300)));
-            //envElements[0] - UsedBlock
-            envElements.Add(new QuestionBlock(new Vector2(400, 300)));
-            //envElements[1] - QuestionBlock
-            envElements.Add(new BrickBlock(new Vector2(500, 300)));
-            //envElements[2] - BrickBlock
-            envElements.Add(new HiddenBlock(new Vector2(300, 300)));
-            //envElements[3] - HiddenBlock
-            envElements.Add(new GroundBlock(new Vector2(600, 300)));
-            //envElements[4] - GroundBlock
-            envElements.Add(new StageBlock(new Vector2(700, 100)));
-            //envElements[5] - StageBlock
-            envElements.Add(new Pipe(new Vector2(400, 100)));
-            //envElements[6] - Pipe
+            //envElements.Add(new UsedBlock(new Vector2(700, 300)));
+            ////envElements[0] - UsedBlock
+            //envElements.Add(new QuestionBlock(new Vector2(400, 300)));
+            ////envElements[1] - QuestionBlock
+            //envElements.Add(new BrickBlock(new Vector2(500, 300)));
+            ////envElements[2] - BrickBlock
+            //envElements.Add(new HiddenBlock(new Vector2(300, 300)));
+            ////envElements[3] - HiddenBlock
+            //envElements.Add(new GroundBlock(new Vector2(600, 300)));
+            ////envElements[4] - GroundBlock
+            //envElements.Add(new StageBlock(new Vector2(700, 100)));
+            ////envElements[5] - StageBlock
+            //envElements.Add(new Pipe(new Vector2(400, 100)));
+            ////envElements[6] - Pipe
 
-            backgroundElements.Add(new BigCloud(new Vector2(200, 40)));
-            backgroundElements.Add(new SmallCloud(new Vector2(400, 40)));
-            backgroundElements.Add(new BigMountain(new Vector2(150, 410)));
-            backgroundElements.Add(new SmallMountain(new Vector2(375, 440)));
-            backgroundElements.Add(new BigBrush(new Vector2(500, 450)));
-            backgroundElements.Add(new SmallBrush(new Vector2(700, 450)));
+            //backgroundElements.Add(new BigCloud(new Vector2(200, 40)));
+            //backgroundElements.Add(new SmallCloud(new Vector2(400, 40)));
+            //backgroundElements.Add(new BigMountain(new Vector2(150, 410)));
+            //backgroundElements.Add(new SmallMountain(new Vector2(375, 440)));
+            //backgroundElements.Add(new BigBrush(new Vector2(500, 450)));
+            //backgroundElements.Add(new SmallBrush(new Vector2(700, 450)));
         }
 
         public void ResetGame()
         {
-            mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
-            mario.MarioIdle();
             Initialize();
-            envElements = new List<IBlock>();
-            itemElements = new List<IItem>();
-            enemyElements = new List<IEnemy>();
-            backgroundElements = new List<IBackground>();
             LoadContent();
         }
     }
