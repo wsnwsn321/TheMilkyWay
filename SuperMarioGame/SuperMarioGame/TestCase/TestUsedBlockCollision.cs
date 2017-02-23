@@ -34,7 +34,7 @@ namespace SuperMarioGame.TestCase
             TestUsedBlockTopCollision();
             TestUsedBlockLeftCollision();
             TestUsedBlockRightCollision();
-            Debug.WriteLine("All UsedBlockCollision test complete, "+ failure+ "failures occurred");
+            Debug.WriteLine("All UsedBlockCollision test complete, "+ failure+ " failures occurred");
         }
 
 

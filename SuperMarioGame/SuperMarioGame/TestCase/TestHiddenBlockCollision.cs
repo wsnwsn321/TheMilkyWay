@@ -36,7 +36,7 @@ namespace SuperMarioGame.TestCase
             TestHiddenBlockTopCollision();
             TestHiddenBlockLeftCollision();
             TestHiddenBlockRightCollision();
-            Debug.WriteLine("All HiddenBlockCollision test complete, " + failure + "failures occurred");
+            Debug.WriteLine("All HiddenBlockCollision test complete, " + failure + " failures occurred");
 
         }
 
