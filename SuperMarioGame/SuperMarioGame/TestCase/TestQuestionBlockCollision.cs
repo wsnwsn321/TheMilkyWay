@@ -8,13 +8,13 @@ using System.Diagnostics;
 
 namespace SuperMarioGame.TestCase
 {
-    class TestBlockCollision
+    class TestQuestionBlockCollision
     {
 
-        private static TestBlockCollision instance = new TestBlockCollision();
+        private static TestQuestionBlockCollision instance = new TestQuestionBlockCollision();
         int QuestionBlockWidthAndHeight = 32;
 
-        public static TestBlockCollision Instance
+        public static TestQuestionBlockCollision Instance
         {
             get
             {
@@ -31,6 +31,9 @@ namespace SuperMarioGame.TestCase
         {
             Debug.WriteLine("The testing has begun. Errors will be output to the console.");
             TestQuestionBlockBottomCollision();
+            TestQuestionBlockTopCollision();
+            TestQuestionBlockLeftCollision();
+            TestQuestionBlockRightCollision();
 
         }
 

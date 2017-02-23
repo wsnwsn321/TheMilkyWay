@@ -54,7 +54,7 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
             mario.MarioIdle();
-            TestCase.TestBlockCollision.Instance.RunTests();
+            TestCase.TestQuestionBlockCollision.Instance.RunTests();
         }
 
         protected override void UnloadContent()

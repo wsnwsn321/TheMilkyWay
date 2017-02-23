@@ -30,6 +30,9 @@ namespace SuperMarioGame.TestCase
         {
             Debug.WriteLine("The testing has begun. Errors will be output to the console.");
             TestUsedBlockBottomCollision();
+            TestUsedBlockTopCollision();
+            TestUsedBlockLeftCollision();
+            TestUsedBlockRightCollision();
 
         }
 
@@ -43,7 +46,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos - UsedBlockWidthAndHeight + 1;
 
-            IBlock block = new QuestionBlock(new Vector2(marioXpos, blockposition));
+            IBlock block = new UsedBlock(new Vector2(marioXpos, blockposition));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 3);
@@ -62,7 +65,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos + mario.state.marioSprite.desRectangle.Height - 1;
 
-            IBlock block = new QuestionBlock(new Vector2(marioXpos, blockposition));
+            IBlock block = new UsedBlock(new Vector2(marioXpos, blockposition));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 1);
@@ -81,7 +84,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioXpos + mario.state.marioSprite.desRectangle.Width - 1;
 
-            IBlock block = new QuestionBlock(new Vector2(blockposition, marioYpos));
+            IBlock block = new UsedBlock(new Vector2(blockposition, marioYpos));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 4);
@@ -100,7 +103,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
             int blockposition = marioXpos - UsedBlockWidthAndHeight + 1;
 
-            IBlock block = new QuestionBlock(new Vector2(blockposition, marioYpos));
+            IBlock block = new UsedBlock(new Vector2(blockposition, marioYpos));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 4);
