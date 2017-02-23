@@ -55,7 +55,7 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
-            if (block.blockSprite != EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite() || marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
+            if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
             {
                 Debug.WriteLine("MarioHiddenBlockBottomCollision failed.");
                 failure++;
