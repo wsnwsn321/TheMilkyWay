@@ -19,6 +19,10 @@ namespace SuperMarioGame.LevelLoading
 
         public void Update()
         {
+            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
+            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
+            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+
             foreach (IEnemy enemy in enemyElements)
             {
                 enemy.Update();
@@ -38,9 +42,7 @@ namespace SuperMarioGame.LevelLoading
 
             mario.MarioUpdate();
 
-            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
-            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
-            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+
         }
 
         public void Draw()
@@ -80,8 +82,13 @@ namespace SuperMarioGame.LevelLoading
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
             Debug.WriteLine(envElements.Capacity);
+            Debug.WriteLine(enemyElements.Capacity);
+
+            Debug.WriteLine(itemElements.Capacity);
+
+
         }
-        
+
 
     }
 }
