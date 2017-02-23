@@ -8,7 +8,7 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
         {
-            if (!(enemy.enemySprite is GoombaStompedSprite))
+            if (!(enemy.enemySprite is GoombaStompedSprite) && !(enemy.enemySprite is KoopaStompedSprite))
             {
                 switch (CollisionSide)
                 {

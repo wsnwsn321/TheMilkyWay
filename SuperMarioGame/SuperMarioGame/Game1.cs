@@ -52,9 +52,9 @@ namespace SuperMarioGame
         }
 
         protected override void Update(GameTime gameTime)
-        {
-            keyboardController.Update();
+        {   
             level.Update();
+            keyboardController.Update();
             base.Update(gameTime);
         }
 
@@ -140,6 +140,7 @@ namespace SuperMarioGame
         {
             Initialize();
             LoadContent();
+            
         }
     }
 }
