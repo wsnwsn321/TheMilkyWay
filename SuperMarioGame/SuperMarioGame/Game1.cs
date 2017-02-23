@@ -43,7 +43,7 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
             level.Load();
-            //TestCase.TestQuestionBlockCollision.Instance.RunTests();
+            TestCase.RunTest.Instance.runAllTests();
         }
 
         protected override void UnloadContent()
