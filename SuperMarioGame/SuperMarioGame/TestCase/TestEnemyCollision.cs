@@ -145,10 +145,11 @@ namespace SuperMarioGame.TestCase
             if (koopba.koopaAction != Koopa.KOOPA_SHELL)
             {
                 Debug.WriteLine("The MarioKoopaTopCollision test case failed.");
+                failure++;
             }
             else
             {
-                failure++;
+                
                 Debug.WriteLine("The MarioKoopaTopCollision test case Success");
             }
         }
@@ -169,10 +170,11 @@ namespace SuperMarioGame.TestCase
             if (!(mario.marioState == Mario.MARIO_DEAD))
             {
                 Debug.WriteLine("The MarioKoopaLeftCollision test case failed.");
+                failure++;
             }
             else
             {
-                failure++;
+                
                 Debug.WriteLine("The MarioKoopaLeftCollision test case Success");
             }
         }
@@ -215,7 +217,7 @@ namespace SuperMarioGame.TestCase
 
             if (!(mario.marioAction != Mario.MARIO_DEAD))
             {
-                Debug.WriteLine(mario.marioAction);
+               
                 Debug.WriteLine("The MarioKoopaBottomCollision test case failed.");
                 failure++;
             } else
