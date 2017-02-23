@@ -53,7 +53,7 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
-            if (block != newBlock)
+            if (block.blockSprite!= new UsedBlock(new Vector2(marioXpos, blockposition)))
             {
                 Debug.WriteLine("no trans.");
             }
