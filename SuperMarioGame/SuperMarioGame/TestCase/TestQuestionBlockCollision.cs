@@ -2,8 +2,8 @@
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
+using SuperMarioGame.Sprites;
 using SuperMarioGame.CollisionHandler;
-using System;
 using System.Diagnostics;
 
 namespace SuperMarioGame.TestCase
@@ -53,12 +53,12 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block  
             mario.MarioJump();
             MarioBlockHandler.BlockHandler(mario, block,3);
-            if (marioYpos < (blockposition + block.blockSprite.desRectangle.Height))
+            if (marioYpos < (blockposition + block.blockSprite.desRectangle.Height) || !(block.blockSprite is UsedBlockSprite))
             {
                 Debug.WriteLine("MarioQuestionBlockBottomCollision failed.");
                 failure++;
             }    
-         }
+        }
 
         public void TestQuestionBlockTopCollision()
         {

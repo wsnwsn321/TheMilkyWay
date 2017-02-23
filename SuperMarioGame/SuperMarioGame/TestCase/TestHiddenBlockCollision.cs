@@ -6,6 +6,7 @@ using SuperMarioGame.CollisionHandler;
 using System;
 using System.Diagnostics;
 using SuperMarioGame.SpriteFactories;
+using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.TestCase
 {
@@ -55,7 +56,7 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
-            if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
+            if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1) || !(block.blockSprite is UsedBlockSprite))
             {
                 Debug.WriteLine("MarioHiddenBlockBottomCollision failed.");
                 failure++;
