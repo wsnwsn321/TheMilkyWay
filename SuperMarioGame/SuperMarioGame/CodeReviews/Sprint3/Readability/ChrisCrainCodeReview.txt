@@ -1,0 +1,14 @@
+﻿Chris Crain
+2/8/17
+Sprint 2
+//to do
+DeadMarioState.cs
+Oliver Wu
+14 minutes
+
+The constructor for DeadMarioState is readable,
+but it can be confusing that 
+this.mario is set to mario and they are different.
+
+The void methods are readable since they are only
+one line of code each.
