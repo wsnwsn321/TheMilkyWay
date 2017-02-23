@@ -166,7 +166,7 @@ namespace SuperMarioGame.TestCase
             int left = CollisionDetection.LEFT;
             MarioEnemyHandler.EnemyHandler(mario, koopba, left);
 
-            if (!mario.IsInvincible||mario.marioState == Mario.MARIO_DEAD)
+            if (!(mario.marioState == Mario.MARIO_DEAD))
             {
                 Debug.WriteLine("The MarioKoopaLeftCollision test case failed.");
             }
