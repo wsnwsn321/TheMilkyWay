@@ -15,14 +15,9 @@ namespace SuperMarioGame.LevelLoading
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
         internal Mario mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
-        //mario.MarioIdle();
 
         public void Update()
         {
-            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
-            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
-            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
-
             foreach (IEnemy enemy in enemyElements)
             {
                 enemy.Update();
@@ -39,10 +34,10 @@ namespace SuperMarioGame.LevelLoading
             {
                 back.Update();
             }
-
+            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
+            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
+            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
             mario.MarioUpdate();
-
-
         }
 
         public void Draw()
@@ -66,27 +61,12 @@ namespace SuperMarioGame.LevelLoading
 
             mario.MarioDraw();
         }
-
-        public void resetLevel()
-        {
-            mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
-            mario.MarioIdle();
-            envElements = new List<IBlock>();
-            itemElements = new List<IItem>();
-            enemyElements = new List<IEnemy>();
-            backgroundElements = new List<IBackground>();
-        }
         
         public void Load()
         {
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
-            Debug.WriteLine(envElements.Capacity);
-            Debug.WriteLine(enemyElements.Capacity);
-
-            Debug.WriteLine(itemElements.Capacity);
-
-
+            mario.MarioIdle();
         }
 
 

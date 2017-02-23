@@ -45,15 +45,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public void Update()
         {
             koopaState.Update(enemySprite);
-            if(koopaAction == Koopa.KOOPA_SHELL)
-            {
-                if(deadCounter == 50)
-                {
-                    isVisible = false;
-                }
-                deadCounter++;
-
-            }
         }
 
         public void ChangeDirection()

@@ -76,7 +76,7 @@ namespace SuperMarioGame.LevelLoading
                             level.enemyElements.Add(new Koopa(new Vector2(x, y + 21)));
                             break;
                         case "Pipe":
-                            level.envElements.Add(new HiddenBlock(new Vector2(x + 2, y + 4)));
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y + 4)));
                             break;
                         default:
                             break;
