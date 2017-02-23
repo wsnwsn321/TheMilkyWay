@@ -35,7 +35,7 @@ namespace SuperMarioGame.TestCase
             TestQuestionBlockTopCollision();
             TestQuestionBlockLeftCollision();
             TestQuestionBlockRightCollision();
-            Debug.WriteLine("All UsedBlockCollision test complete, " + failure + "failures occurred");
+            Debug.WriteLine("All UsedBlockCollision test complete, " + failure + " failures occurred");
         }
 
 
@@ -53,7 +53,7 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block  
             mario.MarioJump();
             MarioBlockHandler.BlockHandler(mario, block,3);
-            if (!(block is UsedBlock) || marioYpos < (blockposition + block.blockSprite.desRectangle.Height))
+            if (marioYpos < (blockposition + block.blockSprite.desRectangle.Height))
             {
                 Debug.WriteLine("MarioQuestionBlockBottomCollision failed.");
                 failure++;
