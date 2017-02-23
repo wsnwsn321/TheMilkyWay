@@ -11,6 +11,7 @@ namespace SuperMarioGame.CollisionHandler
         private Rectangle collideRectangle;
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;
+        public const int TOP = 1, RIGHT = 2, BOTTOM = 3, LEFT = 4;
         public int SIDE;
 
         private static CollisionDetection instance = new CollisionDetection();
@@ -40,22 +41,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = 3;
+                            SIDE = BOTTOM;
                         }
                         else
                         {
-                            SIDE = 1;
+                            SIDE = TOP;
                         }
                     }
                     else if (collideRectangle.Width < collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = 2;
+                            SIDE = RIGHT;
                         }
                         else
                         {
-                            SIDE = 4;
+                            SIDE = LEFT;
                         }
                     }
                     MarioBlockHandler.BlockHandler(mario, block, SIDE);
@@ -76,22 +77,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = 3;
+                            SIDE = BOTTOM;
                         }
                         else
                         {
-                            SIDE = 1;
+                            SIDE = TOP;
                         }
                     }
                     else if (collideRectangle.Width < collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = 4;
+                            SIDE = LEFT;
                         }
                         else
                         {
-                            SIDE = 2;
+                            SIDE = RIGHT;
                         }
                     }
                     MarioItemHandler.ItemHandler(mario, item, SIDE);
@@ -113,22 +114,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = 3;
+                            SIDE = BOTTOM;
                         }
                         else
                         {
-                            SIDE = 1;
+                            SIDE = TOP;
                         }
                     }
                     else if (collideRectangle.Width < collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = 4;
+                            SIDE = RIGHT;
                         }
                         else
                         {
-                            SIDE = 2;
+                            SIDE = LEFT;
                         }
                     }
                     MarioEnemyHandler.EnemyHandler(mario, enemy, SIDE);
