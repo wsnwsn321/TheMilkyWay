@@ -13,6 +13,7 @@ namespace SuperMarioGame.TestCase
 
         private static TestQuestionBlockCollision instance = new TestQuestionBlockCollision();
         private int QuestionBlockWidthAndHeight = 32;
+        private int failure = 0;
 
         public static TestQuestionBlockCollision Instance
         {
@@ -29,12 +30,12 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Debug.WriteLine("The testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The QuestionBlockCollision testing has begun. Errors will be output to the console.");
             TestQuestionBlockBottomCollision();
             TestQuestionBlockTopCollision();
             TestQuestionBlockLeftCollision();
             TestQuestionBlockRightCollision();
-
+            Debug.WriteLine("All UsedBlockCollision test complete, " + failure + "failures occurred");
         }
 
 
@@ -55,6 +56,7 @@ namespace SuperMarioGame.TestCase
             if (!(block is UsedBlock) || marioYpos < (blockposition + block.blockSprite.desRectangle.Height))
             {
                 Debug.WriteLine("MarioQuestionBlockBottomCollision failed.");
+                failure++;
             }    
          }
 
@@ -74,6 +76,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height)+1)
             {
                 Debug.WriteLine("MarioQuestionBlockTopCollision failed.");
+                failure++;
             }
         }
 
@@ -93,6 +96,7 @@ namespace SuperMarioGame.TestCase
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)+1)
             {
                 Debug.WriteLine("MarioQuestionBlockLeftCollision failed.");
+                failure++;
             }
         }
 
@@ -112,6 +116,7 @@ namespace SuperMarioGame.TestCase
             if ( marioXpos < (blockposition + mario.state.marioSprite.desRectangle.Width)-1)
             {
                 Debug.WriteLine("MarioQuestionBlockRightCollision failed.");
+                failure++;
             }
         }
 

@@ -23,8 +23,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public int koopaAction;
 
-        private int deadCounter = 0;
-
         public Koopa(Vector2 pos)
         {
             position    = pos;

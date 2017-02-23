@@ -14,6 +14,7 @@ namespace SuperMarioGame.TestCase
 
         private static TestHiddenBlockCollision instance = new TestHiddenBlockCollision();
         private int HiddenBlockWidthAndHeight = 32;
+        private int failure = 0;
 
         public static TestHiddenBlockCollision Instance
         {
@@ -30,11 +31,12 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Debug.WriteLine("The testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The HiddenBlockCollision testing has begun. Errors will be output to the console.");
             TestHiddenBlockBottomCollision();
             TestHiddenBlockTopCollision();
             TestHiddenBlockLeftCollision();
             TestHiddenBlockRightCollision();
+            Debug.WriteLine("All HiddenBlockCollision test complete, " + failure + "failures occurred");
 
         }
 
@@ -53,13 +55,10 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
-            if (block.blockSprite!= new UsedBlock(new Vector2(marioXpos, blockposition)))
-            {
-                Debug.WriteLine("no trans.");
-            }
             if (block.blockSprite != EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite() || marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
             {
                 Debug.WriteLine("MarioHiddenBlockBottomCollision failed.");
+                failure++;
             }    
          }
 
@@ -79,6 +78,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height)+1)
             {
                 Debug.WriteLine("MarioHiddenBlockTopCollision failed.");
+                failure++;
             }
         }
 
@@ -98,6 +98,7 @@ namespace SuperMarioGame.TestCase
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)+1)
             {
                 Debug.WriteLine("MarioHiddenBlockLeftCollision failed.");
+                failure++;
             }
         }
 
@@ -117,6 +118,7 @@ namespace SuperMarioGame.TestCase
             if ( marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
                 Debug.WriteLine("MarioHiddenBlockRightCollision failed.");
+                failure++;
             }
         }
 

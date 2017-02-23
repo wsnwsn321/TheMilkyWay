@@ -13,6 +13,7 @@ namespace SuperMarioGame.TestCase
 
         private static TestGroundBlockCollision instance = new TestGroundBlockCollision();
         private int GroundBlockWidthAndHeight = 32;
+        private int failure = 0;
         public static TestGroundBlockCollision Instance
         {
             get
@@ -28,11 +29,12 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Debug.WriteLine("The testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The GroundBlockCollision testing has begun. Errors will be output to the console.");
             TestGroundBlockBottomCollision();
             TestGroundBlockTopCollision();
             TestGroundBlockLeftCollision();
             TestGroundBlockRightCollision();
+            Debug.WriteLine("All GroundBlockCollision test complete, " + failure + "failures occurred");
 
         }
 
@@ -54,6 +56,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height) - 1))
             {
                 Debug.WriteLine("MarioGroundBlockBottomCollision failed.");
+                failure++;
             }
         }
 
@@ -73,6 +76,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height) + 1)
             {
                 Debug.WriteLine("MarioGroundBlockTopCollision failed.");
+                failure++;
             }
         }
 
@@ -92,6 +96,7 @@ namespace SuperMarioGame.TestCase
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width) + 1)
             {
                 Debug.WriteLine("MarioGroundBlockLeftCollision failed.");
+                failure++;
             }
         }
 
@@ -111,6 +116,7 @@ namespace SuperMarioGame.TestCase
             if (marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
                 Debug.WriteLine("MarioGroundBlockRightCollision failed.");
+                failure++;
             }
         }
 
