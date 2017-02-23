@@ -53,12 +53,14 @@ namespace SuperMarioGame
         protected override void Update(GameTime gameTime)
         {
             keyboardController.Update();
+            level.Update();
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            level.Draw();
             base.Draw(gameTime);
         }
 

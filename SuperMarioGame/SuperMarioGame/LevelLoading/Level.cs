@@ -75,6 +75,11 @@ namespace SuperMarioGame.LevelLoading
             backgroundElements = new List<IBackground>();
         }
         
+        public void Load()
+        {
+            LevelLoader loader = new LevelLoader(this);
+            loader.LoadLevel();
+        }
         
 
     }

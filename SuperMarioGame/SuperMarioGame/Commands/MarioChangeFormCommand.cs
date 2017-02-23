@@ -8,7 +8,7 @@
         public MarioChangeFormCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.mario;
+            mario = myGame.level.mario;
             counter = 0;
         }
 
