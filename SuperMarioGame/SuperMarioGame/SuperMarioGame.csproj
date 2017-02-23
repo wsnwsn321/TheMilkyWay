@@ -150,8 +150,12 @@
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
-    <Compile Include="TestCase\TestEnemyCollision.cs" />
-    <Compile Include="TestCase\TestBlockCollision.cs" />
+    <Compile Include="TestCase\RunTest.cs" />
+    <Compile Include="TestCase\TestGroundBlockCollision.cs" />
+    <Compile Include="TestCase\TestBrickBlockCollision.cs" />
+    <Compile Include="TestCase\TestHiddenBlockCollision.cs" />
+    <Compile Include="TestCase\TestUsedBlockCollision.cs" />
+    <Compile Include="TestCase\TestQuestionBlockCollision.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -174,7 +178,9 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="LevelLoading\LevelFiles\Level1-1.csv" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

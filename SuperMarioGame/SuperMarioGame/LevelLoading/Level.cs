@@ -3,7 +3,7 @@ using SuperMarioGame.CollisionHandler;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -79,6 +79,7 @@ namespace SuperMarioGame.LevelLoading
         {
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
+            Debug.WriteLine(envElements.Capacity);
         }
         
 

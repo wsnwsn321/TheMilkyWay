@@ -8,13 +8,13 @@ using System.Diagnostics;
 
 namespace SuperMarioGame.TestCase
 {
-    class TestQuestionBlockCollision
+    class TestBrickBlockCollision
     {
 
-        private static TestQuestionBlockCollision instance = new TestQuestionBlockCollision();
-        private int QuestionBlockWidthAndHeight = 32;
+        private static TestBrickBlockCollision instance = new TestBrickBlockCollision();
+        private int BrickBlockWidthAndHeight = 32;
 
-        public static TestQuestionBlockCollision Instance
+        public static TestBrickBlockCollision Instance
         {
             get
             {
@@ -30,35 +30,35 @@ namespace SuperMarioGame.TestCase
         public void RunTests()
         {
             Debug.WriteLine("The testing has begun. Errors will be output to the console.");
-            TestQuestionBlockBottomCollision();
-            TestQuestionBlockTopCollision();
-            TestQuestionBlockLeftCollision();
-            TestQuestionBlockRightCollision();
+            TestBrickBlockBottomCollision();
+            TestBrickBlockTopCollision();
+            TestBrickBlockLeftCollision();
+            TestBrickBlockRightCollision();
 
         }
 
 
 
-        public void TestQuestionBlockBottomCollision()
+        public void TestBrickBlockBottomCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
-            int blockposition = marioYpos - QuestionBlockWidthAndHeight ;
+            int blockposition = marioYpos - BrickBlockWidthAndHeight + 1;
 
-            IBlock block = new QuestionBlock(new Vector2(marioXpos, blockposition));
+            IBlock block = new BrickBlock(new Vector2(marioXpos, blockposition));
 
-            // Make mario collide with the block  
-            mario.MarioJump();
+            // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
-            if (!(block is UsedBlock) || marioYpos < (blockposition + block.blockSprite.desRectangle.Height))
+            mario.MarioJump();
+            if (block.isVisible || marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
             {
-                Debug.WriteLine("MarioQuestionBlockBottomCollision failed.");
+                Debug.WriteLine("MarioBrickBlockBottomCollision failed.");
             }    
          }
 
-        public void TestQuestionBlockTopCollision()
+        public void TestBrickBlockTopCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
@@ -66,18 +66,18 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos + mario.state.marioSprite.desRectangle.Height-1;
 
-            IBlock block = new QuestionBlock(new Vector2(marioXpos, blockposition));
+            IBlock block = new BrickBlock(new Vector2(marioXpos, blockposition));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 1);
             mario.MarioCrouch();
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height)+1)
             {
-                Debug.WriteLine("MarioQuestionBlockTopCollision failed.");
+                Debug.WriteLine("MarioBrickBlockTopCollision failed.");
             }
         }
 
-        public void TestQuestionBlockLeftCollision()
+        public void TestBrickBlockLeftCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
@@ -85,33 +85,33 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioXpos + mario.state.marioSprite.desRectangle.Width-1;
 
-            IBlock block = new QuestionBlock(new Vector2(blockposition, marioYpos));
+            IBlock block = new BrickBlock(new Vector2(blockposition, marioYpos));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 4);
             mario.MarioRun();
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)+1)
             {
-                Debug.WriteLine("MarioQuestionBlockLeftCollision failed.");
+                Debug.WriteLine("MarioBrickBlockLeftCollision failed.");
             }
         }
 
-        public void TestQuestionBlockRightCollision()
+        public void TestBrickBlockRightCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
-            int blockposition = marioXpos - QuestionBlockWidthAndHeight + 1;
+            int blockposition = marioXpos - BrickBlockWidthAndHeight + 1;
 
-            IBlock block = new QuestionBlock(new Vector2(blockposition, marioYpos));
+            IBlock block = new BrickBlock(new Vector2(blockposition, marioYpos));
 
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 4);
             mario.MarioRun();
-            if ( marioXpos < (blockposition + mario.state.marioSprite.desRectangle.Width)-1)
+            if ( marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
-                Debug.WriteLine("MarioQuestionBlockRightCollision failed.");
+                Debug.WriteLine("MarioBrickBlockRightCollision failed.");
             }
         }
 
