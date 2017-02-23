@@ -30,6 +30,7 @@ namespace SuperMarioGame.LevelLoading
             string line;
             while((line = stream.ReadLine()) != null)
             {
+                x = 0;
                 string[] str = line.Split(',');
                 foreach (string obj in str)
                 {

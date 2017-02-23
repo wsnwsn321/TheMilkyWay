@@ -22,6 +22,9 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public bool koopaDirection;
 
         public int koopaAction;
+
+        private int deadCounter = 0;
+
         public Koopa(Vector2 pos)
         {
             position    = pos;
@@ -42,6 +45,15 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public void Update()
         {
             koopaState.Update(enemySprite);
+            if(koopaAction == Koopa.KOOPA_SHELL)
+            {
+                if(deadCounter == 50)
+                {
+                    isVisible = false;
+                }
+                deadCounter++;
+
+            }
         }
 
         public void ChangeDirection()
