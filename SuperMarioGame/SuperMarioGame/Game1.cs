@@ -42,13 +42,13 @@ namespace SuperMarioGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load();
-            //TestCase.RunTest.Instance.runAllTests();
+            mario.MarioIdle();
+            TestCase.TestQuestionBlockCollision.Instance.RunTests();
         }
 
         protected override void UnloadContent()
         {
-
+            // TODO: Unload any non ContentManager content here
         }
 
         protected override void Update(GameTime gameTime)
@@ -80,6 +80,7 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.C, new MarioChangeFormCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
+
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));
