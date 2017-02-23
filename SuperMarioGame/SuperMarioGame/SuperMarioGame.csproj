@@ -150,6 +150,10 @@
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
+    <Compile Include="TestCase\RunTest.cs" />
+    <Compile Include="TestCase\TestGroundBlockCollision.cs" />
+    <Compile Include="TestCase\TestBrickBlockCollision.cs" />
+    <Compile Include="TestCase\TestHiddenBlockCollision.cs" />
     <Compile Include="TestCase\TestUsedBlockCollision.cs" />
     <Compile Include="TestCase\TestQuestionBlockCollision.cs" />
   </ItemGroup>

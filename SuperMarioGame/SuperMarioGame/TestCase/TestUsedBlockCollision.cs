@@ -53,7 +53,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioJump();
             if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height) - 1))
             {
-                Debug.WriteLine("MarioBlockBottomCollision failed.");
+                Debug.WriteLine("MarioUsedBlockBottomCollision failed.");
             }
         }
 
@@ -72,7 +72,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioCrouch();
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height) + 1)
             {
-                Debug.WriteLine("MarioBlockBottomCollision failed.");
+                Debug.WriteLine("MarioUsedBlockTopCollision failed.");
             }
         }
 
@@ -91,7 +91,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioRun();
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width) + 1)
             {
-                Debug.WriteLine("MarioBlockBottomCollision failed.");
+                Debug.WriteLine("MarioUsedBlockLeftCollision failed.");
             }
         }
 
@@ -108,9 +108,9 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 4);
             mario.MarioRun();
-            if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
+            if (marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
-                Debug.WriteLine("MarioBlockBottomCollision failed.");
+                Debug.WriteLine("MarioUsedBlockarioBlockRightCollision failed.");
             }
         }
 
