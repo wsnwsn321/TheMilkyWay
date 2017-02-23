@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
 using SuperMarioGame.CollisionHandler;
 using System;
+using System.Diagnostics;
 
 namespace SuperMarioGame.TestCase
 {
@@ -27,7 +28,7 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Console.WriteLine("The testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The testing has begun. Errors will be output to the console.");
             TestQuestionBlockBottomCollision();
 
         }
@@ -49,7 +50,7 @@ namespace SuperMarioGame.TestCase
 
             if (block.isVisible || !(block is UsedBlock) || marioYpos > (blockposition + block.position.Y))
             {
-                Console.WriteLine("MarioBlockBottomCollision failed.");
+                Debug.WriteLine("MarioBlockBottomCollision failed.");
             }
 
             

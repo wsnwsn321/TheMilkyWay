@@ -52,9 +52,9 @@ namespace SuperMarioGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //WINDOW_HEIGHT = spriteBatch.GraphicsDevice.
             CreateElements();
             mario.MarioIdle();
+            TestCase.TestBlockCollision.Instance.RunTests();
         }
 
         protected override void UnloadContent()
