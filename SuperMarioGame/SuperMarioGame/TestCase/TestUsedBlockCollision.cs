@@ -13,6 +13,7 @@ namespace SuperMarioGame.TestCase
 
         private static TestUsedBlockCollision instance = new TestUsedBlockCollision();
         private int UsedBlockWidthAndHeight = 32;
+        private int failure = 0;
         public static TestUsedBlockCollision Instance
         {
             get
@@ -28,12 +29,12 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Debug.WriteLine("The testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The UsedBlockCollision testing has begun. Errors will be output to the console.");
             TestUsedBlockBottomCollision();
             TestUsedBlockTopCollision();
             TestUsedBlockLeftCollision();
             TestUsedBlockRightCollision();
-
+            Debug.WriteLine("All UsedBlockCollision test complete, "+ failure+ "failures occurred");
         }
 
 
@@ -54,6 +55,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height) - 1))
             {
                 Debug.WriteLine("MarioUsedBlockBottomCollision failed.");
+                failure++;
             }
         }
 
@@ -73,6 +75,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height) + 1)
             {
                 Debug.WriteLine("MarioUsedBlockTopCollision failed.");
+                failure++;
             }
         }
 
@@ -92,6 +95,7 @@ namespace SuperMarioGame.TestCase
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width) + 1)
             {
                 Debug.WriteLine("MarioUsedBlockLeftCollision failed.");
+                failure++;
             }
         }
 
@@ -111,8 +115,11 @@ namespace SuperMarioGame.TestCase
             if (marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
                 Debug.WriteLine("MarioUsedBlockarioBlockRightCollision failed.");
+                failure++;
             }
         }
+
+
 
 
     }

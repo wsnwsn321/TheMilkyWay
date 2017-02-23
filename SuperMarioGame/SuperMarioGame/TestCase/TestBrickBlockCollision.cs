@@ -13,7 +13,7 @@ namespace SuperMarioGame.TestCase
 
         private static TestBrickBlockCollision instance = new TestBrickBlockCollision();
         private int BrickBlockWidthAndHeight = 32;
-
+        private int failure = 0;
         public static TestBrickBlockCollision Instance
         {
             get
@@ -29,11 +29,12 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Debug.WriteLine("The testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The BrickBlockCollision testing has begun. Errors will be output to the console.");
             TestBrickBlockBottomCollision();
             TestBrickBlockTopCollision();
             TestBrickBlockLeftCollision();
             TestBrickBlockRightCollision();
+            Debug.WriteLine("All BrickBlockCollision test complete, " + failure + "failures occurred");
 
         }
 
@@ -55,6 +56,7 @@ namespace SuperMarioGame.TestCase
             if (block.isVisible || marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
             {
                 Debug.WriteLine("MarioBrickBlockBottomCollision failed.");
+                failure++;
             }    
          }
 
@@ -74,6 +76,7 @@ namespace SuperMarioGame.TestCase
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height)+1)
             {
                 Debug.WriteLine("MarioBrickBlockTopCollision failed.");
+                failure++;
             }
         }
 
@@ -93,6 +96,7 @@ namespace SuperMarioGame.TestCase
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)+1)
             {
                 Debug.WriteLine("MarioBrickBlockLeftCollision failed.");
+                failure++;
             }
         }
 
@@ -112,6 +116,7 @@ namespace SuperMarioGame.TestCase
             if ( marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
                 Debug.WriteLine("MarioBrickBlockRightCollision failed.");
+                failure++;
             }
         }
 
