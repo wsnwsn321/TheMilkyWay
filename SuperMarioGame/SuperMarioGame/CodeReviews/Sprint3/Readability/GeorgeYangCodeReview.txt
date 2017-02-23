@@ -1,13 +1,13 @@
 ﻿George Yang
-2/8/17
-Sprint 2
+2/22/17
+Sprint 3
 //to do
-Name of the .cs file being reviewed MarioSpriteFactory.cs
-Author of the .cs file being reviewed Nite
-Number of minutes taken to complete the review 21minute 40sec
+Name of the .cs file being reviewed TestBrickBlockCollision.cs
+Author of the .cs file being reviewed Oliver
+Number of minutes taken to complete the review 15 minute 30sec
 Specific comments on what is readable and what is not
 
-Code is pretty concise and name stydle is readable
-structure of the class is reuseable.
+Code is pretty concise and name style is readable
+and test case is easy to understand
+catch the readability point
 
-Set every mario sprite precisely and have good connection with othre class
