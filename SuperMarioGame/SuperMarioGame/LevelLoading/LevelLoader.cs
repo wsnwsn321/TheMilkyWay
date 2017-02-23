@@ -36,7 +36,7 @@ namespace SuperMarioGame.LevelLoading
                     switch (obj)
                     {
                         case ("BrickBlock"):
-
+                            
                             break;
                         case ("GroundBlock"):
 

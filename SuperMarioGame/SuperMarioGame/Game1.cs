@@ -3,15 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.Commands;
 using SuperMarioGame.Controller;
-using System.Collections.Generic;
-using SuperMarioGame.ElementClasses.ElementInterfaces;
-using SuperMarioGame.ElementClasses.ItemClass;
-using SuperMarioGame.ElementClasses.EnvironmentClass;
-using SuperMarioGame.ElementClasses.BackgroundClass;
-using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
-using SuperMarioGame.ElementClasses;
 using SuperMarioGame.SpriteFactories;
-using SuperMarioGame.CollisionHandler;
+using SuperMarioGame.LevelLoading;
 
 namespace SuperMarioGame
 
@@ -23,6 +16,7 @@ namespace SuperMarioGame
         internal SpriteBatch spriteBatch;
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
+        internal Level level;
 
         public int WINDOW_HEIGHT;
 
@@ -37,6 +31,7 @@ namespace SuperMarioGame
         {
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
+            level = new Level();
 
             InitializeCommands();
 
