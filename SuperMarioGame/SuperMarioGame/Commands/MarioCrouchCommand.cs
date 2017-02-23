@@ -10,7 +10,7 @@ namespace SuperMarioGame.Commands
         public MarioCrouchCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.mario;
+            mario = myGame.level.mario;
         }
 
         public void Execute()
