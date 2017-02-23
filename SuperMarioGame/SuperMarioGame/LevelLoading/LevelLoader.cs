@@ -26,55 +26,55 @@ namespace SuperMarioGame.LevelLoading
 
         private void ReadLevelFile()
         {
-            StreamReader stream = new StreamReader("LevelFiles/Level1-1.csv");
+            StreamReader stream = new StreamReader("C:\\Users\\pratt\\Source\\Repos\\3902Game\\SuperMarioGame\\SuperMarioGame\\LevelLoading\\LevelFiles\\Level1-1.csv");
             string line;
             while((line = stream.ReadLine()) != null)
             {
-                string[] str = line.Split(new char[2] { ',', ' ' } );
+                string[] str = line.Split(',');
                 foreach (string obj in str)
                 {
                     switch (obj)
                     {
-                        case ("BrickBlock"):
+                        case "BrickBlock":
                             level.envElements.Add(new BrickBlock(new Vector2(x, y)));
                             break;
-                        case ("GroundBlock"):
+                        case "GroundBlock":
                             level.envElements.Add(new GroundBlock(new Vector2(x, y)));
                             break;
-                        case ("HiddenBlock"):
+                        case "HiddenBlock":
                             level.envElements.Add(new HiddenBlock(new Vector2(x, y)));
                             break;
-                        case ("QuestionBlock"):
+                        case "QuestionBlock":
                             level.envElements.Add(new QuestionBlock(new Vector2(x, y)));
                             break;
-                        case ("StageBlock"):
+                        case "StageBlock":
                             level.envElements.Add(new StageBlock(new Vector2(x, y)));
                             break;
-                        case ("UsedBlock"):
+                        case "UsedBlock":
                             level.envElements.Add(new UsedBlock(new Vector2(x, y)));
                             break;
-                        case ("Coin"):
+                        case "Coin":
                             level.itemElements.Add(new Coin(new Vector2(x, y)));
                             break;
-                        case ("Flower"):
+                        case "Flower":
                             level.itemElements.Add(new Flower(new Vector2(x, y)));
                             break;
-                        case ("GreenMushroom"):
+                        case "GreenMushroom":
                             level.itemElements.Add(new GreenMushroom(new Vector2(x, y)));
                             break;
-                        case ("RedMushroom"):
+                        case "RedMushroom":
                             level.itemElements.Add(new RedMushroom(new Vector2(x, y)));
                             break;
-                        case ("Star"):
+                        case "Star":
                             level.itemElements.Add(new Star(new Vector2(x, y)));
                             break;
-                        case ("Goomba"):
+                        case "Goomba":
                             level.enemyElements.Add(new Goomba(new Vector2(x, y)));
                             break;
-                        case ("Koopa"):
+                        case "Koopa":
                             level.enemyElements.Add(new Koopa(new Vector2(x, y + 21)));
                             break;
-                        case ("Pipe"):
+                        case "Pipe":
                             level.envElements.Add(new HiddenBlock(new Vector2(x + 2, y + 4)));
                             break;
                         default:
