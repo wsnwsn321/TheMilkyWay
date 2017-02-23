@@ -12,7 +12,7 @@
 
         public void Execute()
         {
-            myGame.envElements[1] = new ElementClasses.EnvironmentClass.UsedBlock(myGame.envElements[1].position);
+            myGame.level.envElements[1] = new ElementClasses.EnvironmentClass.UsedBlock(myGame.level.envElements[1].position);
         }
     }
 }
