@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
+using System;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -26,7 +27,7 @@ namespace SuperMarioGame.LevelLoading
 
         private void ReadLevelFile()
         {
-            StreamReader stream = new StreamReader("C:\\Users\\pratt\\Source\\Repos\\3902Game\\SuperMarioGame\\SuperMarioGame\\LevelLoading\\LevelFiles\\Level1-1.csv");
+            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\Level1-1.csv");
             string line;
             while((line = stream.ReadLine()) != null)
             {
