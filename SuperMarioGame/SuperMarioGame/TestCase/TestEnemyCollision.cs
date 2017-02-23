@@ -55,8 +55,13 @@ namespace SuperMarioGame.TestCase
 
             if (goomba.goombaAction != Goomba.GOOMBA_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioGoombaTopCollision failed.");
             }
+            else
+            {
+                Debug.WriteLine("Success");
+            }
+
         }
         public void TestGoombaLeftCollision()
         {
@@ -70,7 +75,11 @@ namespace SuperMarioGame.TestCase
             MarioEnemyHandler.EnemyHandler(mario, goomba, left);
             if (mario.marioAction != Mario.MARIO_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioGoombaLeftCollision failed.");
+            }
+            else
+            {
+                Debug.WriteLine("Success");
             }
         }
         public void TestGoombaRightCollision()
@@ -85,7 +94,11 @@ namespace SuperMarioGame.TestCase
             MarioEnemyHandler.EnemyHandler(mario, goomba, right);
             if (mario.marioAction != Mario.MARIO_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioGoombaRightCollision failed.");
+            }
+            else
+            {
+                Debug.WriteLine("Success");
             }
         }
 
@@ -103,7 +116,11 @@ namespace SuperMarioGame.TestCase
 
             if (mario.marioAction != Mario.MARIO_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioGoombaBottomCollision failed.");
+            }
+            else
+            {
+                Debug.WriteLine("Success");
             }
 
         }
@@ -122,7 +139,11 @@ namespace SuperMarioGame.TestCase
 
             if (koopba.koopaAction != Koopa.KOOPA_SHELL)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioKoopaTopCollision failed.");
+            }
+            else
+            {
+                Debug.WriteLine("Success");
             }
         }
 
@@ -140,7 +161,11 @@ namespace SuperMarioGame.TestCase
 
             if (mario.marioAction != Mario.MARIO_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioKoopaLeftCollision failed.");
+            }
+            else
+            {
+                Debug.WriteLine("Success");
             }
         }
 
@@ -158,7 +183,11 @@ namespace SuperMarioGame.TestCase
 
             if (mario.marioAction != Mario.MARIO_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioKoopaRightCollision failed.");
+            }
+            else
+            {
+                Debug.WriteLine("Success");
             }
         }
 
@@ -176,7 +205,10 @@ namespace SuperMarioGame.TestCase
 
             if (mario.marioAction != Mario.MARIO_DEAD)
             {
-                Debug.WriteLine("MarioEnemyBottomCollision failed.");
+                Debug.WriteLine("MarioKoopaBottomCollision failed.");
+            }else
+            {
+                Debug.WriteLine("Success");
             }
         }
 
