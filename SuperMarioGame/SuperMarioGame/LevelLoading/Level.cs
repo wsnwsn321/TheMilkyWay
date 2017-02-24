@@ -3,7 +3,6 @@ using SuperMarioGame.CollisionHandler;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -42,9 +41,9 @@ namespace SuperMarioGame.LevelLoading
 
         public void Draw()
         {
-            foreach (IEnemy enemy in enemyElements)
+            foreach (IBackground back in backgroundElements)
             {
-                enemy.Draw();
+                back.Draw();
             }
             foreach (IItem item in itemElements)
             {
@@ -54,9 +53,9 @@ namespace SuperMarioGame.LevelLoading
             {
                 block.Draw();
             }
-            foreach (IBackground back in backgroundElements)
+            foreach (IEnemy enemy in enemyElements)
             {
-                back.Draw();
+                enemy.Draw();
             }
 
             mario.MarioDraw();
