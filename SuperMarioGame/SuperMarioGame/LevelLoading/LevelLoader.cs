@@ -92,12 +92,12 @@ namespace SuperMarioGame.LevelLoading
                         case "SmallMountain":
                             level.backgroundElements.Add(new SmallMountain(new Vector2(x, y)));
                             break;
-                        //case "BigBrush":
-                        //    level.backgroundElements.Add(new BigBrush(new Vector2(x, y)));
-                        //    break;
-                        //case "SmallBrush":
-                        //    level.backgroundElements.Add(new SmallBrush(new Vector2(x, y)));
-                        //    break;
+                        case "BigBrush":
+                            level.backgroundElements.Add(new BigBrush(new Vector2(x, y)));
+                            break;
+                        case "SmallBrush":
+                            level.backgroundElements.Add(new SmallBrush(new Vector2(x, y)));
+                            break;
                         default:
                             break;
                     }
