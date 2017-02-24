@@ -5,6 +5,7 @@ using System.IO;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
 using System;
+using SuperMarioGame.ElementClasses.BackgroundClass;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -79,6 +80,24 @@ namespace SuperMarioGame.LevelLoading
                         case "Pipe":
                             level.envElements.Add(new Pipe(new Vector2(x + 2, y + 4)));
                             break;
+                        case "BigCloud":
+                            level.backgroundElements.Add(new BigCloud(new Vector2(x, y + 14)));
+                            break;
+                        case "SmallCloud":
+                            level.backgroundElements.Add(new SmallCloud(new Vector2(x, y + 18)));
+                            break;
+                        //case "BigMountain":
+                        //    level.backgroundElements.Add(new BigMountain(new Vector2(x, y)));
+                        //    break;
+                        //case "SmallMountain":
+                        //    level.backgroundElements.Add(new SmallMountain(new Vector2(x, y)));
+                        //    break;
+                        //case "BigBrush":
+                        //    level.backgroundElements.Add(new BigBrush(new Vector2(x, y)));
+                        //    break;
+                        //case "SmallBrush":
+                        //    level.backgroundElements.Add(new SmallBrush(new Vector2(x, y)));
+                        //    break;
                         default:
                             break;
                     }
