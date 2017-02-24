@@ -13,7 +13,7 @@ namespace SuperMarioGame.LevelLoading
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
-        internal Mario mario = new Mario(new Vector2(400, 400), Mario.MARIO_SMALL, false);
+        internal Mario mario = new Mario(new Vector2(50, 400), Mario.MARIO_SMALL, false);
 
         public void Update()
         {
