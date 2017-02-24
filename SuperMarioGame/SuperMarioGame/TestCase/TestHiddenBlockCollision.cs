@@ -48,7 +48,7 @@ namespace SuperMarioGame.TestCase
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
-            mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
+            mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos - HiddenBlockWidthAndHeight + 1;
 
             IBlock block = new HiddenBlock(new Vector2(marioXpos, blockposition));
