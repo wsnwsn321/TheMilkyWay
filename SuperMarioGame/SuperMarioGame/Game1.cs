@@ -100,8 +100,8 @@ namespace SuperMarioGame
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
 
             //we will add these to level loader soon
-            level.backgroundElements.Add(new BigCloud(new Vector2(200, 25)));
-            level.backgroundElements.Add(new SmallCloud(new Vector2(400, 25)));
+            //level.backgroundElements.Add(new BigCloud(new Vector2(200, 25)));
+            //level.backgroundElements.Add(new SmallCloud(new Vector2(400, 25)));
             level.backgroundElements.Add(new BigMountain(new Vector2(150, 410)));
             level.backgroundElements.Add(new SmallMountain(new Vector2(375, 440)));
             level.backgroundElements.Add(new BigBrush(new Vector2(500, 450)));
