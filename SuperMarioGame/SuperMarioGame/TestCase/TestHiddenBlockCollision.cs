@@ -6,6 +6,7 @@ using SuperMarioGame.CollisionHandler;
 using System;
 using System.Diagnostics;
 using SuperMarioGame.SpriteFactories;
+using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.TestCase
 {
@@ -47,7 +48,7 @@ namespace SuperMarioGame.TestCase
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
-            mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
+            mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos - HiddenBlockWidthAndHeight + 1;
 
             IBlock block = new HiddenBlock(new Vector2(marioXpos, blockposition));
@@ -55,7 +56,7 @@ namespace SuperMarioGame.TestCase
             // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
-            if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
+            if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1) || !(block.blockSprite is UsedBlockSprite))
             {
                 Debug.WriteLine("MarioHiddenBlockBottomCollision failed.");
                 failure++;
