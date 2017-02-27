@@ -35,7 +35,6 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else if (block is QuestionBlock)
                         {
-                            //block = new UsedBlock(block.position);
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                         }
                         else if (block is HiddenBlock)

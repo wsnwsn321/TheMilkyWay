@@ -21,12 +21,6 @@ namespace SuperMarioGame.TestCase
                 return instance;
             }
         }
-
-        // Need Right, left, top, bottom collision for all block types
-        // Also, need test cases for special cases, like small mario
-        // trying to break a brick block. Only big mario forms can 
-        // break a brick block.
-
         public void RunTests()
         {
             Debug.WriteLine("The BigMarioBrickBlockCollision testing has begun. Errors will be output to the console.");
@@ -49,8 +43,6 @@ namespace SuperMarioGame.TestCase
             int blockposition = marioYpos - BrickBlockWidthAndHeight + 1;
 
             IBlock block = new BrickBlock(new Vector2(marioXpos, blockposition));
-
-            // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
             if (block.isVisible || marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
@@ -89,8 +81,6 @@ namespace SuperMarioGame.TestCase
             int blockposition = marioXpos + mario.state.marioSprite.desRectangle.Width-1;
 
             IBlock block = new BrickBlock(new Vector2(blockposition, marioYpos));
-
-            // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 4);
             mario.MarioRun();
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)+1)

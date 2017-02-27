@@ -22,11 +22,6 @@ namespace SuperMarioGame.TestCase
             }
         }
 
-        // Need Right, left, top, bottom collision for all block types
-        // Also, need test cases for special cases, like small mario
-        // trying to break a brick block. Only big mario forms can 
-        // break a brick block.
-
         public void RunTests()
         {
             Debug.WriteLine("The GroundBlockCollision testing has begun. Errors will be output to the console.");
@@ -69,8 +64,6 @@ namespace SuperMarioGame.TestCase
             int blockposition = marioYpos + mario.state.marioSprite.desRectangle.Height - 1;
 
             IBlock block = new GroundBlock(new Vector2(marioXpos, blockposition));
-
-            // Make mario collide with the block
             MarioBlockHandler.BlockHandler(mario, block, 1);
             mario.MarioCrouch();
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height) + 1)
