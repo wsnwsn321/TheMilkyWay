@@ -48,7 +48,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = TOP;
                         }
                     }
-                    else if (collideRectangle.Width < collideRectangle.Height)
+                    else if (collideRectangle.Width <= collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
