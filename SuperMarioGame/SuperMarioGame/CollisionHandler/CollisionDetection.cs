@@ -71,6 +71,7 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
         {
+            SIDE = TOP;
             foreach (IItem item in itemElements)
             {     
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))

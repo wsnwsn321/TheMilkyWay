@@ -14,7 +14,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
     {     
         public Vector2 position { get; set; }
-        public IEnemyState goombaState;
+        internal IEnemyState goombaState;
         public ISprite enemySprite { get; set; }
         public bool isVisible { get; set; }
 
@@ -22,9 +22,9 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public const bool KOOPA_LEFT = true;
 
-        public bool goombaDirection;
+        internal bool goombaDirection;
 
-        public int goombaAction;
+        internal int goombaAction;
 
         private int deadCounter = 0;
 
@@ -75,11 +75,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         {
             goombaState.BeStomped();
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaStompedSprite();
-        }
-
-        public void BeFilpped()
-        {
-            //nothing
         }
         
     }
