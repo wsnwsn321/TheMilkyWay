@@ -38,7 +38,7 @@ namespace SuperMarioGame.TestCase
             TestKoopaLeftCollision();
             TestKoopaRightCollision();
             TestKoopaBottomCollision();
-            Debug.WriteLine("All EnemyCollision test complete, " + failure + "failures occurred");
+            Debug.WriteLine("All EnemyCollision test complete, " + failure + " failures occurred");
         }
 
 
