@@ -60,7 +60,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = LEFT;
                         }
                     }
-                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                   if (collideRectangle.Width * collideRectangle.Height > 13)
                     {
                         MarioBlockHandler.BlockHandler(mario, block, SIDE);
                     }

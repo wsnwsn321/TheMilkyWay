@@ -21,11 +21,6 @@ namespace SuperMarioGame.TestCase
                 return instance;
             }
         }
-
-        // Need Right, left, top, bottom collision for all block types
-        // Also, need test cases for special cases, like small mario
-        // trying to break a brick block. Only big mario forms can 
-        // break a brick block.
         private int failure = 0;
         public void RunTests()
         {
