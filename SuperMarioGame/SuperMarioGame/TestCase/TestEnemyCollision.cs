@@ -59,10 +59,7 @@ namespace SuperMarioGame.TestCase
                 Debug.WriteLine("The MarioGoombaTopCollision test case failed.");
                 failure++;
             }
-            else
-            {
-                Debug.WriteLine("The MarioGoombaTopCollision test case Success");
-            }
+          
 
         }
         public void TestGoombaLeftCollision()
@@ -70,20 +67,19 @@ namespace SuperMarioGame.TestCase
             int goombaXpos = 500;
             int goombaYpos = 100;
             Goomba goomba  = new Goomba(new Vector2(goombaXpos, goombaYpos));
-            int marioXpos = 510 - SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite().desRectangle.Width;
+            int marioXpos = 500 - SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite().desRectangle.Width;
             int marioYpos = 100;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos));
             int left = CollisionDetection.LEFT;
+            mario.MarioRun();
             MarioEnemyHandler.EnemyHandler(mario, goomba, left);
-            if (!(mario.marioAction != Mario.MARIO_DEAD))
+
+            if (mario.marioState != Mario.MARIO_DEAD)
             {
                 Debug.WriteLine("The MarioGoombaLeftCollision test case failed.");
                 failure++;
             }
-            else
-            {
-                Debug.WriteLine("The MarioGoombaLeftCollision test case Success");
-            }
+           
         }
         public void TestGoombaRightCollision()
         {
@@ -95,15 +91,13 @@ namespace SuperMarioGame.TestCase
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos));
             int right = CollisionDetection.RIGHT;
             MarioEnemyHandler.EnemyHandler(mario, goomba, right);
-            if (!(mario.marioAction != Mario.MARIO_DEAD))
+            
+            if (mario.marioState != Mario.MARIO_DEAD)
             {
                 Debug.WriteLine("The MarioGoombaRightCollision test case failed.");
                 failure++;
             }
-            else
-            {
-                Debug.WriteLine("The MarioGoombaRightCollision test case Success");
-            }
+          
         }
 
         public void TestGoombaBottomCollision()
@@ -118,15 +112,12 @@ namespace SuperMarioGame.TestCase
             int bottom = CollisionDetection.BOTTOM;
             MarioEnemyHandler.EnemyHandler(mario, goomba, bottom);
 
-            if (!(mario.marioAction != Mario.MARIO_DEAD))
+            if (mario.marioState != Mario.MARIO_DEAD)
             {
                 Debug.WriteLine("The MarioGoombaBottomCollision test case failed.");
                 failure++;
             }
-            else
-            {
-                Debug.WriteLine("The MarioGoombaBottomCollision test case Success");
-            }
+            
 
         }
 
@@ -147,11 +138,7 @@ namespace SuperMarioGame.TestCase
                 Debug.WriteLine("The MarioKoopaTopCollision test case failed.");
                 failure++;
             }
-            else
-            {
-                
-                Debug.WriteLine("The MarioKoopaTopCollision test case Success");
-            }
+           
         }
 
         public void TestKoopaLeftCollision()
@@ -167,16 +154,12 @@ namespace SuperMarioGame.TestCase
             int left = CollisionDetection.LEFT;
             MarioEnemyHandler.EnemyHandler(mario, koopba, left);
 
-            if (!(mario.marioState == Mario.MARIO_DEAD))
+            if (mario.marioState != Mario.MARIO_DEAD)
             {
                 Debug.WriteLine("The MarioKoopaLeftCollision test case failed.");
                 failure++;
             }
-            else
-            {
-                
-                Debug.WriteLine("The MarioKoopaLeftCollision test case Success");
-            }
+            
         }
 
         public void TestKoopaRightCollision()
@@ -191,15 +174,10 @@ namespace SuperMarioGame.TestCase
             int right = CollisionDetection.RIGHT;
             MarioEnemyHandler.EnemyHandler(mario, koopba, right);
 
-            if (!(mario.marioAction != Mario.MARIO_DEAD))
+            if (mario.marioState != Mario.MARIO_DEAD)
             {
                 Debug.WriteLine("The MarioKoopaRightCollision test case failed.");
                 failure++;
-            }
-            else
-            {
-                 
-                Debug.WriteLine("The MarioKoopaRightCollision test case Success");
             }
         }
 
@@ -215,15 +193,12 @@ namespace SuperMarioGame.TestCase
             int bottom = CollisionDetection.BOTTOM;
             MarioEnemyHandler.EnemyHandler(mario, koopba, bottom);
 
-            if (!(mario.marioAction != Mario.MARIO_DEAD))
+            if (mario.marioState != Mario.MARIO_DEAD)
             {
                
                 Debug.WriteLine("The MarioKoopaBottomCollision test case failed.");
                 failure++;
-            } else
-            {
-                Debug.WriteLine("The MarioKoopaBottomCollision test case Success");
-            }
+            } 
         }
 
     }
