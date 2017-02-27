@@ -26,7 +26,11 @@ namespace SuperMarioGame.Commands
                 if (mario.position.X < myGame.Window.ClientBounds.Width - mario.state.marioSprite.desRectangle.Width)
                 {
                     mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
-                }                
+                }
+                if (mario.position.X > myGame.Window.ClientBounds.Width - mario.state.marioSprite.desRectangle.Width)
+                {
+                    mario.position = new Vector2(myGame.Window.ClientBounds.Width - mario.state.marioSprite.desRectangle.Width, mario.position.Y);
+                }
             }
              
         }
