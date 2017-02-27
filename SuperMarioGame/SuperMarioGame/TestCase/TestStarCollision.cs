@@ -40,7 +40,7 @@ namespace SuperMarioGame.TestCase
             IItem Star = new Star(new Vector2(marioXpos, marioYpos));
             MarioItemHandler.ItemHandler(mario, Star, 3);
             mario.MarioJump();
-            if (Star.isVisible || mario.marioState != Mario.MARIO_BIG)
+            if (Star.isVisible || !mario.IsInvincible||!mario.)
             {
                 Debug.WriteLine("Small Mario moving up colliding with Star failed.");
                 failure++;
