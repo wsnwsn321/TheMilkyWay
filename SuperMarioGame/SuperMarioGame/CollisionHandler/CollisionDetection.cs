@@ -75,32 +75,7 @@ namespace SuperMarioGame.CollisionHandler
             {     
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
                 {
-                    firstRectangle = mario.state.marioSprite.desRectangle;
-                    secondRectangle = item.itemSprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
-                    if (collideRectangle.Width > collideRectangle.Height)
-                    {
-                        if (firstRectangle.Top > secondRectangle.Top)
-                        {
-                            SIDE = BOTTOM;
-                        }
-                        else
-                        {
-                            SIDE = TOP;
-                        }
-                    }
-                    else if (collideRectangle.Width < collideRectangle.Height)
-                    {
-                        if (firstRectangle.Left > secondRectangle.Left)
-                        {
-                            SIDE = LEFT;
-                        }
-                        else
-                        {
-                            SIDE = RIGHT;
-                        }
-                    }
-                    MarioItemHandler.ItemHandler(mario, item, SIDE);
+                    MarioItemHandler.ItemHandler(mario, item);
                 }
             }
         }
