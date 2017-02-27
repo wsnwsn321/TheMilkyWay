@@ -33,10 +33,11 @@ namespace SuperMarioGame.CollisionHandler
 
             foreach (IBlock block in envElements)
             {
-                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)){
+                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
+                {
                     firstRectangle = mario.state.marioSprite.desRectangle;
                     secondRectangle = block.blockSprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(firstRectangle,secondRectangle);
+                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
                     if (collideRectangle.Width > collideRectangle.Height)
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
@@ -59,7 +60,11 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = LEFT;
                         }
                     }
-                    MarioBlockHandler.BlockHandler(mario, block, SIDE);
+                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                    {
+                        MarioBlockHandler.BlockHandler(mario, block, SIDE);
+                    }
+
                 }
             }
         }
