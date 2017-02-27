@@ -22,12 +22,20 @@ namespace SuperMarioGame.Commands
                 mario.MarioIdle();
                 mario.MarioChangeDireciton();
                    }
-             mario.MarioRun();
+                mario.MarioRun();
                 if (mario.position.X > 0)
                 {
                     mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
                 }
-             
+                if (mario.position.Y > 0)
+                {
+                    mario.position = new Vector2(mario.position.X, mario.position.Y - 3);
+                }
+                if (mario.position.Y < myGame.Window.ClientBounds.Height - mario.state.marioSprite.desRectangle.Height)
+                {
+                    mario.position = new Vector2(mario.position.X, mario.position.Y + 3);
+                }
+
             }
                 
 
