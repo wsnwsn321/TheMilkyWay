@@ -153,9 +153,10 @@
     <Compile Include="TestCase\RunTest.cs" />
     <Compile Include="TestCase\TestEnemyCollision.cs" />
     <Compile Include="TestCase\TestGreenMushroomCollision.cs" />
+    <Compile Include="TestCase\TestBigMarioBrickBlockCollision.cs" />
     <Compile Include="TestCase\TestStarCollision.cs" />
     <Compile Include="TestCase\TestGroundBlockCollision.cs" />
-    <Compile Include="TestCase\TestBrickBlockCollision.cs" />
+    <Compile Include="TestCase\TestSmallMarioBrickBlockCollision.cs" />
     <Compile Include="TestCase\TestHiddenBlockCollision.cs" />
     <Compile Include="TestCase\TestFlowerCollision.cs" />
     <Compile Include="TestCase\TestRedMushroomCollision.cs" />
