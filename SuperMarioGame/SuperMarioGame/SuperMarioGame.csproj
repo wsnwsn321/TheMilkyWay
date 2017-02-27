@@ -157,12 +157,6 @@
     <Compile Include="TestCase\TestHiddenBlockCollision.cs" />
     <Compile Include="TestCase\TestUsedBlockCollision.cs" />
     <Compile Include="TestCase\TestQuestionBlockCollision.cs" />
-    <Compile Include="UpdateGeorge\new Mario.cs" />
-    <Compile Include="UpdateGeorge\NewMarioState\CrouchMarioState.cs" />
-    <Compile Include="UpdateGeorge\NewMarioState\DeadMarioState.cs" />
-    <Compile Include="UpdateGeorge\NewMarioState\IdleMarioState.cs" />
-    <Compile Include="UpdateGeorge\NewMarioState\JumpingMarioState.cs" />
-    <Compile Include="UpdateGeorge\NewMarioState\RunningMarioState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
