@@ -152,6 +152,7 @@
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
     <Compile Include="TestCase\RunTest.cs" />
     <Compile Include="TestCase\TestEnemyCollision.cs" />
+    <Compile Include="TestCase\TestGreenMushroomCollision.cs" />
     <Compile Include="TestCase\TestStarCollision.cs" />
     <Compile Include="TestCase\TestGroundBlockCollision.cs" />
     <Compile Include="TestCase\TestBrickBlockCollision.cs" />

@@ -9,11 +9,11 @@ using SuperMarioGame.ElementClasses.ItemClass;
 
 namespace SuperMarioGame.TestCase
 {
-    class TestStarCollision
+    class TestGreenMushroomCollision
     {
-        private static TestStarCollision instance = new TestStarCollision();
+        private static TestGreenMushroomCollision instance = new TestGreenMushroomCollision();
         private int failure = 0;
-        public static TestStarCollision Instance
+        public static TestGreenMushroomCollision Instance
         {
             get
             {
@@ -22,61 +22,61 @@ namespace SuperMarioGame.TestCase
         }
         public void RunTests()
         {
-            Debug.WriteLine("The MarioStarCollision testing has begun. Errors will be output to the console.");
-            TestSmallMarioStarCollision();
-            TestBigMarioStarCollision();
-            TestFireMarioStarCollision();
-            Debug.WriteLine("All MarioStarCollision test complete, " + failure + " failures occurred");
+            Debug.WriteLine("The MarioGreenmushroomCollision testing has begun. Errors will be output to the console.");
+            TestSmallMarioGreenMushroomCollision();
+            TestBigMarioGreenMushroomCollision();
+            TestFireMarioGreenMushroomCollision();
+            Debug.WriteLine("All MarioGreenmushroomCollision test complete, " + failure + " failures occurGreen");
 
         }
 
-        public void TestSmallMarioStarCollision()
+        public void TestSmallMarioGreenMushroomCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
-            IItem Star = new Star(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, Star, 3);
+            IItem mushroom = new GreenMushroom(new Vector2(marioXpos, marioYpos));
+            MarioItemHandler.ItemHandler(mario, mushroom, 3);
             mario.MarioJump();
-            if (Star.isVisible || !mario.IsInvincible||!mario.HasStarPower)
+            if (mushroom.isVisible)
             {
-                Debug.WriteLine("Small Mario collides with Star failed.");
+                Debug.WriteLine("Small Mario collides with Greenmushroom failed.");
                 failure++;
             }
         }
 
-        public void TestBigMarioStarCollision()
+        public void TestBigMarioGreenMushroomCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_BIG, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
-            IItem Star = new Star(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, Star, 3);
+            IItem mushroom = new GreenMushroom(new Vector2(marioXpos, marioYpos));
+            MarioItemHandler.ItemHandler(mario, mushroom, 3);
             mario.MarioJump();
-            if (Star.isVisible || !mario.IsInvincible || !mario.HasStarPower)
+            if (mushroom.isVisible)
             {
-                Debug.WriteLine("Big Mario collides with Star failed.");
+                Debug.WriteLine("Big Mario collides with Greenmushroom failed.");
                 failure++;
             }
         }
 
-        public void TestFireMarioStarCollision()
+        public void TestFireMarioGreenMushroomCollision()
         {
             int marioXpos = 400;
             int marioYpos = 400;
             Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_FIRE, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
-            IItem Star = new Star(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, Star, 3);
+            IItem mushroom = new GreenMushroom(new Vector2(marioXpos, marioYpos));
+            MarioItemHandler.ItemHandler(mario, mushroom, 3);
             mario.MarioJump();
-            if (Star.isVisible || !mario.IsInvincible || !mario.HasStarPower)
+            if (mushroom.isVisible)
             {
-                Debug.WriteLine("Fire Mario colldes with Star failed.");
+                Debug.WriteLine("Fire Mario colldes with Greenmushroom failed.");
                 failure++;
             }
         }

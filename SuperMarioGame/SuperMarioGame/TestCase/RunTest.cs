@@ -25,7 +25,10 @@ namespace SuperMarioGame.TestCase
             TestCase.TestUsedBlockCollision.Instance.RunTests();
             TestCase.TestBrickBlockCollision.Instance.RunTests();
             TestCase.TestEnemyCollision.Instance.RunTests();
-
+            TestCase.TestFlowerCollision.Instance.RunTests();
+            TestCase.TestStarCollision.Instance.RunTests();
+            TestCase.TestRedMushroomCollision.Instance.RunTests();
+            TestCase.TestGreenMushroomCollision.Instance.RunTests();
         }
 
 

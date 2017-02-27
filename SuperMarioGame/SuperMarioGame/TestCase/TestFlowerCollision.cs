@@ -42,7 +42,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioJump();
             if (flower.isVisible || mario.marioState != Mario.MARIO_BIG)
             {
-                Debug.WriteLine("Small Mario moving up colliding with Flower failed.");
+                Debug.WriteLine("Small Mario collides with Flower failed.");
                 failure++;
             }
         }
