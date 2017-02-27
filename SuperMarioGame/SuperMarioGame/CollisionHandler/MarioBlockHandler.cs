@@ -29,7 +29,7 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height;
                         mario.position = newPosition;
-                        if (block is BrickBlock)
+                        if (block is BrickBlock && mario.marioState != Mario.MARIO_SMALL)
                         {
                             block.isVisible = false;
                         }
