@@ -8,13 +8,13 @@ using System.Diagnostics;
 
 namespace SuperMarioGame.TestCase
 {
-    class TestBrickBlockCollision
+    class TestBigMarioBrickBlockCollision
     {
 
-        private static TestBrickBlockCollision instance = new TestBrickBlockCollision();
+        private static TestBigMarioBrickBlockCollision instance = new TestBigMarioBrickBlockCollision();
         private int BrickBlockWidthAndHeight = 32;
         private int failure = 0;
-        public static TestBrickBlockCollision Instance
+        public static TestBigMarioBrickBlockCollision Instance
         {
             get
             {
@@ -29,12 +29,12 @@ namespace SuperMarioGame.TestCase
 
         public void RunTests()
         {
-            Debug.WriteLine("The BrickBlockCollision testing has begun. Errors will be output to the console.");
+            Debug.WriteLine("The BigMarioBrickBlockCollision testing has begun. Errors will be output to the console.");
             TestBrickBlockBottomCollision();
             TestBrickBlockTopCollision();
             TestBrickBlockLeftCollision();
             TestBrickBlockRightCollision();
-            Debug.WriteLine("All BrickBlockCollision test complete, " + failure + " failures occurred");
+            Debug.WriteLine("All BigMarioBrickBlockCollision test complete, " + failure + " failures occurred");
 
         }
 
@@ -44,7 +44,7 @@ namespace SuperMarioGame.TestCase
         {
             int marioXpos = 400;
             int marioYpos = 400;
-            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
+            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_BIG, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos - BrickBlockWidthAndHeight + 1;
 
@@ -55,7 +55,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioJump();
             if (block.isVisible || marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1))
             {
-                Debug.WriteLine("MarioBrickBlockBottomCollision failed.");
+                Debug.WriteLine("BigMarioBrickBlockBottomCollision failed.");
                 failure++;
             }    
          }
@@ -64,7 +64,7 @@ namespace SuperMarioGame.TestCase
         {
             int marioXpos = 400;
             int marioYpos = 400;
-            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
+            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_BIG, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioYpos + mario.state.marioSprite.desRectangle.Height-1;
 
@@ -75,7 +75,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioCrouch();
             if (marioYpos > (blockposition - mario.state.marioSprite.desRectangle.Height)+1)
             {
-                Debug.WriteLine("MarioBrickBlockTopCollision failed.");
+                Debug.WriteLine("BigMarioBrickBlockTopCollision failed.");
                 failure++;
             }
         }
@@ -84,7 +84,7 @@ namespace SuperMarioGame.TestCase
         {
             int marioXpos = 400;
             int marioYpos = 400;
-            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
+            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_BIG, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
             int blockposition = marioXpos + mario.state.marioSprite.desRectangle.Width-1;
 
@@ -95,7 +95,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioRun();
             if (marioXpos > (blockposition - mario.state.marioSprite.desRectangle.Width)+1)
             {
-                Debug.WriteLine("MarioBrickBlockLeftCollision failed.");
+                Debug.WriteLine("BigMarioBrickBlockLeftCollision failed.");
                 failure++;
             }
         }
@@ -104,7 +104,7 @@ namespace SuperMarioGame.TestCase
         {
             int marioXpos = 400;
             int marioYpos = 400;
-            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_SMALL, false);
+            Mario mario = new Mario(new Vector2(marioXpos, marioYpos), Mario.MARIO_BIG, false);
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
             int blockposition = marioXpos - BrickBlockWidthAndHeight + 1;
 
@@ -115,7 +115,7 @@ namespace SuperMarioGame.TestCase
             mario.MarioRun();
             if ( marioXpos < (blockposition - mario.state.marioSprite.desRectangle.Width)-1)
             {
-                Debug.WriteLine("MarioBrickBlockRightCollision failed.");
+                Debug.WriteLine("BigMarioBrickBlockRightCollision failed.");
                 failure++;
             }
         }
