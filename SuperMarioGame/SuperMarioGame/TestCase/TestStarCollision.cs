@@ -38,7 +38,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem Star = new Star(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, Star, 3);
+            MarioItemHandler.ItemHandler(mario, Star);
             mario.MarioJump();
             if (Star.isVisible || !mario.IsInvincible||!mario.HasStarPower)
             {
@@ -55,7 +55,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem Star = new Star(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, Star, 3);
+            MarioItemHandler.ItemHandler(mario, Star);
             mario.MarioJump();
             if (Star.isVisible || !mario.IsInvincible || !mario.HasStarPower)
             {
@@ -72,7 +72,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem Star = new Star(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, Star, 3);
+            MarioItemHandler.ItemHandler(mario, Star);
             mario.MarioJump();
             if (Star.isVisible || !mario.IsInvincible || !mario.HasStarPower)
             {

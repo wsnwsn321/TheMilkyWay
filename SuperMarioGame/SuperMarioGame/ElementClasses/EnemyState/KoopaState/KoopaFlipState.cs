@@ -10,18 +10,18 @@ using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
 
 namespace SuperMarioGame.ElementClasses.EnemyState.KoopaState
 {
-    class KoopaFlipState: IEnemyState
+    public class KoopaFlipState: IEnemyState
     {
 
         private Koopa koopa;
 
-        public KoopaFlipState(Koopa koopa)
+        public KoopaFlipState(Koopa koop)
         {
-            this.koopa = koopa;
+            koopa = koop;
         }
-        public void EnemyIdle(Koopa koopa)
+        public void EnemyIdle(Koopa koop)
         {
-            this.koopa = koopa;
+            koopa = koop;
         }
 
         public void BeFilpped()

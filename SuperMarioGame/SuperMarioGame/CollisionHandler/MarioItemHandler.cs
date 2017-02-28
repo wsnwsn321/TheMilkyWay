@@ -6,7 +6,7 @@ namespace SuperMarioGame.CollisionHandler
 {
     public static class MarioItemHandler
     {
-        public static void ItemHandler(Mario mario,  IItem item, int CollisionSide)
+        public static void ItemHandler(Mario mario,  IItem item)
         {
                     
             if(item is RedMushroom)
