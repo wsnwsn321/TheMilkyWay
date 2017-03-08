@@ -3,6 +3,7 @@ using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses.EnemyState.KoopaState;
 using SuperMarioGame.Sprites;
 using System;
+using System.Collections.Generic;
 
 namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 {
@@ -23,6 +24,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         internal int koopaAction;
 
+        
         public Koopa(Vector2 pos)
         {
             position    = pos;
@@ -42,6 +44,14 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void Update()
         {
+            if (koopaDirection)
+            {
+                position = new Vector2(position.X - 1, position.Y);
+            }
+            else
+            {
+                position = new Vector2(position.X + 1, position.Y);
+            }
             koopaState.Update(enemySprite);
         }
 
