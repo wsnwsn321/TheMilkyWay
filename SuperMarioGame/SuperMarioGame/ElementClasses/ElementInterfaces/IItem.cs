@@ -8,6 +8,7 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         Vector2 position { get; set; }
         void Draw();
         void Update();
+        void ItemChangeDirection();
         ISprite itemSprite { get; set; }
         bool isVisible { get; set; }
 

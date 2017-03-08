@@ -9,11 +9,17 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
+        public bool changeDirection { get; set; }
         public RedMushroom(Vector2 pos)
         {
             position = pos;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
             isVisible = true;
+        }
+
+        public void ItemChangeDirection()
+        {
+            changeDirection = !changeDirection;
         }
 
         public void Draw()
@@ -28,6 +34,15 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public void Update()
         {
             itemSprite.Update();
+            if (changeDirection)
+            {
+                position = new Vector2(position.X + 2, position.Y);
+            }
+            else
+            {
+                position = new Vector2(position.X - 2, position.Y);
+            }
+           
         }
     }
 }
