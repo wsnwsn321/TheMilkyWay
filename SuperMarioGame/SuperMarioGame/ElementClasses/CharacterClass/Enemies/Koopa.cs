@@ -18,7 +18,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public const int KOOPA_IDLE = 1, KOOPA_FLIPPED = 2, KOOPA_SHELL = 3;
 
-        public const bool GOOMBA_LEFT = true;
+        public const bool KOOPA_LEFT = true;
 
         internal bool koopaDirection;
 
