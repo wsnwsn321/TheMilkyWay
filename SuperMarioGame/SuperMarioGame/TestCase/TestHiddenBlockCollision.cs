@@ -47,7 +47,6 @@ namespace SuperMarioGame.TestCase
             int blockposition = marioYpos - HiddenBlockWidthAndHeight + 1;
 
             IBlock block = new HiddenBlock(new Vector2(marioXpos, blockposition));
-            IBlock newBlock = new UsedBlock(new Vector2(marioXpos, blockposition));
             MarioBlockHandler.BlockHandler(mario, block,3);
             mario.MarioJump();
             if (marioYpos < ((blockposition + block.blockSprite.desRectangle.Height)-1) || !(block.blockSprite is UsedBlockSprite))

@@ -22,7 +22,7 @@ namespace SuperMarioGame.ElementClasses
         public Vector2 position { set; get; }
 
 
-        public int InvincibilityTime;
+        internal int InvincibilityTime;
         private int counter, starCounter;
 
         public Mario(Vector2 position)

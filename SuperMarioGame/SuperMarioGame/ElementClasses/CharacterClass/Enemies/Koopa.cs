@@ -13,15 +13,15 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
 
-        public IEnemyState koopaState;
+        internal IEnemyState koopaState;
 
         public const int KOOPA_IDLE = 1, KOOPA_FLIPPED = 2, KOOPA_SHELL = 3;
 
         public const bool GOOMBA_LEFT = true;
 
-        public bool koopaDirection;
+        internal bool koopaDirection;
 
-        public int koopaAction;
+        internal int koopaAction;
 
         public Koopa(Vector2 pos)
         {
@@ -54,12 +54,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         {
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaStompedSprite();
             koopaState.BeStomped();
-        }
-
-        public void BeFlipped()
-        {
-            //enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaFlippedSprite();
-            //koopaState.BeFlipped()
         }
 
         public void EnemyIdle()

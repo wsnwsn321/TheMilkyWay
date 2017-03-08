@@ -19,8 +19,6 @@ namespace SuperMarioGame
         internal KeyboardController keyboardController;
         internal Level level;
 
-        public int WINDOW_HEIGHT;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);

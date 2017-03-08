@@ -30,7 +30,6 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioBlockCollision(Mario mario, List<IBlock> envElements)
         {
-
             foreach (IBlock block in envElements)
             {
                 if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
@@ -64,19 +63,18 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         MarioBlockHandler.BlockHandler(mario, block, SIDE);
                     }
-
                 }
             }
         }
 
-        public void MarioItemCollision(Mario mario, List<IItem> itemElements)
+        public void EnemyBlockCollision(IEnemy enemy, List<IBlock> envElements)
         {
-            foreach (IItem item in itemElements)
-            {     
-                if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+            foreach (IBlock block in envElements)
+            {
+                if (enemy.enemySprite.desRectangle.Intersects(block.blockSprite.desRectangle))
                 {
-                    firstRectangle = mario.state.marioSprite.desRectangle;
-                    secondRectangle = item.itemSprite.desRectangle;
+                    firstRectangle = enemy.enemySprite.desRectangle;
+                    secondRectangle = block.blockSprite.desRectangle;
                     collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
                     if (collideRectangle.Width > collideRectangle.Height)
                     {
@@ -89,18 +87,33 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = TOP;
                         }
                     }
-                    else if (collideRectangle.Width < collideRectangle.Height)
+                    else if (collideRectangle.Width <= collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = LEFT;
+                            SIDE = RIGHT;
                         }
                         else
                         {
-                            SIDE = RIGHT;
+                            SIDE = LEFT;
                         }
                     }
-                    MarioItemHandler.ItemHandler(mario, item, SIDE);
+                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                    {
+                        EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
+                    }
+                }
+            }
+        }
+
+        public void MarioItemCollision(Mario mario, List<IItem> itemElements)
+        {
+            SIDE = TOP;
+            foreach (IItem item in itemElements)
+            {     
+                if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+                {
+                    MarioItemHandler.ItemHandler(mario, item);
                 }
             }
         }
@@ -142,11 +155,40 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
-        //maybe need an enemy enemy collison too because we would need it later.
-        //  public void MarioEnemyCollision(List<IEnemy> enemyElement1, List<IEnemy> enemyElement2)
-
-        //and a enemy block collision as well
-        //  public void MarioEnemyCollision(List<IEnemy> enemyElements, List<IBlock>envElements)
-
+        public void EnemyEnemyCollision(IEnemy enemy1, List<IEnemy> enemyElements)
+        {
+            foreach (IEnemy enemy2 in enemyElements)
+            {
+                if (!enemy1.Equals(enemy2) && enemy1.enemySprite.desRectangle.Intersects(enemy2.enemySprite.desRectangle))
+                {
+                    firstRectangle = enemy1.enemySprite.desRectangle;
+                    secondRectangle = enemy2.enemySprite.desRectangle;
+                    collideRectangle = Rectangle.Intersect(enemy1.enemySprite.desRectangle, enemy2.enemySprite.desRectangle);
+                    if (collideRectangle.Width > collideRectangle.Height)
+                    {
+                        if (firstRectangle.Top > secondRectangle.Top)
+                        {
+                            SIDE = BOTTOM;
+                        }
+                        else
+                        {
+                            SIDE = TOP;
+                        }
+                    }
+                    else if (collideRectangle.Width < collideRectangle.Height)
+                    {
+                        if (firstRectangle.Left > secondRectangle.Left)
+                        {
+                            SIDE = RIGHT;
+                        }
+                        else
+                        {
+                            SIDE = LEFT;
+                        }
+                    }
+                    EnemyEnemyHandler.EnemyHandler(enemy1, enemy2, SIDE);
+                }
+            }
+        }
     }
 }

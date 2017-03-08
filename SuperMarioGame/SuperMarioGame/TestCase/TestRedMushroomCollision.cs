@@ -38,7 +38,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem mushroom = new RedMushroom(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, mushroom, 3);
+            MarioItemHandler.ItemHandler(mario, mushroom);
             mario.MarioJump();
             if (mushroom.isVisible || mario.marioState != Mario.MARIO_BIG)
             {
@@ -55,7 +55,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem mushroom = new RedMushroom(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, mushroom, 3);
+            MarioItemHandler.ItemHandler(mario, mushroom);
             mario.MarioJump();
             if (mushroom.isVisible || mario.marioState != Mario.MARIO_BIG)
             {
@@ -72,7 +72,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem mushroom = new RedMushroom(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, mushroom, 3);
+            MarioItemHandler.ItemHandler(mario, mushroom);
             mario.MarioJump();
             if (mushroom.isVisible || mario.marioState != Mario.MARIO_FIRE)
             {

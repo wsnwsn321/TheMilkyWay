@@ -1,16 +1,12 @@
 ﻿Chris Crain
-2-13-17
-Sprint2
-Name of file being reviewed: RightCrouchingBigMarioSprite.cs
-Author of file being reviewed: Nate Pratt
+2-27-17
+Sprint3
+Name of file being reviewed: GoombaIdleState.cs
+Author of file being reviewed: George Yang
 Specific Comments on code quality: 
 Code is short, sweet, and to the point.  It's easy to read and is easy to manage or update if needed.
 
-Let's suppose that I wanted to make a way to draw a sprite of a larger magnitude than the standard 
-mario size.  This could easily be done in Nate's code by adding a parameter to draw and modifying
-the desRectangle to scale accordingly. 
-
-Another method of approach for scaled sprites would be to overload the draw method, one with only a 
-vector as the param and the other with both the vector and the scale as a param. The code for 
-Draw(Vector2 location) would just call Draw(Vector2 location, int scale) and pass 1 as the scale. 
-This would make the code more maintainable when the time comes. 
+Let's suppose I wanted to create another Goomba State called Goomba Fly State. In George's current 
+implementation of the class, it should be really simple to modify his code to fit the changes.
+All we would need is another method called Fly or GoombaFly that changes the goomba state to 
+GoombaFly. It would be a simple and clean change.

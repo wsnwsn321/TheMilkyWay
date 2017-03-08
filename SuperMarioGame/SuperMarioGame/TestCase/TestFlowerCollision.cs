@@ -38,7 +38,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem flower = new Flower(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, flower, 3);
+            MarioItemHandler.ItemHandler(mario, flower);
             mario.MarioJump();
             if (flower.isVisible || mario.marioState != Mario.MARIO_BIG)
             {
@@ -55,7 +55,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem flower = new Flower(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, flower, 3);
+            MarioItemHandler.ItemHandler(mario, flower);
             mario.MarioJump();
             if (flower.isVisible || mario.marioState != Mario.MARIO_FIRE)
             {
@@ -72,7 +72,7 @@ namespace SuperMarioGame.TestCase
             mario.state.marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
 
             IItem flower = new Flower(new Vector2(marioXpos, marioYpos));
-            MarioItemHandler.ItemHandler(mario, flower, 3);
+            MarioItemHandler.ItemHandler(mario, flower);
             mario.MarioJump();
             if (flower.isVisible || mario.marioState != Mario.MARIO_FIRE)
             {
