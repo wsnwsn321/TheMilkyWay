@@ -11,11 +11,16 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public bool isVisible { get; set; }
         public bool changeDirection { get; set; }
 
+        private int jumpCounter;
+        private bool increment;
+
         public Star(Vector2 pos)
         {
             position = pos;
+            jumpCounter = 0;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateStarSprite();
             isVisible = true;
+            increment = true;
             changeDirection = true;
         }
         public void ItemChangeDirection()
@@ -34,14 +39,32 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public void Update()
         {
             itemSprite.Update();
+
+
+            if(increment)
+            {
+                jumpCounter++;
+            } else
+            {
+                jumpCounter--;
+            }
+
+            if(jumpCounter == 10 || jumpCounter == -4)
+            {
+                increment = !increment;
+            }
+
             if (changeDirection)
             {
-                position = new Vector2(position.X +2, position.Y);
+                position = new Vector2(position.X +2, position.Y - jumpCounter);
             }
             else
             {
-                position = new Vector2(position.X - 2, position.Y);
+                position = new Vector2(position.X - 2, position.Y - jumpCounter);
             }
+
+ 
+
         }
     }
 }

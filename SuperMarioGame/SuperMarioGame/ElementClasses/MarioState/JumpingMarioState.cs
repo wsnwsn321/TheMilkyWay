@@ -57,7 +57,7 @@ namespace SuperMarioGame.ElementClasses
 
         public void Draw(Vector2 position)
         {
-            marioSprite.Draw(position);
+            marioSprite.Draw(new Vector2(position.X, position.Y));
         }
         public void ChangeForm(int form)
         {

@@ -61,6 +61,7 @@ namespace SuperMarioGame.ElementClasses
         public void MarioJump()
         {
             marioAction = MARIO_JUMP;
+            position = new Vector2(position.X, position.Y - 3);
             state.Jump();
         }
         public void MarioCrouch()

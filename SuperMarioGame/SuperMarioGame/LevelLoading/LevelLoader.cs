@@ -28,7 +28,7 @@ namespace SuperMarioGame.LevelLoading
 
         private void ReadLevelFile()
         {
-            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\cTest.csv");
+            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\cool.csv");
             string line;
             while((line = stream.ReadLine()) != null)
             {
