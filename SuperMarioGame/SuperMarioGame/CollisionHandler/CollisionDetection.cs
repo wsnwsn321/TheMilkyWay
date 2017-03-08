@@ -106,6 +106,45 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
+        public void ItemBlockCollision(IItem item, List<IBlock> envElements)
+        {
+            foreach (IBlock block in envElements)
+            {
+                if (item.itemSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
+                {
+                    firstRectangle = item.itemSprite.desRectangle;
+                    secondRectangle = block.blockSprite.desRectangle;
+                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
+                    if (collideRectangle.Width > collideRectangle.Height)
+                    {
+                        if (firstRectangle.Top > secondRectangle.Top)
+                        {
+                            SIDE = BOTTOM;
+                        }
+                        else
+                        {
+                            SIDE = TOP;
+                        }
+                    }
+                    else if (collideRectangle.Width <= collideRectangle.Height)
+                    {
+                        if (firstRectangle.Left > secondRectangle.Left)
+                        {
+                            SIDE = RIGHT;
+                        }
+                        else
+                        {
+                            SIDE = LEFT;
+                        }
+                    }
+                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                    {
+                        ItemBlockHandler.BlockHandler(item, block, SIDE);
+                    }
+                }
+            }
+        }
+
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
         {
             SIDE = TOP;
