@@ -26,6 +26,7 @@ namespace SuperMarioGame.LevelLoading
             foreach (IItem item in itemElements)
             {
                 item.Update();
+                CollisionDetection.Instance.ItemBlockCollision(item, envElements);
             }
             foreach (IBlock block in envElements)
             {
