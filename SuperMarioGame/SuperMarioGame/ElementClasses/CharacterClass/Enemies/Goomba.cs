@@ -54,13 +54,19 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void Update()
         {
-            if (goombaDirection)
+            if (goombaAction != Goomba.GOOMBA_DEAD)
             {
-                position = new Vector2(position.X - 1, position.Y);
-            }else
-            {
-                position = new Vector2(position.X + 1, position.Y);
+                if (goombaDirection)
+                {
+                    position = new Vector2(position.X - 1, position.Y);
+                }
+                else
+                {
+                    position = new Vector2(position.X + 1, position.Y);
+                }
             }
+            
+              
             goombaState.Update(enemySprite);
             if (goombaAction.Equals(GOOMBA_DEAD))
             {
