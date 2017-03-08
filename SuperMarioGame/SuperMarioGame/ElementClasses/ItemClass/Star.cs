@@ -16,6 +16,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             position = pos;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateStarSprite();
             isVisible = true;
+            changeDirection = true;
         }
         public void ItemChangeDirection()
         {
@@ -35,11 +36,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             itemSprite.Update();
             if (changeDirection)
             {
-                position = new Vector2(position.X - 2, position.Y);
+                position = new Vector2(position.X +2, position.Y);
             }
             else
             {
-                position = new Vector2(position.X + 2, position.Y);
+                position = new Vector2(position.X - 2, position.Y);
             }
         }
     }

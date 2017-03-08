@@ -15,6 +15,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             position = pos;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
             isVisible = true;
+            changeDirection = true;
         }
 
         public void ItemChangeDirection()
