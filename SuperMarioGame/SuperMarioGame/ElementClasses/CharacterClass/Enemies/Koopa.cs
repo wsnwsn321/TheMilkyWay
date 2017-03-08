@@ -63,14 +63,18 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public void ChangeDirection()
         {
             koopaState.ChangeDirection();
-            if (koopaDirection)
+            if(koopaAction != KOOPA_SHELL)
             {
-                enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
+                if (koopaDirection)
+                {
+                    enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
+                }
+                else
+                {
+                    enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
+                }
             }
-            else
-            {
-                enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
-            }
+        
             
         }
 
