@@ -30,7 +30,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             position    = pos;
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
             koopaState  = new KoopaIdleState(this);
-            koopaAction = KOOPA_IDLE; 
+            koopaAction = KOOPA_IDLE;
+            koopaDirection = KOOPA_LEFT;
             isVisible   = true;
         }
 
