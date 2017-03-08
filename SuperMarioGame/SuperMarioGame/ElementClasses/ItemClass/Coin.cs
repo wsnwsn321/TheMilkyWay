@@ -17,6 +17,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             isVisible = true;
         }
 
+        public void ItemChangeDirection()
+        {
+           
+        }
+
         public void Draw()
         {
             if (isVisible)

@@ -16,6 +16,10 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushroomSprite();
             isVisible = true;
         }
+        public void ItemChangeDirection()
+        {
+           
+        }
 
         public void Draw()
         {
