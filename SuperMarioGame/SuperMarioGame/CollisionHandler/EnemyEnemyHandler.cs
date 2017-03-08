@@ -2,6 +2,7 @@
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sprites;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -16,18 +17,26 @@ namespace SuperMarioGame.CollisionHandler
                     
                     break;
                 case 2:
-                    newPosition.X = enemy2.enemySprite.desRectangle.X + enemy2.enemySprite.desRectangle.Width;
+                    newPosition.X = enemy1.enemySprite.desRectangle.X + 2;
                     newPosition.Y = enemy1.enemySprite.desRectangle.Y;
                     enemy1.position = newPosition;
+                    if (enemy1 is Koopa)
+                    {
+                        enemy2.ChangeDirection();
+                    }
                     enemy1.ChangeDirection();
                     break;
                 case 3:
 
                     break;
                 case 4:
-                    newPosition.X = enemy2.enemySprite.desRectangle.X - enemy1.enemySprite.desRectangle.Width;
+                    newPosition.X = enemy1.enemySprite.desRectangle.X - 2;
                     newPosition.Y = enemy1.enemySprite.desRectangle.Y;
                     enemy1.position = newPosition;
+                    if (enemy1 is Koopa)
+                    {
+                        enemy2.ChangeDirection();
+                    }
                     enemy1.ChangeDirection();
                     break;
             }
