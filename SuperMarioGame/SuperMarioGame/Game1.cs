@@ -53,6 +53,10 @@ namespace SuperMarioGame
         protected override void Update(GameTime gameTime)
         {   
             level.Update();
+            if (level.mario.marioState == 1)
+            {
+                ResetGame();
+            }
             keyboardController.Update();
             base.Update(gameTime);
         }
