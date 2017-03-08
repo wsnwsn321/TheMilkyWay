@@ -62,7 +62,15 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public void ChangeDirection()
         {
             koopaState.ChangeDirection();
-            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
+            if (koopaDirection)
+            {
+                enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
+            }
+            else
+            {
+                enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
+            }
+            
         }
 
         public void BeStomped()
