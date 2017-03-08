@@ -44,20 +44,25 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void Update()
         {
-            if (koopaDirection)
+            if(koopaAction != Koopa.KOOPA_SHELL)
             {
-                position = new Vector2(position.X - 1, position.Y);
+                if (koopaDirection)
+                {
+                    position = new Vector2(position.X - 1, position.Y);
+                }
+                else
+                {
+                    position = new Vector2(position.X + 1, position.Y);
+                }
             }
-            else
-            {
-                position = new Vector2(position.X + 1, position.Y);
-            }
+            
             koopaState.Update(enemySprite);
         }
 
         public void ChangeDirection()
         {
             koopaState.ChangeDirection();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
         }
 
         public void BeStomped()
@@ -68,7 +73,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void EnemyIdle()
         {
-            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
             koopaState.EnemyIdle();
         }
     }
