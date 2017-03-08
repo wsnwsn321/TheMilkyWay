@@ -66,6 +66,10 @@ namespace SuperMarioGame.LevelLoading
         
         public void Load()
         {
+            envElements = new List<IBlock>();
+            itemElements = new List<IItem>();
+            enemyElements = new List<IEnemy>();
+            backgroundElements = new List<IBackground>();
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
             mario.MarioIdle();

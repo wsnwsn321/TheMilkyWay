@@ -19,6 +19,9 @@ namespace SuperMarioGame.CollisionHandler
                     enemy.position = newPosition;
                     break;
                 case 2:
+                    newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
+                    newPosition.Y = enemy.enemySprite.desRectangle.Y;
+                    enemy.position = newPosition;
                     enemy.ChangeDirection();
                     break;
                 case 3:
@@ -27,6 +30,9 @@ namespace SuperMarioGame.CollisionHandler
                     enemy.position = newPosition;
                     break;
                 case 4:
+                    newPosition.X = block.blockSprite.desRectangle.X - enemy.enemySprite.desRectangle.Width;
+                    newPosition.Y = enemy.enemySprite.desRectangle.Y;
+                    enemy.position = newPosition;
                     enemy.ChangeDirection();
                     break;
             }            
