@@ -19,7 +19,7 @@ namespace SuperMarioGame.CollisionHandler
                     item.position = newPosition;
                     break;
                 case 2:
-                    //item.ChangeDirection();
+                    item.ItemChangeDirection();
                     break;
                 case 3:
                     newPosition.X = item.itemSprite.desRectangle.X;
@@ -27,7 +27,7 @@ namespace SuperMarioGame.CollisionHandler
                     item.position = newPosition;
                     break;
                 case 4:
-                    //item.ChangeDirection();
+                    item.ItemChangeDirection();
                     break;
             }            
         }
