@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    public class KoopaSprite : ISprite
+    public class KoopaLeftSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -15,7 +15,7 @@ namespace SuperMarioGame.Sprites
         int totalFrame;
         int currentUpdate;
         int slowSpeedDown;
-        public KoopaSprite(Texture2D texture, SpriteBatch sb)
+        public KoopaLeftSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
@@ -45,7 +45,7 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(75 + 17 * currentFrame, 0, 17, 23);
+            Rectangle sourceRectangle = new Rectangle(37 + 17 * currentFrame, 0, 17, 23);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 43);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
