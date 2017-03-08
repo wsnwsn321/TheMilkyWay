@@ -62,6 +62,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public void ChangeDirection()
         {
             koopaState.ChangeDirection();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
         }
 
         public void BeStomped()
@@ -72,7 +73,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void EnemyIdle()
         {
-            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
             koopaState.EnemyIdle();
         }
     }

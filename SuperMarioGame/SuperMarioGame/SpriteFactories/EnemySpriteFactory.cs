@@ -42,14 +42,19 @@ namespace SuperMarioGame.SpriteFactories
         {
             return new Sprites.GoombaStompedSprite(goombaSpritesheet,sb);
         }
-        public Sprites.ISprite CreateKoopaSprite()
+        public Sprites.ISprite CreateKoopaMoveLeftSprite()
         {
-            return new Sprites.KoopaSprite(koopaSpritesheet,sb);
+            return new Sprites.KoopaLeftSprite(koopaSpritesheet,sb);
         }
 
         public Sprites.ISprite CreateKoopaStompedSprite()
         {
             return new Sprites.KoopaStompedSprite(koopaSpritesheet, sb);
+        }
+
+        public Sprites.ISprite CreateKoopaMoveRightSprite()
+        {
+            return new Sprites.KoopaRightSprite(koopaSpritesheet, sb);
         }
     }
 }
