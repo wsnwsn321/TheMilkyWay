@@ -114,6 +114,7 @@
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftRunningSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\RightIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftIdleSmallMarioSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\OtherSprite\KoopaStompedSprite .cs" />
     <Compile Include="Sprites\OtherSprite\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BrickBlockSprite.cs" />
@@ -123,7 +124,7 @@
     <Compile Include="Sprites\OtherSprite\ISprite.cs" />
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
     <Compile Include="SpriteFactories\MarioSpriteFactory.cs" />
-    <Compile Include="Sprites\OtherSprite\KoopaSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\KoopaRightSprite.cs" />
     <Compile Include="Sprites\OtherSprite\PipeSprite.cs" />
     <Compile Include="Sprites\OtherSprite\FlowerSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GreenMushroomSprite.cs" />
