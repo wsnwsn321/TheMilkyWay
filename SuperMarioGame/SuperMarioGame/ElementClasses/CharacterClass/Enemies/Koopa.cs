@@ -28,7 +28,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Koopa(Vector2 pos)
         {
             position    = pos;
-            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
             koopaState  = new KoopaIdleState(this);
             koopaAction = KOOPA_IDLE; 
             isVisible   = true;
