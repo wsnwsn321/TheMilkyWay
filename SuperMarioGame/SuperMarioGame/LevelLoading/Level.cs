@@ -20,6 +20,8 @@ namespace SuperMarioGame.LevelLoading
             foreach (IEnemy enemy in enemyElements)
             {
                 enemy.Update();
+                CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
+                CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
             }
             foreach (IItem item in itemElements)
             {

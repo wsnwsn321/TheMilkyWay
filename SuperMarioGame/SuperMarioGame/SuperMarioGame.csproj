@@ -40,6 +40,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
+    <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
+    <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MarioItemHandler.cs" />
     <Compile Include="CollisionHandler\MarioEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MarioBlockHandler.cs" />
