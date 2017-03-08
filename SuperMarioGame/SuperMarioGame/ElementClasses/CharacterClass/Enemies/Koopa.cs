@@ -28,7 +28,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Koopa(Vector2 pos)
         {
             position    = pos;
-            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaSprite();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
             koopaState  = new KoopaIdleState(this);
             koopaAction = KOOPA_IDLE; 
             isVisible   = true;
@@ -62,7 +62,15 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public void ChangeDirection()
         {
             koopaState.ChangeDirection();
-            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
+            if (koopaDirection)
+            {
+                enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveLeftSprite();
+            }
+            else
+            {
+                enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
+            }
+            
         }
 
         public void BeStomped()
