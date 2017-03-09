@@ -2,6 +2,7 @@
 using SuperMarioGame.CollisionHandler;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
+using SuperMarioGame.ElementClasses.ItemClass;
 using System.Collections.Generic;
 
 namespace SuperMarioGame.LevelLoading
@@ -15,9 +16,10 @@ namespace SuperMarioGame.LevelLoading
         public float gravity = 3;
 
         internal Mario mario = new Mario(new Vector2(50, 400), Mario.MARIO_SMALL, false);
-
-        public void Update()
+        Game1 myGame;
+        public void Update(Game1 game)
         {
+            myGame = game;
             foreach (IEnemy enemy in enemyElements)
             {
                 enemy.position = new Vector2(enemy.position.X, enemy.position.Y + gravity);
@@ -27,7 +29,10 @@ namespace SuperMarioGame.LevelLoading
             }
             foreach (IItem item in itemElements)
             {
-                item.position = new Vector2(item.position.X, item.position.Y + gravity);
+                if(!(item is Flower) && !(item is Coin))
+                {
+                    item.position = new Vector2(item.position.X, item.position.Y + gravity);
+                }
                 item.Update();
                 CollisionDetection.Instance.ItemBlockCollision(item, envElements);
             }
@@ -39,7 +44,7 @@ namespace SuperMarioGame.LevelLoading
             {
                 back.Update();
             }
-            CollisionDetection.Instance.MarioBlockCollision(mario, envElements);
+            CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
             CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
             CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
 

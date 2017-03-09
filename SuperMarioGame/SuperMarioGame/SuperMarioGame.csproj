@@ -70,6 +70,7 @@
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaFlipState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -136,7 +137,7 @@
     <Compile Include="ElementClasses\EnvironmentClass\Pipe.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\GroundBlock.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\StageBlock.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\QuestionBlock.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockM.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\UsedBlock.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\HiddenBlock.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlock.cs" />
@@ -154,18 +155,6 @@
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
-    <Compile Include="TestCase\RunTest.cs" />
-    <Compile Include="TestCase\TestEnemyCollision.cs" />
-    <Compile Include="TestCase\TestGreenMushroomCollision.cs" />
-    <Compile Include="TestCase\TestBigMarioBrickBlockCollision.cs" />
-    <Compile Include="TestCase\TestStarCollision.cs" />
-    <Compile Include="TestCase\TestGroundBlockCollision.cs" />
-    <Compile Include="TestCase\TestSmallMarioBrickBlockCollision.cs" />
-    <Compile Include="TestCase\TestHiddenBlockCollision.cs" />
-    <Compile Include="TestCase\TestFlowerCollision.cs" />
-    <Compile Include="TestCase\TestRedMushroomCollision.cs" />
-    <Compile Include="TestCase\TestUsedBlockCollision.cs" />
-    <Compile Include="TestCase\TestQuestionBlockCollision.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

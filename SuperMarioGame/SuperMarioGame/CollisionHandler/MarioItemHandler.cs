@@ -1,6 +1,7 @@
 ﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ItemClass;
+using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -14,9 +15,10 @@ namespace SuperMarioGame.CollisionHandler
                         
                 if(mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
                 {
-                        mario.state.ChangeForm(Mario.MARIO_BIG);        
+                        mario.state.ChangeForm(Mario.MARIO_BIG);
+                        mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
                 }
-                       item.isVisible = false;  
+                item.isVisible = false;  
             }
 
 
@@ -27,6 +29,7 @@ namespace SuperMarioGame.CollisionHandler
                     if (mario.marioState == Mario.MARIO_SMALL)
                     {
                         mario.state.ChangeForm(Mario.MARIO_BIG);
+                        mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
                     }
                     else
                     {

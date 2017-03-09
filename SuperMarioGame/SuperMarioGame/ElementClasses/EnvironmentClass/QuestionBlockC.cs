@@ -3,7 +3,7 @@ using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses.EnvironmentClass
 {
-    public class QuestionBlock : ElementInterfaces.IBlock
+    public class QuestionBlockC : ElementInterfaces.IBlock
 
     {
         public ISprite blockSprite { get; set; }
@@ -11,7 +11,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
 
         public bool isVisible { get; set; }
 
-        public QuestionBlock(Vector2 pos)
+        public QuestionBlockC(Vector2 pos)
         {
             position = pos;
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateQuestionBlockSprite();

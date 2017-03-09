@@ -28,7 +28,7 @@ namespace SuperMarioGame.LevelLoading
 
         private void ReadLevelFile()
         {
-            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\cool.csv");
+            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\cTest.csv");
             string line;
             while((line = stream.ReadLine()) != null)
             {
@@ -47,8 +47,11 @@ namespace SuperMarioGame.LevelLoading
                         case "HiddenBlock":
                             level.envElements.Add(new HiddenBlock(new Vector2(x, y)));
                             break;
-                        case "QuestionBlock":
-                            level.envElements.Add(new QuestionBlock(new Vector2(x, y)));
+                        case "QuestionBlockM":
+                            level.envElements.Add(new QuestionBlockM(new Vector2(x, y)));
+                            break;
+                        case "QuestionBlockC":
+                            level.envElements.Add(new QuestionBlockC(new Vector2(x, y)));
                             break;
                         case "StageBlock":
                             level.envElements.Add(new StageBlock(new Vector2(x, y)));

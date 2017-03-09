@@ -42,7 +42,7 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
             level.Load();
-            TestCase.RunTest.Instance.runAllTests();
+            //TestCase.RunTest.Instance.runAllTests();
         }
 
         protected override void UnloadContent()
@@ -52,7 +52,7 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {   
-            level.Update();
+            level.Update(this);
             if (level.mario.marioState == 1)
             {
                 ResetGame();

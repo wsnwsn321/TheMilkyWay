@@ -5,11 +5,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,Flower,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,0,0,QuestionBlock,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,QuestionBlockM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,Coin,Coin,Coin,Coin,Coin,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-0,0,0,0,BrickBlock,BrickBlock,QuestionBlock,BrickBlock,BrickBlock,0,0,RedMushroom,GreenMushroom,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,BrickBlock,BrickBlock,QuestionBlockC,BrickBlock,BrickBlock,0,0,RedMushroom,GreenMushroom,0,0,0,0,0,0,0,0,0,0,0,0
 BigMountain,M,M,M,M,0,0,0,0,0,0,Pipe,P,0,0,Koopa,0,0,0,Pipe,P,0,0,0,0
 M,M,M,M,M,0,SmallMountain,M,M,0,Star,P,P,Goomba,RedMushroom,K,BigBrush,B,P,P,0,SmallBrush,B,0,0
 GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock,GroundBlock
