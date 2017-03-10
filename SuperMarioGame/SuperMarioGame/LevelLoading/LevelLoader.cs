@@ -11,7 +11,7 @@ namespace SuperMarioGame.LevelLoading
 {
     public class LevelLoader
     {
-        private int x, y;
+        private int x, y, height;
         private Level level;
 
         public LevelLoader(Level level)
@@ -24,6 +24,11 @@ namespace SuperMarioGame.LevelLoading
             x = 0;
             y = 0;
             ReadLevelFile();
+        }
+
+        public int GetHeight()
+        {
+            return height;
         }
 
         private void ReadLevelFile()
@@ -108,7 +113,7 @@ namespace SuperMarioGame.LevelLoading
                 }
                 y += 32;
             }
-
+            height = y;
         }
     }
 }

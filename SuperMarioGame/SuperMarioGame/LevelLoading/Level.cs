@@ -14,12 +14,20 @@ namespace SuperMarioGame.LevelLoading
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
         public float gravity = 3;
+        public int height;
+        private Camera.Camera camera;
 
         internal Mario mario = new Mario(new Vector2(50, 400), Mario.MARIO_SMALL, false);
         Game1 myGame;
-        public void Update(Game1 game)
+
+        public Level(Game1 game)
         {
             myGame = game;
+            camera = new Camera.Camera(game.Window.ClientBounds);
+        }
+
+        public void Update()
+        {
             foreach (IEnemy enemy in enemyElements)
             {
                 enemy.position = new Vector2(enemy.position.X, enemy.position.Y + gravity);
@@ -83,6 +91,7 @@ namespace SuperMarioGame.LevelLoading
             backgroundElements = new List<IBackground>();
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
+            camera.InitialShift(loader.GetHeight());
             mario.MarioIdle();
         }
 

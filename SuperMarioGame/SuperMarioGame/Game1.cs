@@ -30,7 +30,7 @@ namespace SuperMarioGame
         {
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
-            level = new Level();
+            level = new Level(this);
 
             InitializeCommands();
 
@@ -52,7 +52,7 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {   
-            level.Update(this);
+            level.Update();
             if (level.mario.marioState == 1)
             {
                 ResetGame();
