@@ -5,6 +5,7 @@ using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses.ItemClass;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -16,6 +17,7 @@ namespace SuperMarioGame.LevelLoading
         internal List<IBackground> backgroundElements = new List<IBackground>();
         public float gravity = 3;
         public int height;
+        private int gameWidth, gameHeight;
         private Camera.Camera camera;
         int camX = 0;
 
@@ -65,16 +67,16 @@ namespace SuperMarioGame.LevelLoading
 
             mario.MarioUpdate();
             mario.position = new Vector2(mario.position.X, mario.position.Y + gravity);
-            if(mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400)
+            if((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - 800)
             {
-                camX -= 1;
+                camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
             }
             
         }
 
         public void Draw()
         {
-            myGame.GraphicsDevice.Viewport = new Viewport(camX, 0, 800, 480);
+            myGame.GraphicsDevice.Viewport = new Viewport(camX, 0, gameWidth, gameHeight);
 
             foreach (IBackground back in backgroundElements)
             {
@@ -86,7 +88,9 @@ namespace SuperMarioGame.LevelLoading
             }
             foreach (IBlock block in envElements)
             {
+                //if(block.position.X > (-myGame.GraphicsDevice.Viewport.X) && block.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800)){
                 block.Draw();
+                //}
             }
             foreach (IEnemy enemy in enemyElements)
             {
@@ -104,10 +108,10 @@ namespace SuperMarioGame.LevelLoading
             backgroundElements = new List<IBackground>();
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
+            gameWidth = loader.GetWidth();
+            gameHeight = loader.GetHeight();
             camera.InitialShift(loader.GetHeight());
             mario.MarioIdle();
         }
-
-
     }
 }

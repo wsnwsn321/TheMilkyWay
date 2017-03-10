@@ -11,7 +11,7 @@ namespace SuperMarioGame.LevelLoading
 {
     public class LevelLoader
     {
-        private int x, y, height;
+        private int x, y, height, width;
         private Level level;
 
         public LevelLoader(Level level)
@@ -31,6 +31,10 @@ namespace SuperMarioGame.LevelLoading
             return height;
         }
 
+        public int GetWidth()
+        {
+            return width;
+        }
         private void ReadLevelFile()
         {
             StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\Level1-1Full.csv");
@@ -111,6 +115,7 @@ namespace SuperMarioGame.LevelLoading
                     }
                     x += 32;
                 }
+                width = x;
                 y += 32;
             }
             height = y;
