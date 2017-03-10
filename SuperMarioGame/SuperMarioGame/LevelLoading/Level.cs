@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using SuperMarioGame.CollisionHandler;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
@@ -16,18 +17,24 @@ namespace SuperMarioGame.LevelLoading
         public float gravity = 3;
         public int height;
         private Camera.Camera camera;
+        int camX = 0;
 
-        internal Mario mario = new Mario(new Vector2(50, 400), Mario.MARIO_SMALL, false);
+
+
+        internal Mario mario = new Mario(new Vector2(50, 358), Mario.MARIO_SMALL, false);
         Game1 myGame;
+
 
         public Level(Game1 game)
         {
             myGame = game;
             camera = new Camera.Camera(game.Window.ClientBounds);
+
         }
 
         public void Update()
         {
+
             foreach (IEnemy enemy in enemyElements)
             {
                 enemy.position = new Vector2(enemy.position.X, enemy.position.Y + gravity);
@@ -58,11 +65,17 @@ namespace SuperMarioGame.LevelLoading
 
             mario.MarioUpdate();
             mario.position = new Vector2(mario.position.X, mario.position.Y + gravity);
-
+            if(mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400)
+            {
+                camX -= 1;
+            }
+            
         }
 
         public void Draw()
         {
+            myGame.GraphicsDevice.Viewport = new Viewport(camX, 0, 800, 480);
+
             foreach (IBackground back in backgroundElements)
             {
                 back.Draw();
