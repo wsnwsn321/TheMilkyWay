@@ -39,10 +39,13 @@ namespace SuperMarioGame.LevelLoading
 
             foreach (IEnemy enemy in enemyElements)
             {
-                enemy.position = new Vector2(enemy.position.X, enemy.position.Y + gravity);
-                enemy.Update();
-                CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
-                CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
+                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 32 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800))
+                {
+                    enemy.position = new Vector2(enemy.position.X, enemy.position.Y + gravity);
+                    enemy.Update();
+                    CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
+                    CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
+                }
             }
             foreach (IItem item in itemElements)
             {
@@ -87,14 +90,15 @@ namespace SuperMarioGame.LevelLoading
                 item.Draw();
             }
             foreach (IBlock block in envElements)
-            {
-                //if(block.position.X > (-myGame.GraphicsDevice.Viewport.X) && block.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800)){
+            {               
                 block.Draw();
-                //}
             }
             foreach (IEnemy enemy in enemyElements)
             {
-                enemy.Draw();
+                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-32 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800))
+                {
+                    enemy.Draw();
+                }
             }
 
             mario.MarioDraw();
