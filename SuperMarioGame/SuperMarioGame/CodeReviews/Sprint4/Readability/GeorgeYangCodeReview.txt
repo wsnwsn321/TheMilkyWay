@@ -1,13 +1,11 @@
 ﻿George Yang
-2/22/17
-Sprint 3
-//to do
-Name of the .cs file being reviewed TestBrickBlockCollision.cs
-Author of the .cs file being reviewed Oliver
+3/10/17 
+Sprint 4
+Name of the .cs file being reviewed ItemBlockHandler.cs
+Author of the .cs file being reviewed: Nate
 Number of minutes taken to complete the review 15 minute 30sec
 Specific comments on what is readable and what is not
 
 Code is pretty concise and name style is readable
-and test case is easy to understand
 catch the readability point
 
