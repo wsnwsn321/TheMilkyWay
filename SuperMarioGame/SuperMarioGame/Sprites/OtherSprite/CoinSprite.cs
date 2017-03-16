@@ -26,7 +26,7 @@ namespace SuperMarioGame.Sprites
         }
         public void Update()
         {
-            if (counter % 7 == 0)
+            if (counter % 2 == 0)
             {
                 currentFrame++;
             }

@@ -50,6 +50,12 @@ namespace SuperMarioGame.LevelLoading
                         case "BrickBlock":
                             level.envElements.Add(new BrickBlock(new Vector2(x, y)));
                             break;
+                        case "BrickBlockC":
+                            level.envElements.Add(new BrickBlockC(new Vector2(x, y)));
+                            break;
+                        case "BrickBlockS":
+                            level.envElements.Add(new BrickBlockS(new Vector2(x, y)));
+                            break;
                         case "GroundBlock":
                             level.envElements.Add(new GroundBlock(new Vector2(x, y)));
                             break;

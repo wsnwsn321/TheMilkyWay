@@ -10,12 +10,16 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
         public bool changeDirection { get; set; }
+        public int gravity { get; set; }
+        public bool onTop { get; set; }
         public RedMushroom(Vector2 pos)
         {
             position = pos;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateRedMushroomSprite();
             isVisible = true;
             changeDirection = true;
+            gravity = 3;
+            onTop = false;
         }
 
         public void ItemChangeDirection()

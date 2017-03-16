@@ -18,6 +18,10 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public ISprite enemySprite { get; set; }
         public bool isVisible { get; set; }
 
+        public float gravity { get; set; }
+
+        public bool onTop { get; set; }
+
         public const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
 
         public const bool GOOMBA_LEFT = true;
@@ -37,6 +41,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             goombaAction = GOOMBA_IDLE;
             EnemyIdle();
             isVisible = true;
+            gravity = 3;
+            onTop = false;
         }
 
         public void  EnemyIdle()
@@ -64,8 +70,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
                 {
                     position = new Vector2(position.X + 1, position.Y);
                 }
-            }
-            
+            }           
               
             goombaState.Update(enemySprite);
             if (goombaAction.Equals(GOOMBA_DEAD))

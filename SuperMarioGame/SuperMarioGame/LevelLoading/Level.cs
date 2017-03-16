@@ -21,9 +21,7 @@ namespace SuperMarioGame.LevelLoading
         private Camera.Camera camera;
         int camX = 0;
 
-
-
-        internal Mario mario = new Mario(new Vector2(50, 358), Mario.MARIO_SMALL, false);
+        internal Mario mario = new Mario(new Vector2(2250, 358), Mario.MARIO_SMALL, false);
         Game1 myGame;
 
 
@@ -41,20 +39,36 @@ namespace SuperMarioGame.LevelLoading
             {
                 if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 32 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800))
                 {
-                    enemy.position = new Vector2(enemy.position.X, enemy.position.Y + gravity);
-                    enemy.Update();
                     CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
                     CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
+                    if (enemy.onTop)
+                    {
+                        enemy.gravity = 0;
+                    }
+                    else
+                    {
+                        enemy.gravity = 4;
+                    }
+                    enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
+                    enemy.Update();
                 }
             }
             foreach (IItem item in itemElements)
             {
-                if(!(item is Flower) && !(item is Coin))
+                CollisionDetection.Instance.ItemBlockCollision(item, envElements);
+                if (item.onTop)
                 {
-                    item.position = new Vector2(item.position.X, item.position.Y + gravity);
+                    item.gravity = 0;
+                }
+                else
+                {
+                    item.gravity = 4;
+                }
+                if (!(item is Flower) && !(item is Coin))
+                {
+                    item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
                 }
                 item.Update();
-                CollisionDetection.Instance.ItemBlockCollision(item, envElements);
             }
             foreach (IBlock block in envElements)
             {
@@ -67,10 +81,19 @@ namespace SuperMarioGame.LevelLoading
             CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
             CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
             CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+            if (mario.onTop)
+            {
+                mario.gravity = 0;
+            }
+            else
+            {
+                mario.gravity = 4;
+            }
 
+            mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
             mario.MarioUpdate();
-            mario.position = new Vector2(mario.position.X, mario.position.Y + gravity);
-            if((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - 800)
+
+            if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - 800)
             {
                 camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
             }

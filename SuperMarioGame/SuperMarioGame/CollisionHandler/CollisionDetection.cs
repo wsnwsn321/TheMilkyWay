@@ -65,6 +65,11 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         MarioBlockHandler.BlockHandler(myGame,mario, block, SIDE);
                     }
+                    else
+                    {
+                        mario.onTop = false;
+                        mario.gravity = 3;
+                    }
                 }
             }
         }
@@ -105,6 +110,10 @@ namespace SuperMarioGame.CollisionHandler
                         EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
                     }
                 }
+                else
+                {
+                    enemy.onTop = false;
+                }
             }
         }
 
@@ -143,6 +152,10 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         ItemBlockHandler.BlockHandler(item, block, SIDE);
                     }
+                }
+                else
+                {
+                    item.onTop = false;
                 }
             }
         }
@@ -192,6 +205,10 @@ namespace SuperMarioGame.CollisionHandler
                         }
                     }
                     MarioEnemyHandler.EnemyHandler(mario, enemy, SIDE);
+                }
+                else
+                {
+                    mario.onTop = false;
                 }
             }
         }

@@ -16,14 +16,17 @@ namespace SuperMarioGame.CollisionHandler
         {
             Vector2 newPosition;
             Game1 myGame = game;
+            bool top = false;
+
             if (block.isVisible)
             {
                 switch (CollisionSide)
                 {
                     case 1: //top collision
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-3;
                         mario.position = newPosition;
+                        top = true;
                         break;
                     case 2: //right side collision
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
@@ -32,11 +35,23 @@ namespace SuperMarioGame.CollisionHandler
                         break;
                     case 3: //bottom collision
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height;
+                        newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+3;
                         mario.position = newPosition;
-                        if (block is BrickBlock && mario.marioState != Mario.MARIO_SMALL)
+                        if (block is BrickBlock && block.blockSprite is BrickBlockSprite && mario.marioState != Mario.MARIO_SMALL)
                         {
                             block.isVisible = false;
+                        }
+                        else if(block is BrickBlockC && block.blockSprite is BrickBlockSprite)
+                        {
+                            block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                            Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                            c.jump = true;
+                            myGame.level.itemElements.Add(c);
+                        }
+                        else if (block is BrickBlockS && block.blockSprite is BrickBlockSprite)
+                        {
+                            block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                            myGame.level.itemElements.Add(new Star(new Vector2(block.position.X,block.position.Y-32)));
                         }
                         else if (block is QuestionBlockM && block.blockSprite is QuestionBlockSprite)
                         {
@@ -56,18 +71,29 @@ namespace SuperMarioGame.CollisionHandler
                         else if (block is QuestionBlockC && block.blockSprite is QuestionBlockSprite)
                         {
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-                            myGame.level.itemElements.Add(new Coin(new Vector2(block.position.X+8, block.position.Y - 31)));                            
+                            Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                            c.jump = true;
+                            myGame.level.itemElements.Add(c);
                         }
                         else if (block is HiddenBlock)
                         {
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                         }
+                        top = true;
                         break;
                     case 4: //left side collision
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
                         break;
+                }
+                if (top)
+                {
+                    mario.onTop = true;
+                }
+                else
+                {
+                    mario.onTop = false;
                 }
             }
         }

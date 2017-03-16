@@ -11,6 +11,8 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         void ItemChangeDirection();
         ISprite itemSprite { get; set; }
         bool isVisible { get; set; }
+        int gravity { get; set; }
+        bool onTop { get; set; }
 
     }
 }

@@ -10,14 +10,17 @@ namespace SuperMarioGame.CollisionHandler
         public static void BlockHandler(IItem item, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
+            bool top = false;
+
             if (!(block.blockSprite is HiddenBlockSprite))
             {
                 switch (CollisionSide)
                 {
                     case 1:
                         newPosition.X = item.itemSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-2;
                         item.position = newPosition;
+                        top = true;
                         break;
                     case 2:
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
@@ -29,6 +32,7 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.X = item.itemSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + item.itemSprite.desRectangle.Height;
                         item.position = newPosition;
+                        top = true;
                         break;
                     case 4:
                         newPosition.X = block.blockSprite.desRectangle.X - item.itemSprite.desRectangle.Width;
@@ -36,6 +40,14 @@ namespace SuperMarioGame.CollisionHandler
                         item.position = newPosition;
                         item.ItemChangeDirection();
                         break;
+                }
+                if (top)
+                {
+                    item.onTop = true;
+                }
+                else
+                {
+                    item.onTop = false;
                 }
             }         
         }

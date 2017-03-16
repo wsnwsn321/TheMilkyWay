@@ -13,6 +13,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public ISprite enemySprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
+        public float gravity { get; set; }
+        public bool onTop { get; set; }
 
         internal IEnemyState koopaState;
 
@@ -33,6 +35,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             koopaAction = KOOPA_IDLE;
             koopaDirection = KOOPA_LEFT;
             isVisible   = true;
+            gravity = 3;
+            onTop = false;
         }
 
         public void Draw()

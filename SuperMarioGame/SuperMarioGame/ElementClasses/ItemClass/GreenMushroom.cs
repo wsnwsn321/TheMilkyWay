@@ -9,12 +9,15 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
-
+        public int gravity { get; set; }
+        public bool onTop { get; set; }
         public GreenMushroom(Vector2 pos)
         {
             position = pos;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateGreenMushroomSprite();
             isVisible = true;
+            gravity = 3;
+            onTop = false;
         }
         public void ItemChangeDirection()
         {

@@ -20,6 +20,8 @@ namespace SuperMarioGame.ElementClasses
         public int marioState { set; get; }
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
+        public int gravity { get; set; }
+        public bool onTop { get; set; }
 
 
         internal int InvincibilityTime;
@@ -36,7 +38,8 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
             starCounter = 0;
-
+            gravity = 3;
+            onTop = false;
         }
         public Mario(Vector2 position, int marioState, bool marioDirection)
         {
@@ -47,6 +50,8 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             IsInvincible = false;
             InvincibilityTime = 0;
+            gravity = 3;
+            onTop = false;
         }
         public void MarioIdle()
         {
