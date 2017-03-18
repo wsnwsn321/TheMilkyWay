@@ -49,6 +49,7 @@
     <Compile Include="CollisionHandler\MarioBlockHandler.cs" />
     <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioIdleCommand.cs" />
+    <Compile Include="Commands\MarioAttackCommand.cs" />
     <Compile Include="Commands\MarioRightCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
     <Compile Include="Commands\MarioLeftCommand.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
+    <Compile Include="ElementClasses\ItemClass\Fireball.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -90,6 +92,8 @@
     <Compile Include="Sprites\BackgroundSprite\SmallBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallMountainSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftAttackingMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\IMarioSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
@@ -123,6 +127,7 @@
     <Compile Include="Sprites\OtherSprite\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BrickBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\StageBlockSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\FireballSprite.cs" />
     <Compile Include="Sprites\OtherSprite\UsedBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\CoinSprite.cs" />
     <Compile Include="Sprites\OtherSprite\ISprite.cs" />

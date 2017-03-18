@@ -14,6 +14,7 @@ namespace SuperMarioGame.ElementClasses
         void Update();
         void ChangeDirection();
         void Die();
+        void Attack();
         IMarioSprite marioSprite { get; set; }
     }
 }

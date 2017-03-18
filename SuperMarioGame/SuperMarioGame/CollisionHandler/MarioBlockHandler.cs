@@ -24,8 +24,9 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     case 1: //top collision
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-3;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
                         mario.position = newPosition;
+                        mario.gravity = 0;
                         top = true;
                         break;
                     case 2: //right side collision
@@ -79,7 +80,6 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                         }
-                        top = true;
                         break;
                     case 4: //left side collision
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;

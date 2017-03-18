@@ -68,6 +68,7 @@ namespace SuperMarioGame.ElementClasses
             marioAction = MARIO_JUMP;
             position = new Vector2(position.X, position.Y - 3);
             state.Jump();
+            gravity = 3;
         }
         public void MarioCrouch()
         {
@@ -77,7 +78,11 @@ namespace SuperMarioGame.ElementClasses
         public void MarioRun()
         {
             state.Run();
-            marioAction = MARIO_RUN; 
+            marioAction = MARIO_RUN;
+            //if (!onTop)
+            //{
+            //    gravity = 3;
+            //}
         }
         public virtual void MarioDraw()
         {
@@ -96,6 +101,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
+
             state.Update();
             counter++;
             if(InvincibilityTime > 0 && counter > 20)
@@ -140,6 +146,11 @@ namespace SuperMarioGame.ElementClasses
             HasStarPower = true;
             IsInvincible = true;
             InvincibilityTime = 20;
+        }
+
+        public void Attack()
+        {
+            state.Attack();
         }
 
     }

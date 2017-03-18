@@ -61,14 +61,13 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = LEFT;
                         }
                     }
-                   if (collideRectangle.Width * collideRectangle.Height > 13)
+                    if (collideRectangle.Width * collideRectangle.Height > 13)
                     {
-                        MarioBlockHandler.BlockHandler(myGame,mario, block, SIDE);
+                        MarioBlockHandler.BlockHandler(myGame, mario, block, SIDE);
                     }
                     else
                     {
                         mario.onTop = false;
-                        mario.gravity = 3;
                     }
                 }
             }

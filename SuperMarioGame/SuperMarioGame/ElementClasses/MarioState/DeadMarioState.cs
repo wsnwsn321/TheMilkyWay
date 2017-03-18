@@ -54,5 +54,9 @@ namespace SuperMarioGame.ElementClasses
         public void Die()
         {
         }
+
+        public void Attack()
+        {
+        }
     }
 }

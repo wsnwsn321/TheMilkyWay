@@ -21,7 +21,7 @@ namespace SuperMarioGame.LevelLoading
         private Camera.Camera camera;
         int camX = 0;
 
-        internal Mario mario = new Mario(new Vector2(2250, 358), Mario.MARIO_SMALL, false);
+        internal Mario mario = new Mario(new Vector2(50, 358), Mario.MARIO_SMALL, false);
         Game1 myGame;
 
 
@@ -81,14 +81,14 @@ namespace SuperMarioGame.LevelLoading
             CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
             CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
             CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
-            if (mario.onTop)
-            {
-                mario.gravity = 0;
-            }
-            else
-            {
-                mario.gravity = 4;
-            }
+            //if (!mario.onTop)
+            //{
+            //    mario.gravity = 3;
+            //}
+            //else
+            //{
+            //    mario.gravity = 0;
+            //}
 
             mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
             mario.MarioUpdate();

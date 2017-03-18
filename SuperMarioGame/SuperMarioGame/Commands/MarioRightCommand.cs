@@ -33,8 +33,7 @@ namespace SuperMarioGame.Commands
                 //{
                 //    mario.position = new Vector2(myGame.Window.ClientBounds.Width - mario.state.marioSprite.desRectangle.Width, mario.position.Y);
                 //}
-            }
-             
+            }             
         }
     }
 }

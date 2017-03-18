@@ -10,6 +10,8 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D coinSpritesheet;
         private Texture2D flowerSpritesheet;
         private Texture2D starSpritesheet;
+        private Texture2D fireballSpritesheet;
+
         public SpriteBatch sb { set; get; }
         private static ItemSpriteFactory instance = new ItemSpriteFactory();
         public static ItemSpriteFactory Instance
@@ -34,6 +36,7 @@ namespace SuperMarioGame.SpriteFactories
             flowerSpritesheet = content.Load<Texture2D>("Item/Flower");
             starSpritesheet = content.Load<Texture2D>("Item/Star");
             coinSpritesheet = content.Load<Texture2D>("Item/Coin");
+            fireballSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioFireball");
             this.sb = sb;
         }
 
@@ -61,6 +64,11 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateCoinSprite()
         {
             return new Sprites.CoinSprite(coinSpritesheet, sb);
+        }
+
+        public Sprites.ISprite CreateFireballSprite()
+        {
+            return new Sprites.FireballSprite(fireballSpritesheet, sb);
         }
 
     }

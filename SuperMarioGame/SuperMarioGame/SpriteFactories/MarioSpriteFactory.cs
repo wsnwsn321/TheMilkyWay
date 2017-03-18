@@ -19,13 +19,8 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D runningFireMarioSpritesheet;
         private Texture2D jumpingFireMarioSpritesheet;
         private Texture2D crouchingFireMarioSpritesheet;
-
-
-
-
-
-        //there will be tons of other mario sprite sheets i assume...
-
+        private Texture2D attackingFireMarioSpritesheet;
+        
         private SpriteBatch sb { set; get; }
         private static MarioSpriteFactory instance = new MarioSpriteFactory();
 
@@ -58,6 +53,7 @@ namespace SuperMarioGame.SpriteFactories
             runningFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioRun");
             jumpingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioJump");
             crouchingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
+            attackingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FireAttack");
         }
 
 
@@ -167,5 +163,13 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.MarioSprite.FireMarioSprite.RightCrouchingFireMarioSprite(crouchingFireMarioSpritesheet, sb);
         }
 
+        public Sprites.IMarioSprite CreateRightAttackingFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.RightAttackingMarioSprite(attackingFireMarioSpritesheet, sb);
+        }
+        public Sprites.IMarioSprite CreateLeftAttackingFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.LeftAttackingMarioSprite(attackingFireMarioSpritesheet, sb);
+        }
     }
 }

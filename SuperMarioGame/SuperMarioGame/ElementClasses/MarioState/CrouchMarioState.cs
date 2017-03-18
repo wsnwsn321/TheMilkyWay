@@ -95,5 +95,9 @@ namespace SuperMarioGame.ElementClasses
             mario.state = new DeadMarioState( mario);
             mario.MarioDie();
         }
+        
+        public void Attack()
+        {
+        }
     }
 }

@@ -83,7 +83,7 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.C, new MarioChangeFormCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
-
+            keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));

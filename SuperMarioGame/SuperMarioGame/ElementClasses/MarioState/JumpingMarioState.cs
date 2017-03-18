@@ -92,5 +92,17 @@ namespace SuperMarioGame.ElementClasses
             mario.state = new DeadMarioState( mario);
             mario.MarioDie();
         }
+
+        public void Attack()
+        {
+            if (!mario.marioDirection)
+            {
+                marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightAttackingFireMarioSprite();
+            }
+            else
+            {
+                marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftAttackingFireMarioSprite();
+            }
+        }
     }
 }
