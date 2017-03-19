@@ -18,6 +18,7 @@ namespace SuperMarioGame.ElementClasses
 
         public int marioAction { set; get; }
         public int marioState { set; get; }
+        private int prevMarioState { set; get; }
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
         public int gravity { get; set; }
@@ -30,6 +31,7 @@ namespace SuperMarioGame.ElementClasses
         public Mario(Vector2 position)
         {
             marioState = MARIO_SMALL;
+            prevMarioState = marioState;
             marioDirection = MARIO_LEFT;
             marioAction = MARIO_IDLE;
             this.position = position;
@@ -61,11 +63,18 @@ namespace SuperMarioGame.ElementClasses
         public virtual void MarioChangeForm(int form)
         {
             state.ChangeForm(form);
-            marioState = form;
-            if(form == MARIO_BIG)
+            if(prevMarioState == MARIO_FIRE && form == MARIO_BIG)
+            {
+                position = new Vector2(position.X, position.Y);
+            } else if (form == MARIO_BIG)
             {
                 position = new Vector2(position.X, position.Y - 32);
+            } else if (form == MARIO_SMALL)
+            {
+                position = new Vector2(position.X, position.Y + 32);
             }
+
+            marioState = form;
         }
         public void MarioJump()
         {
@@ -134,6 +143,7 @@ namespace SuperMarioGame.ElementClasses
         {
             if(marioState > MARIO_SMALL && !IsInvincible)
             {
+                prevMarioState = marioState;
                 marioState--;
                 MarioChangeForm(marioState);
                 IsInvincible = true;
