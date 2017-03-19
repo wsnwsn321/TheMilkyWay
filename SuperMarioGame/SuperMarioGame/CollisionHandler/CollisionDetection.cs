@@ -159,6 +159,18 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
+        public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements)
+        {
+            SIDE = TOP;
+            foreach (IEnemy enemy in enemyElements)
+            {
+                if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                {
+                    ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                }
+            }
+        }
+
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
         {
             SIDE = TOP;

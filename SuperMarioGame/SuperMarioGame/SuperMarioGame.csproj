@@ -44,6 +44,7 @@
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
+    <Compile Include="CollisionHandler\ItemEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MarioItemHandler.cs" />
     <Compile Include="CollisionHandler\MarioEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MarioBlockHandler.cs" />

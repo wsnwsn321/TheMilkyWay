@@ -62,6 +62,10 @@ namespace SuperMarioGame.ElementClasses
         {
             state.ChangeForm(form);
             marioState = form;
+            if(form == MARIO_BIG)
+            {
+                position = new Vector2(position.X, position.Y - 32);
+            }
         }
         public void MarioJump()
         {

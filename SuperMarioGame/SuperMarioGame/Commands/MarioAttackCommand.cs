@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses.ItemClass;
+using SuperMarioGame.Sprites.MarioSprite.FireMarioSprite;
 
 namespace SuperMarioGame.Commands
 {
@@ -8,7 +10,6 @@ namespace SuperMarioGame.Commands
     {
         private Game1 myGame;
         private ElementClasses.Mario mario;
-        KeyboardState OldState;
 
         public MarioAttackCommand(Game1 game)
         {
@@ -20,13 +21,17 @@ namespace SuperMarioGame.Commands
         {
             if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
             {
-                KeyboardState NewState = Keyboard.GetState();
-                if (NewState.IsKeyDown(Keys.X) && OldState.IsKeyUp(Keys.X))
+                mario.Attack();
+                Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + 13));
+                if (mario.state.marioSprite is RightAttackingMarioSprite)
                 {
-                    mario.Attack();
-                    myGame.level.itemElements.Add(new Fireball(new Vector2(mario.position.X, mario.position.Y+10)));
+                    myGame.level.itemElements.Add(fball);
                 }
-                OldState = NewState;
+                else if(mario.state.marioSprite is LeftAttackingMarioSprite)
+                {
+                    fball.changeDirection = !fball.changeDirection;
+                    myGame.level.itemElements.Add(fball);                
+                }
             }
         }
     }

@@ -56,6 +56,7 @@ namespace SuperMarioGame.LevelLoading
             foreach (IItem item in itemElements)
             {
                 CollisionDetection.Instance.ItemBlockCollision(item, envElements);
+                CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
                 if (item.onTop)
                 {
                     item.gravity = 0;

@@ -47,6 +47,10 @@ namespace SuperMarioGame.CollisionHandler
                 }
                 else
                 {
+                    if (item.itemSprite is FireballSprite)
+                    {
+                        item.isVisible = false;
+                    }
                     item.onTop = false;
                 }
             }         
