@@ -52,8 +52,8 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             IsInvincible = false;
             InvincibilityTime = 0;
-            gravity = 3;
             onTop = false;
+            DetermineGravity();
         }
         public void MarioIdle()
         {
@@ -79,9 +79,8 @@ namespace SuperMarioGame.ElementClasses
         public void MarioJump()
         {
             marioAction = MARIO_JUMP;
-            position = new Vector2(position.X, position.Y - 3);
+            position = new Vector2(position.X, position.Y - gravity);
             state.Jump();
-            gravity = 3;
         }
         public void MarioCrouch()
         {
@@ -95,10 +94,6 @@ namespace SuperMarioGame.ElementClasses
         {
             state.Run();
             marioAction = MARIO_RUN;
-            if (!onTop)
-            { 
-                gravity = 3;
-            }
         }
         public virtual void MarioDraw()
         {
@@ -117,7 +112,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
-
+            DetermineGravity();
             state.Update();
             counter++;
             if(InvincibilityTime > 0 && counter > 20)
@@ -132,6 +127,20 @@ namespace SuperMarioGame.ElementClasses
                 counter = 0;
             }
         }
+
+        private void DetermineGravity()
+        {
+            if (!onTop)
+            {
+                gravity = 1;
+            }
+            else
+            {
+                gravity = 0;
+            }
+        }
+
+
         public void MarioChangeDireciton()
         {
             state.ChangeDirection();
