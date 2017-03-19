@@ -87,14 +87,7 @@ namespace SuperMarioGame.CollisionHandler
                         mario.position = newPosition;
                         break;
                 }
-                if (top)
-                {
-                    mario.onTop = true;
-                }
-                else
-                {
-                    mario.onTop = false;
-                }
+                    mario.onTop = top;
             }
         }
     }

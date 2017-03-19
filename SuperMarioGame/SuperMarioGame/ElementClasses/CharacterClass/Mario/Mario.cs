@@ -85,17 +85,20 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioCrouch()
         {
-            marioAction = MARIO_CROUCH;
-            state.Crouch();
+            if (marioState != MARIO_SMALL)
+            {
+                marioAction = MARIO_CROUCH;
+                state.Crouch();
+            }
         }
         public void MarioRun()
         {
             state.Run();
             marioAction = MARIO_RUN;
-            //if (!onTop)
-            //{
-            //    gravity = 3;
-            //}
+            if (!onTop)
+            { 
+                gravity = 3;
+            }
         }
         public virtual void MarioDraw()
         {

@@ -31,6 +31,7 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioBlockCollision(Game1 game, Mario mario, List<IBlock> envElements)
         {
+            bool onTop = false;
             foreach (IBlock block in envElements)
             {
                 myGame = game;
@@ -64,13 +65,17 @@ namespace SuperMarioGame.CollisionHandler
                     if (collideRectangle.Width * collideRectangle.Height > 13)
                     {
                         MarioBlockHandler.BlockHandler(myGame, mario, block, SIDE);
-                    }
-                    else
-                    {
-                        mario.onTop = false;
+                        if(SIDE == TOP)
+                        {
+                            onTop = true;
+                        }
                     }
                 }
             }
+
+            mario.onTop = onTop;
+
+
         }
 
         public void EnemyBlockCollision(IEnemy enemy, List<IBlock> envElements)
