@@ -38,7 +38,7 @@ namespace SuperMarioGame.SpriteFactories
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
             stageBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
-            blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
+            //blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
             this.sb = sb;
 
         }

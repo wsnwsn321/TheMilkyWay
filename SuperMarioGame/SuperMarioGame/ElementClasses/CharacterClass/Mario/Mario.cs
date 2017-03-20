@@ -23,6 +23,7 @@ namespace SuperMarioGame.ElementClasses
         public Vector2 position { set; get; }
         public int gravity { get; set; }
         public bool onTop { get; set; }
+        private int accel = 20;
 
         public bool jump { get; set; }
         private int jumpCount = 0;
@@ -42,7 +43,7 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
             starCounter = 0;
-            gravity = 3;
+            gravity = 0;
             onTop = false;
         }
         public Mario(Vector2 position, int marioState, bool marioDirection)
@@ -55,6 +56,7 @@ namespace SuperMarioGame.ElementClasses
             IsInvincible = false;
             InvincibilityTime = 0;
             onTop = false;
+            gravity = 0;
             DetermineGravity();
         }
         public void MarioIdle()
@@ -121,18 +123,30 @@ namespace SuperMarioGame.ElementClasses
         {
             if (jump)
             {
-                if (jumpCount < 20)
+                if (jumpCount <= 35)
                 {
-                    position = new Vector2(position.X, position.Y - 10);
+                    if(jumpCount % 15 == 0)
+                    accel -= 2;
+                    if(accel < 0)
+                    {
+                        accel = 0;
+                    }
+                    position = new Vector2(position.X, position.Y - accel);
                 }
                 else
                 {
                     jumpCount = 0;
+                    accel = 10;
                     jump = false;
                 }
                 jumpCount++;
             }
-            //DetermineGravity();
+            else
+            {
+                jumpCount = 0;
+                accel = 10;
+            }
+            DetermineGravity();
             state.Update();
             counter++;
             if(InvincibilityTime > 0 && counter > 20)
@@ -150,14 +164,14 @@ namespace SuperMarioGame.ElementClasses
 
         private void DetermineGravity()
         {
-            //if (!onTop)
-            //{
-            //    gravity = 1;
-            //}
-            //else
-            //{
-            //    gravity = 0;
-            //}
+            if (!onTop)
+            {
+                gravity = 3;
+            }
+            else
+            {
+                gravity = 0;
+            }
         }
 
 
