@@ -96,6 +96,10 @@
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\IMarioSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece4Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />
