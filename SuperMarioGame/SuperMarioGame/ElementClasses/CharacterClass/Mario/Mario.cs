@@ -24,6 +24,8 @@ namespace SuperMarioGame.ElementClasses
         public int gravity { get; set; }
         public bool onTop { get; set; }
 
+        public bool jump { get; set; }
+        private int jumpCount = 0;
 
         internal int InvincibilityTime;
         private int counter, starCounter;
@@ -78,9 +80,13 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioJump()
         {
-            marioAction = MARIO_JUMP;
-            position = new Vector2(position.X, position.Y - gravity);
-            state.Jump();
+            if (true)
+            {
+                marioAction = MARIO_JUMP;
+                //position = new Vector2(position.X, position.Y - gravity);
+                state.Jump();
+                jump = true;
+            }
         }
         public void MarioCrouch()
         {
@@ -97,7 +103,8 @@ namespace SuperMarioGame.ElementClasses
         }
         public virtual void MarioDraw()
         {
-            if(HasStarPower)
+
+            if (HasStarPower)
             {
                 starCounter++;
                 if(starCounter % 20 == 0)
@@ -112,7 +119,20 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
-            DetermineGravity();
+            if (jump)
+            {
+                if (jumpCount < 20)
+                {
+                    position = new Vector2(position.X, position.Y - 10);
+                }
+                else
+                {
+                    jumpCount = 0;
+                    jump = false;
+                }
+                jumpCount++;
+            }
+            //DetermineGravity();
             state.Update();
             counter++;
             if(InvincibilityTime > 0 && counter > 20)
@@ -130,14 +150,14 @@ namespace SuperMarioGame.ElementClasses
 
         private void DetermineGravity()
         {
-            if (!onTop)
-            {
-                gravity = 1;
-            }
-            else
-            {
-                gravity = 0;
-            }
+            //if (!onTop)
+            //{
+            //    gravity = 1;
+            //}
+            //else
+            //{
+            //    gravity = 0;
+            //}
         }
 
 

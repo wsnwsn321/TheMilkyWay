@@ -71,9 +71,20 @@ namespace SuperMarioGame.CollisionHandler
                         }
                     }
                 }
+                if(mario.position.Y > block.position.Y-4 && mario.position.Y <= block.position.Y)
+                {
+                    if(mario.state.marioSprite.desRectangle.Right > block.position.X && mario.position.X < block.position.X + block.blockSprite.desRectangle.Width)
+                    {
+                        mario.onTop = true;
+                    }
+                    else
+                    {
+                        mario.onTop = false;
+                    }
+                }
             }
 
-            mario.onTop = onTop;
+            //mario.onTop = onTop;
 
 
         }
