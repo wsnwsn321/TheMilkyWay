@@ -22,6 +22,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public bool onTop { get; set; }
 
+        public bool flip { get; set; }
+
         public const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
 
         public const bool GOOMBA_LEFT = true;
@@ -95,6 +97,13 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             goombaState.BeStomped();
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaStompedSprite();
         }
-        
+
+        public void BeFlipped()
+        {
+            goombaState.BeStomped();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaFlippedSprite();
+            flip = true;
+        }
+
     }
 }
