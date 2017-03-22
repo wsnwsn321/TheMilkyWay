@@ -38,7 +38,7 @@ namespace SuperMarioGame.SpriteFactories
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
             stageBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
-            blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
+         
             this.sb = sb;
 
         }
@@ -78,23 +78,8 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.StageBlockSprite(stageBlockSpritesheet, sb);
         }
 
-        public Sprites.ISprite CreateBlockPiece1Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
 
-        public Sprites.ISprite CreateBlockPiece2Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece3Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece4Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
+      
 
     }
 }

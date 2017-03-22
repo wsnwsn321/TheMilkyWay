@@ -373,7 +373,7 @@
 /processorParam:TextureFormat=Color
 /build:Mario/Fmario/FireAttack.png
 
-#begin Item/breakBlockpsd.png
+#begin Item\BlockPiece.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -383,5 +383,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Item/breakBlockpsd.png
+/build:Item\BlockPiece.png
 
