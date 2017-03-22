@@ -95,8 +95,14 @@ namespace SuperMarioGame.LevelLoading
                         case "Koopa":
                             level.enemyElements.Add(new Koopa(new Vector2(x, y + 21)));
                             break;
-                        case "Pipe":
-                            level.envElements.Add(new Pipe(new Vector2(x + 2, y + 4)));
+                        case "Pipe1":                            
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y + 4),1));
+                            break;
+                        case "Pipe2":
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y - 15),2));
+                            break;
+                        case "Pipe3":
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y - 35),3));
                             break;
                         case "BigCloud":
                             level.backgroundElements.Add(new BigCloud(new Vector2(x, y + 14)));
