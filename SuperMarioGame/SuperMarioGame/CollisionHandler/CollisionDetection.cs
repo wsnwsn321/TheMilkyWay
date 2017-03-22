@@ -82,7 +82,7 @@ namespace SuperMarioGame.CollisionHandler
                 }
             }
 
-            //mario.onTop = onTop;
+            mario.onTop = onTop;
 
 
         }
