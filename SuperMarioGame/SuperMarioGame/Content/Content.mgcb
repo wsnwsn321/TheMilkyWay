@@ -421,7 +421,7 @@
 /processorParam:TextureFormat=Color
 /build:Mario/Fmario/FireBallHitTheWall.png
 
-#begin Item/BlockPiece.png
+#begin Item/Castle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -431,5 +431,17 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Item/BlockPiece.png
+/build:Item/Castle.png
+
+#begin Item/Flag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Item/Flag.png
 
