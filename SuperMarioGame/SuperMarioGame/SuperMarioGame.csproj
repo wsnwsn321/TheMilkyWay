@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
-    <Compile Include="CollisionHandler\FireBallBlockHandler.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
