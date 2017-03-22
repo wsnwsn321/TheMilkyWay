@@ -61,11 +61,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
             if (changeDirection)
             {
-                position = new Vector2(position.X + 2, position.Y - jumpCounter);
+                position = new Vector2(position.X + 5, position.Y - jumpCounter);
             }
             else
             {
-                position = new Vector2(position.X - 2, position.Y - jumpCounter);
+                position = new Vector2(position.X - 5, position.Y - jumpCounter);
             }
         }
     }

@@ -72,12 +72,15 @@ namespace SuperMarioGame.CollisionHandler
                         }
                     }
                 }
-                if(mario.state.marioSprite.desRectangle.Bottom > block.position.Y-5 && mario.state.marioSprite.desRectangle.Bottom < block.position.Y)
+                if (block.isVisible)
                 {
-                    if(mario.state.marioSprite.desRectangle.Right > block.position.X && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right)
+                    if (mario.state.marioSprite.desRectangle.Bottom > block.position.Y - 5 && mario.state.marioSprite.desRectangle.Bottom < block.position.Y)
                     {
-                        mario.onTop = true;
-                        mario.gravity = 0;
+                        if (mario.state.marioSprite.desRectangle.Right > block.position.X+3 && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right-3)
+                        {
+                            mario.onTop = true;
+                            mario.gravity = 0;
+                        }
                     }
                 }
             }

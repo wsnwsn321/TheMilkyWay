@@ -9,13 +9,14 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
+        private int size;
         public Rectangle desRectangle { get; set; }
 
-        public PipeSprite(Texture2D texture, SpriteBatch sb)
+        public PipeSprite(Texture2D texture, SpriteBatch sb, int size)
         {
             Texture = texture;
             this.sb = sb;
-
+            this.size = size;
         }
         public void Update()
         {
@@ -29,9 +30,24 @@ namespace SuperMarioGame.Sprites
 
         public void Draw(Vector2 position)
         {
+            Rectangle sourceRectangle;
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(224, 96, 34, 33);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 60);
+            if (size == 1)
+            {
+                sourceRectangle = new Rectangle(224, 96, 34, 33);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 60);
+            }
+            else if(size == 2)
+            {
+                sourceRectangle = new Rectangle(185, 80, 35, 49);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 80);
+            }
+            else
+            {
+                sourceRectangle = new Rectangle(145, 63, 34, 65);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 100);
+            }
+
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

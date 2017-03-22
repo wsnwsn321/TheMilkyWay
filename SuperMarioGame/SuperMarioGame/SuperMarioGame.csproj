@@ -101,6 +101,7 @@
     <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\GoombaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\RightIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\OtherSprite\KoopaLeftSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\KoopaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\KoopaStompedSprite .cs" />
     <Compile Include="Sprites\OtherSprite\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BrickBlockSprite.cs" />

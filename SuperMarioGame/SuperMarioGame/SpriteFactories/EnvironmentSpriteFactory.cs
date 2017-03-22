@@ -43,9 +43,9 @@ namespace SuperMarioGame.SpriteFactories
         }
 
         //create environment sprites
-        public Sprites.ISprite CreatePipeSprite()
+        public Sprites.ISprite CreatePipeSprite(int size)
         {
-            return new Sprites.PipeSprite(pipeSpritesheet,sb);
+            return new Sprites.PipeSprite(pipeSpritesheet,sb,size);
         }
 
         public Sprites.ISprite CreateUsedBlockSprite()

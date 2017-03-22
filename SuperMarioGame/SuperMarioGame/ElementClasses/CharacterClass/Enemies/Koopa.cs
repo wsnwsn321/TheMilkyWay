@@ -16,6 +16,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public float gravity { get; set; }
         public bool onTop { get; set; }
 
+        public bool flip { get; set; }
+
         internal IEnemyState koopaState;
 
         public const int KOOPA_IDLE = 1, KOOPA_FLIPPED = 2, KOOPA_SHELL = 3;
@@ -86,6 +88,13 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         {
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaStompedSprite();
             koopaState.BeStomped();
+        }
+
+        public void BeFlipped()
+        {
+            koopaState.BeStomped();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaFlippedSprite();
+            flip = true;
         }
 
         public void EnemyIdle()

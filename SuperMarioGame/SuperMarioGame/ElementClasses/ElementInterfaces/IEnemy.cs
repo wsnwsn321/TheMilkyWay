@@ -12,7 +12,11 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         void EnemyIdle();
         void ChangeDirection();
         void BeStomped();
+        void BeFlipped();
+
         bool isVisible { get; set; }
+        bool flip { get; set; }
+
         float gravity { get; set; }
         bool onTop { get; set; }
     }
