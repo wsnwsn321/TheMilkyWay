@@ -2,6 +2,7 @@
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sprites;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.ElementClasses.EnvironmentClass;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -12,13 +13,13 @@ namespace SuperMarioGame.CollisionHandler
             Vector2 newPosition;
             bool top = false;
 
-            if (!(block.blockSprite is HiddenBlockSprite))
+            if (!(block.blockSprite is HiddenBlockSprite)&& !(item is BlockPiece))
             {
                 switch (CollisionSide)
                 {
                     case 1:
                         newPosition.X = item.itemSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-2;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-3;
                         item.position = newPosition;
                         top = true;
                         break;

@@ -22,7 +22,7 @@ namespace SuperMarioGame.Commands
             if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
             {
                 mario.Attack();
-                Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + 13));
+                Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + 25));
                 if (mario.state.marioSprite is RightAttackingMarioSprite)
                 {
                     myGame.level.itemElements.Add(fball);

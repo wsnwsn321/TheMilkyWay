@@ -32,6 +32,7 @@ namespace SuperMarioGame.CollisionHandler
         public void MarioBlockCollision(Game1 game, Mario mario, List<IBlock> envElements)
         {
             bool onTop = false;
+            mario.onTop = false;
             foreach (IBlock block in envElements)
             {
                 myGame = game;
@@ -71,9 +72,17 @@ namespace SuperMarioGame.CollisionHandler
                         }
                     }
                 }
+                if(mario.state.marioSprite.desRectangle.Bottom > block.position.Y-5 && mario.state.marioSprite.desRectangle.Bottom < block.position.Y)
+                {
+                    if(mario.state.marioSprite.desRectangle.Right > block.position.X && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right)
+                    {
+                        mario.onTop = true;
+                        mario.gravity = 0;
+                    }
+                }
             }
 
-            mario.onTop = onTop;
+            //mario.onTop = onTop;
 
 
         }

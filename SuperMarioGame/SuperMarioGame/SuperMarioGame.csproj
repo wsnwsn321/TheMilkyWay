@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
+    <Compile Include="CollisionHandler\FireBallBlockHandler.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaFlipState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\BlockPiece.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
@@ -96,6 +98,10 @@
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\IMarioSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece4Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />

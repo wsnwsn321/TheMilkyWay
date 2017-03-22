@@ -24,9 +24,9 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     case 1: //top collision
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-2;
                         mario.position = newPosition;
-                        mario.gravity = 0;
+                        //mario.gravity = 0;
                         top = true;
                         break;
                     case 2: //right side collision
@@ -41,6 +41,20 @@ namespace SuperMarioGame.CollisionHandler
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite && mario.marioState != Mario.MARIO_SMALL)
                         {
                             block.isVisible = false;
+                            //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
+                            BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y),1);
+                          
+                            BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y+16), 2);
+                            BlockPiece block3 = new BlockPiece(new Vector2(block.position.X+16, block.position.Y), 3);
+                            BlockPiece block4 = new BlockPiece(new Vector2(block.position.X+16, block.position.Y+16), 4);
+                              block1.gravity = 0;
+                            block2.gravity = 0;
+                            block3.gravity = 0;
+                            block4.gravity = 0;
+                            myGame.level.itemElements.Add(block1);
+                            myGame.level.itemElements.Add(block2);
+                            myGame.level.itemElements.Add(block3);
+                            myGame.level.itemElements.Add(block4);
                         }
                         else if(block is BrickBlockC && block.blockSprite is BrickBlockSprite)
                         {
@@ -88,7 +102,7 @@ namespace SuperMarioGame.CollisionHandler
                         mario.position = newPosition;
                         break;
                 }
-                    mario.onTop = top;
+                    //mario.onTop = top;
             }
         }
     }

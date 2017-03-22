@@ -41,13 +41,13 @@ namespace SuperMarioGame.Controller
                             controllerMappings[key].Execute();
                         }
                     }
-                    //else if (key.Equals(Keys.W))
-                    //{
-                    //    if (NewState.IsKeyDown(Keys.W) && OldState.IsKeyUp(Keys.W))
-                    //    {
-                    //        controllerMappings[key].Execute();
-                    //    }
-                    //}
+                    else if (key.Equals(Keys.W))
+                    {
+                        if (NewState.IsKeyDown(Keys.W) && OldState.IsKeyUp(Keys.W))
+                        {
+                            controllerMappings[key].Execute();
+                        }
+                    }
                     else
                     {
                         controllerMappings[key].Execute();

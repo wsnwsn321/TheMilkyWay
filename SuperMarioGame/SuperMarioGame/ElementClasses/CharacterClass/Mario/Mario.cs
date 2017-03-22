@@ -23,7 +23,10 @@ namespace SuperMarioGame.ElementClasses
         public Vector2 position { set; get; }
         public int gravity { get; set; }
         public bool onTop { get; set; }
+        private int accel = 20;
 
+        public bool jump { get; set; }
+        private int jumpCount = 0;
 
         internal int InvincibilityTime;
         private int counter, starCounter;
@@ -40,7 +43,7 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
             starCounter = 0;
-            gravity = 3;
+            gravity = 0;
             onTop = false;
         }
         public Mario(Vector2 position, int marioState, bool marioDirection)
@@ -53,6 +56,7 @@ namespace SuperMarioGame.ElementClasses
             IsInvincible = false;
             InvincibilityTime = 0;
             onTop = false;
+            gravity = 0;
             DetermineGravity();
         }
         public void MarioIdle()
@@ -78,9 +82,13 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioJump()
         {
-            marioAction = MARIO_JUMP;
-            position = new Vector2(position.X, position.Y - gravity);
-            state.Jump();
+            if (true)
+            {
+                marioAction = MARIO_JUMP;
+                //position = new Vector2(position.X, position.Y - gravity);
+                state.Jump();
+                jump = true;
+            }
         }
         public void MarioCrouch()
         {
@@ -97,7 +105,8 @@ namespace SuperMarioGame.ElementClasses
         }
         public virtual void MarioDraw()
         {
-            if(HasStarPower)
+
+            if (HasStarPower)
             {
                 starCounter++;
                 if(starCounter % 20 == 0)
@@ -112,6 +121,31 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
+            if (jump)
+            {
+                if (jumpCount <= 35)
+                {
+                    if(jumpCount % 15 == 0)
+                    accel -= 2;
+                    if(accel < 0)
+                    {
+                        accel = 0;
+                    }
+                    position = new Vector2(position.X, position.Y - accel);
+                }
+                else
+                {
+                    jumpCount = 0;
+                    accel = 10;
+                    jump = false;
+                }
+                jumpCount++;
+            }
+            else
+            {
+                jumpCount = 0;
+                accel = 10;
+            }
             DetermineGravity();
             state.Update();
             counter++;
@@ -132,7 +166,7 @@ namespace SuperMarioGame.ElementClasses
         {
             if (!onTop)
             {
-                gravity = 1;
+                gravity = 3;
             }
             else
             {
