@@ -13,16 +13,46 @@ namespace SuperMarioGame.CollisionHandler
                 switch (CollisionSide)
                 {
                     case 1:
-                        enemy.BeStomped();
+                        if (mario.HasStarPower)
+                        {
+                            enemy.BeFlipped();
+                        }
+                        else
+                        {
+                            enemy.BeStomped();
+                        }
                         break;
                     case 2:
+                        if (mario.HasStarPower)
+                        {
+                            enemy.BeFlipped();
+                        }
+                        else
+                        {
+                            mario.MarioGetHit();
+                        }
                         mario.MarioGetHit();
                         break;
                     case 3:
+                        if (mario.HasStarPower)
+                        {
+                            enemy.BeFlipped();
+                        }
+                        else
+                        {
+                            mario.MarioGetHit();
+                        }
                         mario.MarioGetHit();
                         break;
                     case 4:
-                        mario.MarioGetHit();
+                        if (mario.HasStarPower)
+                        {
+                            enemy.BeFlipped();
+                        }
+                        else
+                        {
+                            mario.MarioGetHit();
+                        }
                         break;
                 }
             }
