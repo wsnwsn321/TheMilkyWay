@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Camera\Camera.cs" />
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
+    <Compile Include="CollisionHandler\FireBallBlockHandler.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaFlipState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\BlockPiece.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
