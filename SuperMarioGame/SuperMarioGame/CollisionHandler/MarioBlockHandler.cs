@@ -24,9 +24,9 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     case 1: //top collision
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-2;
                         mario.position = newPosition;
-                        mario.gravity = 0;
+                        //mario.gravity = 0;
                         top = true;
                         break;
                     case 2: //right side collision
@@ -101,7 +101,7 @@ namespace SuperMarioGame.CollisionHandler
                         mario.position = newPosition;
                         break;
                 }
-                    mario.onTop = top;
+                    //mario.onTop = top;
             }
         }
     }

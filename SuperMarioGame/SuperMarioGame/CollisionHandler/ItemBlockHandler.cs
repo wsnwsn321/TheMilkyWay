@@ -19,7 +19,7 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     case 1:
                         newPosition.X = item.itemSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-2;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-3;
                         item.position = newPosition;
                         top = true;
                         break;
