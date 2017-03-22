@@ -79,6 +79,7 @@ namespace SuperMarioGame.CollisionHandler
                         else if (block is HiddenBlock)
                         {
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                            myGame.level.itemElements.Add(new GreenMushroom(new Vector2(block.position.X, block.position.Y - 32)));
                         }
                         break;
                     case 4: //left side collision
