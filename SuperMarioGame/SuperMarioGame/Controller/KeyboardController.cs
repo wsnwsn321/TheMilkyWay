@@ -8,6 +8,7 @@ namespace SuperMarioGame.Controller
       
         private Dictionary<Keys, ICommand> controllerMappings;
         KeyboardState OldState;
+        private static int resetOnce=1;
         public KeyboardController()
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
@@ -23,6 +24,11 @@ namespace SuperMarioGame.Controller
 
         public void Update()
         {
+            if (resetOnce<6)
+            {
+                controllerMappings[Keys.R].Execute();
+                resetOnce++;
+            }
             KeyboardState NewState = Keyboard.GetState();
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             if(pressedKeys.Length == 0)

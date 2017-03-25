@@ -6,6 +6,7 @@ using SuperMarioGame.Controller;
 using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
+using SuperMarioGame.ElementClasses;
 
 namespace SuperMarioGame
 
@@ -35,6 +36,7 @@ namespace SuperMarioGame
             InitializeCommands();
 
             base.Initialize();
+
         }
 
         protected override void LoadContent()
@@ -42,6 +44,7 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
             level.Load();
+
             //TestCase.RunTest.Instance.runAllTests();
         }
 
@@ -51,9 +54,10 @@ namespace SuperMarioGame
         }
 
         protected override void Update(GameTime gameTime)
-        {   
+        {
+
             level.Update();
-            if (level.mario.marioState == 1)
+            if (level.mario.marioState == Mario.MARIO_DEAD)
             {
                 ResetGame();
             }

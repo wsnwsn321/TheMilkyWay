@@ -121,6 +121,10 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
+            if(position.Y > 480)
+            {
+                MarioDie();
+            }
             if (jump)
             {
                 if (jumpCount <= 35)
