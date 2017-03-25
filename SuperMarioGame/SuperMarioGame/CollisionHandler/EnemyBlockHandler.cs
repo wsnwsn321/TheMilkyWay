@@ -20,7 +20,7 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - 2;
                         enemy.position = newPosition;
                         top = true;
-                        if (block.isVisible == false&&block.isBroken==false)
+                        if (!block.isVisible && !block.isBroken)
                         {
                             enemy.BeFlipped();
                             block.isBroken = true;

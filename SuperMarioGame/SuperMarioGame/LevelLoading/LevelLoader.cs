@@ -122,6 +122,9 @@ namespace SuperMarioGame.LevelLoading
                         case "SmallBrush":
                             level.backgroundElements.Add(new SmallBrush(new Vector2(x, y)));
                             break;
+                        case "Castle":
+                            level.backgroundElements.Add(new Castle(new Vector2(x, y+2)));
+                            break;
                         default:
                             break;
                     }

@@ -60,6 +60,7 @@
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\Castle.cs" />
     <Compile Include="ElementClasses\BackgroundClass\BigBrush.cs" />
     <Compile Include="ElementClasses\BackgroundClass\BigCloud.cs" />
     <Compile Include="ElementClasses\BackgroundClass\BigMountain.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="SpriteFactories\BackgroundSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
+    <Compile Include="Sprites\BackgroundSprite\CastleSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\BigBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\BigCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\BigMountainSprite.cs" />

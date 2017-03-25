@@ -57,5 +57,10 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.BigCloudSprite(backgroundSpritesheet, sb);
         }
 
+        public Sprites.ISprite CreateCastleSprite()
+        {
+            return new Sprites.CastleSprite(backgroundSpritesheet, sb);
+        }
+
     }
 }
