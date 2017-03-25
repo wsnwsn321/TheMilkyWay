@@ -10,12 +10,15 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public Vector2 position { get; set; }
 
         public bool isVisible { get; set; }
-
+        public bool isBroken { get; set; }
         public BrickBlock(Vector2 pos)
         {
             position = pos;
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
             isVisible = true;
+            isBroken = false;
+
+
         }
 
         public void Draw()

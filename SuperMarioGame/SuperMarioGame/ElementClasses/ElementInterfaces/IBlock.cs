@@ -10,6 +10,7 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         void Update();
         ISprite blockSprite { get; set; }
         bool isVisible { get; set; }
+        bool isBroken { get; set; }
 
 
     }
