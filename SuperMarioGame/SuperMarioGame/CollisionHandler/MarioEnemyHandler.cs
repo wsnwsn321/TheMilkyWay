@@ -19,7 +19,10 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else
                         {
-                            enemy.BeStomped();
+                            if(mario.state.marioSprite.desRectangle.Bottom < enemy.enemySprite.desRectangle.Bottom)
+                            {
+                                enemy.BeStomped();
+                            }
                         }
                         break;
                     case 2:

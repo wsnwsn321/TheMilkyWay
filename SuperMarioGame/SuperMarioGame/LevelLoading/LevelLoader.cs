@@ -90,7 +90,7 @@ namespace SuperMarioGame.LevelLoading
                             level.itemElements.Add(new Star(new Vector2(x, y)));
                             break;
                         case "Goomba":
-                            level.enemyElements.Add(new Goomba(new Vector2(x, y)));
+                            level.enemyElements.Add(new Goomba(new Vector2(x, y-10)));
                             break;
                         case "Koopa":
                             level.enemyElements.Add(new Koopa(new Vector2(x, y + 21)));

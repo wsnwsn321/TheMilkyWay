@@ -62,6 +62,10 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void Update()
         {
+            if (flip)
+            {
+                gravity = 3;
+            }
             if (goombaAction != Goomba.GOOMBA_DEAD)
             {
                 if (goombaDirection)

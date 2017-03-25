@@ -11,36 +11,38 @@ namespace SuperMarioGame.CollisionHandler
         public static void EnemyHandler(IEnemy enemy1, IEnemy enemy2, int CollisionSide)
         {
             Vector2 newPosition;
-            switch (CollisionSide)
+            if (!(enemy2.enemySprite is GoombaStompedSprite) && enemy2.isVisible && !(enemy1.enemySprite is GoombaStompedSprite) && enemy1.isVisible)
             {
-                case 1:
-                    
-                    break;
-                case 2:
-                    newPosition.X = enemy1.enemySprite.desRectangle.X + 2;
-                    newPosition.Y = enemy1.enemySprite.desRectangle.Y;
-                    enemy1.position = newPosition;
-                    if (enemy1 is Koopa)
-                    {
-                        enemy2.ChangeDirection();
-                    }
-                    enemy1.ChangeDirection();
-                    break;
-                case 3:
+                switch (CollisionSide)
+                {
+                    case 1:
 
-                    break;
-                case 4:
-                    newPosition.X = enemy1.enemySprite.desRectangle.X - 2;
-                    newPosition.Y = enemy1.enemySprite.desRectangle.Y;
-                    enemy1.position = newPosition;
-                    if (enemy1 is Koopa)
-                    {
-                        enemy2.ChangeDirection();
-                    }
-                    enemy1.ChangeDirection();
-                    break;
-            }
-            
+                        break;
+                    case 2:
+                        newPosition.X = enemy1.enemySprite.desRectangle.X + 2;
+                        newPosition.Y = enemy1.enemySprite.desRectangle.Y;
+                        enemy1.position = newPosition;
+                        if (enemy1 is Koopa)
+                        {
+                            enemy2.ChangeDirection();
+                        }
+                        enemy1.ChangeDirection();
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+                        newPosition.X = enemy1.enemySprite.desRectangle.X - 2;
+                        newPosition.Y = enemy1.enemySprite.desRectangle.Y;
+                        enemy1.position = newPosition;
+                        if (enemy1 is Koopa)
+                        {
+                            enemy2.ChangeDirection();
+                        }
+                        enemy1.ChangeDirection();
+                        break;
+                }
+            }                    
         }
     }
 }

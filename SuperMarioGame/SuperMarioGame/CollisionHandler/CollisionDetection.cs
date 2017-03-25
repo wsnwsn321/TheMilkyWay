@@ -78,7 +78,7 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (mario.state.marioSprite.desRectangle.Right > block.position.X+3 && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right-3)
                         {
-                            mario.onTop = true;
+                            onTop = true;
                             mario.gravity = 0;
                         }
                     }
@@ -92,6 +92,8 @@ namespace SuperMarioGame.CollisionHandler
 
         public void EnemyBlockCollision(IEnemy enemy, List<IBlock> envElements)
         {
+            bool onTop = false;
+            enemy.onTop = false;
             foreach (IBlock block in envElements)
             {
                 if (enemy.enemySprite.desRectangle.Intersects(block.blockSprite.desRectangle))
@@ -124,11 +126,26 @@ namespace SuperMarioGame.CollisionHandler
                     if (collideRectangle.Width * collideRectangle.Height > 13)
                     {
                         EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
+                        if (SIDE == TOP)
+                        {
+                            onTop = true;
+                        }
                     }
                 }
-                else
+                if (block.isVisible)
                 {
-                    enemy.onTop = false;
+                    if (enemy.enemySprite.desRectangle.Bottom > block.position.Y - 3 && enemy.enemySprite.desRectangle.Bottom < block.position.Y)
+                    {
+                        if (enemy.enemySprite.desRectangle.Right > block.position.X + 3 && enemy.enemySprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
+                        {
+                            if (!enemy.flip)
+                            {
+                                enemy.onTop = true;
+                                enemy.gravity = 0;
+                            }
+
+                        }
+                    }
                 }
             }
         }

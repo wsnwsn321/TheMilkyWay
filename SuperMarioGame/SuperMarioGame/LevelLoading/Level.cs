@@ -30,6 +30,7 @@ namespace SuperMarioGame.LevelLoading
             myGame = game;
             camera = new Camera.Camera(game.Window.ClientBounds);
 
+
         }
 
         public void Update()
