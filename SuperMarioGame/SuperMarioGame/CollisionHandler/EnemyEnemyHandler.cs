@@ -24,7 +24,15 @@ namespace SuperMarioGame.CollisionHandler
                         enemy1.position = newPosition;
                         if (enemy1 is Koopa)
                         {
-                            enemy2.ChangeDirection();
+                            if (enemy1.shellDirection)
+                            {
+                                enemy2.BeFlipped();
+                            }
+                            else
+                            {
+                                 enemy2.ChangeDirection();
+                            }
+                           
                         }
                         enemy1.ChangeDirection();
                         break;
@@ -37,7 +45,14 @@ namespace SuperMarioGame.CollisionHandler
                         enemy1.position = newPosition;
                         if (enemy1 is Koopa)
                         {
-                            enemy2.ChangeDirection();
+                            if (enemy1.shellDirection)
+                            {
+                                enemy2.BeFlipped();
+                            }
+                            else
+                            {
+                                enemy2.ChangeDirection();
+                            }
                         }
                         enemy1.ChangeDirection();
                         break;
