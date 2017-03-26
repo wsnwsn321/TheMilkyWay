@@ -19,6 +19,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             isVisible = true;
             gravity = 3;
             onTop = false;
+            changeDirection = true;
         }
         public void ItemChangeDirection()
         {
