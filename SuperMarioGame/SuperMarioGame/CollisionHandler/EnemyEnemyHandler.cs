@@ -26,6 +26,7 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (enemy1.shellDirection)
                             {
+                                
                                 enemy2.BeFlipped();
                             }
                             else
