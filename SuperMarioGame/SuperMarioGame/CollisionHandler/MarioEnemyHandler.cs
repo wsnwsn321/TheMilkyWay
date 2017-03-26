@@ -1,6 +1,7 @@
 ﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sprites;
+using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -8,7 +9,8 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
         {
-            if (!(enemy.enemySprite is GoombaFlippedSprite) && !(enemy.enemySprite is GoombaStompedSprite) && !(enemy.enemySprite is KoopaStompedSprite))
+            //Vector2 newPosition;
+            if (!(enemy.enemySprite is GoombaFlippedSprite) && !(enemy.enemySprite is GoombaStompedSprite) /*&& !(enemy.enemySprite is KoopaStompedSprite)*/)
             {
                 switch (CollisionSide)
                 {
@@ -23,6 +25,21 @@ namespace SuperMarioGame.CollisionHandler
                             {
                                 enemy.BeStomped();
                             }
+                            else if(enemy.enemySprite is KoopaStompedSprite)
+                            {
+                                if (mario.marioDirection)
+                                {
+                                    enemy.shellDirection =true;
+                                    enemy.shellMoving = 4;
+                                    
+                                }
+                                else
+                                {
+                                    enemy.shellDirection = true;
+                                    enemy.shellMoving = 2;
+                                }
+                                //enemy.enemySprite.desRectangle;
+                            }
                         }
                         break;
                     case 2:
@@ -32,7 +49,18 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else
                         {
-                            mario.MarioGetHit();
+                            if(enemy.enemySprite is KoopaStompedSprite)
+                            {
+
+                                // Set shellMoving int from here somehow. 
+                                enemy.shellDirection = true;
+                                enemy.shellMoving = 2;
+                            }
+                            else
+                            {
+                                mario.MarioGetHit();
+                            }
+                         
                         }
                         mario.MarioGetHit();
                         break;
@@ -54,7 +82,17 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else
                         {
-                            mario.MarioGetHit();
+                            if (enemy.enemySprite is KoopaStompedSprite)
+                            {
+                                // Set shellMoving int from here somehow. 
+                                enemy.shellDirection = true;
+                                enemy.shellMoving = 4;
+                            }
+                            else
+                            {
+                                mario.MarioGetHit();
+                            }
+
                         }
                         break;
                 }

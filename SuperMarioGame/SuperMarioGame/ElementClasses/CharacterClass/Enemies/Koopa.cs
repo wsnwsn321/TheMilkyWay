@@ -18,6 +18,9 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public bool flip { get; set; }
 
+        public bool shellDirection { get; set; }
+        public int shellMoving { get; set; }
+
         internal IEnemyState koopaState;
 
         public const int KOOPA_IDLE = 1, KOOPA_FLIPPED = 2, KOOPA_SHELL = 3;
@@ -37,8 +40,10 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             koopaAction = KOOPA_IDLE;
             koopaDirection = KOOPA_LEFT;
             isVisible   = true;
+            shellDirection = false;
             gravity = 3;
             onTop = false;
+            shellMoving = 0;
         }
 
         public void Draw()
@@ -62,9 +67,32 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
                     position = new Vector2(position.X + 1, position.Y);
                 }
             }
+            else
+            {
+                if(shellDirection)
+                {
+                    if (shellMoving == 2)
+                    {
+                        koopaDirection = false;
+                    }
+                    else if (shellMoving == 4)
+                    {
+                        koopaDirection = true;
+                    }
+                    if (koopaDirection)
+                    {
+                        position = new Vector2(position.X - 5, position.Y);
+                    }
+                    else
+                    {
+                        position = new Vector2(position.X + 5, position.Y);
+                    }
+                } 
+            }
             
             koopaState.Update(enemySprite);
         }
+        
 
         public void ChangeDirection()
         {
@@ -80,6 +108,11 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
                     enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaMoveRightSprite();
                 }
             }
+            else
+            {
+
+            }
+                    
         
             
         }
@@ -92,6 +125,10 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void BeFlipped()
         {
+            if(enemySprite is KoopaStompedSprite)
+            {
+
+            }
             koopaState.BeStomped();
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateKoopaFlippedSprite();
             flip = true;

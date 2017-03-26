@@ -23,6 +23,8 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public bool onTop { get; set; }
 
         public bool flip { get; set; }
+        public bool shellDirection { get; set; }
+        public int shellMoving { get; set; }
 
         public const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
 
@@ -45,6 +47,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             isVisible = true;
             gravity = 3;
             onTop = false;
+            
         }
 
         public void  EnemyIdle()
