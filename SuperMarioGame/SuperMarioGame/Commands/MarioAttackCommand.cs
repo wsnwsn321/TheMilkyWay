@@ -29,7 +29,7 @@ namespace SuperMarioGame.Commands
                 }
                 else if(mario.state.marioSprite is LeftAttackingMarioSprite)
                 {
-                    fball.changeDirection = !fball.changeDirection;
+                    fball.hDirection = !fball.hDirection;
                     myGame.level.itemElements.Add(fball);                
                 }
             }
