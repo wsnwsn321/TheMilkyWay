@@ -19,15 +19,12 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         private TwoVolecity volecity;
         private float reset;
         private int jumpCounter;
-        private bool increment;
-
         public Fireball(Vector2 pos)
         {
             position = pos;
             jumpCounter = 0;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballSprite();
             isVisible = true;
-            increment = true;
             hDirection = false;
             vDirection = false;
             volecity = new TwoVolecity(3, 6);

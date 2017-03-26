@@ -63,12 +63,14 @@ namespace SuperMarioGame
                 if (level.mario.marioState == Mario.MARIO_DEAD)
                 {
                     freeze = true;
+                    level.mario.gravity = 3;
                 }
                 keyboardController.Update();
                 base.Update(gameTime);
             }
             else
             {
+                level.mario.MarioUpdate();
                 freezeCount++;
                 if (freezeCount == 75)
                 {

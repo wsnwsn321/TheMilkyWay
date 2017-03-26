@@ -18,7 +18,6 @@ namespace SuperMarioGame.LevelLoading
         public float gravity = 3;
         public int height;
         private int gameWidth, gameHeight;
-        private Camera.Camera camera;
         int camX = 0;
 
         internal Mario mario = new Mario(new Vector2(100, 358), Mario.MARIO_SMALL, false);
@@ -28,9 +27,6 @@ namespace SuperMarioGame.LevelLoading
         public Level(Game1 game)
         {
             myGame = game;
-            camera = new Camera.Camera(game.Window.ClientBounds);
-
-
         }
 
         public void Update()
@@ -140,7 +136,6 @@ namespace SuperMarioGame.LevelLoading
             loader.LoadLevel();
             gameWidth = loader.GetWidth();
             gameHeight = loader.GetHeight();
-            camera.InitialShift(loader.GetHeight());
             mario.MarioIdle();
         }
     }
