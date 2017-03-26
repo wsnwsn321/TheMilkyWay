@@ -77,6 +77,7 @@
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BlockPiece.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\BrickBlockCC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
