@@ -125,6 +125,12 @@ namespace SuperMarioGame.LevelLoading
                         case "Castle":
                             level.backgroundElements.Add(new Castle(new Vector2(x, y+2)));
                             break;
+                        case "Flagpole":
+                            level.backgroundElements.Add(new Flagpole(new Vector2(x, y)));
+                            break;
+                        case "Flag":
+                            level.backgroundElements.Add(new Flag(new Vector2(x+15, y+27)));
+                            break;
                         default:
                             break;
                     }

@@ -6,6 +6,9 @@ namespace SuperMarioGame.SpriteFactories
     class BackgroundSpriteFactory
     {
         private Texture2D backgroundSpritesheet;
+        private Texture2D flagpole;
+        private Texture2D flag;
+
         public SpriteBatch sb { get; set; }
         private static BackgroundSpriteFactory instance = new BackgroundSpriteFactory();
 
@@ -24,6 +27,9 @@ namespace SuperMarioGame.SpriteFactories
         public void LoadAllTextures(ContentManager content, SpriteBatch sb)
         {
             backgroundSpritesheet = content.Load < Texture2D >("Background/BackgroundEnvironment");
+            flagpole = content.Load<Texture2D>("Background/Flagpole");
+            flag = content.Load<Texture2D>("Background/Flag");
+
             this.sb = sb;
         }
 
@@ -61,6 +67,14 @@ namespace SuperMarioGame.SpriteFactories
         {
             return new Sprites.CastleSprite(backgroundSpritesheet, sb);
         }
+        public Sprites.ISprite CreateFlagpoleSprite()
+        {
+            return new Sprites.FlagpoleSprite(flagpole, sb);
+        }
 
+        public Sprites.ISprite CreateFlagSprite()
+        {
+            return new Sprites.FlagSprite(flag, sb);
+        }
     }
 }

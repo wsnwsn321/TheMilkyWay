@@ -21,7 +21,7 @@ namespace SuperMarioGame.LevelLoading
         private Camera.Camera camera;
         int camX = 0;
 
-        internal Mario mario = new Mario(new Vector2(2250, 358), Mario.MARIO_BIG, false);
+        internal Mario mario = new Mario(new Vector2(50, 358), Mario.MARIO_SMALL, false);
         Game1 myGame;
 
 
@@ -78,6 +78,7 @@ namespace SuperMarioGame.LevelLoading
             }
             foreach (IBackground back in backgroundElements)
             {
+                CollisionDetection.Instance.MarioFlagCollision(mario, backgroundElements);
                 back.Update();
             }
             CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);

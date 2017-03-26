@@ -3,6 +3,7 @@ using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.ItemClass;
+using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -214,6 +215,21 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     MarioItemHandler.ItemHandler(mario, item);
                 }
+            }
+        }
+
+        public void MarioFlagCollision(Mario mario, List<IBackground> backgroundElements)
+        {
+            foreach (IBackground bg in backgroundElements)
+            {
+                if(bg.backgroundSprite is FlagpoleSprite)
+                {
+                    if(mario.state.marioSprite.desRectangle.Intersects(bg.backgroundSprite.desRectangle))
+                    {
+                        myGame.keyboardController.keysEnabled = false;
+                    }
+                }
+
             }
         }
 
