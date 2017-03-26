@@ -16,7 +16,6 @@ namespace SuperMarioGame.CollisionHandler
         {
             Vector2 newPosition;
             Game1 myGame = game;
-            bool top = false;
 
             if (block.isVisible)
             {
@@ -27,7 +26,6 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-2;
                         mario.position = newPosition;
                         //mario.gravity = 0;
-                        top = true;
                         break;
                     case 2: //right side collision
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
@@ -42,6 +40,7 @@ namespace SuperMarioGame.CollisionHandler
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite && mario.marioState != Mario.MARIO_SMALL)
                         {
                             block.isVisible = false;
+                            //block.isBroken = true;
                             //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
                             BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y),1);
                           
@@ -103,7 +102,6 @@ namespace SuperMarioGame.CollisionHandler
                         mario.position = newPosition;
                         break;
                 }
-                    mario.onTop = top;
             }
         }
     }

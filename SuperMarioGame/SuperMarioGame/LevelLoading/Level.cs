@@ -30,6 +30,7 @@ namespace SuperMarioGame.LevelLoading
             myGame = game;
             camera = new Camera.Camera(game.Window.ClientBounds);
 
+
         }
 
         public void Update()
@@ -77,6 +78,7 @@ namespace SuperMarioGame.LevelLoading
             }
             foreach (IBackground back in backgroundElements)
             {
+                CollisionDetection.Instance.MarioFlagCollision(mario, backgroundElements);
                 back.Update();
             }
             CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);

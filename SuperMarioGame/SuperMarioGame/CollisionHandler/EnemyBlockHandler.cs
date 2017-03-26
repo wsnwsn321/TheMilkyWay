@@ -11,7 +11,7 @@ namespace SuperMarioGame.CollisionHandler
         {
             Vector2 newPosition;
             bool top = false;
-            if (!enemy.flip)
+            if (!enemy.flip&&block.isBroken==false)
             {
                 switch (CollisionSide)
                 {
@@ -20,6 +20,11 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - 2;
                         enemy.position = newPosition;
                         top = true;
+                        if (!block.isVisible && !block.isBroken)
+                        {
+                            enemy.BeFlipped();
+                            block.isBroken = true;
+                        }
                         break;
                     case 2:
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;

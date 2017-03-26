@@ -100,8 +100,11 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioRun()
         {
-            state.Run();
-            marioAction = MARIO_RUN;
+            if (marioAction != MARIO_CROUCH)
+            {
+                state.Run();
+                marioAction = MARIO_RUN;
+            }
         }
         public virtual void MarioDraw()
         {
@@ -121,6 +124,10 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
+            if(position.Y > 480)
+            {
+                MarioDie();
+            }
             if (jump)
             {
                 if (jumpCount <= 35)

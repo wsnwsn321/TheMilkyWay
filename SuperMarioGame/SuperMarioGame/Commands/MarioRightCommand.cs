@@ -22,8 +22,11 @@ namespace SuperMarioGame.Commands
                     mario.MarioIdle();
                     mario.MarioChangeDireciton();
                 }
-                mario.MarioRun();
-                mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
+                if (mario.marioAction != ElementClasses.Mario.MARIO_CROUCH)
+                {
+                    mario.MarioRun();
+                    mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
+                }
 
                 //if (mario.position.X < myGame.Window.ClientBounds.Width - mario.state.marioSprite.desRectangle.Width)
                 //{

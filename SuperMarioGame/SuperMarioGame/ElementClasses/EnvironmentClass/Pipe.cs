@@ -12,13 +12,14 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         private int size;
 
         public bool isVisible { get; set; }
-
+        public bool isBroken { get; set; }
         public Pipe(Vector2 pos, int size)
         {
             position = pos;
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreatePipeSprite(size);
             isVisible = true;
             this.size = size;
+            isBroken = false;
         }
 
         public void Draw()

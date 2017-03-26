@@ -90,7 +90,7 @@ namespace SuperMarioGame.LevelLoading
                             level.itemElements.Add(new Star(new Vector2(x, y)));
                             break;
                         case "Goomba":
-                            level.enemyElements.Add(new Goomba(new Vector2(x, y)));
+                            level.enemyElements.Add(new Goomba(new Vector2(x, y-10)));
                             break;
                         case "Koopa":
                             level.enemyElements.Add(new Koopa(new Vector2(x, y + 21)));
@@ -121,6 +121,15 @@ namespace SuperMarioGame.LevelLoading
                             break;
                         case "SmallBrush":
                             level.backgroundElements.Add(new SmallBrush(new Vector2(x, y)));
+                            break;
+                        case "Castle":
+                            level.backgroundElements.Add(new Castle(new Vector2(x, y+2)));
+                            break;
+                        case "Flagpole":
+                            level.backgroundElements.Add(new Flagpole(new Vector2(x, y)));
+                            break;
+                        case "Flag":
+                            level.backgroundElements.Add(new Flag(new Vector2(x+15, y+27)));
                             break;
                         default:
                             break;
