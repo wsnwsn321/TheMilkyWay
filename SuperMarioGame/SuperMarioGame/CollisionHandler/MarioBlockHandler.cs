@@ -22,21 +22,19 @@ namespace SuperMarioGame.CollisionHandler
                 switch (CollisionSide)
                 {
                     case 1: //top collision
-                        if (!(block is HiddenBlock))
-                        {
+                       
                          newPosition.X = mario.state.marioSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-2;
                         mario.position = newPosition;
-                        }
+                        
                         //mario.gravity = 0;
                         break;
                     case 2: //right side collision
-                        if (!(block is HiddenBlock))
-                        {
+                        
                          newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
-                        }
+                        
                        
                         break;
                     case 3: //bottom collision
@@ -123,13 +121,10 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         break;
                     case 4: //left side collision
-                        if (!(block is HiddenBlock))
-                        {
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
                        
-                        }
                          break;
                 }
             }
