@@ -71,19 +71,12 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             {
                 if(shellDirection)
                 {
-                    if (shellMoving == 2)
-                    {
-                        koopaDirection = false;
-                    }
-                    else if (shellMoving == 4)
-                    {
-                        koopaDirection = true;
-                    }
-                    if (koopaDirection)
+                    
+                    if (shellMoving==2)
                     {
                         position = new Vector2(position.X - 5, position.Y);
                     }
-                    else
+                    else if(shellMoving==4)
                     {
                         position = new Vector2(position.X + 5, position.Y);
                     }

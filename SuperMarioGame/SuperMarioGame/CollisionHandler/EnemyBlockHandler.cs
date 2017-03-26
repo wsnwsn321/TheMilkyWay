@@ -31,6 +31,14 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
                         enemy.ChangeDirection();
+                        if (enemy.shellMoving == 2)
+                        {
+                            enemy.shellMoving = 4;
+                        }
+                       else if (enemy.shellMoving == 4)
+                        {
+                            enemy.shellMoving = 2;
+                        }
                         break;
                     case 3:
                         newPosition.X = enemy.enemySprite.desRectangle.X;
@@ -42,6 +50,14 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
                         enemy.ChangeDirection();
+                        if (enemy.shellMoving == 2)
+                        {
+                            enemy.shellMoving = 4;
+                        }
+                        else if (enemy.shellMoving == 4)
+                        {
+                            enemy.shellMoving = 2;
+                        }
                         break;
                 }
                 if (top)
