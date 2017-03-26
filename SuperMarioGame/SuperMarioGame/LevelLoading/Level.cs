@@ -21,7 +21,7 @@ namespace SuperMarioGame.LevelLoading
         private Camera.Camera camera;
         int camX = 0;
 
-        internal Mario mario = new Mario(new Vector2(50, 358), Mario.MARIO_SMALL, false);
+        internal Mario mario = new Mario(new Vector2(100, 358), Mario.MARIO_SMALL, false);
         Game1 myGame;
 
 

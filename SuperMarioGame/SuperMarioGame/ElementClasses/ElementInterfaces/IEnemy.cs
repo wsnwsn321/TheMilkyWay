@@ -19,5 +19,7 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
 
         float gravity { get; set; }
         bool onTop { get; set; }
+        bool shellDirection { get; set; }
+        int shellMoving { get; set; }
     }
 }
