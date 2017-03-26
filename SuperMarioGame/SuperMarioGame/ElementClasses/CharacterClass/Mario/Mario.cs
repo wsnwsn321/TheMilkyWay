@@ -100,8 +100,11 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioRun()
         {
-            state.Run();
-            marioAction = MARIO_RUN;
+            if (marioAction != MARIO_CROUCH)
+            {
+                state.Run();
+                marioAction = MARIO_RUN;
+            }
         }
         public virtual void MarioDraw()
         {

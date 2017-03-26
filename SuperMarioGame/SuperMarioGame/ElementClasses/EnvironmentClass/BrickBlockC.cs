@@ -8,7 +8,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     {
         public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
-
+        public bool multiple { get; set; }
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
         public BrickBlockC(Vector2 pos)
