@@ -40,7 +40,6 @@ namespace SuperMarioGame.CollisionHandler
                        
                         break;
                     case 3: //bottom collision
-                        
                         mario.jump = false;
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+3;

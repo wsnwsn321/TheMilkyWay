@@ -26,14 +26,12 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (enemy1.shellDirection)
                             {
-                                
                                 enemy2.BeFlipped();
                             }
                             else
                             {
-                                 enemy2.ChangeDirection();
+                                enemy2.ChangeDirection();
                             }
-                           
                         }
                         enemy1.ChangeDirection();
                         break;
@@ -48,7 +46,7 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (enemy1.shellDirection)
                             {
-                                enemy2.BeFlipped();
+                                    enemy2.BeFlipped();    
                             }
                             else
                             {
