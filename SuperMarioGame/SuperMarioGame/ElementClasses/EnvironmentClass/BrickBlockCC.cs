@@ -8,7 +8,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
     {
         public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
-        public bool multiple { get; set; }
+        public int coinCount { get; set; }
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
         public BrickBlockCC(Vector2 pos)
@@ -17,6 +17,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
             isVisible = true;
             isBroken = false;
+            coinCount = 10;
         }
 
         public void Draw()

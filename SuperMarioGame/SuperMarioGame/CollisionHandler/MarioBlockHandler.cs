@@ -63,6 +63,25 @@ namespace SuperMarioGame.CollisionHandler
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                         }
+                        else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
+                        {
+                            BrickBlockCC b = block as BrickBlockCC;
+                            if (b.coinCount > 0)
+                            {
+                                Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                                c.jump = true;
+                                myGame.level.itemElements.Add(c);
+                                b.coinCount--;
+                            }
+                            else
+                            {
+                                block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                                Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                                c.jump = true;
+                                myGame.level.itemElements.Add(c);
+                            }
+
+                        }
                         else if (block is BrickBlockS && block.blockSprite is BrickBlockSprite)
                         {
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
@@ -90,7 +109,7 @@ namespace SuperMarioGame.CollisionHandler
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                         }
-                        else if (block is HiddenBlock)
+                        else if (block is HiddenBlock && block.blockSprite is HiddenBlockSprite)
                         {
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             myGame.level.itemElements.Add(new GreenMushroom(new Vector2(block.position.X, block.position.Y - 32)));
