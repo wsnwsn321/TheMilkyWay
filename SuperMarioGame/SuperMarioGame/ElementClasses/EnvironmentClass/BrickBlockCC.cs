@@ -3,14 +3,15 @@ using SuperMarioGame.Sprites;
 
 namespace SuperMarioGame.ElementClasses.EnvironmentClass
 {
-    public class BrickBlockC : ElementInterfaces.IBlock
+    public class BrickBlockCC : ElementInterfaces.IBlock
 
     {
         public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
+        public bool multiple { get; set; }
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
-        public BrickBlockC(Vector2 pos)
+        public BrickBlockCC(Vector2 pos)
         {
             position = pos;
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
