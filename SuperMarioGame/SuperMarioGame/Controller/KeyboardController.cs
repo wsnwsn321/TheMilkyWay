@@ -31,7 +31,7 @@ namespace SuperMarioGame.Controller
                 controllerMappings[Keys.R].Execute();
                 resetOnce++;
             }
-            if (keysEnabled)
+            //if (keysEnabled)
             {
                 KeyboardState NewState = Keyboard.GetState();
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
