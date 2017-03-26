@@ -171,6 +171,8 @@
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
+    <Compile Include="VolecotyTest\TwoVolecity.cs" />
+    <Compile Include="VolecotyTest\Volecity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMarioGame.Sprites;
+using SuperMarioGame.VolecotyTest;
+using System.Collections.Generic;
 
 namespace SuperMarioGame.ElementClasses.ItemClass
 {
@@ -9,10 +11,13 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
-        public bool changeDirection { get; set; }
+        public bool hDirection { get; set; }
+        public bool vDirection { get; set; }
         public int gravity { get; set; }
+      
         public bool onTop { get; set; }
-
+        private TwoVolecity volecity;
+        private float reset;
         private int jumpCounter;
         private bool increment;
 
@@ -23,13 +28,18 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballSprite();
             isVisible = true;
             increment = true;
-            changeDirection = true;
-            gravity = 3;
+            hDirection = false;
+            vDirection = false;
+            volecity = new TwoVolecity(3, 6);
+            reset = volecity.vv;
+            gravity = 0;
             onTop = false;
         }
         public void ItemChangeDirection()
         {
-            changeDirection = !changeDirection;
+            vDirection = !vDirection;
+            volecity.vv = reset;
+            jumpCounter++;
         }
 
         public void Draw()
@@ -42,31 +52,54 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Update()
         {
-            itemSprite.Update();
+            if(jumpCounter <= 4)
+            {
+                position = Volecity.getNewPosition(volecity, vDirection, hDirection, true, position);
+                if (volecity.vv < 0)
+                {
+                    ItemChangeDirection();
+                    volecity.vv = reset;
+                }
 
+                System.Console.WriteLine(volecity.vv);
+                itemSprite.Update();
+            }else
+            {
+                isVisible = false;
+            }
+       
+         
 
-            if (increment)
-            {
-                jumpCounter++;
-            }
-            else
-            {
-                jumpCounter--;
-            }
+            
+         
+            
 
-            if (jumpCounter == 8 || jumpCounter == -1)
-            {
-                increment = !increment;
-            }
+         
+            
+            
+           
+            //if (increment)
+            //{
+            //    jumpCounter++;
+            //}
+            //else
+            //{
+            //    jumpCounter--;
+            //}
 
-            if (changeDirection)
-            {
-                position = new Vector2(position.X + 5, position.Y - jumpCounter);
-            }
-            else
-            {
-                position = new Vector2(position.X - 5, position.Y - jumpCounter);
-            }
+            //if (jumpCounter == 8 || jumpCounter == -1)
+            //{
+            //    increment = !increment;
+            //}
+
+            //if (hDirection)
+            //{
+            //    position = new Vector2(position.X + 5, position.Y - jumpCounter);
+            //}
+            //else
+            //{
+            //    position = new Vector2(position.X - 5, position.Y - jumpCounter);
+            //}
         }
     }
 }

@@ -21,39 +21,62 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.X = item.itemSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-3;
                         item.position = newPosition;
+                        if(item.itemSprite is FireballSprite)
+                        {
+                            item.ItemChangeDirection();
+                        }
                         top = true;
                         break;
                     case 2:
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                         newPosition.Y = item.itemSprite.desRectangle.Y;
                         item.position = newPosition;
-                        item.ItemChangeDirection();
+                        if(item.itemSprite is FireballSprite)
+                        {
+                            item.isVisible = !item.isVisible;
+                        }else
+                        {
+                            item.ItemChangeDirection();
+                        }
+                      
+
                         break;
                     case 3:
                         newPosition.X = item.itemSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + item.itemSprite.desRectangle.Height;
                         item.position = newPosition;
                         top = true;
+                        if (item.itemSprite is FireballSprite)
+                        {
+                            item.ItemChangeDirection();
+                        }
                         break;
                     case 4:
                         newPosition.X = block.blockSprite.desRectangle.X - item.itemSprite.desRectangle.Width;
                         newPosition.Y = item.itemSprite.desRectangle.Y;
                         item.position = newPosition;
-                        item.ItemChangeDirection();
+                        if (item.itemSprite is FireballSprite)
+                        {
+                            item.isVisible = !item.isVisible;
+                        }
+                        else
+                        {
+                            item.ItemChangeDirection();
+                        }
                         break;
                 }
-                if (top)
-                {
-                    item.onTop = true;
-                }
-                else
-                {
-                    if (item.itemSprite is FireballSprite)
-                    {
-                        item.isVisible = false;
-                    }
-                    item.onTop = false;
-                }
+                //if (top)
+                //{
+                  //  item.onTop = true;
+                //}
+                //else
+                //{
+                    //if (item.itemSprite is FireballSprite)
+                    //{
+                      //  item.isVisible = false;
+                    //}
+                  //  item.onTop = false;
+                //}
             }         
         }
     }
