@@ -19,6 +19,8 @@ namespace SuperMarioGame
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
         internal Level level;
+        private bool freeze = false;
+        private int freezeCount = 0;
 
         public Game1()
         {
@@ -55,14 +57,27 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {
-
-            level.Update();
-            if (level.mario.marioState == Mario.MARIO_DEAD)
+            if (!freeze)
             {
-                ResetGame();
+                level.Update();
+                if (level.mario.marioState == Mario.MARIO_DEAD)
+                {
+                    freeze = true;
+                }
+                keyboardController.Update();
+                base.Update(gameTime);
             }
-            keyboardController.Update();
-            base.Update(gameTime);
+            else
+            {
+                freezeCount++;
+                if (freezeCount == 75)
+                {
+                    freeze = false;
+                    freezeCount = 0;
+                    ResetGame();
+                }
+            }
+
         }
 
         protected override void Draw(GameTime gameTime)
