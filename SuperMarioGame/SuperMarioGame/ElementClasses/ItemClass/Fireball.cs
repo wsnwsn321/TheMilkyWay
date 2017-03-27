@@ -15,9 +15,12 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public bool vDirection { get; set; }
         public int gravity { get; set; }
       
+        public bool onTop { get; set; }
         private TwoVolecity volecity;
         private float reset;
         private int jumpCounter;
+
+
         public Fireball(Vector2 pos)
         {
             position = pos;
@@ -29,6 +32,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             volecity = new TwoVolecity(3, 6);
             reset = volecity.vv;
             gravity = 0;
+            onTop = false;
         }
         public void ItemChangeDirection()
         {
@@ -47,18 +51,18 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Update()
         {
-            if(jumpCounter <= 4)
+            if(jumpCounter <= 10 && isVisible &&  position.Y > 0 && position.Y < 480)
             {
                 position = Volecity.getNewPosition(volecity, vDirection, hDirection, true, position);
-                if (volecity.vv < 0)
+                if (volecity.vv <= 0)
                 {
                     ItemChangeDirection();
                     volecity.vv = reset;
                 }
 
-                //System.Console.WriteLine(volecity.vv);
+                System.Console.WriteLine(volecity.vv);
                 itemSprite.Update();
-            }else
+            }else 
             {
                 isVisible = false;
             }
