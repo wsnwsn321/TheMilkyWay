@@ -30,7 +30,7 @@ namespace SuperMarioGame.CollisionHandler
                             {
                                 if (enemy.shellDirection)
                                 {
-                                    enemy.shellDirection = false;
+                                    mario.MarioGetHit();
                                 }
                                 else
                                 {
@@ -97,7 +97,7 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             mario.MarioGetHit();
                         }
-                        mario.MarioGetHit();
+                      
                         break;
                     case 4:
                         if (mario.HasStarPower)
@@ -114,6 +114,18 @@ namespace SuperMarioGame.CollisionHandler
                                 }
                                 else
                                 {
+                                    if (mario.position.X < enemy.position.X)
+                                    {
+                                        newPosition.X = mario.position.X - 6;
+                                        newPosition.Y = mario.position.Y;
+                                        mario.position = newPosition;
+                                    }
+                                    else
+                                    {
+                                        newPosition.X = mario.position.X + 6;
+                                        newPosition.Y = mario.position.Y;
+                                        mario.position = newPosition;
+                                    }
                                     enemy.shellDirection = true;
                                     enemy.shellMoving = 4;
                                     
