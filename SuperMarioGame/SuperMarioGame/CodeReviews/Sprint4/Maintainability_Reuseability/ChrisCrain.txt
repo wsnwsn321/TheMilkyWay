@@ -1,0 +1,12 @@
+﻿Chris Crain
+2-27-17
+Sprint3
+Name of file being reviewed: GoombaIdleState.cs
+Author of file being reviewed: George Yang
+Specific Comments on code quality: 
+Code is short, sweet, and to the point.  It's easy to read and is easy to manage or update if needed.
+
+Let's suppose I wanted to create another Goomba State called Goomba Fly State. In George's current 
+implementation of the class, it should be really simple to modify his code to fit the changes.
+All we would need is another method called Fly or GoombaFly that changes the goomba state to 
+GoombaFly. It would be a simple and clean change.
