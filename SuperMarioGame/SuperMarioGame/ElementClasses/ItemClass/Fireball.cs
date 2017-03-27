@@ -62,20 +62,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
                 System.Console.WriteLine(volecity.vv);
                 itemSprite.Update();
+                
             }else 
             {
                 isVisible = false;
-            }
-       
-         
-
-            
-         
-            
-
-         
-            
-            
+            }    
            
             //if (increment)
             //{

@@ -139,15 +139,24 @@ namespace SuperMarioGame.CollisionHandler
 
         public void ItemBlockCollision(IItem item, List<IBlock> envElements)
         {
-            item.gravity = 4;
+            if(!(item.itemSprite is FireballSprite))
+            {
+                item.gravity = 4;
+            }
+        
             foreach (IBlock block in envElements)
             {
                 if (block.isVisible)
                 {
                     if (item.itemSprite.desRectangle.Bottom > block.position.Y - 5 && item.itemSprite.desRectangle.Bottom <= block.position.Y)
                     {
+                        
                         if (item.itemSprite.desRectangle.Right > block.position.X + 3 && item.itemSprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
                         {
+                            if(item.itemSprite is FireballSprite)
+                            {
+                                item.ItemChangeDirection();
+                            }
                             item.gravity = 0;
                         }
                     }
@@ -190,13 +199,16 @@ namespace SuperMarioGame.CollisionHandler
         public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements)
         {
             SIDE = TOP;
-            foreach (IEnemy enemy in enemyElements)
-            {
-                if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+            
+                foreach (IEnemy enemy in enemyElements)
                 {
-                    ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                    if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                    {
+                        ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                          
+                    }
                 }
-            }
+  
         }
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
