@@ -15,6 +15,9 @@ namespace SuperMarioGame.LevelLoading
         internal List<IItem> itemElements = new List<IItem>();
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
+        internal List<IItem> fireBall = new List<IItem>();
+        internal Stack<int> deleteList = new Stack<int>();
+    
         public float gravity = 3;
         public int height;
         private int gameWidth, gameHeight;
@@ -26,6 +29,7 @@ namespace SuperMarioGame.LevelLoading
 
         public Level(Game1 game)
         {
+           
             myGame = game;
         }
 
@@ -42,10 +46,10 @@ namespace SuperMarioGame.LevelLoading
                     enemy.Update();
                 }
             }
+
             foreach (IItem item in itemElements)
             {
                 CollisionDetection.Instance.ItemBlockCollision(item, envElements);
-                CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
 
                 if (!(item is Flower) && !(item is Coin))
                 {
@@ -53,10 +57,36 @@ namespace SuperMarioGame.LevelLoading
                 }
                 item.Update();
             }
+            
+
+            
+            foreach (IItem item in fireBall)
+            {
+                
+                CollisionDetection.Instance.ItemBlockCollision(item,envElements);
+                CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
+
+            
+                if (!item.isVisible)
+                {
+                    deleteList.Push(fireBall.IndexOf(item));
+                }
+                item.Update();
+            }
+
+            while(deleteList.Count > 0)
+            {
+                fireBall.RemoveAt(deleteList.Pop());
+            }
+            
+
+
             foreach (IBlock block in envElements)
             {
                 block.Update();
             }
+
+
             foreach (IBackground back in backgroundElements)
             {
                 CollisionDetection.Instance.MarioFlagCollision(mario, backgroundElements);
@@ -98,6 +128,10 @@ namespace SuperMarioGame.LevelLoading
                 {
                     enemy.Draw();
                 }
+            }
+            foreach(IItem fireBall in fireBall)
+            {
+                fireBall.Draw();
             }
 
             mario.MarioDraw();

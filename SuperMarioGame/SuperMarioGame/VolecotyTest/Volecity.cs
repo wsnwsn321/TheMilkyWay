@@ -62,11 +62,12 @@ namespace SuperMarioGame.VolecotyTest
                         x -= volecity.vh;
                         y += volecity.vv;
                         volecity.vv += gravity;
+
                     }else if(vDirection && !hDirection)
                     {
                         //right up
                         x += volecity.vh;
-                        y -= volecity.vh;
+                        y -= volecity.vv;
                         volecity.vv -= gravity;
                     }
                     else
