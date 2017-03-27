@@ -12,7 +12,7 @@ namespace SuperMarioGame.CollisionHandler
         {
             Vector2 newPosition;
 
-            if (!(block.blockSprite is HiddenBlockSprite)&& !(item is BlockPiece))
+            if (!(block.blockSprite is HiddenBlockSprite)&& !(item is BlockPiece) && block.isVisible)
             {
                 switch (CollisionSide)
                 {
