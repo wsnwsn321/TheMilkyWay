@@ -18,7 +18,6 @@ namespace SuperMarioGame.LevelLoading
         public float gravity = 3;
         public int height;
         private int gameWidth, gameHeight;
-        private Camera.Camera camera;
         int camX = 0;
 
         internal Mario mario = new Mario(new Vector2(100, 358), Mario.MARIO_SMALL, false);
@@ -28,9 +27,6 @@ namespace SuperMarioGame.LevelLoading
         public Level(Game1 game)
         {
             myGame = game;
-            camera = new Camera.Camera(game.Window.ClientBounds);
-
-
         }
 
         public void Update()
@@ -42,14 +38,6 @@ namespace SuperMarioGame.LevelLoading
                 {
                     CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
                     CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
-                    if (enemy.onTop)
-                    {
-                        enemy.gravity = 0;
-                    }
-                    else
-                    {
-                        enemy.gravity = 4;
-                    }
                     enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
                     enemy.Update();
                 }
@@ -58,14 +46,7 @@ namespace SuperMarioGame.LevelLoading
             {
                 CollisionDetection.Instance.ItemBlockCollision(item, envElements);
                 CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
-                if (item.onTop)
-                {
-                    item.gravity = 0;
-                }
-                else
-                {
-                    item.gravity = 4;
-                }
+
                 if (!(item is Flower) && !(item is Coin))
                 {
                     item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
@@ -84,14 +65,6 @@ namespace SuperMarioGame.LevelLoading
             CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
             CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
             CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
-            //if (!mario.onTop)
-            //{
-            //    mario.gravity = 3;
-            //}
-            //else
-            //{
-            //    mario.gravity = 0;
-            //}
 
             mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
             mario.MarioUpdate();
@@ -140,7 +113,6 @@ namespace SuperMarioGame.LevelLoading
             loader.LoadLevel();
             gameWidth = loader.GetWidth();
             gameHeight = loader.GetHeight();
-            camera.InitialShift(loader.GetHeight());
             mario.MarioIdle();
         }
     }

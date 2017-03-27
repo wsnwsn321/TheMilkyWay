@@ -11,8 +11,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public bool isVisible { get; set; }
         public bool changeDirection { get; set; }
         public int gravity { get; set; }
-        public bool onTop { get; set; }
-
         private int jumpCounter;
         private bool increment;
 
@@ -25,7 +23,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             increment = true;
             changeDirection = true;
             gravity = 3;
-            onTop = false;
         }
         public void ItemChangeDirection()
         {

@@ -14,8 +14,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
         public float gravity { get; set; }
-        public bool onTop { get; set; }
-
         public bool flip { get; set; }
 
         public bool shellDirection { get; set; }
@@ -42,7 +40,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             isVisible   = true;
             shellDirection = false;
             gravity = 3;
-            onTop = false;
             shellMoving = 0;
         }
 
@@ -71,21 +68,14 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             {
                 if(shellDirection)
                 {
-                    if (shellMoving == 2)
+                    
+                    if (shellMoving==2)
                     {
-                        koopaDirection = false;
+                        position = new Vector2(position.X - 2, position.Y);
                     }
-                    else if (shellMoving == 4)
+                    else if(shellMoving==4)
                     {
-                        koopaDirection = true;
-                    }
-                    if (koopaDirection)
-                    {
-                        position = new Vector2(position.X - 5, position.Y);
-                    }
-                    else
-                    {
-                        position = new Vector2(position.X + 5, position.Y);
+                        position = new Vector2(position.X + 2, position.Y);
                     }
                 } 
             }

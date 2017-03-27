@@ -10,7 +10,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
         public int gravity { get; set; }
-        public bool onTop { get; set; }
 
         public Flower(Vector2 pos)
         {
@@ -18,7 +17,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFlowerSprite();
             isVisible = true;
             gravity = 3;
-            onTop = false;
         }
 
         public void ItemChangeDirection()

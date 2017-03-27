@@ -39,7 +39,6 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Camera\Camera.cs" />
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />

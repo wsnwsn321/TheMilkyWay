@@ -12,7 +12,5 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         ISprite itemSprite { get; set; }
         bool isVisible { get; set; }
         int gravity { get; set; }
-        bool onTop { get; set; }
-
     }
 }

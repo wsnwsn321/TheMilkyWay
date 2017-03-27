@@ -10,16 +10,14 @@ namespace SuperMarioGame.CollisionHandler
         public static void BlockHandler(IEnemy enemy, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
-            bool top = false;
             if (!enemy.flip&&block.isBroken==false)
             {
                 switch (CollisionSide)
                 {
                     case 1:
                         newPosition.X = enemy.enemySprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - 2;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - 6;
                         enemy.position = newPosition;
-                        top = true;
                         if (!block.isVisible && !block.isBroken)
                         {
                             enemy.BeFlipped();
@@ -31,6 +29,14 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
                         enemy.ChangeDirection();
+                        if (enemy.shellMoving == 2)
+                        {
+                            enemy.shellMoving = 4;
+                        }
+                       else if (enemy.shellMoving == 4)
+                        {
+                            enemy.shellMoving = 2;
+                        }
                         break;
                     case 3:
                         newPosition.X = enemy.enemySprite.desRectangle.X;
@@ -42,15 +48,15 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
                         enemy.ChangeDirection();
+                        if (enemy.shellMoving == 2)
+                        {
+                            enemy.shellMoving = 4;
+                        }
+                        else if (enemy.shellMoving == 4)
+                        {
+                            enemy.shellMoving = 2;
+                        }
                         break;
-                }
-                if (top)
-                {
-                    enemy.onTop = true;
-                }
-                else
-                {
-                    enemy.onTop = false;
                 }
             }            
         }

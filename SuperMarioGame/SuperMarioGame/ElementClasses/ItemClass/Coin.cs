@@ -14,7 +14,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         private int jumpCount = 0;
 
         public int gravity { get; set; }
-        public bool onTop { get; set; }
 
         public Coin(Vector2 pos)
         {
@@ -22,7 +21,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateCoinSprite();
             isVisible = true;
             gravity = 3;
-            onTop = false;
         }
 
         public void ItemChangeDirection()

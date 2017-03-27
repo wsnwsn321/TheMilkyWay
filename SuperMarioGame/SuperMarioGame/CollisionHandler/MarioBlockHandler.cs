@@ -22,15 +22,20 @@ namespace SuperMarioGame.CollisionHandler
                 switch (CollisionSide)
                 {
                     case 1: //top collision
+                       
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-2;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-6;
                         mario.position = newPosition;
+                        
                         //mario.gravity = 0;
                         break;
                     case 2: //right side collision
-                        newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
+                        
+                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
+                        
+                       
                         break;
                     case 3: //bottom collision
                         mario.jump = false;
@@ -43,7 +48,6 @@ namespace SuperMarioGame.CollisionHandler
                             //block.isBroken = true;
                             //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
                             BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y),1);
-                          
                             BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y+16), 2);
                             BlockPiece block3 = new BlockPiece(new Vector2(block.position.X+16, block.position.Y), 3);
                             BlockPiece block4 = new BlockPiece(new Vector2(block.position.X+16, block.position.Y+16), 4);
@@ -119,7 +123,8 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
-                        break;
+                       
+                         break;
                 }
             }
         }
