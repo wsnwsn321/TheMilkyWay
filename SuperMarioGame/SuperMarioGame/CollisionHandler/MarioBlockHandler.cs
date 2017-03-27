@@ -47,7 +47,7 @@ namespace SuperMarioGame.CollisionHandler
                             if(mario.marioState != Mario.MARIO_SMALL)
                             {
                                 block.isVisible = false;
-
+                                block.isBumped = true;
                                 //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
                                 BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), 1);
                                 BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y + 16), 2);
@@ -61,6 +61,7 @@ namespace SuperMarioGame.CollisionHandler
                                 myGame.level.itemElements.Add(block2);
                                 myGame.level.itemElements.Add(block3);
                                 myGame.level.itemElements.Add(block4);
+
                             }
                             else
                             {

@@ -53,6 +53,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
                 }
                 bumpCount--;
             }
+         
             blockSprite.Update();
         }
 

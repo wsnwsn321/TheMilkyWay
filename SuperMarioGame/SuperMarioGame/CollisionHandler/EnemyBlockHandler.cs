@@ -20,8 +20,11 @@ namespace SuperMarioGame.CollisionHandler
                         enemy.position = newPosition;
                         if (block.isVisible==false)
                         {
+                            if (block.isBumped == true)
+                            {
                                 enemy.BeFlipped();
-                            
+                            }
+                            block.isBumped = false;
                             block.isBroken = true;
                         }
                         break;
