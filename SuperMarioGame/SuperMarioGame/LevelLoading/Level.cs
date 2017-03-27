@@ -15,11 +15,11 @@ namespace SuperMarioGame.LevelLoading
         internal List<IItem> itemElements = new List<IItem>();
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
-        internal List<IItem> fireBall = new List<IItem>();
+        internal List<IItem> fireBallList = new List<IItem>();
         internal Stack<int> deleteList = new Stack<int>();
     
-        public float gravity = 3;
-        public int height;
+        //private float gravity = 3;
+        //private int height;
         private int gameWidth, gameHeight;
         int camX = 0;
 
@@ -60,7 +60,7 @@ namespace SuperMarioGame.LevelLoading
             
 
             
-            foreach (IItem item in fireBall)
+            foreach (IItem item in fireBallList)
             {
                 
                 CollisionDetection.Instance.ItemBlockCollision(item,envElements);
@@ -69,14 +69,14 @@ namespace SuperMarioGame.LevelLoading
             
                 if (!item.isVisible)
                 {
-                    deleteList.Push(fireBall.IndexOf(item));
+                    deleteList.Push(fireBallList.IndexOf(item));
                 }
                 item.Update();
             }
 
             while(deleteList.Count > 0)
             {
-                fireBall.RemoveAt(deleteList.Pop());
+                fireBallList.RemoveAt(deleteList.Pop());
             }
             
 
@@ -129,7 +129,7 @@ namespace SuperMarioGame.LevelLoading
                     enemy.Draw();
                 }
             }
-            foreach(IItem fireBall in fireBall)
+            foreach(IItem fireBall in fireBallList)
             {
                 fireBall.Draw();
             }

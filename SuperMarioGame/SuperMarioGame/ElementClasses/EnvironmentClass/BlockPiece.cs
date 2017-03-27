@@ -13,8 +13,8 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public bool isVisible { get; set; }
         public bool isBumped { get; set; }
         public int bumpCount { get; set; }
-        public int piece;
-        public int jumpCount=0;
+        private int piece;
+        private int jumpCount=0;
         public BlockPiece(Vector2 pos, int piece)
         {
             onTop = true;

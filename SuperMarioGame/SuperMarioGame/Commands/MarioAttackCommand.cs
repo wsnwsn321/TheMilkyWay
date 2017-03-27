@@ -19,7 +19,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (myGame.level.fireBall.Count <= 1)
+            if (myGame.level.fireBallList.Count <= 1)
             {
                 if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
                 {
@@ -29,7 +29,7 @@ namespace SuperMarioGame.Commands
                     {
 
 
-                        myGame.level.fireBall.Add(fball);
+                        myGame.level.fireBallList.Add(fball);
 
 
                     }
@@ -38,7 +38,7 @@ namespace SuperMarioGame.Commands
 
                         
                             fball.hDirection = !fball.hDirection;
-                            myGame.level.fireBall.Add(fball);
+                            myGame.level.fireBallList.Add(fball);
                        
 
 

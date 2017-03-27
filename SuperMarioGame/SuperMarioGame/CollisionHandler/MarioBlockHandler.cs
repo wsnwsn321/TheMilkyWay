@@ -26,8 +26,6 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-6;
                         mario.position = newPosition;
-                        
-                        //mario.gravity = 0;
                         break;
                     case 2: //right side collision
                         
@@ -48,8 +46,6 @@ namespace SuperMarioGame.CollisionHandler
                             {
                                 block.Bump();
                                 block.isVisible = false;
-                                
-                                //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
                                 BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), 1);
                                 BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y + 16), 2);
                                 BlockPiece block3 = new BlockPiece(new Vector2(block.position.X + 16, block.position.Y), 3);

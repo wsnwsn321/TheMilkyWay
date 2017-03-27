@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.VolecotyTest
 {
-    public class Volecity
+    public static class Volecity
     {
         public const float gravity = 0.2f;
         //vDirection true Top
