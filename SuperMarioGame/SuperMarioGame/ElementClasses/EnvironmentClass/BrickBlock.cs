@@ -49,6 +49,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
                 if (bumpCount == 0)
                 {
                     isBumped = !isBumped;
+                  
                 }
                 bumpCount--;
             }
@@ -58,7 +59,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public void Bump()
         {
             isBumped = true;
-            bumpCount = 9;
+            bumpCount = 11;
         }
     }
 }

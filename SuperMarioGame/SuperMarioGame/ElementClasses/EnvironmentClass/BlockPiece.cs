@@ -11,6 +11,8 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public int gravity { get; set; }
         public bool onTop { get; set; }
         public bool isVisible { get; set; }
+        public bool isBumped { get; set; }
+        public int bumpCount { get; set; }
         public int piece;
         public int jumpCount=0;
         public BlockPiece(Vector2 pos, int piece)
@@ -121,6 +123,11 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public void ItemChangeDirection()
         {
 
+        }
+        public void Bump()
+        {
+            isBumped = true;
+            bumpCount = 11;
         }
 
         public void Update()
