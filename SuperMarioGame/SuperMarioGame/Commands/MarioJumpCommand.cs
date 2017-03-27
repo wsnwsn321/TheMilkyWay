@@ -8,7 +8,7 @@ namespace SuperMarioGame.Commands
         private Game1 myGame;
         private ElementClasses.Mario mario;
         private int jumpTime=50;
-        private double jumpForce = 11;
+        private double jumpForce = 12;
         private double decay = 0;
         public bool wDown;
 

@@ -66,7 +66,10 @@ namespace SuperMarioGame.CollisionHandler
                             }
                             else
                             {
-                                block.Bump();
+                                if (!block.isBumped)
+                                {
+                                    block.Bump();
+                                }
                             }
                            
                         }

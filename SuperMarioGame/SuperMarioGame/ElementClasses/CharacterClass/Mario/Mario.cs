@@ -115,9 +115,6 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
-            System.Console.WriteLine(bounce);
-            System.Console.WriteLine(bounceCount);
-
             if (bounce)
             {
                 if (bounceCount < 10)
@@ -134,7 +131,7 @@ namespace SuperMarioGame.ElementClasses
                         if (marioAction == MARIO_RUN)
                             position = new Vector2(position.X, position.Y - 7);
                         else
-                            position = new Vector2(position.X - 3, position.Y - 7);
+                            position = new Vector2(position.X + 3, position.Y - 7);
                     }
                 }
                 if (bounceCount>=10)
