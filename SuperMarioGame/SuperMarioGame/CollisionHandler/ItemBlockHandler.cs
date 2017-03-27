@@ -18,7 +18,7 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     case 1:
                         newPosition.X = item.itemSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-3;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height-6;
                         item.position = newPosition;
                         if(item.itemSprite is FireballSprite)
                         {

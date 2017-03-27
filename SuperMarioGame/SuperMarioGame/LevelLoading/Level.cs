@@ -38,14 +38,6 @@ namespace SuperMarioGame.LevelLoading
                 {
                     CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
                     CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
-                    if (enemy.onTop)
-                    {
-                        enemy.gravity = 0;
-                    }
-                    else
-                    {
-                        enemy.gravity = 4;
-                    }
                     enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
                     enemy.Update();
                 }
@@ -54,14 +46,7 @@ namespace SuperMarioGame.LevelLoading
             {
                 CollisionDetection.Instance.ItemBlockCollision(item, envElements);
                 CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
-                if (item.onTop)
-                {
-                    item.gravity = 0;
-                }
-                else
-                {
-                    item.gravity = 4;
-                }
+
                 if (!(item is Flower) && !(item is Coin))
                 {
                     item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
@@ -80,14 +65,6 @@ namespace SuperMarioGame.LevelLoading
             CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
             CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
             CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
-            //if (!mario.onTop)
-            //{
-            //    mario.gravity = 3;
-            //}
-            //else
-            //{
-            //    mario.gravity = 0;
-            //}
 
             mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
             mario.MarioUpdate();

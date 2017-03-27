@@ -11,7 +11,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public bool isVisible { get; set; }
         public bool changeDirection { get; set; }
         public int gravity { get; set; }
-        public bool onTop { get; set; }
         public RedMushroom(Vector2 pos)
         {
             position = pos;
@@ -19,7 +18,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             isVisible = true;
             changeDirection = true;
             gravity = 3;
-            onTop = false;
         }
 
         public void ItemChangeDirection()

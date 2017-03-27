@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using SuperMarioGame.Commands;
 using System.Collections.Generic;
 
 namespace SuperMarioGame.Controller
@@ -6,8 +7,9 @@ namespace SuperMarioGame.Controller
     public class KeyboardController
     {
       
-        private Dictionary<Keys, ICommand> controllerMappings;
+        public Dictionary<Keys, ICommand> controllerMappings;
         KeyboardState OldState;
+        public bool wDown;
         private static int resetOnce=1;
         public bool keysEnabled { get; set; }
         public KeyboardController()
@@ -26,6 +28,7 @@ namespace SuperMarioGame.Controller
 
         public void Update()
         {
+            wDown = false;
             if (resetOnce<6)
             {
                 controllerMappings[Keys.R].Execute();
@@ -44,16 +47,14 @@ namespace SuperMarioGame.Controller
                 {
                     if (controllerMappings.ContainsKey(key))
                     {
+                        if (key.Equals(Keys.W))
+                        {
+                            wDown = true;                            
+                        }
+
                         if (key.Equals(Keys.X))
                         {
                             if (NewState.IsKeyDown(Keys.X) && OldState.IsKeyUp(Keys.X))
-                            {
-                                controllerMappings[key].Execute();
-                            }
-                        }
-                        else if (key.Equals(Keys.W))
-                        {
-                            if (NewState.IsKeyDown(Keys.W) && OldState.IsKeyUp(Keys.W))
                             {
                                 controllerMappings[key].Execute();
                             }
@@ -62,9 +63,14 @@ namespace SuperMarioGame.Controller
                         {
                             controllerMappings[key].Execute();
                         }
+
+
                     }
                 }
                 OldState = NewState;
+                MarioJumpCommand c = controllerMappings[Keys.W] as MarioJumpCommand;
+                c.wDown = wDown;
+                controllerMappings[Keys.W] = c;
             }            
         }
     }

@@ -15,7 +15,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public bool vDirection { get; set; }
         public int gravity { get; set; }
       
-        public bool onTop { get; set; }
         private TwoVolecity volecity;
         private float reset;
         private int jumpCounter;
@@ -30,7 +29,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             volecity = new TwoVolecity(3, 6);
             reset = volecity.vv;
             gravity = 0;
-            onTop = false;
         }
         public void ItemChangeDirection()
         {
@@ -58,7 +56,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
                     volecity.vv = reset;
                 }
 
-                System.Console.WriteLine(volecity.vv);
+                //System.Console.WriteLine(volecity.vv);
                 itemSprite.Update();
             }else
             {

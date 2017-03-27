@@ -14,8 +14,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
         public float gravity { get; set; }
-        public bool onTop { get; set; }
-
         public bool flip { get; set; }
 
         public bool shellDirection { get; set; }
@@ -42,7 +40,6 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             isVisible   = true;
             shellDirection = false;
             gravity = 3;
-            onTop = false;
             shellMoving = 0;
         }
 
