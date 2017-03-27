@@ -19,7 +19,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         private TwoVolecity volecity;
         private float reset;
         private int jumpCounter;
-        private bool increment;
+
 
         public Fireball(Vector2 pos)
         {
@@ -27,7 +27,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             jumpCounter = 0;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballSprite();
             isVisible = true;
-            increment = true;
             hDirection = false;
             vDirection = false;
             volecity = new TwoVolecity(3, 6);
@@ -52,10 +51,10 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Update()
         {
-            if(jumpCounter <= 4)
+            if(jumpCounter <= 10 && isVisible &&  position.Y > 0 && position.Y < 480)
             {
                 position = Volecity.getNewPosition(volecity, vDirection, hDirection, true, position);
-                if (volecity.vv < 0)
+                if (volecity.vv <= 0)
                 {
                     ItemChangeDirection();
                     volecity.vv = reset;
@@ -63,7 +62,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
                 System.Console.WriteLine(volecity.vv);
                 itemSprite.Update();
-            }else
+            }else 
             {
                 isVisible = false;
             }
