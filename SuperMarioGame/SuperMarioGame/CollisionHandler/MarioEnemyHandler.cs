@@ -15,6 +15,7 @@ namespace SuperMarioGame.CollisionHandler
                 switch (CollisionSide)
                 {
                     case 1:
+                        mario.bounce = true;
                         if (mario.HasStarPower)
                         {
                             enemy.BeFlipped();
@@ -44,9 +45,7 @@ namespace SuperMarioGame.CollisionHandler
                                         enemy.shellDirection = true;
                                         enemy.shellMoving = 2;
                                         }
-                                }
-                              
-                                //enemy.enemySprite.desRectangle;
+                                }                              
                             }
                         }
                         break;
