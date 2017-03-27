@@ -10,7 +10,7 @@ namespace SuperMarioGame.CollisionHandler
         public static void BlockHandler(IEnemy enemy, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
-            if (!enemy.flip&&block.isBroken==false)
+            if (!enemy.flip&&block.isBroken==false&&block.isVisible)
             {
                 switch (CollisionSide)
                 {
@@ -18,11 +18,6 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.X = enemy.enemySprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - 6;
                         enemy.position = newPosition;
-                        if (!block.isVisible && !block.isBroken)
-                        {
-                            enemy.BeFlipped();
-                            block.isBroken = true;
-                        }
                         break;
                     case 2:
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;

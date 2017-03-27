@@ -23,6 +23,8 @@ namespace SuperMarioGame.ElementClasses
         public Vector2 position { set; get; }
         public int gravity { get; set; }
         public bool jump { get; set; }
+        public bool bounce { get; set; }
+        private int bounceCount=0;
 
         internal int InvincibilityTime;
         private int counter, starCounter;
@@ -40,6 +42,7 @@ namespace SuperMarioGame.ElementClasses
             InvincibilityTime = 0;
             starCounter = 0;
             gravity = 4;
+            bounce = false;
         }
         public Mario(Vector2 position, int marioState, bool marioDirection)
         {
@@ -51,6 +54,7 @@ namespace SuperMarioGame.ElementClasses
             IsInvincible = false;
             InvincibilityTime = 0;
             gravity = 4;
+            bounce = false;
         }
         public void MarioIdle()
         {
@@ -111,6 +115,32 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
+            if (bounce)
+            {
+                if (bounceCount < 10)
+                {
+                    if (marioDirection == MARIO_LEFT)
+                    {
+                        if(marioAction == MARIO_RUN)
+                            position = new Vector2(position.X, position.Y - 7);
+                        else
+                            position = new Vector2(position.X - 3, position.Y - 7);
+                    }
+                    else
+                    {
+                        if (marioAction == MARIO_RUN)
+                            position = new Vector2(position.X, position.Y - 7);
+                        else
+                            position = new Vector2(position.X + 3, position.Y - 7);
+                    }
+                }
+                if (bounceCount>=10)
+                {
+                    bounceCount = 0;
+                    bounce = false;
+                }
+                bounceCount++;
+            }
             if(position.Y > 480)
             {
                 MarioDie();

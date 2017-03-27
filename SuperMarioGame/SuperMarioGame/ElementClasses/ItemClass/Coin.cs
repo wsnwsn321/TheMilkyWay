@@ -30,9 +30,17 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Draw()
         {
+            if(isVisible)
+            {
+                itemSprite.Draw(position);
+            }
+        }
+
+        public void Update()
+        {
             if (isVisible && jump)
             {
-                if(jumpCount < 20)
+                if (jumpCount < 20)
                 {
                     position = new Vector2(position.X, position.Y - 3);
                     itemSprite.Draw(position);
@@ -49,15 +57,6 @@ namespace SuperMarioGame.ElementClasses.ItemClass
                 }
                 jumpCount++;
             }
-            else if (isVisible)
-            {
-                itemSprite.Draw(position);
-            }
-
-        }
-
-        public void Update()
-        {
             itemSprite.Update();
         }
     }

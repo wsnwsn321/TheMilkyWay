@@ -84,7 +84,7 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
-        public void EnemyBlockCollision(IEnemy enemy, List<IBlock> envElements)
+        public void EnemyBlockCollision(Mario mario, IEnemy enemy, List<IBlock> envElements)
         {
             enemy.gravity = 3;
             foreach (IBlock block in envElements)
@@ -97,6 +97,8 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (!enemy.flip)
                             {
+                                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)&&mario.marioState!=Mario.MARIO_SMALL)
+                                    enemy.BeFlipped();
                                 enemy.gravity = 0;
                             }
                         }

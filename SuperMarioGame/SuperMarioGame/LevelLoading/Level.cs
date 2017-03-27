@@ -40,7 +40,7 @@ namespace SuperMarioGame.LevelLoading
             {
                 if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 32 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800))
                 {
-                    CollisionDetection.Instance.EnemyBlockCollision(enemy, envElements);
+                    CollisionDetection.Instance.EnemyBlockCollision(mario, enemy, envElements);
                     CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
                     enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
                     enemy.Update();

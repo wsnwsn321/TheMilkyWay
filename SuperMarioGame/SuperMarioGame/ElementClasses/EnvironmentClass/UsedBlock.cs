@@ -11,6 +11,8 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
 
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
+        public bool isBumped { get; set; }
+        public int bumpCount { get; set; }
         public UsedBlock(Vector2 pos)
         {
             position = pos;
@@ -27,7 +29,11 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
                 blockSprite.Draw(position);
             }
         }
-
+        public void Bump()
+        {
+            isBumped = true;
+            bumpCount = 11;
+        }
         public void Update()
         {
             blockSprite.Update();

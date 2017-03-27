@@ -13,6 +13,8 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
 
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
+        public bool isBumped { get; set; }
+        public int bumpCount { get; set; }
         public Pipe(Vector2 pos, int size)
         {
             position = pos;
@@ -28,6 +30,11 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
             {
                 blockSprite.Draw(position);
             }
+        }
+        public void Bump()
+        {
+            isBumped = true;
+            bumpCount = 9;
         }
 
         public void Update()
