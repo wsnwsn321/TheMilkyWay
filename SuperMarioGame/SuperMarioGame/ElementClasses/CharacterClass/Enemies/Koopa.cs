@@ -71,11 +71,11 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
                     
                     if (shellMoving==2)
                     {
-                        position = new Vector2(position.X - 2, position.Y);
+                        position = new Vector2(position.X - 4, position.Y);
                     }
                     else if(shellMoving==4)
                     {
-                        position = new Vector2(position.X + 2, position.Y);
+                        position = new Vector2(position.X + 4, position.Y);
                     }
                 } 
             }
