@@ -43,11 +43,12 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+3;
                         mario.position = newPosition;
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite)
-                        {
+                        {    
                             if(mario.marioState != Mario.MARIO_SMALL)
                             {
+                                block.Bump();
                                 block.isVisible = false;
-                                block.isBumped = true;
+                                
                                 //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
                                 BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), 1);
                                 BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y + 16), 2);
