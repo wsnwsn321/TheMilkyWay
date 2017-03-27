@@ -97,7 +97,7 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (!enemy.flip)
                             {
-                                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)&&mario.marioState!=Mario.MARIO_SMALL)
+                                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)&&mario.marioState!=Mario.MARIO_SMALL&&block.blockSprite is BrickBlockSprite)
                                     enemy.BeFlipped();
                                 enemy.gravity = 0;
                             }
