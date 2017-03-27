@@ -4,6 +4,7 @@ using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.Sprites;
+using SuperMarioGame.SpriteFactories;
 
 namespace SuperMarioGame.CollisionHandler
 {
