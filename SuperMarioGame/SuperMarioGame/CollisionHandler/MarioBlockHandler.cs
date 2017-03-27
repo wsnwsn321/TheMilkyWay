@@ -45,7 +45,7 @@ namespace SuperMarioGame.CollisionHandler
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite && mario.marioState != Mario.MARIO_SMALL)
                         {
                             block.isVisible = false;
-                            //block.isBroken = true;
+                            
                             //block.blockSprite = EnvironmentSpriteFactory.Instance.CreateBlockPiece2Sprite();
                             BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y),1);
                             BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y+16), 2);
