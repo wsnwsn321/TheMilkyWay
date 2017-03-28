@@ -1,13 +1,13 @@
 ﻿Chris Crain
 3-27-17
 Sprint4
-Name of file being reviewed: Volecity.cs
+Name of file being reviewed: Velocity.cs
 Author of file being reviewed: George Yang
 Specific Comments on code quality: 
 The code has some high cyclomatic complexity.  It could probably be shortened or simplified, but it works well 
 in the current implementation. 
 
 This class works very well when a change to the game is needed.  If I need to add velocity
-to another object, I just need to call the methods within the volecity.cs class to do so. 
+to another object, I just need to call the methods within the velocity.cs class to do so. 
 This code has high reuseability, but the maintainability can be challenging due to the 
 cyclomatic complexity issues. 
