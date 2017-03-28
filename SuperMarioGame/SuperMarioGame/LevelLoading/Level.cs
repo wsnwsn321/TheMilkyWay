@@ -145,8 +145,8 @@ namespace SuperMarioGame.LevelLoading
             backgroundElements = new List<IBackground>();
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel();
-            gameWidth = loader.GetWidth();
-            gameHeight = loader.GetHeight();
+            gameWidth = loader.width;
+            gameHeight = loader.height;
             mario.MarioIdle();
         }
     }
