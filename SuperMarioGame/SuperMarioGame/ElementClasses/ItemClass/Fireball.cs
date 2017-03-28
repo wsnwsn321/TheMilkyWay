@@ -59,37 +59,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
                     ItemChangeDirection();
                     volecity.vv = reset;
                 }
-
-                System.Console.WriteLine(volecity.vv);
-                itemSprite.Update();
-                
+                itemSprite.Update();                
             }else 
             {
                 isVisible = false;
-            }    
-           
-            //if (increment)
-            //{
-            //    jumpCounter++;
-            //}
-            //else
-            //{
-            //    jumpCounter--;
-            //}
-
-            //if (jumpCounter == 8 || jumpCounter == -1)
-            //{
-            //    increment = !increment;
-            //}
-
-            //if (hDirection)
-            //{
-            //    position = new Vector2(position.X + 5, position.Y - jumpCounter);
-            //}
-            //else
-            //{
-            //    position = new Vector2(position.X - 5, position.Y - jumpCounter);
-            //}
+            }              
         }
     }
 }
