@@ -1,19 +1,11 @@
 ﻿Nathan Pratt
-2-27-17
-Sprint3
-Name of file being reviewed: CollisionDetection
-Author of file being reviewed: Chris Crain
+3-27-17
+Sprint4
+Name of file being reviewed: BlockPiece.cs
+Author of file being reviewed: Oliver Wu
 
 Specific Comments on code quality:
-This class contains many properties that a high quality piece of code should have.
-This class has high cohesion; the class exhibits a very simple and concise structure
-that contains code that is all very related to its purpose, althought it does have many
-branches.
-The class also has loose coupling.
-
-The cyclomatic complexity is a bit high in this class but there is not really a better way of handling what the class
-needs to do.
-
-There is really no hypothetical change I would like to make to the class. If there were something that
-needed to be fixed or changed, it would be very simple to implement because of the relatively high quality of the
-class.
+This class has a very high cyclomatic complexity compared to some of the other classes, although it has
+relatively low cohesion and loose coupling.
+If I were to make a hypothetical change to this class, I would develop a better system for determining which 
+block piece specifically I was currently working with. This would help with decrease the cyclomatic complexity.
