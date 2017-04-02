@@ -27,7 +27,7 @@ namespace SuperMarioGame.LevelLoading
         private bool IsPaused { get; set;}
         int camX = 0;
 
-        internal Mario mario = new Mario(new Vector2(100, 358), Mario.MARIO_SMALL, false);
+        internal Mario mario = new Mario(new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
         Game1 myGame;
 
 
@@ -45,7 +45,7 @@ namespace SuperMarioGame.LevelLoading
             {
                 foreach (IEnemy enemy in enemyElements)
                 {
-                    if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.ViewportLeftConst && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ViewportRightConst))
+                    if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
                     {
                         CollisionDetection.Instance.EnemyBlockCollision(mario, enemy, envElements);
                         CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
@@ -106,7 +106,7 @@ namespace SuperMarioGame.LevelLoading
                 mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
                 mario.MarioUpdate();
 
-                if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - 800)
+                if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
                 {
                     camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
                 }
@@ -132,7 +132,7 @@ namespace SuperMarioGame.LevelLoading
             }
             foreach (IEnemy enemy in enemyElements)
             {
-                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-GameConstants.ViewportLeftConst && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ViewportRightConst))
+                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
                 {
                     enemy.Draw();
                 }
@@ -140,6 +140,11 @@ namespace SuperMarioGame.LevelLoading
             foreach(IItem fireBall in fireBallList)
             {
                 fireBall.Draw();
+            }
+
+            if(IsPaused)
+            {
+
             }
 
             mario.MarioDraw();
