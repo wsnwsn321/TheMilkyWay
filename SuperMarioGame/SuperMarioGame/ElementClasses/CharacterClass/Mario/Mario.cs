@@ -118,48 +118,52 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioUpdate()
         {
-            if (bounce)
+            if (canMove)
             {
-                if (bounceCount < 10)
+                if (bounce)
                 {
-                    if (marioDirection == MARIO_LEFT)
+                    if (bounceCount < 10)
                     {
-                        if(marioAction == MARIO_RUN)
-                            position = new Vector2(position.X, position.Y - 7);
+                        if (marioDirection == MARIO_LEFT)
+                        {
+                            if (marioAction == MARIO_RUN)
+                                position = new Vector2(position.X, position.Y - 7);
+                            else
+                                position = new Vector2(position.X - 3, position.Y - 7);
+                        }
                         else
-                            position = new Vector2(position.X - 3, position.Y - 7);
+                        {
+                            if (marioAction == MARIO_RUN)
+                                position = new Vector2(position.X, position.Y - 7);
+                            else
+                                position = new Vector2(position.X + 3, position.Y - 7);
+                        }
                     }
-                    else
+                    if (bounceCount >= 10)
                     {
-                        if (marioAction == MARIO_RUN)
-                            position = new Vector2(position.X, position.Y - 7);
-                        else
-                            position = new Vector2(position.X + 3, position.Y - 7);
+                        bounceCount = 0;
+                        bounce = false;
                     }
+                    bounceCount++;
                 }
-                if (bounceCount>=10)
+                if (position.Y > 480)
                 {
-                    bounceCount = 0;
-                    bounce = false;
+                    MarioDie();
                 }
-                bounceCount++;
-            }
-            if(position.Y > 480)
-            {
-                MarioDie();
-            }
-            state.Update();
-            counter++;
-            if(InvincibilityTime > 0 && counter > 20)
-            {
-                IsInvincible = true;
-                InvincibilityTime--;
-                counter = 0;
-            } else if (InvincibilityTime == 0 && counter > 20)
-            {
-                IsInvincible = false;
-                HasStarPower = false;
-                counter = 0;
+                state.Update();
+                counter++;
+                if (InvincibilityTime > 0 && counter > 20)
+                {
+                    IsInvincible = true;
+                    InvincibilityTime--;
+                    counter = 0;
+                }
+                else if (InvincibilityTime == 0 && counter > 20)
+                {
+                    IsInvincible = false;
+                    HasStarPower = false;
+                    counter = 0;
+                }
             }
         }
         public void MarioChangeDireciton()
