@@ -37,6 +37,7 @@ namespace SuperMarioGame.Controller
             
             {
                 KeyboardState NewState = Keyboard.GetState();
+
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
                 if (pressedKeys.Length == 0)
                 {

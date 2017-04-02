@@ -1,10 +1,8 @@
 ﻿using SuperMarioGame.ElementClasses.EnvironmentClass;
 using Microsoft.Xna.Framework;
-using System.Diagnostics;
 using System.IO;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
-using System;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 
 namespace SuperMarioGame.LevelLoading
@@ -21,15 +19,15 @@ namespace SuperMarioGame.LevelLoading
             this.level = level;
         }
 
-        public void LoadLevel()
+        public void LoadLevel(string levelToLoad)
         {
             x = 0;
             y = 0;
-            ReadLevelFile();
+            ReadLevelFile(levelToLoad);
         }
-        private void ReadLevelFile()
+        private void ReadLevelFile(string levelToLoad)
         {
-            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\Sprint4Level.csv");
+            StreamReader stream = new StreamReader(levelToLoad);
             string line;
             while((line = stream.ReadLine()) != null)
             {

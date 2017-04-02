@@ -5,7 +5,6 @@ using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses.ItemClass;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -17,10 +16,15 @@ namespace SuperMarioGame.LevelLoading
         internal List<IBackground> backgroundElements = new List<IBackground>();
         internal List<IItem> fireBallList = new List<IItem>();
         internal Stack<int> deleteList = new Stack<int>();
-    
-        //private float gravity = 3;
-        //private int height;
+
+        private List<IBlock> tempEnvElements = new List<IBlock>();
+        private List<IItem> tempItemElements = new List<IItem>();
+        private List<IEnemy> tempEnemyElements = new List<IEnemy>();
+        private List<IBackground> tempBackgroundElements = new List<IBackground>();
+
+        public string currentLevel { get; set; }
         private int gameWidth, gameHeight;
+        private bool IsPaused { get; set;}
         int camX = 0;
 
         internal Mario mario = new Mario(new Vector2(100, 358), Mario.MARIO_SMALL, false);
@@ -31,77 +35,81 @@ namespace SuperMarioGame.LevelLoading
         {
            
             myGame = game;
+            currentLevel = GameConstants.OverworldLevel;
+            IsPaused = false;
         }
 
         public void Update()
         {
-
-            foreach (IEnemy enemy in enemyElements)
+            if (!IsPaused)
             {
-                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 32 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800))
+                foreach (IEnemy enemy in enemyElements)
                 {
-                    CollisionDetection.Instance.EnemyBlockCollision(mario, enemy, envElements);
-                    CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
-                    enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
-                    enemy.Update();
+                    if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.ViewportLeftConst && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ViewportRightConst))
+                    {
+                        CollisionDetection.Instance.EnemyBlockCollision(mario, enemy, envElements);
+                        CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
+                        enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
+                        enemy.Update();
+                    }
                 }
-            }
 
-            foreach (IItem item in itemElements)
-            {
-                CollisionDetection.Instance.ItemBlockCollision(item, envElements);
-
-                if (!(item is Flower) && !(item is Coin))
+                foreach (IItem item in itemElements)
                 {
-                    item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
+                    CollisionDetection.Instance.ItemBlockCollision(item, envElements);
+
+                    if (!(item is Flower) && !(item is Coin))
+                    {
+                        item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
+                    }
+                    item.Update();
                 }
-                item.Update();
-            }
-            
 
-            
-            foreach (IItem item in fireBallList)
-            {
-                
-                CollisionDetection.Instance.ItemBlockCollision(item,envElements);
-                CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
 
-            
-                if (!item.isVisible)
+
+                foreach (IItem item in fireBallList)
                 {
-                    deleteList.Push(fireBallList.IndexOf(item));
+
+                    CollisionDetection.Instance.ItemBlockCollision(item, envElements);
+                    CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
+
+
+                    if (!item.isVisible)
+                    {
+                        deleteList.Push(fireBallList.IndexOf(item));
+                    }
+                    item.Update();
                 }
-                item.Update();
-            }
 
-            while(deleteList.Count > 0)
-            {
-                fireBallList.RemoveAt(deleteList.Pop());
-            }
-            
+                while (deleteList.Count > 0)
+                {
+                    fireBallList.RemoveAt(deleteList.Pop());
+                }
 
 
-            foreach (IBlock block in envElements)
-            {
-                block.Update();
-            }
+
+                foreach (IBlock block in envElements)
+                {
+                    block.Update();
+                }
 
 
-            foreach (IBackground back in backgroundElements)
-            {
-                CollisionDetection.Instance.MarioFlagCollision(mario, backgroundElements);
-                back.Update();
-            }
-            CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
-            CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
-            CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+                foreach (IBackground back in backgroundElements)
+                {
+                    CollisionDetection.Instance.MarioFlagCollision(mario, backgroundElements);
+                    back.Update();
+                }
+                CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
+                CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
+                CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
 
-            mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
-            mario.MarioUpdate();
+                mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
+                mario.MarioUpdate();
 
-            if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - 800)
-            {
-                camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
+                if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - 800)
+                {
+                    camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
+                }
             }
             
         }
@@ -124,7 +132,7 @@ namespace SuperMarioGame.LevelLoading
             }
             foreach (IEnemy enemy in enemyElements)
             {
-                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-32 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + 800))
+                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-GameConstants.ViewportLeftConst && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ViewportRightConst))
                 {
                     enemy.Draw();
                 }
@@ -144,10 +152,28 @@ namespace SuperMarioGame.LevelLoading
             enemyElements = new List<IEnemy>();
             backgroundElements = new List<IBackground>();
             LevelLoader loader = new LevelLoader(this);
-            loader.LoadLevel();
+            loader.LoadLevel(currentLevel);
             gameWidth = loader.width;
             gameHeight = loader.height;
             mario.MarioIdle();
+        }
+
+        public void ChangeLevel(string newLevel)
+        {
+            this.currentLevel = newLevel;
+        }
+
+        private void StoreElements()
+        {
+            tempBackgroundElements = backgroundElements;
+            tempEnemyElements = enemyElements;
+            tempEnvElements = envElements;
+            tempItemElements = itemElements;
+        }
+
+        public void Pause()
+        {
+            IsPaused = !IsPaused;
         }
     }
 }

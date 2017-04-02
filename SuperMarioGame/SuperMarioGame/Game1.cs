@@ -7,6 +7,7 @@ using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
+using SuperMarioGame.GameState;
 
 namespace SuperMarioGame
 
@@ -19,6 +20,7 @@ namespace SuperMarioGame
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
         internal Level level;
+        internal GameStateHandler gameStateHandler;
         private bool freeze = false;
         private int freezeCount = 0;
 
@@ -34,6 +36,7 @@ namespace SuperMarioGame
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
             level = new Level(this);
+            gameStateHandler = new GameStateHandler(level);
 
             InitializeCommands();
 
@@ -92,6 +95,7 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.D, new MarioRightCommand(this));
             keyboardController.RegisterCommand(Keys.S, new MarioCrouchCommand(this));
 
+            keyboardController.RegisterCommand(Keys.Space, new PauseGameCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             keyboardController.RegisterCommand(Keys.C, new MarioChangeFormCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
