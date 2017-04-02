@@ -19,6 +19,9 @@ namespace SuperMarioGame.HUDElements
 
         public void Draw()
         {
+            FontPos = new Vector2(GameConstants.ScreenWidth / 2 - myGame.GraphicsDevice.Viewport.X,
+                GameConstants.ScreenHeight / 2);
+
             // Draw Pause
             string output = "P A U S E D";
 
