@@ -21,6 +21,7 @@ namespace SuperMarioGame
         internal KeyboardController keyboardController;
         internal Level level;
         internal GameStateHandler gameStateHandler;
+        internal SpriteFont font;
         private bool freeze = false;
         private int freezeCount = 0;
 
@@ -117,6 +118,7 @@ namespace SuperMarioGame
             EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            font = Content.Load<SpriteFont>(@"SpriteFonts\Courier New");
         }
 
         public void ResetGame()

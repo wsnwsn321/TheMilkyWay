@@ -457,3 +457,9 @@
 /processorParam:TextureFormat=Color
 /build:Background/Flag.png
 
+#begin SpriteFonts/Courier New.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:SpriteFonts/Courier New.spritefont
+

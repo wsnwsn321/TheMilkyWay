@@ -7,7 +7,7 @@ namespace SuperMarioGame.Commands
     {
         private Game1 myGame;
         private ElementClasses.Mario mario;
-        private int jumpTime=50;
+        private int jumpTime = 50;
         private double jumpForce = 12;
         private double decay = 0;
         public bool wDown;
@@ -17,44 +17,47 @@ namespace SuperMarioGame.Commands
             myGame = game;
             mario = myGame.level.mario;
         }
-        
+
         public void Execute()
         {
-            if (!mario.jump)
+            if (mario.canMove)
             {
-                jumpTime = 0;
-            }
-            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
-            {
-                if (jumpTime > 0)
+                if (!mario.jump)
                 {
-                    mario.MarioJump();
-                    mario.position = new Vector2(mario.position.X, mario.position.Y - (float)(jumpForce - decay));
-                    decay += jumpForce / 50;
-
-                    jumpTime--;
-                    if (mario.gravity == 0 && !wDown)
+                    jumpTime = 0;
+                }
+                if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+                {
+                    if (jumpTime > 0)
                     {
-                        decay = 0;
-                        jumpTime = 50;
-                        mario.jump = true;
+                        mario.MarioJump();
+                        mario.position = new Vector2(mario.position.X, mario.position.Y - (float)(jumpForce - decay));
+                        decay += jumpForce / 50;
+
+                        jumpTime--;
+                        if (mario.gravity == 0 && !wDown)
+                        {
+                            decay = 0;
+                            jumpTime = 50;
+                            mario.jump = true;
+                        }
+                        else if (!wDown)
+                        {
+                            mario.jump = false;
+                        }
                     }
-                    else if (!wDown)
+                    else
                     {
                         mario.jump = false;
+                        if (mario.gravity == 0 && !wDown)
+                        {
+                            decay = 0;
+                            jumpTime = 50;
+                            mario.jump = true;
+                        }
                     }
                 }
-                else
-                {
-                    mario.jump = false;
-                    if (mario.gravity == 0 && !wDown)
-                    {
-                        decay = 0;
-                        jumpTime = 50;
-                        mario.jump = true;
-                    }
-                }
-            }           
+            }
         }
     }
 }

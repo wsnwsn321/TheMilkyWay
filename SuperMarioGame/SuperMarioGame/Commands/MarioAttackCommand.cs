@@ -19,7 +19,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (myGame.level.fireBallList.Count <= 1)
+            if (myGame.level.fireBallList.Count <= 1 && mario.canMove)
             {
                 if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
                 {

@@ -14,24 +14,27 @@
 
         public void Execute()
         {
-            counter++;
-            if (counter >= 10)
+            if (mario.canMove)
             {
-                switch (mario.marioState)
+                counter++;
+                if (counter >= 10)
                 {
-                    case ElementClasses.Mario.MARIO_SMALL:
-                        mario.MarioChangeForm(ElementClasses.Mario.MARIO_BIG);
-                        break;
-                    case ElementClasses.Mario.MARIO_BIG:
-                        mario.MarioChangeForm(ElementClasses.Mario.MARIO_FIRE);
-                        break;
-                    case ElementClasses.Mario.MARIO_FIRE:
-                        mario.MarioChangeForm(ElementClasses.Mario.MARIO_SMALL);
-                        break;
-                    default:
-                        break;
+                    switch (mario.marioState)
+                    {
+                        case ElementClasses.Mario.MARIO_SMALL:
+                            mario.MarioChangeForm(ElementClasses.Mario.MARIO_BIG);
+                            break;
+                        case ElementClasses.Mario.MARIO_BIG:
+                            mario.MarioChangeForm(ElementClasses.Mario.MARIO_FIRE);
+                            break;
+                        case ElementClasses.Mario.MARIO_FIRE:
+                            mario.MarioChangeForm(ElementClasses.Mario.MARIO_SMALL);
+                            break;
+                        default:
+                            break;
+                    }
+                    counter = 0;
                 }
-                counter = 0;
             }
         }
     }

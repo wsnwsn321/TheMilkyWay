@@ -25,6 +25,7 @@ namespace SuperMarioGame.ElementClasses
         public int gravity { get; set; }
         public bool jump { get; set; }
         public bool bounce { get; set; }
+        public bool canMove { get; set; }
         private int bounceCount=0;
 
         internal int InvincibilityTime;
@@ -39,6 +40,7 @@ namespace SuperMarioGame.ElementClasses
             this.position = position;
             IsInvincible = false;
             HasStarPower = false;
+            canMove = true;
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
             starCounter = 0;
@@ -194,6 +196,7 @@ namespace SuperMarioGame.ElementClasses
         {
             state.Attack();
         }
+
 
     }
 }

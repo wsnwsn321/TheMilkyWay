@@ -4,6 +4,7 @@ using SuperMarioGame.CollisionHandler;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses.ItemClass;
+using SuperMarioGame.HUDElements;
 using System.Collections.Generic;
 
 namespace SuperMarioGame.LevelLoading
@@ -21,6 +22,7 @@ namespace SuperMarioGame.LevelLoading
         private List<IItem> tempItemElements = new List<IItem>();
         private List<IEnemy> tempEnemyElements = new List<IEnemy>();
         private List<IBackground> tempBackgroundElements = new List<IBackground>();
+        private PauseText pauseText;
 
         public string currentLevel { get; set; }
         private int gameWidth, gameHeight;
@@ -43,6 +45,7 @@ namespace SuperMarioGame.LevelLoading
         {
             if (!IsPaused)
             {
+                mario.canMove = true;
                 foreach (IEnemy enemy in enemyElements)
                 {
                     if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
@@ -111,6 +114,10 @@ namespace SuperMarioGame.LevelLoading
                     camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
                 }
             }
+            else
+            {
+                mario.canMove = false;
+            }
             
         }
 
@@ -144,7 +151,7 @@ namespace SuperMarioGame.LevelLoading
 
             if(IsPaused)
             {
-
+                pauseText.Draw();
             }
 
             mario.MarioDraw();
@@ -156,6 +163,7 @@ namespace SuperMarioGame.LevelLoading
             itemElements = new List<IItem>();
             enemyElements = new List<IEnemy>();
             backgroundElements = new List<IBackground>();
+            pauseText = new PauseText(myGame);
             LevelLoader loader = new LevelLoader(this);
             loader.LoadLevel(currentLevel);
             gameWidth = loader.width;

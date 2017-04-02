@@ -7,6 +7,7 @@
 
         public const int SquareWidth = 32;
         public const int ScreenWidth = 800;
+        public const int ScreenHeight = 480;
 
         public const int MarioStartingX = 100;
         public const int MarioStartingY = 358;

@@ -87,6 +87,7 @@
     <Compile Include="GameConstants.cs" />
     <Compile Include="GameState\GameStateHandler.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HUDElements\PauseText.cs" />
     <Compile Include="LevelLoading\Level.cs" />
     <Compile Include="LevelLoading\LevelLoader.cs" />
     <Compile Include="Program.cs" />

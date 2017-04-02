@@ -15,7 +15,7 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD && mario.canMove)
             {
                 if (mario.marioDirection)
                 {
