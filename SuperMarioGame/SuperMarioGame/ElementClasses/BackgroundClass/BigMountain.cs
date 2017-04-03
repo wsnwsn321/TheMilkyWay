@@ -7,6 +7,8 @@ namespace SuperMarioGame.ElementClasses.BackgroundClass
     {
         public ISprite backgroundSprite { get; set; }
         public Vector2 position { get; set; }
+        public bool moveDown { get; set; }
+
 
         public BigMountain(Vector2 pos)
         {

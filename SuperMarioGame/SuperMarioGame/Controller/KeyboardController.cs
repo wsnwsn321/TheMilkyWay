@@ -7,7 +7,7 @@ namespace SuperMarioGame.Controller
     public class KeyboardController
     {
       
-        private Dictionary<Keys, ICommand> controllerMappings;
+        public Dictionary<Keys, ICommand> controllerMappings;
         KeyboardState OldState;
         private bool wDown;
         private static int resetOnce=1;
@@ -34,7 +34,7 @@ namespace SuperMarioGame.Controller
                 controllerMappings[Keys.R].Execute();
                 resetOnce++;
             }
-            
+            if(keysEnabled)
             {
                 KeyboardState NewState = Keyboard.GetState();
 
@@ -46,7 +46,7 @@ namespace SuperMarioGame.Controller
 
                 foreach (Keys key in pressedKeys)
                 {
-                    if (controllerMappings.ContainsKey(key))
+                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P))
                     {
                         if (key.Equals(Keys.W))
                         {

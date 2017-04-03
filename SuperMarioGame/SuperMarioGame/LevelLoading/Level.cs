@@ -5,6 +5,7 @@ using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.HUDElements;
+using SuperMarioGame.SpriteFactories;
 using System.Collections.Generic;
 
 namespace SuperMarioGame.LevelLoading
@@ -29,7 +30,7 @@ namespace SuperMarioGame.LevelLoading
         private bool IsPaused { get; set;}
         int camX = 0;
 
-        internal Mario mario = new Mario(new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
+        internal Mario mario;
         Game1 myGame;
 
 
@@ -39,10 +40,11 @@ namespace SuperMarioGame.LevelLoading
             myGame = game;
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
+            mario = new Mario(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
         }
 
         public void Update()
-        {
+        {            
             if (!IsPaused)
             {
                 mario.canMove = true;
@@ -102,16 +104,22 @@ namespace SuperMarioGame.LevelLoading
                     CollisionDetection.Instance.MarioFlagCollision(mario, backgroundElements);
                     back.Update();
                 }
-                CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
-                CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
-                CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
-
-                mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
-                mario.MarioUpdate();
-
-                if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
+                if (!mario.animated)
                 {
-                    camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
+                    CollisionDetection.Instance.MarioBlockCollision(myGame, mario, envElements);
+                    CollisionDetection.Instance.MarioEnemyCollision(mario, enemyElements);
+                    CollisionDetection.Instance.MarioItemCollision(mario, itemElements);
+                    mario.position = new Vector2(mario.position.X, mario.position.Y + mario.gravity);
+                    mario.MarioUpdate();
+
+                    if ((mario.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
+                    {
+                        camX -= (int)(mario.position.X + myGame.GraphicsDevice.Viewport.X - 400);
+                    }
+                }
+                else
+                {
+                    mario.FlagAnimationUpdate();
                 }
             }
             else
@@ -153,8 +161,10 @@ namespace SuperMarioGame.LevelLoading
             {
                 pauseText.Draw();
             }
-
-            mario.MarioDraw();
+            if (mario.isVisible)
+            {
+                mario.MarioDraw();
+            }
         }
         
         public void Load()

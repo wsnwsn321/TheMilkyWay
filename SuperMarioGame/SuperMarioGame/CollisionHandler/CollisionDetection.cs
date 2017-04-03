@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.Sprites;
 using SuperMarioGame.SpriteFactories;
+using Microsoft.Xna.Framework.Input;
+using SuperMarioGame.ElementClasses.BackgroundClass;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -16,6 +18,7 @@ namespace SuperMarioGame.CollisionHandler
         public const int TOP = 1, RIGHT = 2, BOTTOM = 3, LEFT = 4;
         public int SIDE;
         Game1 myGame;
+        private bool animation = false;
 
         private static CollisionDetection instance = new CollisionDetection();
 
@@ -227,16 +230,25 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioFlagCollision(Mario mario, List<IBackground> backgroundElements)
         {
-            foreach (IBackground bg in backgroundElements)
+            if (!mario.animated)
             {
-                if(bg.backgroundSprite is FlagpoleSprite)
+                animation = false;
+            }
+            if (!animation)
+            {
+                foreach (IBackground bg in backgroundElements)
                 {
-                    if(mario.state.marioSprite.desRectangle.Intersects(bg.backgroundSprite.desRectangle))
+                    if (bg is Flag)
                     {
-                        myGame.keyboardController.keysEnabled = false;
+                        if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
+                        {
+                            myGame.keyboardController.keysEnabled = false;
+                            bg.moveDown = true;
+                            mario.animated = true;
+                            animation = true;
+                        }
                     }
                 }
-
             }
         }
 

@@ -102,6 +102,10 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
+            //arbitrarily choose p for flagpole animation command
+            //p is disabled in KeyboardController.cs
+            keyboardController.RegisterCommand(Keys.P, new MarioFlagpoleCommand(this));
+
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));

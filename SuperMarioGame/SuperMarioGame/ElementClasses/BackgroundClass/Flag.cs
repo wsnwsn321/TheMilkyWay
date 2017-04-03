@@ -7,7 +7,7 @@ namespace SuperMarioGame.ElementClasses.BackgroundClass
     {
         public ISprite backgroundSprite { get; set; }
         public Vector2 position { get; set; }
-
+        public bool moveDown { get; set; }
         public Flag(Vector2 pos)
         {
             position = pos;
@@ -21,6 +21,17 @@ namespace SuperMarioGame.ElementClasses.BackgroundClass
 
         public void Update()
         {
+            if(moveDown)
+            {
+                if (position.Y < GameConstants.ScreenHeight - 132)
+                {
+                    position = new Vector2(position.X, position.Y + 4);
+                }else
+                {
+                    moveDown = false;
+                }
+
+            }
             backgroundSprite.Update();
         }
     }

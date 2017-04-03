@@ -50,6 +50,7 @@
     <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioAttackCommand.cs" />
+    <Compile Include="Commands\MarioFlagpoleCommand.cs" />
     <Compile Include="Commands\MarioRightCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
     <Compile Include="Commands\MarioLeftCommand.cs" />
@@ -104,9 +105,15 @@
     <Compile Include="Sprites\BackgroundSprite\SmallBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallMountainSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\BigMarioSprite\LeftFlagBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\BigMarioSprite\RightFlagBigMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftAttackingMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightFlagFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftFlagFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\IMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\SmallMarioSprite\RightFlagSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftFlagSmallMarioSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece4Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />

@@ -1,10 +1,13 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMarioGame.ElementClasses
 {
     public class Mario
     {
+        private Game1 myGame;
+
         public IMarioState state { set; get; }
 
         public bool IsInvincible { get; set; }
@@ -26,13 +29,18 @@ namespace SuperMarioGame.ElementClasses
         public bool jump { get; set; }
         public bool bounce { get; set; }
         public bool canMove { get; set; }
+        public bool animated { get; set; }
+        public bool isVisible { get; set; }
+
+
         private int bounceCount=0;
 
         internal int InvincibilityTime;
         private int counter, starCounter;
 
-        public Mario(Vector2 position)
+        public Mario(Game1 game, Vector2 position)
         {
+            myGame = game;
             marioState = MARIO_SMALL;
             prevMarioState = marioState;
             marioDirection = MARIO_LEFT;
@@ -46,9 +54,12 @@ namespace SuperMarioGame.ElementClasses
             starCounter = 0;
             gravity = 4;
             bounce = false;
+            animated = false;
+            isVisible = true;
         }
-        public Mario(Vector2 position, int marioState, bool marioDirection)
+        public Mario(Game1 game, Vector2 position, int marioState, bool marioDirection)
         {
+            myGame = game;
             this.marioState = marioState;
             this.marioDirection = marioDirection;
             marioAction = MARIO_IDLE;
@@ -58,6 +69,8 @@ namespace SuperMarioGame.ElementClasses
             InvincibilityTime = 0;
             gravity = 4;
             bounce = false;
+            animated = false;
+            isVisible = true;
         }
         public void MarioIdle()
         {
@@ -103,18 +116,22 @@ namespace SuperMarioGame.ElementClasses
         }
         public virtual void MarioDraw()
         {
-            if (HasStarPower)
+            //if (isVisible)
             {
-                starCounter++;
-                if(starCounter % 20 == 0)
+                if (HasStarPower)
                 {
-                    state.marioSprite.tintColor = Color.White;
-                }  else if (starCounter % 20 == 10) 
-                {
-                    state.marioSprite.tintColor = Color.Brown;
+                    starCounter++;
+                    if (starCounter % 20 == 0)
+                    {
+                        state.marioSprite.tintColor = Color.White;
+                    }
+                    else if (starCounter % 20 == 10)
+                    {
+                        state.marioSprite.tintColor = Color.Brown;
+                    }
                 }
+                state.Draw(position);
             }
-            state.Draw(position);
         }
         public void MarioUpdate()
         {
@@ -200,7 +217,10 @@ namespace SuperMarioGame.ElementClasses
         {
             state.Attack();
         }
-
-
+        public void FlagAnimationUpdate()
+        {
+            myGame.keyboardController.controllerMappings[Keys.P].Execute();
+            state.Update();
+        }
     }
 }
