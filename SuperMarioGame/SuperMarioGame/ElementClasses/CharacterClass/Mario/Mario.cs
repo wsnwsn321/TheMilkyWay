@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMarioGame.ElementClasses
 {
@@ -32,11 +33,14 @@ namespace SuperMarioGame.ElementClasses
         public bool animated { get; set; }
         public bool isVisible { get; set; }
 
+        public bool isScored { get; set; }
+        public int score { get; set; }
+        public Vector2 textPosition { get; set; }
 
         private int bounceCount=0;
 
         internal int InvincibilityTime;
-        private int counter, starCounter;
+        private int counter, starCounter, scoreCounter;
 
         public Mario(Game1 game, Vector2 position)
         {
@@ -52,10 +56,12 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
             starCounter = 0;
+            scoreCounter = 0;
             gravity = 4;
             bounce = false;
             animated = false;
             isVisible = true;
+            isScored = false;
         }
         public Mario(Game1 game, Vector2 position, int marioState, bool marioDirection)
         {
@@ -129,6 +135,10 @@ namespace SuperMarioGame.ElementClasses
                     {
                         state.marioSprite.tintColor = Color.Brown;
                     }
+                }
+                if (isScored)
+                {
+                    DrawScore(score);
                 }
                 state.Draw(position);
             }
@@ -221,6 +231,33 @@ namespace SuperMarioGame.ElementClasses
         {
             myGame.keyboardController.controllerMappings[Keys.P].Execute();
             state.Update();
+        }
+
+        public void DrawScore(int ScoreNumber)
+        {
+            Vector2 newPos;
+            newPos.X = textPosition.X;
+            newPos.Y = textPosition.Y;
+            String output = ""+ScoreNumber;
+            Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
+            myGame.spriteBatch.Begin();
+
+                if (scoreCounter <= 20)
+                {
+                    textPosition = new Vector2(newPos.X, newPos.Y - 3);
+                    myGame.spriteBatch.DrawString(myGame.font, output, newPos, Color.White,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 1f);
+                scoreCounter++;
+                }
+            else
+            {
+                scoreCounter = 0;
+                 isScored = false;
+            }
+               
+
+
+            myGame.spriteBatch.End();
         }
     }
 }

@@ -25,6 +25,13 @@ namespace SuperMarioGame.CollisionHandler
                             if(mario.state.marioSprite.desRectangle.Bottom < enemy.enemySprite.desRectangle.Bottom)
                             {
                                 enemy.BeStomped();
+                                mario.isScored = true;
+                                mario.score = 100;
+                                Vector2 newP;
+                                newP.X = mario.position.X;
+                                newP.Y = mario.position.Y-3;
+                                mario.textPosition = newP;
+                                
                             }
                             else if(enemy.enemySprite is KoopaStompedSprite)
                             {
