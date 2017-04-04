@@ -71,7 +71,7 @@ namespace SuperMarioGame.Commands
                         }
                         else
                         {
-                            if(wait2 < 50)
+                            if(wait2 < 60)
                             {
                                 mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
                                 wait2++;
@@ -127,7 +127,7 @@ namespace SuperMarioGame.Commands
                         }
                         else
                         {
-                            if (wait2 < 50)
+                            if (wait2 < 60)
                             {
                                 mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
                                 wait2++;
@@ -184,7 +184,7 @@ namespace SuperMarioGame.Commands
                         }
                         else
                         {
-                            if (wait2 < 50)
+                            if (wait2 < 60)
                             {
                                 mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
                                 wait2++;
