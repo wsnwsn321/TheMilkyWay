@@ -89,6 +89,7 @@
     <Compile Include="GameState\GameStateHandler.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\PauseText.cs" />
+    <Compile Include="HUDElements\ScoreSystem.cs" />
     <Compile Include="LevelLoading\Level.cs" />
     <Compile Include="LevelLoading\LevelLoader.cs" />
     <Compile Include="Program.cs" />
@@ -257,6 +258,9 @@
     <Content Include="LevelLoading\LevelFiles\Sprint4Level.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sound\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

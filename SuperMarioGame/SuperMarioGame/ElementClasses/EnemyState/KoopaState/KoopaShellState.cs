@@ -28,6 +28,7 @@ namespace SuperMarioGame.ElementClasses.EnemyState.KoopaState
         public void BeStomped()
         {
             koopa.koopaAction = Koopa.KOOPA_SHELL;
+//            koopa.shellDirection = true;
         }
 
         public void ChangeDirection()

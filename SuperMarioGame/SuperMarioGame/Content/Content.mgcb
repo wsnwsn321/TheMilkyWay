@@ -463,3 +463,135 @@
 /processorParam:TextureFormat=Compressed
 /build:SpriteFonts/Courier New.spritefont
 
+#begin Sound/Mario/smb_1-up.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_1-up.wav
+
+#begin Sound/Mario/smb_bowserfall.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_bowserfall.wav
+
+#begin Sound/Mario/smb_breakblock.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_breakblock.wav
+
+#begin Sound/Mario/smb_bump.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_bump.wav
+
+#begin Sound/Mario/smb_coin.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_coin.wav
+
+#begin Sound/Mario/smb_fireball.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_fireball.wav
+
+#begin Sound/Mario/smb_fireworks.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_fireworks.wav
+
+#begin Sound/Mario/smb_flagpole.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_flagpole.wav
+
+#begin Sound/Mario/smb_gameover.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_gameover.wav
+
+#begin Sound/Mario/smb_jumpsmall.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_jumpsmall.wav
+
+#begin Sound/Mario/smb_jump-super.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_jump-super.wav
+
+#begin Sound/Mario/smb_kick.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_kick.wav
+
+#begin Sound/Mario/smb_mariodie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_mariodie.wav
+
+#begin Sound/Mario/smb_pause.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_pause.wav
+
+#begin Sound/Mario/smb_pipe.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_pipe.wav
+
+#begin Sound/Mario/smb_powerup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_powerup.wav
+
+#begin Sound/Mario/smb_powerup_appears.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_powerup_appears.wav
+
+#begin Sound/Mario/smb_stage_clear.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_stage_clear.wav
+
+#begin Sound/Mario/smb_stomp.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_stomp.wav
+
+#begin Sound/Mario/smb_vine.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_vine.wav
+
+#begin Sound/Mario/smb_warning.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_warning.wav
+
+#begin Sound/Mario/smb_world_clear.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Mario/smb_world_clear.wav
+
