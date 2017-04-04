@@ -8,6 +8,7 @@ using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.GameState;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame
 
@@ -50,6 +51,7 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
             level.Load();
+           
         }
 
         protected override void UnloadContent()
@@ -59,6 +61,8 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {
+           
+           
             if (!freeze)
             {
                 level.Update();
@@ -79,7 +83,7 @@ namespace SuperMarioGame
                     ResetGame();
                 }
             }
-
+            MarioSoundManager.instance.playSound(MarioSoundManager.JUMPSMALL);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -122,6 +126,7 @@ namespace SuperMarioGame
             EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            MarioSoundManager.instance.LoadSound(Content);
             font = Content.Load<SpriteFont>(@"SpriteFonts\Courier New");
         }
 
