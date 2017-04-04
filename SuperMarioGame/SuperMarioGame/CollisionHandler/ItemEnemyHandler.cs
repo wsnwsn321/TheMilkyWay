@@ -8,25 +8,25 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void EnemyHandler(IItem item, IEnemy enemy, int CollisionSide)
         {
-            if (!(enemy.enemySprite is GoombaStompedSprite) && !(enemy.enemySprite is KoopaStompedSprite) && item.itemSprite is FireballSprite)
+            if (item.isVisible && !(enemy.enemySprite is GoombaStompedSprite) && !(enemy.enemySprite is KoopaStompedSprite) && item.itemSprite is FireballSprite)
             {
                 switch (CollisionSide)
                 {
                     case 1:
                         item.isVisible = false;
-                        enemy.BeStomped();
+                        enemy.BeFlipped();
                         break;
                     case 2:
                         item.isVisible = false;
-                        enemy.BeStomped();
+                        enemy.BeFlipped();
                         break;
                     case 3:
                         item.isVisible = false;
-                        enemy.BeStomped();
+                        enemy.BeFlipped();
                         break;
                     case 4:
                         item.isVisible = false;
-                        enemy.BeStomped();
+                        enemy.BeFlipped();
                         break;
                 }
             }

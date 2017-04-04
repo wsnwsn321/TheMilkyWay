@@ -11,7 +11,6 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D groundBlockSpritesheet;
         private Texture2D pipeSpritesheet;
         private Texture2D stageBlockSpritesheet;
-        private Texture2D blockPieceSpritesheet;
         public SpriteBatch sb { get; set; }
         private static EnvironmentSpriteFactory instance = new EnvironmentSpriteFactory();
 
@@ -38,15 +37,15 @@ namespace SuperMarioGame.SpriteFactories
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
             stageBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
-            //blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
+         
             this.sb = sb;
 
         }
 
         //create environment sprites
-        public Sprites.ISprite CreatePipeSprite()
+        public Sprites.ISprite CreatePipeSprite(int size)
         {
-            return new Sprites.PipeSprite(pipeSpritesheet,sb);
+            return new Sprites.PipeSprite(pipeSpritesheet,sb,size);
         }
 
         public Sprites.ISprite CreateUsedBlockSprite()
@@ -78,23 +77,8 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.StageBlockSprite(stageBlockSpritesheet, sb);
         }
 
-        public Sprites.ISprite CreateBlockPiece1Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
 
-        public Sprites.ISprite CreateBlockPiece2Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece3Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece4Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
+      
 
     }
 }

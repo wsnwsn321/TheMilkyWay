@@ -19,18 +19,30 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
+            if (myGame.level.fireBallList.Count <= 1 && mario.canMove)
             {
-                mario.Attack();
-                Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + 13));
-                if (mario.state.marioSprite is RightAttackingMarioSprite)
+                if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
                 {
-                    myGame.level.itemElements.Add(fball);
-                }
-                else if(mario.state.marioSprite is LeftAttackingMarioSprite)
-                {
-                    fball.changeDirection = !fball.changeDirection;
-                    myGame.level.itemElements.Add(fball);                
+                    mario.Attack();
+                    Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + 25));
+                    if (mario.state.marioSprite is RightAttackingMarioSprite)
+                    {
+
+
+                        myGame.level.fireBallList.Add(fball);
+
+
+                    }
+                    else if (mario.state.marioSprite is LeftAttackingMarioSprite)
+                    {
+
+                        
+                            fball.hDirection = !fball.hDirection;
+                            myGame.level.fireBallList.Add(fball);
+                       
+
+
+                    }
                 }
             }
         }

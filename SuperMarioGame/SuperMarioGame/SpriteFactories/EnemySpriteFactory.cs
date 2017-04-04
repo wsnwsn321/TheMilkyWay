@@ -8,6 +8,9 @@ namespace SuperMarioGame.SpriteFactories
 
         private Texture2D goombaSpritesheet;
         private Texture2D koopaSpritesheet;
+        private Texture2D koopaFlipSheet;
+        private Texture2D goombaFlipSheet;
+
         public SpriteBatch sb { get; set; }
         private static EnemySpriteFactory instance = new EnemySpriteFactory();
 
@@ -28,6 +31,9 @@ namespace SuperMarioGame.SpriteFactories
         {
             goombaSpritesheet = content.Load<Texture2D>("Goomba/Goomba");
             koopaSpritesheet = content.Load<Texture2D>("Koopa/Koopa");
+            koopaFlipSheet = content.Load<Texture2D>("Koopa/FlipKoopa");
+            goombaFlipSheet = content.Load<Texture2D>("Goomba/FilpGoomba");
+
             this.sb = sb;
         }
 
@@ -55,6 +61,14 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateKoopaMoveRightSprite()
         {
             return new Sprites.KoopaRightSprite(koopaSpritesheet, sb);
+        }
+        public Sprites.ISprite CreateGoombaFlippedSprite()
+        {
+            return new Sprites.GoombaFlippedSprite(goombaFlipSheet, sb);
+        }
+        public Sprites.ISprite CreateKoopaFlippedSprite()
+        {
+            return new Sprites.KoopaFlippedSprite(koopaFlipSheet, sb);
         }
     }
 }

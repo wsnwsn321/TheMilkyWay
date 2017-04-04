@@ -9,18 +9,22 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D runningSmallMarioSpritesheet;
         private Texture2D jumpingSmallMarioSpritesheet;
         private Texture2D deadSmallMarioSpritesheet;
+        private Texture2D flagSmallMarioSpritesheet;
 
         private Texture2D idleBigMarioSpritesheet;
         private Texture2D runningBigMarioSpritesheet;
         private Texture2D jumpingBigMarioSpritesheet;
         private Texture2D crouchingBigMarioSpritesheet;
+        private Texture2D flagBigMarioSpritesheet;
+
 
         private Texture2D idleFireMarioSpritesheet;
         private Texture2D runningFireMarioSpritesheet;
         private Texture2D jumpingFireMarioSpritesheet;
         private Texture2D crouchingFireMarioSpritesheet;
         private Texture2D attackingFireMarioSpritesheet;
-        
+        private Texture2D flagFireMarioSpritesheet;
+
         private SpriteBatch sb { set; get; }
         private static MarioSpriteFactory instance = new MarioSpriteFactory();
 
@@ -43,17 +47,20 @@ namespace SuperMarioGame.SpriteFactories
             runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
             jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
             deadSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioDead");
+            flagSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioFlag");
 
             idleBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
             runningBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioRun");
             jumpingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioJump");
             crouchingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
+            flagBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioFlag");
 
             idleFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
             runningFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioRun");
             jumpingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioJump");
             crouchingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
             attackingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FireAttack");
+            flagFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioFlag");
         }
 
 
@@ -88,6 +95,15 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.IMarioSprite CreateDeadSmallMarioSprite()
         {
             return new Sprites.MarioSprite.SmallMarioSprite.DeadSmallMarioSprite(deadSmallMarioSpritesheet, sb);
+        }
+
+        public Sprites.IMarioSprite CreateLeftFlagSmallMarioSprite()
+        {
+            return new Sprites.MarioSprite.SmallMarioSprite.LeftFlagSmallMarioSprite(flagSmallMarioSpritesheet, sb);
+        }
+        public Sprites.IMarioSprite CreateRightFlagSmallMarioSprite()
+        {
+            return new Sprites.MarioSprite.SmallMarioSprite.RightFlagSmallMarioSprite(flagSmallMarioSpritesheet, sb);
         }
         public Sprites.IMarioSprite CreateLeftIdleBigMarioSprite()
         {
@@ -124,6 +140,14 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.IMarioSprite CreateRightCrouchingBigMarioSprite()
         {
             return new Sprites.MarioSprite.BigMarioSprite.RightCrouchingBigMarioSprite(crouchingBigMarioSpritesheet, sb);
+        }
+        public Sprites.IMarioSprite CreateLeftFlagBigMarioSprite()
+        {
+            return new Sprites.MarioSprite.BigMarioSprite.LeftFlagBigMarioSprite(flagBigMarioSpritesheet, sb);
+        }
+        public Sprites.IMarioSprite CreateRightFlagBigMarioSprite()
+        {
+            return new Sprites.MarioSprite.BigMarioSprite.RightFlagBigMarioSprite(flagBigMarioSpritesheet, sb);
         }
 
         public Sprites.IMarioSprite CreateLeftIdleFireMarioSprite()
@@ -170,6 +194,14 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.IMarioSprite CreateLeftAttackingFireMarioSprite()
         {
             return new Sprites.MarioSprite.FireMarioSprite.LeftAttackingMarioSprite(attackingFireMarioSpritesheet, sb);
+        }
+        public Sprites.IMarioSprite CreateLeftFlagFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.LeftFlagFireMarioSprite(flagFireMarioSpritesheet, sb);
+        }
+        public Sprites.IMarioSprite CreateRightFlagFireMarioSprite()
+        {
+            return new Sprites.MarioSprite.FireMarioSprite.RightFlagFireMarioSprite(flagFireMarioSpritesheet, sb);
         }
     }
 }

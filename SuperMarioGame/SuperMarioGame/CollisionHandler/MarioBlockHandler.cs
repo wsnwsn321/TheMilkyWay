@@ -16,46 +16,98 @@ namespace SuperMarioGame.CollisionHandler
         {
             Vector2 newPosition;
             Game1 myGame = game;
-            bool top = false;
 
             if (block.isVisible)
             {
                 switch (CollisionSide)
                 {
                     case 1: //top collision
+                       
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-2;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-6;
                         mario.position = newPosition;
-                        //mario.gravity = 0;
-                        top = true;
                         break;
                     case 2: //right side collision
-                        newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
+                        
+                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
+                        
+                       
                         break;
                     case 3: //bottom collision
+                        mario.jump = false;
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+3;
                         mario.position = newPosition;
-                        if (block is BrickBlock && block.blockSprite is BrickBlockSprite && mario.marioState != Mario.MARIO_SMALL)
-                        {
-                            block.isVisible = false;
+                        if (block is BrickBlock && block.blockSprite is BrickBlockSprite)
+                        {    
+                            if(mario.marioState != Mario.MARIO_SMALL)
+                            {
+                                block.Bump();
+                                block.isVisible = false;
+                                BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), 1);
+                                BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y + 16), 2);
+                                BlockPiece block3 = new BlockPiece(new Vector2(block.position.X + 16, block.position.Y), 3);
+                                BlockPiece block4 = new BlockPiece(new Vector2(block.position.X + 16, block.position.Y + 16), 4);
+                                block1.gravity = 0;
+                                block2.gravity = 0;
+                                block3.gravity = 0;
+                                block4.gravity = 0;
+                                myGame.level.itemElements.Add(block1);
+                                myGame.level.itemElements.Add(block2);
+                                myGame.level.itemElements.Add(block3);
+                                myGame.level.itemElements.Add(block4);
+
+                            }
+                            else
+                            {
+                                if (!block.isBumped)
+                                {
+                                    block.Bump();
+                                }
+                            }
+                           
                         }
                         else if(block is BrickBlockC && block.blockSprite is BrickBlockSprite)
                         {
+                            block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                         }
+                        else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
+                        {
+                            
+                            BrickBlockCC b = block as BrickBlockCC;
+                            if (b.coinCount > 0)
+                            {
+                                b.Bump();
+                                Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                                c.jump = true;
+                                myGame.level.itemElements.Add(c);
+                                b.coinCount--;
+                            }
+                            else
+                            {
+                                block.Bump();
+                                block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                                Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                                c.jump = true;
+                                myGame.level.itemElements.Add(c);
+                            }
+
+                        }
                         else if (block is BrickBlockS && block.blockSprite is BrickBlockSprite)
                         {
+                            block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             myGame.level.itemElements.Add(new Star(new Vector2(block.position.X,block.position.Y-32)));
                         }
                         else if (block is QuestionBlockM && block.blockSprite is QuestionBlockSprite)
                         {
+                            block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             
                             if(mario.marioState == 2)
@@ -71,23 +123,26 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else if (block is QuestionBlockC && block.blockSprite is QuestionBlockSprite)
                         {
+                            block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                         }
-                        else if (block is HiddenBlock)
+                        else if (block is HiddenBlock && block.blockSprite is HiddenBlockSprite)
                         {
+                            block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
+                            myGame.level.itemElements.Add(new GreenMushroom(new Vector2(block.position.X, block.position.Y - 32)));
                         }
                         break;
                     case 4: //left side collision
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
-                        break;
+                       
+                         break;
                 }
-                    //mario.onTop = top;
             }
         }
     }

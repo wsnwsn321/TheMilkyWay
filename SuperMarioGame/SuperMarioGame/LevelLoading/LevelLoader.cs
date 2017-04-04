@@ -1,17 +1,17 @@
 ﻿using SuperMarioGame.ElementClasses.EnvironmentClass;
 using Microsoft.Xna.Framework;
-using System.Diagnostics;
 using System.IO;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.ElementClasses.CharacterClass.Enemies;
-using System;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 
 namespace SuperMarioGame.LevelLoading
 {
     public class LevelLoader
     {
-        private int x, y, height, width;
+        private int x, y;
+        public int height { get; set; }
+        public int width { get; set; }
         private Level level;
 
         public LevelLoader(Level level)
@@ -19,25 +19,15 @@ namespace SuperMarioGame.LevelLoading
             this.level = level;
         }
 
-        public void LoadLevel()
+        public void LoadLevel(string levelToLoad)
         {
             x = 0;
             y = 0;
-            ReadLevelFile();
+            ReadLevelFile(levelToLoad);
         }
-
-        public int GetHeight()
+        private void ReadLevelFile(string levelToLoad)
         {
-            return height;
-        }
-
-        public int GetWidth()
-        {
-            return width;
-        }
-        private void ReadLevelFile()
-        {
-            StreamReader stream = new StreamReader(@"LevelLoading\LevelFiles\Level1-1Full.csv");
+            StreamReader stream = new StreamReader(levelToLoad);
             string line;
             while((line = stream.ReadLine()) != null)
             {
@@ -52,6 +42,9 @@ namespace SuperMarioGame.LevelLoading
                             break;
                         case "BrickBlockC":
                             level.envElements.Add(new BrickBlockC(new Vector2(x, y)));
+                            break;
+                        case "BrickBlockCC":
+                            level.envElements.Add(new BrickBlockCC(new Vector2(x, y)));
                             break;
                         case "BrickBlockS":
                             level.envElements.Add(new BrickBlockS(new Vector2(x, y)));
@@ -90,13 +83,19 @@ namespace SuperMarioGame.LevelLoading
                             level.itemElements.Add(new Star(new Vector2(x, y)));
                             break;
                         case "Goomba":
-                            level.enemyElements.Add(new Goomba(new Vector2(x, y)));
+                            level.enemyElements.Add(new Goomba(new Vector2(x, y-10)));
                             break;
                         case "Koopa":
                             level.enemyElements.Add(new Koopa(new Vector2(x, y + 21)));
                             break;
-                        case "Pipe":
-                            level.envElements.Add(new Pipe(new Vector2(x + 2, y + 4)));
+                        case "Pipe1":                            
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y + 4),1));
+                            break;
+                        case "Pipe2":
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y - 15),2));
+                            break;
+                        case "Pipe3":
+                            level.envElements.Add(new Pipe(new Vector2(x + 2, y - 35),3));
                             break;
                         case "BigCloud":
                             level.backgroundElements.Add(new BigCloud(new Vector2(x, y + 14)));
@@ -115,6 +114,15 @@ namespace SuperMarioGame.LevelLoading
                             break;
                         case "SmallBrush":
                             level.backgroundElements.Add(new SmallBrush(new Vector2(x, y)));
+                            break;
+                        case "Castle":
+                            level.backgroundElements.Add(new Castle(new Vector2(x, y+2)));
+                            break;
+                        case "Flagpole":
+                            level.backgroundElements.Add(new Flagpole(new Vector2(x, y)));
+                            break;
+                        case "Flag":
+                            level.backgroundElements.Add(new Flag(new Vector2(x+15, y+27)));
                             break;
                         default:
                             break;

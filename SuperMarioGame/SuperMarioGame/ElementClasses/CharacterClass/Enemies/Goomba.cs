@@ -20,7 +20,9 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public float gravity { get; set; }
 
-        public bool onTop { get; set; }
+        public bool flip { get; set; }
+        public bool shellDirection { get; set; }
+        public int shellMoving { get; set; }
 
         public const int GOOMBA_IDLE = 1, GOOMBA_DEAD = 2;
 
@@ -41,8 +43,7 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             goombaAction = GOOMBA_IDLE;
             EnemyIdle();
             isVisible = true;
-            gravity = 3;
-            onTop = false;
+            gravity = 3;            
         }
 
         public void  EnemyIdle()
@@ -60,6 +61,10 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
 
         public void Update()
         {
+            if (flip)
+            {
+                gravity = 3;
+            }
             if (goombaAction != Goomba.GOOMBA_DEAD)
             {
                 if (goombaDirection)
@@ -95,6 +100,13 @@ namespace SuperMarioGame.ElementClasses.CharacterClass.Enemies
             goombaState.BeStomped();
             enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaStompedSprite();
         }
-        
+
+        public void BeFlipped()
+        {
+            goombaState.BeStomped();
+            enemySprite = SpriteFactories.EnemySpriteFactory.Instance.CreateGoombaFlippedSprite();
+            flip = true;
+        }
+
     }
 }

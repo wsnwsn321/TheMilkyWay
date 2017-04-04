@@ -15,23 +15,22 @@ namespace SuperMarioGame.Commands
 
         public void Execute()
         {
-            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD && mario.canMove)
             {
                 if (!mario.marioDirection)
                {
                 mario.MarioIdle();
                 mario.MarioChangeDireciton();
                }
-                mario.MarioRun();
-
-                if (mario.position.X > -myGame.GraphicsDevice.Viewport.X)
+                if (mario.marioAction != ElementClasses.Mario.MARIO_CROUCH)
                 {
-                    mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
+                    mario.MarioRun();
+
+                    if (mario.position.X > -myGame.GraphicsDevice.Viewport.X)
+                    {
+                        mario.position = new Vector2(mario.position.X - 3, mario.position.Y);
+                    }
                 }
-                //if (mario.position.X < 0)
-                //{
-                //    mario.position = new Vector2(mario.state.marioSprite.desRectangle.Width, mario.position.Y);
-                //}
 
             }
 

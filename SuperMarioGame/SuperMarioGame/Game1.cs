@@ -6,6 +6,8 @@ using SuperMarioGame.Controller;
 using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
+using SuperMarioGame.ElementClasses;
+using SuperMarioGame.GameState;
 
 namespace SuperMarioGame
 
@@ -18,6 +20,10 @@ namespace SuperMarioGame
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
         internal Level level;
+        internal GameStateHandler gameStateHandler;
+        internal SpriteFont font;
+        private bool freeze = false;
+        private int freezeCount = 0;
 
         public Game1()
         {
@@ -31,10 +37,12 @@ namespace SuperMarioGame
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
             level = new Level(this);
+            gameStateHandler = new GameStateHandler(level);
 
             InitializeCommands();
 
             base.Initialize();
+
         }
 
         protected override void LoadContent()
@@ -42,7 +50,6 @@ namespace SuperMarioGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
             level.Load();
-            //TestCase.RunTest.Instance.runAllTests();
         }
 
         protected override void UnloadContent()
@@ -51,14 +58,28 @@ namespace SuperMarioGame
         }
 
         protected override void Update(GameTime gameTime)
-        {   
-            level.Update();
-            if (level.mario.marioState == 1)
+        {
+            if (!freeze)
             {
-                ResetGame();
+                level.Update();
+                if (level.mario.marioState == Mario.MARIO_DEAD)
+                {
+                    freeze = true;
+                }
+                keyboardController.Update();
+                base.Update(gameTime);
             }
-            keyboardController.Update();
-            base.Update(gameTime);
+            else
+            {
+                freezeCount++;
+                if (freezeCount == 75)
+                {
+                    freeze = false;
+                    freezeCount = 0;
+                    ResetGame();
+                }
+            }
+
         }
 
         protected override void Draw(GameTime gameTime)
@@ -75,15 +96,16 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.D, new MarioRightCommand(this));
             keyboardController.RegisterCommand(Keys.S, new MarioCrouchCommand(this));
 
-            keyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
-            keyboardController.RegisterCommand(Keys.Left, new MarioLeftCommand(this));
-            keyboardController.RegisterCommand(Keys.Right, new MarioRightCommand(this));
-            keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
+            keyboardController.RegisterCommand(Keys.Space, new PauseGameCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             keyboardController.RegisterCommand(Keys.C, new MarioChangeFormCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
+            //arbitrarily choose p for flagpole animation command
+            //p is disabled in KeyboardController.cs
+            keyboardController.RegisterCommand(Keys.P, new MarioFlagpoleCommand(this));
+
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));
@@ -100,6 +122,7 @@ namespace SuperMarioGame
             EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            font = Content.Load<SpriteFont>(@"SpriteFonts\Courier New");
         }
 
         public void ResetGame()

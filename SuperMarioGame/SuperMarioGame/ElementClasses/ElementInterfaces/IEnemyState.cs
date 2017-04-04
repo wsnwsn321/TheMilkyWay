@@ -18,6 +18,7 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
          void BeStomped();
 
          void ChangeDirection();
+       // void MovingShell(int side);
 
          void Draw(Vector2 position, ISprite enemySprite);
 

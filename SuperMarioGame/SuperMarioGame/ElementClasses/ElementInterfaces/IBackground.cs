@@ -10,5 +10,6 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         void Update();
         ISprite backgroundSprite { get; set; }
 
+        bool moveDown { get; set; }
     }
 }

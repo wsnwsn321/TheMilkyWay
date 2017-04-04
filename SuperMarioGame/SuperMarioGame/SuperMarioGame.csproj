@@ -39,7 +39,6 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Camera\Camera.cs" />
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
@@ -51,15 +50,20 @@
     <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioAttackCommand.cs" />
+    <Compile Include="Commands\MarioFlagpoleCommand.cs" />
     <Compile Include="Commands\MarioRightCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
     <Compile Include="Commands\MarioLeftCommand.cs" />
     <Compile Include="Commands\MarioChangeFormCommand.cs" />
+    <Compile Include="Commands\PauseGameCommand.cs" />
     <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\Flag.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\Flagpole.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\Castle.cs" />
     <Compile Include="ElementClasses\BackgroundClass\BigBrush.cs" />
     <Compile Include="ElementClasses\BackgroundClass\BigCloud.cs" />
     <Compile Include="ElementClasses\BackgroundClass\BigMountain.cs" />
@@ -73,13 +77,19 @@
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaFlipState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
     <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\BlockPiece.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\BrickBlockCC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
     <Compile Include="ElementClasses\ItemClass\Fireball.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="GameConstants.cs" />
+    <Compile Include="GameState\GameStateHandler.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HUDElements\PauseText.cs" />
+    <Compile Include="HUDElements\ScoreSystem.cs" />
     <Compile Include="LevelLoading\Level.cs" />
     <Compile Include="LevelLoading\LevelLoader.cs" />
     <Compile Include="Program.cs" />
@@ -87,19 +97,29 @@
     <Compile Include="SpriteFactories\BackgroundSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
+    <Compile Include="Sprites\BackgroundSprite\FlagSprite.cs" />
+    <Compile Include="Sprites\BackgroundSprite\FlagpoleSprite.cs" />
+    <Compile Include="Sprites\BackgroundSprite\CastleSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\BigBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\BigCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\BigMountainSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallBrushSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallCloudSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\SmallMountainSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\BigMarioSprite\LeftFlagBigMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\BigMarioSprite\RightFlagBigMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftAttackingMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightFlagFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\FireMarioSprite\LeftFlagFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\FireMarioSprite\RightAttackingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\IMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\SmallMarioSprite\RightFlagSmallMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftFlagSmallMarioSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece4Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\GoombaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />
@@ -128,6 +148,7 @@
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\RightIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprite\SmallMarioSprite\LeftIdleSmallMarioSprite.cs" />
     <Compile Include="Sprites\OtherSprite\KoopaLeftSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\KoopaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\KoopaStompedSprite .cs" />
     <Compile Include="Sprites\OtherSprite\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BrickBlockSprite.cs" />
@@ -168,6 +189,8 @@
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IMarioState.cs" />
+    <Compile Include="VolecotyTest\TwoVolecity.cs" />
+    <Compile Include="VolecotyTest\Volecity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -185,6 +208,10 @@
     <Content Include="CodeReviews\Sprint2\Readability\ChrisCrainCodeReview.txt" />
     <Content Include="CodeReviews\Sprint2\Readability\OliverCodeReview.txt" />
     <Content Include="CodeReviews\Sprint2\Readability\NathanPrattCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\ChrisCrain.txt" />
+    <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\GeorgeYang.txt" />
+    <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\NathanPratt.txt" />
+    <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\OliverWu.txt" />
     <Content Include="CodeReviews\Sprint4\Readability\ChrisCrainCodeReview.txt" />
     <Content Include="CodeReviews\Sprint4\Readability\GeorgeYangCodeReview.txt" />
     <Content Include="CodeReviews\Sprint4\Readability\NathanPrattCodeReview.txt" />
@@ -224,6 +251,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\Level1-1Full.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LevelLoading\LevelFiles\Sprint4Level.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

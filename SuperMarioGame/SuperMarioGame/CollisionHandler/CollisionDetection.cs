@@ -3,6 +3,10 @@ using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using Microsoft.Xna.Framework;
 using SuperMarioGame.ElementClasses.ItemClass;
+using SuperMarioGame.Sprites;
+using SuperMarioGame.SpriteFactories;
+using Microsoft.Xna.Framework.Input;
+using SuperMarioGame.ElementClasses.BackgroundClass;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -14,6 +18,7 @@ namespace SuperMarioGame.CollisionHandler
         public const int TOP = 1, RIGHT = 2, BOTTOM = 3, LEFT = 4;
         public int SIDE;
         Game1 myGame;
+        private bool animation = false;
 
         private static CollisionDetection instance = new CollisionDetection();
 
@@ -31,11 +36,21 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioBlockCollision(Game1 game, Mario mario, List<IBlock> envElements)
         {
-            bool onTop = false;
-            mario.onTop = false;
+            mario.gravity = 4;
             foreach (IBlock block in envElements)
             {
                 myGame = game;
+                if (block.isVisible)
+                {
+                    if (mario.state.marioSprite.desRectangle.Bottom > block.position.Y - 5 && mario.state.marioSprite.desRectangle.Bottom <= block.position.Y)
+                    {
+                        if (mario.state.marioSprite.desRectangle.Right > block.position.X + 3 && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
+                        {
+                            mario.gravity = 0;
+                            mario.jump = true;
+                        }
+                    }
+                }
                 if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
                 {
                     firstRectangle = mario.state.marioSprite.desRectangle;
@@ -66,31 +81,32 @@ namespace SuperMarioGame.CollisionHandler
                     if (collideRectangle.Width * collideRectangle.Height > 13)
                     {
                         MarioBlockHandler.BlockHandler(myGame, mario, block, SIDE);
-                        if(SIDE == TOP)
+                    }
+                }
+
+            }
+        }
+
+        public void EnemyBlockCollision(Mario mario, IEnemy enemy, List<IBlock> envElements)
+        {
+            enemy.gravity = 3;
+            foreach (IBlock block in envElements)
+            {
+                if (block.isVisible)
+                {
+                    if (enemy.enemySprite.desRectangle.Bottom > block.position.Y - 5 && enemy.enemySprite.desRectangle.Bottom <= block.position.Y)
+                    {
+                        if (enemy.enemySprite.desRectangle.Right > block.position.X + 3 && enemy.enemySprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
                         {
-                            onTop = true;
+                            if (!enemy.flip)
+                            {
+                                if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)&&mario.marioState!=Mario.MARIO_SMALL&&block.blockSprite is BrickBlockSprite)
+                                    enemy.BeFlipped();
+                                enemy.gravity = 0;
+                            }
                         }
                     }
                 }
-                if(mario.state.marioSprite.desRectangle.Bottom > block.position.Y-5 && mario.state.marioSprite.desRectangle.Bottom < block.position.Y)
-                {
-                    if(mario.state.marioSprite.desRectangle.Right > block.position.X && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right)
-                    {
-                        mario.onTop = true;
-                        mario.gravity = 0;
-                    }
-                }
-            }
-
-            //mario.onTop = onTop;
-
-
-        }
-
-        public void EnemyBlockCollision(IEnemy enemy, List<IBlock> envElements)
-        {
-            foreach (IBlock block in envElements)
-            {
                 if (enemy.enemySprite.desRectangle.Intersects(block.blockSprite.desRectangle))
                 {
                     firstRectangle = enemy.enemySprite.desRectangle;
@@ -123,17 +139,33 @@ namespace SuperMarioGame.CollisionHandler
                         EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
                     }
                 }
-                else
-                {
-                    enemy.onTop = false;
-                }
             }
         }
 
         public void ItemBlockCollision(IItem item, List<IBlock> envElements)
         {
+            if(!(item.itemSprite is FireballSprite))
+            {
+                item.gravity = 4;
+            }
+        
             foreach (IBlock block in envElements)
             {
+                if (block.isVisible)
+                {
+                    if (item.itemSprite.desRectangle.Bottom > block.position.Y - 5 && item.itemSprite.desRectangle.Bottom <= block.position.Y)
+                    {
+                        
+                        if (item.itemSprite.desRectangle.Right > block.position.X + 3 && item.itemSprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
+                        {
+                            if(item.itemSprite is FireballSprite)
+                            {
+                                item.ItemChangeDirection();
+                            }
+                            item.gravity = 0;
+                        }
+                    }
+                }
                 if (!(item is Flower) && item.itemSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
                 {
                     firstRectangle = item.itemSprite.desRectangle;
@@ -166,23 +198,22 @@ namespace SuperMarioGame.CollisionHandler
                         ItemBlockHandler.BlockHandler(item, block, SIDE);
                     }
                 }
-                else
-                {
-                    item.onTop = false;
-                }
             }
         }
 
         public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements)
         {
             SIDE = TOP;
-            foreach (IEnemy enemy in enemyElements)
-            {
-                if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+            
+                foreach (IEnemy enemy in enemyElements)
                 {
-                    ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                    if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                    {
+                        ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                          
+                    }
                 }
-            }
+  
         }
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
@@ -193,6 +224,30 @@ namespace SuperMarioGame.CollisionHandler
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
                 {
                     MarioItemHandler.ItemHandler(mario, item);
+                }
+            }
+        }
+
+        public void MarioFlagCollision(Mario mario, List<IBackground> backgroundElements)
+        {
+            if (!mario.animated)
+            {
+                animation = false;
+            }
+            if (!animation)
+            {
+                foreach (IBackground bg in backgroundElements)
+                {
+                    if (bg is Flag)
+                    {
+                        if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
+                        {
+                            myGame.keyboardController.keysEnabled = false;
+                            bg.moveDown = true;
+                            mario.animated = true;
+                            animation = true;
+                        }
+                    }
                 }
             }
         }
@@ -230,10 +285,6 @@ namespace SuperMarioGame.CollisionHandler
                         }
                     }
                     MarioEnemyHandler.EnemyHandler(mario, enemy, SIDE);
-                }
-                else
-                {
-                    mario.onTop = false;
                 }
             }
         }
