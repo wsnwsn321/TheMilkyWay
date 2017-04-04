@@ -12,12 +12,14 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public bool isBroken { get; set; }
         public bool isBumped { get; set; }
         public int bumpCount { get; set; }
-        public Pipe(Vector2 pos, int size)
+        public bool special = false;
+        public Pipe(Vector2 pos, int size, bool special)
         {
             position = pos;
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreatePipeSprite(size);
             isVisible = true;
             isBroken = false;
+            this.special = special;
         }
 
         public void Draw()

@@ -121,7 +121,10 @@ namespace SuperMarioGame.LevelLoading
                 }
                 else
                 {
-                    mario.FlagAnimationUpdate();
+                    if (mario.animation == GameConstants.FlagAnimation)
+                        mario.FlagAnimationUpdate();
+                    else
+                        mario.PipeAnimationUpdate();
                 }
             }
             else
@@ -143,10 +146,6 @@ namespace SuperMarioGame.LevelLoading
             {
                 item.Draw();
             }
-            foreach (IBlock block in envElements)
-            {               
-                block.Draw();
-            }
             foreach (IEnemy enemy in enemyElements)
             {
                 if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
@@ -167,11 +166,17 @@ namespace SuperMarioGame.LevelLoading
             {
                 mario.MarioDraw();
             }
+            foreach (IBlock block in envElements)
+            {
+                block.Draw();
+            }
             scoreSystem.DisplayScore(mario.totalScore);
         }
         
-        public void Load()
+        public void Load(string levelToLoad, Vector2 marioPos)
         {
+            currentLevel = levelToLoad;
+            camX = 0;
             envElements = new List<IBlock>();
             itemElements = new List<IItem>();
             enemyElements = new List<IEnemy>();
@@ -182,12 +187,8 @@ namespace SuperMarioGame.LevelLoading
             gameWidth = loader.width;
             gameHeight = loader.height;
             mario.MarioIdle();
+            mario.position = marioPos;
             scoreSystem = new ScoreSystem(myGame);
-        }
-
-        public void ChangeLevel(string newLevel)
-        {
-            this.currentLevel = newLevel;
         }
 
         private void StoreElements()

@@ -48,6 +48,7 @@
     <Compile Include="CollisionHandler\MarioEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MarioBlockHandler.cs" />
     <Compile Include="Commands\MarioCrouchCommand.cs" />
+    <Compile Include="Commands\MarioPipeCommand.cs" />
     <Compile Include="Commands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioAttackCommand.cs" />
     <Compile Include="Commands\MarioFlagpoleCommand.cs" />

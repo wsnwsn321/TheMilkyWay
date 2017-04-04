@@ -7,6 +7,8 @@ using SuperMarioGame.Sprites;
 using SuperMarioGame.SpriteFactories;
 using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.ElementClasses.BackgroundClass;
+using SuperMarioGame.ElementClasses.EnvironmentClass;
+using System.Diagnostics;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -46,8 +48,26 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (mario.state.marioSprite.desRectangle.Right > block.position.X + 3 && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
                         {
-                            mario.gravity = 0;
-                            mario.jump = true;
+                            if(block is Pipe && mario.state is CrouchMarioState)
+                            {
+                                Pipe tempPipe = block as Pipe;
+                                if (tempPipe.special)
+                                {
+                                    mario.position = new Vector2(block.position.X+17, block.position.Y-mario.state.marioSprite.desRectangle.Height);
+                                    mario.animated = true;
+                                    mario.animation = GameConstants.PipeAnimation;
+                                }
+                                else
+                                {
+                                    mario.gravity = 0;
+                                    mario.jump = true;
+                                }
+                            }
+                            else
+                            {
+                                mario.gravity = 0;
+                                mario.jump = true;
+                            }
                         }
                     }
                 }
@@ -245,6 +265,7 @@ namespace SuperMarioGame.CollisionHandler
                             myGame.keyboardController.keysEnabled = false;
                             bg.moveDown = true;
                             mario.animated = true;
+                            mario.animation = GameConstants.FlagAnimation;
                             animation = true;
                         }
                     }
