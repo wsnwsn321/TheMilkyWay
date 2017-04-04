@@ -84,7 +84,7 @@ namespace SuperMarioGame
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(level.backgroundColor);
             level.Draw();
             base.Draw(gameTime);
         }

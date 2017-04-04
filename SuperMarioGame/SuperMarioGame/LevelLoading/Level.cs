@@ -27,6 +27,7 @@ namespace SuperMarioGame.LevelLoading
         internal ScoreSystem scoreSystem;
 
         public string currentLevel { get; set; }
+        public Color backgroundColor;
         private int gameWidth, gameHeight;
         private bool IsPaused { get; set;}
         int camX = 0;
@@ -41,6 +42,7 @@ namespace SuperMarioGame.LevelLoading
             myGame = game;
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
+            backgroundColor = Color.CornflowerBlue;
             mario = new Mario(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
             
         }

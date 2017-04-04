@@ -120,6 +120,8 @@
     <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlueBrickBlockSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlueGroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
