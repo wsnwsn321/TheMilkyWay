@@ -2,7 +2,7 @@
 {
     public class GameConstants
     {
-        public const string UnderworldLevel = @"LevelLoading\LevelFiles\cTest.csv";
+        public const string UnderworldLevel = @"LevelLoading\LevelFiles\cool.csv";
         public const string OverworldLevel = @"LevelLoading\LevelFiles\Sprint4Level.csv";
 
         public const int SquareWidth = 32;
@@ -12,8 +12,15 @@
         //for flagpole testing change x pos to 6750
         public const int MarioStartingX = 100;
         public const int MarioStartingY = 358;
+        public const int NewMarioStartingX = 100;
+        public const int NewMarioStartingY = 358;
 
+        public const int SmallPipe = 1;
+        public const int MedPipe = 2;
+        public const int LargePipe = 3;
 
+        public const int FlagAnimation = 1;
+        public const int PipeAnimation = 2;
 
     }
 }

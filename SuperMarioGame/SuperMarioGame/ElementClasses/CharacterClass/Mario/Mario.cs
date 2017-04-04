@@ -31,6 +31,7 @@ namespace SuperMarioGame.ElementClasses
         public bool bounce { get; set; }
         public bool canMove { get; set; }
         public bool animated { get; set; }
+        public int animation { get; set; }
         public bool isVisible { get; set; }
 
         public bool isScored { get; set; }
@@ -109,11 +110,8 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioCrouch()
         {
-            if (marioState != MARIO_SMALL)
-            {
                 marioAction = MARIO_CROUCH;
                 state.Crouch();
-            }
         }
         public void MarioRun()
         {
@@ -233,6 +231,11 @@ namespace SuperMarioGame.ElementClasses
         public void FlagAnimationUpdate()
         {
             myGame.keyboardController.controllerMappings[Keys.P].Execute();
+            state.Update();
+        }
+        public void PipeAnimationUpdate()
+        {
+            myGame.keyboardController.controllerMappings[Keys.O].Execute();
             state.Update();
         }
 

@@ -9,7 +9,7 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
-        private int size;
+        public int size;
         public Rectangle desRectangle { get; set; }
 
         public PipeSprite(Texture2D texture, SpriteBatch sb, int size)
@@ -32,12 +32,12 @@ namespace SuperMarioGame.Sprites
         {
             Rectangle sourceRectangle;
             sb.Begin();
-            if (size == 1)
+            if (size == GameConstants.SmallPipe)
             {
                 sourceRectangle = new Rectangle(224, 96, 34, 33);
                 desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 60);
             }
-            else if(size == 2)
+            else if(size == GameConstants.MedPipe)
             {
                 sourceRectangle = new Rectangle(185, 80, 35, 49);
                 desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 80);
