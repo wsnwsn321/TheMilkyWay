@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-
+using SuperMarioGame.Sound.MarioSound;
 namespace SuperMarioGame.ElementClasses
 {
     public class Mario
@@ -105,8 +105,10 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioJump()
         {
+           
             marioAction = MARIO_JUMP;
             state.Jump();
+            
         }
         public void MarioCrouch()
         {

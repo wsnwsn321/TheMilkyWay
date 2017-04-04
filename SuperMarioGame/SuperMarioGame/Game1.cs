@@ -8,6 +8,7 @@ using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.GameState;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame
 
@@ -49,7 +50,8 @@ namespace SuperMarioGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY));
+            level.Load();
+           
         }
 
         protected override void UnloadContent()
@@ -59,6 +61,8 @@ namespace SuperMarioGame
 
         protected override void Update(GameTime gameTime)
         {
+           
+           
             if (!freeze)
             {
                 level.Update();
@@ -79,7 +83,7 @@ namespace SuperMarioGame
                     ResetGame();
                 }
             }
-
+            MarioSoundManager.instance.playSound(MarioSoundManager.JUMPSMALL);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -102,10 +106,10 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
-            //arbitrarily choose o,p for animation commands
-            //o,p is disabled in KeyboardController.cs
+            //arbitrarily choose p for flagpole animation command
+            //p is disabled in KeyboardController.cs
             keyboardController.RegisterCommand(Keys.P, new MarioFlagpoleCommand(this));
-            keyboardController.RegisterCommand(Keys.O, new MarioPipeCommand(this));
+
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));
@@ -122,13 +126,15 @@ namespace SuperMarioGame
             EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            MarioSoundManager.instance.LoadSound(Content);
             font = Content.Load<SpriteFont>(@"SpriteFonts\Courier New");
         }
 
         public void ResetGame()
         {
             Initialize();
-            LoadContent();            
+            LoadContent();
+            
         }
     }
 }
