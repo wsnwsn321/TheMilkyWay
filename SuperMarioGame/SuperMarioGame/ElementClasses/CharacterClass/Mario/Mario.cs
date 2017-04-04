@@ -35,6 +35,7 @@ namespace SuperMarioGame.ElementClasses
 
         public bool isScored { get; set; }
         public int score { get; set; }
+        public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
 
         private int bounceCount=0;
@@ -62,6 +63,7 @@ namespace SuperMarioGame.ElementClasses
             animated = false;
             isVisible = true;
             isScored = false;
+            //totalScore = 0;
         }
         public Mario(Game1 game, Vector2 position, int marioState, bool marioDirection)
         {
@@ -77,6 +79,7 @@ namespace SuperMarioGame.ElementClasses
             bounce = false;
             animated = false;
             isVisible = true;
+            //totalScore = 0;
         }
         public void MarioIdle()
         {
@@ -138,7 +141,7 @@ namespace SuperMarioGame.ElementClasses
                 }
                 if (isScored)
                 {
-                    DrawScore(score);
+                    DrawScore();
                 }
                 state.Draw(position);
             }
@@ -233,12 +236,12 @@ namespace SuperMarioGame.ElementClasses
             state.Update();
         }
 
-        public void DrawScore(int ScoreNumber)
+        public void DrawScore()
         {
             Vector2 newPos;
             newPos.X = textPosition.X;
             newPos.Y = textPosition.Y;
-            String output = ""+ScoreNumber;
+            String output = ""+score;
             Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
             myGame.spriteBatch.Begin();
 
@@ -252,11 +255,9 @@ namespace SuperMarioGame.ElementClasses
             else
             {
                 scoreCounter = 0;
-                 isScored = false;
+                isScored = false;
             }
                
-
-
             myGame.spriteBatch.End();
         }
     }

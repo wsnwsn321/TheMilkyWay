@@ -24,6 +24,7 @@ namespace SuperMarioGame.LevelLoading
         private List<IEnemy> tempEnemyElements = new List<IEnemy>();
         private List<IBackground> tempBackgroundElements = new List<IBackground>();
         private PauseText pauseText;
+        internal ScoreSystem scoreSystem;
 
         public string currentLevel { get; set; }
         private int gameWidth, gameHeight;
@@ -41,6 +42,7 @@ namespace SuperMarioGame.LevelLoading
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
             mario = new Mario(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
+            
         }
 
         public void Update()
@@ -165,6 +167,7 @@ namespace SuperMarioGame.LevelLoading
             {
                 mario.MarioDraw();
             }
+            scoreSystem.DisplayScore(mario.totalScore);
         }
         
         public void Load()
@@ -179,6 +182,7 @@ namespace SuperMarioGame.LevelLoading
             gameWidth = loader.width;
             gameHeight = loader.height;
             mario.MarioIdle();
+            scoreSystem = new ScoreSystem(myGame);
         }
 
         public void ChangeLevel(string newLevel)

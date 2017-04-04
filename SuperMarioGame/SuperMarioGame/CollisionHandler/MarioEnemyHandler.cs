@@ -19,18 +19,31 @@ namespace SuperMarioGame.CollisionHandler
                         if (mario.HasStarPower)
                         {
                             enemy.BeFlipped();
+                            //score
+                            mario.isScored = true;
+                            mario.score = 100;
+                            mario.totalScore += mario.score;
+                            Vector2 newP;
+                            newP.X = mario.position.X;
+                            newP.Y = mario.position.Y - 3;
+                            mario.textPosition = newP;
                         }
                         else
                         {
                             if(mario.state.marioSprite.desRectangle.Bottom < enemy.enemySprite.desRectangle.Bottom)
                             {
                                 enemy.BeStomped();
+                                if(!(enemy.shellDirection))
+                                {
                                 mario.isScored = true;
-                                mario.score = 100;
-                                Vector2 newP;
+                                    mario.score = 100;
+                                    mario.totalScore += mario.score;
+                                    Vector2 newP;
                                 newP.X = mario.position.X;
                                 newP.Y = mario.position.Y-3;
                                 mario.textPosition = newP;
+                                }
+                                
                                 
                             }
                             else if(enemy.enemySprite is KoopaStompedSprite)
@@ -60,6 +73,13 @@ namespace SuperMarioGame.CollisionHandler
                         if (mario.HasStarPower)
                         {
                             enemy.BeFlipped();
+                            //score
+                            mario.isScored = true;
+                            mario.score = 100;
+                            Vector2 newP;
+                            newP.X = mario.position.X;
+                            newP.Y = mario.position.Y - 3;
+                            mario.textPosition = newP;
                         }
                         else
                         {
@@ -99,6 +119,13 @@ namespace SuperMarioGame.CollisionHandler
                         if (mario.HasStarPower)
                         {
                             enemy.BeFlipped();
+                            //score
+                            mario.isScored = true;
+                            mario.score = 100;
+                            Vector2 newP;
+                            newP.X = mario.position.X;
+                            newP.Y = mario.position.Y - 3;
+                            mario.textPosition = newP;
                         }
                         else
                         {
@@ -109,7 +136,15 @@ namespace SuperMarioGame.CollisionHandler
                     case 4:
                         if (mario.HasStarPower)
                         {
+                            
                             enemy.BeFlipped();
+                            //score
+                            mario.isScored = true;
+                            mario.score = 100;
+                            Vector2 newP;
+                            newP.X = mario.position.X;
+                            newP.Y = mario.position.Y - 3;
+                            mario.textPosition = newP;
                         }
                         else
                         {
