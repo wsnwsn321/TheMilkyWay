@@ -50,8 +50,8 @@ namespace SuperMarioGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load();
-           
+            level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY));
+
         }
 
         protected override void UnloadContent()
