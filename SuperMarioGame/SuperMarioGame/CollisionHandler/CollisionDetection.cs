@@ -53,7 +53,10 @@ namespace SuperMarioGame.CollisionHandler
                                 Pipe tempPipe = block as Pipe;
                                 if (tempPipe.special)
                                 {
-                                    mario.position = new Vector2(block.position.X+17, block.position.Y-mario.state.marioSprite.desRectangle.Height);
+                                    if(mario.marioState==Mario.MARIO_SMALL)
+                                        mario.position = new Vector2(block.position.X+17, block.position.Y-mario.state.marioSprite.desRectangle.Height);
+                                    else
+                                        mario.position = new Vector2(block.position.X + 12, block.position.Y - mario.state.marioSprite.desRectangle.Height);
                                     mario.animated = true;
                                     mario.animation = GameConstants.PipeAnimation;
                                 }
