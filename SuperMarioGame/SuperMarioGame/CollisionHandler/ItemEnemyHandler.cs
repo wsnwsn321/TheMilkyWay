@@ -15,6 +15,7 @@ namespace SuperMarioGame.CollisionHandler
                     case 1:
                         item.isVisible = false;
                         enemy.BeFlipped();
+                        
                         break;
                     case 2:
                         item.isVisible = false;

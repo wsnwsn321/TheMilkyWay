@@ -35,6 +35,7 @@ namespace SuperMarioGame.ElementClasses
         public bool isVisible { get; set; }
 
         public bool isScored { get; set; }
+        public bool isGreenMushroom { get; set; }
         public int score { get; set; }
         public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
@@ -246,7 +247,16 @@ namespace SuperMarioGame.ElementClasses
             Vector2 newPos;
             newPos.X = textPosition.X;
             newPos.Y = textPosition.Y;
-            String output = ""+score;
+            String output;
+            if (!isGreenMushroom)
+            {
+                  output = ""+score;
+            }
+            else
+            {
+                  output = "1UP";
+            }
+           
             Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
             myGame.spriteBatch.Begin();
 
@@ -261,6 +271,8 @@ namespace SuperMarioGame.ElementClasses
             {
                 scoreCounter = 0;
                 isScored = false;
+                isGreenMushroom = false;
+
             }
                
             myGame.spriteBatch.End();
