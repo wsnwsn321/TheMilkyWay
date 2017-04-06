@@ -1,11 +1,12 @@
 ﻿Chris Crain
 3/10/17
 Sprint 4
-Level.cs
+MarioFlagpoleCommand.cs
 Nate Pratt
-10 minutes
+15 minutes
 
-The methods are well-organized and can be easily read,
-but it can be confusing that magic numbers are used throughout.
+The methods are well-organized, but readability isn't too high.
+It isn't easy to determine what is going on inside the methods, but this is to be 
+expected since it is a very specific set of actions for an automated Mario.
 
-The void methods are readable since they make use of foreach loops throughout.
+The constructor is easy to read and follows the same format as all of the other commands.
