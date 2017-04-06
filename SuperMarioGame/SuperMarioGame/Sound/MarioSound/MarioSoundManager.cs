@@ -17,10 +17,11 @@ namespace SuperMarioGame.Sound.MarioSound
         public static MarioSoundManager instance = new MarioSoundManager();
         
         List<SoundEffect> soundEffects;
+        SoundEffectInstance var;
         
         public const  string ONEUP = "1UP", BOWSERFALL = "boswerFall", BREAKBLOCK = "breakBlock", BUMP = "bump", COIN = "coin", FIREBALL = "fireBall",FIREWORKS ="fireWorks", FLAGPOLE = "flagPole", GAMEOVER = "gameOver",
                             JUMPSMALL = "jumpsmall", JUMPSUPER = "jumpSuper", KICK = "kick", MARIODIE = "marioDie", PAUSE = "pause", PIPE = "pipe", POWERUPAPPEARS = "powerAppears", STAGECLEAR = "stageClear",
-                            STOMP = "stomp", VINE = "vine", WARNING = "warning", WORLDCLEAR = "worldClear";
+                            STOMP = "stomp", VINE = "vine", WARNING = "warning", WORLDCLEAR = "worldClear",POWERUP="powerUp";
         public MarioSoundManager()
         {
             soundEffects = new List<SoundEffect>();
@@ -28,7 +29,8 @@ namespace SuperMarioGame.Sound.MarioSound
         }
         public void LoadSound(ContentManager content)
         {
-            SoundEffect.MasterVolume =1.0f;
+        
+            
             //#0
             soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_1-up"));
             //#1
@@ -71,7 +73,8 @@ namespace SuperMarioGame.Sound.MarioSound
             soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_warning"));
             //#20
             soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_world_clear"));
-            
+            //#21
+            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_powerup"));
         }
 
         public void playSound(String order)
@@ -79,69 +82,114 @@ namespace SuperMarioGame.Sound.MarioSound
             switch (order)
             {
                 case ONEUP:
-                    soundEffects[0].Play();
-                    
+                    var = soundEffects[0].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case BOWSERFALL:
-                    soundEffects[1].Play();
+                    var = soundEffects[1].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case BREAKBLOCK:
-                    soundEffects[2].Play();
+                    var = soundEffects[2].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case BUMP:
-                    soundEffects[3].Play();
+                    var = soundEffects[3].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case COIN:
-                    soundEffects[4].Play();
+                    var = soundEffects[4].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case FIREBALL:
-                    soundEffects[5].Play();
+                    var = soundEffects[5].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case FIREWORKS:
-                    soundEffects[6].Play();
+                    var = soundEffects[6].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case FLAGPOLE:
-                    soundEffects[7].Play();
+                    var = soundEffects[7].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case GAMEOVER:
-                    soundEffects[8].Play();
+                    var = soundEffects[8].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case JUMPSMALL:
-                   
-                    soundEffects[9].Play();
+                    var = soundEffects[9].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case JUMPSUPER:
-                    soundEffects[10].Play();
+                    var = soundEffects[10].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case KICK:
-                    soundEffects[11].Play();
+                    var = soundEffects[11].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case MARIODIE:
-                    soundEffects[12].Play();
+                    var = soundEffects[12].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case PAUSE:
-                    soundEffects[13].Play();
+                    var = soundEffects[13].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case PIPE:
-                    soundEffects[14].Play();
+                    var = soundEffects[14].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case POWERUPAPPEARS:
-                    soundEffects[15].Play();
+                    var = soundEffects[15].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case STAGECLEAR:
-                    soundEffects[16].Play();
+                    var = soundEffects[16].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case STOMP:
-                    soundEffects[17].Play();
+                    var = soundEffects[17].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case VINE:
-                    soundEffects[18].Play();
+                    var = soundEffects[18].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case WARNING:
-                    soundEffects[19].Play();
+                    var = soundEffects[19].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
                 case WORLDCLEAR:
-                    soundEffects[20].Play();
+                    var = soundEffects[20].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
+                    break;
+                case POWERUP:
+                    var = soundEffects[21].CreateInstance();
+                    var.IsLooped = false;
+                    var.Play();
                     break;
 
             }

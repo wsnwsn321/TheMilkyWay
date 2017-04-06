@@ -105,10 +105,11 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioJump()
         {
-           
+            
             marioAction = MARIO_JUMP;
             state.Jump();
-            
+          
+
         }
         public void MarioCrouch()
         {
@@ -202,8 +203,10 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioDie()
         {
+            MarioSoundManager.instance.playSound(MarioSoundManager.MARIODIE);
             marioState = MARIO_DEAD;
             state.Die();
+         
         }
         public void MarioGetHit()
         {
@@ -222,12 +225,14 @@ namespace SuperMarioGame.ElementClasses
         }
         public void GetStar()
         {
+           
             HasStarPower = true;
             IsInvincible = true;
             InvincibilityTime = 20;
         }
         public void Attack()
         {
+            MarioSoundManager.instance.playSound(MarioSoundManager.FIREBALL);
             state.Attack();
         }
         public void FlagAnimationUpdate()
@@ -237,6 +242,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void PipeAnimationUpdate()
         {
+            
             myGame.keyboardController.controllerMappings[Keys.O].Execute();
             state.Update();
         }

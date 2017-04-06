@@ -2,6 +2,7 @@
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ItemClass;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -16,7 +17,8 @@ namespace SuperMarioGame.CollisionHandler
                 if(mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
                 {
                         mario.state.ChangeForm(Mario.MARIO_BIG);
-                        mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
+                    MarioSoundManager.instance.playSound(MarioSoundManager.POWERUP);
+                    mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
                 }
                 item.isVisible = false;  
             }
@@ -28,6 +30,7 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     if (mario.marioState == Mario.MARIO_SMALL)
                     {
+                        MarioSoundManager.instance.playSound(MarioSoundManager.VINE);
                         mario.state.ChangeForm(Mario.MARIO_BIG);
                         mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
                     }
@@ -51,15 +54,19 @@ namespace SuperMarioGame.CollisionHandler
 
             if (item is Coin)
             {
+                
                 if (item.isVisible)
                 {
+                    MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
                     item.isVisible = false;
                 }
             }
             if (item is GreenMushroom)
             {
+                
                 if (item.isVisible)
                 {
+                    MarioSoundManager.instance.playSound(MarioSoundManager.ONEUP);
                     item.isVisible = false;
                 }
             }

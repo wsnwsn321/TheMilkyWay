@@ -2,6 +2,7 @@
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sprites;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -31,7 +32,9 @@ namespace SuperMarioGame.CollisionHandler
                         else
                         {
                             if(mario.state.marioSprite.desRectangle.Bottom < enemy.enemySprite.desRectangle.Bottom)
+
                             {
+                                MarioSoundManager.instance.playSound(MarioSoundManager.STOMP);
                                 enemy.BeStomped();
                                 if(!(enemy.shellDirection))
                                 {
@@ -85,6 +88,7 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if(enemy.enemySprite is KoopaStompedSprite)
                             {
+                               
                                 if (enemy.shellDirection)
                                 {
                                     mario.MarioGetHit();
@@ -150,12 +154,14 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (enemy.enemySprite is KoopaStompedSprite)
                             {
+                               
                                 if (enemy.shellDirection)
                                 {
                                     mario.MarioGetHit();
                                 }
                                 else
                                 {
+                                    MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
                                     if (mario.position.X < enemy.position.X)
                                     {
                                         newPosition.X = mario.position.X - 6;

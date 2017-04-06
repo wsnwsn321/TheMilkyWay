@@ -50,7 +50,7 @@ namespace SuperMarioGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load();
+            level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY)); ;
            
         }
 
@@ -83,7 +83,7 @@ namespace SuperMarioGame
                     ResetGame();
                 }
             }
-            MarioSoundManager.instance.playSound(MarioSoundManager.JUMPSMALL);
+           
         }
 
         protected override void Draw(GameTime gameTime)
@@ -106,10 +106,10 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
-            //arbitrarily choose p for flagpole animation command
-            //p is disabled in KeyboardController.cs
+            //arbitrarily choose o,p for animation commands
+            //o,p is disabled in KeyboardController.cs
             keyboardController.RegisterCommand(Keys.P, new MarioFlagpoleCommand(this));
-
+            keyboardController.RegisterCommand(Keys.O, new MarioPipeCommand(this));
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));

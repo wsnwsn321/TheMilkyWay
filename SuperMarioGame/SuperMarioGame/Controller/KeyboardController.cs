@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.Commands;
+using SuperMarioGame.Sound.MarioSound;
 using System.Collections.Generic;
 
 namespace SuperMarioGame.Controller
@@ -50,7 +51,8 @@ namespace SuperMarioGame.Controller
                     {
                         if (key.Equals(Keys.W))
                         {
-                            wDown = true;                            
+                            wDown = true;
+                         
                         }
 
                         if (key.Equals(Keys.X))
