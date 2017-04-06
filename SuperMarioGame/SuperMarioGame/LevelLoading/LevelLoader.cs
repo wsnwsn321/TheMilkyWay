@@ -38,7 +38,10 @@ namespace SuperMarioGame.LevelLoading
                     switch (obj)
                     {
                         case "BrickBlock":
-                            level.envElements.Add(new BrickBlock(new Vector2(x, y)));
+                            level.envElements.Add(new BrickBlock(new Vector2(x, y), false));
+                            break;
+                        case "BlueBrickBlock":
+                            level.envElements.Add(new BrickBlock(new Vector2(x, y), true));
                             break;
                         case "BrickBlockC":
                             level.envElements.Add(new BrickBlockC(new Vector2(x, y)));
@@ -50,7 +53,10 @@ namespace SuperMarioGame.LevelLoading
                             level.envElements.Add(new BrickBlockS(new Vector2(x, y)));
                             break;
                         case "GroundBlock":
-                            level.envElements.Add(new GroundBlock(new Vector2(x, y)));
+                            level.envElements.Add(new GroundBlock(new Vector2(x, y), false));
+                            break;
+                        case "BlueGroundBlock":
+                            level.envElements.Add(new GroundBlock(new Vector2(x, y), true));
                             break;
                         case "HiddenBlock":
                             level.envElements.Add(new HiddenBlock(new Vector2(x, y)));
@@ -106,6 +112,9 @@ namespace SuperMarioGame.LevelLoading
                         case "Pipe3S":
                             level.envElements.Add(new Pipe(new Vector2(x + 2, y - 35), 3, true));
                             break;
+                        case "UnderPipe":
+                            level.envElements.Add(new Pipe(new Vector2(x, y), 4, true));
+                            break;
                         case "BigCloud":
                             level.backgroundElements.Add(new BigCloud(new Vector2(x, y + 14)));
                             break;
@@ -132,6 +141,14 @@ namespace SuperMarioGame.LevelLoading
                             break;
                         case "Flag":
                             level.backgroundElements.Add(new Flag(new Vector2(x+15, y+27)));
+                            break;
+                        case "OVERWORLD":
+                            level.envElements.Add(new GroundBlock(new Vector2(x, y), false));
+                            level.backgroundColor = Color.CornflowerBlue;        
+                            break;
+                        case "UNDERWORLD":
+                            level.envElements.Add(new GroundBlock(new Vector2(x, y), true));
+                            level.backgroundColor = Color.Black;
                             break;
                         default:
                             break;

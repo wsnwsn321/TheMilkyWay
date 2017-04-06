@@ -121,6 +121,8 @@
     <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlueBrickBlockSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\BlueGroundBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
@@ -210,6 +212,10 @@
     <Content Include="CodeReviews\Sprint2\Readability\ChrisCrainCodeReview.txt" />
     <Content Include="CodeReviews\Sprint2\Readability\OliverCodeReview.txt" />
     <Content Include="CodeReviews\Sprint2\Readability\NathanPrattCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint5\Readability\ChrisCrainCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint5\Readability\GeorgeYangCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint5\Readability\NathanPrattCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint5\Readability\OliverCodeReview.txt" />
     <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\ChrisCrain.txt" />
     <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\GeorgeYang.txt" />
     <Content Include="CodeReviews\Sprint4\Maintainability_Reuseability\NathanPratt.txt" />
@@ -261,7 +267,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="LevelLoading\LevelFiles\Underworld.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

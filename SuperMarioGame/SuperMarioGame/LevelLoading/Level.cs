@@ -27,6 +27,7 @@ namespace SuperMarioGame.LevelLoading
         internal ScoreSystem scoreSystem;
 
         public string currentLevel { get; set; }
+        public Color backgroundColor;
         private int gameWidth, gameHeight;
         private bool IsPaused { get; set;}
         int camX = 0;
@@ -41,6 +42,7 @@ namespace SuperMarioGame.LevelLoading
             myGame = game;
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
+            backgroundColor = Color.CornflowerBlue;
             mario = new Mario(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
             
         }
@@ -146,18 +148,10 @@ namespace SuperMarioGame.LevelLoading
             {
                 item.Draw();
             }
-            foreach (IEnemy enemy in enemyElements)
-            {
-                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X)-GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
-                {
-                    enemy.Draw();
-                }
-            }
             foreach(IItem fireBall in fireBallList)
             {
                 fireBall.Draw();
             }
-
             if(IsPaused)
             {
                 pauseText.Draw();
@@ -169,6 +163,13 @@ namespace SuperMarioGame.LevelLoading
             foreach (IBlock block in envElements)
             {
                 block.Draw();
+            }
+            foreach (IEnemy enemy in enemyElements)
+            {
+                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
+                {
+                    enemy.Draw();
+                }
             }
             scoreSystem.DisplayScore(mario.totalScore);
         }

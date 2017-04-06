@@ -6,6 +6,7 @@ namespace SuperMarioGame.SpriteFactories
     class EnvironmentSpriteFactory
     {
         private Texture2D brickBlockSpritesheet;
+        private Texture2D backgroundSpritesheet;
         private Texture2D questionBlockSpritesheet;
         private Texture2D usedBlockSpritesheet;
         private Texture2D groundBlockSpritesheet;
@@ -32,6 +33,7 @@ namespace SuperMarioGame.SpriteFactories
             //one example is below
 
             pipeSpritesheet = content.Load<Texture2D>("Item/Pipe");
+            backgroundSpritesheet = content.Load<Texture2D>("Background/BackgroundEnvironment");
             usedBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             brickBlockSpritesheet = content.Load<Texture2D>("Item/BrickBlock");
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
@@ -45,7 +47,14 @@ namespace SuperMarioGame.SpriteFactories
         //create environment sprites
         public Sprites.ISprite CreatePipeSprite(int size)
         {
-            return new Sprites.PipeSprite(pipeSpritesheet,sb,size);
+            if (size == GameConstants.UnderPipe)
+            {
+                return new Sprites.PipeSprite(backgroundSpritesheet, sb);
+            }
+            else
+            {
+                return new Sprites.PipeSprite(pipeSpritesheet, sb, size);
+            }
         }
 
         public Sprites.ISprite CreateUsedBlockSprite()
@@ -58,6 +67,11 @@ namespace SuperMarioGame.SpriteFactories
             return new Sprites.BrickBlockSprite(brickBlockSpritesheet,sb);
         }
 
+        public Sprites.ISprite CreateBlueBrickBlockSprite()
+        {
+            return new Sprites.BlueBrickBlockSprite(brickBlockSpritesheet, sb);
+        }
+
         public Sprites.ISprite CreateQuestionBlockSprite()
         {
             return new Sprites.QuestionBlockSprite(questionBlockSpritesheet,sb);
@@ -66,6 +80,11 @@ namespace SuperMarioGame.SpriteFactories
         public Sprites.ISprite CreateGroundBlockSprite()
         {
             return new Sprites.GroundBlockSprite(groundBlockSpritesheet,sb);
+        }
+
+        public Sprites.ISprite CreateBlueGroundBlockSprite()
+        {
+            return new Sprites.BlueGroundBlockSprite(groundBlockSpritesheet, sb);
         }
 
         public Sprites.ISprite CreateHiddenBlockSprite()

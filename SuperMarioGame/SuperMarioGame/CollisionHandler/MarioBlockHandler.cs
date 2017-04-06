@@ -76,6 +76,14 @@ namespace SuperMarioGame.CollisionHandler
                             Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
+                            //score part
+                            mario.isScored = true;
+                            mario.score = 200;
+                            mario.totalScore += mario.score;
+                            Vector2 newP;
+                            newP.X = block.position.X+12;
+                            newP.Y = block.position.Y - 3;
+                            mario.textPosition = newP;
                         }
                         else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
                         {
@@ -88,6 +96,14 @@ namespace SuperMarioGame.CollisionHandler
                                 c.jump = true;
                                 myGame.level.itemElements.Add(c);
                                 b.coinCount--;
+                                //score part
+                                mario.isScored = true;
+                                mario.score = 200;
+                                mario.totalScore += mario.score;
+                                Vector2 newP;
+                                newP.X = b.blockSprite.desRectangle.X+12;
+                                newP.Y = b.blockSprite.desRectangle.Y - 3;
+                                mario.textPosition = newP;
                             }
                             else
                             {
@@ -124,10 +140,19 @@ namespace SuperMarioGame.CollisionHandler
                         else if (block is QuestionBlockC && block.blockSprite is QuestionBlockSprite)
                         {
                             block.Bump();
+                            //score part
+                            mario.isScored = true;
+                            mario.score = 200;
+                            mario.totalScore += mario.score;
+                            Vector2 newP;
+                            newP.X = block.blockSprite.desRectangle.X + 12;
+                            newP.Y = block.blockSprite.desRectangle.Y - 3;
+                            mario.textPosition = newP;
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
+                            
                         }
                         else if (block is HiddenBlock && block.blockSprite is HiddenBlockSprite)
                         {

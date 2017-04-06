@@ -13,9 +13,19 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public bool isBroken { get; set; }
         public bool isBumped { get; set; }
         public int bumpCount { get; set; }
-        public GroundBlock(Vector2 pos)
+
+        private Color blockTint;
+        public GroundBlock(Vector2 pos, bool isBlue)
         {
-            blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
+            if (isBlue)
+            {
+                blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBlueGroundBlockSprite();
+            }
+            else
+            {
+                blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateGroundBlockSprite();
+            }
+
             position = pos;
             isVisible = true;
             isBroken = false;
