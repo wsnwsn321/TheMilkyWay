@@ -18,6 +18,13 @@ namespace SuperMarioGame.Sprites
             this.sb = sb;
             this.size = size;
         }
+
+        public PipeSprite(Texture2D texture, SpriteBatch underPipeSB)
+        {
+            Texture = texture;
+            this.sb = underPipeSB;
+            this.size = GameConstants.UnderPipe;
+        }
         public void Update()
         {
 
@@ -41,6 +48,11 @@ namespace SuperMarioGame.Sprites
             {
                 sourceRectangle = new Rectangle(185, 80, 35, 49);
                 desRectangle = new Rectangle((int)position.X, (int)position.Y, 60, 80);
+            }
+            else if(size == GameConstants.UnderPipe)
+            {
+                sourceRectangle = new Rectangle(84, 320, 42, 130);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, 84, 384);
             }
             else
             {

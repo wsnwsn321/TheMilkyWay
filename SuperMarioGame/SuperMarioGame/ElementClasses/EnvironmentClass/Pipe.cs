@@ -13,6 +13,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public bool isBumped { get; set; }
         public int bumpCount { get; set; }
         public bool special = false;
+
         public Pipe(Vector2 pos, int size, bool special)
         {
             position = pos;
