@@ -47,7 +47,7 @@ namespace SuperMarioGame.Controller
 
                 foreach (Keys key in pressedKeys)
                 {
-                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P) && !key.Equals(Keys.O))
+                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P) && !key.Equals(Keys.O) && !key.Equals(Keys.I))
                     {
                         if (key.Equals(Keys.W))
                         {

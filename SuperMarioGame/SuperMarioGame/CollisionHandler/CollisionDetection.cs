@@ -124,7 +124,17 @@ namespace SuperMarioGame.CollisionHandler
                             if (!enemy.flip)
                             {
                                 if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)&&mario.marioState!=Mario.MARIO_SMALL&&block.blockSprite is BrickBlockSprite)
+                                {
                                     enemy.BeFlipped();
+                                    //score part
+                                    mario.isScored = true;
+                                    mario.score = 100;
+                                    mario.totalScore += mario.score;
+                                    Vector2 newP;
+                                    newP.X = block.blockSprite.desRectangle.X + 12;
+                                    newP.Y = block.blockSprite.desRectangle.Y - 3;
+                                    mario.textPosition = newP;
+                                }
                                 enemy.gravity = 0;
                             }
                         }
@@ -224,19 +234,28 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
-        public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements)
+        public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements, Mario mario)
         {
             SIDE = TOP;
             
-                foreach (IEnemy enemy in enemyElements)
+            foreach (IEnemy enemy in enemyElements)
+            {
+                if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
                 {
-                    if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                    ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                    if(item is Fireball)
                     {
-                        ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
-                          
+                        //score part
+                        mario.isScored = true;
+                        mario.score = 100;
+                        mario.totalScore += mario.score;
+                        Vector2 newP;
+                        newP.X = enemy.position.X;
+                        newP.Y = enemy.position.Y - 3;
+                        mario.textPosition = newP;
                     }
                 }
-  
+            }  
         }
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)

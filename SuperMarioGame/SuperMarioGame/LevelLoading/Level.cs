@@ -80,7 +80,7 @@ namespace SuperMarioGame.LevelLoading
                 {
 
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
-                    CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements);
+                    CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements,mario);
 
 
                     if (!item.isVisible)
@@ -124,9 +124,17 @@ namespace SuperMarioGame.LevelLoading
                 else
                 {
                     if (mario.animation == GameConstants.FlagAnimation)
+                    {
                         mario.FlagAnimationUpdate();
-                    else
+                    }
+                    else if(mario.animation == GameConstants.PipeAnimation)
+                    {
                         mario.PipeAnimationUpdate();
+                    }
+                    else
+                    {
+                        mario.GrowAnimationUpdate();
+                    }
                 }
             }
             else

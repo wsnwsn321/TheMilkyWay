@@ -247,6 +247,12 @@ namespace SuperMarioGame.ElementClasses
             myGame.keyboardController.controllerMappings[Keys.O].Execute();
             state.Update();
         }
+        public void GrowAnimationUpdate()
+        {
+
+            myGame.keyboardController.controllerMappings[Keys.I].Execute();
+            state.Update();
+        }
 
         public void DrawScore()
         {

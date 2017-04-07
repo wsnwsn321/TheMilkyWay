@@ -22,5 +22,6 @@
 
         public const int FlagAnimation = 1;
         public const int PipeAnimation = 2;
+        public const int GrowAnimation = 3;
     }
 }

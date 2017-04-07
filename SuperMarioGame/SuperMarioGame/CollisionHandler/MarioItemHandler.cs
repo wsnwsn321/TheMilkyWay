@@ -12,17 +12,16 @@ namespace SuperMarioGame.CollisionHandler
                     
             if(item is RedMushroom)
             {
-                        
-                if(mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
+                if (mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
                 {
-                        mario.state.ChangeForm(Mario.MARIO_BIG);
-                        mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
+                    mario.animated = true;
+                    mario.animation = GameConstants.GrowAnimation;
                     //score part
                     mario.isScored = true;
                     mario.score = 1000;
                     mario.totalScore += mario.score;
                     Vector2 newP;
-                    newP.X =mario.position.X + 12;
+                    newP.X = mario.position.X + 12;
                     newP.Y = mario.position.Y - 3;
                     mario.textPosition = newP;
                 }
