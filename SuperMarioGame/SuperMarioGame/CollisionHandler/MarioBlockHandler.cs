@@ -7,6 +7,7 @@ using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.LevelLoading;
 using SuperMarioGame.Sprites;
 using System.Diagnostics;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -41,9 +42,11 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+3;
                         mario.position = newPosition;
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite)
-                        {    
-                            if(mario.marioState != Mario.MARIO_SMALL)
+                        {
+                            MarioSoundManager.instance.playSound(MarioSoundManager.BUMP);
+                            if (mario.marioState != Mario.MARIO_SMALL)
                             {
+                                MarioSoundManager.instance.playSound(MarioSoundManager.BREAKBLOCK);
                                 block.Bump();
                                 block.isVisible = false;
                                 BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), 1);
@@ -58,7 +61,6 @@ namespace SuperMarioGame.CollisionHandler
                                 myGame.level.itemElements.Add(block2);
                                 myGame.level.itemElements.Add(block3);
                                 myGame.level.itemElements.Add(block4);
-
                             }
                             else
                             {
@@ -71,6 +73,7 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else if(block is BrickBlockC && block.blockSprite is BrickBlockSprite)
                         {
+                            MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
@@ -87,7 +90,7 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
                         {
-                            
+                            MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
                             BrickBlockCC b = block as BrickBlockCC;
                             if (b.coinCount > 0)
                             {
@@ -119,26 +122,28 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-                            myGame.level.itemElements.Add(new Star(new Vector2(block.position.X,block.position.Y-32)));
+                            myGame.level.itemElements.Add(new Star(new Vector2(block.position.X,block.position.Y-GameConstants.SquareWidth)));
                         }
                         else if (block is QuestionBlockM && block.blockSprite is QuestionBlockSprite)
                         {
+                            MarioSoundManager.instance.playSound(MarioSoundManager.POWERUPAPPEARS);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             
                             if(mario.marioState == 2)
                             {
-                                myGame.level.itemElements.Add(new RedMushroom(new Vector2(block.position.X, block.position.Y - 32)));
+                                myGame.level.itemElements.Add(new RedMushroom(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                                 //IItem redMushroom = myGame.level.itemElements[myGame.level.itemElements.Count - 1];
                             }
                             else if(mario.marioState == 3 || mario.marioState == 4)
                             {
-                                myGame.level.itemElements.Add(new Flower(new Vector2(block.position.X, block.position.Y - 32)));
+                                myGame.level.itemElements.Add(new Flower(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                                 //IItem flower = myGame.level.itemElements[myGame.level.itemElements.Count - 1];
                             }
                         }
                         else if (block is QuestionBlockC && block.blockSprite is QuestionBlockSprite)
                         {
+                            MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
                             block.Bump();
                             //score part
                             mario.isScored = true;
@@ -156,9 +161,10 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else if (block is HiddenBlock && block.blockSprite is HiddenBlockSprite)
                         {
+                            MarioSoundManager.instance.playSound(MarioSoundManager.POWERUPAPPEARS);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-                            myGame.level.itemElements.Add(new GreenMushroom(new Vector2(block.position.X, block.position.Y - 32)));
+                            myGame.level.itemElements.Add(new GreenMushroom(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                         }
                         break;
                     case 4: //left side collision

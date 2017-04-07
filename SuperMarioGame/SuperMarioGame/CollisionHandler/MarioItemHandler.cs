@@ -2,6 +2,7 @@
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ItemClass;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -14,6 +15,7 @@ namespace SuperMarioGame.CollisionHandler
             {
                 if (mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
                 {
+                    MarioSoundManager.instance.playSound(MarioSoundManager.POWERUP);
                     mario.animated = true;
                     mario.animation = GameConstants.GrowAnimation;
                     //score part
@@ -29,9 +31,9 @@ namespace SuperMarioGame.CollisionHandler
             }
 
 
-            if (item is Flower)
+            if (item is Flower && item.isVisible)
             {
-               
+                MarioSoundManager.instance.playSound(MarioSoundManager.POWERUP);
                 if (mario.marioState != Mario.MARIO_FIRE && item.isVisible)
                 {
                     //score part
@@ -46,7 +48,6 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         mario.state.ChangeForm(Mario.MARIO_BIG);
                         mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
-
                     }
                     else
                     {
@@ -96,6 +97,7 @@ namespace SuperMarioGame.CollisionHandler
             {
                 if (item.isVisible)
                 {
+                    MarioSoundManager.instance.playSound(MarioSoundManager.ONEUP);
                     item.isVisible = false;
                     //score part
                     mario.isScored = true;

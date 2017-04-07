@@ -1,4 +1,6 @@
-﻿namespace SuperMarioGame.Commands
+﻿using SuperMarioGame.Sound.MarioSound;
+
+namespace SuperMarioGame.Commands
 {
     class PauseGameCommand : ICommand
     {
@@ -17,6 +19,7 @@
             if (counter % 10 == 0)
             {
                 counter = 0;
+                MarioSoundManager.instance.playSound(MarioSoundManager.PAUSE);
                 myGame.gameStateHandler.GamePause();
             }
         }

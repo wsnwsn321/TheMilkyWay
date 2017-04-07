@@ -56,7 +56,7 @@ namespace SuperMarioGame.CollisionHandler
                                 }
                                 else
                                 {
-                                     if (mario.marioDirection)
+                                    if (mario.marioDirection)
                                     {
                                         enemy.shellDirection =true;
                                         enemy.shellMoving = 4;

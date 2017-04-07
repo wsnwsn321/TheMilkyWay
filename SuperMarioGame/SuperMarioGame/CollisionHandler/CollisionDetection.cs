@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
 using System.Diagnostics;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -282,13 +283,19 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     if (bg is Flag)
                     {
-                        if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
+                        Flag tempFlag = bg as Flag;
+                        if (!tempFlag.isDown)
                         {
-                            myGame.keyboardController.keysEnabled = false;
-                            bg.moveDown = true;
-                            mario.animated = true;
-                            mario.animation = GameConstants.FlagAnimation;
-                            animation = true;
+                            if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
+                            {
+                                MarioSoundManager.instance.playSound(MarioSoundManager.FLAGPOLE);
+                                MarioSoundManager.instance.playSound(MarioSoundManager.STAGECLEAR);
+                                myGame.keyboardController.keysEnabled = false;
+                                bg.moveDown = true;
+                                mario.animated = true;
+                                mario.animation = GameConstants.FlagAnimation;
+                                animation = true;
+                            }
                         }
                     }
                 }

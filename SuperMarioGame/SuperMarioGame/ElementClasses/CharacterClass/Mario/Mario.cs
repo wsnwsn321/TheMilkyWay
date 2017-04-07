@@ -96,10 +96,10 @@ namespace SuperMarioGame.ElementClasses
                 position = new Vector2(position.X, position.Y);
             } else if (form == MARIO_BIG)
             {
-                position = new Vector2(position.X, position.Y - 32);
+                position = new Vector2(position.X, position.Y - GameConstants.SquareWidth);
             } else if (form == MARIO_SMALL)
             {
-                position = new Vector2(position.X, position.Y + 32);
+                position = new Vector2(position.X, position.Y + GameConstants.SquareWidth);
             }
 
             marioState = form;
