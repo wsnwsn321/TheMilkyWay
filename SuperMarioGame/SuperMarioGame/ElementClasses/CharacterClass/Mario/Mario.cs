@@ -37,6 +37,7 @@ namespace SuperMarioGame.ElementClasses
         public bool isScored { get; set; }
         public bool isGreenMushroom { get; set; }
         public int score { get; set; }
+        public int coin { get; set; }
         public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
 
@@ -134,12 +135,13 @@ namespace SuperMarioGame.ElementClasses
                     starCounter++;
                     if (starCounter % 20 == 0)
                     {
-                        state.marioSprite.tintColor = Color.White;
+                        state.marioSprite.tintColor = Color.Brown;
                     }
                     else if (starCounter % 20 == 10)
                     {
-                        state.marioSprite.tintColor = Color.Brown;
+                        state.marioSprite.tintColor = Color.Green;
                     }
+
                 }
                 if (isScored)
                 {

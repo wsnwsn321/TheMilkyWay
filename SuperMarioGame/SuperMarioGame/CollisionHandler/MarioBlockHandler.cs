@@ -82,6 +82,7 @@ namespace SuperMarioGame.CollisionHandler
                             //score part
                             mario.isScored = true;
                             mario.score = 200;
+                            mario.coin += 1;
                             mario.totalScore += mario.score;
                             Vector2 newP;
                             newP.X = block.position.X+12;
@@ -102,6 +103,7 @@ namespace SuperMarioGame.CollisionHandler
                                 //score part
                                 mario.isScored = true;
                                 mario.score = 200;
+                                mario.coin += 1;
                                 mario.totalScore += mario.score;
                                 Vector2 newP;
                                 newP.X = b.blockSprite.desRectangle.X+12;
@@ -148,6 +150,7 @@ namespace SuperMarioGame.CollisionHandler
                             //score part
                             mario.isScored = true;
                             mario.score = 200;
+                            mario.coin += 1;
                             mario.totalScore += mario.score;
                             Vector2 newP;
                             newP.X = block.blockSprite.desRectangle.X + 12;

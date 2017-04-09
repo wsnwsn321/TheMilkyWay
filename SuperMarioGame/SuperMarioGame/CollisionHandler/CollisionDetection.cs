@@ -248,7 +248,7 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         //score part
                         mario.isScored = true;
-                        mario.score = 100;
+                        mario.score = 200;
                         mario.totalScore += mario.score;
                         Vector2 newP;
                         newP.X = enemy.position.X;

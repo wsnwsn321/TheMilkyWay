@@ -180,6 +180,9 @@ namespace SuperMarioGame.LevelLoading
                 }
             }
             scoreSystem.DisplayScore(mario.totalScore);
+            scoreSystem.CoinSystem(mario.coin);
+            scoreSystem.WorldSystem(true);
+            scoreSystem.Time();
         }
         
         public void Load(string levelToLoad, Vector2 marioPos)
