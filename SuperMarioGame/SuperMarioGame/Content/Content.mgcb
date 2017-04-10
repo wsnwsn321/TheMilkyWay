@@ -595,3 +595,21 @@
 /processorParam:Quality=Best
 /build:Sound/Mario/smb_world_clear.wav
 
+#begin Sound/Map/Level-01.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/Map/Level-01.mp3
+
+#begin Item\undergroundPipe.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Item\undergroundPipe.png
+
