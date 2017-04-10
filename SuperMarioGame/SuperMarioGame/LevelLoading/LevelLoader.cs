@@ -143,11 +143,9 @@ namespace SuperMarioGame.LevelLoading
                             level.backgroundElements.Add(new Flag(new Vector2(x+15, y+27)));
                             break;
                         case "OVERWORLD":
-                            level.envElements.Add(new GroundBlock(new Vector2(x, y), false));
                             level.backgroundColor = Color.CornflowerBlue;        
                             break;
                         case "UNDERWORLD":
-                            level.envElements.Add(new GroundBlock(new Vector2(x, y), false));
                             level.backgroundColor = Color.TransparentBlack;
                             break;
                         default:

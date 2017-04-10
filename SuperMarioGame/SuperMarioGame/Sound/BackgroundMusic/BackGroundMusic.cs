@@ -12,7 +12,7 @@ namespace SuperMarioGame.Sound.BackgroundMusic
         List<Song> BGM;
         Song var;
         public const string LEVEL1 = "Level1", LEVEL2 = "Level2", LEVELClEAR ="LevelClear", STARMAN ="Starman";
-        private string current;
+        private string currentBGM;
         public BackgroundMusic()
         {
             BGM = new List<Song>();
@@ -36,30 +36,25 @@ namespace SuperMarioGame.Sound.BackgroundMusic
                 case LEVEL1:
                     var = BGM[0];
                     MediaPlayer.Play(var);
-                    current = LEVEL1;
+                    currentBGM = LEVEL1;
                     break;
                 case LEVEL2:
                     var = BGM[1];
                     MediaPlayer.Play(var);
-                    current = LEVEL2;
+                    currentBGM = LEVEL2;
                     break;
                 case STARMAN:
                     var = BGM[2];
                     MediaPlayer.Play(var);
-                    break;
-                case LEVELClEAR:
-                    var = BGM[2];
-                    MediaPlayer.Play(var);
-                    current = LEVELClEAR;
                     break;
                 
                     
             }
         }
 
-        public string currentPlay()
+        public void resetBGM()
         {
-            return current;
+            playSound(currentBGM);
         }
     }
 }
