@@ -17,8 +17,8 @@ namespace SuperMarioGame.HUDElements
     {
         Game1 mygame;
         Coin c;
-        int time_elapsed = 0;
-        int time_left = 400;
+        int timeElapsed = 0;
+        int timeLeft = GameConstants.InitialTimerValue;
 
         public ScoreSystem(Game1 game)
         {
@@ -109,17 +109,17 @@ namespace SuperMarioGame.HUDElements
         public void Time()
         {
             String TIME = "TIME";
-            time_elapsed++;
-            if (time_elapsed % 60 == 0)
+            timeElapsed++;
+            if (timeElapsed % 60 == 0)
             {
-                time_left--;
-                time_elapsed = 0;
+                timeLeft--;
+                timeElapsed = 0;
             }
-            String timer_num = time_left.ToString() ;
-            if (time_left == 0)
+            String timer_num = timeLeft.ToString() ;
+            if (timeLeft == 0)
             {
-                time_left = 400;
-                time_elapsed = 0;
+                timeLeft = GameConstants.InitialTimerValue;
+                timeElapsed = 0;
                 mygame.ResetGame();
             }
             Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / 2;
