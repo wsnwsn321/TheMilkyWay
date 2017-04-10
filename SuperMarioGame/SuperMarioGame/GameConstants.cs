@@ -12,7 +12,7 @@
         //for flagpole testing change x pos to 6750
         public const int MarioStartingX = 100;
         public const int MarioStartingY = 358;
-        public const int NewMarioStartingX = 100;
+        public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
 
         public const int SmallPipe = 1;
