@@ -1,6 +1,6 @@
 ﻿namespace SuperMarioGame
 {
-    public class GameConstants
+    public static class GameConstants
     {
         public const string UnderworldLevel = @"LevelLoading\LevelFiles\Underworld.csv";
         public const string OverworldLevel = @"LevelLoading\LevelFiles\Sprint4Level.csv";
@@ -28,7 +28,6 @@
         public const int GrowAnimation = 4;
 
         public const int InitialTimerValue = 400;
-
         public const int Score1 = 100;
         public const int Score2 = 100;
 
@@ -36,6 +35,20 @@
         public const int BlockPieceTwo = 2;
         public const int BlockPieceThree = 3;
         public const int BlockPieceFour = 4;
+
+        public const int score900 = 900;
+        public const int score9900 = 9900;
+        public const int score99900 = 99900;
+        public const int score1000 = 1000;
+        public const int score10000 = 10000;
+
+        public const int Three = 3;
+        public const int Two = 2;
+        public const int Eleven = 11;
+        public const int Eight = 8;
+        public const int FourHund = 400;
+        public const int Ten = 10;
+        public const int Twelve = 12;
 
     }
 }

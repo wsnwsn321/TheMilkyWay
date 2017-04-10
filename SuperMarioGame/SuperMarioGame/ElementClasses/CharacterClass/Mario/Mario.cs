@@ -283,7 +283,7 @@ namespace SuperMarioGame.ElementClasses
                   output = "1UP";
             }
            
-            Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
+            Vector2 FontOrigin = myGame.font.MeasureString(output) / GameConstants.Two;
             myGame.spriteBatch.Begin();
 
                 if (scoreCounter <= Twenty)
