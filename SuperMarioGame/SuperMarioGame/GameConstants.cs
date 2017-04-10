@@ -11,7 +11,7 @@
         public const int ScreenHeight = 480;
         public const int FreezeTime = 150;
         //for flagpole testing change x pos to 6750
-        public const int MarioStartingX = 6500;
+        public const int MarioStartingX = 100;
         public const int MarioStartingY = 358;
         public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
