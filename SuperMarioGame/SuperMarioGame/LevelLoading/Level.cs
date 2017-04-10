@@ -20,10 +20,6 @@ namespace SuperMarioGame.LevelLoading
         internal List<IItem> fireBallList = new List<IItem>();
         internal Stack<int> deleteList = new Stack<int>();
 
-        private List<IBlock> tempEnvElements = new List<IBlock>();
-        private List<IItem> tempItemElements = new List<IItem>();
-        private List<IEnemy> tempEnemyElements = new List<IEnemy>();
-        private List<IBackground> tempBackgroundElements = new List<IBackground>();
         private PauseText pauseText;
         internal ScoreSystem scoreSystem;
 
@@ -190,7 +186,7 @@ namespace SuperMarioGame.LevelLoading
             }
             scoreSystem.DisplayScore(mario.totalScore);
             scoreSystem.CoinSystem(mario.coin);
-            scoreSystem.WorldSystem(true);
+            scoreSystem.WorldSystem();
             scoreSystem.Time();
         }
         
@@ -221,14 +217,6 @@ namespace SuperMarioGame.LevelLoading
             }
           
             
-        }
-
-        private void StoreElements()
-        {
-            tempBackgroundElements = backgroundElements;
-            tempEnemyElements = enemyElements;
-            tempEnvElements = envElements;
-            tempItemElements = itemElements;
         }
 
         public void Pause()

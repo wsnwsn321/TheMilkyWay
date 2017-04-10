@@ -103,7 +103,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = GameConstants.Left;
                         }
                     }
-                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
                     {
                         MarioBlockHandler.BlockHandler(myGame, mario, block, SIDE);
                     }
@@ -133,8 +133,8 @@ namespace SuperMarioGame.CollisionHandler
                                     mario.score = GameConstants.Score1;
                                     mario.totalScore += mario.score;
                                     Vector2 newP;
-                                    newP.X = block.blockSprite.desRectangle.X + 12;
-                                    newP.Y = block.blockSprite.desRectangle.Y - 3;
+                                    newP.X = block.blockSprite.desRectangle.X + GameConstants.Twelve;
+                                    newP.Y = block.blockSprite.desRectangle.Y - GameConstants.Three;
                                     mario.textPosition = newP;
                                 }
                                 enemy.gravity = 0;
@@ -169,7 +169,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = GameConstants.Left;
                         }
                     }
-                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven+ GameConstants.Two)
                     {
                         EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
                     }
@@ -181,7 +181,7 @@ namespace SuperMarioGame.CollisionHandler
         {
             if(!(item.itemSprite is FireballSprite))
             {
-                item.gravity = 4;
+                item.gravity = GameConstants.Two* GameConstants.Two;
             }
         
             foreach (IBlock block in envElements)
@@ -228,7 +228,7 @@ namespace SuperMarioGame.CollisionHandler
                             SIDE = GameConstants.Left;
                         }
                     }
-                    if (collideRectangle.Width * collideRectangle.Height > 13)
+                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
                     {
                         ItemBlockHandler.BlockHandler(item, block, SIDE);
                     }
@@ -253,7 +253,7 @@ namespace SuperMarioGame.CollisionHandler
                         mario.totalScore += mario.score;
                         Vector2 newP;
                         newP.X = enemy.position.X;
-                        newP.Y = enemy.position.Y - 3;
+                        newP.Y = enemy.position.Y - GameConstants.Three;
                         mario.textPosition = newP;
                     }
                 }
@@ -289,6 +289,24 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
                             {
+                                //score part
+                                mario.isScored = true;
+                                if (mario.position.Y < bg.backgroundSprite.desRectangle.Y + GameConstants.Fifty)
+                                {
+                                    mario.score = GameConstants.Score1500;
+                                }
+                                else if(mario.position.Y >= bg.backgroundSprite.desRectangle.Y + GameConstants.Fifty&&mario.position.Y < bg.backgroundSprite.desRectangle.Y + GameConstants.Fifty* GameConstants.Three)
+                                {
+                                    mario.score = GameConstants.Score1000;
+                                }
+                                else{
+                                    mario.score = GameConstants.Score500;
+                                }
+                                mario.totalScore += mario.score;
+                                Vector2 newP;
+                                newP.X = mario.position.X;
+                                newP.Y = mario.position.Y - GameConstants.Three;
+                                mario.textPosition = newP;
                                 MediaPlayer.Stop();
                                 MarioSoundManager.instance.playSound(MarioSoundManager.FLAGPOLE);
                                 MarioSoundManager.instance.playSound(MarioSoundManager.STAGECLEAR);

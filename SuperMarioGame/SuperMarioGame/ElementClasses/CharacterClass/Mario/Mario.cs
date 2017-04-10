@@ -16,7 +16,7 @@ namespace SuperMarioGame.ElementClasses
         public bool IsInvincible { get; set; }
         public bool HasStarPower { get; set; }
 
-        public bool reSetBGM;
+        private bool reSetBGM;
         //state constant   
         public const int MARIO_DEAD = 1, MARIO_SMALL = 2, MARIO_BIG = 3, MARIO_FIRE = 4;
         //action constant
@@ -38,7 +38,6 @@ namespace SuperMarioGame.ElementClasses
         public bool isVisible { get; set; }
 
         public bool isScored { get; set; }
-        private bool WasHit { get; set; }
         public bool isGreenMushroom { get; set; }
         public int score { get; set; }
         public int coin { get; set; }
@@ -74,7 +73,6 @@ namespace SuperMarioGame.ElementClasses
             bounce = false;
             animated = false;
             isVisible = true;
-            WasHit = false;
             isScored = false;
         }
         public Mario(Game1 game, Vector2 position, int marioState, bool marioDirection)
