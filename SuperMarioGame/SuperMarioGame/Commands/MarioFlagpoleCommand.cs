@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses.ElementInterfaces;
+using SuperMarioGame.Sound.MarioSound;
 using SuperMarioGame.SpriteFactories;
 
 namespace SuperMarioGame.Commands
@@ -49,7 +50,7 @@ namespace SuperMarioGame.Commands
                 {
                     mario.gravity = 0;
                     mario.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagSmallMarioSprite();
-                    mario.position = new Vector2(mario.position.X + 32, mario.position.Y);
+                    mario.position = new Vector2(mario.position.X + GameConstants.SquareWidth, mario.position.Y);
                     b2 = true;
                 }
                 else
@@ -105,7 +106,7 @@ namespace SuperMarioGame.Commands
                 {
                     mario.gravity = 0;
                     mario.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagBigMarioSprite();
-                    mario.position = new Vector2(mario.position.X + 32, mario.position.Y);
+                    mario.position = new Vector2(mario.position.X + GameConstants.SquareWidth, mario.position.Y);
                     b2 = true;
                 }
                 else
@@ -162,7 +163,7 @@ namespace SuperMarioGame.Commands
                 {
                     mario.gravity = 0;
                     mario.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagFireMarioSprite();
-                    mario.position = new Vector2(mario.position.X + 32, mario.position.Y);
+                    mario.position = new Vector2(mario.position.X + GameConstants.SquareWidth, mario.position.Y);
                     b2 = true;
                 }
                 else

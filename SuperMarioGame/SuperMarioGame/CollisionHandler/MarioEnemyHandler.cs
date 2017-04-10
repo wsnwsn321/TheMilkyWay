@@ -16,7 +16,6 @@ namespace SuperMarioGame.CollisionHandler
                 switch (CollisionSide)
                 {
                     case 1:
-                        mario.bounce = true;
                         if (mario.HasStarPower)
                         {
                             enemy.BeFlipped();
@@ -31,9 +30,9 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         else
                         {
-                            if(mario.state.marioSprite.desRectangle.Bottom < enemy.enemySprite.desRectangle.Bottom)
-
+                            if(mario.state.marioSprite.desRectangle.Bottom > enemy.enemySprite.desRectangle.Top)
                             {
+                                mario.bounce = true;
                                 MarioSoundManager.instance.playSound(MarioSoundManager.STOMP);
                                 enemy.BeStomped();
                                 if(!(enemy.shellDirection))
@@ -57,7 +56,7 @@ namespace SuperMarioGame.CollisionHandler
                                 }
                                 else
                                 {
-                                     if (mario.marioDirection)
+                                    if (mario.marioDirection)
                                     {
                                         enemy.shellDirection =true;
                                         enemy.shellMoving = 4;

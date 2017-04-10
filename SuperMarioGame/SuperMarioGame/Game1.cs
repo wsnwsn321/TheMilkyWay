@@ -107,9 +107,12 @@ namespace SuperMarioGame
             keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
             //arbitrarily choose o,p for animation commands
-            //o,p is disabled in KeyboardController.cs
+            //o,p,Attn is disabled in KeyboardController.cs
             keyboardController.RegisterCommand(Keys.P, new MarioFlagpoleCommand(this));
             keyboardController.RegisterCommand(Keys.O, new MarioPipeCommand(this));
+            keyboardController.RegisterCommand(Keys.Attn, new MarioUnderPipeCommand(this));
+            keyboardController.RegisterCommand(Keys.I, new MarioGrowCommand(this));
+
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));

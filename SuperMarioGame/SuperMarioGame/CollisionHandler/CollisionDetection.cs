@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
 using System.Diagnostics;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -124,7 +125,17 @@ namespace SuperMarioGame.CollisionHandler
                             if (!enemy.flip)
                             {
                                 if (mario.state.marioSprite.desRectangle.Intersects(block.blockSprite.desRectangle)&&mario.marioState!=Mario.MARIO_SMALL&&block.blockSprite is BrickBlockSprite)
+                                {
                                     enemy.BeFlipped();
+                                    //score part
+                                    mario.isScored = true;
+                                    mario.score = 100;
+                                    mario.totalScore += mario.score;
+                                    Vector2 newP;
+                                    newP.X = block.blockSprite.desRectangle.X + 12;
+                                    newP.Y = block.blockSprite.desRectangle.Y - 3;
+                                    mario.textPosition = newP;
+                                }
                                 enemy.gravity = 0;
                             }
                         }
@@ -224,19 +235,28 @@ namespace SuperMarioGame.CollisionHandler
             }
         }
 
-        public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements)
+        public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements, Mario mario)
         {
             SIDE = TOP;
             
-                foreach (IEnemy enemy in enemyElements)
+            foreach (IEnemy enemy in enemyElements)
+            {
+                if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
                 {
-                    if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                    ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                    if(item is Fireball)
                     {
-                        ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
-                          
+                        //score part
+                        mario.isScored = true;
+                        mario.score = 200;
+                        mario.totalScore += mario.score;
+                        Vector2 newP;
+                        newP.X = enemy.position.X;
+                        newP.Y = enemy.position.Y - 3;
+                        mario.textPosition = newP;
                     }
                 }
-  
+            }  
         }
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
@@ -263,13 +283,19 @@ namespace SuperMarioGame.CollisionHandler
                 {
                     if (bg is Flag)
                     {
-                        if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
+                        Flag tempFlag = bg as Flag;
+                        if (!tempFlag.isDown)
                         {
-                            myGame.keyboardController.keysEnabled = false;
-                            bg.moveDown = true;
-                            mario.animated = true;
-                            mario.animation = GameConstants.FlagAnimation;
-                            animation = true;
+                            if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
+                            {
+                                MarioSoundManager.instance.playSound(MarioSoundManager.FLAGPOLE);
+                                MarioSoundManager.instance.playSound(MarioSoundManager.STAGECLEAR);
+                                myGame.keyboardController.keysEnabled = false;
+                                bg.moveDown = true;
+                                mario.animated = true;
+                                mario.animation = GameConstants.FlagAnimation;
+                                animation = true;
+                            }
                         }
                     }
                 }

@@ -148,15 +148,15 @@ namespace SuperMarioGame.LevelLoading
                             break;
                         case "UNDERWORLD":
                             level.envElements.Add(new GroundBlock(new Vector2(x, y), true));
-                            level.backgroundColor = Color.Black;
+                            level.backgroundColor = Color.TransparentBlack;
                             break;
                         default:
                             break;
                     }
-                    x += 32;
+                    x += GameConstants.SquareWidth;
                 }
                 width = x;
-                y += 32;
+                y += GameConstants.SquareWidth;
             }
             height = y;
         }

@@ -32,7 +32,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.FireMarioSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(19, 0, 19, 32);
+            Rectangle sourceRectangle = new Rectangle(19, 0, 19,GameConstants.SquareWidth);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 38, 64);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;

@@ -52,7 +52,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite
             sb.Begin();
             int currentWidth = 15;
             Rectangle sourceRectangle = new Rectangle((currentFrame * currentWidth)-1, 0, 15, 16);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 32);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 30,GameConstants.SquareWidth);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

@@ -33,7 +33,7 @@ namespace SuperMarioGame.Sprites.MarioSprite.BigMarioSprite
         {
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(16, 0, 16, 31);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 62);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y,GameConstants.SquareWidth, 62);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

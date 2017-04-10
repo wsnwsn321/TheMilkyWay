@@ -37,6 +37,7 @@ namespace SuperMarioGame.ElementClasses
         public bool isScored { get; set; }
         public bool isGreenMushroom { get; set; }
         public int score { get; set; }
+        public int coin { get; set; }
         public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
 
@@ -96,10 +97,10 @@ namespace SuperMarioGame.ElementClasses
                 position = new Vector2(position.X, position.Y);
             } else if (form == MARIO_BIG)
             {
-                position = new Vector2(position.X, position.Y - 32);
+                position = new Vector2(position.X, position.Y - GameConstants.SquareWidth);
             } else if (form == MARIO_SMALL)
             {
-                position = new Vector2(position.X, position.Y + 32);
+                position = new Vector2(position.X, position.Y + GameConstants.SquareWidth);
             }
 
             marioState = form;
@@ -134,12 +135,13 @@ namespace SuperMarioGame.ElementClasses
                     starCounter++;
                     if (starCounter % 20 == 0)
                     {
-                        state.marioSprite.tintColor = Color.White;
+                        state.marioSprite.tintColor = Color.Brown;
                     }
                     else if (starCounter % 20 == 10)
                     {
-                        state.marioSprite.tintColor = Color.Brown;
+                        state.marioSprite.tintColor = Color.Green;
                     }
+
                 }
                 if (isScored)
                 {
@@ -245,6 +247,12 @@ namespace SuperMarioGame.ElementClasses
         {
             
             myGame.keyboardController.controllerMappings[Keys.O].Execute();
+            state.Update();
+        }
+        public void GrowAnimationUpdate()
+        {
+
+            myGame.keyboardController.controllerMappings[Keys.I].Execute();
             state.Update();
         }
 

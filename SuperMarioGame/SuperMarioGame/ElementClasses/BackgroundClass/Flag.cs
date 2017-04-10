@@ -8,10 +8,12 @@ namespace SuperMarioGame.ElementClasses.BackgroundClass
         public ISprite backgroundSprite { get; set; }
         public Vector2 position { get; set; }
         public bool moveDown { get; set; }
+        public bool isDown { get; set; }
         public Flag(Vector2 pos)
         {
             position = pos;
             backgroundSprite = SpriteFactories.BackgroundSpriteFactory.Instance.CreateFlagSprite();
+            moveDown = isDown = false;
         }
 
         public void Draw()
@@ -29,6 +31,7 @@ namespace SuperMarioGame.ElementClasses.BackgroundClass
                 }else
                 {
                     moveDown = false;
+                    isDown = true;
                 }
 
             }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.HUDElements
 {
@@ -7,6 +8,7 @@ namespace SuperMarioGame.HUDElements
     {
         Game1 myGame;
         Vector2 FontPos;
+        bool playOnce = true;
 
         public PauseText(Game1 game)
         {
@@ -19,6 +21,11 @@ namespace SuperMarioGame.HUDElements
 
         public void Draw()
         {
+            if (playOnce)
+            {
+                playOnce = false;
+            }
+
             FontPos = new Vector2(GameConstants.ScreenWidth / 2 - myGame.GraphicsDevice.Viewport.X,
                 GameConstants.ScreenHeight / 2);
 
