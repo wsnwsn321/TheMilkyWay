@@ -240,19 +240,23 @@ namespace SuperMarioGame.ElementClasses
         }
         public void FlagAnimationUpdate()
         {
-            myGame.keyboardController.controllerMappings[Keys.P].Execute();
+            myGame.keyboardController.controllerMappings[Keys.BrowserFavorites].Execute();
             state.Update();
         }
         public void PipeAnimationUpdate()
         {
-            
-            myGame.keyboardController.controllerMappings[Keys.O].Execute();
+            myGame.keyboardController.controllerMappings[Keys.BrowserForward].Execute();
+            state.Update();
+        }
+        public void UnderPipeAnimationUpdate()
+        {
+            myGame.keyboardController.controllerMappings[Keys.Attn].Execute();
             state.Update();
         }
         public void GrowAnimationUpdate()
         {
 
-            myGame.keyboardController.controllerMappings[Keys.I].Execute();
+            myGame.keyboardController.controllerMappings[Keys.BrowserHome].Execute();
             state.Update();
         }
 

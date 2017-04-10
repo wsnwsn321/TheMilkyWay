@@ -14,8 +14,8 @@
         public const int MarioStartingY = 358;
         public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
-        public const int OutPipeStartingX = 6200;
-        public const int OutPipeStartingY = 58;
+        public const int OutPipeStartingX = 5775;
+        public const int OutPipeStartingY = 320;
 
         public const int SmallPipe = 1;
         public const int MedPipe = 2;
@@ -24,7 +24,8 @@
 
         public const int FlagAnimation = 1;
         public const int PipeAnimation = 2;
-        public const int GrowAnimation = 3;
+        public const int UnderPipeAnimation = 3;
+        public const int GrowAnimation = 4;
 
         public const int InitialTimerValue = 400;
 

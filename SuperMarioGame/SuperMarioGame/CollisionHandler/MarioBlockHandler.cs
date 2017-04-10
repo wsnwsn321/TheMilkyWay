@@ -177,11 +177,19 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         break;
                     case 4: //left side collision
+                        if (block is Pipe)
+                        {
+                            Pipe tempPipe = block as Pipe;
+                            if (tempPipe.size == GameConstants.UnderPipe)
+                            {
+                                mario.animated = true;
+                                mario.animation = GameConstants.UnderPipeAnimation;
+                            }
+                        }
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
-                       
-                         break;
+                        break;
                 }
             }
         }
