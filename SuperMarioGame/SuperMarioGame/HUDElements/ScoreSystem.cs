@@ -36,15 +36,15 @@ namespace SuperMarioGame.HUDElements
             {
                 output = "000000";
             }
-            else if (score < GameConstants.score900)
+            else if (score <= GameConstants.score900)
             {
                 output = zeros+score + "";
             }
-            else if(score>= GameConstants.score1000 && score < GameConstants.score9900)
+            else if(score> GameConstants.score900 && score <= GameConstants.score9900)
             {
                 output = zeros.Substring(0,2) + score + "";
             }
-            else if(score>= GameConstants.score10000 && score < GameConstants.score99900)
+            else if(score> GameConstants.score9900 && score < GameConstants.score99900)
             {
                 output = zeros.Substring(0,1) + score + "";
             }
@@ -67,7 +67,7 @@ namespace SuperMarioGame.HUDElements
         public void CoinSystem(int coin)
         {
             Vector2 newPos;
-            newPos.X = (GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X)-40;
+            newPos.X = (GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X)- GameConstants.Ten* GameConstants.Two* GameConstants.Two;
             newPos.Y = GameConstants.ScreenHeight / (GameConstants.Ten+ GameConstants.Eight);
             c.position = newPos;
             c.Draw();
@@ -82,7 +82,7 @@ namespace SuperMarioGame.HUDElements
                 output = "X"+zero+coin + "";
             }
              
-            Vector2 FontOrigin = mygame.font.MeasureString(output)/2;
+            Vector2 FontOrigin = mygame.font.MeasureString(output)/ GameConstants.Two;
             mygame.spriteBatch.Begin(); 
             mygame.spriteBatch.DrawString(mygame.font, output, new Vector2(GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X,
                 GameConstants.ScreenHeight / GameConstants.Twelve), Color.White,
