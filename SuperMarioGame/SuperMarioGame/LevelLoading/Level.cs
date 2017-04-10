@@ -7,6 +7,7 @@ using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.HUDElements;
 using SuperMarioGame.SpriteFactories;
 using System.Collections.Generic;
+using SuperMarioGame.Sound.BackgroundMusic;
 
 namespace SuperMarioGame.LevelLoading
 {
@@ -201,6 +202,8 @@ namespace SuperMarioGame.LevelLoading
             mario.MarioIdle();
             mario.position = marioPos;
             scoreSystem = new ScoreSystem(myGame);
+            BackgroundMusic.instanse.playSound(BackgroundMusic.LEVEL1);
+            
         }
 
         private void StoreElements()
