@@ -8,7 +8,7 @@
         public const int SquareWidth = 32;
         public const int ScreenWidth = 800;
         public const int ScreenHeight = 480;
-
+        public const int FreezeTime = 150;
         //for flagpole testing change x pos to 6750
         public const int MarioStartingX = 100;
         public const int MarioStartingY = 358;
