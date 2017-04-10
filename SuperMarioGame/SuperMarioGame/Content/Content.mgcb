@@ -601,6 +601,18 @@
 /processorParam:Quality=Best
 /build:Sound/Map/Level-01.mp3
 
+#begin Sound/Map/Level-02.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/Map/Level-02.mp3
+
+#begin Sound/Map/Starman.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/Map/Starman.mp3
+
 #begin Item\undergroundPipe.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -612,4 +624,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Item\undergroundPipe.png
+
+#begin Item/UndergroundPipe1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Item/UndergroundPipe1.png
+
+#begin Item/UnderGroundPipe2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Item/UnderGroundPipe2.png
 

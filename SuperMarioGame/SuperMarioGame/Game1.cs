@@ -9,6 +9,7 @@ using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.GameState;
 using SuperMarioGame.Sound.MarioSound;
+using SuperMarioGame.Sound.BackgroundMusic;
 
 namespace SuperMarioGame
 
@@ -130,6 +131,8 @@ namespace SuperMarioGame
             MarioSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MarioSoundManager.instance.LoadSound(Content);
+            BackgroundMusic.instanse.LoadSound(Content);
+       
             font = Content.Load<SpriteFont>(@"SpriteFonts\Courier New");
         }
 
