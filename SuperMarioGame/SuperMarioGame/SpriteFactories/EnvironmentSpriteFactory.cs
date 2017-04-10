@@ -11,6 +11,7 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D usedBlockSpritesheet;
         private Texture2D groundBlockSpritesheet;
         private Texture2D pipeSpritesheet;
+        private Texture2D underPipeSpritesheet;
         private Texture2D stageBlockSpritesheet;
         public SpriteBatch sb { get; set; }
         private static EnvironmentSpriteFactory instance = new EnvironmentSpriteFactory();
@@ -32,6 +33,7 @@ namespace SuperMarioGame.SpriteFactories
             //load sprite sheets here**************************************
             //one example is below
 
+            underPipeSpritesheet = content.Load<Texture2D>("Item/undergroundPipe");
             pipeSpritesheet = content.Load<Texture2D>("Item/Pipe");
             backgroundSpritesheet = content.Load<Texture2D>("Background/BackgroundEnvironment");
             usedBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
@@ -49,7 +51,7 @@ namespace SuperMarioGame.SpriteFactories
         {
             if (size == GameConstants.UnderPipe)
             {
-                return new Sprites.PipeSprite(backgroundSpritesheet, sb);
+                return new Sprites.PipeSprite(underPipeSpritesheet, sb);
             }
             else
             {

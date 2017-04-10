@@ -13,6 +13,7 @@ namespace SuperMarioGame.Commands
         private double decay = 0;
         private bool jumpCount = true;
         public bool wDown;
+        private int Fifty = 50;
 
         public MarioJumpCommand(Game1 game)
         {
@@ -42,14 +43,14 @@ namespace SuperMarioGame.Commands
                             jumpCount = false;
                         }
                         mario.position = new Vector2(mario.position.X, mario.position.Y - (float)(jumpForce - decay));
-                        decay += jumpForce / 50;
+                        decay += jumpForce / Fifty;
 
                         jumpTime--;
                    
                         if (mario.gravity == 0 && !wDown)
                         {
                             decay = 0;
-                            jumpTime = 50;
+                            jumpTime = Fifty;
                             mario.jump = true;
                             jumpCount = true;
                         }
@@ -65,7 +66,7 @@ namespace SuperMarioGame.Commands
                         if (mario.gravity == 0 && !wDown)
                         {
                             decay = 0;
-                            jumpTime = 50;
+                            jumpTime = Fifty;
                             mario.jump = true;
                             jumpCount = true;
 

@@ -39,19 +39,20 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioBlockCollision(Game1 game, Mario mario, List<IBlock> envElements)
         {
+            Pipe tempPipe;
             mario.gravity = 4;
             foreach (IBlock block in envElements)
             {
                 myGame = game;
                 if (block.isVisible)
-                {
+                {                   
                     if (mario.state.marioSprite.desRectangle.Bottom > block.position.Y - 5 && mario.state.marioSprite.desRectangle.Bottom <= block.position.Y)
                     {
                         if (mario.state.marioSprite.desRectangle.Right > block.position.X + 3 && mario.state.marioSprite.desRectangle.Left < block.blockSprite.desRectangle.Right - 3)
                         {
                             if(block is Pipe && mario.state is CrouchMarioState)
                             {
-                                Pipe tempPipe = block as Pipe;
+                                tempPipe = block as Pipe;                      
                                 if (tempPipe.special)
                                 {
                                     if(mario.marioState==Mario.MARIO_SMALL)

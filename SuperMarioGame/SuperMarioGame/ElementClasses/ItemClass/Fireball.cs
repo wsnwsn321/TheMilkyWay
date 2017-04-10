@@ -19,6 +19,8 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         private TwoVolecity volecity;
         private float reset;
         private int jumpCounter;
+        private int Ten = 10;
+        private int FOURHEIGHT = 480;
 
 
         public Fireball(Vector2 pos)
@@ -51,7 +53,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Update()
         {
-            if(jumpCounter <= 10 && isVisible &&  position.Y > 0 && position.Y < 480)
+            if(jumpCounter <= Ten && isVisible &&  position.Y > 0 && position.Y < FOURHEIGHT)
             {
                 position = Volecity.getNewPosition(volecity, vDirection, hDirection, true, position);
                 if (volecity.vv <= 0)

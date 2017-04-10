@@ -47,6 +47,11 @@ namespace SuperMarioGame.ElementClasses
 
         internal int InvincibilityTime;
         private int counter, starCounter, scoreCounter;
+        private int Seven = 7;
+        private int Three = 3;
+        private int Ten = 10;
+        private int Twenty = 20;
+        private int FourHEight = 480;
 
         public Mario(Game1 game, Vector2 position)
         {
@@ -135,11 +140,11 @@ namespace SuperMarioGame.ElementClasses
                 if (HasStarPower)
                 {
                     starCounter++;
-                    if (starCounter % 20 == 0)
+                    if (starCounter % Twenty == 0)
                     {
                         state.marioSprite.tintColor = Color.Brown;
                     }
-                    else if (starCounter % 20 == 10)
+                    else if (starCounter % Twenty == Ten)
                     {
                         state.marioSprite.tintColor = Color.Green;
                     }
@@ -158,43 +163,43 @@ namespace SuperMarioGame.ElementClasses
             {
                 if (bounce)
                 {
-                    if (bounceCount < 10)
+                    if (bounceCount < Ten)
                     {
                         if (marioDirection == MARIO_LEFT)
                         {
                             if (marioAction == MARIO_RUN)
-                                position = new Vector2(position.X, position.Y - 7);
+                                position = new Vector2(position.X, position.Y - Seven);
                             else
-                                position = new Vector2(position.X - 3, position.Y - 7);
+                                position = new Vector2(position.X - Three, position.Y - Seven);
                         }
                         else
                         {
                             if (marioAction == MARIO_RUN)
-                                position = new Vector2(position.X, position.Y - 7);
+                                position = new Vector2(position.X, position.Y - Seven);
                             else
-                                position = new Vector2(position.X + 3, position.Y - 7);
+                                position = new Vector2(position.X + Three, position.Y - Seven);
                         }
                     }
-                    if (bounceCount >= 10)
+                    if (bounceCount >= Ten)
                     {
                         bounceCount = 0;
                         bounce = false;
                     }
                     bounceCount++;
                 }
-                if (position.Y > 480)
+                if (position.Y > FourHEight)
                 {
                     MarioDie();
                 }
                 state.Update();
                 counter++;
-                if (InvincibilityTime > 0 && counter > 20)
+                if (InvincibilityTime > 0 && counter > Twenty)
                 {
                     IsInvincible = true;
                     InvincibilityTime--;
                     counter = 0;
                 }
-                else if (InvincibilityTime == 0 && counter > 20)
+                else if (InvincibilityTime == 0 && counter > Twenty)
                 {
                     IsInvincible = false;
                     HasStarPower = false;
@@ -222,7 +227,7 @@ namespace SuperMarioGame.ElementClasses
                 marioState--;
                 MarioChangeForm(marioState);
                 IsInvincible = true;
-                InvincibilityTime += 3;
+                InvincibilityTime += Three;
             } else if (!IsInvincible)
             {
                 MarioDie();
@@ -234,7 +239,7 @@ namespace SuperMarioGame.ElementClasses
            
             HasStarPower = true;
             IsInvincible = true;
-            InvincibilityTime = 20;
+            InvincibilityTime = Twenty;
         }
         public void Attack()
         {
@@ -243,19 +248,23 @@ namespace SuperMarioGame.ElementClasses
         }
         public void FlagAnimationUpdate()
         {
-            myGame.keyboardController.controllerMappings[Keys.P].Execute();
+            myGame.keyboardController.controllerMappings[Keys.BrowserFavorites].Execute();
             state.Update();
         }
         public void PipeAnimationUpdate()
         {
-            
-            myGame.keyboardController.controllerMappings[Keys.O].Execute();
+            myGame.keyboardController.controllerMappings[Keys.BrowserForward].Execute();
+            state.Update();
+        }
+        public void UnderPipeAnimationUpdate()
+        {
+            myGame.keyboardController.controllerMappings[Keys.Attn].Execute();
             state.Update();
         }
         public void GrowAnimationUpdate()
         {
 
-            myGame.keyboardController.controllerMappings[Keys.I].Execute();
+            myGame.keyboardController.controllerMappings[Keys.BrowserHome].Execute();
             state.Update();
         }
 
@@ -277,9 +286,9 @@ namespace SuperMarioGame.ElementClasses
             Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
             myGame.spriteBatch.Begin();
 
-                if (scoreCounter <= 20)
+                if (scoreCounter <= Twenty)
                 {
-                    textPosition = new Vector2(newPos.X, newPos.Y - 3);
+                    textPosition = new Vector2(newPos.X, newPos.Y - Three);
                     myGame.spriteBatch.DrawString(myGame.font, output, newPos, Color.White,
                 0, FontOrigin, 1.0f, SpriteEffects.None, 1f);
                 scoreCounter++;

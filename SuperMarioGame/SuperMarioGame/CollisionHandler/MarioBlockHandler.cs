@@ -141,12 +141,10 @@ namespace SuperMarioGame.CollisionHandler
                             if(mario.marioState == Mario.MARIO_SMALL)
                             {
                                 myGame.level.itemElements.Add(new RedMushroom(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
-                                //IItem redMushroom = myGame.level.itemElements[myGame.level.itemElements.Count - 1];
                             }
                             else if(mario.marioState == Mario.MARIO_BIG || mario.marioState == Mario.MARIO_FIRE)
                             {
                                 myGame.level.itemElements.Add(new Flower(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
-                                //IItem flower = myGame.level.itemElements[myGame.level.itemElements.Count - 1];
                             }
                         }
                         else if (block is QuestionBlockC && block.blockSprite is QuestionBlockSprite)
@@ -177,11 +175,19 @@ namespace SuperMarioGame.CollisionHandler
                         }
                         break;
                     case 4: //left side collision
+                        if (block is Pipe)
+                        {
+                            Pipe tempPipe = block as Pipe;
+                            if (tempPipe.size == GameConstants.UnderPipe)
+                            {
+                                mario.animated = true;
+                                mario.animation = GameConstants.UnderPipeAnimation;
+                            }
+                        }
                         newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
                         newPosition.Y = mario.state.marioSprite.desRectangle.Y;
                         mario.position = newPosition;
-                       
-                         break;
+                        break;
                 }
             }
         }

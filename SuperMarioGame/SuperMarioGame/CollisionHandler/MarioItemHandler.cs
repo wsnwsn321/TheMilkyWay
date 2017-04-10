@@ -10,7 +10,10 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void ItemHandler(Mario mario,  IItem item)
         {
-                    
+            int TWELVE = 12;
+            int THIRTY = 30;
+            int THREE = 3;
+            int TEN = 10;
             if(item is RedMushroom)
             {
                 if (mario.marioState ==Mario.MARIO_SMALL && item.isVisible)
@@ -23,8 +26,8 @@ namespace SuperMarioGame.CollisionHandler
                     mario.score = 1000;
                     mario.totalScore += mario.score;
                     Vector2 newP;
-                    newP.X = mario.position.X + 12;
-                    newP.Y = mario.position.Y - 3;
+                    newP.X = mario.position.X + TWELVE;
+                    newP.Y = mario.position.Y -THREE;
                     mario.textPosition = newP;
                 }
                 item.isVisible = false;  
@@ -41,13 +44,13 @@ namespace SuperMarioGame.CollisionHandler
                     mario.score = 1000;
                     mario.totalScore += mario.score;
                     Vector2 newP;
-                    newP.X = mario.position.X + 12;
-                    newP.Y = mario.position.Y - 3;
+                    newP.X = mario.position.X + TWELVE;
+                    newP.Y = mario.position.Y -THREE;
                     mario.textPosition = newP;
                     if (mario.marioState == Mario.MARIO_SMALL)
                     {
                         mario.state.ChangeForm(Mario.MARIO_BIG);
-                        mario.position = new Vector2(mario.position.X, mario.position.Y - 30);
+                        mario.position = new Vector2(mario.position.X, mario.position.Y - THIRTY);
                     }
                     else
                     {
@@ -62,8 +65,8 @@ namespace SuperMarioGame.CollisionHandler
                     mario.score = 1000;
                     mario.totalScore += mario.score;
                     Vector2 newP;
-                    newP.X = mario.position.X + 12;
-                    newP.Y = mario.position.Y - 3;
+                    newP.X = mario.position.X + TWELVE;
+                    newP.Y = mario.position.Y -THREE;
                     mario.textPosition = newP;
                 }
                 item.isVisible = false;
@@ -79,8 +82,8 @@ namespace SuperMarioGame.CollisionHandler
                     mario.score = 1000;
                     mario.totalScore += mario.score;
                     Vector2 newP;
-                    newP.X = mario.position.X + 12;
-                    newP.Y = mario.position.Y - 3;
+                    newP.X = mario.position.X + TWELVE;
+                    newP.Y = mario.position.Y -THREE;
                     mario.textPosition = newP;
                     mario.GetStar();
                 }
@@ -95,7 +98,7 @@ namespace SuperMarioGame.CollisionHandler
                     mario.score = 200;
                     mario.coin += 1;
                     mario.totalScore += mario.score;
-                    mario.textPosition = new Vector2(mario.position.X, mario.position.Y - 10);
+                    mario.textPosition = new Vector2(mario.position.X, mario.position.Y - TEN);
                     item.isVisible = false;
                 }
             }
@@ -111,8 +114,8 @@ namespace SuperMarioGame.CollisionHandler
                     mario.score = 0;
                     mario.totalScore += mario.score;
                     Vector2 newP;
-                    newP.X = mario.position.X + 12;
-                    newP.Y = mario.position.Y - 3;
+                    newP.X = mario.position.X + TWELVE;
+                    newP.Y = mario.position.Y -THREE;
                     mario.textPosition = newP;
                    
                 }

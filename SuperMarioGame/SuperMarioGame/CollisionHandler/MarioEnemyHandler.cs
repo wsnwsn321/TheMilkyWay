@@ -10,6 +10,8 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
         {
+            int THREE = 3;
+            int SIX = 6;
             Vector2 newPosition;
             if (!(enemy.enemySprite is GoombaFlippedSprite) && !(enemy.enemySprite is GoombaStompedSprite) && !(enemy.enemySprite is KoopaFlippedSprite))
             {
@@ -25,7 +27,7 @@ namespace SuperMarioGame.CollisionHandler
                             mario.totalScore += mario.score;
                             Vector2 newP;
                             newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - 3;
+                            newP.Y = mario.position.Y - THREE;
                             mario.textPosition = newP;
                         }
                         else
@@ -42,7 +44,7 @@ namespace SuperMarioGame.CollisionHandler
                                     mario.totalScore += mario.score;
                                     Vector2 newP;
                                 newP.X = mario.position.X;
-                                newP.Y = mario.position.Y-3;
+                                newP.Y = mario.position.Y- THREE;
                                 mario.textPosition = newP;
                                 }
                                 
@@ -59,13 +61,13 @@ namespace SuperMarioGame.CollisionHandler
                                     if (mario.marioDirection)
                                     {
                                         enemy.shellDirection =true;
-                                        enemy.shellMoving = 4;
+                                        enemy.shellMoving = GameConstants.Left;
                                     
                                     }
                                     else
                                        {
                                         enemy.shellDirection = true;
-                                        enemy.shellMoving = 2;
+                                        enemy.shellMoving = GameConstants.Right;
                                         }
                                 }                              
                             }
@@ -80,7 +82,7 @@ namespace SuperMarioGame.CollisionHandler
                             mario.score = GameConstants.Score1;
                             Vector2 newP;
                             newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - 3;
+                            newP.Y = mario.position.Y - THREE;
                             mario.textPosition = newP;
                         }
                         else
@@ -96,19 +98,19 @@ namespace SuperMarioGame.CollisionHandler
                                 {
                                     if (mario.position.X < enemy.position.X)
                                     {
-                                        newPosition.X = mario.position.X - 6;
+                                        newPosition.X = mario.position.X -SIX;
                                         newPosition.Y = mario.position.Y;
                                         mario.position = newPosition;
                                     }
                                     else
                                     {
-                                        newPosition.X = mario.position.X + 6;
+                                        newPosition.X = mario.position.X +SIX;
                                         newPosition.Y = mario.position.Y;
                                         mario.position = newPosition;
                                     }
                                     
                                     enemy.shellDirection = true;
-                                enemy.shellMoving = 2;
+                                enemy.shellMoving = GameConstants.Right;
                                 }    
                             }
                             else
@@ -127,7 +129,7 @@ namespace SuperMarioGame.CollisionHandler
                             mario.score = GameConstants.Score1;
                             Vector2 newP;
                             newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - 3;
+                            newP.Y = mario.position.Y - THREE;
                             mario.textPosition = newP;
                         }
                         else
@@ -146,7 +148,7 @@ namespace SuperMarioGame.CollisionHandler
                             mario.score = GameConstants.Score1;
                             Vector2 newP;
                             newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - 3;
+                            newP.Y = mario.position.Y - THREE;
                             mario.textPosition = newP;
                         }
                         else
@@ -163,18 +165,18 @@ namespace SuperMarioGame.CollisionHandler
                                     MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
                                     if (mario.position.X < enemy.position.X)
                                     {
-                                        newPosition.X = mario.position.X - 6;
+                                        newPosition.X = mario.position.X -SIX;
                                         newPosition.Y = mario.position.Y;
                                         mario.position = newPosition;
                                     }
                                     else
                                     {
-                                        newPosition.X = mario.position.X + 6;
+                                        newPosition.X = mario.position.X +SIX;
                                         newPosition.Y = mario.position.Y;
                                         mario.position = newPosition;
                                     }
                                     enemy.shellDirection = true;
-                                    enemy.shellMoving = 4;
+                                    enemy.shellMoving = GameConstants.Left;
                                     
                                 }
                             }

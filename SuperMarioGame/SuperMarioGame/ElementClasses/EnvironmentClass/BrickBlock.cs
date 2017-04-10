@@ -12,6 +12,9 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
         public bool isBumped { get; set; }
+        private int Three = 3;
+        private int Five = 5;
+        private int Eleven = 11;
         public BrickBlock(Vector2 pos, bool isBlue)
         {
             position = pos;
@@ -44,14 +47,14 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         {
             if (isVisible && isBumped)
             {
-                if (bumpCount > 5)
+                if (bumpCount > Five)
                 {
-                    position = new Vector2(position.X, position.Y - 3);
+                    position = new Vector2(position.X, position.Y - Three);
                     blockSprite.Draw(position);
                 }
                 else
                 {
-                    position = new Vector2(position.X, position.Y + 3);
+                    position = new Vector2(position.X, position.Y + Three);
                     blockSprite.Draw(position);
                 }
                 if (bumpCount == 0)
@@ -68,7 +71,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public void Bump()
         {
             isBumped = true;
-            bumpCount = 11;
+            bumpCount = Eleven;
         }
     }
 }
