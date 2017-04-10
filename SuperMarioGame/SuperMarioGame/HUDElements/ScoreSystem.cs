@@ -120,7 +120,7 @@ namespace SuperMarioGame.HUDElements
             {
                 timeLeft = GameConstants.InitialTimerValue;
                 timeElapsed = 0;
-                mygame.ResetGame();
+                mygame.level.mario.MarioDie();
             }
             Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / 2;
             Vector2 FontOrigin2 = mygame.font.MeasureString(timer_num) / 2;
