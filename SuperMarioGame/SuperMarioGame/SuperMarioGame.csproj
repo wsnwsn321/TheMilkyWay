@@ -57,6 +57,7 @@
     <Compile Include="Commands\MarioJumpCommand.cs" />
     <Compile Include="Commands\MarioLeftCommand.cs" />
     <Compile Include="Commands\MarioChangeFormCommand.cs" />
+    <Compile Include="Commands\MarioUnderPipeCommand.cs" />
     <Compile Include="Commands\PauseGameCommand.cs" />
     <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />

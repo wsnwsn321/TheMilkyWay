@@ -39,37 +39,9 @@ namespace SuperMarioGame.GameState
             myLevel.Pause();
         }
 
-        public void GoToUnderworld()
+        public void DisplayDeathScreen()
         {
-            // Store overworld elements for enemies, items, env, background
-
-            //myLevel.enemyElements.CopyTo(overworldEnemyElements);
-
-            // Set myLevel elements to the underworld elements
-
-            //myLevel.enemyElements = underworldEnemyElements;
-
-            // Make the screen go black for a few frames?
-
-        }
-
-        public void GoToOverworld()
-        {
-            // Store underworld elements for enemies, items, env, background
-
-            //myLevel.enemyElements.CopyTo(underworldEnemyElements);
-
-            // Set myLevel elements to the underworld elements
-
-            //myLevel.enemyElements = overworldEnemyElements;
-
-            // Make the screen go black for a few frames?
-
-        }
-
-        public void GoToDeathScreen()
-        {
-
+            
         }        
 
     }
