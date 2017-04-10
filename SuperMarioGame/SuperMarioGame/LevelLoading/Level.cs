@@ -202,7 +202,16 @@ namespace SuperMarioGame.LevelLoading
             mario.MarioIdle();
             mario.position = marioPos;
             scoreSystem = new ScoreSystem(myGame);
-            BackgroundMusic.instanse.playSound(BackgroundMusic.LEVEL1);
+            switch (levelToLoad)
+            {
+                case GameConstants.OverworldLevel:
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.LEVEL1);
+                    break;
+                case GameConstants.UnderworldLevel:
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.LEVEL2);
+                    break;
+            }
+          
             
         }
 
