@@ -16,6 +16,7 @@ namespace SuperMarioGame.ElementClasses
         public bool IsInvincible { get; set; }
         public bool HasStarPower { get; set; }
 
+        public bool reSetBGM;
         //state constant   
         public const int MARIO_DEAD = 1, MARIO_SMALL = 2, MARIO_BIG = 3, MARIO_FIRE = 4;
         //action constant
@@ -204,6 +205,11 @@ namespace SuperMarioGame.ElementClasses
                     IsInvincible = false;
                     HasStarPower = false;
                     counter = 0;
+                    if (reSetBGM)
+                    {
+                        BackgroundMusic.instanse.resetBGM();
+                        reSetBGM = false;
+                    }
                 }
             }
         }
@@ -239,6 +245,8 @@ namespace SuperMarioGame.ElementClasses
            
             HasStarPower = true;
             IsInvincible = true;
+            BackgroundMusic.instanse.playSound(BackgroundMusic.STARMAN);
+            reSetBGM = true;
             InvincibilityTime = Twenty;
         }
         public void Attack()
