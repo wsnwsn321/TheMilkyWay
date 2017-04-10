@@ -16,6 +16,12 @@ namespace SuperMarioGame.Commands
         private int wait1 = 0;
         bool changeOnce = true;
         bool firstPos = true;
+        private int Ten =10;
+        private int Twenty = 20;
+        private int Thirty = 30;
+        private int Forty = 40;
+
+
         public MarioGrowCommand(Game1 game)
         {
             myGame = game;
@@ -30,7 +36,7 @@ namespace SuperMarioGame.Commands
                 firstPos = false;
             }
             myGame.keyboardController.keysEnabled = false;
-            if (wait1 < 10)
+            if (wait1 < Ten)
             {
                 if (changeOnce)
                 {
@@ -38,13 +44,13 @@ namespace SuperMarioGame.Commands
                     mario.MarioChangeForm(Mario.MARIO_BIG);
                     changeOnce = false;
                 }
-                if (wait1 == 9)
+                if (wait1 == Ten-1)
                 {
                     changeOnce = true;
                 }
                 wait1++;
             }
-            else if(wait1 < 20)
+            else if(wait1 < Twenty)
             {
                 if (changeOnce)
                 {
@@ -52,13 +58,13 @@ namespace SuperMarioGame.Commands
                     mario.state.ChangeForm(Mario.MARIO_SMALL);
                     changeOnce = false;
                 }
-                if (wait1 == 19)
+                if (wait1 == Twenty-1)
                 {
                     changeOnce = true;
                 }
                 wait1++;
             }
-            else if (wait1 < 30)
+            else if (wait1 < Thirty)
             {
                 if (changeOnce)
                 {
@@ -66,13 +72,13 @@ namespace SuperMarioGame.Commands
                     mario.MarioChangeForm(Mario.MARIO_BIG);
                     changeOnce = false;
                 }
-                if (wait1 == 29)
+                if (wait1 == Thirty-1)
                 {
                     changeOnce = true;
                 }
                 wait1++;
             }
-            else if (wait1 < 40)
+            else if (wait1 < Forty)
             {
                 if (changeOnce)
                 {

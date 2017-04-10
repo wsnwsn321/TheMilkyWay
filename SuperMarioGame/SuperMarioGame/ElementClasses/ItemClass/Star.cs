@@ -13,7 +13,9 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public int gravity { get; set; }
         private int jumpCounter;
         private bool increment;
+        private int Two = 2;
 
+        private int Ten=  10;
         public Star(Vector2 pos)
         {
             position = pos;
@@ -50,18 +52,18 @@ namespace SuperMarioGame.ElementClasses.ItemClass
                 jumpCounter--;
             }
 
-            if(jumpCounter == 10 || jumpCounter == -4)
+            if(jumpCounter == Ten || jumpCounter == -(Two*Two))
             {
                 increment = !increment;
             }
 
             if (changeDirection)
             {
-                position = new Vector2(position.X +2, position.Y - jumpCounter);
+                position = new Vector2(position.X +Two, position.Y - jumpCounter);
             }
             else
             {
-                position = new Vector2(position.X - 2, position.Y - jumpCounter);
+                position = new Vector2(position.X - Two, position.Y - jumpCounter);
             }
 
  

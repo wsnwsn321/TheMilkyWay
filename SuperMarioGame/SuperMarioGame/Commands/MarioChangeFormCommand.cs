@@ -5,6 +5,7 @@
         private Game1 myGame;
         private ElementClasses.Mario mario;
         private int counter;
+        private int TEN =10;
         public MarioChangeFormCommand(Game1 game)
         {
             myGame = game;
@@ -17,7 +18,7 @@
             if (mario.canMove)
             {
                 counter++;
-                if (counter >= 10)
+                if (counter >= TEN)
                 {
                     switch (mario.marioState)
                     {
