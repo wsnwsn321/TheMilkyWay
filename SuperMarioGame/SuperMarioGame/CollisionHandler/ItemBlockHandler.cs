@@ -32,8 +32,12 @@ namespace SuperMarioGame.CollisionHandler
                         item.position = newPosition;
                         if(item.itemSprite is FireballSprite)
                         {
+
                             item.isVisible = !item.isVisible;
-                        }else
+                            ((ElementClasses.ItemClass.Fireball)item).fireBallExplosion();
+
+                        }
+                        else
                         {
                             item.ItemChangeDirection();
                         }
@@ -56,6 +60,7 @@ namespace SuperMarioGame.CollisionHandler
                         if (item.itemSprite is FireballSprite)
                         {
                             item.isVisible = !item.isVisible;
+                           
                         }
                         else
                         {
