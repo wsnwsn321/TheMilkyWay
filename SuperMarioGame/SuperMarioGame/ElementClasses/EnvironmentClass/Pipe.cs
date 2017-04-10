@@ -14,7 +14,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         public int bumpCount { get; set; }
         public int size { get; set; }
 
-        public bool special = false;
+        public bool special { get; set; }
 
         public Pipe(Vector2 pos, int size, bool special)
         {
