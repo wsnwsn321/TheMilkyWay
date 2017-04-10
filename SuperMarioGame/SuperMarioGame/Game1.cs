@@ -76,7 +76,7 @@ namespace SuperMarioGame
             else
             {
                 freezeCount++;
-                if (freezeCount == 75)
+                if (freezeCount == GameConstants.FreezeTime)
                 {
                     freeze = false;
                     freezeCount = 0;
