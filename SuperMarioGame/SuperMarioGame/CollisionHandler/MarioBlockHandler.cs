@@ -123,6 +123,15 @@ namespace SuperMarioGame.CollisionHandler
                                 Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
                                 c.jump = true;
                                 myGame.level.itemElements.Add(c);
+                                //score part
+                                mario.isScored = true;
+                                mario.score = GameConstants.Score2;
+                                mario.coin += 1;
+                                mario.totalScore += mario.score;
+                                Vector2 newP;
+                                newP.X = b.blockSprite.desRectangle.X + TWELVE;
+                                newP.Y = b.blockSprite.desRectangle.Y - THREE;
+                                mario.textPosition = newP;
                             }
 
                         }

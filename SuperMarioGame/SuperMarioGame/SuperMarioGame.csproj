@@ -89,7 +89,6 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GameConstants.cs" />
-    <Compile Include="GameState\GameStateHandler.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\PauseText.cs" />
     <Compile Include="HUDElements\ScoreSystem.cs" />
@@ -126,6 +125,7 @@
     <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlueBrickBlockSprite.cs" />
     <Compile Include="Sprites\OtherSprite\BlueGroundBlockSprite.cs" />
+    <Compile Include="Sprites\OtherSprite\FireballExplosionSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaFlippedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
     <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />

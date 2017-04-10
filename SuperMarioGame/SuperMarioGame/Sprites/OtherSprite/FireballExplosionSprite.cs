@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.Sprites
 {
-    public class FireballSprite : ISprite
+    public class FireballExplosionSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -17,7 +17,7 @@ namespace SuperMarioGame.Sprites
         int currentUpdate;
         int slowSpeedDown;
 
-        public FireballSprite(Texture2D texture, SpriteBatch sb)
+        public FireballExplosionSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
@@ -29,20 +29,7 @@ namespace SuperMarioGame.Sprites
         }
         public void Update()
         {
-            currentUpdate++;
-            if (currentUpdate == slowSpeedDown)
-            {
-                currentUpdate = 0;
-                currentFrame++;
-                if (currentFrame == totalFrame)
-                {
-                    currentFrame = 0;
-                    currentWidth = 0;
-                }else
-                {
-                    currentWidth = 2;
-                }
-            }
+            
         }
 
         public Vector2 returnPosition()
@@ -53,8 +40,8 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(currentFrame * (9+currentWidth), 0, 9+currentWidth, 9);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, GameConstants.Two* GameConstants.Ten, GameConstants.Two * GameConstants.Ten);
+            Rectangle sourceRectangle = new Rectangle(0,0,GameConstants.Eight, GameConstants.Eight);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, GameConstants.Two * GameConstants.Ten, GameConstants.Two * GameConstants.Ten);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

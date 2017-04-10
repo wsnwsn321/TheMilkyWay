@@ -9,14 +9,16 @@ namespace SuperMarioGame.HUDElements
         Game1 myGame;
         Vector2 FontPos;
         bool playOnce = true;
+        private int Two = 2;
+
 
         public PauseText(Game1 game)
         {
             this.myGame = game;
 
             // TODO: Load your game content here            
-            FontPos = new Vector2(GameConstants.ScreenWidth / 2,
-                GameConstants.ScreenHeight / 2);
+            FontPos = new Vector2(GameConstants.ScreenWidth / Two,
+                GameConstants.ScreenHeight / Two);
         }
 
         public void Draw()
@@ -26,14 +28,14 @@ namespace SuperMarioGame.HUDElements
                 playOnce = false;
             }
 
-            FontPos = new Vector2(GameConstants.ScreenWidth / 2 - myGame.GraphicsDevice.Viewport.X,
-                GameConstants.ScreenHeight / 2);
+            FontPos = new Vector2(GameConstants.ScreenWidth / Two - myGame.GraphicsDevice.Viewport.X,
+                GameConstants.ScreenHeight / Two);
 
             // Draw Pause
             string output = "P A U S E D";
 
             // Find the center of the string
-            Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
+            Vector2 FontOrigin = myGame.font.MeasureString(output) / Two;
 
             // Draw the string. 3.0f represents the size
             myGame.spriteBatch.Begin();

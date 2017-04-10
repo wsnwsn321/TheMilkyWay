@@ -19,12 +19,12 @@ namespace SuperMarioGame.HUDElements
         Coin c;
         static int timeElapsed = 0;
         static int timeLeft = GameConstants.InitialTimerValue;
-
+     
         public ScoreSystem(Game1 game)
         {
             this.mygame = game;
-             c = new Coin(new Vector2(GameConstants.ScreenWidth / 2 - mygame.GraphicsDevice.Viewport.X,
-                GameConstants.ScreenHeight / 12));
+             c = new Coin(new Vector2(GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X,
+                GameConstants.ScreenHeight / GameConstants.Twelve));
         }
 
         public void DisplayScore(int score)
@@ -36,15 +36,15 @@ namespace SuperMarioGame.HUDElements
             {
                 output = "000000";
             }
-            else if (score < 900)
+            else if (score <= GameConstants.score900)
             {
                 output = zeros+score + "";
             }
-            else if(score>=1000 &&score < 9900)
+            else if(score> GameConstants.score900 && score <= GameConstants.score9900)
             {
                 output = zeros.Substring(0,2) + score + "";
             }
-            else if(score>=10000 &&score < 99900)
+            else if(score> GameConstants.score9900 && score < GameConstants.score99900)
             {
                 output = zeros.Substring(0,1) + score + "";
             }
@@ -53,13 +53,13 @@ namespace SuperMarioGame.HUDElements
                 output = score + "";
             } 
            
-            Vector2 FontOrigin = mygame.font.MeasureString(output)/2;
+            Vector2 FontOrigin = mygame.font.MeasureString(output)/ GameConstants.Two;
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, mario, new Vector2(GameConstants.ScreenWidth / 8 - mygame.GraphicsDevice.Viewport.X,
-                (GameConstants.ScreenHeight / 11)-10), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, mario, new Vector2(GameConstants.ScreenWidth /GameConstants.Eight - mygame.GraphicsDevice.Viewport.X,
+                (GameConstants.ScreenHeight / GameConstants.Eleven)-GameConstants.Ten), Color.White,
             0, FontOrigin, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, output, new Vector2(GameConstants.ScreenWidth / 8 - mygame.GraphicsDevice.Viewport.X,
-                (GameConstants.ScreenHeight / 11)+10), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, output, new Vector2(GameConstants.ScreenWidth /GameConstants.Eight - mygame.GraphicsDevice.Viewport.X,
+                (GameConstants.ScreenHeight / GameConstants.Eleven)+GameConstants.Ten), Color.White,
             0, FontOrigin, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
@@ -67,14 +67,14 @@ namespace SuperMarioGame.HUDElements
         public void CoinSystem(int coin)
         {
             Vector2 newPos;
-            newPos.X = (GameConstants.ScreenWidth / 3 - mygame.GraphicsDevice.Viewport.X)-40;
-            newPos.Y = GameConstants.ScreenHeight / 18;
+            newPos.X = (GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X)- GameConstants.Ten* GameConstants.Two* GameConstants.Two;
+            newPos.Y = GameConstants.ScreenHeight / (GameConstants.Ten+ GameConstants.Eight);
             c.position = newPos;
             c.Draw();
             c.Update();
             String zero = "0";
             String output;
-            if (coin > 9)
+            if (coin > (GameConstants.Ten-1))
             {
                 output = "X" + coin + "";
             }else
@@ -82,10 +82,10 @@ namespace SuperMarioGame.HUDElements
                 output = "X"+zero+coin + "";
             }
              
-            Vector2 FontOrigin = mygame.font.MeasureString(output)/2;
+            Vector2 FontOrigin = mygame.font.MeasureString(output)/ GameConstants.Two;
             mygame.spriteBatch.Begin(); 
-            mygame.spriteBatch.DrawString(mygame.font, output, new Vector2(GameConstants.ScreenWidth / 3 - mygame.GraphicsDevice.Viewport.X,
-                GameConstants.ScreenHeight / 12), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, output, new Vector2(GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X,
+                GameConstants.ScreenHeight / GameConstants.Twelve), Color.White,
             0, FontOrigin, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
@@ -94,14 +94,14 @@ namespace SuperMarioGame.HUDElements
         {
             String output1 = "WORLD";
             String output2 = "1-1";
-            Vector2 FontOrigin1 = mygame.font.MeasureString(output1) / 2;
-            Vector2 FontOrigin2 = mygame.font.MeasureString(output2) / 2;
+            Vector2 FontOrigin1 = mygame.font.MeasureString(output1) / GameConstants.Two;
+            Vector2 FontOrigin2 = mygame.font.MeasureString(output2) / GameConstants.Two;
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, output1, new Vector2(c.position.X+200,
-                (GameConstants.ScreenHeight / 11)-10), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, output1, new Vector2(c.position.X+GameConstants.FourHund/2,
+                (GameConstants.ScreenHeight / GameConstants.Eleven)-GameConstants.Ten), Color.White,
             0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, output2, new Vector2(c.position.X + 200,
-                (GameConstants.ScreenHeight / 11)+10), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, output2, new Vector2(c.position.X + GameConstants.FourHund/2,
+                (GameConstants.ScreenHeight / GameConstants.Eleven)+GameConstants.Ten), Color.White,
             0, FontOrigin2, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
@@ -122,14 +122,14 @@ namespace SuperMarioGame.HUDElements
                 timeElapsed = 0;
                 mygame.level.mario.MarioDie();
             }
-            Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / 2;
-            Vector2 FontOrigin2 = mygame.font.MeasureString(timer_num) / 2;
+            Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / GameConstants.Two;
+            Vector2 FontOrigin2 = mygame.font.MeasureString(timer_num) / GameConstants.Two;
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, TIME, new Vector2(c.position.X + 400,
-                (GameConstants.ScreenHeight / 11) - 10), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, TIME, new Vector2(c.position.X +  GameConstants.FourHund,
+                (GameConstants.ScreenHeight / GameConstants.Eleven) -GameConstants.Ten), Color.White,
             0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, timer_num, new Vector2(c.position.X + 400,
-                (GameConstants.ScreenHeight / 11) + 10), Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, timer_num, new Vector2(c.position.X +  GameConstants.FourHund,
+                (GameConstants.ScreenHeight / GameConstants.Eleven) +GameConstants.Ten), Color.White,
             0, FontOrigin2, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
