@@ -113,7 +113,7 @@ namespace SuperMarioGame.LevelLoading
                             level.envElements.Add(new Pipe(new Vector2(x + 2, y - 35), GameConstants.LargePipe, true));
                             break;
                         case "UnderPipe":
-                            level.envElements.Add(new Pipe(new Vector2(x, y), GameConstants.UnderPipe, true));
+                            level.envElements.Add(new Pipe(new Vector2(x, y-7), GameConstants.UnderPipe, true));
                             break;
                         case "BigCloud":
                             level.backgroundElements.Add(new BigCloud(new Vector2(x, y + 14)));

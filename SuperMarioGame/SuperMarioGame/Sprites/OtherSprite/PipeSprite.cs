@@ -52,7 +52,7 @@ namespace SuperMarioGame.Sprites
             else if(size == GameConstants.UnderPipe)
             {
                 sourceRectangle = new Rectangle(0, 0, 48, 32);
-                desRectangle = new Rectangle((int)position.X, (int)position.Y, 80, 60);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, 80, 75);
             }
             else
             {
