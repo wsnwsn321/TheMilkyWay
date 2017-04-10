@@ -6,6 +6,7 @@ using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.Sprites;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace SuperMarioGame.HUDElements
     {
         Game1 mygame;
         Coin c;
+        int time_elapsed = 0;
+        int time_left = 400;
 
         public ScoreSystem(Game1 game)
         {
@@ -105,15 +108,27 @@ namespace SuperMarioGame.HUDElements
 
         public void Time()
         {
-            String output1 = "TIME";
-            String output2 = "400";
-            Vector2 FontOrigin1 = mygame.font.MeasureString(output1) / 2;
-            Vector2 FontOrigin2 = mygame.font.MeasureString(output2) / 2;
+            String TIME = "TIME";
+            time_elapsed++;
+            if (time_elapsed % 60 == 0)
+            {
+                time_left--;
+                time_elapsed = 0;
+            }
+            String timer_num = time_left.ToString() ;
+            if (time_left == 0)
+            {
+                time_left = 400;
+                time_elapsed = 0;
+                mygame.ResetGame();
+            }
+            Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / 2;
+            Vector2 FontOrigin2 = mygame.font.MeasureString(timer_num) / 2;
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, output1, new Vector2(c.position.X + 400,
+            mygame.spriteBatch.DrawString(mygame.font, TIME, new Vector2(c.position.X + 400,
                 (GameConstants.ScreenHeight / 11) - 10), Color.White,
             0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, output2, new Vector2(c.position.X + 400,
+            mygame.spriteBatch.DrawString(mygame.font, timer_num, new Vector2(c.position.X + 400,
                 (GameConstants.ScreenHeight / 11) + 10), Color.White,
             0, FontOrigin2, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
