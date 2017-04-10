@@ -4,6 +4,7 @@
     {
         public const string UnderworldLevel = @"LevelLoading\LevelFiles\Underworld.csv";
         public const string OverworldLevel = @"LevelLoading\LevelFiles\Sprint4Level.csv";
+        public const string LifeScreen = @"LevelLoading\LevelFiles\LifeScreen.csv";
         public const int Top = 1, Right = 2, Bottom = 3, Left = 4;
         public const int SquareWidth = 32;
         public const int ScreenWidth = 800;
@@ -26,6 +27,8 @@
         public const int PipeAnimation = 2;
         public const int UnderPipeAnimation = 3;
         public const int GrowAnimation = 4;
+        public const int LifeScreenAnimation = 5;
+
 
         public const int InitialTimerValue = 400;
 

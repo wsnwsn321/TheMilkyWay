@@ -61,8 +61,7 @@ namespace SuperMarioGame
         }
 
         protected override void Update(GameTime gameTime)
-        {
-           
+        {          
            
             if (!freeze)
             {
@@ -81,7 +80,13 @@ namespace SuperMarioGame
                 {
                     freeze = false;
                     freezeCount = 0;
-                    ResetGame();
+                    int marioWidth = level.mario.state.marioSprite.desRectangle.Width;
+                    level.mario = new Mario(this, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
+                    level.mario.gravity = 0;
+                    level.mario.animated = true;
+                    level.mario.animation = GameConstants.LifeScreenAnimation;
+                    level.Load(GameConstants.LifeScreen,new Vector2((GameConstants.ScreenWidth/2)-marioWidth,GameConstants.ScreenHeight/2));
+                    //ResetGame();
                 }
             }
            

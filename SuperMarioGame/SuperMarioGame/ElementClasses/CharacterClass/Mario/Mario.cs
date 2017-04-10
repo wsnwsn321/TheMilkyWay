@@ -267,6 +267,11 @@ namespace SuperMarioGame.ElementClasses
             myGame.keyboardController.controllerMappings[Keys.BrowserHome].Execute();
             state.Update();
         }
+        public void LifeScreenUpdate()
+        {
+
+
+        }
 
         public void DrawScore()
         {

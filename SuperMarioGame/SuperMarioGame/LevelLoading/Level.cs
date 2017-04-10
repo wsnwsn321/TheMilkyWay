@@ -136,9 +136,13 @@ namespace SuperMarioGame.LevelLoading
                     {
                         mario.UnderPipeAnimationUpdate();
                     }
-                    else
+                    else if(mario.animation == GameConstants.GrowAnimation)
                     {
                         mario.GrowAnimationUpdate();
+                    }
+                    else
+                    {
+                        mario.LifeScreenUpdate();
                     }
                 }
             }
