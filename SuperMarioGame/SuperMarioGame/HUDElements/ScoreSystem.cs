@@ -17,8 +17,8 @@ namespace SuperMarioGame.HUDElements
     {
         Game1 mygame;
         Coin c;
-        int timeElapsed = 0;
-        int timeLeft = GameConstants.InitialTimerValue;
+        static int timeElapsed = 0;
+        static int timeLeft = GameConstants.InitialTimerValue;
 
         public ScoreSystem(Game1 game)
         {
