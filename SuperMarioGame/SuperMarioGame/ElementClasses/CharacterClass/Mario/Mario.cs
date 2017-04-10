@@ -16,7 +16,7 @@ namespace SuperMarioGame.ElementClasses
         public bool IsInvincible { get; set; }
         public bool HasStarPower { get; set; }
 
-        public bool reSetBGM;
+        private bool reSetBGM;
         //state constant   
         public const int MARIO_DEAD = 1, MARIO_SMALL = 2, MARIO_BIG = 3, MARIO_FIRE = 4;
         //action constant

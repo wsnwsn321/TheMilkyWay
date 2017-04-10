@@ -11,21 +11,10 @@ namespace SuperMarioGame.Sprites
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
-        int currentFrame;
-        int totalFrame;
-        int currentWidth;
-        int currentUpdate;
-        int slowSpeedDown;
-
         public FireballExplosionSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
-            currentFrame = 0;
-            totalFrame = 4;
-            currentUpdate = 0;
-            slowSpeedDown = 5;
-            currentWidth = 0;
         }
         public void Update()
         {
