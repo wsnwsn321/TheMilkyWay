@@ -18,7 +18,6 @@ namespace SuperMarioGame.CollisionHandler
         private Rectangle collideRectangle;
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;
-        public const int TOP = 1, RIGHT = 2, BOTTOM = 3, LEFT = 4;
         public int SIDE;
         Game1 myGame;
         private bool animation = false;
@@ -84,22 +83,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = BOTTOM;
+                            SIDE = GameConstants.Bottom;
                         }
                         else
                         {
-                            SIDE = TOP;
+                            SIDE = GameConstants.Top;
                         }
                     }
                     else if (collideRectangle.Width <= collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = RIGHT;
+                            SIDE = GameConstants.Right;
                         }
                         else
                         {
-                            SIDE = LEFT;
+                            SIDE = GameConstants.Left;
                         }
                     }
                     if (collideRectangle.Width * collideRectangle.Height > 13)
@@ -129,7 +128,7 @@ namespace SuperMarioGame.CollisionHandler
                                     enemy.BeFlipped();
                                     //score part
                                     mario.isScored = true;
-                                    mario.score = 100;
+                                    mario.score = GameConstants.Score1;
                                     mario.totalScore += mario.score;
                                     Vector2 newP;
                                     newP.X = block.blockSprite.desRectangle.X + 12;
@@ -150,22 +149,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = BOTTOM;
+                            SIDE = GameConstants.Bottom;
                         }
                         else
                         {
-                            SIDE = TOP;
+                            SIDE = GameConstants.Top;
                         }
                     }
                     else if (collideRectangle.Width <= collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = RIGHT;
+                            SIDE = GameConstants.Right;
                         }
                         else
                         {
-                            SIDE = LEFT;
+                            SIDE = GameConstants.Left;
                         }
                     }
                     if (collideRectangle.Width * collideRectangle.Height > 13)
@@ -209,22 +208,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = BOTTOM;
+                            SIDE = GameConstants.Bottom;
                         }
                         else
                         {
-                            SIDE = TOP;
+                            SIDE = GameConstants.Top;
                         }
                     }
                     else if (collideRectangle.Width <= collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = RIGHT;
+                            SIDE = GameConstants.Right;
                         }
                         else
                         {
-                            SIDE = LEFT;
+                            SIDE = GameConstants.Left;
                         }
                     }
                     if (collideRectangle.Width * collideRectangle.Height > 13)
@@ -237,18 +236,18 @@ namespace SuperMarioGame.CollisionHandler
 
         public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements, Mario mario)
         {
-            SIDE = TOP;
+            SIDE = GameConstants.Top;
             
             foreach (IEnemy enemy in enemyElements)
             {
                 if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
                 {
-                    ItemEnemyHandler.EnemyHandler(item, enemy, TOP);
+                    ItemEnemyHandler.EnemyHandler(item, enemy, GameConstants.Top);
                     if(item is Fireball)
                     {
                         //score part
                         mario.isScored = true;
-                        mario.score = 200;
+                        mario.score = GameConstants.Score2;
                         mario.totalScore += mario.score;
                         Vector2 newP;
                         newP.X = enemy.position.X;
@@ -261,7 +260,7 @@ namespace SuperMarioGame.CollisionHandler
 
         public void MarioItemCollision(Mario mario, List<IItem> itemElements)
         {
-            SIDE = TOP;
+            SIDE = GameConstants.Top;
             foreach (IItem item in itemElements)
             {     
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
@@ -316,22 +315,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = BOTTOM;
+                            SIDE = GameConstants.Bottom;
                         }
                         else
                         {
-                            SIDE = TOP;
+                            SIDE = GameConstants.Top;
                         }
                     }
                     else if (collideRectangle.Width < collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = RIGHT;
+                            SIDE = GameConstants.Right;
                         }
                         else
                         {
-                            SIDE = LEFT;
+                            SIDE = GameConstants.Left;
                         }
                     }
                     MarioEnemyHandler.EnemyHandler(mario, enemy, SIDE);
@@ -352,22 +351,22 @@ namespace SuperMarioGame.CollisionHandler
                     {
                         if (firstRectangle.Top > secondRectangle.Top)
                         {
-                            SIDE = BOTTOM;
+                            SIDE = GameConstants.Bottom;
                         }
                         else
                         {
-                            SIDE = TOP;
+                            SIDE = GameConstants.Top;
                         }
                     }
                     else if (collideRectangle.Width < collideRectangle.Height)
                     {
                         if (firstRectangle.Left > secondRectangle.Left)
                         {
-                            SIDE = RIGHT;
+                            SIDE = GameConstants.Right;
                         }
                         else
                         {
-                            SIDE = LEFT;
+                            SIDE = GameConstants.Left;
                         }
                     }
                     EnemyEnemyHandler.EnemyHandler(enemy1, enemy2, SIDE);

@@ -15,6 +15,12 @@ namespace SuperMarioGame.CollisionHandler
     {
         public static void BlockHandler(Game1 game, Mario mario, IBlock block, int CollisionSide)
         {
+            int SIXTEEN = 16;
+            int SIX = 6;
+            int THREE = 3;
+            int THIRTYONE = 31;
+            int EIGHT = 8;
+            int TWELVE = 12;
             Vector2 newPosition;
             Game1 myGame = game;
 
@@ -25,7 +31,7 @@ namespace SuperMarioGame.CollisionHandler
                     case 1: //top collision
                        
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-6;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-SIX;
                         mario.position = newPosition;
                         break;
                     case 2: //right side collision
@@ -39,7 +45,7 @@ namespace SuperMarioGame.CollisionHandler
                     case 3: //bottom collision
                         mario.jump = false;
                         newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+3;
+                        newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+THREE;
                         mario.position = newPosition;
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite)
                         {
@@ -49,10 +55,10 @@ namespace SuperMarioGame.CollisionHandler
                                 MarioSoundManager.instance.playSound(MarioSoundManager.BREAKBLOCK);
                                 block.Bump();
                                 block.isVisible = false;
-                                BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), 1);
-                                BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y + 16), 2);
-                                BlockPiece block3 = new BlockPiece(new Vector2(block.position.X + 16, block.position.Y), 3);
-                                BlockPiece block4 = new BlockPiece(new Vector2(block.position.X + 16, block.position.Y + 16), 4);
+                                BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), GameConstants.BlockPieceOne);
+                                BlockPiece block2 = new BlockPiece(new Vector2(block.position.X, block.position.Y +SIXTEEN), GameConstants.BlockPieceTwo);
+                                BlockPiece block3 = new BlockPiece(new Vector2(block.position.X +SIXTEEN, block.position.Y), GameConstants.BlockPieceThree);
+                                BlockPiece block4 = new BlockPiece(new Vector2(block.position.X +SIXTEEN, block.position.Y+SIXTEEN), GameConstants.BlockPieceFour);
                                 block1.gravity = 0;
                                 block2.gravity = 0;
                                 block3.gravity = 0;
@@ -76,17 +82,17 @@ namespace SuperMarioGame.CollisionHandler
                             MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-                            Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                            Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                             //score part
                             mario.isScored = true;
-                            mario.score = 200;
+                            mario.score = GameConstants.Score2;
                             mario.coin += 1;
                             mario.totalScore += mario.score;
                             Vector2 newP;
-                            newP.X = block.position.X+12;
-                            newP.Y = block.position.Y - 3;
+                            newP.X = block.position.X+TWELVE;
+                            newP.Y = block.position.Y -THREE;
                             mario.textPosition = newP;
                         }
                         else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
@@ -96,25 +102,25 @@ namespace SuperMarioGame.CollisionHandler
                             if (b.coinCount > 0)
                             {
                                 b.Bump();
-                                Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                                Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
                                 c.jump = true;
                                 myGame.level.itemElements.Add(c);
                                 b.coinCount--;
                                 //score part
                                 mario.isScored = true;
-                                mario.score = 200;
+                                mario.score = GameConstants.Score2;
                                 mario.coin += 1;
                                 mario.totalScore += mario.score;
                                 Vector2 newP;
-                                newP.X = b.blockSprite.desRectangle.X+12;
-                                newP.Y = b.blockSprite.desRectangle.Y - 3;
+                                newP.X = b.blockSprite.desRectangle.X+TWELVE;
+                                newP.Y = b.blockSprite.desRectangle.Y -THREE;
                                 mario.textPosition = newP;
                             }
                             else
                             {
                                 block.Bump();
                                 block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-                                Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                                Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
                                 c.jump = true;
                                 myGame.level.itemElements.Add(c);
                             }
@@ -149,15 +155,15 @@ namespace SuperMarioGame.CollisionHandler
                             block.Bump();
                             //score part
                             mario.isScored = true;
-                            mario.score = 200;
+                            mario.score = GameConstants.Score2;
                             mario.coin += 1;
                             mario.totalScore += mario.score;
                             Vector2 newP;
-                            newP.X = block.blockSprite.desRectangle.X + 12;
-                            newP.Y = block.blockSprite.desRectangle.Y - 3;
+                            newP.X = block.blockSprite.desRectangle.X + TWELVE;
+                            newP.Y = block.blockSprite.desRectangle.Y -THREE;
                             mario.textPosition = newP;
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
-                            Coin c = new Coin(new Vector2(block.position.X + 8, block.position.Y - 31));
+                            Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                             

@@ -21,7 +21,7 @@ namespace SuperMarioGame.CollisionHandler
                             enemy.BeFlipped();
                             //score
                             mario.isScored = true;
-                            mario.score = 100;
+                            mario.score = GameConstants.Score1;
                             mario.totalScore += mario.score;
                             Vector2 newP;
                             newP.X = mario.position.X;
@@ -38,7 +38,7 @@ namespace SuperMarioGame.CollisionHandler
                                 if(!(enemy.shellDirection))
                                 {
                                 mario.isScored = true;
-                                    mario.score = 100;
+                                    mario.score = GameConstants.Score1;
                                     mario.totalScore += mario.score;
                                     Vector2 newP;
                                 newP.X = mario.position.X;
@@ -77,7 +77,7 @@ namespace SuperMarioGame.CollisionHandler
                             enemy.BeFlipped();
                             //score
                             mario.isScored = true;
-                            mario.score = 100;
+                            mario.score = GameConstants.Score1;
                             Vector2 newP;
                             newP.X = mario.position.X;
                             newP.Y = mario.position.Y - 3;
@@ -124,7 +124,7 @@ namespace SuperMarioGame.CollisionHandler
                             enemy.BeFlipped();
                             //score
                             mario.isScored = true;
-                            mario.score = 100;
+                            mario.score = GameConstants.Score1;
                             Vector2 newP;
                             newP.X = mario.position.X;
                             newP.Y = mario.position.Y - 3;
@@ -143,7 +143,7 @@ namespace SuperMarioGame.CollisionHandler
                             enemy.BeFlipped();
                             //score
                             mario.isScored = true;
-                            mario.score = 100;
+                            mario.score = GameConstants.Score1;
                             Vector2 newP;
                             newP.X = mario.position.X;
                             newP.Y = mario.position.Y - 3;

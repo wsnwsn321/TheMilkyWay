@@ -5,18 +5,21 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMarioGame.CollisionHandler
 {
+
     public static class EnemyBlockHandler
     {
+        
         public static void BlockHandler(IEnemy enemy, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
+            int SIX= 6;
             if (!enemy.flip&&block.isBroken==false&&block.isVisible)
             {
                 switch (CollisionSide)
                 {
                     case 1:
                         newPosition.X = enemy.enemySprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - 6;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - enemy.enemySprite.desRectangle.Height - SIX;
                         enemy.position = newPosition;
                         break;
                     case 2:
@@ -24,13 +27,13 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
                         enemy.ChangeDirection();
-                        if (enemy.shellMoving == 2)
+                        if (enemy.shellMoving == GameConstants.Right)
                         {
-                            enemy.shellMoving = 4;
+                            enemy.shellMoving = GameConstants.Left;
                         }
-                       else if (enemy.shellMoving == 4)
+                       else if (enemy.shellMoving == GameConstants.Left)
                         {
-                            enemy.shellMoving = 2;
+                            enemy.shellMoving = GameConstants.Right;
                         }
                         break;
                     case 3:
@@ -43,13 +46,13 @@ namespace SuperMarioGame.CollisionHandler
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
                         enemy.ChangeDirection();
-                        if (enemy.shellMoving == 2)
+                        if (enemy.shellMoving == GameConstants.Right)
                         {
-                            enemy.shellMoving = 4;
+                            enemy.shellMoving = GameConstants.Left;
                         }
-                        else if (enemy.shellMoving == 4)
+                        else if (enemy.shellMoving == GameConstants.Left)
                         {
-                            enemy.shellMoving = 2;
+                            enemy.shellMoving = GameConstants.Right;
                         }
                         break;
                 }
