@@ -11,6 +11,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public bool isVisible { get; set; }
         public bool changeDirection { get; set; }
         public int gravity { get; set; }
+        private int Two = 2;
         public RedMushroom(Vector2 pos)
         {
             position = pos;
@@ -39,11 +40,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             itemSprite.Update();
             if (changeDirection)
             {
-                position = new Vector2(position.X + 2, position.Y);
+                position = new Vector2(position.X + Two, position.Y);
             }
             else
             {
-                position = new Vector2(position.X - 2, position.Y);
+                position = new Vector2(position.X - Two, position.Y);
             }
            
         }

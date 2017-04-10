@@ -10,6 +10,7 @@ namespace SuperMarioGame.Commands
     {
         private Game1 myGame;
         private ElementClasses.Mario mario;
+        int  TwentyFive = 25;
 
         public MarioAttackCommand(Game1 game)
         {
@@ -24,7 +25,7 @@ namespace SuperMarioGame.Commands
                 if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
                 {
                     mario.Attack();
-                    Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + 25));
+                    Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + TwentyFive));
                     if (mario.state.marioSprite is RightAttackingMarioSprite)
                     {
 

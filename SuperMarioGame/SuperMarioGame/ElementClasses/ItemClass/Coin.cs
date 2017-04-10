@@ -14,6 +14,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         private int jumpCount = 0;
 
         public int gravity { get; set; }
+        private int Three = 3; 
 
         public Coin(Vector2 pos)
         {
@@ -42,12 +43,12 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             {
                 if (jumpCount < 20)
                 {
-                    position = new Vector2(position.X, position.Y - 3);
+                    position = new Vector2(position.X, position.Y - Three);
                     itemSprite.Draw(position);
                 }
                 else
                 {
-                    position = new Vector2(position.X, position.Y + 3);
+                    position = new Vector2(position.X, position.Y + Three);
                     itemSprite.Draw(position);
                 }
                 if (jumpCount == 35)

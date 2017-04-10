@@ -15,7 +15,5 @@ namespace SuperMarioGame.ElementClasses.ElementInterfaces
         bool isBroken { get; set; }
         bool isBumped { get; set; }
 
-
-
     }
 }
