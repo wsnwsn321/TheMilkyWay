@@ -7,7 +7,6 @@ using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
-using SuperMarioGame.GameState;
 using SuperMarioGame.Sound.MarioSound;
 using SuperMarioGame.Sound.BackgroundMusic;
 
@@ -22,7 +21,6 @@ namespace SuperMarioGame
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
         internal Level level;
-        internal GameStateHandler gameStateHandler;
         internal SpriteFont font;
         private bool freeze = false;
         private int freezeCount = 0;
@@ -39,7 +37,6 @@ namespace SuperMarioGame
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
             level = new Level(this);
-            gameStateHandler = new GameStateHandler(level);
 
             InitializeCommands();
 

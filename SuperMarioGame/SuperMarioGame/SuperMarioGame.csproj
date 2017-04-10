@@ -89,7 +89,6 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GameConstants.cs" />
-    <Compile Include="GameState\GameStateHandler.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\PauseText.cs" />
     <Compile Include="HUDElements\ScoreSystem.cs" />
