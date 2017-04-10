@@ -16,13 +16,13 @@ namespace SuperMarioGame.ElementClasses
         public bool IsInvincible { get; set; }
         public bool HasStarPower { get; set; }
 
-        public bool reSetBGM;
+        private bool reSetBGM;
         //state constant   
         public const int MARIO_DEAD = 1, MARIO_SMALL = 2, MARIO_BIG = 3, MARIO_FIRE = 4;
         //action constant
         public const int MARIO_RUN = 5, MARIO_JUMP = 6, MARIO_CROUCH = 7,MARIO_IDLE = 8;
 
-        public  const  bool MARIO_LEFT = true;
+        public const bool MARIO_LEFT = true;
 
         public int marioAction { set; get; }
         public int marioState { set; get; }
@@ -74,7 +74,6 @@ namespace SuperMarioGame.ElementClasses
             animated = false;
             isVisible = true;
             isScored = false;
-            //totalScore = 0;
         }
         public Mario(Game1 game, Vector2 position, int marioState, bool marioDirection)
         {
@@ -90,7 +89,6 @@ namespace SuperMarioGame.ElementClasses
             bounce = false;
             animated = false;
             isVisible = true;
-            //totalScore = 0;
         }
         public void MarioIdle()
         {
@@ -136,27 +134,25 @@ namespace SuperMarioGame.ElementClasses
         }
         public virtual void MarioDraw()
         {
-            //if (isVisible)
+            if (HasStarPower)
             {
-                if (HasStarPower)
+                starCounter++;
+                if (starCounter % Twenty == 0)
                 {
-                    starCounter++;
-                    if (starCounter % Twenty == 0)
-                    {
-                        state.marioSprite.tintColor = Color.Brown;
-                    }
-                    else if (starCounter % Twenty == Ten)
-                    {
-                        state.marioSprite.tintColor = Color.Green;
-                    }
+                    state.marioSprite.tintColor = Color.Brown;
+                }
+                else if (starCounter % Twenty == Ten)
+                {
+                    state.marioSprite.tintColor = Color.Green;
+                }
 
-                }
-                if (isScored)
-                {
-                    DrawScore();
-                }
-                state.Draw(position);
             }
+            if (isScored)
+            {
+                DrawScore();
+            }
+            state.Draw(position);
+            
         }
         public void MarioUpdate()
         {
