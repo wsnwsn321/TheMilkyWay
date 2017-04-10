@@ -138,12 +138,12 @@ namespace SuperMarioGame.CollisionHandler
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             
-                            if(mario.marioState == 2)
+                            if(mario.marioState == Mario.MARIO_SMALL)
                             {
                                 myGame.level.itemElements.Add(new RedMushroom(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                                 //IItem redMushroom = myGame.level.itemElements[myGame.level.itemElements.Count - 1];
                             }
-                            else if(mario.marioState == 3 || mario.marioState == 4)
+                            else if(mario.marioState == Mario.MARIO_BIG || mario.marioState == Mario.MARIO_FIRE)
                             {
                                 myGame.level.itemElements.Add(new Flower(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                                 //IItem flower = myGame.level.itemElements[myGame.level.itemElements.Count - 1];
