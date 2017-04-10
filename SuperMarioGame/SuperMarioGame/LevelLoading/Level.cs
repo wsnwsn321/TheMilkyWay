@@ -219,14 +219,6 @@ namespace SuperMarioGame.LevelLoading
             
         }
 
-        private void StoreElements()
-        {
-            tempBackgroundElements = backgroundElements;
-            tempEnemyElements = enemyElements;
-            tempEnvElements = envElements;
-            tempItemElements = itemElements;
-        }
-
         public void Pause()
         {
             IsPaused = !IsPaused;
