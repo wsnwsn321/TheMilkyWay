@@ -10,6 +10,7 @@ using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
 using System.Diagnostics;
 using SuperMarioGame.Sound.MarioSound;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -287,6 +288,7 @@ namespace SuperMarioGame.CollisionHandler
                         {
                             if (mario.state.marioSprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
                             {
+                                MediaPlayer.Stop();
                                 MarioSoundManager.instance.playSound(MarioSoundManager.FLAGPOLE);
                                 MarioSoundManager.instance.playSound(MarioSoundManager.STAGECLEAR);
                                 myGame.keyboardController.keysEnabled = false;
