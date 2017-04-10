@@ -90,7 +90,7 @@ namespace SuperMarioGame.HUDElements
             mygame.spriteBatch.End();
         }
 
-        public void WorldSystem(bool undergruond)
+        public void WorldSystem()
         {
             String output1 = "WORLD";
             String output2 = "1-1";
