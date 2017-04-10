@@ -1,11 +1,12 @@
 ﻿George Yang
-3/10/17 
+04/05/17 
 Sprint 4
-Name of the .cs file being reviewed ItemBlockHandler.cs
-Author of the .cs file being reviewed: Nate
+Name of the .cs file being reviewed MarioItemHandler.cs
+Author of the .cs file being reviewed: Oliver
 Number of minutes taken to complete the review 15 minute 30sec
 Specific comments on what is readable and what is not
 
+add stuff to coporate the with the mario jump and block move good job
 Code is pretty concise and name style is readable
 catch the readability point
 
