@@ -14,6 +14,8 @@
         public const int MarioStartingY = 358;
         public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
+        public const int OutPipeStartingX = 6200;
+        public const int OutPipeStartingY = 58;
 
         public const int SmallPipe = 1;
         public const int MedPipe = 2;

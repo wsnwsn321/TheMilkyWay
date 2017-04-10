@@ -90,6 +90,12 @@ namespace SuperMarioGame.CollisionHandler
             {
                 if (item.isVisible)
                 {
+                    MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
+                    mario.isScored = true;
+                    mario.score = 200;
+                    mario.coin += 1;
+                    mario.totalScore += mario.score;
+                    mario.textPosition = new Vector2(mario.position.X, mario.position.Y - 10);
                     item.isVisible = false;
                 }
             }
