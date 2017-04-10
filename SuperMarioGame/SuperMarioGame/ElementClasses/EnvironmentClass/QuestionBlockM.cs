@@ -40,7 +40,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         {
             if (isVisible && isBumped)
             {
-                if (bumpCount > 5)
+                if (bumpCount > Five)
                 {
                     position = new Vector2(position.X, position.Y - Three);
                     blockSprite.Draw(position);
