@@ -17,7 +17,6 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
         private int Five = 5;
         private int Eleven = 11;
 
-        private Color blockTint;
         public GroundBlock(Vector2 pos, bool isBlue)
         {
             if (isBlue)

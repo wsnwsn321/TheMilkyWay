@@ -139,7 +139,6 @@ namespace SuperMarioGame.LevelLoading
                     else
                     {
                         mario.GrowAnimationUpdate();
-
                     }
                 }
             }
