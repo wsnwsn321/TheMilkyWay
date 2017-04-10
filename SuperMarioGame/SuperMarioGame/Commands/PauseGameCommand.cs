@@ -20,7 +20,7 @@ namespace SuperMarioGame.Commands
             {
                 counter = 0;
                 MarioSoundManager.instance.playSound(MarioSoundManager.PAUSE);
-                myGame.gameStateHandler.GamePause();
+                myGame.level.Pause();
             }
         }
     }

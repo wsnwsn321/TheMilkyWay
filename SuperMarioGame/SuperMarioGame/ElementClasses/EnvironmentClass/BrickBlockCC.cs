@@ -22,7 +22,7 @@ namespace SuperMarioGame.ElementClasses.EnvironmentClass
             blockSprite = SpriteFactories.EnvironmentSpriteFactory.Instance.CreateBrickBlockSprite();
             isVisible = true;
             isBroken = false;
-            coinCount = 10;
+            coinCount = Three * Three;
         }
 
         public void Draw()

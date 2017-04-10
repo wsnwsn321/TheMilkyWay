@@ -7,7 +7,6 @@ using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.LevelLoading;
 using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
-using SuperMarioGame.GameState;
 using SuperMarioGame.Sound.MarioSound;
 using SuperMarioGame.Sound.BackgroundMusic;
 
@@ -22,7 +21,6 @@ namespace SuperMarioGame
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
         internal Level level;
-        internal GameStateHandler gameStateHandler;
         internal SpriteFont font;
         private bool freeze = false;
         private int freezeCount = 0;
@@ -39,7 +37,6 @@ namespace SuperMarioGame
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
             level = new Level(this);
-            gameStateHandler = new GameStateHandler(level);
 
             InitializeCommands();
 
@@ -61,8 +58,7 @@ namespace SuperMarioGame
         }
 
         protected override void Update(GameTime gameTime)
-        {
-           
+        {          
            
             if (!freeze)
             {
@@ -81,7 +77,13 @@ namespace SuperMarioGame
                 {
                     freeze = false;
                     freezeCount = 0;
-                    ResetGame();
+                    int marioWidth = level.mario.state.marioSprite.desRectangle.Width;
+                    level.mario = new Mario(this, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
+                    level.mario.gravity = 0;
+                    level.mario.animated = true;
+                    level.mario.animation = GameConstants.LifeScreenAnimation;
+                    level.Load(GameConstants.LifeScreen,new Vector2((GameConstants.ScreenWidth/2)-marioWidth,GameConstants.ScreenHeight/2));
+                    //ResetGame();
                 }
             }
            

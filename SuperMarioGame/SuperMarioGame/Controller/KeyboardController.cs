@@ -8,7 +8,7 @@ namespace SuperMarioGame.Controller
     public class KeyboardController
     {
       
-        public Dictionary<Keys, ICommand> controllerMappings;
+        public Dictionary<Keys, ICommand> controllerMappings { get; }
         KeyboardState OldState;
         private bool wDown;
         private static int resetOnce=1;

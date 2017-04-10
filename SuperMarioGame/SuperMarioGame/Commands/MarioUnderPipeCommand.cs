@@ -29,7 +29,6 @@ namespace SuperMarioGame.Commands
                 {
                     pipeCount = false;
                     MarioSoundManager.instance.playSound(MarioSoundManager.PIPE);
-                    mario.position = new Vector2(mario.position.X, mario.position.Y - 10);
                 }
                 wait1++;
                 mario.position = new Vector2(mario.position.X + 1, mario.position.Y);

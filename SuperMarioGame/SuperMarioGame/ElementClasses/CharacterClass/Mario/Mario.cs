@@ -275,6 +275,11 @@ namespace SuperMarioGame.ElementClasses
             myGame.keyboardController.controllerMappings[Keys.BrowserHome].Execute();
             state.Update();
         }
+        public void LifeScreenUpdate()
+        {
+
+
+        }
 
         public void DrawScore()
         {
@@ -291,7 +296,7 @@ namespace SuperMarioGame.ElementClasses
                   output = "1UP";
             }
            
-            Vector2 FontOrigin = myGame.font.MeasureString(output) / 2;
+            Vector2 FontOrigin = myGame.font.MeasureString(output) / GameConstants.Two;
             myGame.spriteBatch.Begin();
 
                 if (scoreCounter <= Twenty)
