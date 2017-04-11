@@ -2,6 +2,8 @@
 using SuperMarioGame.Sprites;
 using SuperMarioGame.VolecotyTest;
 using System.Collections.Generic;
+using System;
+using SuperMarioGame.ElementClasses.ElementInterfaces;
 
 namespace SuperMarioGame.ElementClasses.ItemClass
 {
@@ -11,36 +13,27 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         public ISprite itemSprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
-        public bool hDirection { get; set; }
-        public bool vDirection { get; set; }
+
         public int gravity { get; set; }
-      
-        public bool onTop { get; set; }
-        private TwoVolecity volecity;
-        private float reset;
-        private int jumpCounter;
-        private int Ten = 10;
-        private int FOURHEIGHT = 480;
+
+  
+ 
+
+        private int ExplosionCounter;
+  
 
 
         public FireballExplosion(Vector2 pos)
         {
             position = pos;
-            jumpCounter = 0;
+            ExplosionCounter = 0;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballExplosionSprite();
             isVisible = true;
-            hDirection = false;
-            vDirection = false;
-            volecity = new TwoVolecity(3, 6);
-            reset = volecity.vv;
-            gravity = 0;
-            onTop = false;
+            gravity = -3;
         }
         public void ItemChangeDirection()
         {
-            vDirection = !vDirection;
-            volecity.vv = reset;
-            jumpCounter++;
+          
         }
 
         public void Draw()
@@ -48,33 +41,20 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             if (isVisible)
             {
                 itemSprite.Draw(position);
-            }else
-            {
-                itemSprite.Draw(position);
             }
         }
 
         public void Update()
         {
-            if(jumpCounter <= Ten && isVisible &&  position.Y > 0 && position.Y < FOURHEIGHT)
+              if(ExplosionCounter< 2)
             {
-                position = Volecity.getNewPosition(volecity, vDirection, hDirection, true, position);
-                if (volecity.vv <= 0)
-                {
-                    ItemChangeDirection();
-                    volecity.vv = reset;
-                }
-                itemSprite.Update();                
-            }else 
+                ExplosionCounter++; 
+            }
+            else
             {
                 isVisible = false;
-            }              
+            }    
         }
 
-        public void fireBallExplosion()
-        {
-            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballExplosionSprite();
-            Draw();
-        }
     }
 }
