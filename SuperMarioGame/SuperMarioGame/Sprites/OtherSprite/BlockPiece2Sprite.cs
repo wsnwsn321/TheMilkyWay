@@ -35,8 +35,8 @@ namespace SuperMarioGame.Sprites
             if (toDraw)
             {
                 sb.Begin();
-                Rectangle sourceRectangle = new Rectangle(0, 8, 8, 8);
-                desRectangle = new Rectangle((int)position.X, (int)position.Y, 16, 16);
+                Rectangle sourceRectangle = new Rectangle(0, GameConstants.Eight, GameConstants.Eight, GameConstants.Eight);
+                desRectangle = new Rectangle((int)position.X, (int)position.Y, GameConstants.Sixteen, GameConstants.Sixteen);
                 sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
                 p = position;
                 sb.End();

@@ -59,10 +59,10 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle((9 * currentFrame), 0, currentWidth, 14);
-            if (currentFrame == 2 || currentFrame == 3)
+            Rectangle sourceRectangle = new Rectangle(((GameConstants.Eight+1) * currentFrame), 0, currentWidth, 14);
+            if (currentFrame == GameConstants.Two || currentFrame == GameConstants.Three)
             {
-                desRectangle = new Rectangle((int)position.X+4, (int)position.Y, 18, 28);
+                desRectangle = new Rectangle((int)position.X+ GameConstants.Four, (int)position.Y, GameConstants.Ten+GameConstants.Eight, GameConstants.Twenty+GameConstants.Eight);
                 sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             }
             else
