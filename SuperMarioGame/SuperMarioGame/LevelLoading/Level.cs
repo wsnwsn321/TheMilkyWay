@@ -146,7 +146,6 @@ namespace SuperMarioGame.LevelLoading
             {
                 mario.canMove = false;
             }
-            
         }
 
         public void Draw()
