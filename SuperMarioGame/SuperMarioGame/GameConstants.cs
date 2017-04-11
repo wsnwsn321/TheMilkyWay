@@ -56,6 +56,7 @@
         public const int Twelve = 12;
         public const int Hundred = 100;
         public const int Fifty = 50;
-
+        public const int Sixteen = 16;
+        public const int Fourteen = 14;
     }
 }
