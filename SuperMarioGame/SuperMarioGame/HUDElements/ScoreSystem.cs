@@ -4,6 +4,7 @@ using SuperMarioGame.ElementClasses;
 using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.SpriteFactories;
 using SuperMarioGame.Sprites;
+using SuperMarioGame.Sprites.MarioSprite.SmallMarioSprite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -108,8 +109,17 @@ namespace SuperMarioGame.HUDElements
 
         public void Time()
         {
+            if (mygame.resetTime)
+            {
+                timeLeft = GameConstants.InitialTimerValue;
+                timeElapsed = 0;
+                mygame.resetTime = false;
+            }
             String TIME = "TIME";
-            timeElapsed++;
+            if (!mygame.level.mario.animated)
+            {
+                timeElapsed++;
+            }
             if (timeElapsed % 60 == 0)
             {
                 timeLeft--;

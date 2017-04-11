@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperMarioGame.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
 using SuperMarioGame.Sound.BackgroundMusic;
+using System.Diagnostics;
+
 namespace SuperMarioGame.ElementClasses
 {
     public class Mario
@@ -145,7 +147,6 @@ namespace SuperMarioGame.ElementClasses
                 {
                     state.marioSprite.tintColor = Color.Green;
                 }
-
             }
             if (isScored)
             {

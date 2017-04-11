@@ -187,7 +187,7 @@ namespace SuperMarioGame.CollisionHandler
                         if (block is Pipe)
                         {
                             Pipe tempPipe = block as Pipe;
-                            if (tempPipe.size == GameConstants.UnderPipe)
+                            if (tempPipe.size == GameConstants.UnderPipe && mario.position.Y > block.position.Y-GameConstants.Three+GameConstants.Two)
                             {
                                 mario.animated = true;
                                 mario.animation = GameConstants.UnderPipeAnimation;

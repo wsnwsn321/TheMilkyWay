@@ -24,10 +24,12 @@ namespace SuperMarioGame
         internal Level level;
         internal SpriteFont font;
         private bool freeze = false;
+        public bool resetTime { get; set; }
         public bool displayLifeText { get; set; }
         private LifeText lifeText;
 
         private int freezeCount = 0;
+        private int lifeScreenCount = 0;
 
         public Game1()
         {
@@ -42,7 +44,7 @@ namespace SuperMarioGame
             gamepadController = new GamepadController();
             level = new Level(this);
             lifeText = new LifeText(this);
-
+            resetTime = false;
             InitializeCommands();
 
             base.Initialize();
@@ -63,8 +65,7 @@ namespace SuperMarioGame
         }
 
         protected override void Update(GameTime gameTime)
-        {          
-           
+        {         
             if (!freeze)
             {
                 level.Update();
@@ -77,21 +78,38 @@ namespace SuperMarioGame
             }
             else
             {
-                freezeCount++;
                 if (freezeCount == GameConstants.FreezeTime)
                 {
-                    freeze = false;
-                    freezeCount = 0;
+
                     int marioWidth = level.mario.state.marioSprite.desRectangle.Width;
-                    level.mario = new Mario(this, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
+                    level.mario.marioAction = Mario.MARIO_IDLE;
+                    level.mario.marioState = Mario.MARIO_SMALL;
+                    level.mario.marioDirection = !Mario.MARIO_LEFT;
+                    level.mario.MarioChangeForm(Mario.MARIO_SMALL);
                     level.mario.animated = true;
                     level.mario.animation = GameConstants.LifeScreenAnimation;
-                    level.Load(GameConstants.LifeScreen,new Vector2((GameConstants.ScreenWidth/2)-marioWidth,GameConstants.ScreenHeight/2));
+                    level.Load(GameConstants.LifeScreen,new Vector2((GameConstants.ScreenWidth/2)-marioWidth-GameConstants.Eight,GameConstants.ScreenHeight/2));
                     displayLifeText = true;
-                    //ResetGame();
+                    if (lifeScreenCount == GameConstants.LifeScreenTime)
+                    {
+                        level.mario.animated = false;
+                        keyboardController.keysEnabled = true;
+                        freeze = false;
+                        freezeCount = 0;
+                        lifeScreenCount = 0;
+                        displayLifeText = false;
+                        ResetGame();
+                    }
+                    else
+                    {
+                        lifeScreenCount++;
+                    }
                 }
-            }
-           
+                else
+                {
+                    freezeCount++;
+                }
+            }           
         }
 
         protected override void Draw(GameTime gameTime)
@@ -151,7 +169,7 @@ namespace SuperMarioGame
         {
             Initialize();
             LoadContent();
-            
+            resetTime = true;
         }
     }
 }
