@@ -23,6 +23,7 @@ namespace SuperMarioGame.HUDElements
 
         public void Draw()
         {
+            string output;
             if (playOnce)
             {
                 playOnce = false;
@@ -32,16 +33,33 @@ namespace SuperMarioGame.HUDElements
                 GameConstants.ScreenHeight / Two + GameConstants.Ten);
 
             // Draw Pause
-            string output = " x " + Two;
+            if (myGame.lifeCount > 0)
+            {
+                output = " x " + myGame.lifeCount;
+                // Find the center of the string
+                Vector2 FontOrigin = myGame.font.MeasureString(output) / Two;
 
-            // Find the center of the string
-            Vector2 FontOrigin = myGame.font.MeasureString(output) / Two;
+                // Draw the string. 3.0f represents the size
+                myGame.spriteBatch.Begin();
+                myGame.spriteBatch.DrawString(myGame.font, output, FontPos, Color.White,
+                    0, FontOrigin, 1.5f, SpriteEffects.None, 0.5f);
+                myGame.spriteBatch.End();
+            } else
+            {
+                output = " G A M E    O V E R";
+                // Find the center of the string
+                Vector2 FontOrigin = myGame.font.MeasureString(output) / Two;
 
-            // Draw the string. 3.0f represents the size
-            myGame.spriteBatch.Begin();
-            myGame.spriteBatch.DrawString(myGame.font, output, FontPos, Color.White,
-                0, FontOrigin, 1.5f, SpriteEffects.None, 0.5f);
-            myGame.spriteBatch.End();
+                // Draw the string. 3.0f represents the size
+                myGame.spriteBatch.Begin();
+                myGame.spriteBatch.DrawString(myGame.font, output, FontPos, Color.White,
+                    0, FontOrigin, 1.5f, SpriteEffects.None, 0.5f);
+                myGame.spriteBatch.End();
+                myGame.level.mario.isVisible = false;
+               // myGame.Exit();
+            }
+
+
         }
     }
 }

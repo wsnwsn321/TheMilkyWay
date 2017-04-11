@@ -267,7 +267,7 @@ namespace SuperMarioGame.CollisionHandler
             {     
                 if (mario.state.marioSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
                 {
-                    MarioItemHandler.ItemHandler(mario, item);
+                    MarioItemHandler.ItemHandler( myGame,mario, item);
                 }
             }
         }

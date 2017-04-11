@@ -8,7 +8,7 @@ namespace SuperMarioGame.CollisionHandler
 {
     public static class MarioItemHandler
     {
-        public static void ItemHandler(Mario mario,  IItem item)
+        public static void ItemHandler(Game1 game, Mario mario,  IItem item)
         {
             int TWELVE = 12;
             int THIRTY = 30;
@@ -106,6 +106,7 @@ namespace SuperMarioGame.CollisionHandler
             {
                 if (item.isVisible)
                 {
+                    game.lifeCount++;
                     MarioSoundManager.instance.playSound(MarioSoundManager.ONEUP);
                     item.isVisible = false;
                     //score part

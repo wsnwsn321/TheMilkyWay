@@ -67,7 +67,7 @@ namespace SuperMarioGame.ElementClasses
             InvincibilityTime = 0;
             starCounter = 0;
             scoreCounter = 0;
-            gravity = GameConstants.Two*2;
+            gravity = GameConstants.Two*GameConstants.Two;
             bounce = false;
             animated = false;
             isVisible = true;
@@ -83,7 +83,7 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             IsInvincible = false;
             InvincibilityTime = 0;
-            gravity = GameConstants.Two*2;
+            gravity = GameConstants.Two * GameConstants.Two;
             bounce = false;
             animated = false;
             isVisible = true;
