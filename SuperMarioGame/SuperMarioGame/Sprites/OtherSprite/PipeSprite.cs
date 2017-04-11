@@ -9,7 +9,7 @@ namespace SuperMarioGame.Sprites
         public Texture2D Texture { get; set; }
         Vector2 p;
         SpriteBatch sb;
-        public int size;
+        public int size { get; set; }
         public Rectangle desRectangle { get; set; }
 
         public PipeSprite(Texture2D texture, SpriteBatch sb, int size)
