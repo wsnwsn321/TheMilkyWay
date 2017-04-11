@@ -85,6 +85,7 @@
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
+    <Compile Include="ElementClasses\ItemClass\FireballExplosion.cs" />
     <Compile Include="ElementClasses\ItemClass\Fireball.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />

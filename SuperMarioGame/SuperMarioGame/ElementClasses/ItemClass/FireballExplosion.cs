@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SuperMarioGame.ElementClasses.ItemClass
 {
-    public class Fireball : ElementInterfaces.IItem
+    public class FireballExplosion : ElementInterfaces.IItem
 
     {
         public ISprite itemSprite { get; set; }
@@ -23,12 +23,11 @@ namespace SuperMarioGame.ElementClasses.ItemClass
         private int FOURHEIGHT = 480;
 
 
-        public Fireball(Vector2 pos)
+        public FireballExplosion(Vector2 pos)
         {
             position = pos;
             jumpCounter = 0;
-            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballSprite();
-           //itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballExplosionSprite();
+            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballExplosionSprite();
             isVisible = true;
             hDirection = false;
             vDirection = false;

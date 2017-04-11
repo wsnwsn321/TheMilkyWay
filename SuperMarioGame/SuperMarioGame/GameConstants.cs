@@ -33,6 +33,9 @@
         public const int InitialTimerValue = 400;
         public const int Score1 = 100;
         public const int Score2 = 100;
+        public const int Score1500 = 1500;
+        public const int Score1000 = 1000;
+        public const int Score500 = 500;
 
         public const int BlockPieceOne = 1;
         public const int BlockPieceTwo = 2;
@@ -52,6 +55,8 @@
         public const int FourHund = 400;
         public const int Ten = 10;
         public const int Twelve = 12;
+        public const int Hundred = 100;
+        public const int Fifty = 50;
 
     }
 }
