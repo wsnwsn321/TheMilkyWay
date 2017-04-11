@@ -45,7 +45,6 @@
         public const int score900 = 900;
         public const int score9900 = 9900;
         public const int score99900 = 99900;
-        public const int score1000 = 1000;
         public const int score10000 = 10000;
 
         public const int Three = 3;

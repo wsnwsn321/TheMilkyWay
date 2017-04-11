@@ -6,7 +6,6 @@ namespace SuperMarioGame.SpriteFactories
     class EnvironmentSpriteFactory
     {
         private Texture2D brickBlockSpritesheet;
-        private Texture2D backgroundSpritesheet;
         private Texture2D questionBlockSpritesheet;
         private Texture2D usedBlockSpritesheet;
         private Texture2D groundBlockSpritesheet;
@@ -38,7 +37,6 @@ namespace SuperMarioGame.SpriteFactories
 
             underPipeSpritesheet = content.Load<Texture2D>("Item/undergroundPipe");
             pipeSpritesheet = content.Load<Texture2D>("Item/Pipe");
-            backgroundSpritesheet = content.Load<Texture2D>("Background/BackgroundEnvironment");
             usedBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             brickBlockSpritesheet = content.Load<Texture2D>("Item/BrickBlock");
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");

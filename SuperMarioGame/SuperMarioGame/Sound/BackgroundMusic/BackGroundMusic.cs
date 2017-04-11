@@ -13,7 +13,7 @@ namespace SuperMarioGame.Sound.BackgroundMusic
         Song var;
         public const string LEVEL1 = "Level1", LEVEL2 = "Level2", LEVELClEAR ="LevelClear", STARMAN ="Starman";
         private string currentBGM;
-        public BackgroundMusic()
+        private BackgroundMusic()
         {
             BGM = new List<Song>();
         }
