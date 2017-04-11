@@ -71,11 +71,5 @@ namespace SuperMarioGame.ElementClasses.ItemClass
                 isVisible = false;
             }              
         }
-
-        public void fireBallExplosion()
-        {
-            itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballExplosionSprite();
-            Draw();
-        }
     }
 }

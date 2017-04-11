@@ -230,7 +230,7 @@ namespace SuperMarioGame.CollisionHandler
                     }
                     if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
                     {
-                        ItemBlockHandler.BlockHandler(item, block, SIDE);
+                        ItemBlockHandler.BlockHandler(myGame,item, block, SIDE);
                     }
                 }
             }

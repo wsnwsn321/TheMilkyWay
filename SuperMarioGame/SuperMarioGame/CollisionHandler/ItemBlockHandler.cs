@@ -2,13 +2,14 @@
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sprites;
 using Microsoft.Xna.Framework;
+using SuperMarioGame.ElementClasses.ItemClass;
 using SuperMarioGame.ElementClasses.EnvironmentClass;
 
 namespace SuperMarioGame.CollisionHandler
 {
     public static class ItemBlockHandler
     {
-        public static void BlockHandler(IItem item, IBlock block, int CollisionSide)
+        public static void BlockHandler(Game1 myGame,IItem item, IBlock block, int CollisionSide)
         {
             Vector2 newPosition;
             int SIX = 6;
@@ -34,8 +35,10 @@ namespace SuperMarioGame.CollisionHandler
                         {
 
                             item.isVisible = !item.isVisible;
-                            ((ElementClasses.ItemClass.Fireball)item).fireBallExplosion();
-
+                            IItem fireBallExplosion = new FireballExplosion(item.position);
+                            myGame.level.itemElements.Add(fireBallExplosion);
+                            
+                    
                         }
                         else
                         {
@@ -60,7 +63,9 @@ namespace SuperMarioGame.CollisionHandler
                         if (item.itemSprite is FireballSprite)
                         {
                             item.isVisible = !item.isVisible;
-                           
+                            IItem fireBallExplosion = new FireballExplosion(item.position);
+                            myGame.level.itemElements.Add(fireBallExplosion);
+  
                         }
                         else
                         {
