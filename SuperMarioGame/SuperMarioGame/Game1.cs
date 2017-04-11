@@ -25,8 +25,10 @@ namespace SuperMarioGame
         internal SpriteFont font;
         private bool freeze = false;
         public bool resetTime { get; set; }
+        public int lifeCount { get; set; }
         public bool displayLifeText { get; set; }
         private LifeText lifeText;
+
 
         private int freezeCount = 0;
         private int lifeScreenCount = 0;
@@ -34,7 +36,7 @@ namespace SuperMarioGame
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-
+            lifeCount = 1;
             Content.RootDirectory = "Content";
         }
 
@@ -72,6 +74,7 @@ namespace SuperMarioGame
                 if (level.mario.marioState == Mario.MARIO_DEAD)
                 {
                     freeze = true;
+                    lifeCount--;
                 }
                 keyboardController.Update();
                 base.Update(gameTime);
@@ -98,7 +101,13 @@ namespace SuperMarioGame
                         freezeCount = 0;
                         lifeScreenCount = 0;
                         displayLifeText = false;
-                        ResetGame();
+                        if (lifeCount > 0)
+                        {
+                            ResetGame();
+                        } else
+                        {
+                            Exit();
+                        }
                     }
                     else
                     {
