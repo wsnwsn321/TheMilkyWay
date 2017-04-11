@@ -221,6 +221,11 @@ namespace SuperMarioGame.LevelLoading
         public void Pause()
         {
             IsPaused = !IsPaused;
+            if (IsPaused) { 
+                Microsoft.Xna.Framework.Media.MediaPlayer.Pause();
+             }else{
+                Microsoft.Xna.Framework.Media.MediaPlayer.Resume();
+            }
         }
     }
 }

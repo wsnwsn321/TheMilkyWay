@@ -1,6 +1,7 @@
 ﻿using SuperMarioGame.ElementClasses.ElementInterfaces;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sprites;
+using SuperMarioGame.Sound.MarioSound;
 
 namespace SuperMarioGame.CollisionHandler
 {
@@ -15,19 +16,22 @@ namespace SuperMarioGame.CollisionHandler
                     case 1:
                         item.isVisible = false;
                         enemy.BeFlipped();
-                        
+                        MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
                         break;
                     case 2:
                         item.isVisible = false;
                         enemy.BeFlipped();
+                        MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
                         break;
                     case 3:
                         item.isVisible = false;
                         enemy.BeFlipped();
+                        MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
                         break;
                     case 4:
                         item.isVisible = false;
                         enemy.BeFlipped();
+                        MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
                         break;
                 }
             }

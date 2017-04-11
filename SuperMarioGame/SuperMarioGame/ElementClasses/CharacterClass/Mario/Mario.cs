@@ -48,11 +48,7 @@ namespace SuperMarioGame.ElementClasses
 
         internal int InvincibilityTime;
         private int counter, starCounter, scoreCounter;
-        private int Seven = 7;
-        private int Three = 3;
-        private int Ten = 10;
-        private int Twenty = 20;
-        private int FourHEight = 480;
+  
 
         public Mario(Game1 game, Vector2 position)
         {
@@ -69,7 +65,7 @@ namespace SuperMarioGame.ElementClasses
             InvincibilityTime = 0;
             starCounter = 0;
             scoreCounter = 0;
-            gravity = 4;
+            gravity = GameConstants.Two*2;
             bounce = false;
             animated = false;
             isVisible = true;
@@ -85,7 +81,7 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             IsInvincible = false;
             InvincibilityTime = 0;
-            gravity = 4;
+            gravity = GameConstants.Two*2;
             bounce = false;
             animated = false;
             isVisible = true;
@@ -137,11 +133,11 @@ namespace SuperMarioGame.ElementClasses
             if (HasStarPower)
             {
                 starCounter++;
-                if (starCounter % Twenty == 0)
+                if (starCounter % (GameConstants.Two* GameConstants.Ten) == 0)
                 {
                     state.marioSprite.tintColor = Color.Brown;
                 }
-                else if (starCounter % Twenty == Ten)
+                else if (starCounter % (GameConstants.Two * GameConstants.Ten) == GameConstants.Ten)
                 {
                     state.marioSprite.tintColor = Color.Green;
                 }
@@ -160,43 +156,43 @@ namespace SuperMarioGame.ElementClasses
             {
                 if (bounce)
                 {
-                    if (bounceCount < Ten)
+                    if (bounceCount < GameConstants.Ten)
                     {
                         if (marioDirection == MARIO_LEFT)
                         {
                             if (marioAction == MARIO_RUN)
-                                position = new Vector2(position.X, position.Y - Seven);
+                                position = new Vector2(position.X, position.Y - (GameConstants.Three + GameConstants.Two*2));
                             else
-                                position = new Vector2(position.X - Three, position.Y - Seven);
+                                position = new Vector2(position.X - GameConstants.Three, position.Y - (GameConstants.Three + GameConstants.Two * 2));
                         }
                         else
                         {
                             if (marioAction == MARIO_RUN)
-                                position = new Vector2(position.X, position.Y - Seven);
+                                position = new Vector2(position.X, position.Y - (GameConstants.Three + GameConstants.Two * 2));
                             else
-                                position = new Vector2(position.X + Three, position.Y - Seven);
+                                position = new Vector2(position.X + GameConstants.Three, position.Y - (GameConstants.Three + GameConstants.Two * 2));
                         }
                     }
-                    if (bounceCount >= Ten)
+                    if (bounceCount >= GameConstants.Ten)
                     {
                         bounceCount = 0;
                         bounce = false;
                     }
                     bounceCount++;
                 }
-                if (position.Y > FourHEight)
+                if (position.Y > GameConstants.FourHund+ GameConstants.Ten*GameConstants.Eight)
                 {
                     MarioDie();
                 }
                 state.Update();
                 counter++;
-                if (InvincibilityTime > 0 && counter > Twenty)
+                if (InvincibilityTime > 0 && counter > GameConstants.Ten*GameConstants.Two)
                 {
                     IsInvincible = true;
                     InvincibilityTime--;
                     counter = 0;
                 }
-                else if (InvincibilityTime == 0 && counter > Twenty)
+                else if (InvincibilityTime == 0 && counter > GameConstants.Ten*GameConstants.Two)
                 {
                     IsInvincible = false;
                     HasStarPower = false;
@@ -229,7 +225,7 @@ namespace SuperMarioGame.ElementClasses
                 marioState--;
                 MarioChangeForm(marioState);
                 IsInvincible = true;
-                InvincibilityTime += Three;
+                InvincibilityTime += GameConstants.Three;
             } else if (!IsInvincible)
             {
                 MarioDie();
@@ -243,7 +239,7 @@ namespace SuperMarioGame.ElementClasses
             IsInvincible = true;
             BackgroundMusic.instanse.playSound(BackgroundMusic.STARMAN);
             reSetBGM = true;
-            InvincibilityTime = Twenty;
+            InvincibilityTime = GameConstants.Two* GameConstants.Ten;
         }
         public void Attack()
         {
@@ -295,9 +291,9 @@ namespace SuperMarioGame.ElementClasses
             Vector2 FontOrigin = myGame.font.MeasureString(output) / GameConstants.Two;
             myGame.spriteBatch.Begin();
 
-                if (scoreCounter <= Twenty)
+                if (scoreCounter <= GameConstants.Two* GameConstants.Ten)
                 {
-                    textPosition = new Vector2(newPos.X, newPos.Y - Three);
+                    textPosition = new Vector2(newPos.X, newPos.Y - GameConstants.Three);
                     myGame.spriteBatch.DrawString(myGame.font, output, newPos, Color.White,
                 0, FontOrigin, 1.0f, SpriteEffects.None, 1f);
                 scoreCounter++;
