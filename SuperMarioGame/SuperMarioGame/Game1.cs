@@ -36,7 +36,7 @@ namespace SuperMarioGame
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            //lifeCount = 3;
+            lifeCount = 3;
             Content.RootDirectory = "Content";
         }
 
