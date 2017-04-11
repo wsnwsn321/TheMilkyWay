@@ -11,6 +11,7 @@ namespace SuperMarioGame.Sprites
         SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
 
+
         public FireballExplosionSprite(Texture2D texture, SpriteBatch sb)
         {
             Texture = texture;
@@ -18,7 +19,7 @@ namespace SuperMarioGame.Sprites
         }
         public void Update()
         {
-            
+      
         }
 
         public Vector2 returnPosition()
@@ -29,8 +30,8 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0,0,GameConstants.Eight, GameConstants.Eight);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, GameConstants.Two * GameConstants.Ten* GameConstants.Two, GameConstants.Two * GameConstants.Ten* GameConstants.Two);
+            Rectangle sourceRectangle = new Rectangle(2 * GameConstants.Eight* GameConstants.Two, 0, GameConstants.Eight * GameConstants.Two, GameConstants.Eight * GameConstants.Two);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y,GameConstants.Ten* GameConstants.Two, GameConstants.Ten* GameConstants.Two);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
             sb.End();

@@ -29,7 +29,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
             ExplosionCounter = 0;
             itemSprite = SpriteFactories.ItemSpriteFactory.Instance.CreateFireballExplosionSprite();
             isVisible = true;
-            gravity = -3;
+            gravity = 0;
         }
         public void ItemChangeDirection()
         {
@@ -46,7 +46,7 @@ namespace SuperMarioGame.ElementClasses.ItemClass
 
         public void Update()
         {
-              if(ExplosionCounter< 2)
+              if(ExplosionCounter<1)
             {
                 ExplosionCounter++; 
             }

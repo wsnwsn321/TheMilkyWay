@@ -29,7 +29,7 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 14, 15);
+            Rectangle sourceRectangle = new Rectangle(0, 0, GameConstants.Fourteen, GameConstants.Fourteen+1);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 25, 30);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;
