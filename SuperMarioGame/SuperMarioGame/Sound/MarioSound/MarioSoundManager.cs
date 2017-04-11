@@ -21,7 +21,7 @@ namespace SuperMarioGame.Sound.MarioSound
         public const  string ONEUP = "1UP", BOWSERFALL = "boswerFall", BREAKBLOCK = "breakBlock", BUMP = "bump", COIN = "coin", FIREBALL = "fireBall",FIREWORKS ="fireWorks", FLAGPOLE = "flagPole", GAMEOVER = "gameOver",
                             JUMPSMALL = "jumpsmall", JUMPSUPER = "jumpSuper", KICK = "kick", MARIODIE = "marioDie", PAUSE = "pause", PIPE = "pipe", POWERUPAPPEARS = "powerAppears", STAGECLEAR = "stageClear",
                             STOMP = "stomp", VINE = "vine", WARNING = "warning", WORLDCLEAR = "worldClear",POWERUP="powerUp";
-        public MarioSoundManager()
+        private MarioSoundManager()
         {
             soundEffects = new List<SoundEffect>();
 

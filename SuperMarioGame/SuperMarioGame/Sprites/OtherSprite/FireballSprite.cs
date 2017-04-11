@@ -22,9 +22,9 @@ namespace SuperMarioGame.Sprites
             Texture = texture;
             this.sb = sb;
             currentFrame = 0;
-            totalFrame = 4;
+            totalFrame = GameConstants.Four;
             currentUpdate = 0;
-            slowSpeedDown = 5;
+            slowSpeedDown = GameConstants.Five;
             currentWidth = 0;
         }
         public void Update()
@@ -40,7 +40,7 @@ namespace SuperMarioGame.Sprites
                     currentWidth = 0;
                 }else
                 {
-                    currentWidth = 2;
+                    currentWidth = GameConstants.Two;
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace SuperMarioGame.Sprites
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(currentFrame * (9+currentWidth), 0, 9+currentWidth, 9);
+            Rectangle sourceRectangle = new Rectangle(currentFrame * (GameConstants.Nine+currentWidth), 0, GameConstants.Nine+ currentWidth, GameConstants.Nine);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, GameConstants.Two* GameConstants.Ten, GameConstants.Two * GameConstants.Ten);
             sb.Draw(Texture, desRectangle, sourceRectangle, Color.White);
             p = position;

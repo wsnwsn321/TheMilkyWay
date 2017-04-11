@@ -20,9 +20,9 @@ namespace SuperMarioGame.Sprites
             Texture = texture;
             this.sb = sb;
             currentFrame = 0;
-            totalFrame = 2;
+            totalFrame = GameConstants.Two;
             currentUpdate = 0;
-            slowSpeedDown = 8;
+            slowSpeedDown = GameConstants.Eight;
 
         }
         public void Update()

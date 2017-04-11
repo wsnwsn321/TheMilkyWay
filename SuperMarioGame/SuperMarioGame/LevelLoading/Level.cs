@@ -24,7 +24,7 @@ namespace SuperMarioGame.LevelLoading
         internal ScoreSystem scoreSystem;
 
         public string currentLevel { get; set; }
-        public Color backgroundColor;
+        public Color backgroundColor { get; set; }
         private int gameWidth, gameHeight;
         private bool IsPaused { get; set;}
         int camX = 0;
