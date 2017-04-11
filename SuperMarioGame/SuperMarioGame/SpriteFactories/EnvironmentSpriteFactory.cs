@@ -13,6 +13,9 @@ namespace SuperMarioGame.SpriteFactories
         private Texture2D pipeSpritesheet;
         private Texture2D underPipeSpritesheet;
         private Texture2D stageBlockSpritesheet;
+        private Texture2D blueGroundBlockSpritesheet;
+        private Texture2D blueBrickBlockSpritesheet;
+
         public SpriteBatch sb { get; set; }
         private static EnvironmentSpriteFactory instance = new EnvironmentSpriteFactory();
 
@@ -41,7 +44,9 @@ namespace SuperMarioGame.SpriteFactories
             questionBlockSpritesheet = content.Load<Texture2D>("Item/QuestionBlock");
             groundBlockSpritesheet = content.Load<Texture2D>("Item/GroundBlock");
             stageBlockSpritesheet = content.Load<Texture2D>("Item/UsedBlock");
-         
+            blueGroundBlockSpritesheet = content.Load<Texture2D>("Item/BlueGroundBlock");
+            blueBrickBlockSpritesheet= content.Load<Texture2D>("Item/BlueBrickBlock");
+
             this.sb = sb;
 
         }
@@ -66,12 +71,12 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateBrickBlockSprite()
         {
-            return new Sprites.BrickBlockSprite(brickBlockSpritesheet,sb);
+            return new Sprites.BrickBlockSprite(brickBlockSpritesheet, sb);
         }
 
         public Sprites.ISprite CreateBlueBrickBlockSprite()
         {
-            return new Sprites.BlueBrickBlockSprite(brickBlockSpritesheet, sb);
+            return new Sprites.BlueBrickBlockSprite(blueBrickBlockSpritesheet, sb);
         }
 
         public Sprites.ISprite CreateQuestionBlockSprite()
@@ -86,7 +91,7 @@ namespace SuperMarioGame.SpriteFactories
 
         public Sprites.ISprite CreateBlueGroundBlockSprite()
         {
-            return new Sprites.BlueGroundBlockSprite(groundBlockSpritesheet, sb);
+            return new Sprites.BlueGroundBlockSprite(blueGroundBlockSpritesheet, sb);
         }
 
         public Sprites.ISprite CreateHiddenBlockSprite()
@@ -99,7 +104,9 @@ namespace SuperMarioGame.SpriteFactories
         }
 
 
-      
+
+
+
 
     }
 }

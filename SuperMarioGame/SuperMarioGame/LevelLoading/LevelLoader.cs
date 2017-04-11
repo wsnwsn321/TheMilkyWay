@@ -41,7 +41,7 @@ namespace SuperMarioGame.LevelLoading
                             level.envElements.Add(new BrickBlock(new Vector2(x, y), false));
                             break;
                         case "BlueBrickBlock":
-                            level.envElements.Add(new BrickBlock(new Vector2(x, y), false));
+                            level.envElements.Add(new BrickBlock(new Vector2(x, y), true));
                             break;
                         case "BrickBlockC":
                             level.envElements.Add(new BrickBlockC(new Vector2(x, y)));
@@ -56,7 +56,7 @@ namespace SuperMarioGame.LevelLoading
                             level.envElements.Add(new GroundBlock(new Vector2(x, y), false));
                             break;
                         case "BlueGroundBlock":
-                            level.envElements.Add(new GroundBlock(new Vector2(x, y), false));
+                            level.envElements.Add(new GroundBlock(new Vector2(x, y), true));
                             break;
                         case "HiddenBlock":
                             level.envElements.Add(new HiddenBlock(new Vector2(x, y)));

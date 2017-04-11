@@ -9,6 +9,7 @@ using SuperMarioGame.ElementClasses.BackgroundClass;
 using SuperMarioGame.ElementClasses;
 using SuperMarioGame.Sound.MarioSound;
 using SuperMarioGame.Sound.BackgroundMusic;
+using SuperMarioGame.HUDElements;
 
 namespace SuperMarioGame
 
@@ -23,6 +24,9 @@ namespace SuperMarioGame
         internal Level level;
         internal SpriteFont font;
         private bool freeze = false;
+        public bool displayLifeText { get; set; }
+        private LifeText lifeText;
+
         private int freezeCount = 0;
 
         public Game1()
@@ -37,6 +41,7 @@ namespace SuperMarioGame
             keyboardController = new KeyboardController();
             gamepadController = new GamepadController();
             level = new Level(this);
+            lifeText = new LifeText(this);
 
             InitializeCommands();
 
@@ -79,10 +84,10 @@ namespace SuperMarioGame
                     freezeCount = 0;
                     int marioWidth = level.mario.state.marioSprite.desRectangle.Width;
                     level.mario = new Mario(this, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), Mario.MARIO_SMALL, false);
-                    level.mario.gravity = 0;
                     level.mario.animated = true;
                     level.mario.animation = GameConstants.LifeScreenAnimation;
                     level.Load(GameConstants.LifeScreen,new Vector2((GameConstants.ScreenWidth/2)-marioWidth,GameConstants.ScreenHeight/2));
+                    displayLifeText = true;
                     //ResetGame();
                 }
             }
@@ -93,6 +98,10 @@ namespace SuperMarioGame
         {
             GraphicsDevice.Clear(level.backgroundColor);
             level.Draw();
+            if(displayLifeText)
+            {
+                lifeText.Draw();
+            }
             base.Draw(gameTime);
         }
 

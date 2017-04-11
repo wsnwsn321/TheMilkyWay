@@ -28,8 +28,8 @@ namespace SuperMarioGame.HUDElements
                 playOnce = false;
             }
 
-            FontPos = new Vector2(GameConstants.ScreenWidth / Two - myGame.GraphicsDevice.Viewport.X,
-                GameConstants.ScreenHeight / Two);
+            FontPos = new Vector2(GameConstants.ScreenWidth / Two - myGame.GraphicsDevice.Viewport.X + GameConstants.Ten + GameConstants.Ten / GameConstants.Two,
+                GameConstants.ScreenHeight / Two + GameConstants.Ten);
 
             // Draw Pause
             string output = " x " + Two;
@@ -39,8 +39,8 @@ namespace SuperMarioGame.HUDElements
 
             // Draw the string. 3.0f represents the size
             myGame.spriteBatch.Begin();
-            myGame.spriteBatch.DrawString(myGame.font, output, FontPos, Color.Black,
-                0, FontOrigin, 3.0f, SpriteEffects.None, 0.5f);
+            myGame.spriteBatch.DrawString(myGame.font, output, FontPos, Color.White,
+                0, FontOrigin, 1.5f, SpriteEffects.None, 0.5f);
             myGame.spriteBatch.End();
         }
     }
