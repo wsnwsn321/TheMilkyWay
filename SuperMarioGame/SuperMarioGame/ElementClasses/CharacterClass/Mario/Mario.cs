@@ -32,6 +32,7 @@ namespace SuperMarioGame.ElementClasses
         public bool marioDirection { set; get; }
         public Vector2 position { set; get; }
         public int gravity { get; set; }
+        public int lifeCount { get; set; }
         public bool jump { get; set; }
         public bool bounce { get; set; }
         public bool canMove { get; set; }
@@ -63,6 +64,7 @@ namespace SuperMarioGame.ElementClasses
             IsInvincible = false;
             HasStarPower = false;
             canMove = true;
+            lifeCount = 3;
             state = new IdleMarioState(this);
             InvincibilityTime = 0;
             starCounter = 0;
@@ -83,7 +85,8 @@ namespace SuperMarioGame.ElementClasses
             state = new IdleMarioState(this);
             IsInvincible = false;
             InvincibilityTime = 0;
-            gravity = GameConstants.Two*2;
+            gravity = GameConstants.Two * GameConstants.Two;
+            lifeCount = 3;
             bounce = false;
             animated = false;
             isVisible = true;
@@ -212,6 +215,7 @@ namespace SuperMarioGame.ElementClasses
         }
         public void MarioDie()
         {
+            lifeCount--;
             MediaPlayer.Stop();
             MarioSoundManager.instance.playSound(MarioSoundManager.MARIODIE);
             marioState = MARIO_DEAD;

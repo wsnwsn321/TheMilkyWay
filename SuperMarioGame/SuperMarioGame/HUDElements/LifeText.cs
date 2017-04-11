@@ -32,7 +32,7 @@ namespace SuperMarioGame.HUDElements
                 GameConstants.ScreenHeight / Two + GameConstants.Ten);
 
             // Draw Pause
-            string output = " x " + Two;
+            string output = " x " + myGame.level.mario.lifeCount;
 
             // Find the center of the string
             Vector2 FontOrigin = myGame.font.MeasureString(output) / Two;
