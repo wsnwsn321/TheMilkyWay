@@ -1,0 +1,11 @@
+﻿Nathan Pratt
+3-27-17
+Sprint4
+Name of file being reviewed: BlockPiece.cs
+Author of file being reviewed: Oliver Wu
+
+Specific Comments on code quality:
+This class has a very high cyclomatic complexity compared to some of the other classes, although it has
+relatively low cohesion and loose coupling.
+If I were to make a hypothetical change to this class, I would develop a better system for determining which 
+block piece specifically I was currently working with. This would help with decrease the cyclomatic complexity.

@@ -1,0 +1,63 @@
+﻿using Sprint6.ElementClasses.ElementInterfaces;
+using Sprint6.ElementClasses;
+using Sprint6.Sprites;
+using Microsoft.Xna.Framework;
+using Sprint6.ElementClasses.CharacterClass.Enemies;
+
+namespace Sprint6.CollisionHandler
+{
+    public static class EnemyEnemyHandler
+    {
+        public static void EnemyHandler(IEnemy enemy1, IEnemy enemy2, int CollisionSide)
+        {
+            Vector2 newPosition;
+            int  TWO = 2;
+            if (!(enemy2.enemySprite is GoombaStompedSprite) && enemy2.isVisible && !(enemy1.enemySprite is GoombaStompedSprite) && enemy1.isVisible)
+            {
+                switch (CollisionSide)
+                {
+                    case 1:
+
+                        break;
+                    case 2:
+                        newPosition.X = enemy1.enemySprite.desRectangle.X + TWO;
+                        newPosition.Y = enemy1.enemySprite.desRectangle.Y;
+                        enemy1.position = newPosition;
+                        if (enemy1 is Koopa)
+                        {
+                            if (enemy1.shellDirection)
+                            {
+                                enemy2.BeFlipped();
+                            }
+                            else
+                            {
+                                enemy2.ChangeDirection();
+                            }
+                        }
+                        enemy1.ChangeDirection();
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+                        newPosition.X = enemy1.enemySprite.desRectangle.X - TWO;
+                        newPosition.Y = enemy1.enemySprite.desRectangle.Y;
+                        enemy1.position = newPosition;
+                        if (enemy1 is Koopa)
+                        {
+                            if (enemy1.shellDirection)
+                            {
+                                    enemy2.BeFlipped();    
+                            }
+                            else
+                            {
+                                enemy2.ChangeDirection();
+                            }
+                        }
+                        enemy1.ChangeDirection();
+                        break;
+                }
+            }                    
+        }
+    }
+}
