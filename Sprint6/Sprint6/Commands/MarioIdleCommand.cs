@@ -12,11 +12,7 @@
 
         public void Execute()
         {
-            if (mario.marioState != ElementClasses.MainCharacter.MARIO_DEAD && mario.canMove)
-            {
                 mario.MarioIdle();
-            }
-
         }
     }
 }

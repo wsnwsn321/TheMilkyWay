@@ -129,7 +129,7 @@ namespace Sprint6.HUDElements
             {
                 timeLeft = GameConstants.InitialTimerValue;
                 timeElapsed = 0;
-                mygame.level.mainCharacter.MarioDie();
+                mygame.level.mainCharacter.UFODie();
             }
             Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / GameConstants.Two;
             Vector2 FontOrigin2 = mygame.font.MeasureString(timer_num) / GameConstants.Two;

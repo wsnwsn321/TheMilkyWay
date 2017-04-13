@@ -214,55 +214,7 @@ namespace Sprint6.CollisionHandler
             }
         }
 
-        public void MarioFlagCollision(MainCharacter mainCharacter, List<IBackground> backgroundElements)
-        {
-            if (!mainCharacter.animated)
-            {
-                animation = false;
-            }
-            if (!animation)
-            {
-                foreach (IBackground bg in backgroundElements)
-                {
-                    if (bg is Flag)
-                    {
-                        Flag tempFlag = bg as Flag;
-                        if (!tempFlag.isDown)
-                        {
-                            if (mainCharacter.state.Sprite.desRectangle.Right > bg.backgroundSprite.desRectangle.Right)
-                            {
-                                //score part
-                                mainCharacter.isScored = true;
-                                if (mainCharacter.position.Y < bg.backgroundSprite.desRectangle.Y + GameConstants.Fifty)
-                                {
-                                    mainCharacter.score = GameConstants.Score1500;
-                                }
-                                else if(mainCharacter.position.Y >= bg.backgroundSprite.desRectangle.Y + GameConstants.Fifty&&mainCharacter.position.Y < bg.backgroundSprite.desRectangle.Y + GameConstants.Fifty* GameConstants.Three)
-                                {
-                                    mainCharacter.score = GameConstants.Score1000;
-                                }
-                                else{
-                                    mainCharacter.score = GameConstants.Score500;
-                                }
-                                mainCharacter.totalScore += mainCharacter.score;
-                                Vector2 newP;
-                                newP.X = mainCharacter.position.X;
-                                newP.Y = mainCharacter.position.Y - GameConstants.Three;
-                                mainCharacter.textPosition = newP;
-                                MediaPlayer.Stop();
-                                MainCharSoundManager.instance.playSound(MainCharSoundManager.FLAGPOLE);
-                                MainCharSoundManager.instance.playSound(MainCharSoundManager.STAGECLEAR);
-                                myGame.keyboardController.keysEnabled = false;
-                                bg.moveDown = true;
-                                mainCharacter.animated = true;
-                                mainCharacter.animation = GameConstants.FlagAnimation;
-                                animation = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+       
 
         public void MarioEnemyCollision(MainCharacter mainCharacter, List<IEnemy> enemyElements)
         {

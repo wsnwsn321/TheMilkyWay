@@ -25,48 +25,43 @@ namespace Sprint6.Commands
         {
             if (mainCharacter.canMove)
             {
-                
                 if (!mainCharacter.jump)
                 {
                     jumpTime  = 0;
        
-                }
-                if (mainCharacter.marioState != ElementClasses.MainCharacter.MARIO_DEAD)
+                }                    
+                if (jumpTime > 0)
                 {
-                    
-                    if (jumpTime > 0)
+                    mainCharacter.MainCharJump();
+                    if (jumpCount)
                     {
-                        mainCharacter.MarioJump();
-                        if (jumpCount)
-                        {
-                            MainCharSoundManager.instance.playSound(MainCharSoundManager.JUMPSMALL);
-                            jumpCount = false;
-                        }
-                        mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y - (float)(jumpForce - decay));
-                        decay += jumpForce / Fifty;
-
-                        jumpTime--;
-                   
-                        if (mainCharacter.gravity == 0 && !wDown)
-                        {
-                            decay = 0;
-                            jumpTime = Fifty;
-                            mainCharacter.jump = true;
-                            jumpCount = true;
-                        }
-                        else if (!wDown)
-                        {
-                            mainCharacter.jump = false;
-                        }
+                        MainCharSoundManager.instance.playSound(MainCharSoundManager.JUMPSMALL);
+                        jumpCount = false;
                     }
-                    else
+                    mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y - (float)(jumpForce - decay));
+                    decay += jumpForce / Fifty;
+
+                    jumpTime--;
+                   
+                    if (mainCharacter.gravity == 0 && !wDown)
                     {
-                        mainCharacter.jump = false;
                         decay = 0;
                         jumpTime = Fifty;
                         mainCharacter.jump = true;
                         jumpCount = true;
                     }
+                    else if (!wDown)
+                    {
+                        mainCharacter.jump = false;
+                    }
+                }
+                else
+                {
+                    mainCharacter.jump = false;
+                    decay = 0;
+                    jumpTime = Fifty;
+                    mainCharacter.jump = true;
+                    jumpCount = true;
                 }
             }
         }

@@ -47,7 +47,6 @@
     <Compile Include="CollisionHandler\MainCharItemHandler.cs" />
     <Compile Include="CollisionHandler\MainCharEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MainCharBlockHandler.cs" />
-    <Compile Include="Commands\MarioGrowCommand.cs" />
     <Compile Include="Commands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioAttackCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
     <Compile Include="ElementClasses\ItemClass\FireballExplosion.cs" />
     <Compile Include="ElementClasses\ItemClass\Fireball.cs" />
+    <Compile Include="ElementClasses\UFOState\FlyingState.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GameConstants.cs" />

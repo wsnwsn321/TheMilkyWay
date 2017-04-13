@@ -17,8 +17,6 @@ namespace Sprint6.LevelLoading
         internal List<IItem> itemElements = new List<IItem>();
         internal List<IEnemy> enemyElements = new List<IEnemy>();
         internal List<IBackground> backgroundElements = new List<IBackground>();
-        internal List<IItem> fireBallList = new List<IItem>();
-        internal Stack<int> deleteList = new Stack<int>();
 
         private PauseText pauseText;
         internal ScoreSystem scoreSystem;
@@ -40,7 +38,7 @@ namespace Sprint6.LevelLoading
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
             backgroundColor = Color.CornflowerBlue;
-            mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY), MainCharacter.MARIO_SMALL, false);
+            mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY));
             
         }
 
@@ -54,8 +52,6 @@ namespace Sprint6.LevelLoading
                     if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
                     {
                         CollisionDetection.Instance.EnemyBlockCollision(mainCharacter, enemy, envElements);
-                        CollisionDetection.Instance.EnemyEnemyCollision(enemy, enemyElements);
-                        enemy.position = new Vector2(enemy.position.X, enemy.position.Y + enemy.gravity);
                         enemy.Update();
                     }
                 }
@@ -63,36 +59,8 @@ namespace Sprint6.LevelLoading
                 foreach (IItem item in itemElements)
                 {
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
-
-                    if (!(item is Flower) && !(item is Coin))
-                    {
-                        item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
-                    }
                     item.Update();
                 }
-
-
-
-                foreach (IItem item in fireBallList)
-                {
-
-                    CollisionDetection.Instance.ItemBlockCollision(item, envElements);
-                    CollisionDetection.Instance.ItemEnemyCollision(item, enemyElements,mainCharacter);
-
-
-                    if (!item.isVisible)
-                    {
-                        deleteList.Push(fireBallList.IndexOf(item));
-                    }
-                    item.Update();
-                }
-
-                while (deleteList.Count > 0)
-                {
-                    fireBallList.RemoveAt(deleteList.Pop());
-                }
-
-
 
                 foreach (IBlock block in envElements)
                 {
@@ -102,7 +70,6 @@ namespace Sprint6.LevelLoading
 
                 foreach (IBackground back in backgroundElements)
                 {
-                    CollisionDetection.Instance.MarioFlagCollision(mainCharacter, backgroundElements);
                     back.Update();
                 }
                 if (!mainCharacter.animated)
@@ -111,18 +78,14 @@ namespace Sprint6.LevelLoading
                     CollisionDetection.Instance.MarioEnemyCollision(mainCharacter, enemyElements);
                     CollisionDetection.Instance.MarioItemCollision(mainCharacter, itemElements);
                     mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity);
-                    mainCharacter.MarioUpdate();
+                    mainCharacter.MainCharUpdate();
 
                     if ((mainCharacter.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
                     {
                         camX -= (int)(mainCharacter.position.X + myGame.GraphicsDevice.Viewport.X - 400);
                     }
                 }
-                else
-                {
-
-                        mainCharacter.LifeScreenUpdate();
-                }
+                //else do animation updates
             }
             else
             {
@@ -142,17 +105,13 @@ namespace Sprint6.LevelLoading
             {
                 item.Draw();
             }
-            foreach(IItem fireBall in fireBallList)
-            {
-                fireBall.Draw();
-            }
             if(IsPaused)
             {
                 pauseText.Draw();
             }
             if (mainCharacter.isVisible)
             {
-                mainCharacter.MarioDraw();
+                mainCharacter.MainCharDraw();
             }
             foreach (IBlock block in envElements)
             {
@@ -166,7 +125,7 @@ namespace Sprint6.LevelLoading
                 }
             }
             scoreSystem.DisplayScore(mainCharacter.totalScore);
-            scoreSystem.CoinSystem(mainCharacter.coin);
+            scoreSystem.CoinSystem(mainCharacter.cow);
             scoreSystem.WorldSystem();
             scoreSystem.Time();
         }

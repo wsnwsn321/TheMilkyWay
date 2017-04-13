@@ -24,7 +24,7 @@ namespace Sprint6.SpriteFactories
 
         public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
-            flyingUFOSpritesheet = content.Load<Texture2D>("MainCharacter/UFO");
+            flyingUFOSpritesheet = content.Load<Texture2D>("MainCharacter/UFO/ufo");
             this.sb = sb;
         }
 
