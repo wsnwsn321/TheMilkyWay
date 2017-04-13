@@ -137,7 +137,6 @@ namespace Sprint6
             keyboardController.RegisterCommand(Keys.W, new MarioJumpCommand(this));
             keyboardController.RegisterCommand(Keys.A, new MarioLeftCommand(this));
             keyboardController.RegisterCommand(Keys.D, new MarioRightCommand(this));
-            keyboardController.RegisterCommand(Keys.S, new MarioCrouchCommand(this));
 
             keyboardController.RegisterCommand(Keys.Space, new PauseGameCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
@@ -147,15 +146,12 @@ namespace Sprint6
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
             //arbitrarily choose o,p for animation commands
             //o,p,Attn is disabled in KeyboardController.cs
-            keyboardController.RegisterCommand(Keys.BrowserFavorites, new MarioFlagpoleCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserForward, new MarioPipeCommand(this));
-            keyboardController.RegisterCommand(Keys.Attn, new MarioUnderPipeCommand(this));
             keyboardController.RegisterCommand(Keys.BrowserHome, new MarioGrowCommand(this));
 
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLeftCommand(this));
-            gamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioCrouchCommand(this));
             gamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioRightCommand(this));
             gamepadController.RegisterCommand(Buttons.Start, new ResetCommand(this));
 

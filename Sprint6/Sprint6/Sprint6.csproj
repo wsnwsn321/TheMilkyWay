@@ -47,17 +47,13 @@
     <Compile Include="CollisionHandler\MainCharItemHandler.cs" />
     <Compile Include="CollisionHandler\MainCharEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MainCharBlockHandler.cs" />
-    <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioGrowCommand.cs" />
     <Compile Include="Commands\MarioPipeCommand.cs" />
-    <Compile Include="Commands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioAttackCommand.cs" />
-    <Compile Include="Commands\MarioFlagpoleCommand.cs" />
     <Compile Include="Commands\MarioRightCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
     <Compile Include="Commands\MarioLeftCommand.cs" />
     <Compile Include="Commands\MarioChangeFormCommand.cs" />
-    <Compile Include="Commands\MarioUnderPipeCommand.cs" />
     <Compile Include="Commands\PauseGameCommand.cs" />
     <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />

@@ -74,7 +74,7 @@ namespace Sprint6.ElementClasses
         public void Run()
         {
             mainCharacter.state = new RunningMarioState( mainCharacter);
-            mainCharacter.MarioRun();
+            mainCharacter.MainCharMove();
         }
 
         public void Update()

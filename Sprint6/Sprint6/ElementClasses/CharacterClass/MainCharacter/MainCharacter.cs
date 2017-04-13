@@ -117,12 +117,8 @@ namespace Sprint6.ElementClasses
           
 
         }
-        public void MarioCrouch()
-        {
-                marioAction = MARIO_CROUCH;
-                state.Crouch();
-        }
-        public void MarioRun()
+
+        public void MainCharMove()
         {
             if (marioAction != MARIO_CROUCH)
             {
@@ -153,63 +149,10 @@ namespace Sprint6.ElementClasses
         }
         public void MarioUpdate()
         {
-            if (canMove)
-            {
-                if (bounce)
-                {
-                    if (bounceCount < GameConstants.Ten)
-                    {
-                        if (marioDirection == MARIO_LEFT)
-                        {
-                            if (marioAction == MARIO_RUN)
-                                position = new Vector2(position.X, position.Y - (GameConstants.Three + GameConstants.Two*2));
-                            else
-                                position = new Vector2(position.X - GameConstants.Three, position.Y - (GameConstants.Three + GameConstants.Two * 2));
-                        }
-                        else
-                        {
-                            if (marioAction == MARIO_RUN)
-                                position = new Vector2(position.X, position.Y - (GameConstants.Three + GameConstants.Two * 2));
-                            else
-                                position = new Vector2(position.X + GameConstants.Three, position.Y - (GameConstants.Three + GameConstants.Two * 2));
-                        }
-                    }
-                    if (bounceCount >= GameConstants.Ten)
-                    {
-                        bounceCount = 0;
-                        bounce = false;
-                    }
-                    bounceCount++;
-                }
-                if (position.Y > GameConstants.FourHund+ GameConstants.Ten*GameConstants.Eight)
-                {
-                    MarioDie();
-                }
-                state.Update();
-                counter++;
-                if (InvincibilityTime > 0 && counter > GameConstants.Ten*GameConstants.Two)
-                {
-                    IsInvincible = true;
-                    InvincibilityTime--;
-                    counter = 0;
-                }
-                else if (InvincibilityTime == 0 && counter > GameConstants.Ten*GameConstants.Two)
-                {
-                    IsInvincible = false;
-                    HasStarPower = false;
-                    counter = 0;
-                    if (reSetBGM)
-                    {
-                        BackgroundMusic.instanse.resetBGM();
-                        reSetBGM = false;
-                    }
-                }
-            }
+            position = new Vector2(position.X+1,position.Y);
+            state.Update();
         }
-        public void MarioChangeDireciton()
-        {
-            state.ChangeDirection();
-        }
+
         public void MarioDie()
         {
             MediaPlayer.Stop();

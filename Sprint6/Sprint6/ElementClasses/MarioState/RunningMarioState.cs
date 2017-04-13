@@ -51,18 +51,14 @@ namespace Sprint6.ElementClasses
         public void Run()
         {
         }
-        public void Crouch()
-        {
-            mainCharacter.state = new CrouchMarioState( mainCharacter);
-            mainCharacter.MarioCrouch();
-        }
+
 
 
         public void ChangeForm(int form)
         {
             mainCharacter.marioState = form;
             mainCharacter.state = new IdleMarioState(mainCharacter);
-            mainCharacter.MarioRun();
+            mainCharacter.MainCharMove();
         }
 
         public void Idle()
@@ -94,7 +90,7 @@ namespace Sprint6.ElementClasses
         public void ChangeDirection()
         {
             mainCharacter.marioDirection = !mainCharacter.marioDirection;
-            mainCharacter.MarioRun();
+            mainCharacter.MainCharMove();
         }
         public void Die()
         {
