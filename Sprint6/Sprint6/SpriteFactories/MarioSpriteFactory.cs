@@ -43,28 +43,28 @@ namespace Sprint6.SpriteFactories
         public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
             this.sb = sb;
-            idleSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioStand");
-            runningSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioRun");
-            jumpingSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioJump");
-            deadSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioDead");
-            flagSmallMarioSpritesheet = content.Load<Texture2D>("Mario/Smario/SmarioFlag");
+            idleSmallMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Smario/SmarioStand");
+            runningSmallMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Smario/SmarioRun");
+            jumpingSmallMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Smario/SmarioJump");
+            deadSmallMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Smario/SmarioDead");
+            flagSmallMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Smario/SmarioFlag");
 
-            idleBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
-            runningBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioRun");
-            jumpingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioJump");
-            crouchingBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioStand");
-            flagBigMarioSpritesheet = content.Load<Texture2D>("Mario/Bmario/BmarioFlag");
+            idleBigMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Bmario/BmarioStand");
+            runningBigMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Bmario/BmarioRun");
+            jumpingBigMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Bmario/BmarioJump");
+            crouchingBigMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Bmario/BmarioStand");
+            flagBigMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Bmario/BmarioFlag");
 
-            idleFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
-            runningFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioRun");
-            jumpingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioJump");
-            crouchingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioStand");
-            attackingFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FireAttack");
-            flagFireMarioSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioFlag");
+            idleFireMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioStand");
+            runningFireMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioRun");
+            jumpingFireMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioJump");
+            crouchingFireMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioStand");
+            attackingFireMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FireAttack");
+            flagFireMarioSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioFlag");
         }
 
 
-        //create mario sprites
+        //create mainCharacter sprites
         public Sprites.IMarioSprite CreateLeftIdleSmallMarioSprite()
         {
             return new Sprites.MarioSprite.SmallMarioSprite.LeftIdleSmallMarioSprite(idleSmallMarioSpritesheet, sb);

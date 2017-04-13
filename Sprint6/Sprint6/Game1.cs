@@ -71,7 +71,7 @@ namespace Sprint6
             if (!freeze)
             {
                 level.Update();
-                if (level.mario.marioState == Mario.MARIO_DEAD)
+                if (level.mainCharacter.marioState == MainCharacter.MARIO_DEAD)
                 {
                     freeze = true;
                     lifeCount--;
@@ -84,18 +84,18 @@ namespace Sprint6
                 if (freezeCount == GameConstants.FreezeTime)
                 {
 
-                    int marioWidth = level.mario.state.marioSprite.desRectangle.Width;
-                    level.mario.marioAction = Mario.MARIO_IDLE;
-                    level.mario.marioState = Mario.MARIO_SMALL;
-                    level.mario.marioDirection = !Mario.MARIO_LEFT;
-                    level.mario.MarioChangeForm(Mario.MARIO_SMALL);
-                    level.mario.animated = true;
-                    level.mario.animation = GameConstants.LifeScreenAnimation;
+                    int marioWidth = level.mainCharacter.state.marioSprite.desRectangle.Width;
+                    level.mainCharacter.marioAction = MainCharacter.MARIO_IDLE;
+                    level.mainCharacter.marioState = MainCharacter.MARIO_SMALL;
+                    level.mainCharacter.marioDirection = !MainCharacter.MARIO_LEFT;
+                    level.mainCharacter.MarioChangeForm(MainCharacter.MARIO_SMALL);
+                    level.mainCharacter.animated = true;
+                    level.mainCharacter.animation = GameConstants.LifeScreenAnimation;
                     level.Load(GameConstants.LifeScreen,new Vector2((GameConstants.ScreenWidth/2)-marioWidth-GameConstants.Eight,GameConstants.ScreenHeight/2));
                     displayLifeText = true;
                     if (lifeScreenCount == GameConstants.LifeScreenTime)
                     {
-                        level.mario.animated = false;
+                        level.mainCharacter.animated = false;
                         keyboardController.keysEnabled = true;
                         freeze = false;
                         freezeCount = 0;

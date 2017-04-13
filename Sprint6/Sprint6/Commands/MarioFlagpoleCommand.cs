@@ -11,27 +11,27 @@ namespace Sprint6.Commands
     class MarioFlagpoleCommand : ICommand
     {
         private Game1 myGame;
-        private ElementClasses.Mario mario;
+        private ElementClasses.MainCharacter mainCharacter;
         private bool b1,b2,b3 = false;
         private int wait1,wait2 = 0;
 
         public MarioFlagpoleCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.level.mario;
+            mainCharacter = myGame.level.mainCharacter;
         }
 
         public void Execute()
         {
-            if (mario.marioState == Mario.MARIO_SMALL)
+            if (mainCharacter.marioState == MainCharacter.MARIO_SMALL)
             {
                 smallAnimation();
             }
-            else if (mario.marioState == Mario.MARIO_BIG)
+            else if (mainCharacter.marioState == MainCharacter.MARIO_BIG)
             {
                 bigAnimation();
             }
-            else if (mario.marioState == Mario.MARIO_FIRE)
+            else if (mainCharacter.marioState == MainCharacter.MARIO_FIRE)
             {
                 fireAnimation();
             }
@@ -41,16 +41,16 @@ namespace Sprint6.Commands
         {
             if (!b1)
             {
-                mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightFlagSmallMarioSprite();
+                mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateRightFlagSmallMarioSprite();
                 b1 = true;
             }
-            if (mario.position.Y >= GameConstants.ScreenHeight - 132)
+            if (mainCharacter.position.Y >= GameConstants.ScreenHeight - 132)
             {
                 if (!b2)
                 {
-                    mario.gravity = 0;
-                    mario.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagSmallMarioSprite();
-                    mario.position = new Vector2(mario.position.X + GameConstants.SquareWidth, mario.position.Y);
+                    mainCharacter.gravity = 0;
+                    mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagSmallMarioSprite();
+                    mainCharacter.position = new Vector2(mainCharacter.position.X + GameConstants.SquareWidth, mainCharacter.position.Y);
                     b2 = true;
                 }
                 else
@@ -63,23 +63,23 @@ namespace Sprint6.Commands
                     {
                         if (!b3)
                         {
-                            mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
+                            mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
                             b3 = true;
                         }
-                        if(mario.state.marioSprite.desRectangle.Bottom < GameConstants.ScreenHeight - 67)
+                        if(mainCharacter.state.marioSprite.desRectangle.Bottom < GameConstants.ScreenHeight - 67)
                         {
-                            mario.position = new Vector2(mario.position.X + 3, mario.position.Y+4);
+                            mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y+4);
                         }
                         else
                         {
                             if(wait2 < 60)
                             {
-                                mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
+                                mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y);
                                 wait2++;
                             }
                             else
                             {
-                                mario.isVisible = false;
+                                mainCharacter.isVisible = false;
                                 myGame.keyboardController.keysEnabled = true;
                                 b1 = b2 = b3 = false;
                                 wait1 = wait2 = 0;
@@ -90,23 +90,23 @@ namespace Sprint6.Commands
             }
             else
             {
-                mario.position = new Vector2(mario.position.X, mario.position.Y + 4);
+                mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + 4);
             }
         }
         private void bigAnimation()
         {
             if (!b1)
             {
-                mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightFlagBigMarioSprite();
+                mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateRightFlagBigMarioSprite();
                 b1 = true;
             }
-            if (mario.position.Y >= GameConstants.ScreenHeight - 164)
+            if (mainCharacter.position.Y >= GameConstants.ScreenHeight - 164)
             {
                 if (!b2)
                 {
-                    mario.gravity = 0;
-                    mario.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagBigMarioSprite();
-                    mario.position = new Vector2(mario.position.X + GameConstants.SquareWidth, mario.position.Y);
+                    mainCharacter.gravity = 0;
+                    mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagBigMarioSprite();
+                    mainCharacter.position = new Vector2(mainCharacter.position.X + GameConstants.SquareWidth, mainCharacter.position.Y);
                     b2 = true;
                 }
                 else
@@ -119,23 +119,23 @@ namespace Sprint6.Commands
                     {
                         if (!b3)
                         {
-                            mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                            mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
                             b3 = true;
                         }
-                        if (mario.state.marioSprite.desRectangle.Bottom < GameConstants.ScreenHeight - 67)
+                        if (mainCharacter.state.marioSprite.desRectangle.Bottom < GameConstants.ScreenHeight - 67)
                         {
-                            mario.position = new Vector2(mario.position.X + 3, mario.position.Y + 4);
+                            mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y + 4);
                         }
                         else
                         {
                             if (wait2 < 60)
                             {
-                                mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
+                                mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y);
                                 wait2++;
                             }
                             else
                             {
-                                mario.isVisible = false;
+                                mainCharacter.isVisible = false;
                                 myGame.keyboardController.keysEnabled = true;
                                 b1 = b2 = b3 = false;
                                 wait1 = wait2 = 0;
@@ -146,7 +146,7 @@ namespace Sprint6.Commands
             }
             else
             {
-                mario.position = new Vector2(mario.position.X, mario.position.Y + 4);
+                mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + 4);
             }
         }
 
@@ -154,16 +154,16 @@ namespace Sprint6.Commands
         {
             if (!b1)
             {
-                mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightFlagFireMarioSprite();
+                mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateRightFlagFireMarioSprite();
                 b1 = true;
             }
-            if (mario.position.Y >= GameConstants.ScreenHeight - 164)
+            if (mainCharacter.position.Y >= GameConstants.ScreenHeight - 164)
             {
                 if (!b2)
                 {
-                    mario.gravity = 0;
-                    mario.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagFireMarioSprite();
-                    mario.position = new Vector2(mario.position.X + GameConstants.SquareWidth, mario.position.Y);
+                    mainCharacter.gravity = 0;
+                    mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateLeftFlagFireMarioSprite();
+                    mainCharacter.position = new Vector2(mainCharacter.position.X + GameConstants.SquareWidth, mainCharacter.position.Y);
                     b2 = true;
                 }
                 else
@@ -176,23 +176,23 @@ namespace Sprint6.Commands
                     {
                         if (!b3)
                         {
-                            mario.state.marioSprite = MarioSpriteFactory.Instance.CreateRightRunningFireMarioSprite();
+                            mainCharacter.state.marioSprite = MarioSpriteFactory.Instance.CreateRightRunningFireMarioSprite();
                             b3 = true;
                         }
-                        if (mario.state.marioSprite.desRectangle.Bottom < GameConstants.ScreenHeight - 67)
+                        if (mainCharacter.state.marioSprite.desRectangle.Bottom < GameConstants.ScreenHeight - 67)
                         {
-                            mario.position = new Vector2(mario.position.X + 3, mario.position.Y + 4);
+                            mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y + 4);
                         }
                         else
                         {
                             if (wait2 < 60)
                             {
-                                mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
+                                mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y);
                                 wait2++;
                             }
                             else
                             {
-                                mario.isVisible = false;
+                                mainCharacter.isVisible = false;
                                 myGame.keyboardController.keysEnabled = true;
                                 b1 = b2 = b3 = false;
                                 wait1 = wait2 = 0;
@@ -203,7 +203,7 @@ namespace Sprint6.Commands
             }
             else
             {
-                mario.position = new Vector2(mario.position.X, mario.position.Y + 4);
+                mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + 4);
             }
         }        
     }

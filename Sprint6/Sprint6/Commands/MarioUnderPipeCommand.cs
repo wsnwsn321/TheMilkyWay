@@ -11,13 +11,13 @@ namespace Sprint6.Commands
     class MarioUnderPipeCommand : ICommand
     {
         private Game1 myGame;
-        private ElementClasses.Mario mario;
+        private ElementClasses.MainCharacter mainCharacter;
         private int wait1 = 0;
         private bool pipeCount = true;
         public MarioUnderPipeCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.level.mario;
+            mainCharacter = myGame.level.mainCharacter;
         }
 
         public void Execute()
@@ -31,7 +31,7 @@ namespace Sprint6.Commands
                     MarioSoundManager.instance.playSound(MarioSoundManager.PIPE);
                 }
                 wait1++;
-                mario.position = new Vector2(mario.position.X + 1, mario.position.Y);
+                mainCharacter.position = new Vector2(mainCharacter.position.X + 1, mainCharacter.position.Y);
             }
             else
             {
@@ -39,7 +39,7 @@ namespace Sprint6.Commands
                 myGame.level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.OutPipeStartingX, GameConstants.OutPipeStartingY));
                 wait1 = 0;
                 myGame.keyboardController.keysEnabled = true;
-                mario.animated = false;
+                mainCharacter.animated = false;
             }
         }
     }

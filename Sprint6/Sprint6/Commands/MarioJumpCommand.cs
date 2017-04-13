@@ -7,7 +7,7 @@ namespace Sprint6.Commands
     class MarioJumpCommand : ICommand
     {
         private Game1 myGame;
-        private ElementClasses.Mario mario;
+        private ElementClasses.MainCharacter mainCharacter;
         private int jumpTime = 50;
         private double jumpForce = 12;
         private double decay = 0;
@@ -18,56 +18,56 @@ namespace Sprint6.Commands
         public MarioJumpCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.level.mario;
+            mainCharacter = myGame.level.mainCharacter;
         }
 
         public void Execute()
         {
-            if (mario.canMove)
+            if (mainCharacter.canMove)
             {
                 
-                if (!mario.jump)
+                if (!mainCharacter.jump)
                 {
                     jumpTime  = 0;
        
                 }
-                if (mario.marioState != ElementClasses.Mario.MARIO_DEAD)
+                if (mainCharacter.marioState != ElementClasses.MainCharacter.MARIO_DEAD)
                 {
                     
                     if (jumpTime > 0)
                     {
-                        mario.MarioJump();
+                        mainCharacter.MarioJump();
                         if (jumpCount)
                         {
                             MarioSoundManager.instance.playSound(MarioSoundManager.JUMPSMALL);
                             jumpCount = false;
                         }
-                        mario.position = new Vector2(mario.position.X, mario.position.Y - (float)(jumpForce - decay));
+                        mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y - (float)(jumpForce - decay));
                         decay += jumpForce / Fifty;
 
                         jumpTime--;
                    
-                        if (mario.gravity == 0 && !wDown)
+                        if (mainCharacter.gravity == 0 && !wDown)
                         {
                             decay = 0;
                             jumpTime = Fifty;
-                            mario.jump = true;
+                            mainCharacter.jump = true;
                             jumpCount = true;
                         }
                         else if (!wDown)
                         {
-                            mario.jump = false;
+                            mainCharacter.jump = false;
                         }
                     }
                     else
                     {
 
-                        mario.jump = false;
-                        if (mario.gravity == 0 && !wDown)
+                        mainCharacter.jump = false;
+                        if (mainCharacter.gravity == 0 && !wDown)
                         {
                             decay = 0;
                             jumpTime = Fifty;
-                            mario.jump = true;
+                            mainCharacter.jump = true;
                             jumpCount = true;
 
                         }

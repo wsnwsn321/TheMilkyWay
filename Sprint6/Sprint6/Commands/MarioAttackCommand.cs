@@ -9,24 +9,24 @@ namespace Sprint6.Commands
     class MarioAttackCommand : ICommand
     {
         private Game1 myGame;
-        private ElementClasses.Mario mario;
+        private ElementClasses.MainCharacter mainCharacter;
         int  TwentyFive = 25;
 
         public MarioAttackCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.level.mario;
+            mainCharacter = myGame.level.mainCharacter;
         }
 
         public void Execute()
         {
-            if (myGame.level.fireBallList.Count <= 1 && mario.canMove)
+            if (myGame.level.fireBallList.Count <= 1 && mainCharacter.canMove)
             {
-                if (mario.marioState == ElementClasses.Mario.MARIO_FIRE)
+                if (mainCharacter.marioState == ElementClasses.MainCharacter.MARIO_FIRE)
                 {
-                    mario.Attack();
-                    Fireball fball = new Fireball(new Vector2(mario.position.X, mario.position.Y + TwentyFive));
-                    if (mario.state.marioSprite is RightAttackingMarioSprite)
+                    mainCharacter.Attack();
+                    Fireball fball = new Fireball(new Vector2(mainCharacter.position.X, mainCharacter.position.Y + TwentyFive));
+                    if (mainCharacter.state.marioSprite is RightAttackingMarioSprite)
                     {
 
 
@@ -34,7 +34,7 @@ namespace Sprint6.Commands
 
 
                     }
-                    else if (mario.state.marioSprite is LeftAttackingMarioSprite)
+                    else if (mainCharacter.state.marioSprite is LeftAttackingMarioSprite)
                     {
 
                         

@@ -5,12 +5,12 @@ namespace Sprint6.ElementClasses
 {
     class DeadMarioState : IMarioState
     {
-        private Mario mario;
+        private MainCharacter mainCharacter;
         public IMarioSprite marioSprite { get; set; }
 
-        public DeadMarioState( Mario mario)
+        public DeadMarioState( MainCharacter mainCharacter)
         {
-            this.mario = mario;
+            this.mainCharacter = mainCharacter;
             marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateDeadSmallMarioSprite();
 
 
@@ -22,9 +22,9 @@ namespace Sprint6.ElementClasses
         }
         public void ChangeForm(int form)
         {
-            mario.marioState = form;
-            mario.state = new IdleMarioState( mario);
-            mario.MarioIdle();
+            mainCharacter.marioState = form;
+            mainCharacter.state = new IdleMarioState( mainCharacter);
+            mainCharacter.MarioIdle();
         }
         public void Jump()
         {

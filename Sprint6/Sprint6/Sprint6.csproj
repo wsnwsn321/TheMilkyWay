@@ -9,8 +9,8 @@
     <ProjectGuid>{5B1801C0-287B-4F3A-A83B-1F0DDFE5CD50}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuperMarioGame</RootNamespace>
-    <AssemblyName>SuperMarioGame</AssemblyName>
+    <RootNamespace>Sprint6</RootNamespace>
+    <AssemblyName>Sprint6</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -44,9 +44,9 @@
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
     <Compile Include="CollisionHandler\ItemEnemyHandler.cs" />
-    <Compile Include="CollisionHandler\MarioItemHandler.cs" />
-    <Compile Include="CollisionHandler\MarioEnemyHandler.cs" />
-    <Compile Include="CollisionHandler\MarioBlockHandler.cs" />
+    <Compile Include="CollisionHandler\MainCharItemHandler.cs" />
+    <Compile Include="CollisionHandler\MainCharEnemyHandler.cs" />
+    <Compile Include="CollisionHandler\MainCharBlockHandler.cs" />
     <Compile Include="Commands\MarioCrouchCommand.cs" />
     <Compile Include="Commands\MarioGrowCommand.cs" />
     <Compile Include="Commands\MarioPipeCommand.cs" />
@@ -176,7 +176,7 @@
     <Compile Include="Sprites\OtherSprite\StarSprite.cs" />
     <Compile Include="ElementClasses\CharacterClass\Enemies\Goomba.cs" />
     <Compile Include="ElementClasses\CharacterClass\Enemies\Koopa.cs" />
-    <Compile Include="ElementClasses\CharacterClass\Mario\Mario.cs" />
+    <Compile Include="ElementClasses\CharacterClass\MainCharacter\MainCharacter.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\Pipe.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\GroundBlock.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\StageBlock.cs" />

@@ -11,7 +11,7 @@ namespace Sprint6.Commands
     class MarioGrowCommand : ICommand
     {
         private Game1 myGame;
-        private Mario mario;
+        private MainCharacter mainCharacter;
         Vector2 oldPos;
         private int wait1 = 0;
         bool changeOnce = true;
@@ -25,14 +25,14 @@ namespace Sprint6.Commands
         public MarioGrowCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.level.mario;
+            mainCharacter = myGame.level.mainCharacter;
         }
 
         public void Execute()
         {
             if (firstPos)
             {
-                oldPos = mario.position;
+                oldPos = mainCharacter.position;
                 firstPos = false;
             }
             myGame.keyboardController.keysEnabled = false;
@@ -40,8 +40,8 @@ namespace Sprint6.Commands
             {
                 if (changeOnce)
                 {
-                    mario.state.ChangeForm(Mario.MARIO_BIG);
-                    mario.MarioChangeForm(Mario.MARIO_BIG);
+                    mainCharacter.state.ChangeForm(MainCharacter.MARIO_BIG);
+                    mainCharacter.MarioChangeForm(MainCharacter.MARIO_BIG);
                     changeOnce = false;
                 }
                 if (wait1 == Ten-1)
@@ -54,8 +54,8 @@ namespace Sprint6.Commands
             {
                 if (changeOnce)
                 {
-                    mario.position = oldPos;
-                    mario.state.ChangeForm(Mario.MARIO_SMALL);
+                    mainCharacter.position = oldPos;
+                    mainCharacter.state.ChangeForm(MainCharacter.MARIO_SMALL);
                     changeOnce = false;
                 }
                 if (wait1 == Twenty-1)
@@ -68,8 +68,8 @@ namespace Sprint6.Commands
             {
                 if (changeOnce)
                 {
-                    mario.state.ChangeForm(Mario.MARIO_BIG);
-                    mario.MarioChangeForm(Mario.MARIO_BIG);
+                    mainCharacter.state.ChangeForm(MainCharacter.MARIO_BIG);
+                    mainCharacter.MarioChangeForm(MainCharacter.MARIO_BIG);
                     changeOnce = false;
                 }
                 if (wait1 == Thirty-1)
@@ -82,8 +82,8 @@ namespace Sprint6.Commands
             {
                 if (changeOnce)
                 {
-                    mario.position = oldPos;
-                    mario.state.ChangeForm(Mario.MARIO_SMALL);
+                    mainCharacter.position = oldPos;
+                    mainCharacter.state.ChangeForm(MainCharacter.MARIO_SMALL);
                     changeOnce = false;
                 }
                 wait1++;
@@ -92,11 +92,11 @@ namespace Sprint6.Commands
             {
                 wait1 = 0;
                 myGame.keyboardController.keysEnabled = true;
-                mario.animated = false;
+                mainCharacter.animated = false;
                 firstPos = true;
                 changeOnce = true;
-                mario.state.ChangeForm(Mario.MARIO_BIG);
-                mario.MarioChangeForm(Mario.MARIO_BIG);
+                mainCharacter.state.ChangeForm(MainCharacter.MARIO_BIG);
+                mainCharacter.MarioChangeForm(MainCharacter.MARIO_BIG);
             }
         }
     }

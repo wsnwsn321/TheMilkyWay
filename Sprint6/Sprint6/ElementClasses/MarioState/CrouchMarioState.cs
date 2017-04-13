@@ -7,37 +7,37 @@ namespace Sprint6.ElementClasses
     {
      
 
-        private Mario mario;
+        private MainCharacter mainCharacter;
         public IMarioSprite marioSprite { get; set; }
-        public CrouchMarioState(Mario mario)
+        public CrouchMarioState(MainCharacter mainCharacter)
         {
-            this.mario = mario;
-            if (mario.marioDirection)
+            this.mainCharacter = mainCharacter;
+            if (mainCharacter.marioDirection)
             {
-                switch (mario.marioState)
+                switch (mainCharacter.marioState)
                 {
-                    case Mario.MARIO_SMALL:
+                    case MainCharacter.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
                         break;
-                    case Mario.MARIO_BIG:
+                    case MainCharacter.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingBigMarioSprite();
                         break;
-                    case Mario.MARIO_FIRE:
+                    case MainCharacter.MARIO_FIRE:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingFireMarioSprite();
                         break;
                 }
             }
             else
             {
-                switch (mario.marioState)
+                switch (mainCharacter.marioState)
                 {
-                    case Mario.MARIO_SMALL:
+                    case MainCharacter.MARIO_SMALL:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
                         break;
-                    case Mario.MARIO_BIG:
+                    case MainCharacter.MARIO_BIG:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
                         break;
-                    case Mario.MARIO_FIRE:
+                    case MainCharacter.MARIO_FIRE:
                         marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingFireMarioSprite();
                         break;
                 }
@@ -58,27 +58,27 @@ namespace Sprint6.ElementClasses
         }
         public void ChangeForm(int form)
         {
-            mario.marioState = form;
-            mario.state = new IdleMarioState( mario);
-            mario.MarioIdle();
+            mainCharacter.marioState = form;
+            mainCharacter.state = new IdleMarioState( mainCharacter);
+            mainCharacter.MarioIdle();
         }
 
         public void Idle()
         {
-            mario.state = new IdleMarioState(mario);
-            mario.MarioIdle();
+            mainCharacter.state = new IdleMarioState(mainCharacter);
+            mainCharacter.MarioIdle();
         }
 
         public void Jump()
         {
-            mario.state = new IdleMarioState( mario);
-            mario.MarioIdle();
+            mainCharacter.state = new IdleMarioState( mainCharacter);
+            mainCharacter.MarioIdle();
         }
 
         public void Run()
         {
-            mario.state = new RunningMarioState( mario);
-            mario.MarioRun();
+            mainCharacter.state = new RunningMarioState( mainCharacter);
+            mainCharacter.MarioRun();
         }
 
         public void Update()
@@ -87,13 +87,13 @@ namespace Sprint6.ElementClasses
         }
         public void ChangeDirection()
         {
-            mario.marioDirection = !mario.marioDirection;
-            mario.MarioCrouch();
+            mainCharacter.marioDirection = !mainCharacter.marioDirection;
+            mainCharacter.MarioCrouch();
         }
         public void Die()
         {
-            mario.state = new DeadMarioState( mario);
-            mario.MarioDie();
+            mainCharacter.state = new DeadMarioState( mainCharacter);
+            mainCharacter.MarioDie();
         }
         
         public void Attack()

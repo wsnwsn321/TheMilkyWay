@@ -38,9 +38,9 @@ namespace Sprint6.SpriteFactories
             flowerSpritesheet = content.Load<Texture2D>("Item/Flower");
             starSpritesheet = content.Load<Texture2D>("Item/Star");
             coinSpritesheet = content.Load<Texture2D>("Item/Coin");
-            fireballSpritesheet = content.Load<Texture2D>("Mario/Fmario/FmarioFireball");
+            fireballSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioFireball");
             blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
-            fireballExplosionSpritesheet= content.Load<Texture2D>("Mario/Fmario/FireBallHitTheWall");
+            fireballExplosionSpritesheet= content.Load<Texture2D>("MainCharacter/Fmario/FireBallHitTheWall");
             this.sb = sb;
         }
 

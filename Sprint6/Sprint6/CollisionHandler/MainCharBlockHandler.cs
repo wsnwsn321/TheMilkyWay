@@ -1,19 +1,17 @@
-﻿using Sprint6.ElementClasses.ElementInterfaces;
+﻿using Microsoft.Xna.Framework;
 using Sprint6.ElementClasses;
-using Microsoft.Xna.Framework;
+using Sprint6.ElementClasses.ElementInterfaces;
 using Sprint6.ElementClasses.EnvironmentClass;
-using Sprint6.SpriteFactories;
 using Sprint6.ElementClasses.ItemClass;
-using Sprint6.LevelLoading;
-using Sprint6.Sprites;
-using System.Diagnostics;
 using Sprint6.Sound.MarioSound;
+using Sprint6.SpriteFactories;
+using Sprint6.Sprites;
 
 namespace Sprint6.CollisionHandler
 {
-    public static class MarioBlockHandler
+    public static class MainCharBlockHandler
     {
-        public static void BlockHandler(Game1 game, Mario mario, IBlock block, int CollisionSide)
+        public static void BlockHandler(Game1 game, MainCharacter mainCharacter, IBlock block, int CollisionSide)
         {
             int SIXTEEN = 16;
             int SIX = 6;
@@ -30,27 +28,27 @@ namespace Sprint6.CollisionHandler
                 {
                     case 1: //top collision
                        
-                        newPosition.X = mario.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mario.state.marioSprite.desRectangle.Height-SIX;
-                        mario.position = newPosition;
+                        newPosition.X = mainCharacter.state.marioSprite.desRectangle.X;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mainCharacter.state.marioSprite.desRectangle.Height-SIX;
+                        mainCharacter.position = newPosition;
                         break;
                     case 2: //right side collision
                         
                          newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
-                        newPosition.Y = mario.state.marioSprite.desRectangle.Y;
-                        mario.position = newPosition;
+                        newPosition.Y = mainCharacter.state.marioSprite.desRectangle.Y;
+                        mainCharacter.position = newPosition;
                         
                        
                         break;
                     case 3: //bottom collision
-                        mario.jump = false;
-                        newPosition.X = mario.state.marioSprite.desRectangle.X;
+                        mainCharacter.jump = false;
+                        newPosition.X = mainCharacter.state.marioSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+THREE;
-                        mario.position = newPosition;
+                        mainCharacter.position = newPosition;
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite)
                         {
                             MarioSoundManager.instance.playSound(MarioSoundManager.BUMP);
-                            if (mario.marioState != Mario.MARIO_SMALL)
+                            if (mainCharacter.marioState != MainCharacter.MARIO_SMALL)
                             {
                                 MarioSoundManager.instance.playSound(MarioSoundManager.BREAKBLOCK);
                                 block.Bump();
@@ -86,14 +84,14 @@ namespace Sprint6.CollisionHandler
                             c.jump = true;
                             myGame.level.itemElements.Add(c);
                             //score part
-                            mario.isScored = true;
-                            mario.score = GameConstants.Score2;
-                            mario.coin += 1;
-                            mario.totalScore += mario.score;
+                            mainCharacter.isScored = true;
+                            mainCharacter.score = GameConstants.Score2;
+                            mainCharacter.coin += 1;
+                            mainCharacter.totalScore += mainCharacter.score;
                             Vector2 newP;
                             newP.X = block.position.X+TWELVE;
                             newP.Y = block.position.Y -THREE;
-                            mario.textPosition = newP;
+                            mainCharacter.textPosition = newP;
                         }
                         else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
                         {
@@ -107,14 +105,14 @@ namespace Sprint6.CollisionHandler
                                 myGame.level.itemElements.Add(c);
                                 b.coinCount--;
                                 //score part
-                                mario.isScored = true;
-                                mario.score = GameConstants.Score2;
-                                mario.coin += 1;
-                                mario.totalScore += mario.score;
+                                mainCharacter.isScored = true;
+                                mainCharacter.score = GameConstants.Score2;
+                                mainCharacter.coin += 1;
+                                mainCharacter.totalScore += mainCharacter.score;
                                 Vector2 newP;
                                 newP.X = b.blockSprite.desRectangle.X+TWELVE;
                                 newP.Y = b.blockSprite.desRectangle.Y -THREE;
-                                mario.textPosition = newP;
+                                mainCharacter.textPosition = newP;
                             }
                             else
                             {
@@ -124,14 +122,14 @@ namespace Sprint6.CollisionHandler
                                 c.jump = true;
                                 myGame.level.itemElements.Add(c);
                                 //score part
-                                mario.isScored = true;
-                                mario.score = GameConstants.Score2;
-                                mario.coin += 1;
-                                mario.totalScore += mario.score;
+                                mainCharacter.isScored = true;
+                                mainCharacter.score = GameConstants.Score2;
+                                mainCharacter.coin += 1;
+                                mainCharacter.totalScore += mainCharacter.score;
                                 Vector2 newP;
                                 newP.X = b.blockSprite.desRectangle.X + TWELVE;
                                 newP.Y = b.blockSprite.desRectangle.Y - THREE;
-                                mario.textPosition = newP;
+                                mainCharacter.textPosition = newP;
                             }
 
                         }
@@ -147,11 +145,11 @@ namespace Sprint6.CollisionHandler
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             
-                            if(mario.marioState == Mario.MARIO_SMALL)
+                            if(mainCharacter.marioState == MainCharacter.MARIO_SMALL)
                             {
                                 myGame.level.itemElements.Add(new RedMushroom(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                             }
-                            else if(mario.marioState == Mario.MARIO_BIG || mario.marioState == Mario.MARIO_FIRE)
+                            else if(mainCharacter.marioState == MainCharacter.MARIO_BIG || mainCharacter.marioState == MainCharacter.MARIO_FIRE)
                             {
                                 myGame.level.itemElements.Add(new Flower(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
                             }
@@ -161,14 +159,14 @@ namespace Sprint6.CollisionHandler
                             MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
                             block.Bump();
                             //score part
-                            mario.isScored = true;
-                            mario.score = GameConstants.Score2;
-                            mario.coin += 1;
-                            mario.totalScore += mario.score;
+                            mainCharacter.isScored = true;
+                            mainCharacter.score = GameConstants.Score2;
+                            mainCharacter.coin += 1;
+                            mainCharacter.totalScore += mainCharacter.score;
                             Vector2 newP;
                             newP.X = block.blockSprite.desRectangle.X + TWELVE;
                             newP.Y = block.blockSprite.desRectangle.Y -THREE;
-                            mario.textPosition = newP;
+                            mainCharacter.textPosition = newP;
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
                             c.jump = true;
@@ -187,15 +185,15 @@ namespace Sprint6.CollisionHandler
                         if (block is Pipe)
                         {
                             Pipe tempPipe = block as Pipe;
-                            if (tempPipe.size == GameConstants.UnderPipe && mario.position.Y > block.position.Y-GameConstants.Three+GameConstants.Two)
+                            if (tempPipe.size == GameConstants.UnderPipe && mainCharacter.position.Y > block.position.Y-GameConstants.Three+GameConstants.Two)
                             {
-                                mario.animated = true;
-                                mario.animation = GameConstants.UnderPipeAnimation;
+                                mainCharacter.animated = true;
+                                mainCharacter.animation = GameConstants.UnderPipeAnimation;
                             }
                         }
-                        newPosition.X = block.blockSprite.desRectangle.X - mario.state.marioSprite.desRectangle.Width;
-                        newPosition.Y = mario.state.marioSprite.desRectangle.Y;
-                        mario.position = newPosition;
+                        newPosition.X = block.blockSprite.desRectangle.X - mainCharacter.state.marioSprite.desRectangle.Width;
+                        newPosition.Y = mainCharacter.state.marioSprite.desRectangle.Y;
+                        mainCharacter.position = newPosition;
                         break;
                 }
             }

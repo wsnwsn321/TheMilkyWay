@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace Sprint6.ElementClasses
 {
-    public class Mario
+    public class MainCharacter
     {
         private Game1 myGame;
 
@@ -52,7 +52,7 @@ namespace Sprint6.ElementClasses
         private int counter, starCounter, scoreCounter;
   
 
-        public Mario(Game1 game, Vector2 position)
+        public MainCharacter(Game1 game, Vector2 position)
         {
             myGame = game;
             marioState = MARIO_SMALL;
@@ -73,7 +73,7 @@ namespace Sprint6.ElementClasses
             isVisible = true;
             isScored = false;
         }
-        public Mario(Game1 game, Vector2 position, int marioState, bool marioDirection)
+        public MainCharacter(Game1 game, Vector2 position, int marioState, bool marioDirection)
         {
             myGame = game;
             this.marioState = marioState;

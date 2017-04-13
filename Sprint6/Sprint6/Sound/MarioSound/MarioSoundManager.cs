@@ -31,49 +31,49 @@ namespace Sprint6.Sound.MarioSound
         
             
             //#0
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_1-up"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_1-up"));
             //#1
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_bowserfall"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_bowserfall"));
             //#2
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_breakblock"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_breakblock"));
             //#3
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_bump"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_bump"));
             //#4
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_coin"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_coin"));
             //#5
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_fireball"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_fireball"));
             //#6
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_fireworks"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_fireworks"));
             //#7
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_flagpole"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_flagpole"));
             //#8
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_gameover"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_gameover"));
             //#9
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_jumpsmall"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_jumpsmall"));
             //#10
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_jump-super"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_jump-super"));
             //#11
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_kick"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_kick"));
             //#12
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_mariodie"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_mariodie"));
             //#13
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_pause"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_pause"));
             //#14
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_pipe"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_pipe"));
             //#15
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_powerup_appears"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_powerup_appears"));
             //#16
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_stage_clear"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_stage_clear"));
             //#17
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_stomp"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_stomp"));
             //#18
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_vine"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_vine"));
             //#19
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_warning"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_warning"));
             //#20
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_world_clear"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_world_clear"));
             //#21
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Mario/smb_powerup"));
+            soundEffects.Add(content.Load<SoundEffect>("Sound/MainCharacter/smb_powerup"));
         }
 
         public void playSound(String order)

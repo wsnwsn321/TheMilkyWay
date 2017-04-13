@@ -5,27 +5,27 @@ namespace Sprint6.Commands
     class MarioRightCommand : ICommand
     {
         private Game1 myGame;
-        private ElementClasses.Mario mario;
+        private ElementClasses.MainCharacter mainCharacter;
 
         public MarioRightCommand(Game1 game)
         {
             myGame = game;
-            mario = myGame.level.mario;
+            mainCharacter = myGame.level.mainCharacter;
         }
 
         public void Execute()
         {
-            if (mario.marioState != ElementClasses.Mario.MARIO_DEAD && mario.canMove)
+            if (mainCharacter.marioState != ElementClasses.MainCharacter.MARIO_DEAD && mainCharacter.canMove)
             {
-                if (mario.marioDirection)
+                if (mainCharacter.marioDirection)
                 {
-                    mario.MarioIdle();
-                    mario.MarioChangeDireciton();
+                    mainCharacter.MarioIdle();
+                    mainCharacter.MarioChangeDireciton();
                 }
-                if (mario.marioAction != ElementClasses.Mario.MARIO_CROUCH)
+                if (mainCharacter.marioAction != ElementClasses.MainCharacter.MARIO_CROUCH)
                 {
-                    mario.MarioRun();
-                    mario.position = new Vector2(mario.position.X + 3, mario.position.Y);
+                    mainCharacter.MarioRun();
+                    mainCharacter.position = new Vector2(mainCharacter.position.X + 3, mainCharacter.position.Y);
                 }
             }             
         }

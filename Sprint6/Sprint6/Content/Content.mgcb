@@ -97,150 +97,6 @@
 /processorParam:TextureFormat=Color
 /build:Item/Star.png
 
-#begin Mario/Bmario/BmarioFlag.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Bmario/BmarioFlag.png
-
-#begin Mario/Bmario/BmarioJump.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Bmario/BmarioJump.png
-
-#begin Mario/Bmario/BmarioRun.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Bmario/BmarioRun.png
-
-#begin Mario/Bmario/BmarioStand.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Bmario/BmarioStand.png
-
-#begin Mario/Bmario/BmarioStop.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Bmario/BmarioStop.png
-
-#begin Mario/Smario/SmarioChange.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioChange.png
-
-#begin Mario/Smario/SmarioDead.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioDead.png
-
-#begin Mario/Smario/SmarioFlag.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioFlag.png
-
-#begin Mario/Smario/SmarioJump.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioJump.png
-
-#begin Mario/Smario/SmarioRun.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioRun.png
-
-#begin Mario/Smario/SmarioStand.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioStand.png
-
-#begin Mario/Smario/SmarioStop.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Smario/SmarioStop.png
-
 #begin Item\BrickBlock.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -289,66 +145,6 @@
 /processorParam:TextureFormat=Color
 /build:Koopa/Koopa.png
 
-#begin Mario/Fmario/FmarioFireball.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FmarioFireball.png
-
-#begin Mario/Fmario/FmarioFlag.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FmarioFlag.png
-
-#begin Mario/Fmario/FmarioJump.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FmarioJump.png
-
-#begin Mario/Fmario/FmarioRun.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FmarioRun.png
-
-#begin Mario/Fmario/FmarioStand.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FmarioStand.png
-
 #begin Background/BackgroundEnvironment.gif
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -360,30 +156,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Background/BackgroundEnvironment.gif
-
-#begin Mario/Fmario/FireAttack.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FireAttack.png
-
-#begin Mario/Fmario/FilpGoomba.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Mario/Fmario/FilpGoomba.png
 
 #begin Goomba/FilpGoomba.png
 /importer:TextureImporter
@@ -451,137 +223,137 @@
 /processorParam:TextureFormat=Compressed
 /build:SpriteFonts/Courier New.spritefont
 
-#begin Sound/Mario/smb_1-up.wav
+#begin Sound/MainCharacter/smb_1-up.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_1-up.wav
+/build:Sound/MainCharacter/smb_1-up.wav
 
-#begin Sound/Mario/smb_bowserfall.wav
+#begin Sound/MainCharacter/smb_bowserfall.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_bowserfall.wav
+/build:Sound/MainCharacter/smb_bowserfall.wav
 
-#begin Sound/Mario/smb_breakblock.wav
+#begin Sound/MainCharacter/smb_breakblock.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_breakblock.wav
+/build:Sound/MainCharacter/smb_breakblock.wav
 
-#begin Sound/Mario/smb_bump.wav
+#begin Sound/MainCharacter/smb_bump.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_bump.wav
+/build:Sound/MainCharacter/smb_bump.wav
 
-#begin Sound/Mario/smb_coin.wav
+#begin Sound/MainCharacter/smb_coin.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_coin.wav
+/build:Sound/MainCharacter/smb_coin.wav
 
-#begin Sound/Mario/smb_fireball.wav
+#begin Sound/MainCharacter/smb_fireball.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_fireball.wav
+/build:Sound/MainCharacter/smb_fireball.wav
 
-#begin Sound/Mario/smb_fireworks.wav
+#begin Sound/MainCharacter/smb_fireworks.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_fireworks.wav
+/build:Sound/MainCharacter/smb_fireworks.wav
 
-#begin Sound/Mario/smb_flagpole.wav
+#begin Sound/MainCharacter/smb_flagpole.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_flagpole.wav
+/build:Sound/MainCharacter/smb_flagpole.wav
 
-#begin Sound/Mario/smb_gameover.wav
+#begin Sound/MainCharacter/smb_gameover.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_gameover.wav
+/build:Sound/MainCharacter/smb_gameover.wav
 
-#begin Sound/Mario/smb_jumpsmall.wav
+#begin Sound/MainCharacter/smb_jumpsmall.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_jumpsmall.wav
+/build:Sound/MainCharacter/smb_jumpsmall.wav
 
-#begin Sound/Mario/smb_jump-super.wav
+#begin Sound/MainCharacter/smb_jump-super.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_jump-super.wav
+/build:Sound/MainCharacter/smb_jump-super.wav
 
-#begin Sound/Mario/smb_kick.wav
+#begin Sound/MainCharacter/smb_kick.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_kick.wav
+/build:Sound/MainCharacter/smb_kick.wav
 
-#begin Sound/Mario/smb_mariodie.wav
+#begin Sound/MainCharacter/smb_mariodie.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_mariodie.wav
+/build:Sound/MainCharacter/smb_mariodie.wav
 
-#begin Sound/Mario/smb_pause.wav
+#begin Sound/MainCharacter/smb_pause.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_pause.wav
+/build:Sound/MainCharacter/smb_pause.wav
 
-#begin Sound/Mario/smb_pipe.wav
+#begin Sound/MainCharacter/smb_pipe.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_pipe.wav
+/build:Sound/MainCharacter/smb_pipe.wav
 
-#begin Sound/Mario/smb_powerup.wav
+#begin Sound/MainCharacter/smb_powerup.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_powerup.wav
+/build:Sound/MainCharacter/smb_powerup.wav
 
-#begin Sound/Mario/smb_powerup_appears.wav
+#begin Sound/MainCharacter/smb_powerup_appears.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_powerup_appears.wav
+/build:Sound/MainCharacter/smb_powerup_appears.wav
 
-#begin Sound/Mario/smb_stage_clear.wav
+#begin Sound/MainCharacter/smb_stage_clear.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_stage_clear.wav
+/build:Sound/MainCharacter/smb_stage_clear.wav
 
-#begin Sound/Mario/smb_stomp.wav
+#begin Sound/MainCharacter/smb_stomp.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_stomp.wav
+/build:Sound/MainCharacter/smb_stomp.wav
 
-#begin Sound/Mario/smb_vine.wav
+#begin Sound/MainCharacter/smb_vine.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_vine.wav
+/build:Sound/MainCharacter/smb_vine.wav
 
-#begin Sound/Mario/smb_warning.wav
+#begin Sound/MainCharacter/smb_warning.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_warning.wav
+/build:Sound/MainCharacter/smb_warning.wav
 
-#begin Sound/Mario/smb_world_clear.wav
+#begin Sound/MainCharacter/smb_world_clear.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:Sound/Mario/smb_world_clear.wav
+/build:Sound/MainCharacter/smb_world_clear.wav
 
 #begin Sound/Map/Level-01.mp3
 /importer:Mp3Importer
@@ -661,7 +433,7 @@
 /processorParam:TextureFormat=Color
 /build:Item/BlueGroundBlock.png
 
-#begin Mario/Fmario/FireBallHitTheWall.png
+#begin MainCharacter/Bmario/BmarioFlag.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -671,5 +443,233 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Mario/Fmario/FireBallHitTheWall.png
+/build:MainCharacter/Bmario/BmarioFlag.png
+
+#begin MainCharacter/Bmario/BmarioJump.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Bmario/BmarioJump.png
+
+#begin MainCharacter/Bmario/BmarioRun.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Bmario/BmarioRun.png
+
+#begin MainCharacter/Bmario/BmarioStand.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Bmario/BmarioStand.png
+
+#begin MainCharacter/Bmario/BmarioStop.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Bmario/BmarioStop.png
+
+#begin MainCharacter/Smario/SmarioChange.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioChange.png
+
+#begin MainCharacter/Smario/SmarioDead.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioDead.png
+
+#begin MainCharacter/Smario/SmarioFlag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioFlag.png
+
+#begin MainCharacter/Smario/SmarioJump.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioJump.png
+
+#begin MainCharacter/Smario/SmarioRun.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioRun.png
+
+#begin MainCharacter/Smario/SmarioStand.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioStand.png
+
+#begin MainCharacter/Smario/SmarioStop.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Smario/SmarioStop.png
+
+#begin MainCharacter/Fmario/FmarioFireball.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FmarioFireball.png
+
+#begin MainCharacter/Fmario/FmarioFlag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FmarioFlag.png
+
+#begin MainCharacter/Fmario/FmarioJump.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FmarioJump.png
+
+#begin MainCharacter/Fmario/FmarioRun.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FmarioRun.png
+
+#begin MainCharacter/Fmario/FmarioStand.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FmarioStand.png
+
+#begin MainCharacter/Fmario/FireAttack.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FireAttack.png
+
+#begin MainCharacter/Fmario/FilpGoomba.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FilpGoomba.png
+
+#begin MainCharacter/Fmario/FireBallHitTheWall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:MainCharacter/Fmario/FireBallHitTheWall.png
 

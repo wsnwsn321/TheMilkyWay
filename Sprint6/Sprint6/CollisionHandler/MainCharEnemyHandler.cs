@@ -6,9 +6,9 @@ using Sprint6.Sound.MarioSound;
 
 namespace Sprint6.CollisionHandler
 {
-    public static class MarioEnemyHandler
+    public static class MainCharEnemyHandler
     {
-        public static void EnemyHandler(Mario mario, IEnemy enemy, int CollisionSide)
+        public static void EnemyHandler(MainCharacter mainCharacter, IEnemy enemy, int CollisionSide)
         {
             int THREE = 3;
             int SIX = 6;
@@ -18,34 +18,34 @@ namespace Sprint6.CollisionHandler
                 switch (CollisionSide)
                 {
                     case 1:
-                        if (mario.HasStarPower)
+                        if (mainCharacter.HasStarPower)
                         {
                             enemy.BeFlipped();
                             //score
-                            mario.isScored = true;
-                            mario.score = GameConstants.Score1;
-                            mario.totalScore += mario.score;
+                            mainCharacter.isScored = true;
+                            mainCharacter.score = GameConstants.Score1;
+                            mainCharacter.totalScore += mainCharacter.score;
                             Vector2 newP;
-                            newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - THREE;
-                            mario.textPosition = newP;
+                            newP.X = mainCharacter.position.X;
+                            newP.Y = mainCharacter.position.Y - THREE;
+                            mainCharacter.textPosition = newP;
                         }
                         else
                         {
-                            if(mario.state.marioSprite.desRectangle.Bottom > enemy.enemySprite.desRectangle.Top)
+                            if(mainCharacter.state.marioSprite.desRectangle.Bottom > enemy.enemySprite.desRectangle.Top)
                             {
-                                mario.bounce = true;
+                                mainCharacter.bounce = true;
                                 MarioSoundManager.instance.playSound(MarioSoundManager.STOMP);
                                 enemy.BeStomped();
                                 if(!(enemy.shellDirection))
                                 {
-                                mario.isScored = true;
-                                    mario.score = GameConstants.Score1;
-                                    mario.totalScore += mario.score;
+                                mainCharacter.isScored = true;
+                                    mainCharacter.score = GameConstants.Score1;
+                                    mainCharacter.totalScore += mainCharacter.score;
                                     Vector2 newP;
-                                newP.X = mario.position.X;
-                                newP.Y = mario.position.Y- THREE;
-                                mario.textPosition = newP;
+                                newP.X = mainCharacter.position.X;
+                                newP.Y = mainCharacter.position.Y- THREE;
+                                mainCharacter.textPosition = newP;
                                 }
                                 
                                 
@@ -54,11 +54,11 @@ namespace Sprint6.CollisionHandler
                             {
                                 if (enemy.shellDirection)
                                 {
-                                    mario.MarioGetHit();
+                                    mainCharacter.MarioGetHit();
                                 }
                                 else
                                 {
-                                    if (mario.marioDirection)
+                                    if (mainCharacter.marioDirection)
                                     {
                                         enemy.shellDirection =true;
                                         enemy.shellMoving = GameConstants.Left;
@@ -74,16 +74,16 @@ namespace Sprint6.CollisionHandler
                         }
                         break;
                     case 2:
-                        if (mario.HasStarPower)
+                        if (mainCharacter.HasStarPower)
                         {
                             enemy.BeFlipped();
                             //score
-                            mario.isScored = true;
-                            mario.score = GameConstants.Score1;
+                            mainCharacter.isScored = true;
+                            mainCharacter.score = GameConstants.Score1;
                             Vector2 newP;
-                            newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - THREE;
-                            mario.textPosition = newP;
+                            newP.X = mainCharacter.position.X;
+                            newP.Y = mainCharacter.position.Y - THREE;
+                            mainCharacter.textPosition = newP;
                         }
                         else
                         {
@@ -92,21 +92,21 @@ namespace Sprint6.CollisionHandler
                                
                                 if (enemy.shellDirection)
                                 {
-                                    mario.MarioGetHit();
+                                    mainCharacter.MarioGetHit();
                                 }
                                 else
                                 {
-                                    if (mario.position.X < enemy.position.X)
+                                    if (mainCharacter.position.X < enemy.position.X)
                                     {
-                                        newPosition.X = mario.position.X -SIX;
-                                        newPosition.Y = mario.position.Y;
-                                        mario.position = newPosition;
+                                        newPosition.X = mainCharacter.position.X -SIX;
+                                        newPosition.Y = mainCharacter.position.Y;
+                                        mainCharacter.position = newPosition;
                                     }
                                     else
                                     {
-                                        newPosition.X = mario.position.X +SIX;
-                                        newPosition.Y = mario.position.Y;
-                                        mario.position = newPosition;
+                                        newPosition.X = mainCharacter.position.X +SIX;
+                                        newPosition.Y = mainCharacter.position.Y;
+                                        mainCharacter.position = newPosition;
                                     }
                                     
                                     enemy.shellDirection = true;
@@ -115,41 +115,41 @@ namespace Sprint6.CollisionHandler
                             }
                             else
                             {
-                                mario.MarioGetHit();
+                                mainCharacter.MarioGetHit();
                             }
                          
                         }
                         break;
                     case 3:
-                        if (mario.HasStarPower)
+                        if (mainCharacter.HasStarPower)
                         {
                             enemy.BeFlipped();
                             //score
-                            mario.isScored = true;
-                            mario.score = GameConstants.Score1;
+                            mainCharacter.isScored = true;
+                            mainCharacter.score = GameConstants.Score1;
                             Vector2 newP;
-                            newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - THREE;
-                            mario.textPosition = newP;
+                            newP.X = mainCharacter.position.X;
+                            newP.Y = mainCharacter.position.Y - THREE;
+                            mainCharacter.textPosition = newP;
                         }
                         else
                         {
-                            mario.MarioGetHit();
+                            mainCharacter.MarioGetHit();
                         }
                       
                         break;
                     case 4:
-                        if (mario.HasStarPower)
+                        if (mainCharacter.HasStarPower)
                         {
                             
                             enemy.BeFlipped();
                             //score
-                            mario.isScored = true;
-                            mario.score = GameConstants.Score1;
+                            mainCharacter.isScored = true;
+                            mainCharacter.score = GameConstants.Score1;
                             Vector2 newP;
-                            newP.X = mario.position.X;
-                            newP.Y = mario.position.Y - THREE;
-                            mario.textPosition = newP;
+                            newP.X = mainCharacter.position.X;
+                            newP.Y = mainCharacter.position.Y - THREE;
+                            mainCharacter.textPosition = newP;
                         }
                         else
                         {
@@ -158,22 +158,22 @@ namespace Sprint6.CollisionHandler
                                
                                 if (enemy.shellDirection)
                                 {
-                                    mario.MarioGetHit();
+                                    mainCharacter.MarioGetHit();
                                 }
                                 else
                                 {
                                     MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
-                                    if (mario.position.X < enemy.position.X)
+                                    if (mainCharacter.position.X < enemy.position.X)
                                     {
-                                        newPosition.X = mario.position.X -SIX;
-                                        newPosition.Y = mario.position.Y;
-                                        mario.position = newPosition;
+                                        newPosition.X = mainCharacter.position.X -SIX;
+                                        newPosition.Y = mainCharacter.position.Y;
+                                        mainCharacter.position = newPosition;
                                     }
                                     else
                                     {
-                                        newPosition.X = mario.position.X +SIX;
-                                        newPosition.Y = mario.position.Y;
-                                        mario.position = newPosition;
+                                        newPosition.X = mainCharacter.position.X +SIX;
+                                        newPosition.Y = mainCharacter.position.Y;
+                                        mainCharacter.position = newPosition;
                                     }
                                     enemy.shellDirection = true;
                                     enemy.shellMoving = GameConstants.Left;
@@ -182,7 +182,7 @@ namespace Sprint6.CollisionHandler
                             }
                             else
                             {
-                                mario.MarioGetHit();
+                                mainCharacter.MarioGetHit();
                             }
 
                         }

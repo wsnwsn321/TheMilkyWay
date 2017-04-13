@@ -55,7 +55,7 @@ namespace Sprint6.HUDElements
                 myGame.spriteBatch.DrawString(myGame.font, output, FontPos, Color.White,
                     0, FontOrigin, 1.5f, SpriteEffects.None, 0.5f);
                 myGame.spriteBatch.End();
-                myGame.level.mario.isVisible = false;
+                myGame.level.mainCharacter.isVisible = false;
                // myGame.Exit();
             }
 
