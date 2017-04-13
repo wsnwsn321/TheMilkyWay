@@ -3,13 +3,13 @@ using Sprint6.Sprites;
 
 namespace Sprint6.ElementClasses
 {
-    class RunningMarioState : IMarioState
+    class RunningState : IState
     {
  
      
         private MainCharacter mainCharacter;
-        public IMarioSprite marioSprite { get; set; }
-        public RunningMarioState( MainCharacter mainCharacter)
+        public ISprite Sprite { get; set; }
+        public RunningState( MainCharacter mainCharacter)
         {
             this.mainCharacter = mainCharacter;
             if (mainCharacter.marioDirection)
@@ -18,14 +18,14 @@ namespace Sprint6.ElementClasses
                 {
 
                     case MainCharacter.MARIO_SMALL:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftRunningSmallMarioSprite();
 
                         break;
                     case MainCharacter.MARIO_BIG:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftRunningBigMarioSprite();
                         break;
                     case MainCharacter.MARIO_FIRE:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftRunningFireMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftRunningFireMarioSprite();
 
                         break;
                 }
@@ -35,13 +35,13 @@ namespace Sprint6.ElementClasses
                 switch (mainCharacter.marioState)
                 {
                     case MainCharacter.MARIO_SMALL:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightRunningSmallMarioSprite();
                         break;
                     case MainCharacter.MARIO_BIG:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightRunningBigMarioSprite();
                         break;
                     case MainCharacter.MARIO_FIRE:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightRunningFireMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightRunningFireMarioSprite();
                         break;
                 }
             }
@@ -57,44 +57,37 @@ namespace Sprint6.ElementClasses
         public void ChangeForm(int form)
         {
             mainCharacter.marioState = form;
-            mainCharacter.state = new IdleMarioState(mainCharacter);
-            mainCharacter.MainCharMove();
+            mainCharacter.state = new IdleState(mainCharacter);
         }
 
         public void Idle()
         {
-            mainCharacter.state = new IdleMarioState( mainCharacter);
+            mainCharacter.state = new IdleState( mainCharacter);
             mainCharacter.MarioIdle();
         }
 
         public void Jump()
         {
-            mainCharacter.state = new JumpingMarioState( mainCharacter);
+            mainCharacter.state = new JumpingState( mainCharacter);
             mainCharacter.MarioJump();
         }
 
 
         public void Update()
         {
-            marioSprite.Update();
+            Sprite.Update();
             //change position
             
         }
 
         public void Draw(Vector2 position)
         {
-            marioSprite.Draw(position);
+            Sprite.Draw(position);
 
-        }
-
-        public void ChangeDirection()
-        {
-            mainCharacter.marioDirection = !mainCharacter.marioDirection;
-            mainCharacter.MainCharMove();
         }
         public void Die()
         {
-            mainCharacter.state = new DeadMarioState( mainCharacter);
+            mainCharacter.state = new DeadState( mainCharacter);
             mainCharacter.MarioDie();
         }
 
@@ -102,11 +95,11 @@ namespace Sprint6.ElementClasses
         {
             if (!mainCharacter.marioDirection)
             {
-                marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightAttackingFireMarioSprite();
+                Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightAttackingFireMarioSprite();
             }
             else
             {
-                marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftAttackingFireMarioSprite();
+                Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftAttackingFireMarioSprite();
             }
         }
     }

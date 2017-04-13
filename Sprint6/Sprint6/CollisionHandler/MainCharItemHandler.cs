@@ -18,7 +18,7 @@ namespace Sprint6.CollisionHandler
             {
                 if (mainCharacter.marioState ==MainCharacter.MARIO_SMALL && item.isVisible)
                 {
-                    MarioSoundManager.instance.playSound(MarioSoundManager.POWERUP);
+                    MainCharSoundManager.instance.playSound(MainCharSoundManager.POWERUP);
                     mainCharacter.animated = true;
                     mainCharacter.animation = GameConstants.GrowAnimation;
                     //score part
@@ -36,7 +36,7 @@ namespace Sprint6.CollisionHandler
 
             if (item is Flower && item.isVisible)
             {
-                MarioSoundManager.instance.playSound(MarioSoundManager.POWERUP);
+                MainCharSoundManager.instance.playSound(MainCharSoundManager.POWERUP);
                 if (mainCharacter.marioState != MainCharacter.MARIO_FIRE && item.isVisible)
                 {
                     //score part
@@ -93,7 +93,7 @@ namespace Sprint6.CollisionHandler
             {
                 if (item.isVisible)
                 {
-                    MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
+                    MainCharSoundManager.instance.playSound(MainCharSoundManager.COIN);
                     mainCharacter.isScored = true;
                     mainCharacter.score = 200;
                     mainCharacter.coin += 1;
@@ -107,7 +107,7 @@ namespace Sprint6.CollisionHandler
                 if (item.isVisible)
                 {
                     game.lifeCount++;
-                    MarioSoundManager.instance.playSound(MarioSoundManager.ONEUP);
+                    MainCharSoundManager.instance.playSound(MainCharSoundManager.ONEUP);
                     item.isVisible = false;
                     //score part
                     mainCharacter.isScored = true;

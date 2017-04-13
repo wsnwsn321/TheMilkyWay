@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Input;
 using Sprint6.ElementClasses.ElementInterfaces;
 using Sprint6.ElementClasses.ItemClass;
-using Sprint6.Sprites.MarioSprite.FireMarioSprite;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.Commands
 {
@@ -20,32 +20,7 @@ namespace Sprint6.Commands
 
         public void Execute()
         {
-            if (myGame.level.fireBallList.Count <= 1 && mainCharacter.canMove)
-            {
-                if (mainCharacter.marioState == ElementClasses.MainCharacter.MARIO_FIRE)
-                {
-                    mainCharacter.Attack();
-                    Fireball fball = new Fireball(new Vector2(mainCharacter.position.X, mainCharacter.position.Y + TwentyFive));
-                    if (mainCharacter.state.marioSprite is RightAttackingMarioSprite)
-                    {
 
-
-                        myGame.level.fireBallList.Add(fball);
-
-
-                    }
-                    else if (mainCharacter.state.marioSprite is LeftAttackingMarioSprite)
-                    {
-
-                        
-                            fball.hDirection = !fball.hDirection;
-                            myGame.level.fireBallList.Add(fball);
-                       
-
-
-                    }
-                }
-            }
         }
     }
 }

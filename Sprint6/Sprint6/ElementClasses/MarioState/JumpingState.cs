@@ -3,13 +3,13 @@ using Sprint6.Sprites;
 
 namespace Sprint6.ElementClasses
 {
-    class CrouchMarioState : IMarioState
+    class JumpingState : IState
     {
-     
 
+  
         private MainCharacter mainCharacter;
-        public IMarioSprite marioSprite { get; set; }
-        public CrouchMarioState(MainCharacter mainCharacter)
+        public ISprite Sprite { get; set; }
+        public JumpingState(MainCharacter mainCharacter)
         {
             this.mainCharacter = mainCharacter;
             if (mainCharacter.marioDirection)
@@ -17,13 +17,13 @@ namespace Sprint6.ElementClasses
                 switch (mainCharacter.marioState)
                 {
                     case MainCharacter.MARIO_SMALL:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftIdleSmallMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftJumpingSmallMarioSprite();
                         break;
                     case MainCharacter.MARIO_BIG:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingBigMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftJumpingBigMarioSprite();
                         break;
                     case MainCharacter.MARIO_FIRE:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateLeftCrouchingFireMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftJumpingFireMarioSprite();
                         break;
                 }
             }
@@ -32,72 +32,72 @@ namespace Sprint6.ElementClasses
                 switch (mainCharacter.marioState)
                 {
                     case MainCharacter.MARIO_SMALL:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightIdleSmallMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightJumpingSmallMarioSprite();
                         break;
                     case MainCharacter.MARIO_BIG:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingBigMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightJumpingBigMarioSprite();
                         break;
                     case MainCharacter.MARIO_FIRE:
-                        marioSprite = SpriteFactories.MarioSpriteFactory.Instance.CreateRightCrouchingFireMarioSprite();
+                        Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightJumpingFireMarioSprite();
                         break;
                 }
             }
+        }
 
-
+        public void Jump()
+        {
 
         }
 
         public void Crouch()
         {
-
+            mainCharacter.state = new IdleState( mainCharacter);
+            mainCharacter.MarioIdle();
         }
 
         public void Draw(Vector2 position)
         {
-            marioSprite.Draw(position);
+            Sprite.Draw(new Vector2(position.X, position.Y));
         }
         public void ChangeForm(int form)
         {
             mainCharacter.marioState = form;
-            mainCharacter.state = new IdleMarioState( mainCharacter);
+            mainCharacter.state = new IdleState( mainCharacter);
             mainCharacter.MarioIdle();
         }
 
         public void Idle()
         {
-            mainCharacter.state = new IdleMarioState(mainCharacter);
+            mainCharacter.state = new IdleState(mainCharacter);
             mainCharacter.MarioIdle();
-        }
-
-        public void Jump()
-        {
-            mainCharacter.state = new IdleMarioState( mainCharacter);
-            mainCharacter.MarioIdle();
-        }
-
-        public void Run()
-        {
-            mainCharacter.state = new RunningMarioState( mainCharacter);
-            mainCharacter.MainCharMove();
         }
 
         public void Update()
         {
-            marioSprite.Update();
+            Sprite.Update();
         }
+
         public void ChangeDirection()
         {
             mainCharacter.marioDirection = !mainCharacter.marioDirection;
-            mainCharacter.MarioCrouch();
+            mainCharacter.MarioJump();
         }
         public void Die()
         {
-            mainCharacter.state = new DeadMarioState( mainCharacter);
+            mainCharacter.state = new DeadState( mainCharacter);
             mainCharacter.MarioDie();
         }
-        
+
         public void Attack()
         {
+            if (!mainCharacter.marioDirection)
+            {
+                Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateRightAttackingFireMarioSprite();
+            }
+            else
+            {
+                Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateLeftAttackingFireMarioSprite();
+            }
         }
     }
 }

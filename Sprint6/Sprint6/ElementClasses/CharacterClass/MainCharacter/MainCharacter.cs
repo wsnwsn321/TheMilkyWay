@@ -13,7 +13,7 @@ namespace Sprint6.ElementClasses
     {
         private Game1 myGame;
 
-        public IMarioState state { set; get; }
+        public IState state { set; get; }
 
         public bool IsInvincible { get; set; }
         public bool HasStarPower { get; set; }
@@ -63,7 +63,7 @@ namespace Sprint6.ElementClasses
             IsInvincible = false;
             HasStarPower = false;
             canMove = true;
-            state = new IdleMarioState(this);
+            state = new IdleState(this);
             InvincibilityTime = 0;
             starCounter = 0;
             scoreCounter = 0;
@@ -80,7 +80,7 @@ namespace Sprint6.ElementClasses
             this.marioDirection = marioDirection;
             marioAction = MARIO_IDLE;
             this.position = position;
-            state = new IdleMarioState(this);
+            state = new IdleState(this);
             IsInvincible = false;
             InvincibilityTime = 0;
             gravity = GameConstants.Two * GameConstants.Two;
@@ -118,28 +118,8 @@ namespace Sprint6.ElementClasses
 
         }
 
-        public void MainCharMove()
-        {
-            if (marioAction != MARIO_CROUCH)
-            {
-                state.Run();
-                marioAction = MARIO_RUN;
-            }
-        }
         public virtual void MarioDraw()
         {
-            if (HasStarPower)
-            {
-                starCounter++;
-                if (starCounter % (GameConstants.Two* GameConstants.Ten) == 0)
-                {
-                    state.marioSprite.tintColor = Color.Brown;
-                }
-                else if (starCounter % (GameConstants.Two * GameConstants.Ten) == GameConstants.Ten)
-                {
-                    state.marioSprite.tintColor = Color.Green;
-                }
-            }
             if (isScored)
             {
                 DrawScore();
@@ -149,14 +129,14 @@ namespace Sprint6.ElementClasses
         }
         public void MarioUpdate()
         {
-            position = new Vector2(position.X+1,position.Y);
+            position = new Vector2(position.X+5,position.Y);
             state.Update();
         }
 
         public void MarioDie()
         {
             MediaPlayer.Stop();
-            MarioSoundManager.instance.playSound(MarioSoundManager.MARIODIE);
+            MainCharSoundManager.instance.playSound(MainCharSoundManager.MARIODIE);
             marioState = MARIO_DEAD;
             state.Die();
          
@@ -187,24 +167,10 @@ namespace Sprint6.ElementClasses
         }
         public void Attack()
         {
-            MarioSoundManager.instance.playSound(MarioSoundManager.FIREBALL);
+            MainCharSoundManager.instance.playSound(MainCharSoundManager.FIREBALL);
             state.Attack();
         }
-        public void FlagAnimationUpdate()
-        {
-            myGame.keyboardController.controllerMappings[Keys.BrowserFavorites].Execute();
-            state.Update();
-        }
-        public void PipeAnimationUpdate()
-        {
-            myGame.keyboardController.controllerMappings[Keys.BrowserForward].Execute();
-            state.Update();
-        }
-        public void UnderPipeAnimationUpdate()
-        {
-            myGame.keyboardController.controllerMappings[Keys.Attn].Execute();
-            state.Update();
-        }
+
         public void GrowAnimationUpdate()
         {
 

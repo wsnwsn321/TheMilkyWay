@@ -39,7 +39,7 @@ namespace Sprint6.Commands
                         mainCharacter.MarioJump();
                         if (jumpCount)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.JUMPSMALL);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.JUMPSMALL);
                             jumpCount = false;
                         }
                         mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y - (float)(jumpForce - decay));
@@ -61,16 +61,11 @@ namespace Sprint6.Commands
                     }
                     else
                     {
-
                         mainCharacter.jump = false;
-                        if (mainCharacter.gravity == 0 && !wDown)
-                        {
-                            decay = 0;
-                            jumpTime = Fifty;
-                            mainCharacter.jump = true;
-                            jumpCount = true;
-
-                        }
+                        decay = 0;
+                        jumpTime = Fifty;
+                        mainCharacter.jump = true;
+                        jumpCount = true;
                     }
                 }
             }

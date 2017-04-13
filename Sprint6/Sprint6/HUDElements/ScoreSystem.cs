@@ -4,7 +4,6 @@ using Sprint6.ElementClasses;
 using Sprint6.ElementClasses.ItemClass;
 using Sprint6.SpriteFactories;
 using Sprint6.Sprites;
-using Sprint6.Sprites.MarioSprite.SmallMarioSprite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -28,29 +28,29 @@ namespace Sprint6.CollisionHandler
                 {
                     case 1: //top collision
                        
-                        newPosition.X = mainCharacter.state.marioSprite.desRectangle.X;
-                        newPosition.Y = block.blockSprite.desRectangle.Y - mainCharacter.state.marioSprite.desRectangle.Height-SIX;
+                        newPosition.X = mainCharacter.state.Sprite.desRectangle.X;
+                        newPosition.Y = block.blockSprite.desRectangle.Y - mainCharacter.state.Sprite.desRectangle.Height-SIX;
                         mainCharacter.position = newPosition;
                         break;
                     case 2: //right side collision
                         
                          newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
-                        newPosition.Y = mainCharacter.state.marioSprite.desRectangle.Y;
+                        newPosition.Y = mainCharacter.state.Sprite.desRectangle.Y;
                         mainCharacter.position = newPosition;
                         
                        
                         break;
                     case 3: //bottom collision
                         mainCharacter.jump = false;
-                        newPosition.X = mainCharacter.state.marioSprite.desRectangle.X;
+                        newPosition.X = mainCharacter.state.Sprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+THREE;
                         mainCharacter.position = newPosition;
                         if (block is BrickBlock && block.blockSprite is BrickBlockSprite)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.BUMP);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.BUMP);
                             if (mainCharacter.marioState != MainCharacter.MARIO_SMALL)
                             {
-                                MarioSoundManager.instance.playSound(MarioSoundManager.BREAKBLOCK);
+                                MainCharSoundManager.instance.playSound(MainCharSoundManager.BREAKBLOCK);
                                 block.Bump();
                                 block.isVisible = false;
                                 BlockPiece block1 = new BlockPiece(new Vector2(block.position.X, block.position.Y), GameConstants.BlockPieceOne);
@@ -77,7 +77,7 @@ namespace Sprint6.CollisionHandler
                         }
                         else if(block is BrickBlockC && block.blockSprite is BrickBlockSprite)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.COIN);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             Coin c = new Coin(new Vector2(block.position.X + EIGHT, block.position.Y - THIRTYONE));
@@ -95,7 +95,7 @@ namespace Sprint6.CollisionHandler
                         }
                         else if (block is BrickBlockCC && block.blockSprite is BrickBlockSprite)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.COIN);
                             BrickBlockCC b = block as BrickBlockCC;
                             if (b.coinCount > 0)
                             {
@@ -141,7 +141,7 @@ namespace Sprint6.CollisionHandler
                         }
                         else if (block is QuestionBlockM && block.blockSprite is QuestionBlockSprite)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.POWERUPAPPEARS);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.POWERUPAPPEARS);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             
@@ -156,7 +156,7 @@ namespace Sprint6.CollisionHandler
                         }
                         else if (block is QuestionBlockC && block.blockSprite is QuestionBlockSprite)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.COIN);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.COIN);
                             block.Bump();
                             //score part
                             mainCharacter.isScored = true;
@@ -175,7 +175,7 @@ namespace Sprint6.CollisionHandler
                         }
                         else if (block is HiddenBlock && block.blockSprite is HiddenBlockSprite)
                         {
-                            MarioSoundManager.instance.playSound(MarioSoundManager.POWERUPAPPEARS);
+                            MainCharSoundManager.instance.playSound(MainCharSoundManager.POWERUPAPPEARS);
                             block.Bump();
                             block.blockSprite = EnvironmentSpriteFactory.Instance.CreateUsedBlockSprite();
                             myGame.level.itemElements.Add(new GreenMushroom(new Vector2(block.position.X, block.position.Y -GameConstants.SquareWidth)));
@@ -191,8 +191,8 @@ namespace Sprint6.CollisionHandler
                                 mainCharacter.animation = GameConstants.UnderPipeAnimation;
                             }
                         }
-                        newPosition.X = block.blockSprite.desRectangle.X - mainCharacter.state.marioSprite.desRectangle.Width;
-                        newPosition.Y = mainCharacter.state.marioSprite.desRectangle.Y;
+                        newPosition.X = block.blockSprite.desRectangle.X - mainCharacter.state.Sprite.desRectangle.Width;
+                        newPosition.Y = mainCharacter.state.Sprite.desRectangle.Y;
                         mainCharacter.position = newPosition;
                         break;
                 }

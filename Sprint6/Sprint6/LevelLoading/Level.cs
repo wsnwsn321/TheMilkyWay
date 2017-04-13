@@ -107,7 +107,7 @@ namespace Sprint6.LevelLoading
                 }
                 if (!mainCharacter.animated)
                 {
-                    CollisionDetection.Instance.MarioBlockCollision(myGame, mainCharacter, envElements);
+                    CollisionDetection.Instance.MainCharBlockCollision(myGame, mainCharacter, envElements);
                     CollisionDetection.Instance.MarioEnemyCollision(mainCharacter, enemyElements);
                     CollisionDetection.Instance.MarioItemCollision(mainCharacter, itemElements);
                     mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity);
@@ -120,26 +120,8 @@ namespace Sprint6.LevelLoading
                 }
                 else
                 {
-                    if (mainCharacter.animation == GameConstants.FlagAnimation)
-                    {
-                        mainCharacter.FlagAnimationUpdate();
-                    }
-                    else if(mainCharacter.animation == GameConstants.PipeAnimation)
-                    {
-                        mainCharacter.PipeAnimationUpdate();
-                    }
-                    else if(mainCharacter.animation == GameConstants.UnderPipeAnimation)
-                    {
-                        mainCharacter.UnderPipeAnimationUpdate();
-                    }
-                    else if(mainCharacter.animation == GameConstants.GrowAnimation)
-                    {
-                        mainCharacter.GrowAnimationUpdate();
-                    }
-                    else
-                    {
+
                         mainCharacter.LifeScreenUpdate();
-                    }
                 }
             }
             else

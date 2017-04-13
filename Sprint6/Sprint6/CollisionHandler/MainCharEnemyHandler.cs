@@ -32,10 +32,10 @@ namespace Sprint6.CollisionHandler
                         }
                         else
                         {
-                            if(mainCharacter.state.marioSprite.desRectangle.Bottom > enemy.enemySprite.desRectangle.Top)
+                            if(mainCharacter.state.Sprite.desRectangle.Bottom > enemy.enemySprite.desRectangle.Top)
                             {
                                 mainCharacter.bounce = true;
-                                MarioSoundManager.instance.playSound(MarioSoundManager.STOMP);
+                                MainCharSoundManager.instance.playSound(MainCharSoundManager.STOMP);
                                 enemy.BeStomped();
                                 if(!(enemy.shellDirection))
                                 {
@@ -162,7 +162,7 @@ namespace Sprint6.CollisionHandler
                                 }
                                 else
                                 {
-                                    MarioSoundManager.instance.playSound(MarioSoundManager.KICK);
+                                    MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
                                     if (mainCharacter.position.X < enemy.position.X)
                                     {
                                         newPosition.X = mainCharacter.position.X -SIX;

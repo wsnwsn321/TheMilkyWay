@@ -1,22 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sprint6.Sprites.MarioSprite.BigMarioSprite
+namespace Sprint6.Sprites.UFOSprite
 {
-    public class LeftFlagBigMarioSprite: IMarioSprite
+    public class UFOFlyingSprite : ISprite
+
     {
-        private SpriteBatch sb;
         public Texture2D Texture { get; set; }
-        private Vector2 p;
+        private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
 
 
-        public LeftFlagBigMarioSprite(Texture2D texture,SpriteBatch sb)
+        Vector2 p;
+
+        public UFOFlyingSprite(Texture2D texture,SpriteBatch sb)
         {
+            Texture = texture;
             this.sb = sb;
             tintColor = Color.White;
-            Texture = texture;
         }
         public void Update()
         {
@@ -31,11 +33,12 @@ namespace Sprint6.Sprites.MarioSprite.BigMarioSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(0, 0, 15, 30);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 34, 62);
+            Rectangle sourceRectangle = new Rectangle(18, 0, 18,GameConstants.SquareWidth);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 36, 64);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
-            this.p = position;
+            p = position;
             sb.End();
+
         }
     }
 }

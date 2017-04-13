@@ -11,9 +11,9 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Sprint6.Sound.MarioSound
 {
-    public class MarioSoundManager 
+    public class MainCharSoundManager 
     {
-        public static MarioSoundManager instance = new MarioSoundManager();
+        public static MainCharSoundManager instance = new MainCharSoundManager();
         
         List<SoundEffect> soundEffects;
         SoundEffectInstance var;
@@ -21,7 +21,7 @@ namespace Sprint6.Sound.MarioSound
         public const  string ONEUP = "1UP", BOWSERFALL = "boswerFall", BREAKBLOCK = "breakBlock", BUMP = "bump", COIN = "coin", FIREBALL = "fireBall",FIREWORKS ="fireWorks", FLAGPOLE = "flagPole", GAMEOVER = "gameOver",
                             JUMPSMALL = "jumpsmall", JUMPSUPER = "jumpSuper", KICK = "kick", MARIODIE = "marioDie", PAUSE = "pause", PIPE = "pipe", POWERUPAPPEARS = "powerAppears", STAGECLEAR = "stageClear",
                             STOMP = "stomp", VINE = "vine", WARNING = "warning", WORLDCLEAR = "worldClear",POWERUP="powerUp";
-        private MarioSoundManager()
+        private MainCharSoundManager()
         {
             soundEffects = new List<SoundEffect>();
 

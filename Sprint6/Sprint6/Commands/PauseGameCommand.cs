@@ -19,7 +19,7 @@ namespace Sprint6.Commands
             if (counter % 10 == 0)
             {
                 counter = 0;
-                MarioSoundManager.instance.playSound(MarioSoundManager.PAUSE);
+                MainCharSoundManager.instance.playSound(MainCharSoundManager.PAUSE);
                 myGame.level.Pause();
             }
         }
