@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.ElementClasses
 {
@@ -20,12 +20,7 @@ namespace Sprint6.ElementClasses
             Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateDeadUFOSprite();
 
         }
-        public void ChangeForm(int form)
-        {
-            mainCharacter.marioState = form;
-            mainCharacter.state = new IdleState( mainCharacter);
-            mainCharacter.MarioIdle();
-        }
+
         public void Jump()
         {
             Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateDeadUFOSprite();

@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint6.Sprites.UFOSprite
 {
-    public class UFOFlyingSprite : ISprite
+    public class UFOJumpingSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -13,24 +13,23 @@ namespace Sprint6.Sprites.UFOSprite
         public Color tintColor { get; set; }
 
         private int totalFrames;
-
         private int counter;
 
         Vector2 p;
 
-        public UFOFlyingSprite(Texture2D texture,SpriteBatch sb, int currentF)
+        public UFOJumpingSprite(Texture2D texture,SpriteBatch sb,int currentF)
         {
             Texture = texture;
+            currentFrame = currentF;
             this.sb = sb;
             totalFrames = 4;
-            counter = 0;
             currentFrame = currentF;
             tintColor = Color.White;
         }
         public void Update()
         {
             counter++;
-            if (counter % 10==0)
+            if (counter % 10 == 0)
             {
                 currentFrame++;
             }
@@ -48,8 +47,8 @@ namespace Sprint6.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(60 * currentFrame, 0, 60, 36);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 100, 61);
+            Rectangle sourceRectangle = new Rectangle(60 * currentFrame, 54, 60, 55);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 100, 95);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

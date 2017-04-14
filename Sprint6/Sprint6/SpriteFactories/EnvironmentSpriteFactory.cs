@@ -50,61 +50,6 @@ namespace Sprint6.SpriteFactories
         }
 
         //create environment sprites
-        public Sprites.ISprite CreatePipeSprite(int size)
-        {
-            if (size == GameConstants.UnderPipe)
-            {
-                return new Sprites.PipeSprite(underPipeSpritesheet, sb);
-            }
-            else
-            {
-                return new Sprites.PipeSprite(pipeSpritesheet, sb, size);
-            }
-        }
-
-        public Sprites.ISprite CreateUsedBlockSprite()
-        {
-            return new Sprites.UsedBlockSprite(usedBlockSpritesheet,sb);
-        }
-
-        public Sprites.ISprite CreateBrickBlockSprite()
-        {
-            return new Sprites.BrickBlockSprite(brickBlockSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateBlueBrickBlockSprite()
-        {
-            return new Sprites.BlueBrickBlockSprite(blueBrickBlockSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateQuestionBlockSprite()
-        {
-            return new Sprites.QuestionBlockSprite(questionBlockSpritesheet,sb);
-        }
-
-        public Sprites.ISprite CreateGroundBlockSprite()
-        {
-            return new Sprites.GroundBlockSprite(groundBlockSpritesheet,sb);
-        }
-
-        public Sprites.ISprite CreateBlueGroundBlockSprite()
-        {
-            return new Sprites.BlueGroundBlockSprite(blueGroundBlockSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateHiddenBlockSprite()
-        {
-            return new Sprites.HiddenBlockSprite(pipeSpritesheet,sb);
-        }
-        public Sprites.ISprite CreateStageBlockSprite()
-        {
-            return new Sprites.StageBlockSprite(stageBlockSpritesheet, sb);
-        }
-
-
-
-
-
-
+    
     }
 }

@@ -1,11 +1,16 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using System.Diagnostics;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.SpriteFactories
 {
     class UFOSpriteFactory
     {
         private Texture2D flyingUFOSpritesheet;
+        private static UFOFlyingSprite ufo;
+        private static UFOJumpingSprite  ufo2;
+        private static bool first = true;
 
         private SpriteBatch sb { set; get; }
         private static UFOSpriteFactory instance = new UFOSpriteFactory();
@@ -30,13 +35,28 @@ namespace Sprint6.SpriteFactories
 
 
         //create mainCharacter sprites
-        public Sprites.ISprite CreateFlyingUFOSprite()
+        public ISprite CreateFlyingUFOSprite()
         {
-            return new Sprites.UFOSprite.UFOFlyingSprite(flyingUFOSpritesheet, sb);
+            if (first)
+            {
+
+                ufo = new UFOFlyingSprite(flyingUFOSpritesheet, sb, 0);
+            }
+            else
+            {
+                ufo = new UFOFlyingSprite(flyingUFOSpritesheet, sb, ufo2.currentFrame++);
+            }
+            return ufo;
         }
-        public Sprites.ISprite CreateDeadUFOSprite()
+        public ISprite CreateJumpingUFOSprite()
         {
-            return new Sprites.UFOSprite.UFOFlyingSprite(flyingUFOSpritesheet, sb);
+            ufo2 = new UFOJumpingSprite(flyingUFOSpritesheet, sb, ufo.currentFrame++);
+            first = false;
+            return ufo2;
+        }
+        public ISprite CreateDeadUFOSprite()
+        {
+            return new Sprites.UFOSprite.UFOFlyingSprite(flyingUFOSpritesheet, sb, 0);
         }
     }
 }

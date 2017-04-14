@@ -3,8 +3,7 @@
     public static class GameConstants
     {
         public const string UnderworldLevel = @"LevelLoading\LevelFiles\Underworld.csv";
-        public const string OverworldLevel = @"LevelLoading\LevelFiles\Level1-1Full.csv";
-        public const string LifeScreen = @"LevelLoading\LevelFiles\LifeScreen.csv";
+        public const string OverworldLevel = @"LevelLoading\LevelFiles\black.csv";
         public const int Top = 1, Right = 2, Bottom = 3, Left = 4;
         public const int SquareWidth = 32;
         public const int ScreenWidth = 800;
@@ -14,7 +13,7 @@
 
         //for flagpole testing change x pos to 6750
         public const int MarioStartingX = 100;
-        public const int MarioStartingY = 358;
+        public const int MarioStartingY = 50;
         public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
         public const int OutPipeStartingX = 5135;

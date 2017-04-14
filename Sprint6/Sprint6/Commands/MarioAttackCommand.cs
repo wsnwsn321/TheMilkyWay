@@ -1,8 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses.ItemClass;
-using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.Commands
 {

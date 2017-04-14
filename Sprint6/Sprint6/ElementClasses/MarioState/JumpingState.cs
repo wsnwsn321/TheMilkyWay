@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.ElementClasses
 {
@@ -23,18 +23,6 @@ namespace Sprint6.ElementClasses
         public void Draw(Vector2 position)
         {
             Sprite.Draw(new Vector2(position.X, position.Y));
-        }
-        public void ChangeForm(int form)
-        {
-            mainCharacter.marioState = form;
-            mainCharacter.state = new IdleState( mainCharacter);
-            mainCharacter.MarioIdle();
-        }
-
-        public void Idle()
-        {
-            mainCharacter.state = new IdleState(mainCharacter);
-            mainCharacter.MarioIdle();
         }
 
         public void Update()

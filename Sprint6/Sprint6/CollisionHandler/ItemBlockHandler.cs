@@ -1,9 +1,7 @@
 ﻿using Sprint6.ElementClasses.ElementInterfaces;
 using Sprint6.ElementClasses;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 using Microsoft.Xna.Framework;
-using Sprint6.ElementClasses.ItemClass;
-using Sprint6.ElementClasses.EnvironmentClass;
 
 namespace Sprint6.CollisionHandler
 {
@@ -14,7 +12,7 @@ namespace Sprint6.CollisionHandler
             Vector2 newPosition;
             int SIX = 6;
 
-            if (!(block.blockSprite is HiddenBlockSprite)&& !(item is BlockPiece) && block.isVisible)
+            if (block.isVisible)
             {
                 switch (CollisionSide)
                 {
@@ -22,55 +20,21 @@ namespace Sprint6.CollisionHandler
                         newPosition.X = item.itemSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y - item.itemSprite.desRectangle.Height- SIX;
                         item.position = newPosition;
-                        if(item.itemSprite is FireballSprite)
-                        {
-                            item.ItemChangeDirection();
-                        }
                         break;
                     case 2:
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                         newPosition.Y = item.itemSprite.desRectangle.Y;
                         item.position = newPosition;
-                        if(item.itemSprite is FireballSprite)
-                        {
-
-                            item.isVisible = !item.isVisible;
-                            IItem fireBallExplosion = new FireballExplosion(item.position);
-                            myGame.level.itemElements.Add(fireBallExplosion);
-                            
-                    
-                        }
-                        else
-                        {
-                            item.ItemChangeDirection();
-                        }
-                      
-
                         break;
                     case 3:
                         newPosition.X = item.itemSprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + item.itemSprite.desRectangle.Height;
                         item.position = newPosition;
-                        if (item.itemSprite is FireballSprite)
-                        {
-                            item.ItemChangeDirection();
-                        }
                         break;
                     case 4:
                         newPosition.X = block.blockSprite.desRectangle.X - item.itemSprite.desRectangle.Width;
                         newPosition.Y = item.itemSprite.desRectangle.Y;
                         item.position = newPosition;
-                        if (item.itemSprite is FireballSprite)
-                        {
-                            item.isVisible = !item.isVisible;
-                            IItem fireBallExplosion = new FireballExplosion(item.position);
-                            myGame.level.itemElements.Add(fireBallExplosion);
-  
-                        }
-                        else
-                        {
-                            item.ItemChangeDirection();
-                        }
                         break;
                 }
                

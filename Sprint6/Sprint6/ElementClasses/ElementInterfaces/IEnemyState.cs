@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.ElementClasses.ElementInterfaces
 {

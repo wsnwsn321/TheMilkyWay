@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Sprint6.CollisionHandler;
 using Sprint6.ElementClasses;
 using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses.ItemClass;
 using Sprint6.HUDElements;
 using Sprint6.SpriteFactories;
 using System.Collections.Generic;
@@ -29,7 +28,7 @@ namespace Sprint6.LevelLoading
 
         internal MainCharacter mainCharacter;
         Game1 myGame;
-
+        public int accel { get; set; }
 
         public Level(Game1 game)
         {
@@ -77,7 +76,11 @@ namespace Sprint6.LevelLoading
                     CollisionDetection.Instance.MainCharBlockCollision(myGame, mainCharacter, envElements);
                     CollisionDetection.Instance.MarioEnemyCollision(mainCharacter, enemyElements);
                     CollisionDetection.Instance.MarioItemCollision(mainCharacter, itemElements);
-                    mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity);
+                    if (accel != 5)
+                    {
+                        accel += 1;
+                    }
+                    mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity+accel);
                     mainCharacter.MainCharUpdate();
 
                     if ((mainCharacter.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
@@ -119,10 +122,10 @@ namespace Sprint6.LevelLoading
             }
             foreach (IEnemy enemy in enemyElements)
             {
-                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
-                {
-                    enemy.Draw();
-                }
+                //if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
+                //{
+                //    enemy.Draw();
+                //}
             }
             scoreSystem.DisplayScore(mainCharacter.totalScore);
             scoreSystem.CoinSystem(mainCharacter.cow);

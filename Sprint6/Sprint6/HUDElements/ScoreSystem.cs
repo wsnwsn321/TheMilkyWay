@@ -1,9 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint6.ElementClasses;
-using Sprint6.ElementClasses.ItemClass;
 using Sprint6.SpriteFactories;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,15 +15,12 @@ namespace Sprint6.HUDElements
     class ScoreSystem
     {
         Game1 mygame;
-        Coin c;
         static int timeElapsed = 0;
         static int timeLeft = GameConstants.InitialTimerValue;
      
         public ScoreSystem(Game1 game)
         {
             this.mygame = game;
-             c = new Coin(new Vector2(GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X,
-                GameConstants.ScreenHeight / GameConstants.Twelve));
         }
 
         public void DisplayScore(int score)
@@ -69,9 +65,6 @@ namespace Sprint6.HUDElements
             Vector2 newPos;
             newPos.X = (GameConstants.ScreenWidth / GameConstants.Three - mygame.GraphicsDevice.Viewport.X)- GameConstants.Ten* GameConstants.Two* GameConstants.Two;
             newPos.Y = GameConstants.ScreenHeight / (GameConstants.Ten+ GameConstants.Eight);
-            c.position = newPos;
-            c.Draw();
-            c.Update();
             String zero = "0";
             String output;
             if (coin > (GameConstants.Ten-1))
@@ -97,12 +90,6 @@ namespace Sprint6.HUDElements
             Vector2 FontOrigin1 = mygame.font.MeasureString(output1) / GameConstants.Two;
             Vector2 FontOrigin2 = mygame.font.MeasureString(output2) / GameConstants.Two;
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, output1, new Vector2(c.position.X+GameConstants.FourHund/2,
-                (GameConstants.ScreenHeight / GameConstants.Eleven)-GameConstants.Ten), Color.White,
-            0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, output2, new Vector2(c.position.X + GameConstants.FourHund/2,
-                (GameConstants.ScreenHeight / GameConstants.Eleven)+GameConstants.Ten), Color.White,
-            0, FontOrigin2, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
 
@@ -134,12 +121,12 @@ namespace Sprint6.HUDElements
             Vector2 FontOrigin1 = mygame.font.MeasureString(TIME) / GameConstants.Two;
             Vector2 FontOrigin2 = mygame.font.MeasureString(timer_num) / GameConstants.Two;
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, TIME, new Vector2(c.position.X +  GameConstants.FourHund,
-                (GameConstants.ScreenHeight / GameConstants.Eleven) -GameConstants.Ten), Color.White,
-            0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, timer_num, new Vector2(c.position.X +  GameConstants.FourHund,
-                (GameConstants.ScreenHeight / GameConstants.Eleven) +GameConstants.Ten), Color.White,
-            0, FontOrigin2, 1.5f, SpriteEffects.None, 1f);
+            //mygame.spriteBatch.DrawString(mygame.font, TIME, new Vector2(c.position.X +  GameConstants.FourHund,
+            //    (GameConstants.ScreenHeight / GameConstants.Eleven) -GameConstants.Ten), Color.White,
+            //0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
+            //mygame.spriteBatch.DrawString(mygame.font, timer_num, new Vector2(c.position.X +  GameConstants.FourHund,
+            //    (GameConstants.ScreenHeight / GameConstants.Eleven) +GameConstants.Ten), Color.White,
+            //0, FontOrigin2, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
     }

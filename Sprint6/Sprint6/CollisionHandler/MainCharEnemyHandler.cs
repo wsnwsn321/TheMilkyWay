@@ -1,6 +1,6 @@
 ﻿using Sprint6.ElementClasses.ElementInterfaces;
 using Sprint6.ElementClasses;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 using Microsoft.Xna.Framework;
 using Sprint6.Sound.MarioSound;
 
@@ -13,23 +13,21 @@ namespace Sprint6.CollisionHandler
             int THREE = 3;
             int SIX = 6;
             Vector2 newPosition;
-            if (!(enemy.enemySprite is GoombaFlippedSprite) && !(enemy.enemySprite is GoombaStompedSprite) && !(enemy.enemySprite is KoopaFlippedSprite))
+
+            switch (CollisionSide)
             {
-                switch (CollisionSide)
-                {
-                    case 1:
+                case 1:
                       
-                        break;
-                    case 2:
+                    break;
+                case 2:
                         
-                        break;
-                    case 3:
+                    break;
+                case 3:
                        
-                        break;
-                    case 4:
+                    break;
+                case 4:
                        
-                        break;
-                }
+                    break;
             }
         }
     }

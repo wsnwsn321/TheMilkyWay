@@ -24,6 +24,7 @@ namespace Sprint6.ElementClasses
         public bool animated { get; set; }
         public int animation { get; set; }
         public bool isVisible { get; set; }
+        private bool IsJumping;
 
         public bool isScored { get; set; }
         public int score { get; set; }
@@ -32,7 +33,7 @@ namespace Sprint6.ElementClasses
         public int cow { get; set; }
 
 
-        private int counter, scoreCounter;
+        private int JumpCounter, counter, scoreCounter;
   
 
         public MainCharacter(Game1 game, Vector2 position)
@@ -43,10 +44,12 @@ namespace Sprint6.ElementClasses
             this.position = position;
             canMove = true;
             scoreCounter = 0;
-            gravity = GameConstants.Two*GameConstants.Two;
+            gravity = 6;
             animated = false;
             isVisible = true;
             isScored = false;
+            IsJumping = false;
+            JumpCounter = 0;
         }
         public void MarioIdle()
         {
@@ -57,10 +60,15 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharJump()
         {
+            IsJumping = true;
+            JumpCounter = 20;
+            myGame.level.accel = 0;
+            myGame.level.mainCharacter.state.Sprite = UFOSpriteFactory.Instance.CreateJumpingUFOSprite();
         }
 
         public virtual void MainCharDraw()
         {
+            state.Draw(position);
             if (isScored)
             {
                 DrawScore();
@@ -68,7 +76,21 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharUpdate()
         {
-            position = new Vector2(position.X+5,position.Y);
+            state.Sprite.Update();
+            if (IsJumping)
+            {
+                position = new Vector2(position.X+3, position.Y - (float)(JumpCounter/1.5));
+                JumpCounter--;
+                if (JumpCounter == 0)
+                {
+                    IsJumping = !IsJumping;
+                    state.Sprite = UFOSpriteFactory.Instance.CreateFlyingUFOSprite();
+                }
+            }
+            else
+            {
+                  position = new Vector2(position.X+3,position.Y);
+            }
         }
 
         public void UFODie()

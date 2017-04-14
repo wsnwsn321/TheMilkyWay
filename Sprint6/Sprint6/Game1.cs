@@ -5,7 +5,6 @@ using Sprint6.Commands;
 using Sprint6.Controller;
 using Sprint6.SpriteFactories;
 using Sprint6.LevelLoading;
-using Sprint6.ElementClasses.BackgroundClass;
 using Sprint6.ElementClasses;
 using Sprint6.Sound.MarioSound;
 using Sprint6.Sound.BackgroundMusic;
@@ -91,9 +90,7 @@ namespace Sprint6
 
             keyboardController.RegisterCommand(Keys.Space, new PauseGameCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
-            keyboardController.RegisterCommand(Keys.C, new MarioChangeFormCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
-            keyboardController.RegisterCommand(Keys.BrowserBack, new MarioIdleCommand(this));
             keyboardController.RegisterCommand(Keys.X, new MarioAttackCommand(this));
 
             gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
@@ -105,9 +102,7 @@ namespace Sprint6
         {
             ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            EnemySpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             UFOSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MainCharSoundManager.instance.LoadSound(Content);
             BackgroundMusic.instanse.LoadSound(Content);
        
@@ -116,8 +111,8 @@ namespace Sprint6
 
         public void ResetGame()
         {
-            Initialize();
             LoadContent();
+            Initialize();
             resetTime = true;
         }
     }

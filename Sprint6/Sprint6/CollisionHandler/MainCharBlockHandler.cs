@@ -1,11 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint6.ElementClasses;
 using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses.EnvironmentClass;
-using Sprint6.ElementClasses.ItemClass;
 using Sprint6.Sound.MarioSound;
 using Sprint6.SpriteFactories;
-using Sprint6.Sprites;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.CollisionHandler
 {
@@ -37,7 +35,6 @@ namespace Sprint6.CollisionHandler
                         mainCharacter.position = newPosition;
                         break;
                     case 3: //bottom collision
-                        mainCharacter.jump = false;
                         newPosition.X = mainCharacter.state.Sprite.desRectangle.X;
                         newPosition.Y = block.blockSprite.desRectangle.Y + block.blockSprite.desRectangle.Height+THREE;
                         mainCharacter.position = newPosition;

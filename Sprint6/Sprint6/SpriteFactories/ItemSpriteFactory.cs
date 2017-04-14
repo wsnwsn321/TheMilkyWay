@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.SpriteFactories
 {
@@ -45,57 +46,7 @@ namespace Sprint6.SpriteFactories
         }
 
         //create item sprites
-        public Sprites.ISprite CreateFlowerSprite()
-        {
-            return new Sprites.FlowerSprite(flowerSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateStarSprite()
-        {
-            return new Sprites.StarSprite(starSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateGreenMushroomSprite()
-        {
-            return new Sprites.GreenMushroomSprite(mushroomSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateRedMushroomSprite()
-        {
-            return new Sprites.RedMushroomSprite(mushroomSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateCoinSprite()
-        {
-            return new Sprites.CoinSprite(coinSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateFireballSprite()
-        {
-            return new Sprites.FireballSprite(fireballSpritesheet, sb);
-        }
-
-        public Sprites.ISprite CreateBlockPiece1Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece2Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece3Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateBlockPiece4Sprite()
-        {
-            return new Sprites.BlockPiece1Sprite(blockPieceSpritesheet, sb);
-        }
-        public Sprites.ISprite CreateFireballExplosionSprite()
-        {
-            return new Sprites.FireballExplosionSprite(fireballExplosionSpritesheet, sb);
-        }
-
+       
 
 
     }

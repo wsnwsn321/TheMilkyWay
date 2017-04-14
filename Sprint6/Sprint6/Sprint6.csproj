@@ -42,44 +42,19 @@
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
-    <Compile Include="CollisionHandler\EnemyEnemyHandler.cs" />
     <Compile Include="CollisionHandler\ItemEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MainCharItemHandler.cs" />
     <Compile Include="CollisionHandler\MainCharEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MainCharBlockHandler.cs" />
-    <Compile Include="Commands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioAttackCommand.cs" />
     <Compile Include="Commands\MarioJumpCommand.cs" />
-    <Compile Include="Commands\MarioChangeFormCommand.cs" />
     <Compile Include="Commands\PauseGameCommand.cs" />
-    <Compile Include="Commands\QuestionBlockToUsedBlockCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\Flag.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\Flagpole.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\Castle.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\BigBrush.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\BigCloud.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\BigMountain.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\SmallBrush.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\SmallCloud.cs" />
-    <Compile Include="ElementClasses\BackgroundClass\SmallMountain.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemyState.cs" />
-    <Compile Include="ElementClasses\EnemyState\GoombaState\GoombaStompedState.cs" />
-    <Compile Include="ElementClasses\EnemyState\GoombaState\GoombaIdleState.cs" />
-    <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaFlipState.cs" />
-    <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaIdleState.cs" />
-    <Compile Include="ElementClasses\EnemyState\KoopaState\KoopaShellState.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\BlockPiece.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\BrickBlockCC.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\BrickBlockC.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\BrickBlockS.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockC.cs" />
-    <Compile Include="ElementClasses\ItemClass\FireballExplosion.cs" />
-    <Compile Include="ElementClasses\ItemClass\Fireball.cs" />
     <Compile Include="ElementClasses\UFOState\FlyingState.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
@@ -94,71 +69,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sound\BackgroundMusic\BackgroundMusic.cs" />
     <Compile Include="Sound\MarioSound\MainCharSoundManager.cs" />
-    <Compile Include="SpriteFactories\BackgroundSpriteFactory.cs" />
-    <Compile Include="SpriteFactories\EnemySpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
-    <Compile Include="Sprites\BackgroundSprite\FlagSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\FlagpoleSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\CastleSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\BigBrushSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\BigCloudSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\BigMountainSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\SmallBrushSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\SmallCloudSprite.cs" />
-    <Compile Include="Sprites\BackgroundSprite\SmallMountainSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BlockPiece4Sprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BlockPiece3Sprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BlockPiece2Sprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BlockPiece1Sprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BlueBrickBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BlueGroundBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\FireballExplosionSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\GoombaFlippedSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\GoombaStompedSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\GroundBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\GoombaSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\HiddenBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\KoopaLeftSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\KoopaFlippedSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\KoopaStompedSprite .cs" />
-    <Compile Include="Sprites\OtherSprite\QuestionBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\BrickBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\StageBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\FireballSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\UsedBlockSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\CoinSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\ISprite.cs" />
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
     <Compile Include="SpriteFactories\UFOSpriteFactory.cs" />
-    <Compile Include="Sprites\OtherSprite\KoopaRightSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\PipeSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\FlowerSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\GreenMushroomSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\RedMushroomSprite.cs" />
-    <Compile Include="Sprites\OtherSprite\StarSprite.cs" />
-    <Compile Include="ElementClasses\CharacterClass\Enemies\Goomba.cs" />
-    <Compile Include="ElementClasses\CharacterClass\Enemies\Koopa.cs" />
     <Compile Include="ElementClasses\CharacterClass\MainCharacter\MainCharacter.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\Pipe.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\GroundBlock.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\StageBlock.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\QuestionBlockM.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\UsedBlock.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\HiddenBlock.cs" />
-    <Compile Include="ElementClasses\EnvironmentClass\BrickBlock.cs" />
-    <Compile Include="ElementClasses\ItemClass\Star.cs" />
-    <Compile Include="ElementClasses\ItemClass\RedMushroom.cs" />
-    <Compile Include="ElementClasses\ItemClass\GreenMushroom.cs" />
-    <Compile Include="ElementClasses\ItemClass\Flower.cs" />
-    <Compile Include="ElementClasses\ItemClass\Coin.cs" />
     <Compile Include="ElementClasses\MarioState\DeadState.cs" />
-    <Compile Include="ElementClasses\MarioState\IdleState.cs" />
     <Compile Include="ElementClasses\MarioState\JumpingState.cs" />
-    <Compile Include="ElementClasses\MarioState\RunningState.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemy.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IState.cs" />
+    <Compile Include="Sprites\UFOSprite\ISprite.cs" />
+    <Compile Include="Sprites\UFOSprite\UFOJumpingSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOFlyingSprite.cs" />
     <Compile Include="VolecotyTest\TwoVolecity.cs" />
     <Compile Include="VolecotyTest\Volecity.cs" />
@@ -201,26 +123,6 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\Level1-1.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\gumbo.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\cool.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\cTest.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\Level1-1Full.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -231,12 +133,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\Underworld.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="ElementClasses\EnvironmentClass\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\LifeScreen.csv">
+    <Content Include="LevelLoading\LevelFiles\black.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -40,10 +40,6 @@ namespace Sprint6.Controller
                 KeyboardState NewState = Keyboard.GetState();
 
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-                if (pressedKeys.Length == 0)
-                {
-                    controllerMappings[Keys.BrowserBack].Execute();
-                }
 
                 foreach (Keys key in pressedKeys)
                 {
@@ -58,6 +54,13 @@ namespace Sprint6.Controller
                         if (key.Equals(Keys.X))
                         {
                             if (NewState.IsKeyDown(Keys.X) && OldState.IsKeyUp(Keys.X))
+                            {
+                                controllerMappings[key].Execute();
+                            }
+                        }
+                        if (key.Equals(Keys.W))
+                        {
+                            if (NewState.IsKeyDown(Keys.W) && OldState.IsKeyUp(Keys.W))
                             {
                                 controllerMappings[key].Execute();
                             }
