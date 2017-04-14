@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System.IO;
+using Sprint6.ElementClasses;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.LevelLoading
 {
@@ -37,6 +39,10 @@ namespace Sprint6.LevelLoading
                             level.backgroundColor = Color.CornflowerBlue;        
                             break;
                         case "UNDERWORLD":
+                            level.backgroundColor = Color.TransparentBlack;
+                            break;
+                        case "Silo":
+                            level.envElements.Add(new Silo(new Vector2(x,y)));
                             level.backgroundColor = Color.TransparentBlack;
                             break;
                         case "0":

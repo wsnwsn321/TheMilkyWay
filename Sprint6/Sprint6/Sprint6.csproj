@@ -55,6 +55,7 @@
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemyState.cs" />
+    <Compile Include="ElementClasses\EnvironmentClass\Silo.cs" />
     <Compile Include="ElementClasses\UFOState\FlyingState.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Commands\ICommand.cs" />
@@ -80,6 +81,8 @@
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IState.cs" />
     <Compile Include="Sprites\UFOSprite\ISprite.cs" />
+    <Compile Include="Sprites\UFOSprite\CowSprite.cs" />
+    <Compile Include="Sprites\UFOSprite\SiloSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOJumpingSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOFlyingSprite.cs" />
     <Compile Include="VolecotyTest\TwoVolecity.cs" />
@@ -132,9 +135,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ElementClasses\EnvironmentClass\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\black.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

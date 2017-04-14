@@ -13,7 +13,7 @@ namespace Sprint6.CollisionHandler
         {
             Vector2 newPosition;
             int SIX= 6;
-            if (!enemy.flip&&block.isBroken==false&&block.isVisible)
+            if (block.isVisible)
             {
                 switch (CollisionSide)
                 {
