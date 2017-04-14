@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint6.Sprites;
 using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.ElementClasses
@@ -11,19 +12,19 @@ namespace Sprint6.ElementClasses
         public DeadState(MainCharacter mainCharacter)
         {
             this.mainCharacter = mainCharacter;
-            Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateDeadUFOSprite();
+            Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
 
 
         }
         public void Idle()
         {
-            Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateDeadUFOSprite();
+            Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
 
         }
 
         public void Jump()
         {
-            Sprite = SpriteFactories.UFOSpriteFactory.Instance.CreateDeadUFOSprite();
+            Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
         }
 
         public void Draw(Vector2 position)

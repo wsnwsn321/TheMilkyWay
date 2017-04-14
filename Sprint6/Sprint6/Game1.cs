@@ -56,7 +56,7 @@ namespace Sprint6
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY)); ;
+            level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
            
         }
 
@@ -75,7 +75,7 @@ namespace Sprint6
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(level.backgroundColor);
+            GraphicsDevice.Clear(Color.White);
             level.Draw();
             if(displayLifeText)
             {
@@ -102,7 +102,8 @@ namespace Sprint6
         {
             ItemSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            UFOSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
+            CharacterSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             MainCharSoundManager.instance.LoadSound(Content);
             BackgroundMusic.instanse.LoadSound(Content);
        

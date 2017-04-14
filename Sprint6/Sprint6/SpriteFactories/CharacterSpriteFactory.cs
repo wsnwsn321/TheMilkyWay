@@ -2,20 +2,21 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint6.Sprites.UFOSprite;
+using Sprint6.Sprites;
 
 namespace Sprint6.SpriteFactories
 {
-    class UFOSpriteFactory
+    class CharacterSpriteFactory
     {
-        private Texture2D flyingUFOSpritesheet;
+        private Texture2D flyingUFOSpritesheet, cowSpritesheet;
         private static UFOFlyingSprite ufo;
         private static UFOJumpingSprite  ufo2;
         private static bool first = true;
 
         private SpriteBatch sb { set; get; }
-        private static UFOSpriteFactory instance = new UFOSpriteFactory();
+        private static CharacterSpriteFactory instance = new CharacterSpriteFactory();
 
-        public static UFOSpriteFactory Instance
+        public static CharacterSpriteFactory Instance
         {
             get
             {
@@ -23,13 +24,14 @@ namespace Sprint6.SpriteFactories
             }
         }
 
-        private UFOSpriteFactory()
+        private CharacterSpriteFactory()
         {
         }
 
         public void LoadAllTextures(ContentManager content,SpriteBatch sb)
         {
             flyingUFOSpritesheet = content.Load<Texture2D>("MainCharacter/UFO/ufo");
+            cowSpritesheet = content.Load<Texture2D>("UFOGameObjects/Cowsheet");
             this.sb = sb;
         }
 
@@ -56,7 +58,12 @@ namespace Sprint6.SpriteFactories
         }
         public ISprite CreateDeadUFOSprite()
         {
-            return new Sprites.UFOSprite.UFOFlyingSprite(flyingUFOSpritesheet, sb, 0);
+            return new UFOFlyingSprite(flyingUFOSpritesheet, sb, 0);
+        }
+
+        public ISprite CreateLivingCowSprite()
+        {
+            return new CowSprite(cowSpritesheet, sb, 0);
         }
     }
 }

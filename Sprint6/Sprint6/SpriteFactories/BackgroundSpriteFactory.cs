@@ -1,20 +1,19 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint6.Sprites;
-using Sprint6.Sprites.EnvironmentSprite;
 using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.SpriteFactories
 {
-    class EnvironmentSpriteFactory
+    class BackgroundSpriteFactory
     {
-        private Texture2D farmPackSpritesheet;
+        private Texture2D starryNightSpritesheet;
 
 
         public SpriteBatch sb { get; set; }
-        private static EnvironmentSpriteFactory instance = new EnvironmentSpriteFactory();
+        private static BackgroundSpriteFactory instance = new BackgroundSpriteFactory();
 
-        public static EnvironmentSpriteFactory Instance
+        public static BackgroundSpriteFactory Instance
         {
             get
             {
@@ -22,7 +21,7 @@ namespace Sprint6.SpriteFactories
             }
         }
 
-        private EnvironmentSpriteFactory()
+        private BackgroundSpriteFactory()
         {
         }
 
@@ -31,16 +30,16 @@ namespace Sprint6.SpriteFactories
             //load sprite sheets here**************************************
             //one example is below
 
-            farmPackSpritesheet = content.Load<Texture2D>("UFOGameObjects/FarmPack");
+            starryNightSpritesheet = content.Load<Texture2D>("UFOGameObjects/StarryNight");
 
             this.sb = sb;
 
         }
 
         //create environment sprites
-        public ISprite CreateSiloSprite()
+        public ISprite CreateStarryNightSprite()
         {
-            return new SiloSprite(farmPackSpritesheet, sb, 0);
+            return new StarryNightSprite(starryNightSpritesheet, sb);
         }
     }
 }

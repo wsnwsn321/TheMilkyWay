@@ -53,6 +53,8 @@
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\StarryNight.cs" />
+    <Compile Include="ElementClasses\CharacterClass\CowCharacter\CowCharacter.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemyState.cs" />
     <Compile Include="ElementClasses\EnvironmentClass\Silo.cs" />
@@ -70,9 +72,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sound\BackgroundMusic\BackgroundMusic.cs" />
     <Compile Include="Sound\MarioSound\MainCharSoundManager.cs" />
+    <Compile Include="SpriteFactories\BackgroundSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
-    <Compile Include="SpriteFactories\UFOSpriteFactory.cs" />
+    <Compile Include="SpriteFactories\CharacterSpriteFactory.cs" />
     <Compile Include="ElementClasses\CharacterClass\MainCharacter\MainCharacter.cs" />
     <Compile Include="ElementClasses\MarioState\DeadState.cs" />
     <Compile Include="ElementClasses\MarioState\JumpingState.cs" />
@@ -80,9 +83,10 @@
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IState.cs" />
-    <Compile Include="Sprites\UFOSprite\ISprite.cs" />
+    <Compile Include="Sprites\BackgroundSprite\StarryNightSprite.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
     <Compile Include="Sprites\UFOSprite\CowSprite.cs" />
-    <Compile Include="Sprites\UFOSprite\SiloSprite.cs" />
+    <Compile Include="Sprites\EnvironmentSprite\SiloSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOJumpingSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOFlyingSprite.cs" />
     <Compile Include="VolecotyTest\TwoVolecity.cs" />

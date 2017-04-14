@@ -21,7 +21,7 @@ namespace Sprint6.LevelLoading
         internal ScoreSystem scoreSystem;
 
         public string currentLevel { get; set; }
-        public Color backgroundColor { get; set; }
+        public IBackground background { get; set; }
         private int gameWidth, gameHeight;
         private bool IsPaused { get; set;}
         int camX = 0;
@@ -36,8 +36,7 @@ namespace Sprint6.LevelLoading
             myGame = game;
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
-            backgroundColor = Color.CornflowerBlue;
-            mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MarioStartingX, GameConstants.MarioStartingY));
+            mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
             
         }
 
@@ -80,6 +79,7 @@ namespace Sprint6.LevelLoading
                     {
                         accel += 1;
                     }
+                    
                     mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity+accel);
                     mainCharacter.MainCharUpdate();
 
@@ -99,6 +99,8 @@ namespace Sprint6.LevelLoading
         public void Draw()
         {
             myGame.GraphicsDevice.Viewport = new Viewport(camX, 0, gameWidth, gameHeight);
+
+            background.Draw();
 
             foreach (IBackground back in backgroundElements)
             {

@@ -40,7 +40,7 @@ namespace Sprint6.ElementClasses
         {
             myGame = game;
             state = new FlyingState(this);
-            state.Sprite = UFOSpriteFactory.Instance.CreateFlyingUFOSprite();
+            state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
             this.position = position;
             canMove = true;
             scoreCounter = 0;
@@ -63,7 +63,7 @@ namespace Sprint6.ElementClasses
             IsJumping = true;
             JumpCounter = 20;
             myGame.level.accel = 0;
-            myGame.level.mainCharacter.state.Sprite = UFOSpriteFactory.Instance.CreateJumpingUFOSprite();
+            myGame.level.mainCharacter.state.Sprite = CharacterSpriteFactory.Instance.CreateJumpingUFOSprite();
         }
 
         public virtual void MainCharDraw()
@@ -79,17 +79,17 @@ namespace Sprint6.ElementClasses
             state.Sprite.Update();
             if (IsJumping)
             {
-                position = new Vector2(position.X+3, position.Y - (float)(JumpCounter/1.5));
+                position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y - (float)(JumpCounter/1.5));
                 JumpCounter--;
                 if (JumpCounter == 0)
                 {
                     IsJumping = !IsJumping;
-                    state.Sprite = UFOSpriteFactory.Instance.CreateFlyingUFOSprite();
+                    state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
                 }
             }
             else
             {
-                  position = new Vector2(position.X+3,position.Y);
+                  position = new Vector2(position.X + GameConstants.UFOSpeedX,position.Y);
             }
         }
 

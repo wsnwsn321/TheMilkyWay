@@ -12,8 +12,9 @@
         public const int LifeScreenTime = 200;
 
         //for flagpole testing change x pos to 6750
-        public const int MarioStartingX = 100;
-        public const int MarioStartingY = 50;
+        public const int UFOSpeedX = 4;
+        public const int MainCharStartingX = 100;
+        public const int MainCharStartingY = 50;
         public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
         public const int OutPipeStartingX = 5135;

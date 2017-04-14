@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint6.Sprites;
 using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.ElementClasses.ElementInterfaces

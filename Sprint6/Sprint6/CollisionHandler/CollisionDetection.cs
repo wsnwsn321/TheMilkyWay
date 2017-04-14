@@ -135,14 +135,14 @@ namespace Sprint6.CollisionHandler
 
         public void MarioItemCollision(MainCharacter mainCharacter, List<IItem> itemElements)
         {
-            SIDE = GameConstants.Top;
-            foreach (IItem item in itemElements)
-            {     
-                if (mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle))
-                {
-                    MainCharItemHandler.ItemHandler( myGame,mainCharacter, item);
-                }
-            }
+         //   SIDE = GameConstants.Top;
+           // foreach (IItem item in itemElements)
+            //{     
+             //   if (mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+              //  {
+               //     MainCharItemHandler.ItemHandler( myGame,mainCharacter, item);
+             //   }
+         //   }
         }
 
        

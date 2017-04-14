@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.Sprites.UFOSprite;
+using Sprint6.Sprites;
 
 namespace Sprint6.ElementClasses.ElementInterfaces
 {
@@ -9,7 +9,5 @@ namespace Sprint6.ElementClasses.ElementInterfaces
         void Draw();
         void Update();
         ISprite backgroundSprite { get; set; }
-
-        bool moveDown { get; set; }
     }
 }

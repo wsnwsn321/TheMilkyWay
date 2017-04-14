@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint6.Sprites.UFOSprite
 {
-    public class SiloSprite : ISprite
+    public class StarryNightSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -14,11 +14,11 @@ namespace Sprint6.Sprites.UFOSprite
 
         Vector2 p;
 
-        public SiloSprite(Texture2D texture,SpriteBatch sb, int currentF)
+        public StarryNightSprite(Texture2D texture,SpriteBatch sb)
         {
             Texture = texture;
             this.sb = sb;
-            currentFrame = currentF;
+            currentFrame = 0;
             tintColor = Color.White;
         }
         public void Update()
@@ -34,8 +34,8 @@ namespace Sprint6.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(1690, 25, 340, 1332);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 200, 1000);
+            Rectangle sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, GameConstants.ScreenWidth, GameConstants.ScreenHeight);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

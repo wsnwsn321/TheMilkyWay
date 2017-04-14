@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sprint6.Sprites.UFOSprite
+namespace Sprint6.Sprites.EnvironmentSprite
 {
-    public class CowSprite : ISprite
+    public class SiloSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -12,32 +12,18 @@ namespace Sprint6.Sprites.UFOSprite
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
 
-        private int totalFrames;
-
-        private int counter;
-
         Vector2 p;
 
-        public CowSprite(Texture2D texture,SpriteBatch sb, int currentF)
+        public SiloSprite(Texture2D texture,SpriteBatch sb, int currentF)
         {
             Texture = texture;
             this.sb = sb;
-            totalFrames = 4;
-            counter = 0;
             currentFrame = currentF;
             tintColor = Color.White;
         }
         public void Update()
         {
-            counter++;
-            if (counter % 10==0)
-            {
-                currentFrame++;
-            }
-            if (currentFrame >= totalFrames)
-            {
-                currentFrame = 0;
-            }
+
         }
 
         public Vector2 ReturnPosition()
@@ -48,8 +34,8 @@ namespace Sprint6.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 0, 64, 64);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 64);
+            Rectangle sourceRectangle = new Rectangle(1690, 25, 340, 1332);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 130);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

@@ -36,14 +36,17 @@ namespace Sprint6.LevelLoading
                     switch (obj)
                     {
                         case "OVERWORLD":
-                            level.backgroundColor = Color.CornflowerBlue;        
                             break;
                         case "UNDERWORLD":
-                            level.backgroundColor = Color.TransparentBlack;
+                            break;
+                        case "StarryNight":
+                            level.background = new StarryNight(new Vector2(x,y));
                             break;
                         case "Silo":
                             level.envElements.Add(new Silo(new Vector2(x,y)));
-                            level.backgroundColor = Color.TransparentBlack;
+                            break;
+                        case "Cow":
+                            level.itemElements.Add(new CowCharacter(new Vector2(x, y)));
                             break;
                         case "0":
                             break;
