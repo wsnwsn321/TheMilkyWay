@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
 using Sprint6.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
+using MyGame;
 
 namespace Sprint6.CollisionHandler
 {
@@ -24,10 +25,7 @@ namespace Sprint6.CollisionHandler
 
         public static CollisionDetection Instance
         {
-            get
-            {
-                return instance;
-            }
+            get { return instance; }
         }
 
         private CollisionDetection()
@@ -38,10 +36,20 @@ namespace Sprint6.CollisionHandler
         {
             myGame = game;
             mainCharacter.gravity = 0;
+            bool intersect = false;
             foreach (IBlock block in envElements)
             {
-                if (mainCharacter.state.Sprite.desRectangle.Intersects(block.blockSprite.desRectangle))
+
+                foreach (Circle c in mainCharacter.state.Sprite.circles)
                 {
+                    if (c.Intersects(block.blockSprite.desRectangle))
+                    {
+                        intersect = true;
+                    }
+                }
+                if (intersect)
+                {
+                    mainCharacter.canMove = false;
                     firstRectangle = mainCharacter.state.Sprite.desRectangle;
                     secondRectangle = block.blockSprite.desRectangle;
                     collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
@@ -107,7 +115,7 @@ namespace Sprint6.CollisionHandler
                             SIDE = GameConstants.Left;
                         }
                     }
-                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven+ GameConstants.Two)
+                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
                     {
                         EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
                     }
@@ -117,9 +125,50 @@ namespace Sprint6.CollisionHandler
 
         public void ItemBlockCollision(IItem item, List<IBlock> envElements)
         {
-            
+            foreach (IBlock block in envElements)
+            {
+                if (item.itemSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
+                {
+                    firstRectangle = item.itemSprite.desRectangle;
+                    secondRectangle = block.blockSprite.desRectangle;
+                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
+                    if (collideRectangle.Width > collideRectangle.Height)
+                    {
+                        if (firstRectangle.Top > secondRectangle.Top)
+                        {
+                            SIDE = GameConstants.Bottom;
+                        }
+                        else
+                        {
+                            SIDE = GameConstants.Top;
+                        }
+                    }
+                    else if (collideRectangle.Width <= collideRectangle.Height)
+                    {
+                        if (firstRectangle.Left > secondRectangle.Left)
+                        {
+                            SIDE = GameConstants.Right;
+                        }
+                        else
+                        {
+                            SIDE = GameConstants.Left;
+                        }
+                    }
+                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
+                    {
+                        ItemBlockHandler.BlockHandler(myGame, item, block, SIDE);
+                        if (SIDE == 1)
+                        {
+                            item.gravity = 0;
+                        }
+                        else
+                        {
+                            item.gravity = 3;
+                        }
+                    }
+                }
+            }
         }
-
         public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements, MainCharacter mainCharacter)
         {
             SIDE = GameConstants.Top;
@@ -143,17 +192,25 @@ namespace Sprint6.CollisionHandler
                //     MainCharItemHandler.ItemHandler( myGame,mainCharacter, item);
              //   }
          //   }
-        }
-
-       
+        }       
 
         public void MarioEnemyCollision(MainCharacter mainCharacter, List<IEnemy> enemyElements)
         {
 
             foreach (IEnemy enemy in enemyElements)
             {
-                if (mainCharacter.state.Sprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
+                bool intersect = false;
+
+                foreach (Circle c in enemy.enemySprite.circles)
                 {
+                    if (c.Intersects(mainCharacter.state.Sprite.desRectangle))
+                    {
+                        intersect = true;
+                    }
+                }
+                if (intersect)
+                {
+                    mainCharacter.canMove = false;
                     firstRectangle = mainCharacter.state.Sprite.desRectangle;
                     secondRectangle = enemy.enemySprite.desRectangle;
                     collideRectangle = Rectangle.Intersect(mainCharacter.state.Sprite.desRectangle, enemy.enemySprite.desRectangle);

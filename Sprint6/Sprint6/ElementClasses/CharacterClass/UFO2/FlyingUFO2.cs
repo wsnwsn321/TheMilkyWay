@@ -13,9 +13,6 @@ namespace Sprint6.ElementClasses
         public ISprite enemySprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
-
-        public ISprite itemSprite { get; set; }
-
         public float gravity { get; set; }
 
         public FlyingUFO2(Vector2 pos)

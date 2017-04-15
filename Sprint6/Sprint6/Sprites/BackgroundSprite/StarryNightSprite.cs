@@ -1,5 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MyGame;
 
 namespace Sprint6.Sprites.UFOSprite
 {
@@ -11,6 +13,8 @@ namespace Sprint6.Sprites.UFOSprite
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
+        public List<Circle> circles { get; set; }
+
 
         Vector2 p;
 

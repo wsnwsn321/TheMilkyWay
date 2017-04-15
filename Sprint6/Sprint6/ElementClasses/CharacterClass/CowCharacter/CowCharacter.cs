@@ -10,7 +10,6 @@ namespace Sprint6.ElementClasses
     public class CowCharacter : IItem
 
     {
-        public ISprite blockSprite { get; set; }
         public Vector2 position { get; set; }
         public bool isVisible { get; set; }
 
@@ -21,8 +20,8 @@ namespace Sprint6.ElementClasses
         public CowCharacter(Vector2 pos)
         {
             position = pos;
-
-            blockSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateLivingCowSprite();
+            gravity = 3;
+            itemSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateLivingCowSprite();
             isVisible = true;
 
         }
@@ -32,7 +31,7 @@ namespace Sprint6.ElementClasses
             if (isVisible)
             {
 
-                blockSprite.Draw(position);
+                itemSprite.Draw(position);
             }
 
         }
@@ -44,12 +43,7 @@ namespace Sprint6.ElementClasses
 
             }
 
-            blockSprite.Update();
-        }
-
-        public void ItemChangeDirection()
-        {
-            throw new NotImplementedException();
+            itemSprite.Update();
         }
     }
 }

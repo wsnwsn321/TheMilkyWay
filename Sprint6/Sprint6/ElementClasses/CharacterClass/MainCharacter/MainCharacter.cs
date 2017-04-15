@@ -76,20 +76,23 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharUpdate()
         {
-            state.Sprite.Update();
-            if (IsJumping)
+            if (canMove)
             {
-                position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y - (float)(JumpCounter/1.5));
-                JumpCounter--;
-                if (JumpCounter == 0)
+                state.Sprite.Update();
+                if (IsJumping)
                 {
-                    IsJumping = !IsJumping;
-                    state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
+                    position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y - (float)(JumpCounter / 1.5));
+                    JumpCounter--;
+                    if (JumpCounter == 0)
+                    {
+                        IsJumping = !IsJumping;
+                        state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
+                    }
                 }
-            }
-            else
-            {
-                  position = new Vector2(position.X + GameConstants.UFOSpeedX,position.Y);
+                else
+                {
+                    position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y);
+                }
             }
         }
 

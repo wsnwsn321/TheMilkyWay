@@ -1,11 +1,13 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MyGame;
 
 namespace Sprint6.Sprites.UFOSprite
 {
     public class CowSprite : ISprite
-
     {
+        public List<Circle> circles { get; set; }
         public Texture2D Texture { get; set; }
         public int currentFrame { get; set; }
         private SpriteBatch sb;
@@ -48,8 +50,8 @@ namespace Sprint6.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 0, 64, 64);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 64);
+            Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 22, 64, 43);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 43);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

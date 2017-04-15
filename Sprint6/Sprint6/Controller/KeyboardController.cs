@@ -13,8 +13,10 @@ namespace Sprint6.Controller
         private bool wDown;
         private static int resetOnce=1;
         public bool keysEnabled { get; set; }
-        public KeyboardController()
+        private Game1 myGame;
+        public KeyboardController(Game1 game)
         {
+            myGame = game;
             controllerMappings = new Dictionary<Keys, ICommand>();
             keysEnabled = true;
         }
@@ -43,7 +45,11 @@ namespace Sprint6.Controller
 
                 foreach (Keys key in pressedKeys)
                 {
-                    if (controllerMappings.ContainsKey(key))
+                    if (key.Equals(Keys.Q)||key.Equals(Keys.R))
+                    {
+                        controllerMappings[key].Execute();
+                    }
+                    if (controllerMappings.ContainsKey(key)&&myGame.level.mainCharacter.canMove)
                     {
                         if (key.Equals(Keys.W))
                         {

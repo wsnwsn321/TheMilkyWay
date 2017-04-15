@@ -50,6 +50,7 @@ namespace Sprint6.LevelLoading
                     if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
                     {
                         CollisionDetection.Instance.EnemyBlockCollision(mainCharacter, enemy, envElements);
+
                         enemy.Update();
                     }
                 }
@@ -57,6 +58,7 @@ namespace Sprint6.LevelLoading
                 foreach (IItem item in itemElements)
                 {
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
+                    item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
                     item.Update();
                 }
 
@@ -79,9 +81,11 @@ namespace Sprint6.LevelLoading
                     {
                         accel += 1;
                     }
-                    
-                    mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity+accel);
-                    mainCharacter.MainCharUpdate();
+                    if (mainCharacter.canMove)
+                    {
+                        mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity + accel);
+                        mainCharacter.MainCharUpdate();
+                    }
 
                     if ((mainCharacter.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
                     {

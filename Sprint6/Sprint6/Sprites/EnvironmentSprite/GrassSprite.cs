@@ -1,11 +1,14 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MyGame;
 
 namespace Sprint6.Sprites.EnvironmentSprite
 {
     public class GrassSprite : ISprite
 
     {
+        public List<Circle> circles { get; set; }
         public Texture2D Texture { get; set; }
         public int currentFrame { get; set; }
         private SpriteBatch sb;

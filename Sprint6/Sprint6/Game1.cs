@@ -41,7 +41,7 @@ namespace Sprint6
 
         protected override void Initialize()
         {
-            keyboardController = new KeyboardController();
+            keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController();
             level = new Level(this);
             lifeText = new LifeText(this);
