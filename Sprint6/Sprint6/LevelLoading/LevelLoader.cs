@@ -40,13 +40,26 @@ namespace Sprint6.LevelLoading
                         case "UNDERWORLD":
                             break;
                         case "StarryNight":
-                            level.background = new StarryNight(new Vector2(x,y));
+                            for (int i = 0; i < 100; i++)
+                            {
+                                level.background = new StarryNight(new Vector2(x, y));
+                                level.backgroundElements.Add(new StarryNight(new Vector2(x + GameConstants.ScreenWidth*i, y)));
+                            }                            
                             break;
                         case "Silo":
                             level.envElements.Add(new Silo(new Vector2(x,y)));
                             break;
+                        case "Grass":
+                            level.envElements.Add(new Grass(new Vector2(x,y+3)));
+                            break;
+                        case "Barn":
+                            level.envElements.Add(new Barn(new Vector2(x, y)));
+                            break;
                         case "Cow":
                             level.itemElements.Add(new CowCharacter(new Vector2(x, y)));
+                            break;
+                        case "UFO2":
+                            level.enemyElements.Add(new FlyingUFO2(new Vector2(x, y)));
                             break;
                         case "0":
                             break;

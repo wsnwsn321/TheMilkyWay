@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint6.Sprites.EnvironmentSprite
 {
-    public class SiloSprite : ISprite
+    public class GrassSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }
@@ -14,7 +14,7 @@ namespace Sprint6.Sprites.EnvironmentSprite
 
         Vector2 p;
 
-        public SiloSprite(Texture2D texture,SpriteBatch sb, int currentF)
+        public GrassSprite(Texture2D texture,SpriteBatch sb, int currentF)
         {
             Texture = texture;
             this.sb = sb;
@@ -34,8 +34,8 @@ namespace Sprint6.Sprites.EnvironmentSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(1690, 25, 340, 1332);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 260);
+            Rectangle sourceRectangle = new Rectangle(47, 11, 902, 87);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 100, 32);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

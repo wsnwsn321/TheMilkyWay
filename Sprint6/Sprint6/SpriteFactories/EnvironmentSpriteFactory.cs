@@ -9,6 +9,8 @@ namespace Sprint6.SpriteFactories
     class EnvironmentSpriteFactory
     {
         private Texture2D farmPackSpritesheet;
+        private Texture2D grassSpritesheet;
+
 
 
         public SpriteBatch sb { get; set; }
@@ -32,6 +34,7 @@ namespace Sprint6.SpriteFactories
             //one example is below
 
             farmPackSpritesheet = content.Load<Texture2D>("UFOGameObjects/FarmPack");
+            grassSpritesheet = content.Load<Texture2D>("UFOGameObjects/ground");
 
             this.sb = sb;
 
@@ -41,6 +44,15 @@ namespace Sprint6.SpriteFactories
         public ISprite CreateSiloSprite()
         {
             return new SiloSprite(farmPackSpritesheet, sb, 0);
+        }
+        public ISprite CreateBarnSprite()
+        {
+            return new BarnSprite(farmPackSpritesheet, sb, 0);
+        }
+        
+        public ISprite CreateGrassSprite()
+        {
+            return new GrassSprite(grassSpritesheet, sb, 0);
         }
     }
 }

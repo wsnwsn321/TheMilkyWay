@@ -124,10 +124,10 @@ namespace Sprint6.LevelLoading
             }
             foreach (IEnemy enemy in enemyElements)
             {
-                //if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
-                //{
-                //    enemy.Draw();
-                //}
+                if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 100 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
+                {
+                    enemy.Draw();
+                }
             }
             scoreSystem.DisplayScore(mainCharacter.totalScore);
             scoreSystem.CoinSystem(mainCharacter.cow);

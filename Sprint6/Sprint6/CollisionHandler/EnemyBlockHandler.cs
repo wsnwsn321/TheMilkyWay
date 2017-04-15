@@ -26,15 +26,6 @@ namespace Sprint6.CollisionHandler
                         newPosition.X = block.blockSprite.desRectangle.X + block.blockSprite.desRectangle.Width;
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
-                        enemy.ChangeDirection();
-                        if (enemy.shellMoving == GameConstants.Right)
-                        {
-                            enemy.shellMoving = GameConstants.Left;
-                        }
-                       else if (enemy.shellMoving == GameConstants.Left)
-                        {
-                            enemy.shellMoving = GameConstants.Right;
-                        }
                         break;
                     case 3:
                         newPosition.X = enemy.enemySprite.desRectangle.X;
@@ -45,15 +36,6 @@ namespace Sprint6.CollisionHandler
                         newPosition.X = block.blockSprite.desRectangle.X - enemy.enemySprite.desRectangle.Width;
                         newPosition.Y = enemy.enemySprite.desRectangle.Y;
                         enemy.position = newPosition;
-                        enemy.ChangeDirection();
-                        if (enemy.shellMoving == GameConstants.Right)
-                        {
-                            enemy.shellMoving = GameConstants.Left;
-                        }
-                        else if (enemy.shellMoving == GameConstants.Left)
-                        {
-                            enemy.shellMoving = GameConstants.Right;
-                        }
                         break;
                 }
             }            

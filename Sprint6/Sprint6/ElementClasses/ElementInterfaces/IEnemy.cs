@@ -10,16 +10,7 @@ namespace Sprint6.ElementClasses.ElementInterfaces
         Vector2 position { get; set; }
         void Draw();
         void Update();
-        void EnemyIdle();
-        void ChangeDirection();
-        void BeStomped();
-        void BeFlipped();
-
         bool isVisible { get; set; }
-        bool flip { get; set; }
-
         float gravity { get; set; }
-        bool shellDirection { get; set; }
-        int shellMoving { get; set; }
     }
 }
