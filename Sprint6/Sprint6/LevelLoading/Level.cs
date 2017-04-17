@@ -59,6 +59,7 @@ namespace Sprint6.LevelLoading
                 foreach (IItem item in itemElements)
                 {
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
+                    CollisionDetection.Instance.BeamCowCollision(myGame,mainCharacter,itemElements);
                     item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
                     item.Update();
                 }
@@ -77,7 +78,7 @@ namespace Sprint6.LevelLoading
                 {
                     CollisionDetection.Instance.MainCharBlockCollision(myGame, mainCharacter, envElements);
                     CollisionDetection.Instance.MarioEnemyCollision(mainCharacter, enemyElements);
-                    CollisionDetection.Instance.MarioItemCollision(mainCharacter, itemElements);
+                    CollisionDetection.Instance.MainCharItemCollision(mainCharacter, itemElements);
                     if (accel != 5)
                     {
                         accel += 1;

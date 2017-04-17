@@ -32,6 +32,30 @@ namespace Sprint6.CollisionHandler
         {
         }
 
+        public void BeamCowCollision(Game1 game, MainCharacter mainCharacter, List<IItem> itemElements)
+        {
+            myGame = game;
+            foreach (IItem item in itemElements)
+            {
+                if (item is CowCharacter &&
+                    item.itemSprite.desRectangle.Intersects(mainCharacter.state.BeamSprite.desRectangle)&&mainCharacter.state.beam)
+                {
+                    item.position = new Vector2(item.position.X,item.position.Y - 3);
+                }
+            }
+        }
+
+        public void MainCharItemCollision(MainCharacter mainCharacter, List<IItem> itemElements)
+        {
+            foreach (IItem item in itemElements)
+            {
+                if (item is CowCharacter && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+                {
+                    item.isVisible = false;
+                }
+            }
+        }
+
         public void MainCharBlockCollision(Game1 game, MainCharacter mainCharacter, List<IBlock> envElements)
         {
             myGame = game;
@@ -158,14 +182,6 @@ namespace Sprint6.CollisionHandler
                     if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
                     {
                         ItemBlockHandler.BlockHandler(myGame, item, block, SIDE);
-                        if (SIDE == 1)
-                        {
-                            item.gravity = 0;
-                        }
-                        else
-                        {
-                            item.gravity = 3;
-                        }
                     }
                 }
             }
@@ -182,18 +198,6 @@ namespace Sprint6.CollisionHandler
                 }
             }  
         }
-
-        public void MarioItemCollision(MainCharacter mainCharacter, List<IItem> itemElements)
-        {
-         //   SIDE = GameConstants.Top;
-           // foreach (IItem item in itemElements)
-            //{     
-             //   if (mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle))
-              //  {
-               //     MainCharItemHandler.ItemHandler( myGame,mainCharacter, item);
-             //   }
-         //   }
-        }       
 
         public void MarioEnemyCollision(MainCharacter mainCharacter, List<IEnemy> enemyElements)
         {

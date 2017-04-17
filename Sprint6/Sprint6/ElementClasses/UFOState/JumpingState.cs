@@ -11,14 +11,13 @@ namespace Sprint6.ElementClasses
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
         public ISprite BeamSprite { get; set; }
-
-        public bool beam = false;
+        public bool beam { get; set; }
 
         public JumpingState(MainCharacter mainCharacter)
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             this.mainCharacter = mainCharacter;
-            
+            beam = false;
         }
 
         public void Jump()

@@ -10,6 +10,7 @@ namespace Sprint6.ElementClasses
         void Update();
         void Die();
         void Collect();
+        bool beam { get; set; }
         ISprite BeamSprite { get; set; }
         ISprite Sprite { get; set; }
     }

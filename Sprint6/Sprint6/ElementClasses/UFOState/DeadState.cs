@@ -9,12 +9,14 @@ namespace Sprint6.ElementClasses
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
         public ISprite BeamSprite { get; set; }
+        public bool beam { get; set; }
 
         public DeadState(MainCharacter mainCharacter)
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             this.mainCharacter = mainCharacter;
             Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
+            beam = false;
         }
 
         public void Draw(Vector2 position)

@@ -8,12 +8,13 @@ namespace Sprint6.ElementClasses
     {
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
-        public bool beam = false;
+        public bool beam { get; set; }
         public ISprite BeamSprite { get; set; }
         public FlyingState(MainCharacter mainCharacter)
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             this.mainCharacter = mainCharacter;
+            beam = false;
         }
         //** update the position
         public void Update()
