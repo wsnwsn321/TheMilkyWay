@@ -75,10 +75,10 @@ namespace MyGame
             if (distanceX <= (rect.Width / 2.0f)) { return true; }
             if (distanceY <= (rect.Height / 2.0f)) { return true; }
 
-            float cornerDistance_sq = (distanceX - rect.Width / 2.0f) * (distanceX - rect.Width / 2.0f) +
+            float cornerDist = (distanceX - rect.Width / 2.0f) * (distanceX - rect.Width / 2.0f) +
                                       (distanceY - rect.Height / 2.0f) * (distanceY - rect.Height / 2.0f);
 
-            return (cornerDistance_sq <= (Radius*Radius));
+            return (cornerDist <= (Radius*Radius));
         }
     }
 }
