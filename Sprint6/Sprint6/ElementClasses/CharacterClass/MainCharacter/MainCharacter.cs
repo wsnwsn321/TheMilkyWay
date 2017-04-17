@@ -132,5 +132,10 @@ namespace Sprint6.ElementClasses
                
             myGame.spriteBatch.End();
         }
+
+        public void Collect()
+        {
+
+        }
     }
 }
