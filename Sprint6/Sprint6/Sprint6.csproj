@@ -81,8 +81,8 @@
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
     <Compile Include="SpriteFactories\CharacterSpriteFactory.cs" />
     <Compile Include="ElementClasses\CharacterClass\MainCharacter\MainCharacter.cs" />
-    <Compile Include="ElementClasses\MarioState\DeadState.cs" />
-    <Compile Include="ElementClasses\MarioState\JumpingState.cs" />
+    <Compile Include="ElementClasses\UFOState\DeadState.cs" />
+    <Compile Include="ElementClasses\UFOState\JumpingState.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemy.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IItem.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBlock.cs" />

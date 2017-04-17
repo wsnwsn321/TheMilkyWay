@@ -12,19 +12,8 @@ namespace Sprint6.ElementClasses
 
         public DeadState(MainCharacter mainCharacter)
         {
+            BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             this.mainCharacter = mainCharacter;
-            Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
-
-
-        }
-        public void Idle()
-        {
-            Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
-
-        }
-
-        public void Jump()
-        {
             Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
         }
 

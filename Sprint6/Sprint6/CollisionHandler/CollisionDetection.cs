@@ -50,6 +50,7 @@ namespace Sprint6.CollisionHandler
                 if (intersect)
                 {
                     mainCharacter.canMove = false;
+                    mainCharacter.UFODie();
                     firstRectangle = mainCharacter.state.Sprite.desRectangle;
                     secondRectangle = block.blockSprite.desRectangle;
                     collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);

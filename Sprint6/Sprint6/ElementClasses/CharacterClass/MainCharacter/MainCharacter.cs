@@ -99,6 +99,7 @@ namespace Sprint6.ElementClasses
         public void UFODie()
         {
             MediaPlayer.Stop();
+            state.Die();
         }
 
         public void Attack()
