@@ -51,7 +51,7 @@ namespace Sprint6.Sprites.UFOSprite
                 {
                     circleCenter2 = new Vector2(p.X + desRectangle.Width / 4.0f, p.Y + desRectangle.Height / 2.0f);
                     circles[i].Center = circleCenter2;
-                }
+                } 
                 else if (circles[i].Center == circleCenter3)
                 {
                     circleCenter3 = new Vector2(p.X + desRectangle.Width * 3.0f / 4.0f, p.Y + desRectangle.Height / 2.0f);

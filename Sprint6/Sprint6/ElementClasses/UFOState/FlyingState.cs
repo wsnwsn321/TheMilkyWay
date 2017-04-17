@@ -6,10 +6,9 @@ namespace Sprint6.ElementClasses
 {
     class FlyingState : IState
     {
-
-
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
+        public bool beam = false;
         public ISprite beamSprite { get; set; }
         public FlyingState(MainCharacter mainCharacter)
         {
@@ -20,13 +19,19 @@ namespace Sprint6.ElementClasses
         public void Update()
         {
             Sprite.Update();
-            beamSprite.Update();
+            if (beam)
+            {
+                beamSprite.Update();
+            }
         }
 
         public void Draw(Vector2 position)
         {
             Sprite.Draw(position);
-            Collect();
+            if (beam)
+            {
+                Collect();
+            }
         }
 
         public void Die()

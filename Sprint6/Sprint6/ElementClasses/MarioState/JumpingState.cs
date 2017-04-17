@@ -11,6 +11,9 @@ namespace Sprint6.ElementClasses
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
         public ISprite beamSprite { get; set; }
+
+        public bool beam = false;
+
         public JumpingState(MainCharacter mainCharacter)
         {
             beamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
@@ -26,12 +29,19 @@ namespace Sprint6.ElementClasses
         public void Draw(Vector2 position)
         {
             Sprite.Draw(new Vector2(position.X, position.Y));
+            if (beam)
+            {
+                Collect();
+            }
         }
 
         public void Update()
         {
             Sprite.Update();
-            beamSprite.Update();
+            if (beam)
+            {
+                beamSprite.Update();
+            }
         }
 
         public void Die()

@@ -103,7 +103,18 @@ namespace Sprint6.ElementClasses
 
         public void Attack()
         {
-            
+            if (myGame.level.mainCharacter.state is FlyingState)
+            {
+                FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                f.beam = true;
+                myGame.level.mainCharacter.state = f;
+            }
+            else if (myGame.level.mainCharacter.state is JumpingState)
+            {
+                JumpingState f = myGame.level.mainCharacter.state as JumpingState;
+                f.beam = true;
+                myGame.level.mainCharacter.state = f;
+            }
         }
 
         public void DrawScore()

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Sprint6.ElementClasses;
 using Sprint6.ElementClasses.ElementInterfaces;
+using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.Commands
 {
@@ -18,7 +20,7 @@ namespace Sprint6.Commands
 
         public void Execute()
         {
-
+            myGame.level.mainCharacter.Attack();
         }
     }
 }

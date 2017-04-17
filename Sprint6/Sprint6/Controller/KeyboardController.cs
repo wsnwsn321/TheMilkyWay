@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using Sprint6.Commands;
+using Sprint6.ElementClasses;
 using Sprint6.Sound.MarioSound;
 using System.Collections.Generic;
 
@@ -48,6 +49,12 @@ namespace Sprint6.Controller
                     if (key.Equals(Keys.Q)||key.Equals(Keys.R))
                     {
                         controllerMappings[key].Execute();
+                    }
+                    if (!key.Equals((Keys.B)))
+                    {
+                        FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                        f.beam = false;
+                        myGame.level.mainCharacter.state = f;
                     }
                     if (controllerMappings.ContainsKey(key)&&myGame.level.mainCharacter.canMove)
                     {
