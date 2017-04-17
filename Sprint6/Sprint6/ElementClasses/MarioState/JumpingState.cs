@@ -45,11 +45,6 @@ namespace Sprint6.ElementClasses
         }
         public void Collect()
         {
-            Vector2 newPos;
-            newPos.X = mainCharacter.position.X + 14;
-            newPos.Y =  Sprite.desRectangle.Top+100;
-            BeamSprite.Draw(newPos);
-            
         }
     }
 }
