@@ -17,6 +17,7 @@ namespace Sprint6.ElementClasses
 
         public FlyingUFO2(Vector2 pos)
         {
+
             position = pos;
 
             enemySprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
@@ -26,6 +27,8 @@ namespace Sprint6.ElementClasses
 
         public void Draw()
         {
+            
+          
             if (isVisible)
             {
 
@@ -41,6 +44,10 @@ namespace Sprint6.ElementClasses
 
             }
 
+           position = new Vector2(position.X - 2, position.Y);
+                
+               
+                
             enemySprite.Update();
         }
     }
