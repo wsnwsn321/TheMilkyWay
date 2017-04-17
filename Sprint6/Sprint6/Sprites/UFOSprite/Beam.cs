@@ -50,7 +50,7 @@ namespace Sprint6.Sprites.UFOSprite
 
         public void Draw(Vector2 position)
         {
-            sb.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend);
+            sb.Begin();
             Rectangle sourceRectangle = new Rectangle(76 * currentFrame, 0, 76, 135);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 76, 135);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
