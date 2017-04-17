@@ -745,7 +745,7 @@
 /processorParam:TextureFormat=Color
 /build:UFOGameObjects/ground.png
 
-#begin UFOGameObjects/UFOBeam.jpg
+#begin UFOGameObjects/UFOBeam.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -755,5 +755,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:UFOGameObjects/UFOBeam.jpg
+/build:UFOGameObjects/UFOBeam.png
 
