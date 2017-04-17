@@ -8,6 +8,7 @@ namespace Sprint6.ElementClasses
     {
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
+        public ISprite BeamSprite { get; set; }
 
         public DeadState(MainCharacter mainCharacter)
         {

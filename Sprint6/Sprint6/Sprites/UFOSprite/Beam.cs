@@ -17,7 +17,7 @@ namespace Sprint6.Sprites.UFOSprite
         private int totalFrames;
 
         private int counter;
-
+        private float length;
         Vector2 p;
 
 
@@ -41,6 +41,7 @@ namespace Sprint6.Sprites.UFOSprite
             {
                 currentFrame = 0;
             }
+
         }
 
         public Vector2 ReturnPosition()
@@ -50,9 +51,10 @@ namespace Sprint6.Sprites.UFOSprite
 
         public void Draw(Vector2 position)
         {
+            length = position.Y;
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(76 * currentFrame, 0, 76, 135);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 76, 135);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 76, 440-(int)length);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();
