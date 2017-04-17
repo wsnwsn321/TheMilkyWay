@@ -49,7 +49,7 @@ namespace Sprint6.CollisionHandler
         {
             foreach (IItem item in itemElements)
             {
-                if (item is CowCharacter && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+                if (item is CowCharacter && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && mainCharacter.state.beam)
                 {
                     item.isVisible = false;
                 }
