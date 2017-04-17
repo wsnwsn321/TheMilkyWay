@@ -10,17 +10,17 @@ namespace Sprint6.ElementClasses
 
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
-        public ISprite beamSprite { get; set; }
+        public ISprite BeamSprite { get; set; }
         public FlyingState(MainCharacter mainCharacter)
         {
-            beamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
+            BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             this.mainCharacter = mainCharacter;
         }
         //** update the position
         public void Update()
         {
             Sprite.Update();
-            beamSprite.Update();
+            BeamSprite.Update();
         }
 
         public void Draw(Vector2 position)
@@ -38,7 +38,7 @@ namespace Sprint6.ElementClasses
         {   Vector2 newPos;
             newPos.X = mainCharacter.position.X+14;
             newPos.Y = Sprite.desRectangle.Top + 100;
-            beamSprite.Draw(newPos);
+            BeamSprite.Draw(newPos);
         }
     }
 }
