@@ -68,7 +68,7 @@ namespace Sprint6.SpriteFactories
         }
         public ISprite CreateBeamSprite()
         {
-            return new Beam(beamSpritesheeet, sb, 0);
+            return new BeamSprite(beamSpritesheeet, sb, 0);
         }
         
     }

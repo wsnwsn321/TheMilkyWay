@@ -93,7 +93,7 @@
     <Compile Include="Sprites\ISprite.cs" />
     <Compile Include="Sprites\UFOSprite\CowSprite.cs" />
     <Compile Include="Sprites\EnvironmentSprite\SiloSprite.cs" />
-    <Compile Include="Sprites\UFOSprite\Beam.cs" />
+    <Compile Include="Sprites\UFOSprite\BeamSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOJumpingSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOFlyingSprite.cs" />
     <Compile Include="VolecotyTest\TwoVolecity.cs" />

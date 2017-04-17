@@ -48,7 +48,7 @@ namespace Sprint6.LevelLoading
                 mainCharacter.canMove = true;
                 foreach (IEnemy enemy in enemyElements)
                 {
-                    if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - GameConstants.SquareWidth && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
+                    if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 100 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
                     {
                         CollisionDetection.Instance.EnemyBlockCollision(mainCharacter, enemy, envElements);
 

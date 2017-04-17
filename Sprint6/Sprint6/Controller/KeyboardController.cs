@@ -3,6 +3,7 @@ using Sprint6.Commands;
 using Sprint6.ElementClasses;
 using Sprint6.Sound.MarioSound;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sprint6.Controller
 {
@@ -43,6 +44,18 @@ namespace Sprint6.Controller
                 KeyboardState NewState = Keyboard.GetState();
 
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
+                if (myGame.level.mainCharacter.state is FlyingState)
+                {
+                    FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                    f.beam = false;
+                    myGame.level.mainCharacter.state = f;
+                }
+                else if(myGame.level.mainCharacter.state is JumpingState)
+                {
+                    JumpingState f = myGame.level.mainCharacter.state as JumpingState;
+                    f.beam = false;
+                    myGame.level.mainCharacter.state = f;
+                }
 
                 foreach (Keys key in pressedKeys)
                 {
@@ -50,12 +63,7 @@ namespace Sprint6.Controller
                     {
                         controllerMappings[key].Execute();
                     }
-                    if (!key.Equals((Keys.B)))
-                    {
-                        FlyingState f = myGame.level.mainCharacter.state as FlyingState;
-                        f.beam = false;
-                        myGame.level.mainCharacter.state = f;
-                    }
+
                     if (controllerMappings.ContainsKey(key)&&myGame.level.mainCharacter.canMove)
                     {
                         if (key.Equals(Keys.W))
