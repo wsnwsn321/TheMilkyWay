@@ -31,7 +31,6 @@ namespace Sprint6.ElementClasses
         public void Update()
         {
             Sprite.Update();
-            BeamSprite.Update();
         }
 
         public void Die()
