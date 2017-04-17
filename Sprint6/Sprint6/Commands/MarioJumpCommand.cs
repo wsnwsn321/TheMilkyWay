@@ -25,6 +25,7 @@ namespace Sprint6.Commands
         public void Execute()
         {
             mainCharacter.MainCharJump();
+            
             //myGame.level.mainCharacter.state.Sprite = UFOSpriteFactory.Instance.CreateJumpingUFOSprite();
         }
     }

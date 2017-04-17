@@ -43,5 +43,9 @@ namespace Sprint6.ElementClasses
         public void Attack()
         {
         }
+        public void Collect()
+        {
+
+        }
     }
 }

@@ -14,17 +14,33 @@ namespace Sprint6.Sprites.UFOSprite
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
         public List<Circle> circles { get; set; }
+        private int totalFrames;
+
+        private int counter;
 
         Vector2 p;
+
 
         public Beam(Texture2D texture,SpriteBatch sb, int currentF)
         {
             Texture = texture;
             this.sb = sb;
+            totalFrames = 2;
+            counter = 0;
+            currentFrame = currentF;
+            tintColor = Color.White;
         }
         public void Update()
         {
-
+            counter++;
+            if (counter % 10 == 0)
+            {
+                currentFrame++;
+            }
+            if (currentFrame >= totalFrames)
+            {
+                currentFrame = 0;
+            }
         }
 
         public Vector2 ReturnPosition()
@@ -34,9 +50,9 @@ namespace Sprint6.Sprites.UFOSprite
 
         public void Draw(Vector2 position)
         {
-            sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(60 * currentFrame, 0, 60, 36);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 100, 61);
+            sb.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend);
+            Rectangle sourceRectangle = new Rectangle(76 * currentFrame, 0, 76, 135);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 76, 135);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

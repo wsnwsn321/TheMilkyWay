@@ -9,6 +9,7 @@ namespace Sprint6.ElementClasses
         void Draw(Vector2 Position);
         void Update();
         void Die();
+        void Collect();
         ISprite Sprite { get; set; }
     }
 }

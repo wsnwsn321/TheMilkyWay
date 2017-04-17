@@ -103,7 +103,7 @@ namespace Sprint6.ElementClasses
 
         public void Attack()
         {
-
+            
         }
 
         public void DrawScore()
@@ -133,9 +133,6 @@ namespace Sprint6.ElementClasses
             myGame.spriteBatch.End();
         }
 
-        public void Collect()
-        {
-
-        }
+       
     }
 }
