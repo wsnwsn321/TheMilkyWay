@@ -155,16 +155,8 @@ namespace Sprint6.LevelLoading
             mainCharacter.MarioIdle();
             mainCharacter.position = marioPos;
             scoreSystem = new HUDManager(myGame);
-            switch (levelToLoad)
-            {
-                case GameConstants.OverworldLevel:
-                    BackgroundMusic.instanse.playSound(BackgroundMusic.LEVEL1);
-                    break;
-                case GameConstants.UnderworldLevel:
-                    BackgroundMusic.instanse.playSound(BackgroundMusic.LEVEL2);
-                    break;
-            }
-          
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.BACKGROUNGMUSIC1);
+                  
             
         }
 

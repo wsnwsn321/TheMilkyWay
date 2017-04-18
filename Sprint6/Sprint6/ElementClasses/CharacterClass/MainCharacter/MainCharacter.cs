@@ -63,10 +63,10 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharJump()
         {
-            IsJumping = true;
-            JumpCounter = 20;
-            myGame.level.accel = 0;
-            myGame.level.mainCharacter.state.Sprite = CharacterSpriteFactory.Instance.CreateJumpingUFOSprite();
+                IsJumping = true;
+                JumpCounter = 20;
+                myGame.level.accel = 0;
+                myGame.level.mainCharacter.state.Sprite = CharacterSpriteFactory.Instance.CreateJumpingUFOSprite();
         }
 
         public virtual void MainCharDraw()

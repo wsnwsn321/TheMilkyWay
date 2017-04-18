@@ -61,6 +61,9 @@ namespace Sprint6.LevelLoading
                         case "UFO2":
                             level.enemyElements.Add(new FlyingUFO2(new Vector2(x, y)));
                             break;
+                        case "Disk":
+                            level.itemElements.Add(new Disk(new Vector2(x, y)));
+                            break;
                         case "0":
                             break;
                     }
