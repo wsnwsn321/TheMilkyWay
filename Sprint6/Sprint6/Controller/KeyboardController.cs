@@ -48,12 +48,14 @@ namespace Sprint6.Controller
                 {
                     FlyingState f = myGame.level.mainCharacter.state as FlyingState;
                     f.beam = false;
+                    //f.bomb = false;
                     myGame.level.mainCharacter.state = f;
                 }
                 else if(myGame.level.mainCharacter.state is JumpingState)
                 {
                     JumpingState f = myGame.level.mainCharacter.state as JumpingState;
                     f.beam = false;
+                    //f.bomb = false;
                     myGame.level.mainCharacter.state = f;
                 }
 
@@ -72,14 +74,14 @@ namespace Sprint6.Controller
                          
                         }
 
-                        if (key.Equals(Keys.X))
+                        if (key.Equals(Keys.N))
                         {
-                            if (NewState.IsKeyDown(Keys.X) && OldState.IsKeyUp(Keys.X))
+                            if (NewState.IsKeyDown(Keys.N) && OldState.IsKeyUp(Keys.N))
                             {
                                 controllerMappings[key].Execute();
                             }
                         }
-                        if (key.Equals(Keys.W))
+                        else if (key.Equals(Keys.W))
                         {
                             if (NewState.IsKeyDown(Keys.W) && OldState.IsKeyUp(Keys.W))
                             {

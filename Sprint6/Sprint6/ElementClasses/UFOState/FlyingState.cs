@@ -9,12 +9,20 @@ namespace Sprint6.ElementClasses
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
         public bool beam { get; set; }
+        public bool bomb { get; set; }
+        private bool first = true;
+        private int bombSpeed;
         public ISprite BeamSprite { get; set; }
+        public ISprite BombSprite { get; set; }
+        private Vector2 newPos;
         public FlyingState(MainCharacter mainCharacter)
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
+            BombSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBombSprite();
             this.mainCharacter = mainCharacter;
+            bombSpeed = 0;
             beam = false;
+            bomb = false;
         }
         //** update the position
         public void Update()
@@ -23,6 +31,16 @@ namespace Sprint6.ElementClasses
             if (beam)
             {
                 BeamSprite.Update();
+            }
+            else if (bomb)
+            {
+                BombSprite.Update();
+                if (newPos.Y > 480 - 80)
+                {
+                    bomb = false;
+                    bombSpeed = 0;
+                    first = true;
+                }
             }
         }
 
@@ -33,6 +51,10 @@ namespace Sprint6.ElementClasses
             {
                 Collect();
             }
+            else if (bomb)
+            {
+                Drop();
+            }
         }
 
         public void Die()
@@ -41,10 +63,27 @@ namespace Sprint6.ElementClasses
             mainCharacter.UFODie();
         }
         public void Collect()
-        {   Vector2 newPos;
-            newPos.X = mainCharacter.position.X+14;
-            newPos.Y = Sprite.desRectangle.Top + 100;
-            BeamSprite.Draw(newPos);
+        {
+            Vector2 newbeamPos;
+            newbeamPos.X = mainCharacter.position.X+14;
+            newbeamPos.Y = Sprite.desRectangle.Top + 100;
+            BeamSprite.Draw(newbeamPos);
+        }
+        public void Drop()
+        {
+
+            bombSpeed += 1;
+            newPos.X = mainCharacter.position.X + 14;
+            if (first)
+            {
+                newPos.Y = mainCharacter.position.Y + bombSpeed;
+                first = false;
+            }
+            else
+            {
+                newPos.Y += bombSpeed;
+            }
+            BombSprite.Draw(newPos);
         }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="Sprites\EnvironmentSprite\GrassSprite.cs" />
     <Compile Include="Sprites\EnvironmentSprite\BarnSprite.cs" />
     <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Sprites\UFOSprite\BombSprite.cs" />
     <Compile Include="Sprites\UFOSprite\CowHeadSprite.cs" />
     <Compile Include="Sprites\UFOSprite\CowSprite.cs" />
     <Compile Include="Sprites\EnvironmentSprite\SiloSprite.cs" />

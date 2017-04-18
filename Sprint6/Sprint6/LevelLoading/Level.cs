@@ -87,7 +87,7 @@ namespace Sprint6.LevelLoading
                     {
                         mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity + accel);
                         mainCharacter.MainCharUpdate();
-                        mainCharacter.state.BeamSprite.Update();
+                        mainCharacter.state.Update();
                     }
 
                     if ((mainCharacter.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)
