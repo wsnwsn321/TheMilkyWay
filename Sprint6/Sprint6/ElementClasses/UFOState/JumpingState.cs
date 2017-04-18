@@ -46,7 +46,7 @@ namespace Sprint6.ElementClasses
         public void Die()
         {
             mainCharacter.state = new DeadState( mainCharacter);
-            mainCharacter.UFODie();
+            //mainCharacter.UFODie();
         }
 
         public void Attack()
