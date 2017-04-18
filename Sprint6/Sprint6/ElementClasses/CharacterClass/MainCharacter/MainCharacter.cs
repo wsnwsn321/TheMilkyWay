@@ -111,18 +111,18 @@ namespace Sprint6.ElementClasses
 
         public void Attack()
         {
-            if (beamMeter.GetBeamPercent() > 3)
+            if (beamMeter.GetBeamPercent() > GameConstants.Three)
             {
                 beamMeter.DecreaseBeamPercentBy(GameConstants.Three);
-                if (myGame.level.mainCharacter.state is FlyingState)
+                if (myGame.level.mainCharacter.state is FlyingState &&beamMeter.GetBeamPercent() > GameConstants.Three)
                 {
                     FlyingState f = myGame.level.mainCharacter.state as FlyingState;
                     f.beam = true;
                     myGame.level.mainCharacter.state = f;
                 }
-                else if (myGame.level.mainCharacter.state is JumpingState)
+                else if (myGame.level.mainCharacter.state is JumpingState && beamMeter.GetBeamPercent() > GameConstants.Three)
                 {
-                    JumpingState f = myGame.level.mainCharacter.state as JumpingState;
+                    JumpingState f = (JumpingState)myGame.level.mainCharacter.state;
                     f.beam = true;
                     myGame.level.mainCharacter.state = f;
                 }
