@@ -56,6 +56,7 @@
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="ElementClasses\BackgroundClass\StarryNight.cs" />
     <Compile Include="ElementClasses\CharacterClass\CowCharacter\CowCharacter.cs" />
+    <Compile Include="ElementClasses\CharacterClass\ItemClass\Disk.cs" />
     <Compile Include="ElementClasses\CharacterClass\UFO2\FlyingUFO2.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemyState.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Sprites\UFOSprite\CowSprite.cs" />
     <Compile Include="Sprites\EnvironmentSprite\SiloSprite.cs" />
     <Compile Include="Sprites\UFOSprite\BeamSprite.cs" />
+    <Compile Include="Sprites\UFOSprite\DiskSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOJumpingSprite.cs" />
     <Compile Include="Sprites\UFOSprite\UFOFlyingSprite.cs" />
     <Compile Include="VolecotyTest\TwoVolecity.cs" />
