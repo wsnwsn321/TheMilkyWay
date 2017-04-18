@@ -37,7 +37,6 @@ namespace Sprint6.HUDElements
 
         public void Display()
         {
-            BeamPercent = myGame.level.mainCharacter.BeamPercent;
             HUD_BEAM_METER_X = GameConstants.Ten - myGame.GraphicsDevice.Viewport.X;
             HUD_BEAM_METER_BACK_X = HUD_BEAM_METER_X - 5;
             BeamMeterBackground.X = HUD_BEAM_METER_BACK_X;
@@ -47,6 +46,39 @@ namespace Sprint6.HUDElements
             myGame.spriteBatch.Draw(pixel, BeamMeterBar, Color.Green);
 
             myGame.spriteBatch.End();
+        }
+
+        public int GetBeamPercent()
+        {
+            return BeamPercent;
+        }
+
+        public void SetBeamPercent(int newBeamPercent)
+        {
+            BeamPercent = newBeamPercent;
+        }
+
+        public void DecrementBeamPercent()
+        {
+            if (BeamPercent > 0)
+            {
+                BeamPercent--;
+            }
+        }
+
+        public void IncrementBeamPercent()
+        {
+            BeamPercent++;
+        }
+
+        public void DecreaseBeamPercentBy(int amount)
+        {
+            BeamPercent -= amount;
+        }
+
+        public void IncreaseBeamPercentBy(int amount)
+        {
+            BeamPercent += amount;
         }
 
     }

@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Media;
 using Sprint6.Sound.BackgroundMusic;
 using System.Diagnostics;
 using Sprint6.SpriteFactories;
+using Sprint6.HUDElements;
 
 namespace Sprint6.ElementClasses
 {
@@ -16,7 +17,7 @@ namespace Sprint6.ElementClasses
         public IState state { get; set; }
 
         public int marioAction { set; get; }
-        public int BeamPercent { get; set; }
+        public BeamMeterHUD beamMeter { get; set; }
         public int marioState { set; get; }
         public Vector2 position { set; get; }
         public int gravity { get; set; }
@@ -42,6 +43,7 @@ namespace Sprint6.ElementClasses
             myGame = game;
             state = new FlyingState(this);
             state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
+            beamMeter = new BeamMeterHUD(myGame);
             this.position = position;
             canMove = true;
             scoreCounter = 0;
@@ -79,9 +81,9 @@ namespace Sprint6.ElementClasses
         {
             if (canMove)
             {
-                if (BeamPercent < 100)
+                if (beamMeter.GetBeamPercent() < 100)
                 {
-                    BeamPercent++;
+                    beamMeter.IncrementBeamPercent();
                 }
                 state.Sprite.Update();
                 if (IsJumping)
@@ -109,9 +111,9 @@ namespace Sprint6.ElementClasses
 
         public void Attack()
         {
-            if (BeamPercent > 3)
+            if (beamMeter.GetBeamPercent() > 3)
             {
-                BeamPercent -= GameConstants.Three;
+                beamMeter.DecreaseBeamPercentBy(GameConstants.Three);
                 if (myGame.level.mainCharacter.state is FlyingState)
                 {
                     FlyingState f = myGame.level.mainCharacter.state as FlyingState;
@@ -154,38 +156,6 @@ namespace Sprint6.ElementClasses
             myGame.spriteBatch.End();
         }
 
-        public int GetBeamPercent()
-        {
-            return BeamPercent;
-        }
-
-        public void SetBeamPercent(int newBeamPercent)
-        {
-            BeamPercent = newBeamPercent;
-        }
-
-        public void DecrementBeamPercent()
-        {
-            if (BeamPercent > 0)
-            {
-                BeamPercent--;
-            }
-        }
-
-        public void IncrementBeamPercent()
-        {
-            BeamPercent++;
-        }
-
-        public void DecreaseBeamPercentBy(int amount)
-        {
-            BeamPercent -= amount;
-        }
-
-        public void IncreaseBeamPercentBy(int amount)
-        {
-            BeamPercent += amount;
-        }
 
 
     }

@@ -15,7 +15,7 @@ namespace Sprint6.HUDElements
         public HUDManager(Game1 game)
         {
             mygame = game;
-            beamMeter = new BeamMeterHUD(mygame);
+            beamMeter = mygame.level.mainCharacter.beamMeter;
             cowHUD = new CowHUD(mygame);
         }
 
