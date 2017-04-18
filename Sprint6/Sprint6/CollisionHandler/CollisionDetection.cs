@@ -9,6 +9,7 @@ using System.Diagnostics;
 using Sprint6.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
 using MyGame;
+using Sprint6.Sound.BackgroundMusic;
 
 namespace Sprint6.CollisionHandler
 {
@@ -53,7 +54,12 @@ namespace Sprint6.CollisionHandler
                 {
                     myGame.level.mainCharacter.CowCount++;
                     item.isVisible = false;
+                }else if(item is Disk && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && item.isVisible)
+                {
+                    item.isVisible = false;
+                    BackgroundMusic.instanse.mashPlay();
                 }
+                
             }
         }
 

@@ -9,7 +9,7 @@ namespace Sprint6.CollisionHandler
     {
         public static void ItemHandler(Game1 game, MainCharacter mainCharacter,  IItem item)
         {
-
+            
         }
     }
 }

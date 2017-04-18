@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint6.Sprites;
 using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.SpriteFactories
@@ -14,6 +15,9 @@ namespace Sprint6.SpriteFactories
         private Texture2D fireballSpritesheet;
         private Texture2D blockPieceSpritesheet;
         private Texture2D fireballExplosionSpritesheet;
+        private Texture2D musicDiskSpritesheet;
+
+
 
         public SpriteBatch sb { set; get; }
         private static ItemSpriteFactory instance = new ItemSpriteFactory();
@@ -41,13 +45,18 @@ namespace Sprint6.SpriteFactories
             coinSpritesheet = content.Load<Texture2D>("Item/Coin");
             fireballSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioFireball");
             blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
-            fireballExplosionSpritesheet= content.Load<Texture2D>("MainCharacter/Fmario/FireBallHitTheWall");
+            fireballExplosionSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FireBallHitTheWall");
+            //UFO
+            musicDiskSpritesheet = content.Load<Texture2D>("UFOGameObjects/Disk");
+
             this.sb = sb;
         }
 
         //create item sprites
-       
-
+        public ISprite CreateDiskSprite()
+        {
+            return new DiskSprite(musicDiskSpritesheet, sb, 0);
+        }
 
     }
 }
