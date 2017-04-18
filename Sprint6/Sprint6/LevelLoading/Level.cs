@@ -19,7 +19,7 @@ namespace Sprint6.LevelLoading
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
         private PauseText pauseText;
-        internal ScoreSystem scoreSystem;
+        internal HUDManager scoreSystem;
 
         public string currentLevel { get; set; }
         public IBackground background { get; set; }
@@ -136,10 +136,7 @@ namespace Sprint6.LevelLoading
                     enemy.Draw();
                 }
             }
-            scoreSystem.DisplayScore(mainCharacter.totalScore);
-            scoreSystem.CoinSystem(mainCharacter.cow);
-            scoreSystem.WorldSystem();
-            scoreSystem.Time();
+            scoreSystem.DisplayHUDElements();
         }
         
         public void Load(string levelToLoad, Vector2 marioPos)
@@ -157,7 +154,7 @@ namespace Sprint6.LevelLoading
             gameHeight = loader.height;
             mainCharacter.MarioIdle();
             mainCharacter.position = marioPos;
-            scoreSystem = new ScoreSystem(myGame);
+            scoreSystem = new HUDManager(myGame);
             switch (levelToLoad)
             {
                 case GameConstants.OverworldLevel:

@@ -66,6 +66,11 @@ namespace Sprint6.SpriteFactories
         {
             return new CowSprite(cowSpritesheet, sb, 0);
         }
+
+        public ISprite CreateCowHeadSprite()
+        {
+            return new CowHeadSprite(cowSpritesheet, sb, 0);
+        }
         public ISprite CreateBeamSprite()
         {
             return new BeamSprite(beamSpritesheeet, sb, 0);

@@ -22,6 +22,7 @@ namespace Sprint6
         internal KeyboardController keyboardController;
         internal Level level;
         internal SpriteFont font;
+        internal string playerName;
         private bool freeze = false;
         public bool resetTime { get; set; }
         public int lifeCount { get; set; }
@@ -44,6 +45,7 @@ namespace Sprint6
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController();
             level = new Level(this);
+            playerName = "3Pros1LenUFO";
             lifeText = new LifeText(this);
             resetTime = false;
             InitializeCommands();

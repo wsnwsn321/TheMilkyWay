@@ -15,6 +15,8 @@
         public const int UFOSpeedX = 3;
         public const int MainCharStartingX = 100;
         public const int MainCharStartingY = 50;
+        public const int BEAM_PERCENT_MAX = 100;
+
         public const int NewMarioStartingX = 200;
         public const int NewMarioStartingY = 58;
         public const int OutPipeStartingX = 5135;

@@ -16,6 +16,7 @@ namespace Sprint6.ElementClasses
         public IState state { get; set; }
 
         public int marioAction { set; get; }
+        public int BeamPercent { get; set; }
         public int marioState { set; get; }
         public Vector2 position { set; get; }
         public int gravity { get; set; }
@@ -30,7 +31,7 @@ namespace Sprint6.ElementClasses
         public int score { get; set; }
         public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
-        public int cow { get; set; }
+        public int CowCount { get; set; }
 
 
         private int JumpCounter, counter, scoreCounter;
@@ -78,6 +79,10 @@ namespace Sprint6.ElementClasses
         {
             if (canMove)
             {
+                if (BeamPercent < 100)
+                {
+                    BeamPercent++;
+                }
                 state.Sprite.Update();
                 if (IsJumping)
                 {
@@ -104,17 +109,21 @@ namespace Sprint6.ElementClasses
 
         public void Attack()
         {
-            if (myGame.level.mainCharacter.state is FlyingState)
+            if (BeamPercent > 3)
             {
-                FlyingState f = myGame.level.mainCharacter.state as FlyingState;
-                f.beam = true;
-                myGame.level.mainCharacter.state = f;
-            }
-            else if (myGame.level.mainCharacter.state is JumpingState)
-            {
-                JumpingState f = myGame.level.mainCharacter.state as JumpingState;
-                f.beam = true;
-                myGame.level.mainCharacter.state = f;
+                BeamPercent -= GameConstants.Three;
+                if (myGame.level.mainCharacter.state is FlyingState)
+                {
+                    FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                    f.beam = true;
+                    myGame.level.mainCharacter.state = f;
+                }
+                else if (myGame.level.mainCharacter.state is JumpingState)
+                {
+                    JumpingState f = myGame.level.mainCharacter.state as JumpingState;
+                    f.beam = true;
+                    myGame.level.mainCharacter.state = f;
+                }
             }
         }
 
@@ -145,6 +154,39 @@ namespace Sprint6.ElementClasses
             myGame.spriteBatch.End();
         }
 
-       
+        public int GetBeamPercent()
+        {
+            return BeamPercent;
+        }
+
+        public void SetBeamPercent(int newBeamPercent)
+        {
+            BeamPercent = newBeamPercent;
+        }
+
+        public void DecrementBeamPercent()
+        {
+            if (BeamPercent > 0)
+            {
+                BeamPercent--;
+            }
+        }
+
+        public void IncrementBeamPercent()
+        {
+            BeamPercent++;
+        }
+
+        public void DecreaseBeamPercentBy(int amount)
+        {
+            BeamPercent -= amount;
+        }
+
+        public void IncreaseBeamPercentBy(int amount)
+        {
+            BeamPercent += amount;
+        }
+
+
     }
 }

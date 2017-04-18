@@ -67,9 +67,11 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GameConstants.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HUDElements\BeamMeterHUD.cs" />
+    <Compile Include="HUDElements\CowHUD.cs" />
     <Compile Include="HUDElements\LifeText.cs" />
     <Compile Include="HUDElements\PauseText.cs" />
-    <Compile Include="HUDElements\ScoreSystem.cs" />
+    <Compile Include="HUDElements\HUDManager.cs" />
     <Compile Include="LevelLoading\Level.cs" />
     <Compile Include="LevelLoading\LevelLoader.cs" />
     <Compile Include="Program.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Sprites\EnvironmentSprite\GrassSprite.cs" />
     <Compile Include="Sprites\EnvironmentSprite\BarnSprite.cs" />
     <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Sprites\UFOSprite\CowHeadSprite.cs" />
     <Compile Include="Sprites\UFOSprite\CowSprite.cs" />
     <Compile Include="Sprites\EnvironmentSprite\SiloSprite.cs" />
     <Compile Include="Sprites\UFOSprite\BeamSprite.cs" />
