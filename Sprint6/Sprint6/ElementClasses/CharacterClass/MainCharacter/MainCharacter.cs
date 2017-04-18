@@ -85,7 +85,6 @@ namespace Sprint6.ElementClasses
                 {
                     beamMeter.IncrementBeamPercent();
                 }
-                state.Sprite.Update();
                 if (IsJumping)
                 {
                     position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y - (float)(JumpCounter / 1.5));
