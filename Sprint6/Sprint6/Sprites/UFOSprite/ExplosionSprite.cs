@@ -15,7 +15,7 @@ namespace Sprint6.Sprites.UFOSprite
         public Color tintColor { get; set; }
         public List<Circle> circles { get; set; }
         private int totalColumn,totalRow,currentColumn,currentRow;
-        public Vector2 circleCenter1;
+        public Vector2 circleCenter1, circleCenter2, circleCenter3;
         private int counter;
         Vector2 p;
 
@@ -32,10 +32,32 @@ namespace Sprint6.Sprites.UFOSprite
             circles = new List<Circle>();
             circleCenter1 = new Vector2(p.X + desRectangle.Width / 2.0f, p.Y + desRectangle.Height / 2.0f);
             circles.Add(new Circle(circleCenter1, desRectangle.Height / 2.0f));
+            circleCenter2 = new Vector2(p.X + desRectangle.Width / 4.0f, p.Y + desRectangle.Height / 2.0f);
+            circles.Add(new Circle(circleCenter2, desRectangle.Height / 3.0f));
+            circleCenter3 = new Vector2(p.X + desRectangle.Width * 3.0f / 4.0f, p.Y + desRectangle.Height / 2.0f);
+            circles.Add(new Circle(circleCenter3, desRectangle.Height / 3.0f));
         }
         public void Update()
         {
-            counter++;
+            for (int i = 0; i < circles.Count; i++)
+            {
+                if (circles[i].Center == circleCenter1)
+                {
+                    circleCenter1 = new Vector2(p.X + desRectangle.Width / 2.0f, p.Y + desRectangle.Height / 2.0f);
+                    circles[i].Center = circleCenter1;
+                }
+                else if (circles[i].Center == circleCenter2)
+                {
+                    circleCenter2 = new Vector2(p.X + desRectangle.Width / 4.0f, p.Y + desRectangle.Height / 2.0f);
+                    circles[i].Center = circleCenter2;
+                }
+                else if (circles[i].Center == circleCenter3)
+                {
+                    circleCenter3 = new Vector2(p.X + desRectangle.Width * 3.0f / 4.0f, p.Y + desRectangle.Height / 2.0f);
+                    circles[i].Center = circleCenter3;
+                }
+            }
+                counter++;
             if (counter % 10 == 0)
             {
                 currentColumn++;
