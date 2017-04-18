@@ -8,7 +8,7 @@ namespace Sprint6.SpriteFactories
 {
     class CharacterSpriteFactory
     {
-        private Texture2D flyingUFOSpritesheet, cowSpritesheet,beamSpritesheeet,explosionSpritesheet;
+        private Texture2D flyingUFOSpritesheet, cowSpritesheet,beamSpritesheeet,explosionSpritesheet, bombSpritesheet;
         private static UFOFlyingSprite ufo;
         private static UFOJumpingSprite  ufo2;
         private static bool first = true;
@@ -34,6 +34,8 @@ namespace Sprint6.SpriteFactories
             cowSpritesheet = content.Load<Texture2D>("UFOGameObjects/Cowsheet");
             beamSpritesheeet = content.Load<Texture2D>("UFOGameObjects/UFOBeam");
             explosionSpritesheet = content.Load<Texture2D>("UFOGameObjects/explosion");
+            bombSpritesheet = content.Load<Texture2D>("UFOGameObjects/bomb");
+
             this.sb = sb;
         }
 
@@ -77,5 +79,9 @@ namespace Sprint6.SpriteFactories
             return new BeamSprite(beamSpritesheeet, sb, 0);
         }
 
+        public ISprite CreateBombSprite()
+        {
+            return new BombSprite(bombSpritesheet, sb, 0);
+        }
     }
 }
