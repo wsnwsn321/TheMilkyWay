@@ -17,7 +17,7 @@ namespace Sprint6.ElementClasses
         public IState state { get; set; }
 
         public int marioAction { set; get; }
-        public BeamMeterHUD beamMeter { get; set; }
+        public BeamMeter beamMeter { get; set; }
         public int marioState { set; get; }
         public Vector2 position { set; get; }
         public int gravity { get; set; }
@@ -43,7 +43,7 @@ namespace Sprint6.ElementClasses
             myGame = game;
             state = new FlyingState(this);
             state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
-            beamMeter = new BeamMeterHUD(myGame);
+            beamMeter = new BeamMeter(myGame);
             this.position = position;
             canMove = true;
             scoreCounter = 0;

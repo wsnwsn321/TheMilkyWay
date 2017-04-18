@@ -67,7 +67,7 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="GameConstants.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="HUDElements\BeamMeterHUD.cs" />
+    <Compile Include="HUDElements\BeamMeter.cs" />
     <Compile Include="HUDElements\CowHUD.cs" />
     <Compile Include="HUDElements\LifeText.cs" />
     <Compile Include="HUDElements\PauseText.cs" />

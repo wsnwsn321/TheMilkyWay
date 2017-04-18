@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint6.HUDElements
 {
-    public class BeamMeterHUD
+    public class BeamMeter
     {
         private int BeamPercent;
         private Rectangle BeamMeterBackground;
@@ -20,7 +20,7 @@ namespace Sprint6.HUDElements
         private static int HUD_BEAM_METER_BACK_WIDTH = GameConstants.BEAM_PERCENT_MAX * 3 + 10;
         private static int HUD_BEAM_METER_BACK_HEIGHT = HUD_BEAM_METER_HEIGHT + 10;
 
-        public BeamMeterHUD(Game1 game)
+        public BeamMeter(Game1 game)
         {
 
             myGame = game;

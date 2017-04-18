@@ -9,7 +9,7 @@ namespace Sprint6.HUDElements
     public class HUDManager
     {
         private Game1 mygame;
-        public BeamMeterHUD beamMeter;
+        public BeamMeter beamMeter;
         public CowHUD cowHUD;
 
         public HUDManager(Game1 game)
