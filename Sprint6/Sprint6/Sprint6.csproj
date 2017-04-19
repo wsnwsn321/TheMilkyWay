@@ -78,7 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sound\BackgroundMusic\BackgroundMusic.cs" />
-    <Compile Include="Sound\MarioSound\MainCharSoundManager.cs" />
+    <Compile Include="Sound\UFOSound\MainCharSoundManager.cs" />
     <Compile Include="SpriteFactories\BackgroundSpriteFactory.cs" />
     <Compile Include="SpriteFactories\EnvironmentSpriteFactory.cs" />
     <Compile Include="SpriteFactories\ItemSpriteFactory.cs" />
