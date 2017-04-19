@@ -81,5 +81,10 @@ namespace Sprint6.HUDElements
             BeamPercent += amount;
         }
 
+        public bool isAlmostZero()
+        {
+            return BeamPercent < 5;
+        }
+
     }
 }

@@ -78,10 +78,10 @@ namespace Sprint6.Sound.BackgroundMusic
         {
           
             System.Random randonNumber = new System.Random();
-            int r = randonNumber.Next(0, mash);
+            int r = randonNumber.Next(1, mash);
             while(r == currentBGM)
             {
-                r = randonNumber.Next(0, mash);
+                r = randonNumber.Next(1, mash);
             }
             playSound(r);
         }

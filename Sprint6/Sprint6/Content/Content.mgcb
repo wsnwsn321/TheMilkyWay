@@ -757,42 +757,6 @@
 /processorParam:TextureFormat=Color
 /build:UFOGameObjects/UFOBeam.png
 
-#begin Sound/UFOGameSoundEffect/Cow.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/UFOGameSoundEffect/Cow.mp3
-
-#begin Sound/UFOGameSoundEffect/Explosion.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/UFOGameSoundEffect/Explosion.mp3
-
-#begin Sound/UFOGameSoundEffect/Laser.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/UFOGameSoundEffect/Laser.mp3
-
-#begin Sound/UFOGameSoundEffect/UFO.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/UFOGameSoundEffect/UFO.mp3
-
-#begin Sound/UFOGameSoundEffect/Disk.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sound/UFOGameSoundEffect/Disk.png
-
 #begin UFOGameObjects/Disk.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -852,4 +816,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:UFOGameObjects/bomb.png
+
+#begin Sound/UFOGameSoundEffect/Cow.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/UFOGameSoundEffect/Cow.wav
+
+#begin Sound/UFOGameSoundEffect/Laser.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/UFOGameSoundEffect/Laser.wav
+
+#begin Sound/UFOGameSoundEffect/UFO.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/UFOGameSoundEffect/UFO.wav
+
+#begin Sound\UFOGameSoundEffect\EXP
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound\UFOGameSoundEffect\EXP
 

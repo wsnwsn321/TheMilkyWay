@@ -13,19 +13,19 @@ namespace Sprint6.CollisionHandler
             {
                 case 1:
                     item.isVisible = false;
-                    MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
+                    //MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
                     break;
                 case 2:
                     item.isVisible = false;
-                    MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
+                    //MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
                     break;
                 case 3:
                     item.isVisible = false;
-                    MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
+                   // MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
                     break;
                 case 4:
                     item.isVisible = false;
-                    MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
+                  //  MainCharSoundManager.instance.playSound(MainCharSoundManager.KICK);
                     break;
             }
         }
