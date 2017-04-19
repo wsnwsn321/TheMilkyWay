@@ -38,21 +38,43 @@ namespace Sprint6.CollisionHandler
             myGame = game;
             foreach (IItem item in itemElements)
             {
-                if (item is CowCharacter &&
+                if ((item is CowCharacter||item is BadCowCharacter) &&
                     item.itemSprite.desRectangle.Intersects(mainCharacter.state.BeamSprite.desRectangle)&&mainCharacter.state.beam)
                 {
                     item.position = new Vector2(item.position.X,item.position.Y - 3);
                 }
             }
         }
+        public void BombBrickCollision(Game1 game, MainCharacter mainCharacter, List<IBlock> envElements)
+        {
+            myGame = game;
+            foreach (IBlock block in envElements)
+            {
+                if (block.blockSprite.desRectangle.Intersects(mainCharacter.state.BombSprite.desRectangle) && mainCharacter.state.bomb)
+                {
+                    mainCharacter.state.BombSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
+                    mainCharacter.state.BombSprite.canMove = false;
+                }
+            }
+        }
+
 
         public void MainCharItemCollision(MainCharacter mainCharacter, List<IItem> itemElements)
         {
             foreach (IItem item in itemElements)
             {
-                if (item is CowCharacter && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && mainCharacter.state.beam && item.isVisible)
+                if ((item is CowCharacter ||item is BadCowCharacter)&& mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && mainCharacter.state.beam && item.isVisible)
                 {
-                    myGame.level.mainCharacter.CowCount++;
+                    if(item is CowCharacter)
+                    {
+                        myGame.level.mainCharacter.CowCount++;
+
+                    }
+                    else
+                    {
+                        mainCharacter.canMove = false;
+                        mainCharacter.UFODie();
+                    }
                     item.isVisible = false;
                 }else if(item is Disk && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && item.isVisible)
                 {
@@ -66,7 +88,6 @@ namespace Sprint6.CollisionHandler
         public void MainCharBlockCollision(Game1 game, MainCharacter mainCharacter, List<IBlock> envElements)
         {
             myGame = game;
-            mainCharacter.gravity = 0;
             bool intersect = false;
             foreach (IBlock block in envElements)
             {

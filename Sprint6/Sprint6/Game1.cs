@@ -88,9 +88,9 @@ namespace Sprint6
 
         private void InitializeCommands()
         {
-            keyboardController.RegisterCommand(Keys.W, new MarioJumpCommand(this));
+            keyboardController.RegisterCommand(Keys.Space, new MarioJumpCommand(this));
 
-            keyboardController.RegisterCommand(Keys.Space, new PauseGameCommand(this));
+            keyboardController.RegisterCommand(Keys.P, new PauseGameCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             keyboardController.RegisterCommand(Keys.B, new MarioAttackCommand(this, false));

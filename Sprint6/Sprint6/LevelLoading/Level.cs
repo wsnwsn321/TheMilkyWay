@@ -60,6 +60,7 @@ namespace Sprint6.LevelLoading
                 {
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
                     CollisionDetection.Instance.BeamCowCollision(myGame,mainCharacter,itemElements);
+                    CollisionDetection.Instance.BombBrickCollision(myGame, mainCharacter, envElements);
                     item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
                     item.Update();
                 }
@@ -122,10 +123,6 @@ namespace Sprint6.LevelLoading
             {
                 pauseText.Draw();
             }
-            if (mainCharacter.isVisible)
-            {
-                mainCharacter.MainCharDraw();
-            }
             foreach (IBlock block in envElements)
             {
                 block.Draw();
@@ -136,6 +133,10 @@ namespace Sprint6.LevelLoading
                 {
                     enemy.Draw();
                 }
+            }
+            if (mainCharacter.isVisible)
+            {
+                mainCharacter.MainCharDraw();
             }
             scoreSystem.DisplayHUDElements();
         }

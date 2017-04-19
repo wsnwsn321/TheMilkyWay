@@ -5,7 +5,7 @@ using MyGame;
 
 namespace Sprint6.Sprites.UFOSprite
 {
-    public class DiskSprite : ISprite
+    public class BadCowSprite : ISprite
     {
         public List<Circle> circles { get; set; }
         public bool canMove { get; set; }
@@ -21,20 +21,26 @@ namespace Sprint6.Sprites.UFOSprite
 
         Vector2 p;
 
-        public DiskSprite(Texture2D texture, SpriteBatch sb, int currentF)
+        public BadCowSprite(Texture2D texture,SpriteBatch sb, int currentF)
         {
             Texture = texture;
             this.sb = sb;
-            totalFrames = 1;
+            totalFrames = 4;
             counter = 0;
             currentFrame = currentF;
-            tintColor = Color.White;
+            tintColor = Color.LightGreen;
         }
         public void Update()
         {
-            
+            counter++;
+            if (counter % 10==0)
+            {
+                currentFrame++;
+            }
+            if (currentFrame >= totalFrames)
+            {
                 currentFrame = 0;
-  
+            }
         }
 
         public Vector2 ReturnPosition()
@@ -45,8 +51,8 @@ namespace Sprint6.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 0, 64, 64);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 64);
+            Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 22, 64, 43);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 43);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

@@ -12,6 +12,7 @@ namespace Sprint6.Sprites
     {
         Rectangle desRectangle { get; set; }
         int currentFrame { get; set; }
+        bool canMove { get; set; }
         List<Circle> circles { get; set; }
         void Update();
         void Draw(Vector2 pos);

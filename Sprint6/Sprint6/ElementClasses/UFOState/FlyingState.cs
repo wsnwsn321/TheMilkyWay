@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint6.SpriteFactories;
 using Sprint6.Sprites;
 using Sprint6.Sprites.UFOSprite;
 
@@ -32,15 +33,28 @@ namespace Sprint6.ElementClasses
             {
                 BeamSprite.Update();
             }
-            else if (bomb)
+            else if (bomb && BombSprite.canMove)
             {
                 BombSprite.Update();
-                if (newPos.Y > 480 - 80)
+                bombSpeed = 6;
+                newPos.X = mainCharacter.position.X + 14;
+                if (first)
                 {
-                    bomb = false;
-                    bombSpeed = 0;
-                    first = true;
+                    newPos.Y = mainCharacter.position.Y + bombSpeed;
+                    first = false;
                 }
+                else
+                {
+                    newPos.Y += bombSpeed;
+                }
+            }
+            else if (bomb && !BombSprite.canMove)
+            {
+                BombSprite.Update();
+
+                //BombSprite = CharacterSpriteFactory.Instance.CreateBombSprite();
+                bombSpeed = 0;
+                first = true;
             }
         }
 
@@ -71,18 +85,6 @@ namespace Sprint6.ElementClasses
         }
         public void Drop()
         {
-
-            bombSpeed += 1;
-            newPos.X = mainCharacter.position.X + 14;
-            if (first)
-            {
-                newPos.Y = mainCharacter.position.Y + bombSpeed;
-                first = false;
-            }
-            else
-            {
-                newPos.Y += bombSpeed;
-            }
             BombSprite.Draw(newPos);
         }
     }
