@@ -63,10 +63,10 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharJump()
         {
-            IsJumping = true;
-            JumpCounter = 20;
-            myGame.level.accel = 0;
-            myGame.level.mainCharacter.state.Sprite = CharacterSpriteFactory.Instance.CreateJumpingUFOSprite();
+                IsJumping = true;
+                JumpCounter = 20;
+                myGame.level.accel = 0;
+                myGame.level.mainCharacter.state.Sprite = CharacterSpriteFactory.Instance.CreateJumpingUFOSprite();
         }
 
         public virtual void MainCharDraw()
@@ -85,7 +85,6 @@ namespace Sprint6.ElementClasses
                 {
                     beamMeter.IncrementBeamPercent();
                 }
-                state.Sprite.Update();
                 if (IsJumping)
                 {
                     position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y - (float)(JumpCounter / 1.5));
@@ -109,22 +108,40 @@ namespace Sprint6.ElementClasses
             state.Die();
         }
 
-        public void Attack()
+        public void Attack(bool bomb)
         {
-            if (beamMeter.GetBeamPercent() > GameConstants.Three)
+            if (bomb)
             {
-                beamMeter.DecreaseBeamPercentBy(GameConstants.Three);
-                if (myGame.level.mainCharacter.state is FlyingState &&beamMeter.GetBeamPercent() > GameConstants.Three)
+                if (myGame.level.mainCharacter.state is FlyingState)
                 {
                     FlyingState f = myGame.level.mainCharacter.state as FlyingState;
-                    f.beam = true;
+                    f.bomb = true;
                     myGame.level.mainCharacter.state = f;
                 }
-                else if (myGame.level.mainCharacter.state is JumpingState && beamMeter.GetBeamPercent() > GameConstants.Three)
+                else if (myGame.level.mainCharacter.state is JumpingState)
                 {
                     JumpingState f = (JumpingState)myGame.level.mainCharacter.state;
-                    f.beam = true;
+                    f.bomb = true;
                     myGame.level.mainCharacter.state = f;
+                }
+            }
+            else
+            {
+                if (beamMeter.GetBeamPercent() > GameConstants.Three)
+                {
+                    beamMeter.DecreaseBeamPercentBy(GameConstants.Three);
+                    if (myGame.level.mainCharacter.state is FlyingState && beamMeter.GetBeamPercent() > GameConstants.Three)
+                    {
+                        FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                        f.beam = true;
+                        myGame.level.mainCharacter.state = f;
+                    }
+                    else if (myGame.level.mainCharacter.state is JumpingState && beamMeter.GetBeamPercent() > GameConstants.Three)
+                    {
+                        JumpingState f = (JumpingState)myGame.level.mainCharacter.state;
+                        f.beam = true;
+                        myGame.level.mainCharacter.state = f;
+                    }
                 }
             }
         }

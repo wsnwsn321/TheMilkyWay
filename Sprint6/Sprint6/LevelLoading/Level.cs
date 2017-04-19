@@ -45,7 +45,7 @@ namespace Sprint6.LevelLoading
         {            
             if (!IsPaused)
             {
-                mainCharacter.canMove = true;
+
                 foreach (IEnemy enemy in enemyElements)
                 {
                     if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 100 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
@@ -77,17 +77,18 @@ namespace Sprint6.LevelLoading
                 if (!mainCharacter.animated)
                 {
                     CollisionDetection.Instance.MainCharBlockCollision(myGame, mainCharacter, envElements);
-                    CollisionDetection.Instance.MarioEnemyCollision(mainCharacter, enemyElements);
+                    CollisionDetection.Instance.MainCharEnemyCollision(mainCharacter, enemyElements);
                     CollisionDetection.Instance.MainCharItemCollision(mainCharacter, itemElements);
                     if (accel != 5)
                     {
                         accel += 1;
                     }
+                    mainCharacter.state.Update();
                     if (mainCharacter.canMove)
                     {
                         mainCharacter.position = new Vector2(mainCharacter.position.X, mainCharacter.position.Y + mainCharacter.gravity + accel);
                         mainCharacter.MainCharUpdate();
-                        mainCharacter.state.BeamSprite.Update();
+
                     }
 
                     if ((mainCharacter.position.X > (-myGame.GraphicsDevice.Viewport.X) + 400) && -myGame.GraphicsDevice.Viewport.X < gameWidth - GameConstants.ScreenWidth)

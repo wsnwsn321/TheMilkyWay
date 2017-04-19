@@ -26,37 +26,6 @@ namespace MyGame
         {
             return ((other.Center - Center).Length() < (other.Radius - Radius));
         }
-        //public bool Intersects(Rectangle rectangle)
-        //{
-        //    // the first thing we want to know is if any of the corners intersect
-        //    var corners = new[]
-        //    {
-        //        new Point(rectangle.Top, rectangle.Left),
-        //        new Point(rectangle.Top, rectangle.Right),
-        //        new Point(rectangle.Bottom, rectangle.Right),
-        //        new Point(rectangle.Bottom, rectangle.Left)
-        //    };
-
-        //    foreach (var corner in corners)
-        //    {
-        //        if (ContainsPoint(corner))
-        //            return true;
-        //    }
-
-        //    // next we want to know if the left, top, right or bottom edges overlap
-        //    if (Center.X - Radius > rectangle.Right || Center.X + Radius < rectangle.Left)
-        //        return false;
-
-        //    if (Center.Y - Radius > rectangle.Bottom || Center.Y + Radius < rectangle.Top)
-        //        return false;
-
-        //    return true;
-        //}
-        //public bool ContainsPoint(Point point)
-        //{
-        //    var vector2 = new Vector2(point.X - Center.X, point.Y - Center.Y);
-        //    return vector2.Length() <= Radius;
-        //}
         public bool Intersects(Rectangle rect)
         {
             float distanceX = (Center.X - rect.X-rect.Width/2.0f);
