@@ -58,6 +58,9 @@ namespace Sprint6.LevelLoading
                         case "Cow":
                             level.itemElements.Add(new CowCharacter(new Vector2(x, y)));
                             break;
+                        case "BadCow":
+                            level.itemElements.Add(new BadCowCharacter(new Vector2(x, y)));
+                            break;
                         case "UFO2":
                             level.enemyElements.Add(new FlyingUFO2(new Vector2(x, y)));
                             break;
