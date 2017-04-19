@@ -205,7 +205,7 @@ namespace Sprint6.CollisionHandler
             }  
         }
 
-        public void MarioEnemyCollision(MainCharacter mainCharacter, List<IEnemy> enemyElements)
+        public void MainCharEnemyCollision(MainCharacter mainCharacter, List<IEnemy> enemyElements)
         {
 
             foreach (IEnemy enemy in enemyElements)
@@ -222,6 +222,7 @@ namespace Sprint6.CollisionHandler
                 if (intersect)
                 {
                     mainCharacter.canMove = false;
+                    mainCharacter.UFODie();
                     firstRectangle = mainCharacter.state.Sprite.desRectangle;
                     secondRectangle = enemy.enemySprite.desRectangle;
                     collideRectangle = Rectangle.Intersect(mainCharacter.state.Sprite.desRectangle, enemy.enemySprite.desRectangle);
