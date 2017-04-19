@@ -47,7 +47,7 @@ namespace Sprint6.ElementClasses
             this.position = position;
             canMove = true;
             scoreCounter = 0;
-            gravity = 6;
+            gravity = GameConstants.UFOInitialGravity;
             animated = false;
             isVisible = true;
             isScored = false;
@@ -85,6 +85,9 @@ namespace Sprint6.ElementClasses
                 {
                     beamMeter.IncrementBeamPercent();
                 }
+
+                UpdateGravity();
+
                 if (IsJumping)
                 {
                     position = new Vector2(position.X + GameConstants.UFOSpeedX, position.Y - (float)(JumpCounter / 1.5));
@@ -144,6 +147,11 @@ namespace Sprint6.ElementClasses
                     }
                 }
             }
+        }
+
+        private void UpdateGravity()
+        {
+            gravity = GameConstants.UFOInitialGravity + CowCount;
         }
 
         public void DrawScore()

@@ -79,7 +79,6 @@ namespace Sprint6.CollisionHandler
         public void MainCharBlockCollision(Game1 game, MainCharacter mainCharacter, List<IBlock> envElements)
         {
             myGame = game;
-            mainCharacter.gravity = 0;
             bool intersect = false;
             foreach (IBlock block in envElements)
             {

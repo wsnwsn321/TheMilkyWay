@@ -83,5 +83,9 @@ namespace Sprint6.SpriteFactories
         {
             return new BombSprite(bombSpritesheet, sb, 0);
         }
+        public ISprite CreateDeadCowSprite()
+        {
+            return new BombSprite(cowSpritesheet, sb, 0);
+        }
     }
 }
