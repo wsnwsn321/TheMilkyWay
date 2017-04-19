@@ -68,7 +68,7 @@ namespace Sprint6.Controller
 
                     if (controllerMappings.ContainsKey(key)&&myGame.level.mainCharacter.canMove)
                     {
-                        if (key.Equals(Keys.W))
+                        if (key.Equals(Keys.Space))
                         {
                             wDown = true;
                          
@@ -81,9 +81,9 @@ namespace Sprint6.Controller
                                 controllerMappings[key].Execute();
                             }
                         }
-                        else if (key.Equals(Keys.W))
+                        else if (key.Equals(Keys.Space))
                         {
-                            if (NewState.IsKeyDown(Keys.W) && OldState.IsKeyUp(Keys.W))
+                            if (NewState.IsKeyDown(Keys.Space) && OldState.IsKeyUp(Keys.Space))
                             {
                                 controllerMappings[key].Execute();
                             }
@@ -97,9 +97,9 @@ namespace Sprint6.Controller
                     }
                 }
                 OldState = NewState;
-                MarioJumpCommand c = controllerMappings[Keys.W] as MarioJumpCommand;
+                MarioJumpCommand c = controllerMappings[Keys.Space] as MarioJumpCommand;
                 c.wDown = wDown;
-                controllerMappings[Keys.W] = c;
+                controllerMappings[Keys.Space] = c;
             }            
         }
     }
