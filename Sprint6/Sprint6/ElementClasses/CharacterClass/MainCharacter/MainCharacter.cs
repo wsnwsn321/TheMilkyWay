@@ -124,7 +124,7 @@ namespace Sprint6.ElementClasses
                 else if (myGame.level.mainCharacter.state is JumpingState)
                 {
                     JumpingState f = (JumpingState)myGame.level.mainCharacter.state;
-                    f.bomb = true;
+                    f. bomb = true;
                     myGame.level.mainCharacter.state = f;
                 }
             }

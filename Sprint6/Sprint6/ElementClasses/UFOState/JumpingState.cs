@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint6.SpriteFactories;
 using Sprint6.Sprites;
 using Sprint6.Sprites.UFOSprite;
 
@@ -68,12 +69,14 @@ namespace Sprint6.ElementClasses
                 {
                     newPos.Y += bombSpeed;
                 }
-                if (newPos.Y > 480 - 80)
-                {
-                    bomb = false;
-                    bombSpeed = 0;
-                    first = true;
-                }
+            }
+            else if (bomb && !BombSprite.canMove)
+            {
+                BombSprite.Update();
+                //BombSprite = CharacterSpriteFactory.Instance.CreateBombSprite();
+                bombSpeed = 0;
+                BombSprite.canMove = true;
+                first = true;
             }
         }
 
