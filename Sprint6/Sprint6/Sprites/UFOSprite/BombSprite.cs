@@ -9,11 +9,14 @@ namespace Sprint6.Sprites.UFOSprite
 
     {
         public Texture2D Texture { get; set; }
+        public bool canMove { get; set; }
+
         public int currentFrame { get; set; }
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
         public List<Circle> circles { get; set; }
+        public Vector2 circleCenter1;
 
         private float length;
         Vector2 p;
@@ -24,11 +27,16 @@ namespace Sprint6.Sprites.UFOSprite
             Texture = texture;
             this.sb = sb;
             currentFrame = currentF;
+            circles = new List<Circle>();
+            circleCenter1 = new Vector2(p.X + desRectangle.Width / 2.0f, p.Y + desRectangle.Height / 2.0f);
+            circles.Add(new Circle(circleCenter1, desRectangle.Height / 2.0f));
             tintColor = Color.White;
+            canMove = true;
         }
         public void Update()
         {
-
+            circleCenter1 = new Vector2(p.X + desRectangle.Width / 2.0f, p.Y + desRectangle.Height / 2.0f);
+            circles[0].Center = circleCenter1;
         }
 
         public Vector2 ReturnPosition()

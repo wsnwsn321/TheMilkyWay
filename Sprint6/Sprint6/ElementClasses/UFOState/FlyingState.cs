@@ -32,9 +32,20 @@ namespace Sprint6.ElementClasses
             {
                 BeamSprite.Update();
             }
-            else if (bomb)
+            else if (bomb && BombSprite.canMove)
             {
                 BombSprite.Update();
+                bombSpeed = 6;
+                newPos.X = mainCharacter.position.X + 14;
+                if (first)
+                {
+                    newPos.Y = mainCharacter.position.Y + bombSpeed;
+                    first = false;
+                }
+                else
+                {
+                    newPos.Y += bombSpeed;
+                }
                 if (newPos.Y > 480 - 80)
                 {
                     bomb = false;
@@ -71,18 +82,6 @@ namespace Sprint6.ElementClasses
         }
         public void Drop()
         {
-
-            bombSpeed += 1;
-            newPos.X = mainCharacter.position.X + 14;
-            if (first)
-            {
-                newPos.Y = mainCharacter.position.Y + bombSpeed;
-                first = false;
-            }
-            else
-            {
-                newPos.Y += bombSpeed;
-            }
             BombSprite.Draw(newPos);
         }
     }

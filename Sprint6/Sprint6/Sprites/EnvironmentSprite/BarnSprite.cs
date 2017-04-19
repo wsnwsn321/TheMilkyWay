@@ -9,6 +9,7 @@ namespace Sprint6.Sprites.EnvironmentSprite
 
     {
         public Texture2D Texture { get; set; }
+        public bool canMove { get; set; }
         public int currentFrame { get; set; }
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
