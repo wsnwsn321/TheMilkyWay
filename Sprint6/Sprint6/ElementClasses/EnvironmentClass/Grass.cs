@@ -23,7 +23,6 @@ namespace Sprint6.ElementClasses
         {
             if (isVisible)
             {
-
                 blockSprite.Draw(position);
             }
 
