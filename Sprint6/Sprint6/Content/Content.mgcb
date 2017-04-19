@@ -757,36 +757,6 @@
 /processorParam:TextureFormat=Color
 /build:UFOGameObjects/UFOBeam.png
 
-#begin Sound/BGM/BGM1.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM1.mp3
-
-#begin Sound/BGM/BGM2.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM2.mp3
-
-#begin Sound/BGM/BGM3.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM3.mp3
-
-#begin Sound/BGM/BGM4.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM4.mp3
-
-#begin Sound/BGM/BGM5.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM5.mp3
-
 #begin Sound/UFOGameSoundEffect/Cow.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -834,4 +804,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:UFOGameObjects/Disk.png
+
+#begin Sound/BGM/BGM1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/BGM/BGM1.mp3
+
+#begin Sound/BGM/BGM2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/BGM/BGM2.mp3
+
+#begin Sound/BGM/BGM3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/BGM/BGM3.mp3
+
+#begin Sound/BGM/BGM4.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/BGM/BGM4.mp3
 

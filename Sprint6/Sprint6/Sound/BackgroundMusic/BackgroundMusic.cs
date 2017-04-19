@@ -7,7 +7,7 @@ namespace Sprint6.Sound.BackgroundMusic
     public class BackgroundMusic
     {
         public static BackgroundMusic instanse = new BackgroundMusic();
-        private int mash = 5;
+        private int mash = 4;
         List<Song> BGM;
         Song var;
         public const int BACKGROUNGMUSIC1 = 1, BACKGROUNGMUSIC2 = 2, BACKGROUNGMUSIC3 = 3, BACKGROUNGMUSIC4 = 4, BACKGROUNGMUSIC5= 5;
@@ -31,8 +31,7 @@ namespace Sprint6.Sound.BackgroundMusic
             //#4
             BGM.Add(content.Load<Song>("Sound/BGM/BGM4"));
             
-            //#5
-            BGM.Add(content.Load<Song>("Sound/BGM/BGM5"));
+           
 
         }
 
