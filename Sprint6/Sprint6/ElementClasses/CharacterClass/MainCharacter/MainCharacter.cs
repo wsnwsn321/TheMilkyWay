@@ -41,7 +41,7 @@ namespace Sprint6.ElementClasses
         public MainCharacter(Game1 game, Vector2 position)
         {
             myGame = game;
-            state = new FlyingState(this);
+            state = new AliveState(this);
             state.Sprite = CharacterSpriteFactory.Instance.CreateFlyingUFOSprite();
             beamMeter = new BeamMeter(myGame);
             this.position = position;
@@ -115,16 +115,10 @@ namespace Sprint6.ElementClasses
         {
             if (bomb)
             {
-                if (myGame.level.mainCharacter.state is FlyingState)
+                if (myGame.level.mainCharacter.state is AliveState)
                 {
-                    FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                    AliveState f = myGame.level.mainCharacter.state as AliveState;
                     f.bomb = true;
-                    myGame.level.mainCharacter.state = f;
-                }
-                else if (myGame.level.mainCharacter.state is JumpingState)
-                {
-                    JumpingState f = (JumpingState)myGame.level.mainCharacter.state;
-                    f. bomb = true;
                     myGame.level.mainCharacter.state = f;
                 }
             }
@@ -133,15 +127,9 @@ namespace Sprint6.ElementClasses
                 if (beamMeter.GetBeamPercent() > GameConstants.Three)
                 {
                     beamMeter.DecreaseBeamPercentBy(GameConstants.Three);
-                    if (myGame.level.mainCharacter.state is FlyingState && beamMeter.GetBeamPercent() > GameConstants.Three)
+                    if (myGame.level.mainCharacter.state is AliveState && beamMeter.GetBeamPercent() > GameConstants.Three)
                     {
-                        FlyingState f = myGame.level.mainCharacter.state as FlyingState;
-                        f.beam = true;
-                        myGame.level.mainCharacter.state = f;
-                    }
-                    else if (myGame.level.mainCharacter.state is JumpingState && beamMeter.GetBeamPercent() > GameConstants.Three)
-                    {
-                        JumpingState f = (JumpingState)myGame.level.mainCharacter.state;
+                        AliveState f = myGame.level.mainCharacter.state as AliveState;
                         f.beam = true;
                         myGame.level.mainCharacter.state = f;
                     }

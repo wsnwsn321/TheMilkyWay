@@ -44,18 +44,10 @@ namespace Sprint6.Controller
                 KeyboardState NewState = Keyboard.GetState();
 
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-                if (myGame.level.mainCharacter.state is FlyingState)
+                if (myGame.level.mainCharacter.state is AliveState)
                 {
-                    FlyingState f = myGame.level.mainCharacter.state as FlyingState;
+                    AliveState f = myGame.level.mainCharacter.state as AliveState;
                     f.beam = false;
-                    //f.bomb = false;
-                    myGame.level.mainCharacter.state = f;
-                }
-                else if(myGame.level.mainCharacter.state is JumpingState)
-                {
-                    JumpingState f = myGame.level.mainCharacter.state as JumpingState;
-                    f.beam = false;
-                    //f.bomb = false;
                     myGame.level.mainCharacter.state = f;
                 }
 

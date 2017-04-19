@@ -45,12 +45,12 @@ namespace Sprint6.CollisionHandler
                 }
             }
         }
-        public void BombBrickCollision(Game1 game, MainCharacter mainCharacter, List<IBlock> envElements)
+        public void BombBlockCollision(Game1 game, MainCharacter mainCharacter, List<IBlock> envElements)
         {
             myGame = game;
             foreach (IBlock block in envElements)
             {
-                if (block.blockSprite.desRectangle.Intersects(mainCharacter.state.BombSprite.desRectangle) && mainCharacter.state.bomb)
+                if (block.blockSprite.desRectangle.Intersects(mainCharacter.state.BombSprite.desRectangle))
                 {
                     mainCharacter.state.BombSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
                     mainCharacter.state.BombSprite.canMove = false;

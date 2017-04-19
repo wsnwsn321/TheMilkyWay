@@ -5,7 +5,7 @@ using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.ElementClasses
 {
-    class FlyingState : IState
+    class AliveState : IState
     {
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
@@ -16,12 +16,12 @@ namespace Sprint6.ElementClasses
         public ISprite BeamSprite { get; set; }
         public ISprite BombSprite { get; set; }
         private Vector2 newPos;
-        public FlyingState(MainCharacter mainCharacter)
+        public AliveState(MainCharacter mainCharacter)
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             BombSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBombSprite();
             this.mainCharacter = mainCharacter;
-            bombSpeed = 0;
+            bombSpeed = 6;
             beam = false;
             bomb = false;
         }
@@ -33,13 +33,13 @@ namespace Sprint6.ElementClasses
             {
                 BeamSprite.Update();
             }
-            else if (bomb && BombSprite.canMove)
+            if (bomb && BombSprite.canMove)
             {
                 BombSprite.Update();
-                bombSpeed = 6;
                 newPos.X = mainCharacter.position.X + 14;
                 if (first)
                 {
+                    BombSprite = CharacterSpriteFactory.Instance.CreateBombSprite();
                     newPos.Y = mainCharacter.position.Y + bombSpeed;
                     first = false;
                 }
@@ -48,12 +48,9 @@ namespace Sprint6.ElementClasses
                     newPos.Y += bombSpeed;
                 }
             }
-            else if (bomb && !BombSprite.canMove)
+            if (!BombSprite.canMove)
             {
-                BombSprite.Update();
-
-                //BombSprite = CharacterSpriteFactory.Instance.CreateBombSprite();
-                bombSpeed = 0;
+                BombSprite.canMove = true;
                 first = true;
             }
         }
@@ -65,7 +62,7 @@ namespace Sprint6.ElementClasses
             {
                 Collect();
             }
-            else if (bomb)
+            if (bomb)
             {
                 Drop();
             }

@@ -60,7 +60,7 @@ namespace Sprint6.LevelLoading
                 {
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
                     CollisionDetection.Instance.BeamCowCollision(myGame,mainCharacter,itemElements);
-                    CollisionDetection.Instance.BombBrickCollision(myGame, mainCharacter, envElements);
+                    CollisionDetection.Instance.BombBlockCollision(myGame, mainCharacter, envElements);
                     item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
                     item.Update();
                 }
