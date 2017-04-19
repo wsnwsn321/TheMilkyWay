@@ -85,7 +85,12 @@ namespace Sprint6.SpriteFactories
         }
         public ISprite CreateDeadCowSprite()
         {
-            return new BombSprite(cowSpritesheet, sb, 0);
+            return new DeadCowSprite(cowSpritesheet, sb, 0);
+        }
+
+        public ISprite CreateBadCowSprite()
+        {
+            return new BadCowSprite(cowSpritesheet, sb, 0);
         }
     }
 }
