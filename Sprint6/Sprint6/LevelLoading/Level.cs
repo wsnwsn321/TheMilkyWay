@@ -156,7 +156,7 @@ namespace Sprint6.LevelLoading
             mainCharacter.MarioIdle();
             mainCharacter.position = marioPos;
             scoreSystem = new HUDManager(myGame);
-                    BackgroundMusic.instanse.playSound(BackgroundMusic.BACKGROUNGMUSIC1);
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.BACKGROUNGMUSIC3);
                   
             
         }

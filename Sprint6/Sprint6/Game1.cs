@@ -108,7 +108,7 @@ namespace Sprint6
             EnvironmentSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             BackgroundSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
             CharacterSpriteFactory.Instance.LoadAllTextures(Content, spriteBatch);
-            MainCharSoundManager.instance.LoadSound(Content);
+            UFOSoundManager.instance.LoadSound(Content);
             BackgroundMusic.instanse.LoadSound(Content);
        
             font = Content.Load<SpriteFont>(@"SpriteFonts\Courier New");

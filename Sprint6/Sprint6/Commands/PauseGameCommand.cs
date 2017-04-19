@@ -19,7 +19,7 @@ namespace Sprint6.Commands
             if (counter % 10 == 0)
             {
                 counter = 0;
-                MainCharSoundManager.instance.playSound(MainCharSoundManager.PAUSE);
+               UFOSoundManager.instance.playSound(UFOSoundManager.PAUSE);
                 myGame.level.Pause();
             }
         }
