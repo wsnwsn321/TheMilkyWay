@@ -8,6 +8,8 @@ namespace Sprint6.Sprites.UFOSprite
     public class CowHeadSprite : ISprite
     {
         public List<Circle> circles { get; set; }
+        public bool canMove { get; set; }
+
         public Texture2D Texture { get; set; }
         public int currentFrame { get; set; }
         private SpriteBatch sb;
