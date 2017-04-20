@@ -6,6 +6,7 @@ using Sprint6.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
 using Sprint6.Sound.BackgroundMusic;
 using System.Diagnostics;
+using Sprint6.ElementClasses.ElementInterfaces;
 using Sprint6.SpriteFactories;
 using Sprint6.HUDElements;
 
@@ -27,6 +28,8 @@ namespace Sprint6.ElementClasses
         public int animation { get; set; }
         public bool isVisible { get; set; }
         private bool IsJumping;
+        public Bomb bombItem { get; set; }
+        public bool bombUpdate { get; set; } 
 
         public bool isScored { get; set; }
         public int score { get; set; }
@@ -53,6 +56,8 @@ namespace Sprint6.ElementClasses
             isScored = false;
             IsJumping = false;
             JumpCounter = 0;
+            bombUpdate = false;
+            bombItem = new Bomb(new Vector2(position.X+20,position.Y+64));
         }
         public void MarioIdle()
         {
@@ -72,6 +77,7 @@ namespace Sprint6.ElementClasses
         public virtual void MainCharDraw()
         {
             state.Draw(position);
+            bombItem.Draw();
             if (isScored)
             {
                 DrawScore();
@@ -79,6 +85,14 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharUpdate()
         {
+            if (bombUpdate)
+            {
+                bombItem.Update();
+            }
+            else
+            {
+                bombItem.resetPos(position);
+            }
             if (canMove)
             {
                 if (beamMeter.GetBeamPercent() < 100)
@@ -117,13 +131,15 @@ namespace Sprint6.ElementClasses
             {
                 if (myGame.level.mainCharacter.state is AliveState)
                 {
-                    AliveState f = myGame.level.mainCharacter.state as AliveState;
-                    f.bomb = true;
-                    myGame.level.mainCharacter.state = f;
+                    bombItem.canMove = true;
+                    bombItem.isVisible = true;
+                    bombUpdate = true;
+                    bombItem.position = new Vector2(position.X,bombItem.position.Y);
                 }
             }
             else
             {
+                bombUpdate = false;
                 if (beamMeter.GetBeamPercent() > GameConstants.Three)
                 {
                     beamMeter.DecreaseBeamPercentBy(GameConstants.Three);

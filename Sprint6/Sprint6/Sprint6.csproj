@@ -57,7 +57,8 @@
     <Compile Include="ElementClasses\BackgroundClass\StarryNight.cs" />
     <Compile Include="ElementClasses\CharacterClass\CowCharacter\BadCowCharacter.cs" />
     <Compile Include="ElementClasses\CharacterClass\CowCharacter\CowCharacter.cs" />
-    <Compile Include="ElementClasses\CharacterClass\ItemClass\Disk.cs" />
+    <Compile Include="ElementClasses\ItemClass\Disk.cs" />
+    <Compile Include="ElementClasses\ItemClass\Bomb.cs" />
     <Compile Include="ElementClasses\CharacterClass\UFO2\FlyingUFO2.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IBackground.cs" />
     <Compile Include="ElementClasses\ElementInterfaces\IEnemyState.cs" />
@@ -155,7 +156,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="LevelLoading\LevelFiles\menu.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\black.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

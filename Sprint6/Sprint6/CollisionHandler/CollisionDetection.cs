@@ -19,6 +19,7 @@ namespace Sprint6.CollisionHandler
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;
         public int SIDE;
+        private int bombCount = 0;
         Game1 myGame;
         private bool animation = false;
 
@@ -50,10 +51,45 @@ namespace Sprint6.CollisionHandler
             myGame = game;
             foreach (IBlock block in envElements)
             {
-                if (block.blockSprite.desRectangle.Intersects(mainCharacter.state.BombSprite.desRectangle))
+                if (mainCharacter.bombItem.itemSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
                 {
-                    mainCharacter.state.BombSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
-                    mainCharacter.state.BombSprite.canMove = false;
+                    if (bombCount == 30)
+                    {
+                        mainCharacter.bombItem.isVisible = false;
+                        bombCount = 0;
+                        mainCharacter.bombUpdate = false;
+                    }
+                    else
+                    {
+                        mainCharacter.bombItem.canMove = false;
+                        mainCharacter.bombItem.itemSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
+                    }
+                    bombCount++;
+                }
+            }
+        }
+
+        public void BombItemCollision(Game1 game, MainCharacter mainCharacter, List<IItem> itemElements)
+        {
+            myGame = game;
+            foreach (IItem item in itemElements)
+            {
+                if (mainCharacter.bombItem.itemSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+                {
+                    if (bombCount == 30)
+                    {
+                        mainCharacter.bombItem.isVisible = false;
+                        bombCount = 0;
+                        mainCharacter.bombUpdate = false;
+                    }
+                    else
+                    {
+                        item.gravity = 0;
+                        item.itemSprite = CharacterSpriteFactory.Instance.CreateDeadCowSprite();
+                        mainCharacter.bombItem.canMove = false;
+                        mainCharacter.bombItem.itemSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
+                    }
+                    bombCount++;
                 }
             }
         }

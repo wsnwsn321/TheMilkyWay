@@ -46,7 +46,10 @@ namespace Sprint6.Commands
             {
                 UFOSoundManager.instance.playSound(UFOSoundManager.EXP);
             }
-            myGame.level.mainCharacter.Attack(bomb);
+            if (!mainCharacter.bombItem.isVisible)
+            {
+                myGame.level.mainCharacter.Attack(bomb);
+            }
         }
     }
 }

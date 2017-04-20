@@ -11,9 +11,7 @@ namespace Sprint6.ElementClasses
         void Die();
         void Collect();
         bool beam { get; set; }
-        bool bomb { get; set; }
         ISprite BeamSprite { get; set; }
-        ISprite BombSprite { get; set; }
         ISprite Sprite { get; set; }
     }
 }

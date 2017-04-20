@@ -77,7 +77,7 @@ namespace Sprint6
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.White);
+            GraphicsDevice.Clear(level.backgroundColor);
             level.Draw();
             if(displayLifeText)
             {

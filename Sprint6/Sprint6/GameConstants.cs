@@ -2,7 +2,6 @@
 {
     public static class GameConstants
     {
-        public const string UnderworldLevel = @"LevelLoading\LevelFiles\Underworld.csv";
         public const string OverworldLevel = @"LevelLoading\LevelFiles\black.csv";
         public const int Top = 1, Right = 2, Bottom = 3, Left = 4;
         public const int SquareWidth = 32;
@@ -51,6 +50,8 @@
         public const int score9900 = 9900;
         public const int score99900 = 99900;
         public const int score10000 = 10000;
+
+        public const int MaxBombSpeed = 20;
 
         public const int Three = 3;
         public const int Two = 2;

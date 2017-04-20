@@ -23,12 +23,13 @@ namespace Sprint6.LevelLoading
 
         public string currentLevel { get; set; }
         public IBackground background { get; set; }
+        public Color backgroundColor { get; set; }
+
         private int gameWidth, gameHeight;
         private bool IsPaused { get; set;}
         int camX = 0;
 
-        internal MainCharacter mainCharacter;
-        Game1 myGame;
+        internal MainCharacter mainCharacter;Game1 myGame;
         public int accel { get; set; }
 
         public Level(Game1 game)
@@ -38,7 +39,6 @@ namespace Sprint6.LevelLoading
             currentLevel = GameConstants.OverworldLevel;
             IsPaused = false;
             mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
-            
         }
 
         public void Update()
@@ -61,6 +61,8 @@ namespace Sprint6.LevelLoading
                     CollisionDetection.Instance.ItemBlockCollision(item, envElements);
                     CollisionDetection.Instance.BeamCowCollision(myGame,mainCharacter,itemElements);
                     CollisionDetection.Instance.BombBlockCollision(myGame, mainCharacter, envElements);
+                    CollisionDetection.Instance.BombItemCollision(myGame, mainCharacter, itemElements);
+
                     item.position = new Vector2(item.position.X, item.position.Y + item.gravity);
                     item.Update();
                 }

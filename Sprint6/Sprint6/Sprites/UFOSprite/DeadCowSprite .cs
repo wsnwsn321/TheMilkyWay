@@ -18,7 +18,7 @@ namespace Sprint6.Sprites.UFOSprite
         private int totalFrames;
 
         private int counter;
-
+        private int yPos;
         Vector2 p;
 
         public DeadCowSprite(Texture2D texture,SpriteBatch sb, int currentF)
@@ -27,7 +27,7 @@ namespace Sprint6.Sprites.UFOSprite
             this.sb = sb;
             totalFrames = 4;
             counter = 0;
-            currentFrame = currentF;
+            currentFrame = 3;
             tintColor = Color.White;
         }
         public void Update()
@@ -35,11 +35,11 @@ namespace Sprint6.Sprites.UFOSprite
             counter++;
             if (counter % 10==0)
             {
-                currentFrame++;
+                //currentFrame++;
             }
             if (currentFrame >= totalFrames)
             {
-                currentFrame = 0;
+                //currentFrame = 0;
             }
         }
 
@@ -51,8 +51,9 @@ namespace Sprint6.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
+            yPos++;
             Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 22+192, 64, 43);
-            desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 43);
+            desRectangle = new Rectangle((int)position.X, (int)position.Y-yPos, 64, 43);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
             p = position;
             sb.End();

@@ -35,10 +35,6 @@ namespace Sprint6.LevelLoading
                 {
                     switch (obj)
                     {
-                        case "OVERWORLD":
-                            break;
-                        case "UNDERWORLD":
-                            break;
                         case "StarryNight":
                             for (int i = 0; i < 100; i++)
                             {
