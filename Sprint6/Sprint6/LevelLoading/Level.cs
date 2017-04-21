@@ -171,6 +171,9 @@ namespace Sprint6.LevelLoading
         private void SetBGM()
         {
             switch (this.currentLevel) {
+                case GameConstants.Menu:
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.MainMenu);
+                    break;
                 case GameConstants.Level1:
                     BackgroundMusic.instanse.playSound(BackgroundMusic.LevelOne);
                     break;
