@@ -41,6 +41,7 @@ namespace Sprint6.LevelLoading
                     {
                         case "Menu":
                             level.scoreSystem.displayMenu = true;
+                            level.windowManager.menuWindow.isVisible = true;
                             break;
                         case "StarryNight":
                             for (int i = 0; i < 100; i++)

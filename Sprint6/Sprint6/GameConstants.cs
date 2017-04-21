@@ -21,22 +21,8 @@
         public const int MainCharStartingY = 50;
         public const int BEAM_PERCENT_MAX = 100;
 
-        public const int NewMarioStartingX = 200;
-        public const int NewMarioStartingY = 58;
-        public const int OutPipeStartingX = 5135;
-        public const int OutPipeStartingY = 320;
-
-        public const int SmallPipe = 1;
-        public const int MedPipe = 2;
-        public const int LargePipe = 3;
-        public const int UnderPipe = 4;
-
-        public const int FlagAnimation = 1;
-        public const int PipeAnimation = 2;
-        public const int UnderPipeAnimation = 3;
-        public const int GrowAnimation = 4;
-        public const int LifeScreenAnimation = 5;
-
+        public const int NewMainCharStartingX = 200;
+        public const int NewMainCharStartingY = 58;
 
         public const int InitialTimerValue = 400;
         public const int Score1 = 100;

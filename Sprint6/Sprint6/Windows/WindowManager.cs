@@ -10,7 +10,7 @@ namespace Sprint6
     public class WindowManager
     {
         private Game1 mygame;
-        private MenuWindow menuWindow;
+        public MenuWindow menuWindow;
 
         public WindowManager(Game1 game)
         {
@@ -22,6 +22,5 @@ namespace Sprint6
         {
             menuWindow.Display();
         }
-
     }
 }

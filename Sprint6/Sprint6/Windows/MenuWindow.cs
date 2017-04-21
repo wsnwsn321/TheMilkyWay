@@ -24,6 +24,7 @@ namespace Sprint6.HUDElements
         public MenuWindow(Game1 game)
         {
             mygame = game;
+            isVisible = false;
             pixel = new Texture2D(mygame.GraphicsDevice, 1, 1);
             Color[] colorData = {
                 Color.White,
@@ -42,14 +43,15 @@ namespace Sprint6.HUDElements
                           "\nDo NOT collect toxic green cows\n instead blow them up with bombs ('n')\n";
 
             Vector2 FontOrigin1 = mygame.font.MeasureString(inst) / GameConstants.Two;
-
-            mygame.spriteBatch.Begin();
-            mygame.spriteBatch.Draw(pixel, borderRect, Color.White);
-            mygame.spriteBatch.Draw(pixel, windowRect, Color.Gray);
-
-            mygame.spriteBatch.DrawString(mygame.font, inst, menuItem1, Color.White,
-                0, FontOrigin1, 0.9f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.End();
+            if (isVisible)
+            {
+                mygame.spriteBatch.Begin();
+                mygame.spriteBatch.Draw(pixel, borderRect, Color.White);
+                mygame.spriteBatch.Draw(pixel, windowRect, Color.Gray);
+                mygame.spriteBatch.DrawString(mygame.font, inst, menuItem1, Color.White,
+                    0, FontOrigin1, 0.9f, SpriteEffects.None, 1f);
+                mygame.spriteBatch.End();
+            }
         }
     }
 }
