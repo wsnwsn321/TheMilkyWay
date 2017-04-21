@@ -35,7 +35,7 @@ namespace Sprint6.ElementClasses
         public int score { get; set; }
         public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
-        public int CowCount { get; set; }
+        public int GoodCowCount { get; set; }
 
 
         private int JumpCounter, counter, scoreCounter;
@@ -163,7 +163,7 @@ namespace Sprint6.ElementClasses
 
         private void UpdateGravity()
         {
-            gravity = GameConstants.UFOInitialGravity + CowCount;
+            gravity = GameConstants.UFOInitialGravity + GoodCowCount;
         }
 
         public void DrawScore()

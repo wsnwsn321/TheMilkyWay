@@ -14,6 +14,7 @@ namespace Sprint6.HUDElements
     {
         private ISprite cowHead;
         private Game1 mygame;
+        private int maxGoodCowCount;
 
         public int CowCount { get; set; }
 
@@ -21,6 +22,7 @@ namespace Sprint6.HUDElements
         {
             mygame = game;
             CowCount = 0;
+            maxGoodCowCount = game.level.maxGoodCowCount;
             cowHead = SpriteFactories.CharacterSpriteFactory.Instance.CreateCowHeadSprite();
         }
 
@@ -28,21 +30,13 @@ namespace Sprint6.HUDElements
         {
             Vector2 newPos;
             Vector2 newCowPos;
-            CowCount = mygame.level.mainCharacter.CowCount;
+            CowCount = mygame.level.mainCharacter.GoodCowCount;
             newPos.X = (GameConstants.ScreenWidth - mygame.GraphicsDevice.Viewport.X) - GameConstants.Ten * GameConstants.Two * GameConstants.Two;
             newPos.Y = GameConstants.ScreenHeight / (GameConstants.Ten + GameConstants.Eight);
             newCowPos.X = newPos.X - cowHead.desRectangle.Width * 2;
             newCowPos.Y = newPos.Y - cowHead.desRectangle.Height / 2;
-            String zero = "0";
-            String output;
-            if (CowCount > (GameConstants.Ten - 1))
-            {
-                output = "X" + CowCount + "";
-            }
-            else
-            {
-                output = "X" + zero + CowCount + "";
-            }
+            String output = CowCount + "/" + maxGoodCowCount;
+
 
             Vector2 FontOrigin = mygame.font.MeasureString(output) / GameConstants.Two;
             cowHead.Draw(newCowPos);
