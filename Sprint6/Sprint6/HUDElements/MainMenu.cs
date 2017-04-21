@@ -18,6 +18,8 @@ namespace Sprint6.HUDElements
         private Vector2 menuItem2;
         private Vector2 menuItem3;
         private Vector2 menuItem4;
+        private Vector2 menuItem5;
+
         private Vector2 ufo;
         public int ufoPos = 1;
 
@@ -38,6 +40,8 @@ namespace Sprint6.HUDElements
             menuItem3.Y = menuItem1.Y + 150;
             menuItem4.X = menuItem1.X;
             menuItem4.Y = menuItem1.Y + 225;
+            menuItem5.X = menuItem1.X;
+            menuItem5.Y = menuItem1.Y + 300;
             ufo.X = menuItem1.X - 175;
             ufo.Y = menuItem1.Y - 30;
 
@@ -46,12 +50,14 @@ namespace Sprint6.HUDElements
             String levelTwo = "Level 2";
             String levelThree = "Level 3";
             String quit = "Exit Game";
+            String inst = "Use the arrow keys to navigate\nHit enter to select your choice";
 
 
             Vector2 FontOrigin1 = mygame.font.MeasureString(levelOne) / GameConstants.Two;
             Vector2 FontOrigin2 = mygame.font.MeasureString(levelTwo) / GameConstants.Two;
             Vector2 FontOrigin3 = mygame.font.MeasureString(levelThree) / GameConstants.Two;
             Vector2 FontOrigin4 = mygame.font.MeasureString(quit) / GameConstants.Two;
+            Vector2 FontOrigin5 = mygame.font.MeasureString(inst) / GameConstants.Two;
 
             mygame.spriteBatch.Begin();
             mygame.spriteBatch.DrawString(mygame.font, levelOne, menuItem1, Color.White,
@@ -61,7 +67,9 @@ namespace Sprint6.HUDElements
             mygame.spriteBatch.DrawString(mygame.font, levelThree, menuItem3, Color.White,
                 0, FontOrigin3, 2f, SpriteEffects.None, 1f);
             mygame.spriteBatch.DrawString(mygame.font, quit, menuItem4, Color.White,
-                0, FontOrigin3, 2f, SpriteEffects.None, 1f);
+                0, FontOrigin4, 2f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, inst, menuItem5, Color.White,
+                0, FontOrigin5, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
 
