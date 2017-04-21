@@ -165,8 +165,23 @@ namespace Sprint6.LevelLoading
             mainCharacter.MarioIdle();
             mainCharacter.position = marioPos;
             mainCharacter.canMove = true;
-            BackgroundMusic.instanse.playSound(BackgroundMusic.BACKGROUNGMUSIC3);
-            
+            SetBGM();
+        }
+
+        private void SetBGM()
+        {
+            switch (this.currentLevel) {
+                case GameConstants.Level1:
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.LevelOne);
+                    break;
+                case GameConstants.Level2:
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.LevelTwo);
+                    break;
+                case GameConstants.Level3:
+                    BackgroundMusic.instanse.playSound(BackgroundMusic.LevelThree);
+                    break;
+            }
+
         }
 
         public void Pause()
