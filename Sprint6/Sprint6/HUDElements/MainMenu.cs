@@ -30,7 +30,7 @@ namespace Sprint6.HUDElements
 
         public void Display()
         {
-            menuItem1.X = GameConstants.ScreenWidth*GameConstants.Two / GameConstants.Three;
+            menuItem1.X = (GameConstants.ScreenWidth*GameConstants.Three / GameConstants.Four)+10;
             menuItem1.Y = GameConstants.ScreenHeight / GameConstants.Four;
             menuItem2.X = menuItem1.X;
             menuItem2.Y = menuItem1.Y + 75;
