@@ -24,6 +24,8 @@ namespace Sprint6.LevelLoading
         public string currentLevel { get; set; }
         public IBackground background { get; set; }
         public Color backgroundColor { get; set; }
+        public int maxGoodCowCount { get; set; }
+        public int maxBadCowCount { get; set; }
 
         private int gameWidth, gameHeight;
         private bool IsPaused { get; set;}

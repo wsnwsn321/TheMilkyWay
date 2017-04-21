@@ -8,6 +8,8 @@ namespace Sprint6.LevelLoading
     public class LevelLoader
     {
         private int x, y;
+        private int goodCowCount;
+        private int badCowCount;
         public int height { get; set; }
         public int width { get; set; }
         private Level level;
@@ -21,6 +23,8 @@ namespace Sprint6.LevelLoading
         {
             x = 0;
             y = 0;
+            badCowCount = 0;
+            goodCowCount = 0;
             ReadLevelFile(levelToLoad);
         }
         private void ReadLevelFile(string levelToLoad)
@@ -56,9 +60,11 @@ namespace Sprint6.LevelLoading
                             break;
                         case "Cow":
                             level.itemElements.Add(new CowCharacter(new Vector2(x, y)));
+                            goodCowCount++;
                             break;
                         case "BadCow":
                             level.itemElements.Add(new BadCowCharacter(new Vector2(x, y)));
+                            badCowCount++;
                             break;
                         case "UFO2":
                             level.enemyElements.Add(new FlyingUFO2(new Vector2(x, y)));
@@ -75,6 +81,8 @@ namespace Sprint6.LevelLoading
                 y += GameConstants.SquareWidth;
             }
             height = y;
+            level.maxGoodCowCount = goodCowCount;
+            level.maxBadCowCount = badCowCount;
         }
     }
 }

@@ -103,7 +103,7 @@ namespace Sprint6.CollisionHandler
                 {
                     if(item is CowCharacter)
                     {
-                        myGame.level.mainCharacter.CowCount++;
+                        myGame.level.mainCharacter.GoodCowCount++;
 
                     }
                     else
