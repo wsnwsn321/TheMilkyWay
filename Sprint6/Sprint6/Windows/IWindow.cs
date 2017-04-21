@@ -8,6 +8,5 @@ namespace Sprint6
     {
         Rectangle windowRect { get; set; }
         void Display();
-        bool isVisible { get; set; }
     }
 }

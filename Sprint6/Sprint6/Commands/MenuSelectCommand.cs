@@ -19,15 +19,15 @@ namespace Sprint6.Commands
             {
                 case 1:
                     myGame.level.currentLevel = GameConstants.Level1;
-                    myGame.level.Load(GameConstants.Level1, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
+                    myGame.level.Load(GameConstants.Level1, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
                     break;
                 case 2:
                     myGame.level.currentLevel = GameConstants.Level2;
-                    myGame.level.Load(GameConstants.Level2, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
+                    myGame.level.Load(GameConstants.Level2, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
                     break;
                 case 3:
                     myGame.level.currentLevel = GameConstants.Level3;
-                    myGame.level.Load(GameConstants.Level3, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
+                    myGame.level.Load(GameConstants.Level3, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
                     break;
                 case 4:
                     myGame.Exit();

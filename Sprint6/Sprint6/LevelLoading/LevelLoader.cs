@@ -10,6 +10,7 @@ namespace Sprint6.LevelLoading
         private int x, y;
         private int goodCowCount;
         private int badCowCount;
+        public bool isMenu;
         public int height { get; set; }
         public int width { get; set; }
         private Level level;
@@ -17,6 +18,7 @@ namespace Sprint6.LevelLoading
         public LevelLoader(Level level)
         {
             this.level = level;
+            isMenu = false;
         }
 
         public void LoadLevel(string levelToLoad)
@@ -41,7 +43,8 @@ namespace Sprint6.LevelLoading
                     {
                         case "Menu":
                             level.scoreSystem.displayMenu = true;
-                            level.windowManager.menuWindow.isVisible = true;
+                            level.windowManager.dispMenu = true;
+                            isMenu = true;
                             break;
                         case "StarryNight":
                             for (int i = 0; i < 100; i++)
@@ -94,6 +97,10 @@ namespace Sprint6.LevelLoading
                 }
                 width = x;
                 y += GameConstants.SquareWidth;
+            }
+            if (!isMenu)
+            {
+                level.windowManager.dispLevel = true;
             }
             height = y;
             level.maxGoodCowCount = goodCowCount;

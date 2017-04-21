@@ -1,4 +1,6 @@
-﻿namespace Sprint6.Commands
+﻿using Microsoft.Xna.Framework;
+
+namespace Sprint6.Commands
 {
     class QuitCommand : ICommand
     {
@@ -11,8 +13,8 @@
 
         public void Execute()
         {
-            
-            myGame.Exit();
+            myGame.level.currentLevel = GameConstants.Menu;
+            myGame.level.Load(GameConstants.Menu, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
         }
     }
 }
