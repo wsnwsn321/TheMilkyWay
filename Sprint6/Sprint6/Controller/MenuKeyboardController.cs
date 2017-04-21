@@ -60,6 +60,13 @@ namespace Sprint6.Controller
                                 controllerMappings[key].Execute();
                             }
                         }
+                        else if (key.Equals(Keys.Enter))
+                        {
+                            if (NewState.IsKeyDown(Keys.Enter) && OldState.IsKeyUp(Keys.Enter))
+                            {
+                                controllerMappings[key].Execute();
+                            }
+                        }
                         else
                         {
                             controllerMappings[key].Execute();
