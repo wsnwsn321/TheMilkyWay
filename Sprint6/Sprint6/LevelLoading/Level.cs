@@ -144,7 +144,7 @@ namespace Sprint6.LevelLoading
                 mainCharacter.MainCharDraw();
             }
             scoreSystem.DisplayHUDElements();
-
+            windowManager.DisplayAllWindows();
         }
         
         public void Load(string levelToLoad, Vector2 marioPos)

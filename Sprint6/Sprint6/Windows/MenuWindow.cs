@@ -15,6 +15,7 @@ namespace Sprint6.HUDElements
     {
         private Game1 mygame;
         public Rectangle windowRect { get; set; }
+        private Rectangle borderRect;
         private Texture2D pixel;
         public bool isVisible { get; set; }
 
@@ -28,25 +29,27 @@ namespace Sprint6.HUDElements
                 Color.White,
             };
             pixel.SetData<Color>(colorData);
-            windowRect = new Rectangle(25,25,25,25);
-            menuItem1.X = windowRect.Width / GameConstants.Two;
-            menuItem1.Y = windowRect.Height / GameConstants.Two;
+            windowRect = new Rectangle(25,GameConstants.ScreenHeight-175,255,155);
+            borderRect = new Rectangle(20,GameConstants.ScreenHeight-180,265,165);
+            menuItem1.X = windowRect.X + windowRect.Width / 2;
+            menuItem1.Y = windowRect.Y + 10 + windowRect.Height / 2;
         }
 
         public void Display()
         {
-            String inst = "Use the arrow keys to navigate\nHit enter to select your choice";
+            String inst = "How to Play:\nRepeatedly press space bar in\norder to keep the UFO in the sky,\n and try to avoid all obstacles" +
+                          "\nTry to collect all of the cows in the level\n using the beam ('b')" +
+                          "\nDo NOT collect toxic green cows\n instead blow them up with bombs ('n')\n";
 
             Vector2 FontOrigin1 = mygame.font.MeasureString(inst) / GameConstants.Two;
 
-            if (isVisible)
-            {
-                mygame.spriteBatch.Begin();
-                mygame.spriteBatch.Draw(pixel, windowRect, Color.Black);
-                mygame.spriteBatch.DrawString(mygame.font, inst, menuItem1, Color.White,
-                    0, FontOrigin1, 2f, SpriteEffects.None, 1f);
-                mygame.spriteBatch.End();
-            }
+            mygame.spriteBatch.Begin();
+            mygame.spriteBatch.Draw(pixel, borderRect, Color.White);
+            mygame.spriteBatch.Draw(pixel, windowRect, Color.Gray);
+
+            mygame.spriteBatch.DrawString(mygame.font, inst, menuItem1, Color.White,
+                0, FontOrigin1, 0.9f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.End();
         }
     }
 }
