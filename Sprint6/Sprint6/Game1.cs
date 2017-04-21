@@ -24,7 +24,7 @@ namespace Sprint6
         internal Level level;
         internal SpriteFont font;
         internal string playerName;
-        private bool freeze = false;
+        public bool freeze = false;
         public bool resetTime { get; set; }
         public int lifeCount { get; set; }
         public bool displayLifeText { get; set; }
@@ -71,8 +71,11 @@ namespace Sprint6
         }
 
         protected override void Update(GameTime gameTime)
-        {         
-            level.Update();
+        {
+            if (!freeze)
+            {
+                level.Update();
+            }
             currentLevel = level.currentLevel;
             menuKeyboardController.Update();
             keyboardController.Update();
@@ -121,6 +124,8 @@ namespace Sprint6
 
         public void ResetGame()
         {
+            freeze = false;
+            level.windowManager.dispLevel = false;
             LoadContent();
             Initialize();
             resetTime = true;

@@ -8,6 +8,7 @@ using Sprint6.SpriteFactories;
 using System.Collections.Generic;
 using Sprint6.Sound.BackgroundMusic;
 using System;
+using System.Diagnostics;
 
 namespace Sprint6.LevelLoading
 {
@@ -159,7 +160,8 @@ namespace Sprint6.LevelLoading
             backgroundElements = new List<IBackground>();
             pauseText = new PauseText(myGame);
             LevelLoader loader = new LevelLoader(this);
-            loader.LoadLevel(currentLevel);
+            Debug.WriteLine(levelToLoad);
+            loader.LoadLevel(levelToLoad);
             gameWidth = loader.width;
             gameHeight = loader.height;
             mainCharacter.MarioIdle();
