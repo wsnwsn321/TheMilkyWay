@@ -62,8 +62,7 @@ namespace Sprint6
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load(currentLevel, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
-           
+            level.Load(currentLevel, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
         }
 
         protected override void UnloadContent()

@@ -20,6 +20,7 @@ namespace Sprint6.LevelLoading
 
         private PauseText pauseText;
         internal HUDManager scoreSystem;
+        internal WindowManager windowManager;
 
         public string currentLevel { get; set; }
         public IBackground background { get; set; }
@@ -143,11 +144,13 @@ namespace Sprint6.LevelLoading
                 mainCharacter.MainCharDraw();
             }
             scoreSystem.DisplayHUDElements();
+
         }
         
         public void Load(string levelToLoad, Vector2 marioPos)
         {
             scoreSystem = new HUDManager(myGame);
+            windowManager = new WindowManager(myGame);
             currentLevel = levelToLoad;
             camX = 0;
             envElements = new List<IBlock>();
