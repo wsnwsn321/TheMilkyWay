@@ -39,7 +39,7 @@ namespace Sprint6.LevelLoading
         {
            
             myGame = game;
-            currentLevel = GameConstants.Menu;
+            currentLevel = game.currentLevel;
             IsPaused = false;
             mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
         }
