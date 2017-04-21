@@ -23,8 +23,6 @@ namespace Sprint6.HUDElements
         private Vector2 ufo;
         public int ufoPos = 1;
 
-
-
         public MainMenu(Game1 game)
         {
             mygame = game;
@@ -45,13 +43,11 @@ namespace Sprint6.HUDElements
             ufo.X = menuItem1.X - 175;
             ufo.Y = menuItem1.Y - 30;
 
-
             String levelOne = "Level 1";
             String levelTwo = "Level 2";
             String levelThree = "Level 3";
             String quit = "Exit Game";
             String inst = "Use the arrow keys to navigate\nHit enter to select your choice";
-
 
             Vector2 FontOrigin1 = mygame.font.MeasureString(levelOne) / GameConstants.Two;
             Vector2 FontOrigin2 = mygame.font.MeasureString(levelTwo) / GameConstants.Two;
@@ -69,7 +65,7 @@ namespace Sprint6.HUDElements
             mygame.spriteBatch.DrawString(mygame.font, quit, menuItem4, Color.White,
                 0, FontOrigin4, 2f, SpriteEffects.None, 1f);
             mygame.spriteBatch.DrawString(mygame.font, inst, menuItem5, Color.White,
-                0, FontOrigin5, 1.5f, SpriteEffects.None, 1f);
+                0, FontOrigin5, 1f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
         }
 
