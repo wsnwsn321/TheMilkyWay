@@ -20,16 +20,16 @@ namespace Sprint6.Sound.BackgroundMusic
         public void LoadSound(ContentManager content)
         {
             //#1
-            BGM.Add(content.Load<Song>("Sound/BGM/BGM1"));
+            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level1"));
            
             //#2
-            BGM.Add(content.Load<Song>("Sound/BGM/BGM2"));
+            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level2"));
        
             //#3
-            BGM.Add(content.Load<Song>("Sound/BGM/BGM3"));
+            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level3"));
           
             //#4
-            BGM.Add(content.Load<Song>("Sound/BGM/BGM4"));
+            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/MainMenu"));
             
            
 
