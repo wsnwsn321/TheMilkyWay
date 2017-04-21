@@ -7,14 +7,6 @@ namespace Sprint6.SpriteFactories
 {
     class ItemSpriteFactory
     {
-
-        private Texture2D mushroomSpritesheet;
-        private Texture2D coinSpritesheet;
-        private Texture2D flowerSpritesheet;
-        private Texture2D starSpritesheet;
-        private Texture2D fireballSpritesheet;
-        private Texture2D blockPieceSpritesheet;
-        private Texture2D fireballExplosionSpritesheet;
         private Texture2D musicDiskSpritesheet;
 
 
@@ -39,13 +31,6 @@ namespace Sprint6.SpriteFactories
             //load sprite sheets here**************************************
             //one example is below
 
-            mushroomSpritesheet = content.Load<Texture2D>("Item/Mushroom");
-            flowerSpritesheet = content.Load<Texture2D>("Item/Flower");
-            starSpritesheet = content.Load<Texture2D>("Item/Star");
-            coinSpritesheet = content.Load<Texture2D>("Item/Coin");
-            fireballSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FmarioFireball");
-            blockPieceSpritesheet = content.Load<Texture2D>("Item/BlockPiece");
-            fireballExplosionSpritesheet = content.Load<Texture2D>("MainCharacter/Fmario/FireBallHitTheWall");
             //UFO
             musicDiskSpritesheet = content.Load<Texture2D>("UFOGameObjects/Disk");
 
