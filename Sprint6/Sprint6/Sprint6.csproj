@@ -47,11 +47,14 @@
     <Compile Include="CollisionHandler\MainCharItemHandler.cs" />
     <Compile Include="CollisionHandler\MainCharEnemyHandler.cs" />
     <Compile Include="CollisionHandler\MainCharBlockHandler.cs" />
-    <Compile Include="Commands\MarioAttackCommand.cs" />
-    <Compile Include="Commands\MarioJumpCommand.cs" />
+    <Compile Include="Commands\MainCharAttackCommand.cs" />
+    <Compile Include="Commands\MainCharJumpCommand.cs" />
+    <Compile Include="Commands\MenuSelectCommand.cs" />
     <Compile Include="Commands\PauseGameCommand.cs" />
+    <Compile Include="Commands\MenuCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
+    <Compile Include="Controller\MenuKeyboardController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="ElementClasses\BackgroundClass\StarryNight.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="GameConstants.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\BeamMeter.cs" />
+    <Compile Include="HUDElements\MainMenu.cs" />
     <Compile Include="HUDElements\CowHUD.cs" />
     <Compile Include="HUDElements\LifeText.cs" />
     <Compile Include="HUDElements\PauseText.cs" />

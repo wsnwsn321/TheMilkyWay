@@ -35,6 +35,9 @@ namespace Sprint6.LevelLoading
                 {
                     switch (obj)
                     {
+                        case "Menu":
+                            level.scoreSystem.displayMenu = true;
+                            break;
                         case "StarryNight":
                             for (int i = 0; i < 100; i++)
                             {

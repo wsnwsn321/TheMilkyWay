@@ -2,7 +2,11 @@
 {
     public static class GameConstants
     {
-        public const string OverworldLevel = @"LevelLoading\LevelFiles\black.csv";
+        public const string Level1 = @"LevelLoading\LevelFiles\black.csv";
+        public const string Level2 = @"LevelLoading\LevelFiles\black.csv";
+        public const string Level3 = @"LevelLoading\LevelFiles\black.csv";
+        public const string Menu = @"LevelLoading\LevelFiles\menu.csv";
+
         public const int Top = 1, Right = 2, Bottom = 3, Left = 4;
         public const int SquareWidth = 32;
         public const int ScreenWidth = 800;

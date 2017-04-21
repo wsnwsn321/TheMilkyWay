@@ -11,20 +11,38 @@ namespace Sprint6.HUDElements
         private Game1 mygame;
         public BeamMeter beamMeter;
         public CowHUD cowHUD;
+        public MainMenu menu;
+        private bool first = true;
+        public bool displayMenu { get; set; }
 
         public HUDManager(Game1 game)
         {
             mygame = game;
             beamMeter = mygame.level.mainCharacter.beamMeter;
             cowHUD = new CowHUD(mygame);
+            menu = new MainMenu(mygame);
+            displayMenu = false;
         }
 
         public void DisplayHUDElements()
         {
-            DisplayPlayerName();
-            DisplayLevel();
-            cowHUD.Display();
-            beamMeter.Display();
+
+            if (displayMenu)
+            {
+                menu.Display();
+                if (first)
+                {
+                    menu.moveCharacter();
+                    first = false;
+                }
+            }
+            else
+            {
+                DisplayPlayerName();
+                DisplayLevel();
+                cowHUD.Display();
+                beamMeter.Display();
+            }
         }
         private void DisplayPlayerName()
         {
@@ -52,5 +70,4 @@ namespace Sprint6.HUDElements
             mygame.spriteBatch.End();
         }
     }
-
 }

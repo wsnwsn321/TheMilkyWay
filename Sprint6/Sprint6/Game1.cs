@@ -20,6 +20,7 @@ namespace Sprint6
         internal SpriteBatch spriteBatch;
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
+        internal MenuKeyboardController menuKeyboardController;
         internal Level level;
         internal SpriteFont font;
         internal string playerName;
@@ -28,6 +29,7 @@ namespace Sprint6
         public int lifeCount { get; set; }
         public bool displayLifeText { get; set; }
         private LifeText lifeText;
+        public string currentLevel { get; set; }
 
 
         private int freezeCount = 0;
@@ -36,15 +38,17 @@ namespace Sprint6
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            currentLevel = GameConstants.Menu;
             lifeCount = 3;
             Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
+            level = new Level(this);
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController();
-            level = new Level(this);
+            menuKeyboardController = new MenuKeyboardController(this);
             playerName = "3Pros1LenUFO";
             lifeText = new LifeText(this);
             resetTime = false;
@@ -58,7 +62,7 @@ namespace Sprint6
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CreateElements();
-            level.Load(GameConstants.OverworldLevel, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
+            level.Load(currentLevel, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); ;
            
         }
 
@@ -70,8 +74,10 @@ namespace Sprint6
         protected override void Update(GameTime gameTime)
         {         
             level.Update();
-
+            currentLevel = level.currentLevel;
+            menuKeyboardController.Update();
             keyboardController.Update();
+
             base.Update(gameTime);         
         }
 
@@ -88,18 +94,18 @@ namespace Sprint6
 
         private void InitializeCommands()
         {
-            keyboardController.RegisterCommand(Keys.Space, new MarioJumpCommand(this));
-
+            keyboardController.RegisterCommand(Keys.Space, new MainCharJumpCommand(this));
             keyboardController.RegisterCommand(Keys.P, new PauseGameCommand(this));
             keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
-            keyboardController.RegisterCommand(Keys.B, new MarioAttackCommand(this, false));
-            keyboardController.RegisterCommand(Keys.N, new MarioAttackCommand(this, true));
-
-
-            gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
+            keyboardController.RegisterCommand(Keys.B, new MainCharAttackCommand(this, false));
+            keyboardController.RegisterCommand(Keys.N, new MainCharAttackCommand(this, true));
+            gamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MainCharJumpCommand(this));
             gamepadController.RegisterCommand(Buttons.Start, new ResetCommand(this));
 
+            menuKeyboardController.RegisterCommand(Keys.Down, new MenuCommand(this));
+            menuKeyboardController.RegisterCommand(Keys.Up, new MenuCommand(this));
+            menuKeyboardController.RegisterCommand(Keys.Enter, new MenuSelectCommand(this));
         }
 
         private void CreateElements()

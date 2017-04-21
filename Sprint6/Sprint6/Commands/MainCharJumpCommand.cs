@@ -6,7 +6,7 @@ using Sprint6.SpriteFactories;
 
 namespace Sprint6.Commands
 {
-    class MarioJumpCommand : ICommand
+    class MainCharJumpCommand : ICommand
     {
         private Game1 myGame;
         private ElementClasses.MainCharacter mainCharacter;
@@ -17,7 +17,7 @@ namespace Sprint6.Commands
         public bool wDown;
         private int Fifty = 50;
 
-        public MarioJumpCommand(Game1 game)
+        public MainCharJumpCommand(Game1 game)
         {
             myGame = game;
             mainCharacter = myGame.level.mainCharacter;

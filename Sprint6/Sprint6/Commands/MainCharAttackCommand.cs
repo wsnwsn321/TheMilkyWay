@@ -7,7 +7,7 @@ using Sprint6.Sprites.UFOSprite;
 
 namespace Sprint6.Commands
 {
-    class MarioAttackCommand : ICommand
+    class MainCharAttackCommand : ICommand
     {
         private Game1 myGame;
         private ElementClasses.MainCharacter mainCharacter;
@@ -15,7 +15,7 @@ namespace Sprint6.Commands
         private bool bomb;
         private int count;
         private bool playing = true;
-        public MarioAttackCommand(Game1 game, bool bomb)
+        public MainCharAttackCommand(Game1 game, bool bomb)
         {
             myGame = game;
             mainCharacter = myGame.level.mainCharacter;

@@ -36,7 +36,7 @@ namespace Sprint6.LevelLoading
         {
            
             myGame = game;
-            currentLevel = GameConstants.OverworldLevel;
+            currentLevel = GameConstants.Menu;
             IsPaused = false;
             mainCharacter = new MainCharacter(myGame, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
         }
@@ -145,6 +145,7 @@ namespace Sprint6.LevelLoading
         
         public void Load(string levelToLoad, Vector2 marioPos)
         {
+            scoreSystem = new HUDManager(myGame);
             currentLevel = levelToLoad;
             camX = 0;
             envElements = new List<IBlock>();
@@ -158,9 +159,8 @@ namespace Sprint6.LevelLoading
             gameHeight = loader.height;
             mainCharacter.MarioIdle();
             mainCharacter.position = marioPos;
-            scoreSystem = new HUDManager(myGame);
-                    BackgroundMusic.instanse.playSound(BackgroundMusic.BACKGROUNGMUSIC3);
-                  
+            mainCharacter.canMove = true;
+            BackgroundMusic.instanse.playSound(BackgroundMusic.BACKGROUNGMUSIC3);
             
         }
 

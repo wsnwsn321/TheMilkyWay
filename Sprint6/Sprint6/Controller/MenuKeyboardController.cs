@@ -7,16 +7,17 @@ using System.Linq;
 
 namespace Sprint6.Controller
 {
-    public class KeyboardController
+    public class MenuKeyboardController
     {
       
         public Dictionary<Keys, ICommand> controllerMappings { get; }
         KeyboardState OldState;
         private bool wDown;
+        public bool up { get; set; }
         private static int resetOnce=1;
         public bool keysEnabled { get; set; }
         private Game1 myGame;
-        public KeyboardController(Game1 game)
+        public MenuKeyboardController(Game1 game)
         {
             myGame = game;
             controllerMappings = new Dictionary<Keys, ICommand>();
@@ -33,49 +34,28 @@ namespace Sprint6.Controller
 
         public void Update()
         {
-            wDown = false;
-            if (resetOnce<6)
-            {
-                controllerMappings[Keys.R].Execute();
-                resetOnce++;
-            }
-            if(keysEnabled&&!myGame.level.scoreSystem.displayMenu)
+            if(keysEnabled)
             {
                 KeyboardState NewState = Keyboard.GetState();
 
                 Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-                if (myGame.level.mainCharacter.state is AliveState)
-                {
-                    AliveState f = myGame.level.mainCharacter.state as AliveState;
-                    f.beam = false;
-                    myGame.level.mainCharacter.state = f;
-                }
 
                 foreach (Keys key in pressedKeys)
                 {
-                    if (key.Equals(Keys.Q)||key.Equals(Keys.R))
+                    if (controllerMappings.ContainsKey(key))
                     {
-                        controllerMappings[key].Execute();
-                    }
-
-                    if (controllerMappings.ContainsKey(key)&&myGame.level.mainCharacter.canMove)
-                    {
-                        if (key.Equals(Keys.Space))
+                        if (key.Equals(Keys.Up))
                         {
-                            wDown = true;
-                         
-                        }
-
-                        if (key.Equals(Keys.N))
-                        {
-                            if (NewState.IsKeyDown(Keys.N) && OldState.IsKeyUp(Keys.N))
+                            up = true;
+                            if (NewState.IsKeyDown(Keys.Up) && OldState.IsKeyUp(Keys.Up))
                             {
                                 controllerMappings[key].Execute();
                             }
                         }
-                        else if (key.Equals(Keys.Space))
+                        else if (key.Equals(Keys.Down))
                         {
-                            if (NewState.IsKeyDown(Keys.Space) && OldState.IsKeyUp(Keys.Space))
+                            up = false;
+                            if (NewState.IsKeyDown(Keys.Down) && OldState.IsKeyUp(Keys.Down))
                             {
                                 controllerMappings[key].Execute();
                             }
@@ -84,15 +64,10 @@ namespace Sprint6.Controller
                         {
                             controllerMappings[key].Execute();
                         }
-
-
                     }
                 }
                 OldState = NewState;
-                MainCharJumpCommand c = controllerMappings[Keys.Space] as MainCharJumpCommand;
-                c.wDown = wDown;
-                controllerMappings[Keys.Space] = c;
-            }            
+            }
         }
     }
 }

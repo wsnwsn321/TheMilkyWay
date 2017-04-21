@@ -85,6 +85,14 @@ namespace Sprint6.ElementClasses
         }
         public void MainCharUpdate()
         {
+            if (myGame.level.scoreSystem.displayMenu)
+            {
+                canMove = false;
+            }
+            else
+            {
+                canMove = true;
+            }
             if (bombUpdate)
             {
                 bombItem.Update();
