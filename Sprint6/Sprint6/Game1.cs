@@ -72,14 +72,10 @@ namespace Sprint6
 
         protected override void Update(GameTime gameTime)
         {
-            if (!freeze)
-            {
-                level.Update();
-            }
+            level.Update();
             currentLevel = level.currentLevel;
             menuKeyboardController.Update();
             keyboardController.Update();
-
             base.Update(gameTime);         
         }
 
@@ -124,8 +120,6 @@ namespace Sprint6
 
         public void ResetGame()
         {
-            freeze = false;
-            level.windowManager.dispLevel = false;
             LoadContent();
             Initialize();
             resetTime = true;

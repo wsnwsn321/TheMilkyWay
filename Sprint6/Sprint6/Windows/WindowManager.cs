@@ -33,7 +33,6 @@ namespace Sprint6
             }
             if (dispLevel)
             {
-                mygame.freeze = true;
                 levelWindow.Display();
             }
         }
