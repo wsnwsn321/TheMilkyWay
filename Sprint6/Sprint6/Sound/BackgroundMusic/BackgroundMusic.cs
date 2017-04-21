@@ -7,18 +7,21 @@ namespace Sprint6.Sound.BackgroundMusic
     public class BackgroundMusic
     {
         public static BackgroundMusic instanse = new BackgroundMusic();
-        private int mash = 4;
-        List<Song> BGM;
+        private int mash = 3;
+        public List<Song> BGM;
         Song var;
-        public const int BACKGROUNGMUSIC1 = 1, BACKGROUNGMUSIC2 = 2, BACKGROUNGMUSIC3 = 3, BACKGROUNGMUSIC4 = 4, BACKGROUNGMUSIC5= 5;
+        public const int MainMenu = 0, LevelOne = 1, LevelTwo = 2, LevelThree = 3;
         private int currentBGM;
         private BackgroundMusic()
         {
             BGM = new List<Song>();
-     
         }
         public void LoadSound(ContentManager content)
         {
+
+            //#0
+            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/MenuTheme"));
+
             //#1
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level1"));
            
@@ -27,9 +30,6 @@ namespace Sprint6.Sound.BackgroundMusic
        
             //#3
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level3"));
-          
-            //#4
-            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/MainMenu"));
             
            
 
@@ -37,34 +37,25 @@ namespace Sprint6.Sound.BackgroundMusic
 
         public void playSound(int order)
         {
-          
+
+            currentBGM = order;
             switch (order)
             {
-                case BACKGROUNGMUSIC1:
+                case MainMenu:
                     var = BGM[0];
                     MediaPlayer.Play(var);
-                    currentBGM = BACKGROUNGMUSIC1;
                     break;
-                case BACKGROUNGMUSIC2:
+                case LevelOne:
                     var = BGM[1];
                     MediaPlayer.Play(var);
-                    currentBGM = BACKGROUNGMUSIC2;
                     break;
-                case BACKGROUNGMUSIC3:
+                case LevelTwo:
                     var = BGM[2];
                     MediaPlayer.Play(var);
-                    currentBGM = BACKGROUNGMUSIC3;
                     break;
-
-                case BACKGROUNGMUSIC4:
+                case LevelThree:
                     var = BGM[3];
                     MediaPlayer.Play(var);
-                    currentBGM = BACKGROUNGMUSIC4;
-                    break;
-                case BACKGROUNGMUSIC5:
-                    var = BGM[4];
-                    MediaPlayer.Play(var);
-                    currentBGM = BACKGROUNGMUSIC5;
                     break;
             }
         }
