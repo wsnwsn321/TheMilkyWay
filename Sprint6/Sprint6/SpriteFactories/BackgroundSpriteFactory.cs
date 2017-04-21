@@ -41,5 +41,16 @@ namespace Sprint6.SpriteFactories
         {
             return new StarryNightSprite(starryNightSpritesheet, sb);
         }
+
+        //create environment sprites
+        public ISprite CreateDarkerNightSprite()
+        {
+            return new DarkerNightSprite(starryNightSpritesheet, sb);
+        }
+
+        public ISprite CreateDarkestNightSprite()
+        {
+            return new DarkestNightSprite(starryNightSpritesheet, sb);
+        }
     }
 }
