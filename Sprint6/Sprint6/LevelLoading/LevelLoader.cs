@@ -49,6 +49,20 @@ namespace Sprint6.LevelLoading
                                 level.backgroundElements.Add(new StarryNight(new Vector2(x + GameConstants.ScreenWidth*i, y)));
                             }                            
                             break;
+                        case "DarkerNight":
+                            for (int i = 0; i < 100; i++)
+                            {
+                                level.background = new DarkerNight(new Vector2(x, y));
+                                level.backgroundElements.Add(new DarkerNight(new Vector2(x + GameConstants.ScreenWidth * i, y)));
+                            }
+                            break;
+                        case "DarkestNight":
+                            for (int i = 0; i < 100; i++)
+                            {
+                                level.background = new DarkestNight(new Vector2(x, y));
+                                level.backgroundElements.Add(new DarkestNight(new Vector2(x + GameConstants.ScreenWidth * i, y)));
+                            }
+                            break;
                         case "Silo":
                             level.envElements.Add(new Silo(new Vector2(x,y)));
                             break;

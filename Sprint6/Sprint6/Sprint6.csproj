@@ -57,6 +57,8 @@
     <Compile Include="Controller\MenuKeyboardController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\DarkerNight.cs" />
+    <Compile Include="ElementClasses\BackgroundClass\DarkestNight.cs" />
     <Compile Include="ElementClasses\BackgroundClass\StarryNight.cs" />
     <Compile Include="ElementClasses\CharacterClass\CowCharacter\BadCowCharacter.cs" />
     <Compile Include="ElementClasses\CharacterClass\CowCharacter\CowCharacter.cs" />
@@ -74,6 +76,8 @@
     <Compile Include="GameConstants.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\BeamMeter.cs" />
+    <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
+    <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
     <Compile Include="Windows\WindowManager.cs" />
     <Compile Include="Windows\IWindow.cs" />
     <Compile Include="Windows\MenuWindow.cs" />
@@ -154,22 +158,17 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\Level1-1Full.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\Sprint4Level.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\menu.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LevelLoading\LevelFiles\black.csv">
+    <Content Include="LevelLoading\LevelFiles\LevelOne.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LevelLoading\LevelFiles\LevelTwo.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
