@@ -349,15 +349,15 @@
 /processorParam:Quality=Best
 /build:Sound/UFOGameLevelMusic/Level3.mp3
 
-#begin Sound/UFOGameLevelMusic/MainMenu.mp3
+#begin Sound/UFOGameLevelMusic/MenuTheme.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:Sound/UFOGameLevelMusic/MainMenu.mp3
+/build:Sound/UFOGameLevelMusic/MenuTheme.mp3
 
-#begin Sound/UFOGameLevelMusic/Level1.mp3
+#begin Sound\UFOGameLevelMusic\Level1.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:Sound/UFOGameLevelMusic/Level1.mp3
+/build:Sound\UFOGameLevelMusic\Level1.mp3
 

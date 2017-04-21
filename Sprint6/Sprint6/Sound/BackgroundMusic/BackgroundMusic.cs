@@ -20,7 +20,7 @@ namespace Sprint6.Sound.BackgroundMusic
         {
 
             //#0
-            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/MainMenu"));
+            BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/MenuTheme"));
 
             //#1
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level1"));
