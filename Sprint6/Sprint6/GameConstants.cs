@@ -1,4 +1,4 @@
-﻿namespace Sprint6
+﻿namespace TheMilkyWay
 {
     public static class GameConstants
     {

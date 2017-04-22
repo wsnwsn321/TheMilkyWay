@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.Sprites;
-using Sprint6.Sprites.UFOSprite;
+using TheMilkyWay.Sprites;
+using TheMilkyWay.Sprites.UFOSprite;
 
-namespace Sprint6
+namespace TheMilkyWay
 {
     public interface IWindow
     {

@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
 
-namespace Sprint6.Sprites.EnvironmentSprite
+namespace TheMilkyWay.Sprites.EnvironmentSprite
 {
     public class GrassSprite : ISprite
 

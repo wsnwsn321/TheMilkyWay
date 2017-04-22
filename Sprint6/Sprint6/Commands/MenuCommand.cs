@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Sprint6.Commands
+namespace TheMilkyWay.Commands
 {
     public class MenuCommand : ICommand
     {

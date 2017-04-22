@@ -1,16 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint6.CollisionHandler;
-using Sprint6.ElementClasses;
-using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.HUDElements;
-using Sprint6.SpriteFactories;
+using TheMilkyWay.CollisionHandler;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.HUDElements;
+using TheMilkyWay.SpriteFactories;
 using System.Collections.Generic;
-using Sprint6.Sound.BackgroundMusic;
+using TheMilkyWay.Sound.BackgroundMusic;
 using System;
 using System.Diagnostics;
 
-namespace Sprint6.LevelLoading
+namespace TheMilkyWay.LevelLoading
 {
     public class Level
     {

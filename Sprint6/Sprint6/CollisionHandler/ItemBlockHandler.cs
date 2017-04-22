@@ -1,9 +1,9 @@
-﻿using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses;
-using Sprint6.Sprites.UFOSprite;
+﻿using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.Sprites.UFOSprite;
 using Microsoft.Xna.Framework;
 
-namespace Sprint6.CollisionHandler
+namespace TheMilkyWay.CollisionHandler
 {
     public static class ItemBlockHandler
     {

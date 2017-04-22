@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint6.Sprites;
-using Sprint6.Sprites.UFOSprite;
+using TheMilkyWay.Sprites;
+using TheMilkyWay.Sprites.UFOSprite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint6.HUDElements
+namespace TheMilkyWay.HUDElements
 {
     public class MainMenu
     {

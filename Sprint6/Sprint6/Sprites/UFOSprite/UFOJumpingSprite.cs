@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
 
-namespace Sprint6.Sprites.UFOSprite
+namespace TheMilkyWay.Sprites.UFOSprite
 {
     public class UFOJumpingSprite : ISprite
 

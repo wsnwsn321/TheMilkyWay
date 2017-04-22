@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sprint6.HUDElements
+namespace TheMilkyWay.HUDElements
 {
     public class BeamMeter
     {

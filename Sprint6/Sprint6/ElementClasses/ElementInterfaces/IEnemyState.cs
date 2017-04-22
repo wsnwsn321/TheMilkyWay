@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-using Sprint6.Sprites.UFOSprite;
-using Sprint6.Sprites;
+using TheMilkyWay.Sprites.UFOSprite;
+using TheMilkyWay.Sprites;
 
-namespace Sprint6.ElementClasses.ElementInterfaces
+namespace TheMilkyWay.ElementClasses.ElementInterfaces
 {
     public interface IEnemyState
     {

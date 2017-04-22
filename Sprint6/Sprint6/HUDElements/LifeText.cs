@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint6.Sound.MarioSound;
+using TheMilkyWay.Sound.MarioSound;
 
-namespace Sprint6.HUDElements
+namespace TheMilkyWay.HUDElements
 {
     class LifeText
     {

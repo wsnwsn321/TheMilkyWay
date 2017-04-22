@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 
-namespace Sprint6.Sound.MarioSound
+namespace TheMilkyWay.Sound.MarioSound
 {
     public class UFOSoundManager 
     {

@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Content;
 
-namespace Sprint6.Sound.BackgroundMusic
+namespace TheMilkyWay.Sound.BackgroundMusic
 {
     public class BackgroundMusic
     {

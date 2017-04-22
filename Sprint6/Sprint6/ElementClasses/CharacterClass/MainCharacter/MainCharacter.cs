@@ -2,15 +2,15 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint6.Sound.MarioSound;
+using TheMilkyWay.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
-using Sprint6.Sound.BackgroundMusic;
+using TheMilkyWay.Sound.BackgroundMusic;
 using System.Diagnostics;
-using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.SpriteFactories;
-using Sprint6.HUDElements;
+using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.SpriteFactories;
+using TheMilkyWay.HUDElements;
 
-namespace Sprint6.ElementClasses
+namespace TheMilkyWay.ElementClasses
 {
     public class MainCharacter
     {

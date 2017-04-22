@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.SpriteFactories;
+using TheMilkyWay.SpriteFactories;
 
-namespace Sprint6.Commands
+namespace TheMilkyWay.Commands
 {
     class QuitCommand : ICommand
     {
