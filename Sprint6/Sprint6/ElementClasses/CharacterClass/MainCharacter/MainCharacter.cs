@@ -21,7 +21,7 @@ namespace Sprint6.ElementClasses
         public BeamMeter beamMeter { get; set; }
         public int marioState { set; get; }
         public Vector2 position { set; get; }
-        public int gravity { get; set; }
+        public float gravity { get; set; }
         public bool jump { get; set; }
         public bool canMove { get; set; }
         public bool animated { get; set; }
@@ -162,7 +162,7 @@ namespace Sprint6.ElementClasses
 
         private void UpdateGravity()
         {
-            gravity = GameConstants.UFOInitialGravity + GoodCowCount;
+            gravity = (float)(GoodCowCount * 0.75) + GameConstants.UFOInitialGravity;
         }
 
         public void DrawScore()
