@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using TheMilkyWay.Sprites;
 using TheMilkyWay.Sprites.UFOSprite;
+using TheMilkyWay.Sprites;
 
 namespace TheMilkyWay.SpriteFactories
 {

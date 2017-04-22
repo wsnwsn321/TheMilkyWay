@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sprint6.SpriteFactories;
+using TheMilkyWay.SpriteFactories;
 
 namespace TheMilkyWay.HUDElements
 {

@@ -2,8 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
+using TheMilkyWay.Sprites;
 
-namespace Sprint6.Sprites.UFOSprite
+namespace TheMilkyWay.Sprites.UFOSprite
 {
     public class MilkyWaySprite : ISprite
     {

@@ -9,8 +9,8 @@
     <ProjectGuid>{5B1801C0-287B-4F3A-A83B-1F0DDFE5CD50}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sprint6</RootNamespace>
-    <AssemblyName>Sprint6</AssemblyName>
+    <RootNamespace>TheMilkyWay</RootNamespace>
+    <AssemblyName>TheMilkyWay</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
