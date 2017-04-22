@@ -1,9 +1,9 @@
-﻿using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses;
+﻿using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.ElementClasses;
 using Microsoft.Xna.Framework;
-using Sprint6.Sound.MarioSound;
+using TheMilkyWay.Sound.MarioSound;
 
-namespace Sprint6.CollisionHandler
+namespace TheMilkyWay.CollisionHandler
 {
     public static class MainCharItemHandler
     {

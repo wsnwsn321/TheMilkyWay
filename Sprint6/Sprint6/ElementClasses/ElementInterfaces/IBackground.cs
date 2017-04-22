@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.Sprites;
+using TheMilkyWay.Sprites;
 
-namespace Sprint6.ElementClasses.ElementInterfaces
+namespace TheMilkyWay.ElementClasses.ElementInterfaces
 {
     public interface IBackground
     {

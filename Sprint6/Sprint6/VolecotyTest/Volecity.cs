@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace Sprint6.VolecotyTest
+namespace TheMilkyWay.VolecotyTest
 {
     public static class Volecity
     {

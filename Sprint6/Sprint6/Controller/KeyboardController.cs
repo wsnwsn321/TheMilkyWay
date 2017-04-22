@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using Sprint6.Commands;
-using Sprint6.ElementClasses;
-using Sprint6.Sound.MarioSound;
+using TheMilkyWay.Commands;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.Sound.MarioSound;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sprint6.Controller
+namespace TheMilkyWay.Controller
 {
     public class KeyboardController
     {

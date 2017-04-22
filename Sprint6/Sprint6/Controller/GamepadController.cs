@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
-namespace Sprint6.Controller
+namespace TheMilkyWay.Controller
 {
     public class GamepadController
     {

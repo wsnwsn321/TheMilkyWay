@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint6.VolecotyTest
+namespace TheMilkyWay.VolecotyTest
 {
    public class TwoVolecity
     {

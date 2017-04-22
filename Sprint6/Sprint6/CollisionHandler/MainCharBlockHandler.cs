@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.ElementClasses;
-using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.Sound.MarioSound;
-using Sprint6.SpriteFactories;
-using Sprint6.Sprites.UFOSprite;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.Sound.MarioSound;
+using TheMilkyWay.SpriteFactories;
+using TheMilkyWay.Sprites.UFOSprite;
 
-namespace Sprint6.CollisionHandler
+namespace TheMilkyWay.CollisionHandler
 {
     public static class MainCharBlockHandler
     {

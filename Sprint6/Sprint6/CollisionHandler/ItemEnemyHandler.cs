@@ -1,9 +1,9 @@
-﻿using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses;
-using Sprint6.Sprites.UFOSprite;
-using Sprint6.Sound.MarioSound;
+﻿using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.Sprites.UFOSprite;
+using TheMilkyWay.Sound.MarioSound;
 
-namespace Sprint6.CollisionHandler
+namespace TheMilkyWay.CollisionHandler
 {
     public static class ItemEnemyHandler
     {

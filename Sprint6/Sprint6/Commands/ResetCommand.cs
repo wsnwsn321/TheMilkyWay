@@ -1,4 +1,4 @@
-﻿namespace Sprint6.Commands
+﻿namespace TheMilkyWay.Commands
 {
     class ResetCommand : ICommand
     {

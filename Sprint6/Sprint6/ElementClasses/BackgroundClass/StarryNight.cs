@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.Sprites.UFOSprite;
-using Sprint6.Sprites;
+using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.Sprites.UFOSprite;
+using TheMilkyWay.Sprites;
 using System;
 
-namespace Sprint6.ElementClasses
+namespace TheMilkyWay.ElementClasses
 
 {
     public class StarryNight : IBackground

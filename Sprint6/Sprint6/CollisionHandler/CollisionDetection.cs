@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-using Sprint6.ElementClasses.ElementInterfaces;
-using Sprint6.ElementClasses;
+using TheMilkyWay.ElementClasses.ElementInterfaces;
+using TheMilkyWay.ElementClasses;
 using Microsoft.Xna.Framework;
-using Sprint6.Sprites.UFOSprite;
-using Sprint6.SpriteFactories;
+using TheMilkyWay.Sprites.UFOSprite;
+using TheMilkyWay.SpriteFactories;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
-using Sprint6.Sound.MarioSound;
+using TheMilkyWay.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
 using MyGame;
-using Sprint6.Sound.BackgroundMusic;
+using TheMilkyWay.Sound.BackgroundMusic;
 
-namespace Sprint6.CollisionHandler
+namespace TheMilkyWay.CollisionHandler
 {
     class CollisionDetection
     {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Sprint6.ElementClasses;
-using Sprint6.Sound.MarioSound;
-using Sprint6.SpriteFactories;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.Sound.MarioSound;
+using TheMilkyWay.SpriteFactories;
 
-namespace Sprint6.Commands
+namespace TheMilkyWay.Commands
 {
     class MainCharJumpCommand : ICommand
     {

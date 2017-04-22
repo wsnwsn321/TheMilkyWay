@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint6.Sprites;
-using Sprint6.Sprites.EnvironmentSprite;
-using Sprint6.Sprites.UFOSprite;
+using TheMilkyWay.Sprites;
+using TheMilkyWay.Sprites.EnvironmentSprite;
+using TheMilkyWay.Sprites.UFOSprite;
 
-namespace Sprint6.SpriteFactories
+namespace TheMilkyWay.SpriteFactories
 {
     class EnvironmentSpriteFactory
     {

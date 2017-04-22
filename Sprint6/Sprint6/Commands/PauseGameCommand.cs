@@ -1,6 +1,6 @@
-﻿using Sprint6.Sound.MarioSound;
+﻿using TheMilkyWay.Sound.MarioSound;
 
-namespace Sprint6.Commands
+namespace TheMilkyWay.Commands
 {
     class PauseGameCommand : ICommand
     {

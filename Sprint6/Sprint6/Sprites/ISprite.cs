@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using MyGame;
 
-namespace Sprint6.Sprites
+namespace TheMilkyWay.Sprites
 {
     public interface ISprite
     {

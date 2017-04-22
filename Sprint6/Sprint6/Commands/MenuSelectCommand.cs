@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Diagnostics;
 
-namespace Sprint6.Commands
+namespace TheMilkyWay.Commands
 {
     public class MenuSelectCommand : ICommand
     {

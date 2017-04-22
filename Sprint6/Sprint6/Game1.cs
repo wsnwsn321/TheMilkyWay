@@ -1,16 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Sprint6.Commands;
-using Sprint6.Controller;
-using Sprint6.SpriteFactories;
-using Sprint6.LevelLoading;
-using Sprint6.ElementClasses;
-using Sprint6.Sound.MarioSound;
-using Sprint6.Sound.BackgroundMusic;
-using Sprint6.HUDElements;
+using TheMilkyWay.Commands;
+using TheMilkyWay.Controller;
+using TheMilkyWay.SpriteFactories;
+using TheMilkyWay.LevelLoading;
+using TheMilkyWay.ElementClasses;
+using TheMilkyWay.Sound.MarioSound;
+using TheMilkyWay.Sound.BackgroundMusic;
+using TheMilkyWay.HUDElements;
 
-namespace Sprint6
+namespace TheMilkyWay
 
 { 
     public class Game1 : Game

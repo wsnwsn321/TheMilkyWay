@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sprint6
+namespace TheMilkyWay
 {
 #if WINDOWS || LINUX
     /// <summary>
