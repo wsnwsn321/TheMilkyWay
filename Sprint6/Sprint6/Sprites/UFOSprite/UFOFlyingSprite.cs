@@ -32,6 +32,7 @@ namespace Sprint6.Sprites.UFOSprite
             this.sb = sb;
             totalFrames = 4;
             counter = 0;
+            p = new Vector2(-1000, -1000);
             currentFrame = currentF;
             tintColor = Color.White;
             circles = new List<Circle>(); 
