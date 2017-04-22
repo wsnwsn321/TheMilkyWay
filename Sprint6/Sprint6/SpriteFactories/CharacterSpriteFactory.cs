@@ -96,5 +96,9 @@ namespace TheMilkyWay.SpriteFactories
         {
             return new BadCowSprite(cowSpritesheet, sb, 0);
         }
+        public ISprite CreateBadCowDeadSprite()
+        {
+            return new BadDeadCowSprite(cowSpritesheet, sb, 0);
+        }
     }
 }

@@ -31,6 +31,7 @@ namespace TheMilkyWay.HUDElements
             logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
             mygame.level.mainCharacter.GoodCowCount = 0;
             mygame.level.mainCharacter.BadCowCount = 0;
+            
             ufoPos = 1;
         }
 

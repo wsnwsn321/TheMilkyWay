@@ -12,6 +12,7 @@ namespace TheMilkyWay.HUDElements
         private BeamMeter beamMeter;
         private CowHUD cowHUD;
         private BadCowHUD badcowHUD;
+        private GoalHUD goalHUD;
         public MainMenu menu { get; set; }
         private bool first = true;
         public bool displayMenu { get; set; }
@@ -23,6 +24,7 @@ namespace TheMilkyWay.HUDElements
             cowHUD = new CowHUD(mygame);
             badcowHUD = new BadCowHUD(mygame);
             menu = new MainMenu(mygame);
+            goalHUD = new GoalHUD(mygame);
             displayMenu = false;
         }
 
@@ -44,6 +46,9 @@ namespace TheMilkyWay.HUDElements
                 cowHUD.Display();
                 badcowHUD.Display();
                 beamMeter.Display();
+                goalHUD.Display();
+
+
             }
         }
         private void DisplayPlayerName()

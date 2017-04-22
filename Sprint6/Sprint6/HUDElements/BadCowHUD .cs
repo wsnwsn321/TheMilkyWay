@@ -14,7 +14,7 @@ namespace TheMilkyWay.HUDElements
     {
         private ISprite badcowHead;
         private Game1 mygame;
-        private int maxGoodCowCount;
+        private int maxBadCowCount;
 
         public int CowCount { get; set; }
 
@@ -30,12 +30,12 @@ namespace TheMilkyWay.HUDElements
             Vector2 newPos;
             Vector2 newCowPos;
             CowCount = mygame.level.mainCharacter.BadCowCount;
-            maxGoodCowCount = mygame.level.maxBadCowCount;
+            maxBadCowCount = mygame.level.maxBadCowCount;
             newPos.X = (GameConstants.ScreenWidth - mygame.GraphicsDevice.Viewport.X) - GameConstants.Ten * GameConstants.Two * GameConstants.Two;
             newPos.Y = GameConstants.ScreenHeight / (GameConstants.Eight);
             newCowPos.X = newPos.X - badcowHead.desRectangle.Width * 2;
             newCowPos.Y = newPos.Y - badcowHead.desRectangle.Height / 2;
-            String output = CowCount + "/" + maxGoodCowCount;
+            String output = CowCount + "/" + maxBadCowCount;
 
 
             Vector2 FontOrigin = mygame.font.MeasureString(output) / GameConstants.Two;

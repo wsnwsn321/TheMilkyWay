@@ -27,6 +27,7 @@ namespace TheMilkyWay.LevelLoading
         public IBackground background { get; set; }
         public Color backgroundColor { get; set; }
         public int maxGoodCowCount { get; set; }
+        public int goalPoint { get; set; }
         public int maxBadCowCount { get; set; }
 
         private int gameWidth, gameHeight;

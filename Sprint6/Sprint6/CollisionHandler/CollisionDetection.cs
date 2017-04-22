@@ -83,11 +83,16 @@ namespace TheMilkyWay.CollisionHandler
                     else
                     {
                         item.gravity = 0;
-                        item.itemSprite = CharacterSpriteFactory.Instance.CreateDeadCowSprite();
                         mainCharacter.bombItem.canMove = false;
                         if (item is BadCowCharacter)
                         {
                             mainCharacter.BadCowCount++;
+                            mainCharacter.GoalCount++;
+                            item.itemSprite = CharacterSpriteFactory.Instance.CreateBadCowDeadSprite();
+                        }
+                        else
+                        {
+                            item.itemSprite = CharacterSpriteFactory.Instance.CreateDeadCowSprite();
                         }
 
                         mainCharacter.bombItem.itemSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();

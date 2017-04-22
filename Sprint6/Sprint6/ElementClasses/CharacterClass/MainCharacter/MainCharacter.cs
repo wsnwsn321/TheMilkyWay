@@ -38,6 +38,8 @@ namespace TheMilkyWay.ElementClasses
         public int GoodCowCount { get; set; }
         public int BadCowCount { get; set; }
 
+        public int GoalCount { get; set; }
+
 
         private int JumpCounter, scoreCounter;
   

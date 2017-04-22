@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
-    public class DeadCowSprite : ISprite
+    public class BadDeadCowSprite : ISprite
     {
         public Collection<Circle> circles { get; }
         public bool canMove { get; set; }
@@ -22,14 +22,14 @@ namespace TheMilkyWay.Sprites.UFOSprite
         private int yPos;
         Vector2 p;
 
-        public DeadCowSprite(Texture2D texture,SpriteBatch sb, int currentF)
+        public BadDeadCowSprite(Texture2D texture,SpriteBatch sb, int currentF)
         {
             Texture = texture;
             this.sb = sb;
             totalFrames = 4;
             counter = 0;
             currentFrame = currentF;
-            tintColor = Color.White;
+            tintColor = Color.LightGreen;
         }
         public void Update()
         {
@@ -52,7 +52,7 @@ namespace TheMilkyWay.Sprites.UFOSprite
         public void Draw(Vector2 position)
         {
             sb.Begin();
-            yPos=yPos+3;
+            yPos = yPos + 3;
             Rectangle sourceRectangle = new Rectangle(64 * currentFrame, 22+192, 64, 43);
             desRectangle = new Rectangle((int)position.X, (int)position.Y-yPos, 64, 43);
             sb.Draw(Texture, desRectangle, sourceRectangle, tintColor);
