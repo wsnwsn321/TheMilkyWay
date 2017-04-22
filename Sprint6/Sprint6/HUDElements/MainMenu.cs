@@ -29,6 +29,7 @@ namespace TheMilkyWay.HUDElements
         {
             mygame = game;
             logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
+            mygame.level.mainCharacter.GoodCowCount = 0;
         }
 
         public void Display()
