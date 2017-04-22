@@ -78,6 +78,7 @@
     <Compile Include="HUDElements\BeamMeter.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
+    <Compile Include="Sprites\UFOSprite\MilkyWaySprite.cs" />
     <Compile Include="Windows\LevelWindow.cs" />
     <Compile Include="Windows\WindowManager.cs" />
     <Compile Include="Windows\IWindow.cs" />

@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sprint6.SpriteFactories;
 
 namespace Sprint6.HUDElements
 {
@@ -19,13 +20,15 @@ namespace Sprint6.HUDElements
         private Vector2 menuItem3;
         private Vector2 menuItem4;
         private Vector2 menuItem5;
-
+        private Vector2 menuItem6;
+        private ISprite logo;
         private Vector2 ufo;
         public int ufoPos = 1;
 
         public MainMenu(Game1 game)
         {
             mygame = game;
+            logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
         }
 
         public void Display()
@@ -40,6 +43,8 @@ namespace Sprint6.HUDElements
             menuItem4.Y = menuItem1.Y + 225;
             menuItem5.X = menuItem1.X;
             menuItem5.Y = menuItem1.Y + 300;
+            menuItem6.X = 25;
+            menuItem6.Y = 10;
             ufo.X = menuItem1.X - 175;
             ufo.Y = menuItem1.Y - 30;
 
@@ -67,6 +72,7 @@ namespace Sprint6.HUDElements
             mygame.spriteBatch.DrawString(mygame.font, inst, menuItem5, Color.White,
                 0, FontOrigin5, 1f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
+            logo.Draw(menuItem6);
         }
 
         public void moveCharacter()

@@ -8,7 +8,7 @@ namespace Sprint6.SpriteFactories
     class BackgroundSpriteFactory
     {
         private Texture2D starryNightSpritesheet;
-
+        private Texture2D milkyWaySpritesheet;
 
         public SpriteBatch sb { get; set; }
         private static BackgroundSpriteFactory instance = new BackgroundSpriteFactory();
@@ -31,7 +31,7 @@ namespace Sprint6.SpriteFactories
             //one example is below
 
             starryNightSpritesheet = content.Load<Texture2D>("UFOGameObjects/StarryNight");
-
+            milkyWaySpritesheet = content.Load<Texture2D>("UFOGameObjects/TheMilkyWay");
             this.sb = sb;
 
         }
@@ -51,6 +51,10 @@ namespace Sprint6.SpriteFactories
         public ISprite CreateDarkestNightSprite()
         {
             return new DarkestNightSprite(starryNightSpritesheet, sb);
+        }
+        public ISprite CreateMilkyWaySprite()
+        {
+            return new MilkyWaySprite(milkyWaySpritesheet, sb);
         }
     }
 }
