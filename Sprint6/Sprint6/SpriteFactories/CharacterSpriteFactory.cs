@@ -74,6 +74,10 @@ namespace TheMilkyWay.SpriteFactories
         {
             return new CowHeadSprite(cowSpritesheet, sb, 0);
         }
+        public ISprite CreateBadCowHeadSprite()
+        {
+            return new BadCowHeadSprite(cowSpritesheet, sb, 0);
+        }
         public ISprite CreateBeamSprite()
         {
             return new BeamSprite(beamSpritesheeet, sb, 0);

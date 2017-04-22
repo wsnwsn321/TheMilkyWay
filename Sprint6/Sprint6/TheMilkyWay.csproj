@@ -76,8 +76,10 @@
     <Compile Include="GameConstants.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\BeamMeter.cs" />
+    <Compile Include="HUDElements\BadCowHUD .cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
+    <Compile Include="Sprites\UFOSprite\BadCowHeadSprite.cs" />
     <Compile Include="Sprites\UFOSprite\MilkyWaySprite.cs" />
     <Compile Include="Windows\LevelWindow.cs" />
     <Compile Include="Windows\WindowManager.cs" />

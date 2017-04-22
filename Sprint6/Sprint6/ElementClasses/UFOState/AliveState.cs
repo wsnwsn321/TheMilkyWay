@@ -10,9 +10,7 @@ namespace TheMilkyWay.ElementClasses
         private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
         public bool beam { get; set; }
-        private bool first = true;
         public ISprite BeamSprite { get; set; }
-        private Vector2 newPos;
         public AliveState(MainCharacter mainCharacter)
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();

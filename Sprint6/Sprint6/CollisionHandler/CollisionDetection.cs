@@ -74,7 +74,7 @@ namespace TheMilkyWay.CollisionHandler
             myGame = game;
             foreach (IItem item in itemElements)
             {
-                if (mainCharacter.bombItem.itemSprite.desRectangle.Intersects(item.itemSprite.desRectangle))
+                if (mainCharacter.bombItem.itemSprite.desRectangle.Intersects(item.itemSprite.desRectangle)&& !(item.itemSprite is DiskSprite))
                 {
                     if (bombCount == 30)
                     {
@@ -87,6 +87,11 @@ namespace TheMilkyWay.CollisionHandler
                         item.gravity = 0;
                         item.itemSprite = CharacterSpriteFactory.Instance.CreateDeadCowSprite();
                         mainCharacter.bombItem.canMove = false;
+                        if(item is BadCowCharacter)
+                        {
+                            mainCharacter.BadCowCount++;
+                        }
+                        
                         mainCharacter.bombItem.itemSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
                     }
                     bombCount++;

@@ -36,6 +36,7 @@ namespace TheMilkyWay.ElementClasses
         public int totalScore { get; set; }
         public Vector2 textPosition { get; set; }
         public int GoodCowCount { get; set; }
+        public int BadCowCount { get; set; }
 
 
         private int JumpCounter, counter, scoreCounter;
