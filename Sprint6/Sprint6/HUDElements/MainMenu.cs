@@ -23,7 +23,7 @@ namespace TheMilkyWay.HUDElements
         private Vector2 menuItem6;
         private ISprite logo;
         private Vector2 ufo;
-        public int ufoPos = 1;
+        public int ufoPos { get; set; }
 
         public MainMenu(Game1 game)
         {
@@ -31,6 +31,7 @@ namespace TheMilkyWay.HUDElements
             logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
             mygame.level.mainCharacter.GoodCowCount = 0;
             mygame.level.mainCharacter.BadCowCount = 0;
+            ufoPos = 1;
         }
 
         public void Display()

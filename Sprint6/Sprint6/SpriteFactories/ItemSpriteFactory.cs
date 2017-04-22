@@ -40,7 +40,7 @@ namespace TheMilkyWay.SpriteFactories
         //create item sprites
         public ISprite CreateDiskSprite()
         {
-            return new DiskSprite(musicDiskSpritesheet, sb, 0);
+            return new DiskSprite(musicDiskSpritesheet, sb);
         }
 
     }

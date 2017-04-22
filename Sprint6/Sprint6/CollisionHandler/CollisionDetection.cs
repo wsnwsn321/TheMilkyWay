@@ -18,10 +18,8 @@ namespace TheMilkyWay.CollisionHandler
         private Rectangle collideRectangle;
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;
-        public int SIDE;
         private int bombCount = 0;
         Game1 myGame;
-        private bool animation = false;
 
         private static CollisionDetection instance = new CollisionDetection();
 
@@ -39,10 +37,10 @@ namespace TheMilkyWay.CollisionHandler
             myGame = game;
             foreach (IItem item in itemElements)
             {
-                if ((item is CowCharacter||item is BadCowCharacter) &&
-                    item.itemSprite.desRectangle.Intersects(mainCharacter.state.BeamSprite.desRectangle)&&mainCharacter.state.beam)
+                if ((item is CowCharacter || item is BadCowCharacter) &&
+                    item.itemSprite.desRectangle.Intersects(mainCharacter.state.BeamSprite.desRectangle) && mainCharacter.state.beam)
                 {
-                    item.position = new Vector2(item.position.X,item.position.Y - 3);
+                    item.position = new Vector2(item.position.X, item.position.Y - 3);
                 }
             }
         }
@@ -74,7 +72,7 @@ namespace TheMilkyWay.CollisionHandler
             myGame = game;
             foreach (IItem item in itemElements)
             {
-                if (mainCharacter.bombItem.itemSprite.desRectangle.Intersects(item.itemSprite.desRectangle)&& !(item.itemSprite is DiskSprite))
+                if (mainCharacter.bombItem.itemSprite.desRectangle.Intersects(item.itemSprite.desRectangle) && !(item.itemSprite is DiskSprite))
                 {
                     if (bombCount == 30)
                     {
@@ -87,11 +85,11 @@ namespace TheMilkyWay.CollisionHandler
                         item.gravity = 0;
                         item.itemSprite = CharacterSpriteFactory.Instance.CreateDeadCowSprite();
                         mainCharacter.bombItem.canMove = false;
-                        if(item is BadCowCharacter)
+                        if (item is BadCowCharacter)
                         {
                             mainCharacter.BadCowCount++;
                         }
-                        
+
                         mainCharacter.bombItem.itemSprite = CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
                     }
                     bombCount++;
@@ -99,14 +97,13 @@ namespace TheMilkyWay.CollisionHandler
             }
         }
 
-
         public void MainCharItemCollision(MainCharacter mainCharacter, List<IItem> itemElements)
         {
             foreach (IItem item in itemElements)
             {
-                if ((item is CowCharacter ||item is BadCowCharacter)&& mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && mainCharacter.state.beam && item.isVisible)
+                if ((item is CowCharacter || item is BadCowCharacter) && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && mainCharacter.state.beam && item.isVisible)
                 {
-                    if(item is CowCharacter)
+                    if (item is CowCharacter)
                     {
                         myGame.level.mainCharacter.GoodCowCount++;
 
@@ -117,12 +114,12 @@ namespace TheMilkyWay.CollisionHandler
                         mainCharacter.UFODie();
                     }
                     item.isVisible = false;
-                }else if(item is Disk && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && item.isVisible)
+                } else if (item is Disk && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && item.isVisible)
                 {
                     item.isVisible = false;
                     BackgroundMusic.instanse.mashPlay();
                 }
-                
+
             }
         }
 
@@ -147,73 +144,9 @@ namespace TheMilkyWay.CollisionHandler
                     firstRectangle = mainCharacter.state.Sprite.desRectangle;
                     secondRectangle = block.blockSprite.desRectangle;
                     collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
-                    if (collideRectangle.Width > collideRectangle.Height)
-                    {
-                        if (firstRectangle.Top > secondRectangle.Top)
-                        {
-                            SIDE = GameConstants.Bottom;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Top;
-                        }
-                    }
-                    else if (collideRectangle.Width <= collideRectangle.Height)
-                    {
-                        if (firstRectangle.Left > secondRectangle.Left)
-                        {
-                            SIDE = GameConstants.Right;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Left;
-                        }
-                    }
-                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
-                    {
-                        MainCharBlockHandler.BlockHandler(myGame, mainCharacter, block, SIDE);
-                    }
+
                 }
 
-            }
-        }
-
-        public void EnemyBlockCollision(MainCharacter mainCharacter, IEnemy enemy, List<IBlock> envElements)
-        {
-            foreach (IBlock block in envElements)
-            {
-                if (enemy.enemySprite.desRectangle.Intersects(block.blockSprite.desRectangle))
-                {
-                    firstRectangle = enemy.enemySprite.desRectangle;
-                    secondRectangle = block.blockSprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
-                    if (collideRectangle.Width > collideRectangle.Height)
-                    {
-                        if (firstRectangle.Top > secondRectangle.Top)
-                        {
-                            SIDE = GameConstants.Bottom;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Top;
-                        }
-                    }
-                    else if (collideRectangle.Width <= collideRectangle.Height)
-                    {
-                        if (firstRectangle.Left > secondRectangle.Left)
-                        {
-                            SIDE = GameConstants.Right;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Left;
-                        }
-                    }
-                    if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
-                    {
-                        EnemyBlockHandler.BlockHandler(enemy, block, SIDE);
-                    }
-                }
             }
         }
 
@@ -221,55 +154,22 @@ namespace TheMilkyWay.CollisionHandler
         {
             foreach (IBlock block in envElements)
             {
+                firstRectangle = item.itemSprite.desRectangle;
+                secondRectangle = block.blockSprite.desRectangle;
+                collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
                 if (item.itemSprite.desRectangle.Intersects(block.blockSprite.desRectangle))
                 {
-                    firstRectangle = item.itemSprite.desRectangle;
-                    secondRectangle = block.blockSprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(firstRectangle, secondRectangle);
-                    if (collideRectangle.Width > collideRectangle.Height)
-                    {
-                        if (firstRectangle.Top > secondRectangle.Top)
-                        {
-                            SIDE = GameConstants.Bottom;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Top;
-                        }
-                    }
-                    else if (collideRectangle.Width <= collideRectangle.Height)
-                    {
-                        if (firstRectangle.Left > secondRectangle.Left)
-                        {
-                            SIDE = GameConstants.Right;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Left;
-                        }
-                    }
+
                     if (collideRectangle.Width * collideRectangle.Height > GameConstants.Eleven + GameConstants.Two)
                     {
-                        ItemBlockHandler.BlockHandler(myGame, item, block, SIDE);
+                        ItemBlockHandler.BlockHandler(item, block);
                     }
                 }
             }
         }
-        public void ItemEnemyCollision(IItem item, List<IEnemy> enemyElements, MainCharacter mainCharacter)
-        {
-            SIDE = GameConstants.Top;
-            
-            foreach (IEnemy enemy in enemyElements)
-            {
-                if (item.itemSprite.desRectangle.Intersects(enemy.enemySprite.desRectangle))
-                {
-                    ItemEnemyHandler.EnemyHandler(item, enemy, GameConstants.Top);
-                }
-            }  
-        }
 
         public void MainCharEnemyCollision(MainCharacter mainCharacter, List<IEnemy> enemyElements)
-        {
+        { 
 
             foreach (IEnemy enemy in enemyElements)
             {
@@ -285,33 +185,7 @@ namespace TheMilkyWay.CollisionHandler
                 if (intersect)
                 {
                     mainCharacter.canMove = false;
-                    mainCharacter.UFODie();
-                    firstRectangle = mainCharacter.state.Sprite.desRectangle;
-                    secondRectangle = enemy.enemySprite.desRectangle;
-                    collideRectangle = Rectangle.Intersect(mainCharacter.state.Sprite.desRectangle, enemy.enemySprite.desRectangle);
-                    if (collideRectangle.Width > collideRectangle.Height)
-                    {
-                        if (firstRectangle.Top > secondRectangle.Top)
-                        {
-                            SIDE = GameConstants.Bottom;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Top;
-                        }
-                    }
-                    else if (collideRectangle.Width < collideRectangle.Height)
-                    {
-                        if (firstRectangle.Left > secondRectangle.Left)
-                        {
-                            SIDE = GameConstants.Right;
-                        }
-                        else
-                        {
-                            SIDE = GameConstants.Left;
-                        }
-                    }
-                    MainCharEnemyHandler.EnemyHandler(mainCharacter, enemy, SIDE);
+                    mainCharacter.UFODie(); 
                 }
             }
         }       

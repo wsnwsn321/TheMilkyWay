@@ -10,12 +10,6 @@ namespace TheMilkyWay.Commands
     {
         private Game1 myGame;
         private ElementClasses.MainCharacter mainCharacter;
-        private int jumpTime = 50;
-        private double jumpForce = 12;
-        private double decay = 0;
-        private bool jumpCount = true;
-        public bool wDown;
-        private int Fifty = 50;
 
         public MainCharJumpCommand(Game1 game)
         {

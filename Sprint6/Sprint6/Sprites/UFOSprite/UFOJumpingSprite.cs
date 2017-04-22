@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
@@ -13,12 +14,12 @@ namespace TheMilkyWay.Sprites.UFOSprite
 
         public int currentFrame { get; set; }
         private SpriteBatch sb;
-        public List<Circle> circles { get; set; }
+        public Collection<Circle> circles { get; }
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
-        public Vector2 circleCenter1;
-        public Vector2 circleCenter2;
-        public Vector2 circleCenter3;
+        private Vector2 circleCenter1;
+        private Vector2 circleCenter2;
+        private Vector2 circleCenter3;
         private int totalFrames;
         private int counter;
 
@@ -32,7 +33,7 @@ namespace TheMilkyWay.Sprites.UFOSprite
             totalFrames = 4;
             currentFrame = currentF;
             tintColor = Color.White;
-            circles = new List<Circle>();
+            circles = new Collection<Circle>();
             circleCenter1 = new Vector2(p.X + desRectangle.Width / 2.0f, p.Y + desRectangle.Height / 2.0f);
             circles.Add(new Circle(circleCenter1, desRectangle.Height / 2.0f));
             circleCenter2 = new Vector2(p.X + desRectangle.Width / 4.0f, p.Y + desRectangle.Height / 2.0f);

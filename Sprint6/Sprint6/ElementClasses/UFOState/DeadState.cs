@@ -6,22 +6,16 @@ namespace TheMilkyWay.ElementClasses
 {
     class DeadState : IState
     {
-        private MainCharacter mainCharacter;
         public ISprite Sprite { get; set; }
-        public ISprite BeamSprite { get; set; }
+        public ISprite BeamSprite { get;  set; }
         public ISprite BombSprite { get; set; }
-
         public bool beam { get; set; }
-        public bool bomb { get; set; }
-
-        public DeadState(MainCharacter mainCharacter)
+        public DeadState()
         {
             BeamSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateBeamSprite();
             BombSprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateLivingCowSprite();
-            this.mainCharacter = mainCharacter;
             Sprite = SpriteFactories.CharacterSpriteFactory.Instance.CreateDeadUFOSprite();
             beam = false;
-            bomb = false;
         }
 
         public void Draw(Vector2 position)
@@ -37,9 +31,6 @@ namespace TheMilkyWay.ElementClasses
         {
         }
 
-        public void Attack()
-        {
-        }
         public void Collect()
         {
 

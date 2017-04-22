@@ -42,11 +42,6 @@
     <Compile Include="CollisionHandler\Circle.cs" />
     <Compile Include="CollisionHandler\CollisionDetection.cs" />
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
-    <Compile Include="CollisionHandler\EnemyBlockHandler.cs" />
-    <Compile Include="CollisionHandler\ItemEnemyHandler.cs" />
-    <Compile Include="CollisionHandler\MainCharItemHandler.cs" />
-    <Compile Include="CollisionHandler\MainCharEnemyHandler.cs" />
-    <Compile Include="CollisionHandler\MainCharBlockHandler.cs" />
     <Compile Include="Commands\MainCharAttackCommand.cs" />
     <Compile Include="Commands\MainCharJumpCommand.cs" />
     <Compile Include="Commands\MenuSelectCommand.cs" />

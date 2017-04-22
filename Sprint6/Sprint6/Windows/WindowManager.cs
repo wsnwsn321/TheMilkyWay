@@ -10,10 +10,10 @@ namespace TheMilkyWay
     public class WindowManager
     {
         private Game1 mygame;
-        public MenuWindow menuWindow;
-        public LevelWindow levelWindow;
-        public bool dispMenu;
-        public bool dispLevel;
+        public MenuWindow menuWindow { get; set; }
+        public LevelWindow levelWindow { get; set; }
+        public bool dispMenu { get; set; }
+        public bool dispLevel { get; set; }
 
         public WindowManager(Game1 game)
         {

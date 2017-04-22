@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
@@ -15,10 +16,9 @@ namespace TheMilkyWay.Sprites.UFOSprite
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
-        public List<Circle> circles { get; set; }
-        public Vector2 circleCenter1;
+        public Collection<Circle> circles { get; }
+        private Vector2 circleCenter1;
 
-        private float length;
         Vector2 p;
 
 
@@ -27,7 +27,7 @@ namespace TheMilkyWay.Sprites.UFOSprite
             Texture = texture;
             this.sb = sb;
             currentFrame = currentF;
-            circles = new List<Circle>();
+            circles = new Collection<Circle>();
             circleCenter1 = new Vector2(p.X + desRectangle.Width / 2.0f, p.Y + desRectangle.Height / 2.0f);
             circles.Add(new Circle(circleCenter1, desRectangle.Height / 2.0f));
             tintColor = Color.White;
@@ -46,7 +46,6 @@ namespace TheMilkyWay.Sprites.UFOSprite
 
         public void Draw(Vector2 position)
         {
-            length = position.Y;
             sb.Begin();
             Rectangle sourceRectangle = new Rectangle(0, 0, 256, 256);
             desRectangle = new Rectangle((int)position.X, (int)position.Y, 64, 64);

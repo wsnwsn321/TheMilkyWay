@@ -14,9 +14,6 @@ namespace TheMilkyWay.ElementClasses
         public bool isVisible { get; set; }
         public bool isBroken { get; set; }
         public bool isBumped { get; set; }
-        private int Three = 3;
-        private int Five = 5;
-        private int Eleven = 11;
         public Silo(Vector2 pos)
         {
                 position = pos;

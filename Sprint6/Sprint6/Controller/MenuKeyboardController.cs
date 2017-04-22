@@ -12,14 +12,10 @@ namespace TheMilkyWay.Controller
       
         public Dictionary<Keys, ICommand> controllerMappings { get; }
         KeyboardState OldState;
-        private bool wDown;
         public bool up { get; set; }
-        private static int resetOnce=1;
         public bool keysEnabled { get; set; }
-        private Game1 myGame;
-        public MenuKeyboardController(Game1 game)
+    public MenuKeyboardController()
         {
-            myGame = game;
             controllerMappings = new Dictionary<Keys, ICommand>();
             keysEnabled = true;
         }

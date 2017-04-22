@@ -12,7 +12,7 @@ namespace TheMilkyWay.Controller
       
         public Dictionary<Keys, ICommand> controllerMappings { get; }
         KeyboardState OldState;
-        private bool wDown;
+        public bool wDown { get; set; }
         private static int resetOnce=1;
         public bool keysEnabled { get; set; }
         private Game1 myGame;
@@ -21,6 +21,7 @@ namespace TheMilkyWay.Controller
             myGame = game;
             controllerMappings = new Dictionary<Keys, ICommand>();
             keysEnabled = true;
+            wDown = false;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -90,7 +91,6 @@ namespace TheMilkyWay.Controller
                 }
                 OldState = NewState;
                 MainCharJumpCommand c = controllerMappings[Keys.Space] as MainCharJumpCommand;
-                c.wDown = wDown;
                 controllerMappings[Keys.Space] = c;
             }            
         }

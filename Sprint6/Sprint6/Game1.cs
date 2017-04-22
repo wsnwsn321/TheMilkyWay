@@ -24,16 +24,12 @@ namespace TheMilkyWay
         internal Level level;
         internal SpriteFont font;
         internal string playerName;
-        public bool freeze = false;
         public bool resetTime { get; set; }
         public int lifeCount { get; set; }
         public bool displayLifeText { get; set; }
         private LifeText lifeText;
         public string currentLevel { get; set; }
 
-
-        private int freezeCount = 0;
-        private int lifeScreenCount = 0;
 
         public Game1()
         {
@@ -48,7 +44,7 @@ namespace TheMilkyWay
             level = new Level(this);
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController();
-            menuKeyboardController = new MenuKeyboardController(this);
+            menuKeyboardController = new MenuKeyboardController();
             playerName = "3Pros1LenUFO";
             lifeText = new LifeText(this);
             resetTime = false;

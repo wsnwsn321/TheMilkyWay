@@ -9,10 +9,10 @@ namespace TheMilkyWay.HUDElements
     public class HUDManager
     {
         private Game1 mygame;
-        public BeamMeter beamMeter;
-        public CowHUD cowHUD;
-        public BadCowHUD badcowHUD;
-        public MainMenu menu;
+        private BeamMeter beamMeter;
+        private CowHUD cowHUD;
+        private BadCowHUD badcowHUD;
+        public MainMenu menu { get; set; }
         private bool first = true;
         public bool displayMenu { get; set; }
 
@@ -41,7 +41,6 @@ namespace TheMilkyWay.HUDElements
             else
             {
                 DisplayPlayerName();
-                DisplayLevel();
                 cowHUD.Display();
                 badcowHUD.Display();
                 beamMeter.Display();
@@ -60,17 +59,6 @@ namespace TheMilkyWay.HUDElements
             mygame.spriteBatch.End();
         }
 
-        public void DisplayLevel()
-        {
-            String output1 = "FARM";
-            String output2 = "1";
-            Vector2 FontOrigin1 = mygame.font.MeasureString(output1) / GameConstants.Two;
-            Vector2 FontOrigin2 = mygame.font.MeasureString(output2) / GameConstants.Two;
-
-            mygame.spriteBatch.Begin();
-
-
-            mygame.spriteBatch.End();
-        }
+       
     }
 }

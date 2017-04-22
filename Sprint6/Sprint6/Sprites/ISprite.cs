@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using MyGame;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites
 {
@@ -13,7 +14,7 @@ namespace TheMilkyWay.Sprites
         Rectangle desRectangle { get; set; }
         int currentFrame { get; set; }
         bool canMove { get; set; }
-        List<Circle> circles { get; set; }
+        Collection<Circle> circles { get; }
         void Update();
         void Draw(Vector2 pos);
 

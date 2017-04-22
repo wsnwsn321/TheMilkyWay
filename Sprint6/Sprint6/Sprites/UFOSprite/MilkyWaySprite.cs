@@ -3,17 +3,18 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
 using TheMilkyWay.Sprites;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
     public class MilkyWaySprite : ISprite
     {
-        public List<Circle> circles { get; set; }
+        public Rectangle desRectangle { get; set; }
         public bool canMove { get; set; }
         public Texture2D Texture { get; set; }
         public int currentFrame { get; set; }
         private SpriteBatch sb;
-        public Rectangle desRectangle { get; set; }
+        public Collection<Circle> circles { get; }
 
 
         Vector2 p;

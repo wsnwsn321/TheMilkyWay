@@ -5,7 +5,7 @@ namespace TheMilkyWay.HUDElements
 {
     public class BeamMeter
     {
-        private int BeamPercent;
+        public int BeamPercent { get; set; }
         private Rectangle BeamMeterBackground;
         private Rectangle BeamMeterBar;
         private Game1 myGame;
@@ -48,10 +48,6 @@ namespace TheMilkyWay.HUDElements
             myGame.spriteBatch.End();
         }
 
-        public int GetBeamPercent()
-        {
-            return BeamPercent;
-        }
 
         public void SetBeamPercent(int newBeamPercent)
         {

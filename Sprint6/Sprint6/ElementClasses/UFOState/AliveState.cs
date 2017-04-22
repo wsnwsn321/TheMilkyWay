@@ -38,7 +38,7 @@ namespace TheMilkyWay.ElementClasses
 
         public void Die()
         {
-            mainCharacter.state = new DeadState( mainCharacter);
+            mainCharacter.state = new DeadState();
             //mainCharacter.UFODie();
         }
         public void Collect()

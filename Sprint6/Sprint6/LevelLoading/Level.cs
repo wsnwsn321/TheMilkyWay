@@ -20,7 +20,7 @@ namespace TheMilkyWay.LevelLoading
         internal List<IBackground> backgroundElements = new List<IBackground>();
 
         private PauseText pauseText;
-        internal HUDManager scoreSystem;
+        public HUDManager scoreSystem { get; set; }
         internal WindowManager windowManager;
 
         public string currentLevel { get; set; }
@@ -54,8 +54,6 @@ namespace TheMilkyWay.LevelLoading
                 {
                     if (enemy.position.X > (-myGame.GraphicsDevice.Viewport.X) - 100 && enemy.position.X < ((-myGame.GraphicsDevice.Viewport.X) + GameConstants.ScreenWidth))
                     {
-                        CollisionDetection.Instance.EnemyBlockCollision(mainCharacter, enemy, envElements);
-
                         enemy.Update();
                     }
                 }
@@ -164,7 +162,6 @@ namespace TheMilkyWay.LevelLoading
             loader.LoadLevel(levelToLoad);
             gameWidth = loader.width;
             gameHeight = loader.height;
-            mainCharacter.MarioIdle();
             mainCharacter.position = marioPos;
             mainCharacter.canMove = true;
             SetBGM();

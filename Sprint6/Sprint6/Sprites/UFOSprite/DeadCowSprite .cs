@@ -2,12 +2,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
     public class DeadCowSprite : ISprite
     {
-        public List<Circle> circles { get; set; }
+        public Collection<Circle> circles { get; }
         public bool canMove { get; set; }
         public Texture2D Texture { get; set; }
         public int currentFrame { get; set; }
@@ -27,7 +28,7 @@ namespace TheMilkyWay.Sprites.UFOSprite
             this.sb = sb;
             totalFrames = 4;
             counter = 0;
-            currentFrame = 3;
+            currentFrame = currentF;
             tintColor = Color.White;
         }
         public void Update()

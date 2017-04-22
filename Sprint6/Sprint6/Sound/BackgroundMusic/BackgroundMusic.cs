@@ -8,7 +8,7 @@ namespace TheMilkyWay.Sound.BackgroundMusic
     {
         public static BackgroundMusic instanse = new BackgroundMusic();
         private int mash = 3;
-        public List<Song> BGM;
+        private List<Song> BGM;
         Song var;
         public const int MainMenu = 0, LevelOne = 1, LevelTwo = 2, LevelThree = 3;
         private int currentBGM;

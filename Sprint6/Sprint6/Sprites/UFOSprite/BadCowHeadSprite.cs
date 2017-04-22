@@ -2,12 +2,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
     public class BadCowHeadSprite : ISprite
     {
-        public List<Circle> circles { get; set; }
+        public Collection<Circle> circles { get; }
         public bool canMove { get; set; }
 
         public Texture2D Texture { get; set; }
@@ -24,6 +25,7 @@ namespace TheMilkyWay.Sprites.UFOSprite
 
         public BadCowHeadSprite(Texture2D texture, SpriteBatch sb, int currentF)
         {
+            circles = new Collection<Circle>();
             Texture = texture;
             this.sb = sb;
             totalFrames = 4;

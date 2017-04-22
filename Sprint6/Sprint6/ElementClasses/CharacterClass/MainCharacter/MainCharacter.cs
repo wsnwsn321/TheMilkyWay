@@ -39,7 +39,7 @@ namespace TheMilkyWay.ElementClasses
         public int BadCowCount { get; set; }
 
 
-        private int JumpCounter, counter, scoreCounter;
+        private int JumpCounter, scoreCounter;
   
 
         public MainCharacter(Game1 game, Vector2 position)
@@ -59,13 +59,6 @@ namespace TheMilkyWay.ElementClasses
             JumpCounter = 0;
             bombUpdate = false;
             bombItem = new Bomb(new Vector2(position.X+20,position.Y+64));
-        }
-        public void MarioIdle()
-        {
-        }
-        public virtual void MarioChangeForm(int form)
-        {
-
         }
         public void MainCharJump()
         {
@@ -104,7 +97,7 @@ namespace TheMilkyWay.ElementClasses
             }
             if (canMove)
             {
-                if (beamMeter.GetBeamPercent() < 100)
+                if (beamMeter.BeamPercent < 100)
                 {
                     beamMeter.IncrementBeamPercent();
                 }
@@ -148,10 +141,10 @@ namespace TheMilkyWay.ElementClasses
             else
             {
                 bombUpdate = false;
-                if (beamMeter.GetBeamPercent() > GameConstants.Three)
+                if (beamMeter.BeamPercent > GameConstants.Three)
                 {
                     beamMeter.DecreaseBeamPercentBy(GameConstants.Three);
-                    if (myGame.level.mainCharacter.state is AliveState && beamMeter.GetBeamPercent() > GameConstants.Three)
+                    if (myGame.level.mainCharacter.state is AliveState && beamMeter.BeamPercent > GameConstants.Three)
                     {
                         AliveState f = myGame.level.mainCharacter.state as AliveState;
                         f.beam = true;

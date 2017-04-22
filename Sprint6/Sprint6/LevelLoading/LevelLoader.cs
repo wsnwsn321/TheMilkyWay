@@ -10,7 +10,7 @@ namespace TheMilkyWay.LevelLoading
         private int x, y;
         private int goodCowCount;
         private int badCowCount;
-        public bool isMenu;
+        private bool isMenu;
         public int height { get; set; }
         public int width { get; set; }
         private Level level;

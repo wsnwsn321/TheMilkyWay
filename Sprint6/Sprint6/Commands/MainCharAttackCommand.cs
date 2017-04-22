@@ -11,7 +11,6 @@ namespace TheMilkyWay.Commands
     {
         private Game1 myGame;
         private ElementClasses.MainCharacter mainCharacter;
-        int  TwentyFive = 25;
         private bool bomb;
         private int count;
         private bool playing = true;

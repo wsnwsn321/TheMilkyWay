@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MyGame;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sprites.UFOSprite
 {
@@ -15,8 +16,7 @@ namespace TheMilkyWay.Sprites.UFOSprite
         private SpriteBatch sb;
         public Rectangle desRectangle { get; set; }
         public Color tintColor { get; set; }
-        public List<Circle> circles { get; set; }
-
+        public Collection<Circle> circles { get; }
 
         Vector2 p;
 
