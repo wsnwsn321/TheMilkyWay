@@ -18,7 +18,7 @@
         public const int UFOSpeedX = 3;
         public const int UFOInitialGravity = 0;
         public const int MainCharStartingX = 100;
-        public const int MainCharStartingY = 50;
+        public const int MainCharStartingY = 150;
         public const int BEAM_PERCENT_MAX = 100;
 
         public const int NewMainCharStartingX = 200;
