@@ -77,7 +77,6 @@
     <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
     <Compile Include="Sprites\UFOSprite\BadCowHeadSprite.cs" />
     <Compile Include="Sprites\UFOSprite\BadDeadCowSprite.cs" />
-    <Compile Include="Sprites\UFOSprite\BoomExplosionSprite.cs" />
     <Compile Include="Sprites\UFOSprite\MilkyWaySprite.cs" />
     <Compile Include="Windows\LevelWindow.cs" />
     <Compile Include="Windows\WindowManager.cs" />
