@@ -14,7 +14,6 @@
         public const int FreezeTime = 150;
         public const int LifeScreenTime = 200;
 
-        //for flagpole testing change x pos to 6750
         public const int UFOSpeedX = 3;
         public const int UFOInitialGravity = 0;
         public const int MainCharStartingX = 100;
@@ -42,6 +41,10 @@
         public const int score10000 = 10000;
 
         public const int MaxBombSpeed = 20;
+
+        public const int MenuItem1X = 630;
+        public const int MenuItem1Y = 50;
+        public const int MenuItemSpacing = 65;
 
         public const int Three = 3;
         public const int Two = 2;
