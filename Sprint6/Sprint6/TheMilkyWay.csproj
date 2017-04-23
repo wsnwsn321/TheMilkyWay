@@ -72,6 +72,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\BeamMeter.cs" />
     <Compile Include="HUDElements\BadCowHUD .cs" />
+    <Compile Include="HUDElements\Credits.cs" />
     <Compile Include="HUDElements\GoalHUD.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
@@ -175,6 +176,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\LevelThree.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LevelLoading\LevelFiles\Credits.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
