@@ -27,6 +27,10 @@ namespace TheMilkyWay.Commands
                     myGame.level.Load(GameConstants.Level3, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
                     break;
                 case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
                     myGame.Exit();
                     break;
             }

@@ -159,7 +159,6 @@ namespace TheMilkyWay.LevelLoading
             backgroundElements = new List<IBackground>();
             pauseText = new PauseText(myGame);
             LevelLoader loader = new LevelLoader(this);
-            Debug.WriteLine(levelToLoad);
             loader.LoadLevel(levelToLoad);
             gameWidth = loader.width;
             gameHeight = loader.height;
