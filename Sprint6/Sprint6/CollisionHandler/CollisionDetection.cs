@@ -6,10 +6,10 @@ using TheMilkyWay.Sprites.UFOSprite;
 using TheMilkyWay.SpriteFactories;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
-using TheMilkyWay.Sound.MarioSound;
 using Microsoft.Xna.Framework.Media;
 using MyGame;
 using TheMilkyWay.Sound.BackgroundMusic;
+using TheMilkyWay.Sound.UFOSound;
 
 namespace TheMilkyWay.CollisionHandler
 {
@@ -18,6 +18,7 @@ namespace TheMilkyWay.CollisionHandler
         private Rectangle collideRectangle;
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;
+        public static    bool cowSoundPlay = true;
         private int bombCount = 0;
         Game1 myGame;
 
@@ -41,6 +42,7 @@ namespace TheMilkyWay.CollisionHandler
                     item.itemSprite.desRectangle.Intersects(mainCharacter.state.BeamSprite.desRectangle) && mainCharacter.state.beam)
                 {
                     item.position = new Vector2(item.position.X, item.position.Y - 3);
+                    
                 }
             }
         }
@@ -111,7 +113,9 @@ namespace TheMilkyWay.CollisionHandler
                     if (item is CowCharacter)
                     {
                         myGame.level.mainCharacter.GoodCowCount++;
-
+                      
+                            UFOSoundManager.instance.playSound(UFOSoundManager.COW);
+                
                     }
                     else
                     {
