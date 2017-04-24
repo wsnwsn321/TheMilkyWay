@@ -135,6 +135,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeReviews\Sprint6\Maintainability_Reuseability\ChrisCrain.txt" />
+    <Content Include="CodeReviews\Sprint6\Maintainability_Reuseability\GeorgeYang.txt" />
+    <Content Include="CodeReviews\Sprint6\Maintainability_Reuseability\NathanPratt.txt" />
+    <Content Include="CodeReviews\Sprint6\Maintainability_Reuseability\OliverWu.txt" />
+    <Content Include="CodeReviews\Sprint6\Readability\ChrisCrainCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint6\Readability\GeorgeYangCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint6\Readability\NathanPrattCodeReview.txt" />
+    <Content Include="CodeReviews\Sprint6\Readability\OliverCodeReview.txt" />
     <Content Include="CodeReviews\Sprint5\Maintainability_Reuseability\ChrisCrain.txt" />
     <Content Include="CodeReviews\Sprint5\Maintainability_Reuseability\GeorgeYang.txt" />
     <Content Include="CodeReviews\Sprint5\Maintainability_Reuseability\NathanPratt.txt" />

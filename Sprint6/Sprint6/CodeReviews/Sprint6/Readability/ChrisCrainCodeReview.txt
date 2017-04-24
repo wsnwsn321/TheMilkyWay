@@ -1,0 +1,13 @@
+﻿Chris Crain
+4/24/17
+Sprint 6
+DeadState.cs
+Oliver Wu
+14 minutes
+
+The constructor for DeadState is readable,
+but it can be confusing that 
+this.maincharacter is set to maincharacter and they are different.
+
+The void methods are readable since they are only
+one line of code each.

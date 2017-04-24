@@ -1,0 +1,11 @@
+﻿Oliver Wu
+4-24-17
+Sprint6
+Name of file being reviewed:	Level.cs
+Author of file being reviewed:	Nate	
+Specific Comments on code quality:
+Clear and straight-forward class to load all the necessary content.
+Making the code in Game1 simple and clean.
+
+A hypothetical change to make to the game related to the file being reviewed:
+Great work. Simple and clean.
