@@ -61,33 +61,32 @@ namespace TheMilkyWay.Controller
 
                     if (controllerMappings.ContainsKey(key)&&myGame.level.mainCharacter.canMove)
                     {
-                        if (key.Equals(Keys.Space))
-                        {
-                            wDown = true;
-                         
-                        }
+                            if (key.Equals(Keys.Space))
+                            {
+                                wDown = true;
 
-                        if (key.Equals(Keys.N))
-                        {
-                            if (NewState.IsKeyDown(Keys.N) && OldState.IsKeyUp(Keys.N))
+                            }
+
+                            if (key.Equals(Keys.N))
+                            {
+                                if (NewState.IsKeyDown(Keys.N) && OldState.IsKeyUp(Keys.N))
+                                {
+                                    controllerMappings[key].Execute();
+                                }
+                            }
+                            else if (key.Equals(Keys.Space))
+                            {
+                                if (NewState.IsKeyDown(Keys.Space) && OldState.IsKeyUp(Keys.Space))
+                                {
+                                    controllerMappings[key].Execute();
+                                }
+                            }
+                            else
                             {
                                 controllerMappings[key].Execute();
                             }
-                        }
-                        else if (key.Equals(Keys.Space))
-                        {
-                            if (NewState.IsKeyDown(Keys.Space) && OldState.IsKeyUp(Keys.Space))
-                            {
-                                controllerMappings[key].Execute();
-                            }
-                        }
-                        else
-                        {
-                            controllerMappings[key].Execute();
-                        }
 
-
-                    }
+                        }
                 }
                 OldState = NewState;
                 MainCharJumpCommand c = controllerMappings[Keys.Space] as MainCharJumpCommand;
