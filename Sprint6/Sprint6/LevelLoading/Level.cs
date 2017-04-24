@@ -31,7 +31,9 @@ namespace TheMilkyWay.LevelLoading
         public int goalPoint { get; set; }
         public int maxBadCowCount { get; set; }
 
-        public int gameWidth, gameHeight;
+        public int gameWidth { get; set; }
+        public int gameHeight { get; set; }
+
         private bool IsPaused { get; set;}
         int camX = 0;
 

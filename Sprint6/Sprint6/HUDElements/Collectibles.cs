@@ -30,11 +30,9 @@ namespace TheMilkyWay.HUDElements
         private Vector2 FontOrigin5;
         private Vector2 FontOrigin6;
         private Vector2 FontOrigin7;
-        private Vector2 FontOrigin8;
         private string collectibles;
         private string music1;
         private string music2;
-        private string quit;
         private string music3;
         private string music4;
         private string music5;
@@ -73,7 +71,6 @@ namespace TheMilkyWay.HUDElements
             music4 = "Destroy All Humans! 2 \"Furon Theme\"";
             music5 = "\"Benny Hill remix\"";
             music6 = "Kevin MacLeod \"Pixel Peeker\"";
-            quit = "Press Q to go back to main menu";
 
 
             FontOrigin1 = mygame.font.MeasureString(collectibles) / GameConstants.Two;
@@ -83,7 +80,6 @@ namespace TheMilkyWay.HUDElements
             FontOrigin5 = mygame.font.MeasureString(music4) / GameConstants.Two;
             FontOrigin6 = mygame.font.MeasureString(music5) / GameConstants.Two;
             FontOrigin7 = mygame.font.MeasureString(music6) / GameConstants.Two;
-            FontOrigin8 = mygame.font.MeasureString(quit) / GameConstants.Two;
             ufoPos = 1;
         }
 

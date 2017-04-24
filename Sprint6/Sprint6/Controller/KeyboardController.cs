@@ -54,7 +54,7 @@ namespace TheMilkyWay.Controller
 
                 foreach (Keys key in pressedKeys)
                 {
-                    if (key.Equals(Keys.Q)||(key.Equals(Keys.R)&&!myGame.level.scoreSystem.displayCollectibles&&!myGame.level.scoreSystem.displayCredits))
+                    if (key.Equals(Keys.Q)||(key.Equals(Keys.R)&&!myGame.level.scoreSystem.displayCollectibles&&!myGame.level.scoreSystem.displayCredits&&!myGame.level.scoreSystem.displayMenu))
                     {
                         controllerMappings[key].Execute();
                     }

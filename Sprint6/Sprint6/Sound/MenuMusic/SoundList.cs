@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace TheMilkyWay.Sound.MenuMusic
 {
@@ -14,7 +15,7 @@ namespace TheMilkyWay.Sound.MenuMusic
         private int maxMusic = 6;
         private int currentAdd = -1;
         public static SoundList instance = new SoundList();
-        public List<int> musicList = new List<int>();
+        public Collection<int> musicList = new Collection<int>();
         public void addMusic()
         {
             if(currentAdd < maxMusic && currentAdd >= musicList.Count -1)
@@ -59,7 +60,7 @@ namespace TheMilkyWay.Sound.MenuMusic
             write.Close();
         }
 
-        public List<int> getMusicList()
+        public Collection<int> getMusicList()
         {
             return musicList;
         }

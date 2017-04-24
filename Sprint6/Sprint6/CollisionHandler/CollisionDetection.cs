@@ -18,7 +18,6 @@ namespace TheMilkyWay.CollisionHandler
         private Rectangle collideRectangle;
         private Rectangle firstRectangle;
         private Rectangle secondRectangle;
-        public static    bool cowSoundPlay = true;
         private int bombCount = 0;
         Game1 myGame;
 
