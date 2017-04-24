@@ -277,18 +277,6 @@
 /processorParam:Quality=Best
 /build:Sound/BGM/BGM2.mp3
 
-#begin Sound/BGM/BGM3.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM3.mp3
-
-#begin Sound/BGM/BGM4.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Sound/BGM/BGM4.mp3
-
 #begin UFOGameObjects/explosion.png
 /importer:TextureImporter
 /processor:TextureProcessor

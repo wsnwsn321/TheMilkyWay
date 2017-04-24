@@ -22,7 +22,6 @@ namespace TheMilkyWay.Sound.BackgroundMusic
 
             //#0
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/AlternateTheme"));
-
             //#1
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level1"));
            
@@ -36,8 +35,7 @@ namespace TheMilkyWay.Sound.BackgroundMusic
             BGM.Add(content.Load<Song>("Sound/BGM/BGM1"));
             //#5
             BGM.Add(content.Load<Song>("Sound/BGM/BGM2"));
-            //#6
-            BGM.Add(content.Load<Song>("Sound/BGM/BGM3"));
+  
             
            
 
@@ -69,14 +67,7 @@ namespace TheMilkyWay.Sound.BackgroundMusic
                     var = BGM[4];
                     MediaPlayer.Play(var);
                     break;
-                case BGM2:
-                    var = BGM[5];
-                    MediaPlayer.Play(var);
-                    break;
-                case BGM3:
-                    var = BGM[6];
-                    MediaPlayer.Play(var);
-                    break;
+     
 
             }
         }

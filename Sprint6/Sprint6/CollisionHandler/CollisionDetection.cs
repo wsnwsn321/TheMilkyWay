@@ -125,6 +125,7 @@ namespace TheMilkyWay.CollisionHandler
                     item.isVisible = false;
                 } else if (item is Disk && mainCharacter.state.Sprite.desRectangle.Intersects(item.itemSprite.desRectangle) && item.isVisible)
                 {
+                    Sound.MenuMusic.SoundList.instance.addMusic();
                     item.isVisible = false;
                 }
             }

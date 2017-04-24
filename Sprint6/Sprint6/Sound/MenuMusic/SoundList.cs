@@ -11,14 +11,18 @@ namespace TheMilkyWay.Sound.MenuMusic
     public class SoundList
     {
 
-        private int maxMusic = 7;
+        private int maxMusic = 6;
+        private int currentAdd = -1;
         public static SoundList instance = new SoundList();
         public List<int> musicList = new List<int>();
-        public void addMusic(int n)
+        public void addMusic()
         {
-            if(musicList.Count < maxMusic)
+            if(currentAdd < maxMusic && currentAdd >= musicList.Count -1)
             {
-                musicList.Add(n);
+                currentAdd++;
+                Console.WriteLine(currentAdd);
+                musicList.Add(currentAdd);
+               
             }
           
         } 
@@ -28,6 +32,7 @@ namespace TheMilkyWay.Sound.MenuMusic
             if (File.Exists(@"C:\UFO\MusicList.txt"))
             {
                 string[] lines = System.IO.File.ReadAllLines("MusicList.txt");
+                currentAdd = lines.Length;
                 for (int i = 0; i < lines.Length; i++)
                 {
                     musicList.Add(Int32.Parse(lines[i]));
@@ -36,7 +41,6 @@ namespace TheMilkyWay.Sound.MenuMusic
         }
         public void writeMusicList()
         {
-            musicList.Add(1);
             StreamWriter write;
             if (File.Exists(@"C:\UFO\MusicList.txt"))
             {
@@ -59,6 +63,11 @@ namespace TheMilkyWay.Sound.MenuMusic
         public List<int> getMusicList()
         {
             return musicList;
+        }
+
+        public void reset()
+        {
+            currentAdd = -1;
         }
         
     }

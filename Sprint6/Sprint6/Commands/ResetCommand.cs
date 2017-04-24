@@ -12,6 +12,7 @@
 
         public void Execute()
         {
+            Sound.MenuMusic.SoundList.instance.reset();
             myGame.ResetGame();
         }
     }
