@@ -32,7 +32,7 @@ namespace TheMilkyWay.Controller
 
         public void Update()
         {
-            if(keysEnabled && !myGame.level.scoreSystem.displayMenu)
+            if(keysEnabled && !myGame.level.scoreSystem.displayMenu && !myGame.level.scoreSystem.displayCredits)
             {
                 KeyboardState NewState = Keyboard.GetState();
 
