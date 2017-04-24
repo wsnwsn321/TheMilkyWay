@@ -50,6 +50,10 @@ namespace TheMilkyWay.LevelLoading
                             level.scoreSystem.displayCredits = true;
                             isMenu = true;
                             break;
+                        case "Collectibles":
+                            level.scoreSystem.displayCollectibles = true;
+                            isMenu = true;
+                            break;
                         case "StarryNight":
                             for (int i = 0; i < 100; i++)
                             {
