@@ -1,9 +1,0 @@
-﻿Nathan Pratt
-3/10/17
-Sprint 4
-Name of the .cs file being reviewed: QuestionBlockM
-Author of the .cs file being reviewed: Oliver Wu
-Number of minutes taken to complete the review: approximately 15-20 minutes
-Comments:
-This file is very clear and concise and is very readable. 
-Variable names are named well, and the code is easily understandable.
