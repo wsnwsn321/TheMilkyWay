@@ -81,7 +81,7 @@ namespace TheMilkyWay.ElementClasses
         }
         public void MainCharUpdate()
         {
-            if (myGame.level.scoreSystem.displayMenu)
+            if (myGame.level.scoreSystem.displayMenu || myGame.level.scoreSystem.displayCredits)
             {
                 canMove = false;
             }

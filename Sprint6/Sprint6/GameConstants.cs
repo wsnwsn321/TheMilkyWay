@@ -5,6 +5,7 @@
         public const string Level1 = @"LevelLoading\LevelFiles\LevelOne.csv";
         public const string Level2 = @"LevelLoading\LevelFiles\LevelTwo.csv";
         public const string Level3 = @"LevelLoading\LevelFiles\LevelThree.csv";
+        public const string Credits = @"LevelLoading\LevelFiles\Credits.csv";
         public const string Menu = @"LevelLoading\LevelFiles\menu.csv";
 
         public const int Top = 1, Right = 2, Bottom = 3, Left = 4;
@@ -14,7 +15,6 @@
         public const int FreezeTime = 150;
         public const int LifeScreenTime = 200;
 
-        //for flagpole testing change x pos to 6750
         public const int UFOSpeedX = 3;
         public const int UFOInitialGravity = 0;
         public const int MainCharStartingX = 100;
@@ -42,6 +42,10 @@
         public const int score10000 = 10000;
 
         public const int MaxBombSpeed = 20;
+
+        public const int MenuItem1X = 630;
+        public const int MenuItem1Y = 50;
+        public const int MenuItemSpacing = 65;
 
         public const int Three = 3;
         public const int Two = 2;

@@ -46,6 +46,10 @@ namespace TheMilkyWay.LevelLoading
                             level.windowManager.dispMenu = true;
                             isMenu = true;
                             break;
+                        case "Credits":
+                            level.scoreSystem.displayCredits = true;
+                            isMenu = true;
+                            break;
                         case "StarryNight":
                             for (int i = 0; i < 100; i++)
                             {

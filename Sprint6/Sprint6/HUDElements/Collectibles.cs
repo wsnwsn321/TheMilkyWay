@@ -12,7 +12,7 @@ using TheMilkyWay.SpriteFactories;
 
 namespace TheMilkyWay.HUDElements
 {
-    public class MainMenu
+    public class Collectibles
     {
         private Game1 mygame;
         private Vector2 levelOnePos;
@@ -42,14 +42,14 @@ namespace TheMilkyWay.HUDElements
         private Vector2 ufo;
         public int ufoPos { get; set; }
 
-        public MainMenu(Game1 game)
+        public Collectibles(Game1 game)
         {
             mygame = game;
             logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
             mygame.level.mainCharacter.GoodCowCount = 0;
             mygame.level.mainCharacter.BadCowCount = 0;
-            levelOnePos.X = GameConstants.MenuItem1X;
-            levelOnePos.Y = GameConstants.MenuItem1Y;
+            levelOnePos.X = GameConstants.ScreenWidth/2;
+            levelOnePos.Y = GameConstants.ScreenHeight/5;
             levelTwoPos.X = levelOnePos.X;
             levelTwoPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing;
             levelThreePos.X = levelOnePos.X;
@@ -67,7 +67,7 @@ namespace TheMilkyWay.HUDElements
             ufo.X = levelOnePos.X - 180;
             ufo.Y = levelOnePos.Y - 30;
 
-            levelOne = "Level 1";
+            levelOne = "Collectibles";
             levelTwo = "Level 2";
             levelThree = "Level 3";
             collectibles = "Collectibles";
