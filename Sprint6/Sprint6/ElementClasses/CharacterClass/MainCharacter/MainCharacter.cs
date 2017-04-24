@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-using TheMilkyWay.Sound.MarioSound;
+using TheMilkyWay.Sound.UFOSound;
 using Microsoft.Xna.Framework.Media;
 using TheMilkyWay.Sound.BackgroundMusic;
 using System.Diagnostics;
@@ -81,7 +81,7 @@ namespace TheMilkyWay.ElementClasses
         }
         public void MainCharUpdate()
         {
-            if (myGame.level.scoreSystem.displayMenu)
+            if (myGame.level.scoreSystem.displayMenu || myGame.level.scoreSystem.displayCredits|| myGame.level.scoreSystem.displayCollectibles)
             {
                 canMove = false;
             }

@@ -6,9 +6,9 @@ using TheMilkyWay.Controller;
 using TheMilkyWay.SpriteFactories;
 using TheMilkyWay.LevelLoading;
 using TheMilkyWay.ElementClasses;
-using TheMilkyWay.Sound.MarioSound;
 using TheMilkyWay.Sound.BackgroundMusic;
 using TheMilkyWay.HUDElements;
+using TheMilkyWay.Sound.UFOSound;
 
 namespace TheMilkyWay
 
