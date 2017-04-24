@@ -15,118 +15,185 @@ namespace TheMilkyWay.HUDElements
     public class Credits
     {
         private Game1 mygame;
-        private Vector2 menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6;
-        private Vector2 FontOrigin1, FontOrigin2, FontOrigin3, FontOrigin4, FontOrigin5;
-        private string levelOne, levelTwo, levelThree, quit, inst;
-        private ISprite logo;
-        private Vector2 ufo;
-        public int ufoPos { get; set; }
-
+        private Vector2 creditsItem;
+        private Vector2 creditsFontOrigin;
+        private Vector2 exitItem;
+        private Vector2 exitFontOrigin;
+        private Vector2[] devItems;
+        private Vector2[] devFontOrigins;
+        private Vector2[] artItems;
+        private Vector2[] artFontOrigins;
+        private Vector2[] musicItems;
+        private Vector2[] musicFontOrigins;
+        private string exit, credits, developers, dev1, dev2, dev3, dev4, artwork, art1, art2;
+        private string music, simpsons, simtitle, grabbed, grabtitle, kelis, kelistitle, destroy, desttitle, 
+            kevin, kevintitle, d1, d1title;
         public Credits(Game1 game)
         {
+            int i = 0;
             mygame = game;
-            logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
             mygame.level.mainCharacter.GoodCowCount = 0;
             mygame.level.mainCharacter.BadCowCount = 0;
 
-            menuItem1.X = (GameConstants.ScreenWidth * GameConstants.Three / GameConstants.Four) + 10;
-            menuItem1.Y = GameConstants.ScreenHeight / GameConstants.Four;
-            menuItem2.X = menuItem1.X;
-            menuItem2.Y = menuItem1.Y + 75;
-            menuItem3.X = menuItem1.X;
-            menuItem3.Y = menuItem1.Y + 150;
-            menuItem4.X = menuItem1.X;
-            menuItem4.Y = menuItem1.Y + 225;
-            menuItem5.X = menuItem1.X;
-            menuItem5.Y = menuItem1.Y + 300;
-            menuItem6.X = 25;
-            menuItem6.Y = 10;
-            ufo.X = menuItem1.X - 175;
-            ufo.Y = menuItem1.Y - 30;
+            creditsItem = new Vector2(GameConstants.ScreenWidth / GameConstants.Two, GameConstants.ScreenHeight / GameConstants.Ten);
+            exitItem = new Vector2(GameConstants.ScreenWidth / GameConstants.Three * GameConstants.Two, GameConstants.ScreenHeight / GameConstants.Ten * GameConstants.Nine);
+
+            devItems = new Vector2[5];
+            devFontOrigins = new Vector2[5];
+            artItems = new Vector2[3];
+            artFontOrigins = new Vector2[3];
+            musicItems = new Vector2[13];
+            musicFontOrigins = new Vector2[13];
+
+            for (i = 0; i < devItems.Length; i++)
+            {
+                devItems[i].X = (GameConstants.ScreenWidth / GameConstants.Two);
+                devItems[i].Y = GameConstants.ScreenHeight / GameConstants.Five + i * 30;
+            }
+
+            for (i = 0; i < artItems.Length; i++)
+            {
+                artItems[i].X = (GameConstants.ScreenWidth / GameConstants.Four * GameConstants.Three);
+                artItems[i].Y = GameConstants.ScreenHeight / GameConstants.Five + i * 30;
+            }
+
+            for (i = 0; i < musicItems.Length; i++)
+            {
+                musicItems[i].X = (GameConstants.ScreenWidth / GameConstants.Five);
+                musicItems[i].Y = GameConstants.ScreenHeight / GameConstants.Five + i * 30;
+            }
+
+            credits = "Credits";
+            exit = "Press Q to return to main menu!";
+            developers = "Developers";
+            dev1 = "Chris Crain";
+            dev2 = "Nate Pratt";
+            dev3 = "Oliver Wu";
+            dev4 = "George Yang";
+            artwork = "Artwork";
+            art1 = "FlatRedBall";
+            art2 = "Viscious - Speed";
+            music = "Music";
+            simpsons = "The Simpsons Hit & Run";
+            simtitle = "\"Nightmare on Evergreen\"";
+            grabbed = "Grabbed by the Ghoulies";
+            grabtitle = "\"Main Theme\"";
+            kelis = "Kelis";
+            kelistitle = "\"Milkshake\"";
+            destroy = "Destroy All Humans! 2";
+            desttitle = "\"Furon Theme\"";
+            kevin = "Kevin MacLeod";
+            kevintitle = "\"Pixel Peeker Polka\"";
+            d1 = "D1OfAquavibe";
+            d1title = "\"Party Troll\"";
 
 
-            levelOne = "Level 1";
-            levelTwo = "Level 2";
-            levelThree = "Level 3";
-            quit = "Exit Game";
-            inst = "Use the arrow keys to navigate\nHit enter to select your choice";
-
-            FontOrigin1 = mygame.font.MeasureString(levelOne) / GameConstants.Two;
-            FontOrigin2 = mygame.font.MeasureString(levelTwo) / GameConstants.Two;
-            FontOrigin3 = mygame.font.MeasureString(levelThree) / GameConstants.Two;
-            FontOrigin4 = mygame.font.MeasureString(quit) / GameConstants.Two;
-            FontOrigin5 = mygame.font.MeasureString(inst) / GameConstants.Two;
+            creditsFontOrigin = mygame.font.MeasureString(credits) / GameConstants.Two;
+            exitFontOrigin = mygame.font.MeasureString(exit) / GameConstants.Two;
 
 
-            ufoPos = 1;
+            devFontOrigins[0] = mygame.font.MeasureString(developers) / GameConstants.Two;
+            devFontOrigins[1] = mygame.font.MeasureString(dev1) / GameConstants.Two;
+            devFontOrigins[2] = mygame.font.MeasureString(dev2) / GameConstants.Two;
+            devFontOrigins[3] = mygame.font.MeasureString(dev3) / GameConstants.Two;
+            devFontOrigins[4] = mygame.font.MeasureString(dev4) / GameConstants.Two;
+
+            artFontOrigins[0] = mygame.font.MeasureString(artwork) / GameConstants.Two;
+            artFontOrigins[1] = mygame.font.MeasureString(art1) / GameConstants.Two;
+            artFontOrigins[2] = mygame.font.MeasureString(art2) / GameConstants.Two;
+
+            musicFontOrigins[0] = mygame.font.MeasureString(music) / GameConstants.Two;
+            musicFontOrigins[1] = mygame.font.MeasureString(simpsons) / GameConstants.Two;
+            musicFontOrigins[2] = mygame.font.MeasureString(simtitle) / GameConstants.Two;
+            musicFontOrigins[3] = mygame.font.MeasureString(grabbed) / GameConstants.Two;
+            musicFontOrigins[4] = mygame.font.MeasureString(grabtitle) / GameConstants.Two;
+            musicFontOrigins[5] = mygame.font.MeasureString(kelis) / GameConstants.Two;
+            musicFontOrigins[6] = mygame.font.MeasureString(kelistitle) / GameConstants.Two;
+            musicFontOrigins[7] = mygame.font.MeasureString(destroy) / GameConstants.Two;
+            musicFontOrigins[8] = mygame.font.MeasureString(desttitle) / GameConstants.Two;
+            musicFontOrigins[9] = mygame.font.MeasureString(kevin) / GameConstants.Two;
+            musicFontOrigins[10] = mygame.font.MeasureString(kevintitle) / GameConstants.Two;
+            musicFontOrigins[11] = mygame.font.MeasureString(d1) / GameConstants.Two;
+            musicFontOrigins[12] = mygame.font.MeasureString(d1title) / GameConstants.Two;
+
+
         }
 
         public void Display()
         {
+            mygame.level.mainCharacter.isVisible = false;
+            mygame.level.mainCharacter.canMove = false;
+            mygame.level.mainCharacter.position = new Vector2(-10000, -10000);
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, levelOne, menuItem1, Color.White,
-            0, FontOrigin1, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, levelTwo, menuItem2, Color.White,
-                0, FontOrigin2, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, levelThree, menuItem3, Color.White,
-                0, FontOrigin3, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, quit, menuItem4, Color.White,
-                0, FontOrigin4, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, inst, menuItem5, Color.White,
-                0, FontOrigin5, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, credits, creditsItem, Color.White,
+            0, creditsFontOrigin, 3.0f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, exit, exitItem, Color.White,
+            0, exitFontOrigin, 1.5f, SpriteEffects.None, 1f);
             mygame.spriteBatch.End();
-            logo.Draw(menuItem6);
+            DisplayDevelopers();
+            DisplayArtists();
+            DisplayMusic();
         }
 
-        public void moveCharacter()
+        private void DisplayDevelopers()
         {
-            mygame.level.mainCharacter.position = ufo;
+            mygame.spriteBatch.Begin();
+            mygame.spriteBatch.DrawString(mygame.font, developers, devItems[0], Color.LightGreen,
+            0, devFontOrigins[0], 2.0f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, dev1, devItems[1], Color.LightGreen,
+            0, devFontOrigins[1], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, dev2, devItems[2], Color.LightGreen,
+            0, devFontOrigins[2], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, dev3, devItems[3], Color.LightGreen,
+            0, devFontOrigins[3], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, dev4, devItems[4], Color.LightGreen,
+            0, devFontOrigins[4], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.End();
         }
-        public void moveCharacterUp()
+        
+        private void DisplayMusic()
         {
-            Vector2 charPos = mygame.level.mainCharacter.position;
-            if (charPos.Y > menuItem1.Y - 30)
-            {
-                ufoPos--;
-                switch (ufoPos)
-                {
-                    case 1:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem1.Y - 30);
-                        break;
-                    case 2:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem2.Y - 30);
-                        break;
-                    case 3:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem3.Y - 30);
-                        break;
-                    case 4:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem4.Y - 30);
-                        break;
-                }
-            }
+            mygame.spriteBatch.Begin();
+            mygame.spriteBatch.DrawString(mygame.font, music, musicItems[0], Color.Red,
+            0, musicFontOrigins[0], 2.0f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, simpsons, musicItems[1], Color.Red,
+            0, musicFontOrigins[1], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, simtitle, musicItems[2], Color.HotPink,
+            0, musicFontOrigins[2], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, grabbed, musicItems[3], Color.Red,
+            0, musicFontOrigins[3], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, grabtitle, musicItems[4], Color.HotPink,
+            0, musicFontOrigins[4], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, kelis, musicItems[5], Color.Red,
+            0, musicFontOrigins[5], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, kelistitle, musicItems[6], Color.HotPink,
+            0, musicFontOrigins[6], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, destroy, musicItems[7], Color.Red,
+            0, musicFontOrigins[7], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, desttitle, musicItems[8], Color.HotPink,
+            0, musicFontOrigins[8], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, kevin, musicItems[9], Color.Red,
+            0, musicFontOrigins[9], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, kevintitle, musicItems[10], Color.HotPink,
+            0, musicFontOrigins[10], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, d1, musicItems[11], Color.Red,
+            0, musicFontOrigins[11], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, d1title, musicItems[12], Color.HotPink,
+            0, musicFontOrigins[12], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.End();
         }
-        public void moveCharacterDown()
+
+        private void DisplayArtists()
         {
-            Vector2 charPos = mygame.level.mainCharacter.position;
-            if (charPos.Y < menuItem1.Y + 150)
-            {
-                ufoPos++;
-                switch (ufoPos)
-                {
-                    case 1:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem1.Y - 30);
-                        break;
-                    case 2:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem2.Y - 30);
-                        break;
-                    case 3:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem3.Y - 30);
-                        break;
-                    case 4:
-                        mygame.level.mainCharacter.position = new Vector2(ufo.X, menuItem4.Y - 30);
-                        break;
-                }
-            }
+            mygame.spriteBatch.Begin();
+            mygame.spriteBatch.DrawString(mygame.font, artwork, artItems[0], Color.White,
+            0, artFontOrigins[0], 2.0f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, art1, artItems[1], Color.White,
+            0, artFontOrigins[1], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, art2, artItems[2], Color.White,
+            0, artFontOrigins[2], 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.End();
         }
+
     }
 }
