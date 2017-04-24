@@ -64,12 +64,12 @@ namespace TheMilkyWay.HUDElements
             creditsPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing * 4;
             menuItem8.X = 25;
             menuItem8.Y = 10;
-            ufo.X = levelOnePos.X - 180;
+            ufo.X = levelOnePos.X - 195;
             ufo.Y = levelOnePos.Y - 30;
 
-            levelOne = "Level 1";
-            levelTwo = "Level 2";
-            levelThree = "Level 3";
+            levelOne = "1)First Flight";
+            levelTwo = "2)Toxic Cowz";
+            levelThree = "3)Final Invasion";
             collectibles = "Collectibles";
             credits = "Credits";
             quit = "Exit Game";
@@ -87,6 +87,7 @@ namespace TheMilkyWay.HUDElements
 
         public void Display()
         {
+            mygame.level.mainCharacter.isVisible = true;
             mygame.spriteBatch.Begin();
             mygame.spriteBatch.DrawString(mygame.font, levelOne, levelOnePos, Color.White,
             0, FontOrigin1, 2f, SpriteEffects.None, 1f);
@@ -140,7 +141,7 @@ namespace TheMilkyWay.HUDElements
                     mygame.level.mainCharacter.position = new Vector2(ufo.X, levelTwoPos.Y - 30);
                     break;
                 case 3:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, levelThreePos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X-15, levelThreePos.Y - 30);
                     break;
                 case 4:
                     mygame.level.mainCharacter.position = new Vector2(ufo.X, collectiblesPos.Y - 30);

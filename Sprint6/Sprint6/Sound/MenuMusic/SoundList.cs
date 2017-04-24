@@ -48,7 +48,6 @@ namespace TheMilkyWay.Sound.MenuMusic
             }else
             {
                 Directory.CreateDirectory(@"C:\\UFO");
-                File.Create(@"C:\UFO\MusicList.txt");
                 write = new StreamWriter(@"C:\UFO\MusicList.txt");
             }
 

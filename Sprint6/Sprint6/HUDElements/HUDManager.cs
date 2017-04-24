@@ -55,7 +55,6 @@ namespace TheMilkyWay.HUDElements
                 credits.Display();
                 if (firstCredits)
                 {
-                    credits.moveCharacter();
                     firstCredits = !firstCredits;
                 }
             }
