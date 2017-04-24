@@ -68,9 +68,9 @@ namespace TheMilkyWay.HUDElements
             music1 = "Kelis \"MilkShake\""; 
             music2 = "The Simpsons Hit & Run \"Nightmare on Evergreen\"";
             music3 = "Grabbed by the Ghoulies \"Main Theme\"";
-            music4 = "Destroy All Humans! 2 \"Furon Theme\"";
-            music5 = "\"Benny Hill remix\"";
-            music6 = "Kevin MacLeod \"Pixel Peeker\"";
+            music4 = "Overwatch \"Junkensteins Revenge\"";
+            music5 = "Kevin MacLeod \"Pixel Peeker\"";
+            music6 = "D1ofaquavibe \"Party Troll\"";
 
 
             FontOrigin1 = mygame.font.MeasureString(collectibles) / GameConstants.Two;

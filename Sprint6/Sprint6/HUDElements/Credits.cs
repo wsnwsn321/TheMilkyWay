@@ -80,8 +80,8 @@ namespace TheMilkyWay.HUDElements
             grabtitle = "\"Main Theme\"";
             kelis = "Kelis";
             kelistitle = "\"Milkshake\"";
-            destroy = "Destroy All Humans! 2";
-            desttitle = "\"Furon Theme\"";
+            destroy = "Overwatch";
+            desttitle = "\"Junkensteins Revenge\"";
             kevin = "Kevin MacLeod";
             kevintitle = "\"Pixel Peeker Polka\"";
             d1 = "D1OfAquavibe";
