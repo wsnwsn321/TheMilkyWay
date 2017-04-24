@@ -72,6 +72,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HUDElements\BeamMeter.cs" />
     <Compile Include="HUDElements\BadCowHUD .cs" />
+    <Compile Include="HUDElements\Credits.cs" />
     <Compile Include="HUDElements\GoalHUD.cs" />
     <Compile Include="Sound\MenuMusic\SoundList.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
