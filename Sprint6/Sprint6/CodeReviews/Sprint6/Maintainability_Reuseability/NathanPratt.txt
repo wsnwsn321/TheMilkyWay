@@ -1,0 +1,19 @@
+﻿Nathan Pratt
+4-24-17
+Sprint6
+Name of file being reviewed: CollisionDetection
+Author of file being reviewed: Chris Crain
+
+Specific Comments on code quality:
+This class contains many properties that a high quality piece of code should have.
+This class has high cohesion; the class exhibits a very simple and concise structure
+that contains code that is all very related to its purpose, althought it does have many
+branches.
+The class also has loose coupling.
+
+The cyclomatic complexity is a bit high in this class but there is not really a better way of handling what the class
+needs to do.
+
+There is really no hypothetical change I would like to make to the class. If there were something that
+needed to be fixed or changed, it would be very simple to implement because of the relatively high quality of the
+class.
