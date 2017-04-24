@@ -67,8 +67,8 @@ namespace TheMilkyWay.HUDElements
             quitPos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 6;
             menuItem8.X = 25;
             menuItem8.Y = 10;
-            ufo.X = collectiblePos.X - 180;
-            ufo.Y = collectiblePos.Y - 30;
+            ufo.X = music1Pos.X - 180;
+            ufo.Y = music1Pos.Y - 30;
 
             collectibles = "Collectibles";
             music1 = "The Simpsons Hit & Run \"Nightmare on Evergreen\"";
@@ -130,7 +130,7 @@ namespace TheMilkyWay.HUDElements
         public void moveCharacterDown()
         {
             Vector2 charPos = mygame.level.mainCharacter.position;
-            if (charPos.Y < quitPos.Y && ufoPos!=8)
+            if (charPos.Y < quitPos.Y && ufoPos!=7)
             {
                 ufoPos++;
                 determinePos(ufoPos);
@@ -141,29 +141,24 @@ namespace TheMilkyWay.HUDElements
         {
             switch (ufoPos)
             {
+              
                 case 1:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, collectiblePos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music1Pos.X-50, music1Pos.Y - 30);
                     break;
                 case 2:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music1Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music2Pos.X-50, music2Pos.Y - 30);
                     break;
                 case 3:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music2Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music3Pos.X, music3Pos.Y - 30);
                     break;
                 case 4:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music3Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music4Pos.X, music4Pos.Y - 30);
                     break;
                 case 5:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music4Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music5Pos.X, music5Pos.Y - 30);
                     break;
                 case 6:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music5Pos.Y - 30);
-                    break;
-                case 7:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music6Pos.Y - 30);
-                    break;
-                case 8:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, quitPos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music6Pos.X, music6Pos.Y - 30);
                     break;
                
             }

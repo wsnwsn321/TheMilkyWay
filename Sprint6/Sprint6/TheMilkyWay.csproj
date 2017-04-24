@@ -50,6 +50,7 @@
     <Compile Include="Commands\MenuCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
+    <Compile Include="Controller\CollectiblesKeyboardController.cs" />
     <Compile Include="Controller\MenuKeyboardController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\GamepadController.cs" />

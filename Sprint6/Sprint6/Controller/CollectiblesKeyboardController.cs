@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace TheMilkyWay.Controller
 {
-    public class MenuKeyboardController
+    public class CollectiblesKeyboardController
     {
       
         public Dictionary<Keys, ICommand> controllerMappings { get; }
@@ -15,7 +15,7 @@ namespace TheMilkyWay.Controller
         public Game1 myGame;
         public bool up { get; set; }
         public bool keysEnabled { get; set; }
-    public MenuKeyboardController(Game1 game)
+    public CollectiblesKeyboardController(Game1 game)
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
             keysEnabled = true;
@@ -32,7 +32,7 @@ namespace TheMilkyWay.Controller
 
         public void Update()
         {
-            if(keysEnabled&& !myGame.level.scoreSystem.displayCollectibles)
+            if(keysEnabled && !myGame.level.scoreSystem.displayMenu)
             {
                 KeyboardState NewState = Keyboard.GetState();
 

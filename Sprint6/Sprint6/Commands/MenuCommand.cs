@@ -13,14 +13,29 @@ namespace TheMilkyWay.Commands
 
         public void Execute()
         {
-            if (myGame.menuKeyboardController.up)
+            if (myGame.level.scoreSystem.displayCollectibles)
             {
-                myGame.level.scoreSystem.menu.moveCharacterUp();
+                if (myGame.collectibleKeyboardController.up)
+                {
+                    myGame.level.scoreSystem.collectibles.moveCharacterUp();
+                }
+                else
+                {
+                    myGame.level.scoreSystem.collectibles.moveCharacterDown();
+                }
             }
             else
             {
-                myGame.level.scoreSystem.menu.moveCharacterDown();
+                if (myGame.menuKeyboardController.up)
+                {
+                    myGame.level.scoreSystem.menu.moveCharacterUp();
+                }
+                else
+                {
+                    myGame.level.scoreSystem.menu.moveCharacterDown();
+                }
             }
+          
         }
     }
 }

@@ -21,6 +21,7 @@ namespace TheMilkyWay
         internal GamepadController gamepadController;
         internal KeyboardController keyboardController;
         internal MenuKeyboardController menuKeyboardController;
+        internal CollectiblesKeyboardController collectibleKeyboardController;
         internal Level level;
         internal SpriteFont font;
         internal string playerName;
@@ -44,7 +45,8 @@ namespace TheMilkyWay
             level = new Level(this);
             keyboardController = new KeyboardController(this);
             gamepadController = new GamepadController();
-            menuKeyboardController = new MenuKeyboardController();
+            menuKeyboardController = new MenuKeyboardController(this);
+            collectibleKeyboardController = new CollectiblesKeyboardController(this);
             playerName = "3Pros1LenUFO";
             lifeText = new LifeText(this);
             resetTime = false;
@@ -72,6 +74,7 @@ namespace TheMilkyWay
             currentLevel = level.currentLevel;
             menuKeyboardController.Update();
             keyboardController.Update();
+            collectibleKeyboardController.Update();
             base.Update(gameTime);         
         }
 
@@ -100,6 +103,9 @@ namespace TheMilkyWay
             menuKeyboardController.RegisterCommand(Keys.Down, new MenuCommand(this));
             menuKeyboardController.RegisterCommand(Keys.Up, new MenuCommand(this));
             menuKeyboardController.RegisterCommand(Keys.Enter, new MenuSelectCommand(this));
+            collectibleKeyboardController.RegisterCommand(Keys.Down, new MenuCommand(this));
+            collectibleKeyboardController.RegisterCommand(Keys.Up, new MenuCommand(this));
+            collectibleKeyboardController.RegisterCommand(Keys.Enter, new CollectiblesSelectCommand(this));
         }
 
         private void CreateElements()
