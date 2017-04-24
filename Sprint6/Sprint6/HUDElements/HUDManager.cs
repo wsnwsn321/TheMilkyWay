@@ -14,7 +14,7 @@ namespace TheMilkyWay.HUDElements
         private BadCowHUD badcowHUD;
         private GoalHUD goalHUD;
         public MainMenu menu { get; set; }
-        public MainMenu credits { get; set; }
+        public Credits credits { get; set; }
         private bool firstMenu = true;
         private bool firstCredits = true;
         public bool displayMenu { get; set; }
@@ -27,6 +27,7 @@ namespace TheMilkyWay.HUDElements
             cowHUD = new CowHUD(mygame);
             badcowHUD = new BadCowHUD(mygame);
             menu = new MainMenu(mygame);
+            credits = new Credits(mygame);
             goalHUD = new GoalHUD(mygame);
             displayMenu = false;
             displayCredits = false;

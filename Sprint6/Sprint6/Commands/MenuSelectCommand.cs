@@ -29,6 +29,7 @@ namespace TheMilkyWay.Commands
                 case 4:
                     break;
                 case 5:
+                    myGame.level.Load(GameConstants.Credits, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
                     break;
                 case 6:
                     myGame.Exit();
