@@ -60,7 +60,7 @@ namespace TheMilkyWay.Controller
                         }
                         else if (key.Equals(Keys.Enter))
                         {
-                            if (NewState.IsKeyDown(Keys.Enter) && OldState.IsKeyUp(Keys.Enter))
+                            if (NewState.IsKeyDown(Keys.Enter) && OldState.IsKeyUp(Keys.Enter) && !myGame.level.scoreSystem.displayCredits)
                             {
                                 controllerMappings[key].Execute();
                             }
