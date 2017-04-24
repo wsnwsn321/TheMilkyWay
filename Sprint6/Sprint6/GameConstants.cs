@@ -7,6 +7,7 @@
         public const string Level3 = @"LevelLoading\LevelFiles\LevelThree.csv";
         public const string Credits = @"LevelLoading\LevelFiles\Credits.csv";
         public const string Menu = @"LevelLoading\LevelFiles\menu.csv";
+        public const string Collectibles = @"LevelLoading\LevelFiles\Collectibles.csv";
 
         public const int Top = 1, Right = 2, Bottom = 3, Left = 4;
         public const int SquareWidth = 32;

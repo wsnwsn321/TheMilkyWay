@@ -15,10 +15,14 @@ namespace TheMilkyWay.HUDElements
         private GoalHUD goalHUD;
         public MainMenu menu { get; set; }
         public Credits credits { get; set; }
+        public Collectibles collectibles { get; set; }
         private bool firstMenu = true;
         private bool firstCredits = true;
+        private bool firstCollectibles = true;
         public bool displayMenu { get; set; }
         public bool displayCredits { get; set; }
+
+        public bool displayCollectibles { get; set; }
 
         public HUDManager(Game1 game)
         {
@@ -28,9 +32,11 @@ namespace TheMilkyWay.HUDElements
             badcowHUD = new BadCowHUD(mygame);
             menu = new MainMenu(mygame);
             credits = new Credits(mygame);
+            collectibles = new Collectibles(mygame);
             goalHUD = new GoalHUD(mygame);
             displayMenu = false;
             displayCredits = false;
+            displayCollectibles = false;
         }
 
         public void DisplayHUDElements()
@@ -51,6 +57,15 @@ namespace TheMilkyWay.HUDElements
                 {
                     credits.moveCharacter();
                     firstCredits = !firstCredits;
+                }
+            }
+            else if (displayCollectibles)
+            {
+                collectibles.Display();
+                if (firstCollectibles)
+                {
+                    collectibles.moveCharacter();
+                    firstCollectibles = !firstCollectibles;
                 }
             }
             else

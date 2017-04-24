@@ -27,6 +27,8 @@ namespace TheMilkyWay.Commands
                     myGame.level.Load(GameConstants.Level3, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
                     break;
                 case 4:
+                    myGame.level.Load(GameConstants.Collectibles, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
+
                     break;
                 case 5:
                     myGame.level.Load(GameConstants.Credits, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
