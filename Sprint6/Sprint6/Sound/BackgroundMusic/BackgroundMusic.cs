@@ -68,7 +68,11 @@ namespace TheMilkyWay.Sound.BackgroundMusic
                     var = BGM[4];
                     MediaPlayer.Play(var);
                     break;
-     
+                case BGM2:
+                    var = BGM[5];
+                    MediaPlayer.Play(var);
+                    break;
+
 
             }
         }

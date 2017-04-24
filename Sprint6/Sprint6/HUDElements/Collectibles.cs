@@ -31,8 +31,6 @@ namespace TheMilkyWay.HUDElements
         private Vector2 FontOrigin6;
         private Vector2 FontOrigin7;
         private Vector2 FontOrigin8;
-        private Vector2 FontOrigin9;
-        private Vector2 menuItem8;
         private string collectibles;
         private string music1;
         private string music2;
@@ -63,17 +61,15 @@ namespace TheMilkyWay.HUDElements
             music5Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 5;
             music6Pos.X = collectiblePos.X;
             music6Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 6;
-            quitPos.X = collectiblePos.X*2;
+            quitPos.X = collectiblePos.X;
             quitPos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 6;
-            menuItem8.X = 25;
-            menuItem8.Y = 10;
-            ufo.X = music1Pos.X - 180;
+            ufo.X = music1Pos.X - 300;
             ufo.Y = music1Pos.Y - 30;
 
             collectibles = "Collectibles";
-            music1 = "The Simpsons Hit & Run \"Nightmare on Evergreen\"";
-            music2 = "Grabbed by the Ghoulies \"Main Theme\"";
-            music3 = "Kelis \"MilkShake\"";
+            music1 = "Kelis \"MilkShake\""; 
+            music2 = "The Simpsons Hit & Run \"Nightmare on Evergreen\"";
+            music3 = "Grabbed by the Ghoulies \"Main Theme\"";
             music4 = "Destroy All Humans! 2 \"Furon Theme\"";
             music5 = "\"Benny Hill remix\"";
             music6 = "Kevin MacLeod \"Pixel Peeker\"";
@@ -96,20 +92,19 @@ namespace TheMilkyWay.HUDElements
             mygame.spriteBatch.Begin();
             mygame.spriteBatch.DrawString(mygame.font, collectibles, collectiblePos, Color.White,
             0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, music1, music1Pos, Color.Gray,
+            mygame.spriteBatch.DrawString(mygame.font, music1, music1Pos, Color.White,
                 0, FontOrigin2, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, music2, music2Pos, Color.Gray,
+            mygame.spriteBatch.DrawString(mygame.font, music2, music2Pos, Color.White,
                 0, FontOrigin3, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, music3, music3Pos, Color.Gray,
+            mygame.spriteBatch.DrawString(mygame.font, music3, music3Pos, Color.White,
                 0, FontOrigin4, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, music4, music4Pos, Color.Gray,
+            mygame.spriteBatch.DrawString(mygame.font, music4, music4Pos, Color.White,
                 0, FontOrigin5, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, music5, music5Pos, Color.Gray,
+            mygame.spriteBatch.DrawString(mygame.font, music5, music5Pos, Color.White,
               0, FontOrigin6, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, music6, music6Pos, Color.Gray,
+            mygame.spriteBatch.DrawString(mygame.font, music6, music6Pos, Color.White,
                 0, FontOrigin7, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, quit, quitPos, Color.White,
-                0, FontOrigin8, 1f, SpriteEffects.None, 1f);
+         
            
             mygame.spriteBatch.End();
         }
@@ -130,7 +125,7 @@ namespace TheMilkyWay.HUDElements
         public void moveCharacterDown()
         {
             Vector2 charPos = mygame.level.mainCharacter.position;
-            if (charPos.Y < quitPos.Y && ufoPos!=7)
+            if (charPos.Y < quitPos.Y && ufoPos!=6)
             {
                 ufoPos++;
                 determinePos(ufoPos);
@@ -143,22 +138,22 @@ namespace TheMilkyWay.HUDElements
             {
               
                 case 1:
-                    mygame.level.mainCharacter.position = new Vector2(music1Pos.X-50, music1Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music1Pos.X-300, music1Pos.Y - 30);
                     break;
                 case 2:
-                    mygame.level.mainCharacter.position = new Vector2(music2Pos.X-50, music2Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music2Pos.X - 300, music2Pos.Y - 30);
                     break;
                 case 3:
-                    mygame.level.mainCharacter.position = new Vector2(music3Pos.X, music3Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music3Pos.X - 300, music3Pos.Y - 30);
                     break;
                 case 4:
-                    mygame.level.mainCharacter.position = new Vector2(music4Pos.X, music4Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music4Pos.X - 300, music4Pos.Y - 30);
                     break;
                 case 5:
-                    mygame.level.mainCharacter.position = new Vector2(music5Pos.X, music5Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music5Pos.X - 300, music5Pos.Y - 30);
                     break;
                 case 6:
-                    mygame.level.mainCharacter.position = new Vector2(music6Pos.X, music6Pos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(music6Pos.X - 300, music6Pos.Y - 30);
                     break;
                
             }
