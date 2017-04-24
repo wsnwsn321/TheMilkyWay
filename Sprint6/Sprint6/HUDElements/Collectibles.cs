@@ -15,14 +15,14 @@ namespace TheMilkyWay.HUDElements
     public class Collectibles
     {
         private Game1 mygame;
-        private Vector2 levelOnePos;
-        private Vector2 levelTwoPos;
-        private Vector2 levelThreePos;
+        private Vector2 collectiblePos;
+        private Vector2 music1Pos;
+        private Vector2 music2Pos;
         private Vector2 quitPos;
-        private Vector2 instPos;
-        private Vector2 collectiblesPos;
-        private Vector2 creditsPos;
-        private Vector2 menuItem8;
+        private Vector2 music3Pos;
+        private Vector2 music4Pos;
+        private Vector2 music5Pos;
+        private Vector2 music6Pos;
         private Vector2 FontOrigin1;
         private Vector2 FontOrigin2;
         private Vector2 FontOrigin3;
@@ -30,80 +30,88 @@ namespace TheMilkyWay.HUDElements
         private Vector2 FontOrigin5;
         private Vector2 FontOrigin6;
         private Vector2 FontOrigin7;
-        private string levelOne;
-        private string levelTwo;
-        private string levelThree;
-        private string quit;
+        private Vector2 FontOrigin8;
+        private Vector2 FontOrigin9;
+        private Vector2 menuItem8;
         private string collectibles;
-        private string credits;
-        private string inst;
-
-        private ISprite logo;
+        private string music1;
+        private string music2;
+        private string quit;
+        private string music3;
+        private string music4;
+        private string music5;
+        private string music6;
         private Vector2 ufo;
         public int ufoPos { get; set; }
 
         public Collectibles(Game1 game)
         {
             mygame = game;
-            logo = BackgroundSpriteFactory.Instance.CreateMilkyWaySprite();
             mygame.level.mainCharacter.GoodCowCount = 0;
             mygame.level.mainCharacter.BadCowCount = 0;
-            levelOnePos.X = GameConstants.ScreenWidth/2;
-            levelOnePos.Y = GameConstants.ScreenHeight/5;
-            levelTwoPos.X = levelOnePos.X;
-            levelTwoPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing;
-            levelThreePos.X = levelOnePos.X;
-            levelThreePos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing * 2;
-            quitPos.X = levelOnePos.X;
-            quitPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing * 5;
-            instPos.X = levelOnePos.X;
-            instPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing * 6;
-            collectiblesPos.X = levelOnePos.X;
-            collectiblesPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing * 3;
-            creditsPos.X = levelOnePos.X;
-            creditsPos.Y = levelOnePos.Y + GameConstants.MenuItemSpacing * 4;
+            collectiblePos.X = GameConstants.ScreenWidth/2;
+            collectiblePos.Y = GameConstants.ScreenHeight/20;
+            music1Pos.X = collectiblePos.X;
+            music1Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing;
+            music2Pos.X = collectiblePos.X;
+            music2Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 2;
+            music3Pos.X = collectiblePos.X;
+            music3Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 3;
+            music4Pos.X = collectiblePos.X;
+            music4Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 4;
+            music5Pos.X = collectiblePos.X;
+            music5Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 5;
+            music6Pos.X = collectiblePos.X;
+            music6Pos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 6;
+            quitPos.X = collectiblePos.X*2;
+            quitPos.Y = collectiblePos.Y + GameConstants.MenuItemSpacing * 6;
             menuItem8.X = 25;
             menuItem8.Y = 10;
-            ufo.X = levelOnePos.X - 180;
-            ufo.Y = levelOnePos.Y - 30;
+            ufo.X = collectiblePos.X - 180;
+            ufo.Y = collectiblePos.Y - 30;
 
-            levelOne = "Collectibles";
-            levelTwo = "Level 2";
-            levelThree = "Level 3";
             collectibles = "Collectibles";
-            credits = "Credits";
-            quit = "Exit Game";
-            inst = "Use the arrow keys to navigate\nHit enter to select your choice";
+            music1 = "The Simpsons Hit & Run \"Nightmare on Evergreen\"";
+            music2 = "Grabbed by the Ghoulies \"Main Theme\"";
+            music3 = "Kelis \"MilkShake\"";
+            music4 = "Destroy All Humans! 2 \"Furon Theme\"";
+            music5 = "\"Benny Hill remix\"";
+            music6 = "Kevin MacLeod \"Pixel Peeker\"";
+            quit = "Press Q to go back to main menu";
 
-            FontOrigin1 = mygame.font.MeasureString(levelOne) / GameConstants.Two;
-            FontOrigin2 = mygame.font.MeasureString(levelTwo) / GameConstants.Two;
-            FontOrigin3 = mygame.font.MeasureString(levelThree) / GameConstants.Two;
-            FontOrigin4 = mygame.font.MeasureString(quit) / GameConstants.Two;
-            FontOrigin5 = mygame.font.MeasureString(inst) / GameConstants.Two;
-            FontOrigin6 = mygame.font.MeasureString(collectibles) / GameConstants.Two;
-            FontOrigin7 = mygame.font.MeasureString(credits) / GameConstants.Two;
+
+            FontOrigin1 = mygame.font.MeasureString(collectibles) / GameConstants.Two;
+            FontOrigin2 = mygame.font.MeasureString(music1) / GameConstants.Two;
+            FontOrigin3 = mygame.font.MeasureString(music2) / GameConstants.Two;
+            FontOrigin4 = mygame.font.MeasureString(music3) / GameConstants.Two;
+            FontOrigin5 = mygame.font.MeasureString(music4) / GameConstants.Two;
+            FontOrigin6 = mygame.font.MeasureString(music5) / GameConstants.Two;
+            FontOrigin7 = mygame.font.MeasureString(music6) / GameConstants.Two;
+            FontOrigin8 = mygame.font.MeasureString(quit) / GameConstants.Two;
             ufoPos = 1;
         }
 
         public void Display()
         {
             mygame.spriteBatch.Begin();
-            mygame.spriteBatch.DrawString(mygame.font, levelOne, levelOnePos, Color.White,
-            0, FontOrigin1, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, levelTwo, levelTwoPos, Color.White,
-                0, FontOrigin2, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, levelThree, levelThreePos, Color.White,
-                0, FontOrigin3, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, quit, quitPos, Color.White,
-                0, FontOrigin4, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, inst, instPos, Color.White,
+            mygame.spriteBatch.DrawString(mygame.font, collectibles, collectiblePos, Color.White,
+            0, FontOrigin1, 1.5f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, music1, music1Pos, Color.Gray,
+                0, FontOrigin2, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, music2, music2Pos, Color.Gray,
+                0, FontOrigin3, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, music3, music3Pos, Color.Gray,
+                0, FontOrigin4, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, music4, music4Pos, Color.Gray,
                 0, FontOrigin5, 1f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, collectibles, collectiblesPos, Color.White,
-                0, FontOrigin6, 2f, SpriteEffects.None, 1f);
-            mygame.spriteBatch.DrawString(mygame.font, credits, creditsPos, Color.White,
-                0, FontOrigin7, 2f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, music5, music5Pos, Color.Gray,
+              0, FontOrigin6, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, music6, music6Pos, Color.Gray,
+                0, FontOrigin7, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, quit, quitPos, Color.White,
+                0, FontOrigin8, 1f, SpriteEffects.None, 1f);
+           
             mygame.spriteBatch.End();
-            logo.Draw(menuItem8);
         }
 
         public void moveCharacter()
@@ -113,7 +121,7 @@ namespace TheMilkyWay.HUDElements
         public void moveCharacterUp()
         {
             Vector2 charPos = mygame.level.mainCharacter.position;
-            if (charPos.Y > levelOnePos.Y-30 && ufoPos!=1)
+            if (charPos.Y > collectiblePos.Y-30 && ufoPos!=1)
             {
                 ufoPos--;
                 determinePos(ufoPos);
@@ -122,7 +130,7 @@ namespace TheMilkyWay.HUDElements
         public void moveCharacterDown()
         {
             Vector2 charPos = mygame.level.mainCharacter.position;
-            if (charPos.Y < quitPos.Y && ufoPos!=6)
+            if (charPos.Y < quitPos.Y && ufoPos!=8)
             {
                 ufoPos++;
                 determinePos(ufoPos);
@@ -134,23 +142,30 @@ namespace TheMilkyWay.HUDElements
             switch (ufoPos)
             {
                 case 1:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, levelOnePos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, collectiblePos.Y - 30);
                     break;
                 case 2:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, levelTwoPos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music1Pos.Y - 30);
                     break;
                 case 3:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, levelThreePos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music2Pos.Y - 30);
                     break;
                 case 4:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, collectiblesPos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music3Pos.Y - 30);
                     break;
                 case 5:
-                    mygame.level.mainCharacter.position = new Vector2(ufo.X, creditsPos.Y - 30);
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music4Pos.Y - 30);
                     break;
                 case 6:
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music5Pos.Y - 30);
+                    break;
+                case 7:
+                    mygame.level.mainCharacter.position = new Vector2(ufo.X, music6Pos.Y - 30);
+                    break;
+                case 8:
                     mygame.level.mainCharacter.position = new Vector2(ufo.X, quitPos.Y - 30);
                     break;
+               
             }
         }
     }

@@ -44,6 +44,7 @@
     <Compile Include="CollisionHandler\ItemBlockHandler.cs" />
     <Compile Include="Commands\MainCharAttackCommand.cs" />
     <Compile Include="Commands\MainCharJumpCommand.cs" />
+    <Compile Include="Commands\CollectiblesSelectCommand.cs" />
     <Compile Include="Commands\MenuSelectCommand.cs" />
     <Compile Include="Commands\PauseGameCommand.cs" />
     <Compile Include="Commands\MenuCommand.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="HUDElements\Credits.cs" />
     <Compile Include="HUDElements\GoalHUD.cs" />
     <Compile Include="HUDElements\Collectibles.cs" />
+    <Compile Include="Sound\MenuMusic\SoundList.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
     <Compile Include="Sprites\UFOSprite\BadCowHeadSprite.cs" />
@@ -182,6 +184,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LevelLoading\LevelFiles\Credits.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LevelLoading\LevelFiles\Collectibles.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

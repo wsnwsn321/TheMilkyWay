@@ -10,7 +10,8 @@ namespace TheMilkyWay.Sound.BackgroundMusic
         private int mash = 3;
         private List<Song> BGM;
         Song var;
-        public const int MainMenu = 0, LevelOne = 1, LevelTwo = 2, LevelThree = 3;
+        public const int MainMenu = 0, LevelOne = 1, LevelTwo = 2, LevelThree = 3,
+                         BGM1 = 4, BGM2 = 5, BGM3 = 6, BGM4 = 7;
         private int currentBGM;
         private BackgroundMusic()
         {
@@ -21,7 +22,6 @@ namespace TheMilkyWay.Sound.BackgroundMusic
 
             //#0
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/AlternateTheme"));
-
             //#1
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level1"));
            
@@ -30,6 +30,12 @@ namespace TheMilkyWay.Sound.BackgroundMusic
        
             //#3
             BGM.Add(content.Load<Song>("Sound/UFOGameLevelMusic/Level3"));
+
+            //#4
+            BGM.Add(content.Load<Song>("Sound/BGM/BGM1"));
+            //#5
+            BGM.Add(content.Load<Song>("Sound/BGM/BGM2"));
+  
             
            
 
@@ -57,6 +63,12 @@ namespace TheMilkyWay.Sound.BackgroundMusic
                     var = BGM[3];
                     MediaPlayer.Play(var);
                     break;
+                case BGM1:
+                    var = BGM[4];
+                    MediaPlayer.Play(var);
+                    break;
+     
+
             }
         }
 
