@@ -77,6 +77,7 @@
     <Compile Include="HUDElements\Credits.cs" />
     <Compile Include="HUDElements\GoalHUD.cs" />
     <Compile Include="HUDElements\Collectibles.cs" />
+    <Compile Include="Sound\MenuMusic\SoundList.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkerNightSprite.cs" />
     <Compile Include="Sprites\BackgroundSprite\DarkestNightSprite.cs" />
     <Compile Include="Sprites\UFOSprite\BadCowHeadSprite.cs" />

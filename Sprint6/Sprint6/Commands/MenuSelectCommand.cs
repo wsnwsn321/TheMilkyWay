@@ -18,7 +18,8 @@ namespace TheMilkyWay.Commands
             switch (ufoPos)
             {
                 case 1:
-                    myGame.level.Load(GameConstants.Level1, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
+                    myGame.level.Load(GameConstants.Level1, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY));
+                     
                     break;
                 case 2:
                     myGame.level.Load(GameConstants.Level2, new Vector2(GameConstants.MainCharStartingX, GameConstants.MainCharStartingY)); 
