@@ -30,7 +30,7 @@ namespace TheMilkyWay.LevelLoading
         public int goalPoint { get; set; }
         public int maxBadCowCount { get; set; }
 
-        private int gameWidth, gameHeight;
+        public int gameWidth, gameHeight;
         private bool IsPaused { get; set;}
         int camX = 0;
 
@@ -50,6 +50,11 @@ namespace TheMilkyWay.LevelLoading
         {            
             if (!IsPaused)
             {
+                if (mainCharacter.position.X > gameWidth)
+                {
+                    windowManager.dispEndLevel = true;
+                    mainCharacter.canMove = false;
+                }
 
                 foreach (IEnemy enemy in enemyElements)
                 {

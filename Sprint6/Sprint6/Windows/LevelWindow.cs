@@ -28,8 +28,6 @@ namespace TheMilkyWay.HUDElements
                 Color.White,
             };
             pixel.SetData<Color>(colorData);
-            //windowRect = new Rectangle((GameConstants.ScreenWidth/2)-200,(GameConstants.ScreenHeight/2)-75,400,150);
-            //borderRect = new Rectangle((GameConstants.ScreenWidth/2)-205,(GameConstants.ScreenHeight/2)-80, 410,160);
             windowRect = new Rectangle(25, GameConstants.ScreenHeight - 190, 250, 150);
             borderRect = new Rectangle(20, GameConstants.ScreenHeight - 195, 260, 160);
             menuItem1.X = (windowRect.X + windowRect.Width / 2)+5;
