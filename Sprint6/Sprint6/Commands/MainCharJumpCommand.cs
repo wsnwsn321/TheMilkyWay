@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using TheMilkyWay.ElementClasses;
-using TheMilkyWay.Sound.MarioSound;
+using TheMilkyWay.Sound.UFOSound;
 using TheMilkyWay.SpriteFactories;
 
 namespace TheMilkyWay.Commands

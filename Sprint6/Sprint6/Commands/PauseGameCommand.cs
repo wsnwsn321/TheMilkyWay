@@ -1,4 +1,4 @@
-﻿using TheMilkyWay.Sound.MarioSound;
+﻿using TheMilkyWay.Sound.UFOSound;
 
 namespace TheMilkyWay.Commands
 {

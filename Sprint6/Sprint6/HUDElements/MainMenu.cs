@@ -55,6 +55,7 @@ namespace TheMilkyWay.HUDElements
             String levelOne = "Level 1";
             String levelTwo = "Level 2";
             String levelThree = "Level 3";
+            String MusicMenu = "Music Menu";
             String quit = "Exit Game";
             String inst = "Use the arrow keys to navigate\nHit enter to select your choice";
 
@@ -63,6 +64,7 @@ namespace TheMilkyWay.HUDElements
             Vector2 FontOrigin3 = mygame.font.MeasureString(levelThree) / GameConstants.Two;
             Vector2 FontOrigin4 = mygame.font.MeasureString(quit) / GameConstants.Two;
             Vector2 FontOrigin5 = mygame.font.MeasureString(inst) / GameConstants.Two;
+            Vector2 FontOrigin6 = mygame.font.MeasureString(MusicMenu) / GameConstants.Two;
 
             mygame.spriteBatch.Begin();
             mygame.spriteBatch.DrawString(mygame.font, levelOne, menuItem1, Color.White,
@@ -75,6 +77,9 @@ namespace TheMilkyWay.HUDElements
                 0, FontOrigin4, 2f, SpriteEffects.None, 1f);
             mygame.spriteBatch.DrawString(mygame.font, inst, menuItem5, Color.White,
                 0, FontOrigin5, 1f, SpriteEffects.None, 1f);
+            mygame.spriteBatch.DrawString(mygame.font, MusicMenu, menuItem6, Color.White,
+               0, FontOrigin6, 1f, SpriteEffects.None, 1f);
+
             mygame.spriteBatch.End();
             logo.Draw(menuItem6);
         }
